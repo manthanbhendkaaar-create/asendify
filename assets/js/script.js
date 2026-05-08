@@ -4,16 +4,22 @@
 
 'use strict';
 
-// ---- Navbar scroll effect ----
+// ---- Navbar scroll effect (throttled for performance) ----
 const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
+let lastScrollTime = 0;
+const scrollThrottle = 100;
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    const now = Date.now();
+    if (now - lastScrollTime > scrollThrottle) {
+        if (window.scrollY > 40) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        lastScrollTime = now;
     }
 }, { passive: true });
 
@@ -193,11 +199,17 @@ if (contactForm) {
     });
 }
 
-// ---- Active nav link on scroll ----
+// ---- Active nav link on scroll (throttled for performance) ----
 const sections = document.querySelectorAll('section[id]');
 const navLinkEls = document.querySelectorAll('.nav-link');
+let lastUpdateTime = 0;
+const updateThrottle = 150;
 
 function updateActiveLink() {
+    const now = Date.now();
+    if (now - lastUpdateTime < updateThrottle) return;
+    lastUpdateTime = now;
+
     const scrollY = window.scrollY;
     const navH = parseInt(getComputedStyle(document.documentElement)
         .getPropertyValue('--nav-h')) || 80;
@@ -218,11 +230,12 @@ function updateActiveLink() {
 
 window.addEventListener('scroll', updateActiveLink, { passive: true });
 
-// ---- Parallax glow on mouse move ----
+// ---- Parallax glow on mouse move (Desktop only) ----
 const glow1 = document.querySelector('.glow-1');
 const glow2 = document.querySelector('.glow-2');
+const isDesktop = window.innerWidth > 768;
 
-if (glow1 && glow2) {
+if (glow1 && glow2 && isDesktop) {
     let ticking = false;
     document.addEventListener('mousemove', (e) => {
         if (!ticking) {

@@ -93,6 +93,15 @@ ul {
     transform: translateY(0);
 }
 
+@media (max-width: 768px) {
+    .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+            transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+}
+
 .delay-1 {
     transition-delay: 0.1s;
 }
@@ -383,7 +392,12 @@ ul {
     border-radius: 50%;
     filter: blur(120px);
     opacity: 0.5;
-    animation: glowPulse 6s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .glow {
+        animation: glowPulse 6s ease-in-out infinite alternate;
+    }
 }
 
 .glow-1 {
@@ -394,13 +408,25 @@ ul {
     right: -100px;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+    .glow-1 {
+        animation: glowPulse 6s ease-in-out infinite alternate, float 8s ease-in-out infinite;
+    }
+}
+
 .glow-2 {
     width: 500px;
     height: 500px;
     background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
     bottom: 10%;
     left: -150px;
-    animation-delay: -3s;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .glow-2 {
+        animation: glowPulse 6s ease-in-out infinite alternate, floatReverse 10s ease-in-out infinite;
+        animation-delay: -3s, 0s;
+    }
 }
 
 @keyframes glowPulse {
@@ -415,6 +441,46 @@ ul {
     }
 }
 
+@keyframes gridShift {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 60px 60px;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+/* Hero floating elements animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes floatReverse {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(20px);
+    }
+}
+
 .grid-overlay {
     position: absolute;
     inset: 0;
@@ -423,6 +489,16 @@ ul {
         linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
     background-size: 60px 60px;
     mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+    animation: gridShift 8s linear infinite;
+}
+
+@keyframes gridShift {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 60px 60px;
+    }
 }
 
 .hero-content {
@@ -446,7 +522,12 @@ ul {
     height: 6px;
     border-radius: 50%;
     background: var(--gold);
-    animation: pulse 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .dot {
+        animation: pulse 2s ease-in-out infinite;
+    }
 }
 
 @keyframes pulse {
@@ -1386,12 +1467,10 @@ ul {
 
 @media (max-width: 768px) {
 
-    html{
-        zoom: 90%;
-    }
-
     :root {
         --nav-h: 68px;
+        --transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        --transition-slow: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .container {
@@ -1404,7 +1483,6 @@ ul {
         left: 0;
         right: 0;
         background: rgba(5, 5, 5, 0.97);
-        backdrop-filter: blur(20px);
         flex-direction: column;
         padding: 32px 24px;
         gap: 24px;
@@ -1435,6 +1513,25 @@ ul {
 
     .nav-inner {
         gap: 16px;
+    }
+
+    /* Reduce animations and effects on mobile for better performance */
+    .glow {
+        filter: blur(80px);
+    }
+
+    .glow-1 {
+        width: 400px;
+        height: 400px;
+    }
+
+    .glow-2 {
+        width: 350px;
+        height: 350px;
+    }
+
+    .navbar.scrolled {
+        box-shadow: none;
     }
 
     .hero {
