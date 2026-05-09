@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asendify | Contact Us</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="icon" type="image/png" href="../assets/images/logo1.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../" class="logo">
+                <img class="logo" src="../assets/images/logo.png">
+            </a>
+            <nav class="nav-links" id="navLinks">
+            </nav>
+            <a href="../contact" class="btn-cta">Work with us</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="glow glow-1"></div>
+            <div class="glow glow-2"></div>
+            <div class="grid-overlay"></div>
+        </div>
+        <div class="hero-content" style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: center; width: 100%;">
+
+            <!-- Right Side: Contact Form -->
+            <div class="hero-form reveal delay-3">
+                <div style="background: rgba(17, 17, 17, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 16px; padding: 40px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4); width: 100%; max-width: none;">
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; margin-bottom: 8px; color: #f5f5f5;">Quick Inquiry</h3>
+                    <p style="color: #9a9a9a; margin-bottom: 30px; font-size: 0.9rem;">Let us know about your project</p>
+                    
+                    <form id="contactForm" method="POST" action="send-mail.php">
+                        <!-- Name Field -->
+                        <div style="margin-bottom: 20px;">
+                            <input type="text" name="name" placeholder="Your Name" required 
+                                   style="width: 100%; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 8px; color: #f5f5f5; font-family: 'Outfit', sans-serif; transition: all 0.3s ease;" 
+                                   onfocus="this.style.borderColor='rgba(212, 175, 55, 0.5)'; this.style.background='rgba(255, 255, 255, 0.08)'"
+                                   onblur="this.style.borderColor='rgba(212, 175, 55, 0.2)'; this.style.background='rgba(255, 255, 255, 0.05)'" />
+                        </div>
+
+                        <!-- Email Field -->
+                        <div style="margin-bottom: 20px;">
+                            <input type="email" name="email" placeholder="Your Email" required 
+                                   style="width: 100%; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 8px; color: #f5f5f5; font-family: 'Outfit', sans-serif; transition: all 0.3s ease;" 
+                                   onfocus="this.style.borderColor='rgba(212, 175, 55, 0.5)'; this.style.background='rgba(255, 255, 255, 0.08)'"
+                                   onblur="this.style.borderColor='rgba(212, 175, 55, 0.2)'; this.style.background='rgba(255, 255, 255, 0.05)'" />
+                        </div>
+
+                        <!-- Phone Field -->
+                        <div style="margin-bottom: 20px;">
+                            <input type="tel" name="phone" placeholder="Your Phone (Optional)" 
+                                   style="width: 100%; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 8px; color: #f5f5f5; font-family: 'Outfit', sans-serif; transition: all 0.3s ease;" 
+                                   onfocus="this.style.borderColor='rgba(212, 175, 55, 0.5)'; this.style.background='rgba(255, 255, 255, 0.08)'"
+                                   onblur="this.style.borderColor='rgba(212, 175, 55, 0.2)'; this.style.background='rgba(255, 255, 255, 0.05)'" />
+                        </div>
+
+                        <!-- Message Field -->
+                        <div style="margin-bottom: 24px;">
+                            <textarea name="message" placeholder="Tell us about your project..." rows="4" required 
+                                      style="width: 100%; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 8px; color: #f5f5f5; font-family: 'Outfit', sans-serif; resize: none; transition: all 0.3s ease;" 
+                                      onfocus="this.style.borderColor='rgba(212, 175, 55, 0.5)'; this.style.background='rgba(255, 255, 255, 0.08)'"
+                                      onblur="this.style.borderColor='rgba(212, 175, 55, 0.2)'; this.style.background='rgba(255, 255, 255, 0.05)'"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" style="width: 100%; padding: 14px 24px; background: linear-gradient(135deg, #d4af37 0%, #e8c84a 100%); border: none; border-radius: 8px; color: #050505; font-weight: 600; font-family: 'Outfit', sans-serif; font-size: 0.95rem; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);"
+                                onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(212, 175, 55, 0.4)'"
+                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(212, 175, 55, 0.3)'">
+                            Send Inquiry →
+                        </button>
+
+                        <!-- Response Message -->
+                        <div id="formMessage" style="margin-top: 16px; padding: 12px 16px; border-radius: 8px; display: none; text-align: center; font-size: 0.9rem;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT INFO ========== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Left Side: Contact Body -->
+                <div>
+                    <h2 class="section-heading reveal">Get In <em>Touch</em></h2>
+                    <p class="contact-body reveal delay-1">
+                        We'd love to hear about your project. Whether you need YouTube video editing, short-form content optimization, motion graphics, or commercial ads, our creative team is ready to bring your vision to life.
+                    </p>
+                    <div class="contact-info reveal delay-2">
+                        <div class="ci-item">
+                            <div class="ci-icon">✉</div>
+                            <div>
+                                <strong>Email</strong><br>manthanbhendkaar@gmail.com
+                            </div>
+                        </div>
+                        <div class="ci-item">
+                            <div class="ci-icon">💬</div>
+                            <div>
+                                <strong>Discord</strong><br>
+                                manthanbhendkaar
+                            </div>
+                        </div>
+                        <div class="ci-item">
+                            <div class="ci-icon">📍</div>
+                            <div>
+                                <strong>Location</strong><br>
+                                Remote — Worldwide
+                            </div>
+                        </div>
+                        <div class="ci-item">
+                            <div class="ci-icon">⏱</div>
+                            <div>
+                                <strong>Response Time</strong><br>
+                                24 Hours
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Social Links -->
+                <div>
+                    <h3 class="section-heading reveal" style="font-size: 1.8rem; margin-bottom: 40px;">Connect With <em>Us</em></h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                        <a href="https://www.instagram.com/asendify.digital/" target="_blank" class="service-card reveal delay-1">
+                            <div style="margin-bottom: 16px; color: var(--gold);">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 40px; height: 40px;">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                                    <circle cx="12" cy="12" r="5" />
+                                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                                </svg>
+                            </div>
+                            <div class="sc-title">Instagram</div>
+                            <div class="sc-desc">@asendify.digital</div>
+                            <span class="sc-arrow">→</span>
+                        </a>
+
+                        <a href="https://www.youtube.com/@busterff1600" target="_blank" class="service-card reveal delay-2">
+                            <div style="margin-bottom: 16px; color: var(--gold);">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 40px; height: 40px;">
+                                    <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                                    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none" />
+                                </svg>
+                            </div>
+                            <div class="sc-title">YouTube</div>
+                            <div class="sc-desc">@busterff1600</div>
+                            <span class="sc-arrow">→</span>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/manthan-bhendkar-93b452395/" target="_blank" class="service-card reveal delay-3">
+                            <div style="margin-bottom: 16px; color: var(--gold);">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 40px; height: 40px;">
+                                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                                    <rect x="2" y="9" width="4" height="12" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
+                            </div>
+                            <div class="sc-title">LinkedIn</div>
+                            <div class="sc-desc">Manthan Bhendkar</div>
+                            <span class="sc-arrow">→</span>
+                        </a>
+
+                        <a href="https://x.com/manthanbhendkar" target="_blank" class="service-card reveal delay-4">
+                            <div style="margin-bottom: 16px; color: var(--gold);">
+                                <svg viewBox="0 0 24 24" fill="currentColor" style="width: 40px; height: 40px;">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </div>
+                            <div class="sc-title">X (Twitter)</div>
+                            <div class="sc-desc">@manthanbhendkar</div>
+                            <span class="sc-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../" class="logo footer-logo">
+                        <img class="logo" src="../assets/images/logo.png"> Asendify
+                    </a>
+                    <p class="footer-tagline">Crafting cinematic visual experiences for brands and creators worldwide.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/asendify.digital/" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="5" />
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@busterff1600" class="social-link" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/manthan-bhendkar-93b452395/" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                        <a href="https://x.com/manthanbhendkar" class="social-link" aria-label="Twitter/X">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div></div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="../youtube">Video Editing</a></li>
+                        <li><a href="../youtube">Short Form Content</a></li>
+                        <li><a href="../animations">Motion Graphics</a></li>
+                        <li><a href="../youtube">YouTube Editing</a></li>
+                        <li><a href="../youtube">Commercial Ads</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links footer-contact">
+                        <li>manthanbhendkaar@gmail.com</li>
+                        <li>Discord: manthanbhendkaar</li>
+                        <li>Remote — Worldwide</li>
+                        <li>24hr Response Time</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Asendify. All rights reserved.</p>
+                <p>Crafted with precision &amp; passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const messageDiv = document.getElementById('formMessage');
+            
+            fetch('send-mail.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    messageDiv.style.display = 'block';
+                    messageDiv.style.background = 'rgba(76, 175, 80, 0.15)';
+                    messageDiv.style.color = '#4CAF50';
+                    messageDiv.style.borderLeft = '3px solid #4CAF50';
+                    messageDiv.textContent = '✓ ' + data.message;
+                    document.getElementById('contactForm').reset();
+                } else {
+                    messageDiv.style.display = 'block';
+                    messageDiv.style.background = 'rgba(244, 67, 54, 0.15)';
+                    messageDiv.style.color = '#f44336';
+                    messageDiv.style.borderLeft = '3px solid #f44336';
+                    messageDiv.textContent = '✕ ' + data.message;
+                }
+            })
+            .catch(error => {
+                messageDiv.style.display = 'block';
+                messageDiv.style.background = 'rgba(244, 67, 54, 0.15)';
+                messageDiv.style.color = '#f44336';
+                messageDiv.style.borderLeft = '3px solid #f44336';
+                messageDiv.textContent = '✕ Error sending message. Please try again.';
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+
+</html>
