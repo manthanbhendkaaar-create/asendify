@@ -401,11 +401,11 @@ ul {
 }
 
 .glow-1 {
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, transparent 70%);
-    top: -150px;
-    right: -100px;
+    width: 500px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.578) 0%, transparent 70%);
+    right: -150px;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -417,7 +417,7 @@ ul {
 .glow-2 {
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.578) 0%, transparent 70%);
     bottom: 10%;
     left: -150px;
 }
@@ -485,8 +485,8 @@ ul {
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(212, 175, 55, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.07) 1px, transparent 1px);
     background-size: 60px 60px;
     mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
     animation: gridShift 8s linear infinite;
