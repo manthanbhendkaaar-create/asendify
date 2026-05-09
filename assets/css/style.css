@@ -1667,18 +1667,8 @@ ul {
 .carousel-track {
     display: flex;
     gap: 24px;
-    animation: scroll-left 30s linear infinite;
     will-change: transform;
     padding-right: 24px;
-}
-
-@keyframes scroll-left {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-50% - 12px));
-    }
 }
 
 .channel-card {
@@ -1752,21 +1742,12 @@ ul {
 }
 
 @media (max-width: 768px) {
-    .carousel-track {
-        animation: scroll-left 50s linear infinite;
-    }
-
     .channel-card {
         flex: 0 0 calc(33.333% - 16px);
     }
 }
 
 @media (max-width: 480px) {
-    .carousel-track {
-        animation: scroll-left 40s linear infinite;
-        gap: 16px;
-    }
-
     .channel-card {
         flex: 0 0 calc(50% - 12px);
         padding: 24px 16px;

@@ -267,36 +267,56 @@ window.addEventListener('load', () => {
     });
 });
 
-// ---- Smooth Channels Carousel (Continuous Scroll) ----
+// ---- Smooth Channels Carousel (Seamless Infinite Loop) ----
 const channelsTrack = document.getElementById('channelsTrack');
 if (channelsTrack) {
     const cards = channelsTrack.querySelectorAll('.channel-card');
-    if (cards.length > 0) {
-        // Clone all cards to create seamless infinite loop
-        cards.forEach(card => {
+    const cardArray = Array.from(cards);
+    
+    if (cardArray.length > 0) {
+        // Clone all cards twice for seamless looping
+        cardArray.forEach(card => {
+            const clone = card.cloneNode(true);
+            channelsTrack.appendChild(clone);
+        });
+        cardArray.forEach(card => {
             const clone = card.cloneNode(true);
             channelsTrack.appendChild(clone);
         });
     }
     
-    // Pause animation on hover for better UX
+    let scrollPos = 0;
+    let animationId = null;
+    let isRunning = true;
+    const scrollSpeed = 0.5; // pixels per frame
+    
+    function animate() {
+        if (isRunning) {
+            scrollPos += scrollSpeed;
+            
+            // Calculate the width of one set of original cards
+            const trackWidth = channelsTrack.scrollWidth;
+            const originalWidth = trackWidth / 3; // Since we cloned twice
+            
+            // Reset position when we've scrolled one full set
+            if (scrollPos >= originalWidth) {
+                scrollPos = 0;
+            }
+            
+            channelsTrack.style.transform = `translateX(-${scrollPos}px)`;
+        }
+        animationId = requestAnimationFrame(animate);
+    }
+    
+    // Pause on hover
     channelsTrack.addEventListener('mouseenter', () => {
-        channelsTrack.style.animationPlayState = 'paused';
+        isRunning = false;
     });
     
     channelsTrack.addEventListener('mouseleave', () => {
-        channelsTrack.style.animationPlayState = 'running';
+        isRunning = true;
     });
     
-    // Reset animation when it reaches the halfway point for seamless loop
-    let isAnimating = false;
-    channelsTrack.addEventListener('animationiteration', () => {
-        if (!isAnimating) {
-            isAnimating = true;
-            // Restart animation to ensure smooth continuous scroll
-            setTimeout(() => {
-                isAnimating = false;
-            }, 100);
-        }
-    });
+    // Start animation
+    animate();
 }
