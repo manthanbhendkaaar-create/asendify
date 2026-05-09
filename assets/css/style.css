@@ -1657,6 +1657,132 @@ ul {
     }
 }
 
+/* ---- Channels Carousel Styles ---- */
+.channels-carousel {
+    margin-top: 64px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 24px;
+    animation: scroll-left 30s linear infinite;
+    will-change: transform;
+    padding-right: 24px;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 12px));
+    }
+}
+
+.channel-card {
+    display: block;
+    flex: 0 0 calc(25% - 18px);
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    text-align: center;
+    transition: transform var(--transition), background var(--transition), border-color var(--transition);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.channel-card:hover {
+    transform: translateY(-8px);
+    background: #141414;
+    border-color: var(--gold);
+}
+
+.channel-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: white;
+    flex-shrink: 0;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.channel-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.channel-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.channel-subscribers {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+
+.channel-link {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: transform var(--transition);
+}
+
+.channel-link:hover {
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+    .carousel-track {
+        animation: scroll-left 50s linear infinite;
+    }
+
+    .channel-card {
+        flex: 0 0 calc(33.333% - 16px);
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-track {
+        animation: scroll-left 40s linear infinite;
+        gap: 16px;
+    }
+
+    .channel-card {
+        flex: 0 0 calc(50% - 12px);
+        padding: 24px 16px;
+    }
+
+    .channel-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.1rem;
+    }
+
+    .channel-name {
+        font-size: 1.1rem;
+    }
+}
+
 /* ---- Noise Texture Overlay ---- */
 body::before {
     content: '';

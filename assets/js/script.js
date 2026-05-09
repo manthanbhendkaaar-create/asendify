@@ -267,3 +267,36 @@ window.addEventListener('load', () => {
     });
 });
 
+// ---- Smooth Channels Carousel (Continuous Scroll) ----
+const channelsTrack = document.getElementById('channelsTrack');
+if (channelsTrack) {
+    const cards = channelsTrack.querySelectorAll('.channel-card');
+    if (cards.length > 0) {
+        // Clone all cards to create seamless infinite loop
+        cards.forEach(card => {
+            const clone = card.cloneNode(true);
+            channelsTrack.appendChild(clone);
+        });
+    }
+    
+    // Pause animation on hover for better UX
+    channelsTrack.addEventListener('mouseenter', () => {
+        channelsTrack.style.animationPlayState = 'paused';
+    });
+    
+    channelsTrack.addEventListener('mouseleave', () => {
+        channelsTrack.style.animationPlayState = 'running';
+    });
+    
+    // Reset animation when it reaches the halfway point for seamless loop
+    let isAnimating = false;
+    channelsTrack.addEventListener('animationiteration', () => {
+        if (!isAnimating) {
+            isAnimating = true;
+            // Restart animation to ensure smooth continuous scroll
+            setTimeout(() => {
+                isAnimating = false;
+            }, 100);
+        }
+    });
+}
