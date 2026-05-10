@@ -320,3 +320,265 @@ if (channelsTrack) {
     // Start animation
     animate();
 }
+
+const globeContainer =
+document.getElementById("globe-container");
+
+
+
+const scene = new THREE.Scene();
+
+
+
+const camera = new THREE.PerspectiveCamera(
+    45,
+    globeContainer.offsetWidth /
+    globeContainer.offsetHeight,
+    0.1,
+    1000
+);
+
+camera.position.z = 3;
+
+
+
+const renderer = new THREE.WebGLRenderer({
+    antialias:true,
+    alpha:true
+});
+
+renderer.setSize(
+    globeContainer.offsetWidth,
+    globeContainer.offsetHeight
+);
+
+renderer.setPixelRatio(window.devicePixelRatio);
+
+globeContainer.appendChild(renderer.domElement);
+
+
+
+// LIGHTS
+
+const ambient =
+new THREE.AmbientLight(0xffffff,0.9);
+
+scene.add(ambient);
+
+
+
+const directional =
+new THREE.DirectionalLight(0xffffff,1);
+
+directional.position.set(5,3,5);
+
+scene.add(directional);
+
+
+
+// CONTROLS
+
+const controls =
+new THREE.OrbitControls(
+    camera,
+    renderer.domElement
+);
+
+controls.enableDamping = true;
+
+controls.enablePan = false;
+
+controls.rotateSpeed = 0.6;
+
+controls.autoRotate = true;
+
+controls.autoRotateSpeed = 0.45;
+
+
+
+// EARTH TEXTURE
+
+const loader =
+new THREE.TextureLoader();
+
+const earthTexture =
+loader.load(
+'https://threejs.org/examples/textures/planets/earth_lights_2048.png'
+);
+
+
+
+// EARTH
+
+const earthGeometry =
+new THREE.SphereGeometry(
+    1.42,
+    128,
+    128
+);
+
+const earthMaterial =
+new THREE.MeshStandardMaterial({
+    map:earthTexture,
+    roughness:1,
+    metalness:0
+});
+
+const earth =
+new THREE.Mesh(
+    earthGeometry,
+    earthMaterial
+);
+
+scene.add(earth);
+
+
+
+// GLOW
+
+const glowGeometry =
+new THREE.SphereGeometry(
+    1.46,
+    128,
+    128
+);
+
+const glowMaterial =
+new THREE.MeshBasicMaterial({
+    color:0xd4af37,
+    transparent:true,
+    opacity:0.06,
+    side:THREE.BackSide
+});
+
+const glow =
+new THREE.Mesh(
+    glowGeometry,
+    glowMaterial
+);
+
+scene.add(glow);
+
+
+
+// UAE MARKER
+
+function addMarker(lat, lon){
+
+    const radius = 1.42;
+
+    const phi =
+    (90 - lat) *
+    (Math.PI / 180);
+
+    const theta =
+    (lon + 180) *
+    (Math.PI / 180);
+
+    const x =
+    -(radius *
+    Math.sin(phi) *
+    Math.cos(theta));
+
+    const z =
+    radius *
+    Math.sin(phi) *
+    Math.sin(theta);
+
+    const y =
+    radius *
+    Math.cos(phi);
+
+
+
+    const markerGeometry =
+    new THREE.SphereGeometry(
+        0.03,
+        16,
+        16
+    );
+
+    const markerMaterial =
+    new THREE.MeshBasicMaterial({
+        color:0xd4af37
+    });
+
+    const marker =
+    new THREE.Mesh(
+        markerGeometry,
+        markerMaterial
+    );
+
+    marker.position.set(x,y,z);
+
+    earth.add(marker);
+
+
+
+    const ringGeometry =
+    new THREE.RingGeometry(
+        0.05,
+        0.08,
+        32
+    );
+
+    const ringMaterial =
+    new THREE.MeshBasicMaterial({
+        color:0xd4af37,
+        transparent:true,
+        opacity:0.8,
+        side:THREE.DoubleSide
+    });
+
+    const ring =
+    new THREE.Mesh(
+        ringGeometry,
+        ringMaterial
+    );
+
+    ring.position.set(x,y,z);
+
+    ring.lookAt(
+        new THREE.Vector3(0,0,0)
+    );
+
+    earth.add(ring);
+
+}
+
+addMarker(25.2048,55.2708);
+
+
+
+// ANIMATION
+
+function animate(){
+
+    requestAnimationFrame(animate);
+
+    controls.update();
+
+    renderer.render(scene,camera);
+
+}
+
+animate();
+
+
+
+// RESPONSIVE
+
+window.addEventListener('resize',()=>{
+
+    camera.aspect =
+    globeContainer.offsetWidth /
+    globeContainer.offsetHeight;
+
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(
+        globeContainer.offsetWidth,
+        globeContainer.offsetHeight
+    );
+
+});

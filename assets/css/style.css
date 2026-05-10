@@ -1292,7 +1292,6 @@ ul {
     font-weight: 300;
     outline: none;
     transition: border-color var(--transition), background var(--transition);
-    -webkit-appearance: none;
 }
 
 .form-group select {
@@ -1416,6 +1415,62 @@ ul {
 .footer-bottom p {
     font-size: 0.8rem;
     color: rgba(154, 154, 154, 0.5);
+}
+
+.contact-layout{
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:40px;
+    align-items:center;
+    width:100%;
+}
+
+.globe-wrapper{
+    position:relative;
+    width:50%;
+    height:500px;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid rgba(212,175,55,0.08);
+    background:#050505;
+}
+
+#globe-container{
+    width:100%;
+    height:100%;
+}
+
+.globe-location{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#d4af37;
+    font-size:13px;
+    letter-spacing:1px;
+    font-family:'Cormorant Garamond', serif;
+}
+
+.globe-location .dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#d4af37;
+    box-shadow:0 0 15px #d4af37;
+}
+
+@media(max-width:980px){
+
+    .contact-layout{
+        grid-template-columns:1fr;
+    }
+
+    .globe-wrapper{
+        height:420px;
+    }
 }
 
 /* ============================================
@@ -1673,6 +1728,11 @@ ul {
     .tc-role {
         text-align: center;
     }
+
+    .formspree{
+        width: 100%;
+        max-width: 70%;
+    }
 }
 
 /* ---- Channels Carousel Styles ---- */
@@ -1925,4 +1985,136 @@ body::before {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--gold);
+}
+
+/* ============================================
+   PREMIUM CONTACT FORM & HERO ADDITIONS
+   ============================================ */
+
+.premium-form-container {
+    background: rgba(17, 17, 17, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 16px;
+    padding: 48px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-title {
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    color: var(--white);
+    margin-bottom: 28px;
+    font-weight: 500;
+}
+
+/* Custom Select Wrapper for Dropdown Arrow */
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    font-size: 0.8rem;
+    color: var(--gold);
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Base input styles using the existing .form-group pattern but refined */
+#contactForm .form-group {
+    margin-bottom: 20px;
+}
+
+#contactForm label {
+    color: #ccc;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    display: block;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+#contactForm input,
+#contactForm select,
+#contactForm textarea {
+    width: 100%;
+    padding: 16px 18px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    appearance: none;
+}
+
+#contactForm textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+#contactForm input:focus,
+#contactForm select:focus,
+#contactForm textarea:focus {
+    border-color: var(--gold);
+    background: rgba(212, 175, 55, 0.05);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+}
+
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Submit Button Adjustments */
+#contactForm .btn-primary {
+    margin-top: 10px;
+    padding: 18px;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+/* Animated Globe SVG */
+@keyframes spinGlobe {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+    to {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.globe-svg {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.15));
+    animation: spinGlobe 45s linear infinite;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+    .premium-form-container {
+        padding: 32px 24px;
+    }
+    
+    .globe-container {
+        max-height: 250px;
+        margin-bottom: 30px;
+    }
+    
+    .globe-svg {
+        max-width: 200px;
+    }
 }
