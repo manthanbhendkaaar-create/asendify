@@ -429,6 +429,36 @@ ul {
     }
 }
 
+.glow-3 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, transparent 70%);
+    top: 20%;
+    left: 10%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .glow-3 {
+        animation: glowPulseIntense 8s ease-in-out infinite, floatDiagonal 12s ease-in-out infinite;
+        animation-delay: -2s, 0s;
+    }
+}
+
+.glow-4 {
+    width: 400px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.35) 0%, transparent 70%);
+    bottom: 15%;
+    right: 5%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .glow-4 {
+        animation: glowPulseIntense 7s ease-in-out infinite, swirl 15s linear infinite;
+        animation-delay: -1s, 0s;
+    }
+}
+
 @keyframes glowPulse {
     from {
         opacity: 0.35;
@@ -441,6 +471,23 @@ ul {
     }
 }
 
+@keyframes glowPulseIntense {
+    0% {
+        opacity: 0.25;
+        transform: scale(0.95);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(1.15);
+    }
+
+    100% {
+        opacity: 0.25;
+        transform: scale(0.95);
+    }
+}
+
 @keyframes gridShift {
     0% {
         background-position: 0 0;
@@ -448,6 +495,20 @@ ul {
 
     100% {
         background-position: 60px 60px;
+    }
+}
+
+@keyframes gridPulse {
+    0% {
+        opacity: 0.05;
+    }
+
+    50% {
+        opacity: 0.15;
+    }
+
+    100% {
+        opacity: 0.05;
     }
 }
 
@@ -488,6 +549,83 @@ ul {
     }
 }
 
+@keyframes floatDiagonal {
+    0%,
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+
+    25% {
+        transform: translateY(-15px) translateX(10px);
+    }
+
+    50% {
+        transform: translateY(-25px) translateX(0px);
+    }
+
+    75% {
+        transform: translateY(-15px) translateX(-10px);
+    }
+}
+
+@keyframes swirl {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.05);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        filter: blur(120px) brightness(0.8);
+    }
+
+    50% {
+        filter: blur(120px) brightness(1.2);
+    }
+
+    100% {
+        filter: blur(120px) brightness(0.8);
+    }
+}
+
+@keyframes particleFade {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes orbitSmall {
+    0% {
+        transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+
 .grid-overlay {
     position: absolute;
     inset: 0;
@@ -496,7 +634,7 @@ ul {
         linear-gradient(90deg, rgba(212, 175, 55, 0.07) 1px, transparent 1px);
     background-size: 60px 60px;
     mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
-    animation: gridShift 8s linear infinite;
+    animation: gridShift 8s linear infinite, gridPulse 6s ease-in-out infinite;
 }
 
 @keyframes gridShift {
@@ -506,6 +644,163 @@ ul {
 
     100% {
         background-position: 60px 60px;
+    }
+}
+
+.animated-particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.animated-particles::before,
+.animated-particles::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.8) 0%, transparent 70%);
+    filter: blur(60px);
+}
+
+.animated-particles::before {
+    width: 300px;
+    height: 300px;
+    top: 30%;
+    right: 20%;
+    animation: orbitSmall 20s linear infinite;
+    opacity: 0.3;
+}
+
+.animated-particles::after {
+    width: 250px;
+    height: 250px;
+    bottom: 25%;
+    left: 15%;
+    animation: orbitSmall 25s linear infinite reverse;
+    opacity: 0.25;
+}
+
+.rotating-wheel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    height: 550px;
+    z-index: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .rotating-wheel {
+        animation: wheelRotate 30s linear infinite;
+    }
+}
+
+/* Outer circle border */
+.rotating-wheel::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid rgba(212, 175, 55, 0.140);
+    top: 0;
+    left: 0;
+}
+
+/* Geometric radial pattern */
+.rotating-wheel::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background: 
+        /* Radial lines - 12 segments */
+        linear-gradient(0deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.2) 1px, transparent 1px, transparent 100%),
+        linear-gradient(45deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.2) 1px, transparent 1px, transparent 100%),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.2) 1px, transparent 1px, transparent 100%),
+        linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.2) 1px, transparent 1px, transparent 100%),
+        linear-gradient(180deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.2) 1px, transparent 1px, transparent 100%),
+        linear-gradient(225deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.2) 1px, transparent 1px, transparent 100%),
+        linear-gradient(270deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.2) 1px, transparent 1px, transparent 100%),
+        linear-gradient(315deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.2) 1px, transparent 1px, transparent 100%),
+        linear-gradient(360deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.2) 1px, transparent 1px, transparent 100%);
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    clip-path: polygon(50% 0%, 50% 100%, 0% 50%, 100% 50%);
+}
+
+/* Inner concentric circles */
+
+.rotating-wheel .circle-2 {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    border: 1px solid rgba(212, 175, 55, 0.140);
+    border-radius: 50%;
+    top: 20%;
+    left: 20%;
+}
+
+/* Radial spokes */
+.rotating-wheel .spoke {
+    position: absolute;
+    width: 1px;
+    height: 50%;
+    background: rgba(212, 175, 55, 0.140);
+    left: 50%;
+    top: 0%;
+    transform-origin: center 275px;
+}
+
+.rotating-wheel .spoke:nth-child(5) {
+    transform: rotate(0deg);
+}
+
+.rotating-wheel .spoke:nth-child(6) {
+    transform: rotate(45deg);
+}
+
+.rotating-wheel .spoke:nth-child(7) {
+    transform: rotate(90deg);
+}
+
+.rotating-wheel .spoke:nth-child(8) {
+    transform: rotate(135deg);
+}
+
+.rotating-wheel .spoke:nth-child(9) {
+    transform: rotate(180deg);
+}
+
+.rotating-wheel .spoke:nth-child(10) {
+    transform: rotate(225deg);
+}
+
+.rotating-wheel .spoke:nth-child(11) {
+    transform: rotate(270deg);
+}
+
+.rotating-wheel .spoke:nth-child(12) {
+    transform: rotate(315deg);
+}
+
+.rotating-wheel .spoke:nth-child(13) {
+    transform: rotate(360deg);
+}
+
+@keyframes wheelRotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 
