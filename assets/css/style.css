@@ -1099,7 +1099,7 @@ ul {
    ============================================ */
 .services {
     padding: 120px 0;
-    background: var(--bg-primary);
+    background: var(--bg-secondary);
 }
 
 .services-grid {
@@ -1205,7 +1205,7 @@ ul {
    ============================================ */
 .work {
     padding: 120px 0;
-    background: var(--bg-secondary);
+    background: var(--bg-primary);
 }
 
 .work-grid {
