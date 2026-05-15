@@ -1217,6 +1217,9 @@ ul {
     border-radius: var(--radius);
     overflow: hidden;
     cursor: pointer;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
 .work-featured {
@@ -1231,6 +1234,11 @@ ul {
     overflow: hidden;
     background: var(--bg-card);
     border-radius: var(--radius);
+}
+
+.work-card .video-container {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 280px;
 }
 
 .work-featured .video-container {
@@ -1961,6 +1969,14 @@ ul {
 
     .work-featured {
         grid-column: span 1;
+    }
+
+    .work-card {
+        flex-direction: column;
+    }
+
+    .work-card .video-container {
+        min-width: 100%;
     }
 
     .testimonials {
