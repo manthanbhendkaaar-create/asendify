@@ -923,15 +923,12 @@ ul {
     border-radius: var(--radius);
     background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(13, 13, 13, 0.8) 100%);
     backdrop-filter: blur(10px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
+    display: block;
     cursor: pointer;
     transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
     position: relative;
     overflow: hidden;
+    object-fit: cover;
 }
 
 .reel-frame video {
@@ -1251,17 +1248,25 @@ ul {
     border-radius: var(--radius);
 }
 
-.wc-thumb {
-    position: relative;
+.instagram-container {
     width: 100%;
-    padding-top: 56.25%;
     background: var(--bg-card);
+    border-radius: var(--radius);
     overflow: hidden;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
 }
 
-.work-featured .wc-thumb {
-    padding-top: 50%;
+.instagram-container blockquote.instagram-media {
+    margin: 0 auto !important;
+    width: calc(100% - 2px) !important;
+    max-width: 540px !important;
+    min-width: 300px !important;
 }
+
 
 .wc-overlay {
     position: absolute;
@@ -1830,6 +1835,10 @@ ul {
         width: 340px;
         height: 250px;
     }
+
+    .instagram-container {
+        min-height: auto;
+    }
 }
 
 @media (max-width: 768px) {
@@ -2010,6 +2019,17 @@ ul {
     .reel-frame {
         width: 100%;
         max-width: 320px;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .instagram-container {
+        min-height: 280px;
+    }
+
+    .instagram-container blockquote.instagram-media {
+        min-width: 260px !important;
+        max-width: calc(100% - 2px) !important;
     }
 
     .btn-primary,
@@ -2129,6 +2149,22 @@ ul {
 @media (max-width: 768px) {
     .channel-card {
         flex: 0 0 calc(33.333% - 16px);
+    }
+
+    .reel-frame {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .instagram-container {
+        min-height: 300px;
+    }
+
+    .instagram-container blockquote.instagram-media {
+        max-width: calc(100% - 2px) !important;
+        min-width: 280px !important;
     }
 }
 
