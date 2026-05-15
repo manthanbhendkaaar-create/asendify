@@ -1,0 +1,730 @@
+================================================================================
+                         ASENDIFY WEBSITE DEVELOPER GUIDE
+                    A Complete Guide for New Developers to Update the Site
+================================================================================
+
+TABLE OF CONTENTS:
+1. Project Overview
+2. File Structure
+3. Main Page (index.html) - How to Update
+4. Contact Page (contact/index.html) - How to Update
+5. Work/Portfolio Page (Portfolio Section) - How to Update
+6. CSS & Styling (assets/css/style.css) - How to Update
+7. JavaScript (assets/js/script.js) - How to Update
+8. Important Classes & IDs
+9. Adding New Content
+10. Common Customization Tasks
+
+================================================================================
+1. PROJECT OVERVIEW
+================================================================================
+
+Asendify is a creative video agency website built with:
+- HTML5 (semantic markup)
+- CSS3 (modern styling with CSS variables and animations)
+- JavaScript (vanilla JS for interactivity)
+
+The website showcases premium video editing, motion design, and visual 
+storytelling services. It uses a modern, luxury aesthetic with smooth animations,
+custom icons, and embedded video content.
+
+Key Features:
+- Responsive design (works on desktop, tablet, mobile)
+- Smooth scroll animations (reveal effects)
+- Embedded YouTube videos
+- Contact form integrated with Formspree
+- Social media links
+- Service showcase cards
+- Statistics counter
+
+================================================================================
+2. FILE STRUCTURE
+================================================================================
+
+Asendify/
+├── index.html                      (Main landing page)
+├── contact/
+│   └── index.html                  (Contact page)
+├── assets/
+│   ├── css/
+│   │   └── style.css               (All styling)
+│   ├── js/
+│   │   └── script.js               (All JavaScript)
+│   └── images/
+│       ├── logo.png                (Navigation logo)
+│       └── logo1.jpeg              (Favicon)
+├── youtube/                        (Video editing service page)
+├── short-form/                     (Short form content service page)
+├── animations/                     (Motion graphics service page)
+├── [other service directories]
+└── DEVELOPER_GUIDE.txt             (This file)
+
+================================================================================
+3. MAIN PAGE (index.html) - HOW TO UPDATE
+================================================================================
+
+STRUCTURE OF index.html:
+
+The main page is organized into 8 key sections:
+
+A. HEADER & NAVIGATION
+   Location: Lines 19-38
+   
+   Components:
+   - Navbar class="navbar" 
+   - Logo link (points to #home)
+   - Navigation links (Home, About, Services, Work, Testimonials, Contact)
+   - "Work with us" CTA button
+   - Hamburger menu (for mobile)
+
+   To Update Navigation Links:
+   Find: <a href="#about" class="nav-link">About</a>
+   - Change href="#about" to any section ID
+   - Change text "About" to desired link name
+   
+   To Update Logo:
+   Find: <img class="logo" src="./assets/images/logo.png">
+   - Replace "./assets/images/logo.png" with your logo path
+
+B. HERO SECTION
+   Location: Lines 40-93
+   
+   Components:
+   - Hero background with glows and animated particles
+   - Rotating wheel animation
+   - Main heading "Crafting Visual Experiences"
+   - Subheading (about neuroscience & retention)
+   - Action buttons (View Work, Contact Us)
+   - Embedded Google Drive video/reel
+
+   To Update Hero Heading:
+   Find: <h1 class="hero-heading reveal">
+   Replace text: "Crafting<br />Visual<br />Experiences"
+   
+   To Update Hero Subheading:
+   Find: <p class="hero-sub reveal delay-2">
+   Replace: "We use Neuroscience while editing every video..."
+   
+   To Update Hero Video:
+   Find: <iframe class="reel-frame" src="https://drive.google.com/...
+   Replace src URL with your video embed link
+   
+   To Update CTA Buttons:
+   - View Work button: Change href="#work" to any section
+   - Contact Us button: Already points to contact page
+
+C. ABOUT SECTION
+   Location: Lines 95-151
+   ID: id="about"
+   
+   Components:
+   - Section heading & description
+   - About text (3 paragraphs)
+   - "Explore Services" button
+   - Stats grid (4 stat cards with numbers)
+   - Film strip visual with quote
+
+   To Update About Text:
+   Find: <p class="about-body reveal delay-2">
+   Replace the paragraph text with your content
+   
+   To Update Stats Numbers:
+   Find: <span class="stat-num" data-target="320">0</span>
+   - Change data-target="320" to your number
+   - The number animates from 0 to the target when section scrolls into view
+   
+   Stats to Update:
+   1. Projects Completed: data-target="320"
+   2. Happy Clients: data-target="180"
+   3. Years Experience: data-target="6"
+   4. Client Satisfaction: data-target="98"
+   
+   To Update Quote:
+   Find: <p class="av-quote">"Visual excellence<br />is our language."</p>
+   Replace with your quote
+
+D. WORK/PORTFOLIO SECTION
+   Location: Lines 154-240
+   ID: id="work"
+   
+   Components:
+   - Section heading "Selected Work"
+   - 9 work cards displaying YouTube embedded videos
+   - "Start Your Project" CTA button
+
+   To Update Work Videos:
+   Find: <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+   - Replace VIDEO_ID with YouTube video ID
+   - Example: https://www.youtube.com/embed/o0_-Cgr-VzY
+   
+   Format to get YouTube ID:
+   - Full URL: https://www.youtube.com/watch?v=VIDEO_ID
+   - Embed URL: https://www.youtube.com/embed/VIDEO_ID
+   
+   To Add New Work Card:
+   Copy this structure and add after existing work cards:
+   ```
+   <div class="work-card reveal delay-3">
+       <div class="video-container">
+           <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
+               title="Video Title"
+               allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowFullScreen="">
+           </iframe>
+       </div>
+   </div>
+   ```
+
+E. SERVICES SECTION
+   Location: Lines 242-300+
+   ID: id="services"
+   
+   Components:
+   - Section heading & description
+   - Service cards (links to service pages)
+   - Each card has icon, title, description, arrow
+
+   Services Included:
+   1. Short Form Content (links to ./short-form/)
+   2. 2D Animations (links to ./animations/)
+   3. YouTube Editing (links to ./youtube/)
+   
+   To Update Service Description:
+   Find: <p class="sc-desc">Reels, Shorts, TikToks...</p>
+   Replace text with new description
+   
+   To Update Service Link:
+   Find: <a href="./short-form/">
+   Replace "./short-form/" with your service page path
+   
+   To Update Service Icon:
+   The icons are SVG inline. Find the <svg viewBox="0 0 24 24"...
+   You can replace the entire SVG or edit the path elements
+
+F. TESTIMONIALS SECTION
+   (If present in your file)
+   To add testimonials, look for section id="testimonials"
+   Follow similar structure to services
+
+G. FOOTER
+   (Usually at the end of index.html)
+   
+   Components:
+   - Footer brand with logo
+   - Service links
+   - Contact info
+   - Social media links
+   
+   To Update Social Links:
+   Find: href="https://www.instagram.com/..."
+   Replace with your social media URLs
+   
+   To Update Footer Email:
+   Find: manthanbhendkaar@gmail.com
+   Replace with your email
+
+================================================================================
+4. CONTACT PAGE (contact/index.html) - HOW TO UPDATE
+================================================================================
+
+STRUCTURE OF contact/index.html:
+
+A. HEADER (Same as main page)
+   Navigation is simplified to just "Home" link
+   Back link: href="../" points to main index.html
+
+B. HERO SECTION WITH CONTACT FORM
+   Location: Lines 42-100
+   
+   Components:
+   - Page heading "Build something extraordinary"
+   - Contact form with fields:
+     * Full Name (text input)
+     * Email Address (email input)
+     * Service Required (dropdown select)
+     * Project Details (textarea)
+   - Submit button
+
+   To Update Page Heading:
+   Find: <h1 class="hero-heading">Build<br />something <br><em>extraordinary.</em></h1>
+   Replace text while keeping HTML structure
+   
+   To Update Form Description Text:
+   Find: <p class="hero-sub" style="margin-bottom: 40px;">
+   Replace: "Fill out the form to tell us about your vision..."
+
+   IMPORTANT: FORM INTEGRATION
+   The form uses Formspree service:
+   Line 64: <form action="https://formspree.io/f/mvzlvqjz" method="POST" id="contactForm">
+   
+   To change where form submissions go:
+   1. Go to formspree.io
+   2. Create an account and set up new form
+   3. Get the form ID (mvzlvqjz in this case)
+   4. Replace the action URL: https://formspree.io/f/YOUR_FORM_ID
+
+   To Update Service Options in Dropdown:
+   Find: <select id="service" name="service" required>
+   The options are:
+   - Video Editing
+   - Short Form Content
+   - Motion Graphics
+   - Commercial Ads
+   - Other
+   
+   To add new option:
+   ```
+   <option value="Your Service">Your Service</option>
+   ```
+
+C. CONTACT INFORMATION SECTION
+   Location: Lines 102-208
+   
+   Components:
+   - "Get In Touch" heading
+   - 4 contact info items:
+     * Email: manthanbhendkaar@gmail.com
+     * Discord: manthanbhendkaar
+     * Location: Remote — Worldwide
+     * Response Time: Within 24 Hours
+   - Social media links (Instagram, YouTube, LinkedIn, X/Twitter)
+
+   To Update Email:
+   Find: manthanbhendkaar@gmail.com
+   Replace with your email
+
+   To Update Discord:
+   Find: manthanbhendkaar
+   Replace with your Discord username
+
+   To Update Location:
+   Find: Remote — Worldwide
+   Replace with your location
+
+   To Update Response Time:
+   Find: Within 24 Hours
+   Replace with your response time
+
+   To Update Social Media Links:
+   Each social link has format:
+   <a href="https://www.instagram.com/..." target="_blank">
+   
+   Replace the URLs:
+   - Instagram: https://www.instagram.com/YOUR_HANDLE/
+   - YouTube: https://www.youtube.com/@YOUR_CHANNEL
+   - LinkedIn: https://www.linkedin.com/in/YOUR_PROFILE/
+   - X/Twitter: https://x.com/YOUR_HANDLE
+
+D. FOOTER (Same as main page)
+
+================================================================================
+5. WORK/PORTFOLIO PAGE - HOW TO UPDATE
+================================================================================
+
+The portfolio is in the main index.html under WORK SECTION (Lines 154-240).
+
+To Add a New Portfolio Item:
+1. Get the YouTube video ID (from youtube.com/watch?v=VIDEO_ID)
+2. Find the work-grid div (contains all work-cards)
+3. Copy an existing work-card structure:
+
+```html
+<div class="work-card reveal delay-3">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
+            title="Project Name"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen="">
+        </iframe>
+    </div>
+</div>
+```
+
+4. Paste after the last work-card
+5. Update the src URL with your video ID
+6. Change title="Project Name" to your project name
+
+To Remove a Portfolio Item:
+Simply delete the entire <div class="work-card">...</div> block
+
+To Reorder Portfolio Items:
+Cut and paste work-card blocks in the order you want them
+
+================================================================================
+6. CSS & STYLING (assets/css/style.css) - HOW TO UPDATE
+================================================================================
+
+The CSS file uses:
+- CSS Variables (custom properties) for colors & spacing
+- Flexbox & Grid for layouts
+- CSS animations for smooth effects
+- Media queries for responsive design
+
+COMMON CSS VARIABLES (Look for :root { in style.css):
+
+Color Variables:
+- --gold (primary accent color)
+- --white (text/background)
+- --dark (dark background)
+- --text-light (light text)
+
+To Change Brand Colors:
+Find: :root { 
+Look for CSS variables like:
+--gold: #d4af37;
+--dark: #0a0a0a;
+--white: #ffffff;
+
+Update the hex color values to your colors
+
+To Change Font:
+Find: font-family declarations
+Common fonts used:
+- Cormorant Garamond (headings)
+- Outfit (body text)
+
+To update heading font:
+Find: .hero-heading { font-family: ... }
+Replace with your font
+
+To Change Spacing/Padding:
+Find: padding, margin properties
+Adjust pixel values to increase/decrease spacing
+
+To Add Custom Colors to Specific Elements:
+Find the element class name
+Example: .service-card { background-color: ... }
+Add or update color properties
+
+To Modify Animations:
+Find: @keyframes (animation definitions)
+Examples: @keyframes slideIn, @keyframes fadeIn
+Adjust duration, delay, transform values
+
+Common Classes for Styling:
+- .navbar (navigation bar)
+- .hero (hero section)
+- .service-card (service cards)
+- .work-card (portfolio cards)
+- .btn-primary (primary buttons)
+- .reveal (scroll animation class)
+
+================================================================================
+7. JAVASCRIPT (assets/js/script.js) - HOW TO UPDATE
+================================================================================
+
+The JavaScript file handles:
+- Scroll animations (reveal effects)
+- Mobile hamburger menu
+- Smooth scrolling
+- Counter animations for statistics
+- Dynamic navbar behavior
+
+MAIN FUNCTIONS:
+
+1. Smooth Scroll Navigation:
+   - When you click a navigation link (#about, #work, etc.)
+   - Page smoothly scrolls to that section
+   - NO CHANGES NEEDED - works automatically with ID links
+
+2. Mobile Menu Toggle:
+   - Hamburger icon toggles navigation on mobile
+   - Location: script handles id="hamburger" and id="navLinks"
+   - NO CHANGES NEEDED for basic functionality
+
+3. Reveal Animation (Scroll effect):
+   - Elements with class="reveal" fade in when scrolled into view
+   - Uses delay-1, delay-2, delay-3, delay-4 classes for staggered effect
+   - NO CHANGES NEEDED - works automatically
+
+4. Counter Animation:
+   - Numbers in stats section count up when scrolled into view
+   - Uses data-target="NUMBER" attribute
+   - Example: <span class="stat-num" data-target="320">0</span>
+   - To change numbers: Update the data-target value in HTML
+
+HOW TO MODIFY JAVASCRIPT:
+
+To Change Animation Speed:
+Find: animation-duration in CSS or transition values in JS
+Increase value = slower animation (1s = 1 second)
+Decrease value = faster animation
+
+To Add New Interactive Feature:
+1. Add an ID to your HTML element: id="myElement"
+2. In script.js, add JavaScript code:
+   ```javascript
+   const myElement = document.getElementById('myElement');
+   myElement.addEventListener('click', function() {
+       // Your code here
+   });
+   ```
+
+To Change Scroll Animation Behavior:
+Find: IntersectionObserver section in script.js
+This handles when elements appear on screen
+NO CHANGES NEEDED for standard functionality
+
+================================================================================
+8. IMPORTANT CLASSES & IDs FOR CUSTOMIZATION
+================================================================================
+
+SECTION IDs (Used for navigation):
+- id="home" (hero section)
+- id="about" (about section)
+- id="services" (services section)
+- id="work" (portfolio section)
+- id="testimonials" (testimonials section)
+- id="contact" (contact section on contact page)
+
+ANIMATION CLASSES:
+- class="reveal" (fade-in animation)
+- class="delay-1", "delay-2", "delay-3", "delay-4" (stagger timing)
+- Example: <div class="reveal delay-2">
+
+BUTTON CLASSES:
+- class="btn-primary" (filled button)
+- class="btn-ghost" (outline button)
+- class="btn-cta" (call-to-action button)
+- class="btn-outline" (outline button)
+
+COMPONENT CLASSES:
+- class="service-card" (service showcase card)
+- class="work-card" (portfolio video card)
+- class="stat-card" (statistics card)
+- class="navbar" (navigation bar)
+- class="hero" (hero section)
+- class="container" (content wrapper)
+
+FORM ELEMENTS:
+- id="contactForm" (contact form)
+- id="name", "email", "service", "message" (form inputs)
+- name="name", "email", "service", "message" (form field names)
+
+================================================================================
+9. ADDING NEW CONTENT
+================================================================================
+
+TO ADD A NEW SERVICE:
+
+1. In Services Section (index.html, lines ~242-300):
+   ```html
+   <a href="./your-service/">
+       <div class="service-card reveal delay-4">
+           <div class="sc-icon">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                   <!-- SVG path here -->
+               </svg>
+           </div>
+           <h3 class="sc-title">Your Service Name</h3>
+           <p class="sc-desc">Your service description here...</p>
+           <span class="sc-arrow">→</span>
+       </div>
+   </a>
+   ```
+
+2. Create a new folder: your-service/
+3. Create: your-service/index.html with the service page
+
+TO ADD A NEW PORTFOLIO ITEM:
+
+1. In Work Section (index.html, lines ~154-240):
+   ```html
+   <div class="work-card reveal delay-3">
+       <div class="video-container">
+           <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+               title="Your Project Title"
+               allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowFullScreen="">
+           </iframe>
+       </div>
+   </div>
+   ```
+
+TO ADD A NEW TESTIMONIAL:
+
+1. Look for testimonials section (if it exists)
+2. Follow the structure of existing testimonials
+3. Add testimonial block with quote, author, company
+
+TO ADD A NEW NAVIGATION LINK:
+
+1. In navbar (index.html, lines ~25-31):
+   ```html
+   <a href="#your-section" class="nav-link">Your Section</a>
+   ```
+
+2. Create the section with matching ID:
+   ```html
+   <section class="your-section" id="your-section">
+       <!-- Content -->
+   </section>
+   ```
+
+================================================================================
+10. COMMON CUSTOMIZATION TASKS
+================================================================================
+
+TASK 1: Change Website Title
+Location: <title>Asendify — Crafting Visual Experiences</title>
+Change "Asendify — Crafting Visual Experiences" to your title
+This appears in the browser tab
+
+TASK 2: Change Logo
+File: ./assets/images/logo.png
+Replace logo.png with your logo file
+Keep the same filename, or update all src paths
+
+TASK 3: Update Company Name Throughout
+Find & Replace:
+- In HTML files: "Asendify" → "Your Company"
+- In footer: "© 2026 Asendify" → "© 2026 Your Company"
+
+TASK 4: Change Email Address
+Find: manthanbhendkaar@gmail.com
+Replace with your email (appears in multiple places):
+1. Hero CTA button (contact link)
+2. Contact page form
+3. Contact info section
+4. Footer
+
+TASK 5: Update Social Media Links
+Find all <a href="https://www.instagram.com/asendify.digital/">
+Replace with your social media URLs:
+- Instagram
+- YouTube
+- LinkedIn
+- Twitter/X
+
+TASK 6: Change Primary Color (Gold)
+In assets/css/style.css:
+Find: --gold: #d4af37;
+Change #d4af37 to your brand color hex code
+
+TASK 7: Update Form Recipient Email
+Go to formspree.io
+Create new form and get ID
+In contact/index.html, line 64:
+Change: action="https://formspree.io/f/mvzlvqjz"
+To: action="https://formspree.io/f/YOUR_NEW_ID"
+
+TASK 8: Add Google Analytics
+In <head> of index.html and contact/index.html:
+```html
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'YOUR_ID');
+</script>
+```
+
+TASK 9: Add More Videos to Portfolio
+Copy work-card structure (see section 5)
+Paste before closing </div> of work-grid
+Update YouTube video ID for each video
+
+TASK 10: Change Button Text/Links
+Examples:
+- "View Work" button → Find <a href="#work" class="btn-primary">View Work</a>
+- "Contact Us" button → Find href="./contact"
+- "Start Your Project" → Find at bottom of work section
+
+================================================================================
+QUICK REFERENCE: FILE LOCATIONS
+================================================================================
+
+Main Homepage: index.html
+Contact Page: contact/index.html
+Styling: assets/css/style.css
+JavaScript: assets/js/script.js
+Logo: assets/images/logo.png
+Favicon: assets/images/logo1.jpeg
+
+================================================================================
+IMPORTANT NOTES FOR DEVELOPERS
+================================================================================
+
+1. NAVIGATION LINKS:
+   - Use relative paths: ./folder/ or ../folder/
+   - Use IDs for sections: href="#about", href="#services"
+   - Always test links after making changes
+
+2. RESPONSIVE DESIGN:
+   - CSS uses mobile-first approach
+   - Media queries handle different screen sizes
+   - Test on mobile, tablet, and desktop
+
+3. VIDEO EMBEDS:
+   - YouTube: Use embed URLs (youtube.com/embed/ID)
+   - Google Drive: Use preview links
+   - Always use allowFullScreen attribute
+
+4. FORM SUBMISSION:
+   - Contact form uses Formspree (https://formspree.io/)
+   - You need an account to receive submissions
+   - Configure form ID in action attribute
+
+5. ANIMATIONS:
+   - Scroll reveal animations work automatically
+   - Add class="reveal" to any element to animate on scroll
+   - Use delay-1, delay-2, etc. for staggered effect
+
+6. ACCESSIBILITY:
+   - Always include alt text for images
+   - Use semantic HTML (header, section, footer)
+   - Include aria-label for icons
+
+7. SEO OPTIMIZATION:
+   - Update <title> and <meta name="description">
+   - Use proper heading hierarchy (h1, h2, h3)
+   - Keep alt text descriptive
+
+8. PERFORMANCE:
+   - Use optimized images
+   - Minimize CSS/JS if needed
+   - Use CDN for fonts (Google Fonts)
+
+================================================================================
+TESTING CHECKLIST AFTER UPDATES
+================================================================================
+
+□ Test all navigation links
+□ Test responsive design on mobile
+□ Test contact form submission
+□ Test video embeds (autoplay settings)
+□ Check all image loads correctly
+□ Verify all social media links work
+□ Test scroll animations
+□ Check button links go to correct pages
+□ Verify footer information is current
+□ Test smooth scrolling
+□ Check font loads correctly
+□ Verify colors display correctly
+
+================================================================================
+CONTACT & SUPPORT
+================================================================================
+
+For questions about the code structure, refer to:
+- Inline comments in index.html
+- CSS comments in style.css
+- JavaScript comments in script.js
+
+For Formspree support: https://formspree.io/
+For YouTube embed docs: https://developers.google.com/youtube/player_parameters
+For CSS help: https://developer.mozilla.org/en-US/docs/Web/CSS/
+
+================================================================================
+END OF DEVELOPER GUIDE
+================================================================================
+
+Created: 2026-05-15
+Version: 1.0
+Website: Asendify - Crafting Visual Experiences
+
+This guide provides comprehensive information for new developers to understand
+and update the Asendify website. Refer to specific sections when making changes.
+
+================================================================================
