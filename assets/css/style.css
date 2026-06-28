@@ -1342,6 +1342,11 @@ ul {
 /* ============================================
    TESTIMONIALS
    ============================================ */
+.case{
+    width: 100%;
+    align-items: center;
+}
+
 .testimonials {
     padding: 120px 0;
     background: var(--bg-primary);
