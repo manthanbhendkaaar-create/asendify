@@ -14,6 +14,7 @@
         rel="stylesheet"
      />
 </head>
+<script src="https://cdn.tailwindcss.com"></script>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -163,6 +164,62 @@ twq('config','rd7up');
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── NEUROSCIENCE SECTION ───────────────────────────────────── -->
+    <section id="neuroscience" class="neuroscience-section">
+        <div class="section-bg-graphic">
+            <div class="graphic-glow-gold" style="top: 20%; right: -10%;"></div>
+            <div class="graphic-diamond" style="bottom: 10%; left: 5%; opacity: 0.6;"></div>
+        </div>
+
+        <div class="container">
+            <div class="neuro-grid">
+                <div class="reveal delay-1">
+                    <span class="section-eyebrow neuro-eyebrow">Cognitive Retention Architecture</span>
+                    <h2 class="neuro-title">Retention Engineered for the <br><span class="gold-glow-text">YouTube
+                            Algorithm</span></h2>
+                    <p class="neuro-body">At Asendify, we transcend standard linear editing. By integrating
+                        neuro-aesthetic markers, visual saccade matching, and structural dopaminergic reward loops
+                        directly into our timeline architecture, our edits hook attention and flatten your viewer
+                        drop-off curves.</p>
+                    <p class="neuro-body">We adjust frame durations based on real-time viewer retention analytics,
+                        mapping out high-impact auditory shifts to spike your channel's Average Percentage Viewed (APV)
+                        by over 40%.</p>
+
+                    <div class="diamond-container">
+                        <div class="diamond-graphic" title="Attention Node Geometry"></div>
+                        <div class="diamond-graphic delayed" title="Neural Trigger Array"></div>
+                    </div>
+                </div>
+
+                <div class="brain-panel">
+                    <!-- Interactive Particle Brain Mesh Canvas -->
+                    <canvas id="brain-canvas"></canvas>
+                </div>
+            </div>
+
+            <!-- Live Pricing Hype Parameter Switch -->
+            <div class="hype-panel glass reveal delay-2">
+                <h3 class="hype-title">Deploy Algorithmic Engineering</h3>
+                <p class="hype-desc">Toggle the interactive node below to upgrade raw media assets to fully optimized
+                    Algorithmic-Overclock retention parameters.</p>
+
+                <div class="switch-control-row">
+                    <span class="switch-node-label active" id="label-standard">Standard Growth Plan</span>
+                    <label class="toggle-master">
+                        <input type="checkbox" id="hype-switch-trigger">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="switch-node-label" id="label-hype">Algorithmic-Overclocked Plan (+40% Retention)</span>
+                </div>
+
+                <div class="hype-pricing-node" id="pricing-wrapper">
+                    <span class="price-currency">$</span>
+                    <span class="price-val" id="dynamic-price">150</span>
                 </div>
             </div>
         </div>
@@ -627,6 +684,215 @@ twq('config','rd7up');
             </div>
         </div>
     </footer>
+
+
+    <script>
+                /* ── THE LIVE BRAIN NEURO ANIMATION COMPONENT ────────────────── */
+        (function () {
+            const canvas = document.getElementById('brain-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let W, H, nodes = [], lines = [];
+
+            function resize() {
+                W = canvas.width = canvas.parentElement.offsetWidth;
+                H = canvas.height = canvas.parentElement.offsetHeight;
+                initBrainStructure();
+            }
+
+            function initBrainStructure() {
+                nodes = [];
+                // Programmatic generation of logical hemispheric brain coordinate node patterns
+                const totalNodes = 110;
+                for (let i = 0; i < totalNodes; i++) {
+                    let leftSide = Math.random() > 0.5;
+                    let cx = leftSide ? W * 0.38 : W * 0.62;
+                    let cy = H * 0.5;
+                    let rx = W * 0.16;
+                    let ry = H * 0.26;
+
+                    let angle = Math.random() * Math.PI * 2;
+                    let rad = Math.sqrt(Math.random());
+                    let x = cx + Math.cos(angle) * rx * rad;
+                    let y = cy + Math.sin(angle) * ry * rad;
+
+                    // Apply biological contouring modifiers
+                    if (y < H * 0.3) x += (Math.random() - 0.5) * 20;
+                    if (y > H * 0.7) x = cx + Math.cos(angle) * (rx * 0.6) * rad;
+
+                    nodes.push({
+                        x: x, y: y,
+                        baseX: x, baseY: y,
+                        r: Math.random() * 1.5 + 0.8,
+                        pulse: Math.random() * Math.PI,
+                        speed: 0.02 + Math.random() * 0.03,
+                        electricalCharge: Math.random(),
+                        chargeSpeed: 0.01 + Math.random() * 0.02
+                    });
+                }
+            }
+
+            function drawBrain() {
+                ctx.clearRect(0, 0, W, H);
+
+                // Render network synapses pathways
+                for (let i = 0; i < nodes.length; i++) {
+                    let p = nodes[i];
+                    p.pulse += p.speed;
+                    p.electricalCharge += p.chargeSpeed;
+                    if (p.electricalCharge > 1) p.electricalCharge = 0;
+
+                    // Dynamic micro-movement mapping loops
+                    p.x = p.baseX + Math.sin(p.pulse) * 4;
+                    p.y = p.baseY + Math.cos(p.pulse) * 3;
+
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        let q = nodes[j];
+                        let dist = Math.hypot(p.x - q.x, p.y - q.y);
+                        if (dist < 52) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(q.x, q.y);
+                            // Luxury gold mixed with hot crimson energy filaments pathways
+                            let alpha = (1 - dist / 52) * 0.16;
+                            ctx.strokeStyle = p.electricalCharge > 0.85
+                                ? `rgba(255, 42, 42, ${alpha * 2.5})`
+                                : `rgba(212, 175, 55, ${alpha})`;
+                            ctx.lineWidth = p.electricalCharge > 0.85 ? 0.8 : 0.4;
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                // Render physical neurological core node elements
+                nodes.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r + (Math.sin(p.pulse) * 0.4), 0, Math.PI * 2);
+                    ctx.fillStyle = p.electricalCharge > 0.85 ? '#ff2a2a' : '#d4af37';
+                    ctx.fill();
+                });
+
+                requestAnimationFrame(drawBrain);
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+            drawBrain();
+        })();
+
+        /* ── 40% BASE PRICING HYPE SWITCH CALCULATION MODULE ─────────── */
+        (function () {
+            const trigger = document.getElementById('hype-switch-trigger');
+            const display = document.getElementById('dynamic-price');
+            const wrapper = document.getElementById('pricing-wrapper');
+            const lblStd = document.getElementById('label-standard');
+            const lblHype = document.getElementById('label-hype');
+            if (!trigger || !display) return;
+
+            const basePrice = 150;
+            const hypedPrice = basePrice * 1.40; // Mathematical precision execution verification
+
+            // Smooth Odometer Numeric Counter Engine
+            function animateOdometer(targetValue) {
+                let current = parseInt(display.textContent.replace(/,/g, ''), 10);
+                let duration = 400;
+                let startTimestamp = null;
+
+                function step(timestamp) {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const val = Math.floor(progress * (targetValue - current) + current);
+                    display.textContent = val.toLocaleString();
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                }
+                window.requestAnimationFrame(step);
+            }
+
+            trigger.addEventListener('change', () => {
+                if (trigger.checked) {
+                    animateOdometer(hypedPrice);
+                    wrapper.classList.add('boosted');
+                    lblStd.classList.remove('active');
+                    lblHype.classList.add('active-gold');
+                } else {
+                    animateOdometer(basePrice);
+                    wrapper.classList.remove('boosted');
+                    lblStd.classList.add('active');
+                    lblHype.classList.remove('active-gold');
+                }
+            });
+        })();
+
+        /* ── HERO CANVAS MOLECULAR PARTICLE FIELD ENGINE ────────────── */
+        (function () {
+            const canvas = document.getElementById('hero-canvas');
+            const ctx = canvas.getContext('2d');
+            let W, H, pts;
+
+            function resize() {
+                W = canvas.width = canvas.offsetWidth;
+                H = canvas.height = canvas.offsetHeight;
+                init();
+            }
+
+            function init() {
+                pts = Array.from({ length: 80 }, () => ({
+                    x: Math.random() * W,
+                    y: Math.random() * H,
+                    vx: (Math.random() - 0.5) * 0.3,
+                    vy: (Math.random() - 0.5) * 0.3,
+                    r: Math.random() * 1.2 + 0.3,
+                    a: Math.random()
+                }));
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+
+                const grad = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, W * 0.6);
+                grad.addColorStop(0, 'rgba(255,255,255,0.03)');
+                grad.addColorStop(1, 'rgba(0,0,0,0)');
+                ctx.fillStyle = grad;
+                ctx.fillRect(0, 0, W, H);
+
+                for (let i = 0; i < pts.length; i++) {
+                    const p = pts[i];
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+                    if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255,255,255,${p.a * 0.35})`;
+                    ctx.fill();
+
+                    for (let j = i + 1; j < pts.length; j++) {
+                        const q = pts[j];
+                        const dx = p.x - q.x, dy = p.y - q.y;
+                        const d = Math.sqrt(dx * dx + dy * dy);
+                        if (d < 110) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(q.x, q.y);
+                            ctx.strokeStyle = `rgba(255,255,255,${(1 - d / 110) * 0.06})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(draw);
+            }
+
+            const ro = new ResizeObserver(resize);
+            ro.observe(canvas.parentElement);
+            resize();
+            draw();
+        })();
+
+ 
+    </script>
 
     <script src="assets/js/script.js"></script>
 </body>
