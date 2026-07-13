@@ -1340,6 +1340,153 @@ ul {
 }
 
 /* ============================================
+   PRICING
+   ============================================ */
+.pricing {
+    padding: 120px 0;
+    background: var(--bg-secondary);
+}
+
+.pricing-card {
+    max-width: 40rem;
+    margin: 0 auto;
+    border-radius: var(--radius);
+    padding: 48px 40px;
+    border: 1px solid var(--gold-border);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.04) 0%, var(--bg-card) 60%);
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.pricing-badge {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold-border);
+    background: var(--gold-dim);
+    padding: 8px 20px;
+    border-radius: 999px;
+    margin-bottom: 28px;
+}
+
+.pricing-amount {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 32px;
+}
+
+.pricing-currency {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.pricing-value {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+}
+
+.pricing-period {
+    color: var(--gray);
+    font-size: 1rem;
+    margin-left: 6px;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+    text-align: left;
+    display: inline-block;
+}
+
+.pricing-features li {
+    color: var(--white);
+    font-size: 0.95rem;
+    padding: 10px 0;
+    padding-left: 28px;
+    position: relative;
+}
+
+.pricing-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.pricing-guarantee {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    text-align: left;
+    background: rgba(212, 175, 55, 0.06);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 28px;
+    transition: background var(--transition), border-color var(--transition);
+}
+
+.pricing-guarantee:hover {
+    background: var(--gold-dim);
+    border-color: var(--gold);
+}
+
+.pricing-guarantee .guarantee-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.pricing-guarantee strong {
+    display: block;
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.pricing-guarantee p {
+    color: var(--gray);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.pricing-note {
+    margin-top: 24px;
+    color: var(--gray);
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+.pricing-note a {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+    .pricing-card {
+        padding: 36px 24px;
+    }
+
+    .pricing-value {
+        font-size: 3rem;
+    }
+}
+
+/* ============================================
    TESTIMONIALS
    ============================================ */
 .case-grid{
@@ -1363,6 +1510,61 @@ ul {
 .testimonials {
     padding: 120px 0;
     background: var(--bg-primary);
+}
+
+.case-live {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    aspect-ratio: 16 / 9;
+    background: var(--bg-card);
+    padding: 24px 28px;
+    text-decoration: none;
+}
+
+.case-growth-start,
+.case-growth-end {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.case-growth-start img,
+.case-growth-end img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold-border);
+}
+
+.case-growth-end img {
+    width: 76px;
+    height: 76px;
+}
+
+.case-growth-start span,
+.case-growth-end span {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--white);
+}
+
+.case-growth-start span {
+    font-size: 1rem;
+}
+
+.case-growth-end span {
+    font-size: 1.4rem;
+    color: var(--gold);
+}
+
+.case-arrow {
+    flex: 1;
+    height: 60px;
+    margin: 0 8px;
 }
 
 .testimonial-slider {
