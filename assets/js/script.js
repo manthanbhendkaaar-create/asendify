@@ -81,6 +81,25 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// ---- Services nav dropdown (works on every page) ----
+(function () {
+    const dropdowns = document.querySelectorAll('.nav-item-dropdown');
+    dropdowns.forEach(function (dropdown) {
+        const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+        if (!toggle) return;
+        toggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const isOpen = dropdown.classList.contains('open');
+            dropdowns.forEach(function (d) { d.classList.remove('open'); });
+            if (!isOpen) dropdown.classList.add('open');
+        });
+    });
+    document.addEventListener('click', function () {
+        dropdowns.forEach(function (d) { d.classList.remove('open'); });
+    });
+})();
+
 // ---- Smooth scroll for anchor links ----
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
