@@ -42,7 +42,14 @@ twq('config','rd7up');
             <nav class="nav-links" id="navLinks">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#services" class="nav-link">Services</a>
+                <div class="nav-item-dropdown">
+                    <button class="nav-link nav-dropdown-toggle" type="button">Services</button>
+                    <div class="nav-dropdown-menu">
+                        <a href="#work" class="nav-dropdown-link">YouTube Growth</a>
+                        <a href="./automations" class="nav-dropdown-link">AI Automations</a>
+                        <a href="./clipping" class="nav-dropdown-link">Clipping</a>
+                    </div>
+                </div>
                 <a href="#work" class="nav-link">Work</a>
                 <a href="#testimonials" class="nav-link">Testimonials</a>
                 <a href="#pricing" class="nav-link">Pricing</a>
@@ -631,8 +638,8 @@ twq('config','rd7up');
                     <span class="guarantee-icon">🛡</span>
                     <span>
                         <strong>Full Money-Back Guarantee</strong>
-                        <p>Not satisfied with our service? You can request a full refund whenever you want — no
-                            questions asked. See our Policies page for details.</p>
+                        <p>If you don't see results in your first month, we refund you — no questions asked. See our
+                            Policies page for details.</p>
                     </span>
                 </a>
 
@@ -901,6 +908,25 @@ twq('config','rd7up');
                     lblStd.classList.add('active');
                     lblHype.classList.remove('active-gold');
                 }
+            });
+        })();
+
+        /* ── SERVICES NAV DROPDOWN ────────────────────────────────────── */
+        (function () {
+            const dropdowns = document.querySelectorAll('.nav-item-dropdown');
+            dropdowns.forEach(function (dropdown) {
+                const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+                if (!toggle) return;
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const isOpen = dropdown.classList.contains('open');
+                    dropdowns.forEach(function (d) { d.classList.remove('open'); });
+                    if (!isOpen) dropdown.classList.add('open');
+                });
+            });
+            document.addEventListener('click', function () {
+                dropdowns.forEach(function (d) { d.classList.remove('open'); });
             });
         })();
 
