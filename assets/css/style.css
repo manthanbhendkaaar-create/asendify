@@ -2362,6 +2362,7 @@ ul {
         display: none;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
     }
 
     .nav-links.open {
