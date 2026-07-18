@@ -30,7 +30,15 @@ hamburger.addEventListener('click', () => {
     document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
 });
 
-navLinks.querySelectorAll('.nav-link').forEach(link => {
+navLinks.querySelectorAll('.nav-link:not(.nav-dropdown-toggle)').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+        document.body.style.overflow = '';
+    });
+});
+
+navLinks.querySelectorAll('.nav-dropdown-link').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('open');
         navLinks.classList.remove('open');

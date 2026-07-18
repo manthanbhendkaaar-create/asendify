@@ -347,6 +347,24 @@ ul {
     border: none;
     font-family: inherit;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-dropdown-arrow {
+    color: var(--gray);
+    transition: transform var(--transition), color var(--transition);
+    flex-shrink: 0;
+}
+
+.nav-dropdown-toggle:hover .nav-dropdown-arrow {
+    color: var(--white);
+}
+
+.nav-item-dropdown.open .nav-dropdown-arrow {
+    transform: rotate(180deg);
+    color: var(--gold);
 }
 
 .nav-dropdown-menu {
