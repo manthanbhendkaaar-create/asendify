@@ -1555,6 +1555,168 @@ ul {
 }
 
 /* ============================================
+   CASE STUDIES PAGE
+   ============================================ */
+.cs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+    .cs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cs-card {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius);
+    padding: 32px;
+}
+
+.cs-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.cs-niche {
+    display: block;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.8;
+    margin-bottom: 6px;
+}
+
+.cs-card-head h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.cs-stat {
+    text-align: right;
+}
+
+.cs-stat-num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1.1;
+}
+
+.cs-stat-label {
+    font-size: 0.72rem;
+    color: var(--gray);
+}
+
+.cs-growth {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--white);
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray-dark);
+}
+
+.cs-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: cs-step;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.cs-steps li {
+    counter-increment: cs-step;
+    position: relative;
+    padding-left: 30px;
+    font-size: 0.88rem;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+.cs-steps li::before {
+    content: counter(cs-step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+}
+
+.cs-steps strong {
+    color: var(--white);
+}
+
+.cs-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius);
+}
+
+.cs-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 520px;
+}
+
+.cs-table th,
+.cs-table td {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.cs-table th {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(212, 175, 55, 0.06);
+}
+
+.cs-table td {
+    color: var(--gray);
+    border-top: 1px solid var(--gray-dark);
+}
+
+.cs-table td:first-child {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.cs-table-growth {
+    color: var(--gold) !important;
+    font-weight: 700;
+}
+
+/* ============================================
    PRICING
    ============================================ */
 .pricing {
