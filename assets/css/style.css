@@ -3607,3 +3607,334 @@ body::before {
             }
 
         }
+/* ============================================
+   UNDERWATER HERO + VORTEX REEL (homepage only)
+   Scoped entirely under uw- prefix so nothing
+   here touches the rest of the site's styles.
+   ============================================ */
+:root {
+    --uw-abyss: #030a11;
+    --uw-deep: #071b2c;
+    --uw-current-line: rgba(95, 251, 222, 0.14);
+    --uw-foam: #cdeaf0;
+    --uw-bio: #5ffbde;
+    --uw-pearl: #f3fbfa;
+    --uw-gray: #85a6b3;
+    --uw-font-display: 'Fraunces', serif;
+    --uw-font-body: 'Manrope', sans-serif;
+}
+
+.uw-hero,
+.uw-vortex-runway {
+    background: var(--uw-abyss);
+    color: var(--uw-pearl);
+    font-family: var(--uw-font-body);
+}
+
+.uw-bubbles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.uw-caustics {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: screen;
+    background:
+        radial-gradient(ellipse 60% 40% at 20% 15%, rgba(95, 251, 222, 0.10), transparent 60%),
+        radial-gradient(ellipse 50% 35% at 80% 30%, rgba(95, 251, 222, 0.08), transparent 60%),
+        radial-gradient(ellipse 45% 55% at 50% 80%, rgba(20, 120, 160, 0.18), transparent 65%);
+    animation: uwCausticDrift 22s ease-in-out infinite alternate;
+}
+
+@keyframes uwCausticDrift {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(-2%, 3%) scale(1.06);
+    }
+}
+
+.uw-depth-fade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(3, 10, 17, 0) 0%, rgba(3, 10, 17, 0.35) 75%, var(--bg-primary) 100%);
+}
+
+/* ---- Hero ---- */
+.uw-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: calc(var(--nav-h) + 60px) 32px 80px;
+    overflow: hidden;
+}
+
+.uw-hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+}
+
+.uw-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--uw-bio);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.uw-eyebrow::before,
+.uw-eyebrow::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--uw-bio);
+    opacity: 0.5;
+}
+
+.uw-hero h1 {
+    font-family: var(--uw-font-display);
+    font-weight: 500;
+    font-size: clamp(2.4rem, 6vw, 4.8rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--uw-pearl);
+}
+
+.uw-hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    background: linear-gradient(180deg, var(--uw-bio), #2fb6a0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.uw-hero p {
+    margin: 26px auto 0;
+    max-width: 46ch;
+    color: var(--uw-gray);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.uw-cta {
+    margin-top: 42px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 36px;
+    border-radius: 999px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.5), var(--uw-bio) 60%);
+    color: #032018;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    box-shadow: 0 0 40px rgba(95, 251, 222, 0.35), inset 0 0 12px rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.uw-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 55px rgba(95, 251, 222, 0.55), inset 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+.uw-scroll-cue {
+    margin-top: 64px;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--uw-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.uw-scroll-cue-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(180deg, var(--uw-bio), transparent);
+    animation: uwCueFlow 1.8s ease-in-out infinite;
+}
+
+@keyframes uwCueFlow {
+
+    0%,
+    100% {
+        transform: scaleY(0.6);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+/* ---- Vortex reel ---- */
+.uw-vortex-runway {
+    position: relative;
+    height: 480vh;
+}
+
+.uw-vortex-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.uw-vortex-heading {
+    position: absolute;
+    top: calc(var(--nav-h) + 40px);
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.uw-vortex-heading .tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--uw-bio);
+    margin-bottom: 16px;
+    display: block;
+}
+
+.uw-vortex-heading h2 {
+    font-family: var(--uw-font-display);
+    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+    font-weight: 500;
+    color: var(--uw-pearl);
+}
+
+.uw-vortex-heading h2 em {
+    font-style: italic;
+    color: var(--uw-bio);
+}
+
+.uw-vortex-stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.uw-funnel-silhouette {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.uw-funnel-ring {
+    position: absolute;
+    left: 50%;
+    border-radius: 50%;
+    border: 1px solid rgba(95, 251, 222, 0.16);
+    background: radial-gradient(ellipse at center, rgba(95, 251, 222, 0.05), transparent 70%);
+    transform: translateX(-50%);
+}
+
+.uw-funnel-spiral {
+    position: absolute;
+    inset: 0;
+    opacity: 0.35;
+    animation: uwFunnelRotate 40s linear infinite;
+}
+
+@keyframes uwFunnelRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.uw-vortex-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 260px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--uw-deep);
+    border: 1px solid var(--uw-current-line);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+    will-change: transform, opacity, filter;
+    z-index: 10;
+    text-decoration: none;
+}
+
+.uw-vortex-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.uw-vortex-card .uw-cap {
+    padding: 10px 14px;
+    font-size: 0.75rem;
+    color: var(--uw-foam);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 900px) {
+    .uw-vortex-card {
+        width: 190px;
+    }
+}
+
+@media (max-width: 640px) {
+    .uw-vortex-card {
+        width: 145px;
+    }
+
+    .uw-hero p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .uw-caustics,
+    .uw-scroll-cue-line,
+    .uw-funnel-spiral {
+        animation: none;
+    }
+}
