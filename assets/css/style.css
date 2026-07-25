@@ -300,6 +300,7 @@ ul {
 .logo {
     height: 50px;
     width: 50px;
+    flex-shrink: 0;
 }
 
 .nav-links {
