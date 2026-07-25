@@ -3901,6 +3901,11 @@ body::before {
     overflow: hidden;
 }
 
+.uw-hero-compact {
+    min-height: auto;
+    padding: calc(var(--nav-h) + 48px) 32px 40px;
+}
+
 .uw-hero-inner {
     position: relative;
     z-index: 2;
