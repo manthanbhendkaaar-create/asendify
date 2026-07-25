@@ -1724,6 +1724,59 @@ ul {
     background: var(--bg-secondary);
 }
 
+.elite-badge {
+    max-width: 40rem;
+    margin: 0 auto 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    padding: 14px 28px;
+    border-radius: 999px;
+    border: 1px solid var(--gold-border);
+    background: var(--gold-dim);
+    color: var(--white);
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.elite-badge strong {
+    color: var(--gold);
+}
+
+.elite-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    box-shadow: 0 0 8px var(--gold);
+    animation: eliteDotPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes eliteDotPulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(0.85);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 640px) {
+    .elite-badge {
+        flex-direction: column;
+        gap: 6px;
+        padding: 16px 24px;
+    }
+}
+
 .pricing-card {
     max-width: 40rem;
     margin: 0 auto;
