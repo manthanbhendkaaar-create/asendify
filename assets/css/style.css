@@ -275,8 +275,11 @@ ul {
     right: 0;
     z-index: 1000;
     height: var(--nav-h);
+    background: rgba(3, 10, 17, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(95, 251, 222, 0.08);
     transition: background var(--transition), box-shadow var(--transition), border-color var(--transition);
-    border-bottom: 1px solid transparent;
 }
 
 .navbar.scrolled {
