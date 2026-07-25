@@ -3903,7 +3903,7 @@ body::before {
 
 .uw-hero-compact {
     min-height: auto;
-    padding: calc(var(--nav-h) + 48px) 32px 40px;
+    padding: calc(var(--nav-h) + 48px) 32px 16px;
 }
 
 .uw-hero-inner {
@@ -4039,7 +4039,7 @@ body::before {
 
 .uw-vortex-heading {
     position: absolute;
-    top: calc(var(--nav-h) + 40px);
+    top: 32px;
     left: 0;
     right: 0;
     text-align: center;
