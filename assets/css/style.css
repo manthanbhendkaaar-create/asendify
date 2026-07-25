@@ -3913,15 +3913,22 @@ body::before {
 }
 
 .uw-eyebrow {
-    font-size: 0.75rem;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--uw-bio);
+    font-family: var(--uw-font-display);
+    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--uw-pearl);
     margin-bottom: 28px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
     justify-content: center;
+}
+
+.uw-eyebrow em {
+    font-style: italic;
+    color: var(--uw-bio);
 }
 
 .uw-eyebrow::before,
@@ -4050,9 +4057,11 @@ body::before {
 }
 
 .uw-vortex-heading h2 {
-    font-family: var(--uw-font-display);
-    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+    font-family: var(--uw-font-body);
+    font-size: 0.72rem;
     font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
     color: var(--uw-pearl);
 }
 
