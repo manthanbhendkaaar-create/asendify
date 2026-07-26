@@ -275,13 +275,14 @@ ul {
     right: 0;
     z-index: 1000;
     height: var(--nav-h);
-    background: rgba(3, 10, 17, 0.92);
-    border-bottom: 1px solid rgba(95, 251, 222, 0.08);
     transition: background var(--transition), box-shadow var(--transition), border-color var(--transition);
+    border-bottom: 1px solid transparent;
 }
 
 .navbar.scrolled {
-    background: rgba(3, 10, 17, 0.92);
+    background: rgba(3, 10, 17, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-color: rgba(95, 251, 222, 0.08);
     box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
 }
@@ -299,7 +300,6 @@ ul {
 .logo {
     height: 50px;
     width: 50px;
-    flex-shrink: 0;
 }
 
 .nav-links {
@@ -1722,59 +1722,6 @@ ul {
 .pricing {
     padding: 120px 0;
     background: var(--bg-secondary);
-}
-
-.elite-badge {
-    max-width: 40rem;
-    margin: 0 auto 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    text-align: center;
-    padding: 14px 28px;
-    border-radius: 999px;
-    border: 1px solid var(--gold-border);
-    background: var(--gold-dim);
-    color: var(--white);
-    font-size: 0.88rem;
-    line-height: 1.5;
-}
-
-.elite-badge strong {
-    color: var(--gold);
-}
-
-.elite-badge-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--gold);
-    flex-shrink: 0;
-    box-shadow: 0 0 8px var(--gold);
-    animation: eliteDotPulse 1.8s ease-in-out infinite;
-}
-
-@keyframes eliteDotPulse {
-
-    0%,
-    100% {
-        opacity: 0.5;
-        transform: scale(0.85);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-}
-
-@media (max-width: 640px) {
-    .elite-badge {
-        flex-direction: column;
-        gap: 6px;
-        padding: 16px 24px;
-    }
 }
 
 .pricing-card {
@@ -3900,11 +3847,6 @@ body::before {
     overflow: hidden;
 }
 
-.uw-hero-compact {
-    min-height: auto;
-    padding: calc(var(--nav-h) + 48px) 32px 16px;
-}
-
 .uw-hero-inner {
     position: relative;
     z-index: 2;
@@ -3912,22 +3854,15 @@ body::before {
 }
 
 .uw-eyebrow {
-    font-family: var(--uw-font-display);
-    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
-    font-weight: 500;
-    letter-spacing: 0;
-    text-transform: none;
-    color: var(--uw-pearl);
+    font-size: 0.75rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--uw-bio);
     margin-bottom: 28px;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 10px;
     justify-content: center;
-}
-
-.uw-eyebrow em {
-    font-style: italic;
-    color: var(--uw-bio);
 }
 
 .uw-eyebrow::before,
@@ -4038,11 +3973,11 @@ body::before {
 
 .uw-vortex-heading {
     position: absolute;
-    top: calc(var(--nav-h) + 24px);
+    top: calc(var(--nav-h) + 40px);
     left: 0;
     right: 0;
     text-align: center;
-    z-index: 200;
+    z-index: 5;
     pointer-events: none;
 }
 
@@ -4056,11 +3991,9 @@ body::before {
 }
 
 .uw-vortex-heading h2 {
-    font-family: var(--uw-font-body);
-    font-size: 0.72rem;
+    font-family: var(--uw-font-display);
+    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
     font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
     color: var(--uw-pearl);
 }
 

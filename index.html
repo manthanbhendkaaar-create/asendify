@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asendify — Views-to-Revenue Agency</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=18" />
+    <link rel="stylesheet" href="assets/css/style.css?v=8" />
     <link rel="icon" type="image/png" href="./assets/images/logo1.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -81,7 +81,6 @@ twq('config','rd7up');
                 <a href="./case-studies" class="nav-link">Case Studies</a>
                 <a href="#pricing" class="nav-link">Pricing</a>
                 <a href="./policies" class="nav-link">Policies</a>
-                <a href="./founder" class="nav-link">Founder</a>
                 <a href="./contact" class="nav-link">Contact</a>
             </nav>
             <a href="./contact" class="btn-cta">Work with us</a>
@@ -91,16 +90,30 @@ twq('config','rd7up');
         </div>
     </header>
 
-    <!-- ── HOME ANCHOR ───────────────────────────────────── -->
-    <div id="home" style="position: relative; top: -1px;"></div>
+    <!-- ========== HERO (UNDERWATER) ========== -->
+    <section class="uw-hero" id="home">
+        <canvas class="uw-bubbles" id="uwBubblesHero"></canvas>
+        <div class="uw-caustics"></div>
+        <div class="uw-hero-inner">
+            <div class="uw-eyebrow">Views → Revenue</div>
+            <h1>Your content, <em>pulled</em><br />into the current.</h1>
+            <p>We don't just edit videos — we engineer the pull. Scroll down and watch what happens when content
+                meets the algorithm's undertow.</p>
+            <a href="#work" class="uw-cta">Feel the Pull ↓</a>
+            <div class="uw-scroll-cue">
+                <span>Scroll</span>
+                <span class="uw-scroll-cue-line"></span>
+            </div>
+        </div>
+        <div class="uw-depth-fade"></div>
+    </section>
 
-    <!-- ========== VORTEX REEL (UNDERWATER, HERO MERGED IN) ========== -->
+    <!-- ========== VORTEX REEL (UNDERWATER) ========== -->
     <section class="uw-vortex-runway" id="work">
         <div class="uw-vortex-sticky">
             <canvas class="uw-bubbles" id="uwBubblesVortex"></canvas>
             <div class="uw-caustics"></div>
             <div class="uw-vortex-heading">
-                <div class="uw-eyebrow">Views → <em>Revenue</em></div>
                 <span class="tag">Selected Work</span>
                 <h2>Standing at the <em>edge of the current</em></h2>
             </div>
@@ -325,12 +338,6 @@ twq('config','rd7up');
                 </p>
             </div>
 
-            <div class="elite-badge reveal delay-2">
-                <span class="elite-badge-dot"></span>
-                We only take on <strong>5 clients</strong> at Asendify — an elite group of creators, not an open
-                roster.
-            </div>
-
             <div class="pricing-card reveal delay-2">
                 <div class="pricing-badge">Revenue Partnership</div>
                 <div class="pricing-amount">
@@ -452,7 +459,6 @@ twq('config','rd7up');
                         <li><a href="#home">Home</a></li>
                         <li><a href="#work">Our Work</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="./founder">Founder</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -867,7 +873,7 @@ twq('config','rd7up');
 
     </script>
 
-    <script src="assets/js/script.js?v=18"></script>
+    <script src="assets/js/script.js?v=8"></script>
 </body>
 
 </html>
