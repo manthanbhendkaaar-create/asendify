@@ -275,14 +275,13 @@ ul {
     right: 0;
     z-index: 1000;
     height: var(--nav-h);
+    background: rgba(3, 10, 17, 0.92);
+    border-bottom: 1px solid rgba(95, 251, 222, 0.08);
     transition: background var(--transition), box-shadow var(--transition), border-color var(--transition);
-    border-bottom: 1px solid transparent;
 }
 
 .navbar.scrolled {
-    background: rgba(3, 10, 17, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(3, 10, 17, 0.92);
     border-color: rgba(95, 251, 222, 0.08);
     box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
 }
@@ -300,6 +299,7 @@ ul {
 .logo {
     height: 50px;
     width: 50px;
+    flex-shrink: 0;
 }
 
 .nav-links {
@@ -1717,11 +1717,238 @@ ul {
 }
 
 /* ============================================
+   ROI CALCULATOR
+   ============================================ */
+.roi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 32px;
+    align-items: start;
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+    .roi-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.roi-inputs {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius);
+    padding: 36px 32px;
+}
+
+.roi-inputs h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.roi-inputs-sub {
+    color: var(--gray);
+    font-size: 0.85rem;
+    margin-bottom: 32px;
+}
+
+.roi-field {
+    margin-bottom: 30px;
+}
+
+.roi-field-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    color: var(--white);
+}
+
+.roi-field-value {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--gold);
+    font-size: 1.05rem;
+}
+
+.roi-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--gray-dark);
+    outline: none;
+}
+
+.roi-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 10px rgba(95, 251, 222, 0.6);
+    cursor: pointer;
+}
+
+.roi-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 10px rgba(95, 251, 222, 0.6);
+    cursor: pointer;
+    border: none;
+}
+
+.roi-disclaimer {
+    font-size: 0.75rem;
+    color: var(--gray);
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+.roi-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 500px) {
+    .roi-stat-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.roi-stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.roi-stat-label {
+    font-size: 0.78rem;
+    color: var(--gray);
+}
+
+.roi-stat-value {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.roi-stat-value.roi-highlight {
+    color: var(--gold);
+}
+
+.roi-summary {
+    background: linear-gradient(160deg, rgba(95, 251, 222, 0.06), var(--bg-card));
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius);
+    padding: 28px 28px 24px;
+}
+
+.roi-summary-tag {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+}
+
+.roi-summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid var(--gray-dark);
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.roi-summary-row strong {
+    font-family: var(--font-display);
+    color: var(--white);
+    font-size: 1.05rem;
+}
+
+.roi-cta-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+/* ============================================
    PRICING
    ============================================ */
 .pricing {
     padding: 120px 0;
     background: var(--bg-secondary);
+}
+
+.elite-badge {
+    max-width: 40rem;
+    margin: 0 auto 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    padding: 14px 28px;
+    border-radius: 999px;
+    border: 1px solid var(--gold-border);
+    background: var(--gold-dim);
+    color: var(--white);
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.elite-badge strong {
+    color: var(--gold);
+}
+
+.elite-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    box-shadow: 0 0 8px var(--gold);
+    animation: eliteDotPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes eliteDotPulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(0.85);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 640px) {
+    .elite-badge {
+        flex-direction: column;
+        gap: 6px;
+        padding: 16px 24px;
+    }
 }
 
 .pricing-card {
@@ -3847,6 +4074,11 @@ body::before {
     overflow: hidden;
 }
 
+.uw-hero-compact {
+    min-height: auto;
+    padding: calc(var(--nav-h) + 48px) 32px 16px;
+}
+
 .uw-hero-inner {
     position: relative;
     z-index: 2;
@@ -3854,15 +4086,22 @@ body::before {
 }
 
 .uw-eyebrow {
-    font-size: 0.75rem;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--uw-bio);
+    font-family: var(--uw-font-display);
+    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--uw-pearl);
     margin-bottom: 28px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
     justify-content: center;
+}
+
+.uw-eyebrow em {
+    font-style: italic;
+    color: var(--uw-bio);
 }
 
 .uw-eyebrow::before,
@@ -3973,11 +4212,11 @@ body::before {
 
 .uw-vortex-heading {
     position: absolute;
-    top: calc(var(--nav-h) + 40px);
+    top: calc(var(--nav-h) + 24px);
     left: 0;
     right: 0;
     text-align: center;
-    z-index: 5;
+    z-index: 200;
     pointer-events: none;
 }
 
@@ -3991,9 +4230,11 @@ body::before {
 }
 
 .uw-vortex-heading h2 {
-    font-family: var(--uw-font-display);
-    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+    font-family: var(--uw-font-body);
+    font-size: 0.72rem;
     font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
     color: var(--uw-pearl);
 }
 

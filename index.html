@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asendify — Views-to-Revenue Agency</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=8" />
+    <link rel="stylesheet" href="assets/css/style.css?v=19" />
     <link rel="icon" type="image/png" href="./assets/images/logo1.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -79,8 +79,10 @@ twq('config','rd7up');
                 <a href="#work" class="nav-link">Work</a>
                 <a href="#testimonials" class="nav-link">Testimonials</a>
                 <a href="./case-studies" class="nav-link">Case Studies</a>
+                <a href="#roi-calculator" class="nav-link">ROI Calculator</a>
                 <a href="#pricing" class="nav-link">Pricing</a>
                 <a href="./policies" class="nav-link">Policies</a>
+                <a href="./founder" class="nav-link">Founder</a>
                 <a href="./contact" class="nav-link">Contact</a>
             </nav>
             <a href="./contact" class="btn-cta">Work with us</a>
@@ -90,30 +92,16 @@ twq('config','rd7up');
         </div>
     </header>
 
-    <!-- ========== HERO (UNDERWATER) ========== -->
-    <section class="uw-hero" id="home">
-        <canvas class="uw-bubbles" id="uwBubblesHero"></canvas>
-        <div class="uw-caustics"></div>
-        <div class="uw-hero-inner">
-            <div class="uw-eyebrow">Views → Revenue</div>
-            <h1>Your content, <em>pulled</em><br />into the current.</h1>
-            <p>We don't just edit videos — we engineer the pull. Scroll down and watch what happens when content
-                meets the algorithm's undertow.</p>
-            <a href="#work" class="uw-cta">Feel the Pull ↓</a>
-            <div class="uw-scroll-cue">
-                <span>Scroll</span>
-                <span class="uw-scroll-cue-line"></span>
-            </div>
-        </div>
-        <div class="uw-depth-fade"></div>
-    </section>
+    <!-- ── HOME ANCHOR ───────────────────────────────────── -->
+    <div id="home" style="position: relative; top: -1px;"></div>
 
-    <!-- ========== VORTEX REEL (UNDERWATER) ========== -->
+    <!-- ========== VORTEX REEL (UNDERWATER, HERO MERGED IN) ========== -->
     <section class="uw-vortex-runway" id="work">
         <div class="uw-vortex-sticky">
             <canvas class="uw-bubbles" id="uwBubblesVortex"></canvas>
             <div class="uw-caustics"></div>
             <div class="uw-vortex-heading">
+                <div class="uw-eyebrow">Views → <em>Revenue</em></div>
                 <span class="tag">Selected Work</span>
                 <h2>Standing at the <em>edge of the current</em></h2>
             </div>
@@ -324,6 +312,92 @@ twq('config','rd7up');
         </div>
     </section>
 
+    <!-- ========== ROI CALCULATOR ========== -->
+    <section class="testimonials" id="roi-calculator">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag reveal">ROI Calculator</div>
+                <h2 class="section-heading reveal delay-1">See What <em>Retention Engineering</em> Is Worth</h2>
+                <p class="section-sub reveal delay-2">
+                    Adjust the sliders to match your channel — see what retention-engineered editing could be worth
+                    in additional revenue.
+                </p>
+            </div>
+
+            <div class="roi-grid">
+                <div class="roi-inputs reveal delay-2">
+                    <h3>Your Channel</h3>
+                    <p class="roi-inputs-sub">Adjust the sliders to match your current numbers.</p>
+
+                    <div class="roi-field">
+                        <div class="roi-field-label">
+                            <span>Monthly Views</span>
+                            <span class="roi-field-value" id="roiViewsDisplay">500,000</span>
+                        </div>
+                        <input type="range" id="roiViews" min="10000" max="2000000" step="10000" value="500000"
+                            class="roi-slider">
+                    </div>
+
+                    <div class="roi-field">
+                        <div class="roi-field-label">
+                            <span>Average CPM</span>
+                            <span class="roi-field-value" id="roiCpmDisplay">$12</span>
+                        </div>
+                        <input type="range" id="roiCpm" min="2" max="30" step="1" value="12" class="roi-slider">
+                    </div>
+
+                    <div class="roi-field">
+                        <div class="roi-field-label">
+                            <span>Expected View Uplift</span>
+                            <span class="roi-field-value" id="roiUpliftDisplay">65%</span>
+                        </div>
+                        <input type="range" id="roiUplift" min="20" max="150" step="5" value="65" class="roi-slider">
+                    </div>
+
+                    <p class="roi-disclaimer">Estimates based on typical retention-engineering uplift. Actual results
+                        vary by niche and channel.</p>
+                </div>
+
+                <div class="roi-outputs">
+                    <div class="roi-stat-grid">
+                        <div class="roi-stat-card reveal delay-2">
+                            <span class="roi-stat-label">Current Monthly Revenue</span>
+                            <span class="roi-stat-value" id="roiCurrentRevenue">$6,000</span>
+                        </div>
+                        <div class="roi-stat-card reveal delay-2">
+                            <span class="roi-stat-label">Projected Monthly Revenue</span>
+                            <span class="roi-stat-value" id="roiProjectedRevenue">$9,900</span>
+                        </div>
+                        <div class="roi-stat-card reveal delay-2">
+                            <span class="roi-stat-label">Additional Monthly Revenue</span>
+                            <span class="roi-stat-value roi-highlight" id="roiAdditionalMonthly">$3,900</span>
+                        </div>
+                        <div class="roi-stat-card reveal delay-2">
+                            <span class="roi-stat-label">Additional Annual Revenue</span>
+                            <span class="roi-stat-value roi-highlight" id="roiAdditionalAnnual">$46,800</span>
+                        </div>
+                    </div>
+
+                    <div class="roi-summary reveal delay-2">
+                        <span class="roi-summary-tag">Your Growth Opportunity</span>
+                        <div class="roi-summary-row">
+                            <span>Additional views per month</span>
+                            <strong id="roiAdditionalViews">325,000</strong>
+                        </div>
+                        <div class="roi-summary-row">
+                            <span>Additional revenue per year</span>
+                            <strong id="roiAdditionalAnnual2">$46,800</strong>
+                        </div>
+                        <div class="roi-cta-row">
+                            <a href="./contact" class="btn-primary">Book a Call →</a>
+                            <a href="#pricing" class="btn-outline">See Pricing</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== PRICING ========== -->
     <section class="pricing" id="pricing">
         <div class="container">
@@ -336,6 +410,12 @@ twq('config','rd7up');
                     One partnership tier. No hidden fees. Built for creators serious about turning views into
                     revenue.
                 </p>
+            </div>
+
+            <div class="elite-badge reveal delay-2">
+                <span class="elite-badge-dot"></span>
+                We only take on <strong>5 clients</strong> at Asendify — an elite group of creators, not an open
+                roster.
             </div>
 
             <div class="pricing-card reveal delay-2">
@@ -459,6 +539,7 @@ twq('config','rd7up');
                         <li><a href="#home">Home</a></li>
                         <li><a href="#work">Our Work</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="./founder">Founder</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -871,9 +952,62 @@ twq('config','rd7up');
             update();
         })();
 
+        /* ── ROI CALCULATOR ──────────────────────────────────────────── */
+        (function () {
+            const viewsInput = document.getElementById('roiViews');
+            const cpmInput = document.getElementById('roiCpm');
+            const upliftInput = document.getElementById('roiUplift');
+            if (!viewsInput || !cpmInput || !upliftInput) return;
+
+            const viewsDisplay = document.getElementById('roiViewsDisplay');
+            const cpmDisplay = document.getElementById('roiCpmDisplay');
+            const upliftDisplay = document.getElementById('roiUpliftDisplay');
+
+            const currentRevenueEl = document.getElementById('roiCurrentRevenue');
+            const projectedRevenueEl = document.getElementById('roiProjectedRevenue');
+            const additionalMonthlyEl = document.getElementById('roiAdditionalMonthly');
+            const additionalAnnualEl = document.getElementById('roiAdditionalAnnual');
+            const additionalViewsEl = document.getElementById('roiAdditionalViews');
+            const additionalAnnual2El = document.getElementById('roiAdditionalAnnual2');
+
+            function fmtMoney(n) {
+                return '$' + Math.round(n).toLocaleString('en-US');
+            }
+            function fmtNum(n) {
+                return Math.round(n).toLocaleString('en-US');
+            }
+
+            function recalc() {
+                const views = parseInt(viewsInput.value, 10);
+                const cpm = parseInt(cpmInput.value, 10);
+                const uplift = parseInt(upliftInput.value, 10);
+
+                viewsDisplay.textContent = fmtNum(views);
+                cpmDisplay.textContent = '$' + cpm;
+                upliftDisplay.textContent = uplift + '%';
+
+                const currentRevenue = (views / 1000) * cpm;
+                const projectedViews = views * (1 + uplift / 100);
+                const projectedRevenue = (projectedViews / 1000) * cpm;
+                const additionalMonthly = projectedRevenue - currentRevenue;
+                const additionalAnnual = additionalMonthly * 12;
+                const additionalViews = projectedViews - views;
+
+                currentRevenueEl.textContent = fmtMoney(currentRevenue);
+                projectedRevenueEl.textContent = fmtMoney(projectedRevenue);
+                additionalMonthlyEl.textContent = fmtMoney(additionalMonthly);
+                additionalAnnualEl.textContent = fmtMoney(additionalAnnual);
+                additionalViewsEl.textContent = fmtNum(additionalViews);
+                additionalAnnual2El.textContent = fmtMoney(additionalAnnual);
+            }
+
+            [viewsInput, cpmInput, upliftInput].forEach(el => el.addEventListener('input', recalc));
+            recalc();
+        })();
+
     </script>
 
-    <script src="assets/js/script.js?v=8"></script>
+    <script src="assets/js/script.js?v=19"></script>
 </body>
 
 </html>
