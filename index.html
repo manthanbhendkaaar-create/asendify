@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asendify — Views-to-Revenue Agency</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=21" />
+    <link rel="stylesheet" href="assets/css/style.css?v=22" />
     <link rel="icon" type="image/png" href="./assets/images/logo1.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -351,7 +351,7 @@ twq('config','rd7up');
                             <span>Expected View Uplift</span>
                             <span class="roi-field-value" id="roiUpliftDisplay">100%</span>
                         </div>
-                        <input type="range" id="roiUplift" min="20" max="150" step="5" value="100" class="roi-slider">
+                        <input type="range" id="roiUplift" min="20" max="500" step="5" value="100" class="roi-slider">
                         <p class="roi-timeframe-note" id="roiTimeframeNote">Set manually, or pick a real client result
                             below.</p>
                     </div>
@@ -365,13 +365,16 @@ twq('config','rd7up');
                             <button type="button" class="roi-preset-btn" data-uplift="150" data-months="8">
                                 Imperial<br><span>2.5x in 8mo</span>
                             </button>
-                            <button type="button" class="roi-preset-btn" data-uplift="150" data-months="7">
-                                MegaloMedia<br><span>4.86x in 7mo*</span>
+                            <button type="button" class="roi-preset-btn" data-uplift="386" data-months="7">
+                                MegaloMedia<br><span>4.86x in 7mo</span>
+                            </button>
+                            <button type="button" class="roi-preset-btn" data-uplift="500" data-months="14">
+                                OverSimplified<br><span>Breakout Case — 900x in 14mo*</span>
                             </button>
                         </div>
-                        <p class="roi-preset-disclaimer">*Uplift capped at 150% for this calculator even where actual
-                            client growth was higher — see full numbers in our <a href="./case-studies">Case
-                                Studies</a>.</p>
+                        <p class="roi-preset-disclaimer">*OverSimplified's actual growth (900x) exceeds this
+                            calculator's 500% cap — see the full story on our <a href="./case-studies">Case
+                                Studies</a> page.</p>
                     </div>
 
                     <p class="roi-disclaimer">Estimates based on documented client results. Actual results vary by
@@ -1057,7 +1060,7 @@ twq('config','rd7up');
 
     </script>
 
-    <script src="assets/js/script.js?v=21"></script>
+    <script src="assets/js/script.js?v=22"></script>
 </body>
 
 </html>
