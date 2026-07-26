@@ -1805,6 +1805,73 @@ ul {
     border: none;
 }
 
+.roi-timeframe-note {
+    font-size: 0.75rem;
+    color: var(--gray);
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.roi-presets {
+    margin-bottom: 24px;
+    padding-top: 8px;
+}
+
+.roi-presets-label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--gray);
+    margin-bottom: 12px;
+}
+
+.roi-preset-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.roi-preset-btn {
+    flex: 1;
+    min-width: 120px;
+    background: var(--gold-dim);
+    border: 1px solid var(--gold-border);
+    border-radius: 10px;
+    padding: 10px 12px;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background var(--transition), border-color var(--transition);
+    line-height: 1.5;
+}
+
+.roi-preset-btn span {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--gold);
+    margin-top: 2px;
+}
+
+.roi-preset-btn:hover {
+    background: rgba(95, 251, 222, 0.16);
+    border-color: var(--gold);
+}
+
+.roi-preset-disclaimer {
+    font-size: 0.7rem;
+    color: var(--gray);
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.roi-preset-disclaimer a {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
 .roi-disclaimer {
     font-size: 0.75rem;
     color: var(--gray);

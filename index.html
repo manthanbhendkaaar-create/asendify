@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asendify — Views-to-Revenue Agency</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=20" />
+    <link rel="stylesheet" href="assets/css/style.css?v=21" />
     <link rel="icon" type="image/png" href="./assets/images/logo1.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -352,10 +352,30 @@ twq('config','rd7up');
                             <span class="roi-field-value" id="roiUpliftDisplay">100%</span>
                         </div>
                         <input type="range" id="roiUplift" min="20" max="150" step="5" value="100" class="roi-slider">
+                        <p class="roi-timeframe-note" id="roiTimeframeNote">Set manually, or pick a real client result
+                            below.</p>
                     </div>
 
-                    <p class="roi-disclaimer">Estimates based on typical retention-engineering uplift. Actual results
-                        vary by niche and channel.</p>
+                    <div class="roi-presets">
+                        <span class="roi-presets-label">Based on real client results:</span>
+                        <div class="roi-preset-buttons">
+                            <button type="button" class="roi-preset-btn" data-uplift="136" data-months="5">
+                                Older Brother<br><span>2.36x in 5mo</span>
+                            </button>
+                            <button type="button" class="roi-preset-btn" data-uplift="150" data-months="8">
+                                Imperial<br><span>2.5x in 8mo</span>
+                            </button>
+                            <button type="button" class="roi-preset-btn" data-uplift="150" data-months="7">
+                                MegaloMedia<br><span>4.86x in 7mo*</span>
+                            </button>
+                        </div>
+                        <p class="roi-preset-disclaimer">*Uplift capped at 150% for this calculator even where actual
+                            client growth was higher — see full numbers in our <a href="./case-studies">Case
+                                Studies</a>.</p>
+                    </div>
+
+                    <p class="roi-disclaimer">Estimates based on documented client results. Actual results vary by
+                        niche, channel, and starting point.</p>
                 </div>
 
                 <div class="roi-outputs">
@@ -1016,13 +1036,28 @@ twq('config','rd7up');
                 }
             }
 
-            [viewsInput, cpmInput, upliftInput].forEach(el => el.addEventListener('input', recalc));
+            const timeframeNote = document.getElementById('roiTimeframeNote');
+
+            [viewsInput, cpmInput, upliftInput].forEach(el => el.addEventListener('input', () => {
+                timeframeNote.textContent = 'Set manually, or pick a real client result below.';
+                recalc();
+            }));
             recalc();
+
+            document.querySelectorAll('.roi-preset-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const uplift = btn.getAttribute('data-uplift');
+                    const months = btn.getAttribute('data-months');
+                    upliftInput.value = uplift;
+                    timeframeNote.textContent = `Based on a real ${months}-month result. This is the level reached after ${months} months, not overnight.`;
+                    recalc();
+                });
+            });
         })();
 
     </script>
 
-    <script src="assets/js/script.js?v=20"></script>
+    <script src="assets/js/script.js?v=21"></script>
 </body>
 
 </html>
