@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asendify — Views-to-Revenue Agency</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=19" />
+    <link rel="stylesheet" href="assets/css/style.css?v=20" />
     <link rel="icon" type="image/png" href="./assets/images/logo1.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -332,26 +332,26 @@ twq('config','rd7up');
                     <div class="roi-field">
                         <div class="roi-field-label">
                             <span>Monthly Views</span>
-                            <span class="roi-field-value" id="roiViewsDisplay">500,000</span>
+                            <span class="roi-field-value" id="roiViewsDisplay">750,000</span>
                         </div>
-                        <input type="range" id="roiViews" min="10000" max="2000000" step="10000" value="500000"
+                        <input type="range" id="roiViews" min="10000" max="2000000" step="10000" value="750000"
                             class="roi-slider">
                     </div>
 
                     <div class="roi-field">
                         <div class="roi-field-label">
                             <span>Average CPM</span>
-                            <span class="roi-field-value" id="roiCpmDisplay">$12</span>
+                            <span class="roi-field-value" id="roiCpmDisplay">£16</span>
                         </div>
-                        <input type="range" id="roiCpm" min="2" max="30" step="1" value="12" class="roi-slider">
+                        <input type="range" id="roiCpm" min="2" max="30" step="1" value="16" class="roi-slider">
                     </div>
 
                     <div class="roi-field">
                         <div class="roi-field-label">
                             <span>Expected View Uplift</span>
-                            <span class="roi-field-value" id="roiUpliftDisplay">65%</span>
+                            <span class="roi-field-value" id="roiUpliftDisplay">100%</span>
                         </div>
-                        <input type="range" id="roiUplift" min="20" max="150" step="5" value="65" class="roi-slider">
+                        <input type="range" id="roiUplift" min="20" max="150" step="5" value="100" class="roi-slider">
                     </div>
 
                     <p class="roi-disclaimer">Estimates based on typical retention-engineering uplift. Actual results
@@ -362,31 +362,38 @@ twq('config','rd7up');
                     <div class="roi-stat-grid">
                         <div class="roi-stat-card reveal delay-2">
                             <span class="roi-stat-label">Current Monthly Revenue</span>
-                            <span class="roi-stat-value" id="roiCurrentRevenue">$6,000</span>
+                            <span class="roi-stat-value" id="roiCurrentRevenue">£12,000</span>
                         </div>
                         <div class="roi-stat-card reveal delay-2">
                             <span class="roi-stat-label">Projected Monthly Revenue</span>
-                            <span class="roi-stat-value" id="roiProjectedRevenue">$9,900</span>
+                            <span class="roi-stat-value" id="roiProjectedRevenue">£24,000</span>
                         </div>
                         <div class="roi-stat-card reveal delay-2">
                             <span class="roi-stat-label">Additional Monthly Revenue</span>
-                            <span class="roi-stat-value roi-highlight" id="roiAdditionalMonthly">$3,900</span>
+                            <span class="roi-stat-value roi-highlight" id="roiAdditionalMonthly">£12,000</span>
                         </div>
                         <div class="roi-stat-card reveal delay-2">
                             <span class="roi-stat-label">Additional Annual Revenue</span>
-                            <span class="roi-stat-value roi-highlight" id="roiAdditionalAnnual">$46,800</span>
+                            <span class="roi-stat-value roi-highlight" id="roiAdditionalAnnual">£144,000</span>
                         </div>
+                    </div>
+
+                    <div class="roi-net-card reveal delay-2">
+                        <span class="roi-net-label">Net Monthly Gain After Our £10,000 Fee</span>
+                        <span class="roi-net-value" id="roiNetGain">£2,000</span>
+                        <p class="roi-net-sub">The additional revenue you gain, minus what you pay us — this is
+                            money in your pocket, on top of a channel that keeps compounding.</p>
                     </div>
 
                     <div class="roi-summary reveal delay-2">
                         <span class="roi-summary-tag">Your Growth Opportunity</span>
                         <div class="roi-summary-row">
                             <span>Additional views per month</span>
-                            <strong id="roiAdditionalViews">325,000</strong>
+                            <strong id="roiAdditionalViews">750,000</strong>
                         </div>
                         <div class="roi-summary-row">
                             <span>Additional revenue per year</span>
-                            <strong id="roiAdditionalAnnual2">$46,800</strong>
+                            <strong id="roiAdditionalAnnual2">£144,000</strong>
                         </div>
                         <div class="roi-cta-row">
                             <a href="./contact" class="btn-primary">Book a Call →</a>
@@ -969,9 +976,12 @@ twq('config','rd7up');
             const additionalAnnualEl = document.getElementById('roiAdditionalAnnual');
             const additionalViewsEl = document.getElementById('roiAdditionalViews');
             const additionalAnnual2El = document.getElementById('roiAdditionalAnnual2');
+            const netGainEl = document.getElementById('roiNetGain');
+            const PACKAGE_FEE = 10000;
 
             function fmtMoney(n) {
-                return '$' + Math.round(n).toLocaleString('en-US');
+                const sign = n < 0 ? '-' : '';
+                return sign + '£' + Math.round(Math.abs(n)).toLocaleString('en-US');
             }
             function fmtNum(n) {
                 return Math.round(n).toLocaleString('en-US');
@@ -983,7 +993,7 @@ twq('config','rd7up');
                 const uplift = parseInt(upliftInput.value, 10);
 
                 viewsDisplay.textContent = fmtNum(views);
-                cpmDisplay.textContent = '$' + cpm;
+                cpmDisplay.textContent = '£' + cpm;
                 upliftDisplay.textContent = uplift + '%';
 
                 const currentRevenue = (views / 1000) * cpm;
@@ -992,6 +1002,7 @@ twq('config','rd7up');
                 const additionalMonthly = projectedRevenue - currentRevenue;
                 const additionalAnnual = additionalMonthly * 12;
                 const additionalViews = projectedViews - views;
+                const netGain = additionalMonthly - PACKAGE_FEE;
 
                 currentRevenueEl.textContent = fmtMoney(currentRevenue);
                 projectedRevenueEl.textContent = fmtMoney(projectedRevenue);
@@ -999,6 +1010,10 @@ twq('config','rd7up');
                 additionalAnnualEl.textContent = fmtMoney(additionalAnnual);
                 additionalViewsEl.textContent = fmtNum(additionalViews);
                 additionalAnnual2El.textContent = fmtMoney(additionalAnnual);
+                if (netGainEl) {
+                    netGainEl.textContent = fmtMoney(netGain);
+                    netGainEl.style.color = netGain >= 0 ? 'var(--gold)' : '#ff8080';
+                }
             }
 
             [viewsInput, cpmInput, upliftInput].forEach(el => el.addEventListener('input', recalc));
@@ -1007,7 +1022,7 @@ twq('config','rd7up');
 
     </script>
 
-    <script src="assets/js/script.js?v=19"></script>
+    <script src="assets/js/script.js?v=20"></script>
 </body>
 
 </html>
