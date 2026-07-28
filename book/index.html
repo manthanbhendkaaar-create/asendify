@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Asendify | Contact Us</title>
+    <title>Asendify | Secure Your Spot</title>
     <link rel="stylesheet" href="../assets/css/style.css?v=27" />
     <link rel="icon" type="image/png" href="../assets/images/logo1.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,18 +12,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
-    <style>
-        @media (max-width: 480px) {
-            html {
-                zoom: 75%;
-            }
-        }
-    </style>
-
 </head>
 
 <body>
 
+    <!-- ========== NAVBAR ========== -->
     <header class="navbar" id="navbar">
         <div class="nav-inner">
             <a href="../" class="logo">
@@ -82,15 +75,55 @@
         </div>
     </header>
 
-
-    <section class="contact" id="contact">
+    <!-- ========== INTRO ========== -->
+    <section class="work" id="book-intro" style="padding: 160px 0 20px;">
         <div class="container">
-            <div class="contact-grid">
+            <div class="section-header">
+                <div class="section-tag reveal">Secure Your Spot</div>
+                <h2 class="section-heading reveal delay-1">Reserve Your <em>Spot</em></h2>
+                <p class="section-sub reveal delay-2" style="max-width: 640px;">
+                    We only take on <strong>5 clients</strong> at Asendify. Pay your deposit below to secure your
+                    spot — once it's paid, you'll book your call to scope your package.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PAYMENT STEP ========== -->
+    <section class="testimonials" id="book-payment" style="padding-top: 40px;">
+        <div class="container">
+            <div class="book-step-card reveal delay-2">
+                <span class="book-step-num">Step 1</span>
+                <h3>Pay Your Deposit</h3>
+                <p>Secure your spot with a £10,000 deposit. This reserves your place in our client roster. Once
+                    paid, you'll book a call to scope your package — if your final package is more than £10,000,
+                    the remainder is settled on that call.</p>
+                <div class="book-path-amount">£10,000 <span>+ service fee</span></div>
+                <a href="https://www.paypal.com/ncp/payment/R2SGBHDQRJBDG" target="_blank" rel="noopener"
+                    class="btn-primary btn-full btn-lg">Pay Deposit →</a>
+            </div>
+
+            <p class="book-fineprint">All payments are made in GBP. See our <a href="../policies">Policies</a> page
+                for full payment, refund, and service fee terms.</p>
+        </div>
+    </section>
+
+    <!-- ========== BOOK A CALL (AFTER PAYMENT) ========== -->
+    <section class="contact" id="book-call">
+        <div class="container">
+            <div class="book-step-gate reveal" id="bookStepGate">
+                <span class="book-step-num">Step 2</span>
+                <h3>Book Your Call</h3>
+                <p>Once you've paid your deposit above, click below to open the booking calendar.</p>
+                <button type="button" class="btn-outline btn-lg" id="bookRevealBtn">I've Paid My Deposit — Show
+                    Booking Calendar</button>
+            </div>
+
+            <div class="contact-grid" id="bookCalendarWrap" style="display: none;">
                 <div>
-                    <h2 class="section-heading reveal">Get In <em>Touch</em></h2>
+                    <h2 class="section-heading reveal">Book Your <em>Call</em></h2>
                     <p class="contact-body reveal delay-1">
-                        Prefer direct communication? Reach out to us directly via email or connect with us on Discord.
-                        We are ready to bring your vision to life.
+                        We'll walk through your channel, your goals, and the right package for you.
                     </p>
                     <div class="contact-info reveal delay-2">
                         <div class="ci-item">
@@ -106,34 +139,39 @@
                                 manthanbhendkaar
                             </div>
                         </div>
-                        <div class="ci-item">
-                            <div class="ci-icon">📍</div>
-                            <div>
-                                <strong>Location</strong><br>
-                                Remote — Worldwide
-                            </div>
-                        </div>
-                        <div class="ci-item">
-                            <div class="ci-icon">⏱</div>
-                            <div>
-                                <strong>Response Time</strong><br>
-                                Within 24 Hours
-                            </div>
-                        </div>
                     </div>
                 </div>
 
                 <div>
-                    <h3 class="section-heading reveal" style="font-size: 1.8rem; margin-bottom: 40px;">Book a <em>Call:</em></h3>
+                    <h3 class="section-heading reveal" style="font-size: 1.8rem; margin-bottom: 40px;">Available
+                        Times:</h3>
                     <!-- Calendly inline widget begin -->
-                    <div class="calendly-inline-widget" data-url="https://calendly.com/manthanbhendkaaar/30min?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
-                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                    <div class="calendly-inline-widget"
+                        data-url="https://calendly.com/manthanbhendkaaar/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+                        style="min-width:320px;height:700px;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
+                        async></script>
                     <!-- Calendly inline widget end -->
                 </div>
             </div>
         </div>
     </section>
 
+    <script>
+        (function () {
+            const btn = document.getElementById('bookRevealBtn');
+            const gate = document.getElementById('bookStepGate');
+            const wrap = document.getElementById('bookCalendarWrap');
+            if (!btn || !gate || !wrap) return;
+            btn.addEventListener('click', function () {
+                gate.style.display = 'none';
+                wrap.style.display = 'grid';
+                wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        })();
+    </script>
+
+    <!-- ========== FOOTER ========== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -141,7 +179,8 @@
                     <a href="../" class="logo footer-logo">
                         <img class="logo" src="../assets/images/logo.png" alt="Asendify Logo"> Asendify
                     </a>
-                    <p class="footer-tagline">Crafting cinematic visual experiences for brands and creators worldwide.
+                    <p class="footer-tagline">🇦🇪 UAE-based Views-to-Revenue agency crafting cinematic visual
+                        experiences for brands and creators worldwide.
                     </p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/asendify.digital/" class="social-link"
@@ -182,9 +221,9 @@
                     <ul class="footer-links">
                         <li><a href="../youtube">Video Editing</a></li>
                         <li><a href="../short-form/">Short Form Content</a></li>
-                        <li><a href="../animations">Motion Graphics</a></li>
-                        <li><a href="../youtube">YouTube Editing</a></li>
-                        <li><a href="../youtube">Commercial Ads</a></li>
+                        <li><a href="../automations">AI Automations</a></li>
+                        <li><a href="../clipping">Clipping</a></li>
+                        <li><a href="../web-design">Web Design</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
