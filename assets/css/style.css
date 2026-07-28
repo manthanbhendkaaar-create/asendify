@@ -2039,6 +2039,15 @@ ul {
     margin-bottom: 24px;
 }
 
+.book-closing-note {
+    max-width: 640px;
+    margin: 20px auto 0;
+    color: var(--gold);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-align: center;
+}
+
 .roi-net-card {
     background: var(--gold-dim);
     border: 1px solid var(--gold-border);
