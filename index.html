@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asendify — Views-to-Revenue Agency</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=33" />
+    <link rel="stylesheet" href="assets/css/style.css?v=34" />
     <link rel="icon" type="image/png" href="./assets/images/logo1.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -952,6 +952,7 @@ twq('config','rd7up');
             }
 
             let ticking = false;
+            const isMobile = window.matchMedia('(max-width: 768px)').matches || window.innerWidth < 768;
 
             function update() {
                 ticking = false;
@@ -964,18 +965,26 @@ twq('config','rd7up');
                     let localT = (progress - c.center) / WINDOW;
                     localT = Math.max(-1.6, Math.min(1.6, localT));
 
+                    // Skip work entirely for cards that are fully out of range and already hidden
+                    if (Math.abs(localT) >= 1.6 && c.lastHidden) return;
+                    c.lastHidden = Math.abs(localT) >= 1.6;
+
                     const y = localT * 300;
                     const x = Math.sin(localT * 1.6 + c.swingPhase) * c.swingRadius;
 
                     const focus = 1 - Math.min(1, Math.abs(localT));
                     const scale = 0.55 + focus * 0.55;
-                    const blur = (1 - focus) * 5;
                     const opacity = Math.max(0, focus * 1.15);
 
                     c.el.style.transform =
                         `translate(-50%, -50%) translate(${x}px, ${y}px) scale(${scale})`;
                     c.el.style.opacity = opacity;
-                    c.el.style.filter = `blur(${blur}px)`;
+                    // Blur is one of the most GPU-expensive CSS properties — skip it on mobile
+                    // where it's the main cause of scroll jank; keep it on desktop for the depth effect.
+                    if (!isMobile) {
+                        const blur = (1 - focus) * 5;
+                        c.el.style.filter = blur > 0.1 ? `blur(${blur}px)` : 'none';
+                    }
                     c.el.style.zIndex = 100 + Math.round(focus * 50);
                 });
             }
@@ -1068,7 +1077,7 @@ twq('config','rd7up');
 
     </script>
 
-    <script src="assets/js/script.js?v=33"></script>
+    <script src="assets/js/script.js?v=34"></script>
 </body>
 
 </html>
