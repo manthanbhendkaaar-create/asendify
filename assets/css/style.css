@@ -1872,6 +1872,38 @@ ul {
     text-decoration: underline;
 }
 
+.roi-static-callout {
+    background: linear-gradient(135deg, rgba(255, 138, 0, 0.08), rgba(95, 251, 222, 0.05));
+    border: 1px solid var(--gold-border);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    margin-bottom: 24px;
+}
+
+.roi-static-tag {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.roi-static-callout p {
+    font-size: 0.9rem;
+    color: var(--white);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.roi-static-callout a {
+    font-size: 0.85rem;
+    color: var(--gold);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
 .roi-disclaimer {
     font-size: 0.75rem;
     color: var(--gray);
