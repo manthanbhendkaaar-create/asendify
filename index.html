@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asendify — Views-to-Revenue Agency</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=36" />
+    <link rel="stylesheet" href="assets/css/style.css?v=38" />
     <link rel="icon" type="image/png" href="./assets/images/logo1.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -187,9 +187,9 @@ twq('config','rd7up');
                             <span>200K</span>
                         </div>
                         <svg class="case-arrow" viewBox="0 0 160 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 78 C 55 92, 70 30, 145 15" stroke="#5ffbde" stroke-width="3"
+                            <path d="M15 78 C 55 92, 70 30, 145 15" stroke="#7c3aed" stroke-width="3"
                                 fill="none" stroke-linecap="round" />
-                            <path d="M128 8 L147 14 L136 30" stroke="#5ffbde" stroke-width="3" fill="none"
+                            <path d="M128 8 L147 14 L136 30" stroke="#7c3aed" stroke-width="3" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <div class="case-growth-end">
@@ -204,9 +204,9 @@ twq('config','rd7up');
                             <span>50K</span>
                         </div>
                         <svg class="case-arrow" viewBox="0 0 160 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 78 C 55 92, 70 30, 145 15" stroke="#5ffbde" stroke-width="3"
+                            <path d="M15 78 C 55 92, 70 30, 145 15" stroke="#7c3aed" stroke-width="3"
                                 fill="none" stroke-linecap="round" />
-                            <path d="M128 8 L147 14 L136 30" stroke="#5ffbde" stroke-width="3" fill="none"
+                            <path d="M128 8 L147 14 L136 30" stroke="#7c3aed" stroke-width="3" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <div class="case-growth-end">
@@ -221,9 +221,9 @@ twq('config','rd7up');
                             <span>50K</span>
                         </div>
                         <svg class="case-arrow" viewBox="0 0 160 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 78 C 55 92, 70 30, 145 15" stroke="#5ffbde" stroke-width="3"
+                            <path d="M15 78 C 55 92, 70 30, 145 15" stroke="#7c3aed" stroke-width="3"
                                 fill="none" stroke-linecap="round" />
-                            <path d="M128 8 L147 14 L136 30" stroke="#5ffbde" stroke-width="3" fill="none"
+                            <path d="M128 8 L147 14 L136 30" stroke="#7c3aed" stroke-width="3" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <div class="case-growth-end">
@@ -239,9 +239,9 @@ twq('config','rd7up');
                             <span>10K</span>
                         </div>
                         <svg class="case-arrow" viewBox="0 0 160 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 78 C 55 92, 70 30, 145 15" stroke="#5ffbde" stroke-width="3"
+                            <path d="M15 78 C 55 92, 70 30, 145 15" stroke="#7c3aed" stroke-width="3"
                                 fill="none" stroke-linecap="round" />
-                            <path d="M128 8 L147 14 L136 30" stroke="#5ffbde" stroke-width="3" fill="none"
+                            <path d="M128 8 L147 14 L136 30" stroke="#7c3aed" stroke-width="3" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <div class="case-growth-end">
@@ -682,8 +682,8 @@ twq('config','rd7up');
                             // Luxury gold mixed with hot crimson energy filaments pathways
                             let alpha = (1 - dist / 52) * 0.16;
                             ctx.strokeStyle = p.electricalCharge > 0.85
-                                ? `rgba(255, 42, 42, ${alpha * 2.5})`
-                                : `rgba(212, 175, 55, ${alpha})`;
+                                ? `rgba(124, 58, 237, ${alpha * 2.5})`
+                                : `rgba(124, 58, 237, ${alpha})`;
                             ctx.lineWidth = p.electricalCharge > 0.85 ? 0.8 : 0.4;
                             ctx.stroke();
                         }
@@ -694,7 +694,7 @@ twq('config','rd7up');
                 nodes.forEach(p => {
                     ctx.beginPath();
                     ctx.arc(p.x, p.y, p.r + (Math.sin(p.pulse) * 0.4), 0, Math.PI * 2);
-                    ctx.fillStyle = p.electricalCharge > 0.85 ? '#5ffbde' : '#5ffbde';
+                    ctx.fillStyle = p.electricalCharge > 0.85 ? '#7c3aed' : '#7c3aed';
                     ctx.fill();
                 });
 
@@ -779,8 +779,8 @@ twq('config','rd7up');
                 ctx.clearRect(0, 0, W, H);
 
                 const grad = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, W * 0.6);
-                grad.addColorStop(0, 'rgba(255,255,255,0.03)');
-                grad.addColorStop(1, 'rgba(0,0,0,0)');
+                grad.addColorStop(0, 'rgba(124,58,237,0.03)');
+                grad.addColorStop(1, 'rgba(255,255,255,0)');
                 ctx.fillStyle = grad;
                 ctx.fillRect(0, 0, W, H);
 
@@ -792,7 +792,7 @@ twq('config','rd7up');
 
                     ctx.beginPath();
                     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(255,255,255,${p.a * 0.35})`;
+                    ctx.fillStyle = `rgba(30,16,48,${p.a * 0.35})`;
                     ctx.fill();
 
                     for (let j = i + 1; j < pts.length; j++) {
@@ -803,7 +803,7 @@ twq('config','rd7up');
                             ctx.beginPath();
                             ctx.moveTo(p.x, p.y);
                             ctx.lineTo(q.x, q.y);
-                            ctx.strokeStyle = `rgba(255,255,255,${(1 - d / 110) * 0.06})`;
+                            ctx.strokeStyle = `rgba(30,16,48,${(1 - d / 110) * 0.06})`;
                             ctx.lineWidth = 0.5;
                             ctx.stroke();
                         }
@@ -865,7 +865,7 @@ twq('config','rd7up');
                         }
                         ctx.beginPath();
                         ctx.arc(x, b.y, b.r, 0, Math.PI * 2);
-                        ctx.strokeStyle = `rgba(160, 235, 230, ${b.opacity})`;
+                        ctx.strokeStyle = `rgba(124, 58, 237, ${b.opacity})`;
                         ctx.lineWidth = 1;
                         ctx.stroke();
                     });
@@ -910,8 +910,8 @@ twq('config','rd7up');
             spiralSVG.style.height = '100%';
             spiralSVG.style.transform = 'translateX(-50%)';
             spiralSVG.innerHTML =
-                '<path d="M200,800 C120,600 280,500 200,380 C120,260 280,160 200,20" stroke="#5ffbde" stroke-width="1.5" fill="none" opacity="0.5"/>' +
-                '<path d="M200,800 C280,620 120,480 200,360 C280,240 120,140 200,10" stroke="#5ffbde" stroke-width="1" fill="none" opacity="0.3"/>';
+                '<path d="M200,800 C120,600 280,500 200,380 C120,260 280,160 200,20" stroke="#7c3aed" stroke-width="1.5" fill="none" opacity="0.5"/>' +
+                '<path d="M200,800 C280,620 120,480 200,360 C280,240 120,140 200,10" stroke="#7c3aed" stroke-width="1" fill="none" opacity="0.3"/>';
             funnel.appendChild(spiralSVG);
 
             const videos = [
@@ -1081,7 +1081,7 @@ twq('config','rd7up');
 
     </script>
 
-    <script src="assets/js/script.js?v=36"></script>
+    <script src="assets/js/script.js?v=38"></script>
 </body>
 
 </html>
