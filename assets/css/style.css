@@ -4317,17 +4317,17 @@ body::before {
 }
 
 .uw-eyebrow {
-    font-family: var(--uw-font-display);
-    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
-    font-weight: 500;
-    letter-spacing: 0;
-    text-transform: none;
-    color: var(--uw-pearl);
-    margin-bottom: 28px;
+    font-family: var(--uw-font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--uw-bio);
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
-    gap: 16px;
-    justify-content: center;
+    gap: 8px;
+    justify-content: flex-start;
 }
 
 .uw-eyebrow em {
@@ -4335,8 +4335,7 @@ body::before {
     color: var(--uw-bio);
 }
 
-.uw-eyebrow::before,
-.uw-eyebrow::after {
+.uw-eyebrow::before {
     content: '';
     width: 28px;
     height: 1px;
@@ -4441,14 +4440,26 @@ body::before {
     overflow: hidden;
 }
 
+.uw-vortex-content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: calc(var(--nav-h) + 20px) 60px 20px;
+    gap: 40px;
+}
+
 .uw-vortex-heading {
-    position: absolute;
-    top: calc(var(--nav-h) + 24px);
-    left: 0;
-    right: 0;
-    text-align: center;
+    position: relative;
+    flex: 0 0 40%;
+    text-align: left;
     z-index: 200;
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 .uw-vortex-heading .tag {
@@ -4474,10 +4485,74 @@ body::before {
     color: var(--uw-bio);
 }
 
+.uw-vortex-right {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    min-width: 0;
+}
+
+.uw-vortex-stage-tag {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--uw-bio);
+    z-index: 200;
+}
+
 .uw-vortex-stage {
     position: relative;
     width: 100%;
     height: 100%;
+}
+
+.uw-handcrafted-title {
+    font-family: var(--uw-font-display);
+    font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+    font-weight: 500;
+    color: var(--uw-pearl);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.uw-handcrafted-title em {
+    font-style: italic;
+    color: var(--uw-bio);
+}
+
+.uw-handcrafted-body {
+    font-family: var(--uw-font-body);
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--uw-gray);
+    max-width: 42ch;
+}
+
+@media (max-width: 900px) {
+    .uw-vortex-content {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: calc(var(--nav-h) + 20px) 24px 20px;
+        gap: 24px;
+    }
+
+    .uw-vortex-heading {
+        flex: none;
+        text-align: center;
+    }
+
+    .uw-vortex-heading .uw-eyebrow {
+        justify-content: center;
+    }
+
+    .uw-vortex-right {
+        flex: 1;
+        width: 100%;
+    }
 }
 
 .uw-funnel-silhouette {
