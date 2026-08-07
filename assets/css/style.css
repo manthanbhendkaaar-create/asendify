@@ -4361,6 +4361,13 @@ body::before {
     max-width: 720px;
 }
 
+.uw-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
 .uw-invite-badge {
     display: inline-flex;
     align-items: center;
@@ -4374,7 +4381,6 @@ body::before {
     border: 1px solid var(--gold-border);
     padding: 7px 16px;
     border-radius: 999px;
-    margin-bottom: 18px;
 }
 
 .uw-invite-dot {
