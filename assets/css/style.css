@@ -231,6 +231,14 @@ ul {
     color: var(--gold);
 }
 
+/* Mobile-only duplicates live inside the hamburger panel; hidden on desktop
+   where the standalone .nav-signin / .btn-cta pair (outside the panel) is
+   already visible. */
+.nav-mobile-signin,
+.nav-mobile-cta {
+    display: none;
+}
+
 /* ---- Section Shared ---- */
 .section-tag {
     display: inline-flex;
@@ -3029,6 +3037,23 @@ ul {
     .nav-links.open {
         transform: translateY(0);
         display: flex;
+    }
+
+    .nav-mobile-signin,
+    .nav-mobile-cta {
+        display: inline-flex;
+    }
+
+    .nav-mobile-signin {
+        margin-top: 8px;
+        font-size: 1rem;
+        color: var(--gold);
+    }
+
+    .nav-mobile-cta {
+        width: 100%;
+        justify-content: center;
+        margin-top: 8px;
     }
 
     .nav-link {
