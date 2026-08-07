@@ -4624,11 +4624,24 @@ body::before {
 }
 
 @media (max-width: 900px) {
+    .uw-vortex-runway {
+        height: auto;
+    }
+
+    .uw-vortex-sticky {
+        position: relative;
+        top: auto;
+        height: auto;
+        min-height: 145vh;
+    }
+
     .uw-vortex-content {
         flex-direction: column;
         justify-content: flex-start;
-        padding: calc(var(--nav-h) + 20px) 24px 20px;
+        align-items: stretch;
+        padding: calc(var(--nav-h) + 20px) 24px 40px;
         gap: 24px;
+        height: auto;
     }
 
     .uw-vortex-heading {
@@ -4640,9 +4653,19 @@ body::before {
         justify-content: center;
     }
 
+    .uw-badge-row {
+        justify-content: center;
+    }
+
     .uw-vortex-right {
-        flex: 1;
+        flex: none;
         width: 100%;
+        height: 65vh;
+        min-height: 420px;
+    }
+
+    .uw-vortex-stage {
+        height: 100%;
     }
 }
 
