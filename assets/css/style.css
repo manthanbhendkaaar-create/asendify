@@ -217,6 +217,20 @@ ul {
     box-shadow: 0 0 24px rgba(124, 58, 237, 0.15);
 }
 
+.nav-signin {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--white);
+    white-space: nowrap;
+    transition: color var(--transition);
+}
+
+.nav-signin:hover {
+    color: var(--gold);
+}
+
 /* ---- Section Shared ---- */
 .section-tag {
     display: inline-flex;
@@ -3037,6 +3051,10 @@ ul {
         display: none;
     }
 
+    .nav-signin {
+        display: none;
+    }
+
     .hamburger {
         display: flex;
     }
@@ -4555,6 +4573,21 @@ body::before {
     line-height: 1.7;
     color: var(--uw-gray);
     max-width: 42ch;
+}
+
+.uw-request-invite {
+    display: inline-block;
+    margin-top: 20px;
+    font-family: var(--uw-font-body);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--uw-bio);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.uw-request-invite:hover {
+    color: var(--gold-light);
 }
 
 @media (max-width: 900px) {
