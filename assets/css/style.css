@@ -301,13 +301,13 @@ ul {
 }
 
 .nav-inner {
-    max-width: var(--container);
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 0 32px;
+    padding: 0 28px;
     height: 100%;
     display: flex;
     align-items: center;
-    gap: 48px;
+    gap: 28px;
 }
 
 .logo {
@@ -319,18 +319,45 @@ ul {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 36px;
+    gap: 22px;
     flex: 1;
 }
 
 .nav-link {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 400;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--gray);
     transition: color var(--transition);
     position: relative;
+    white-space: nowrap;
+}
+
+/* Extra safety margin for tighter desktop widths (e.g. 1280px laptops) */
+@media (max-width: 1400px) {
+    .nav-inner {
+        gap: 18px;
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-link {
+        font-size: 0.74rem;
+        letter-spacing: 0.02em;
+    }
+
+    .nav-signin {
+        font-size: 0.78rem;
+    }
+
+    .btn-cta {
+        padding: 9px 18px;
+        font-size: 0.78rem;
+    }
 }
 
 .nav-link::after {
