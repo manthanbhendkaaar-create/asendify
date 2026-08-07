@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asendify — Views-to-Revenue Agency</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=52" />
+    <link rel="stylesheet" href="assets/css/style.css?v=53" />
     <link rel="icon" type="image/png" href="./assets/images/logo1.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -991,16 +991,18 @@ twq('config','rd7up');
                 return;
             }
 
-            let ticking = false;
             const isMobile = window.matchMedia('(max-width: 768px)').matches || window.innerWidth < 768;
+            let smoothedProgress = 0;
+            let animating = false;
 
-            function update() {
-                ticking = false;
+            function computeTargetProgress() {
                 const rect = runway.getBoundingClientRect();
                 const total = rect.height - window.innerHeight;
-                let progress = -rect.top / total;
-                progress = Math.max(0, Math.min(1, progress));
+                let p = -rect.top / total;
+                return Math.max(0, Math.min(1, p));
+            }
 
+            function applyProgress(progress) {
                 cards.forEach((c) => {
                     let localT = (progress - c.center) / WINDOW;
                     localT = Math.max(-1.6, Math.min(1.6, localT));
@@ -1029,14 +1031,40 @@ twq('config','rd7up');
                 });
             }
 
-            document.addEventListener('scroll', () => {
-                if (!ticking) {
-                    requestAnimationFrame(update);
-                    ticking = true;
-                }
-            }, { passive: true });
+            // Smoothing factor: lower = slower, smoother catch-up to the actual
+            // scroll position. Mobile's scroll runway is shorter than desktop's,
+            // so without extra damping here the swirl reaches full speed after
+            // very little scrolling and feels rushed — a lower ease factor
+            // spreads that same motion out so it reads as a normal, unhurried pace.
+            const EASE = isMobile ? 0.045 : 0.16;
 
-            update();
+            function loop() {
+                const target = computeTargetProgress();
+                smoothedProgress += (target - smoothedProgress) * EASE;
+                const diff = Math.abs(target - smoothedProgress);
+
+                if (diff < 0.0008) {
+                    smoothedProgress = target;
+                    applyProgress(smoothedProgress);
+                    animating = false;
+                    return;
+                }
+
+                applyProgress(smoothedProgress);
+                requestAnimationFrame(loop);
+            }
+
+            function requestUpdate() {
+                if (!animating) {
+                    animating = true;
+                    requestAnimationFrame(loop);
+                }
+            }
+
+            document.addEventListener('scroll', requestUpdate, { passive: true });
+
+            smoothedProgress = computeTargetProgress();
+            applyProgress(smoothedProgress);
         })();
 
         /* ── ROI CALCULATOR ──────────────────────────────────────────── */
@@ -1117,7 +1145,7 @@ twq('config','rd7up');
 
     </script>
 
-    <script src="assets/js/script.js?v=52"></script>
+    <script src="assets/js/script.js?v=53"></script>
 </body>
 
 </html>
