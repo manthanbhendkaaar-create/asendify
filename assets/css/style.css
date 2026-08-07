@@ -4316,6 +4316,31 @@ body::before {
     max-width: 720px;
 }
 
+.uw-invite-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--uw-font-body);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--uw-bio);
+    background: var(--gold-dim);
+    border: 1px solid var(--gold-border);
+    padding: 7px 16px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+}
+
+.uw-invite-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--uw-bio);
+    box-shadow: 0 0 8px var(--uw-bio);
+    flex-shrink: 0;
+}
+
 .uw-eyebrow {
     font-family: var(--uw-font-body);
     font-size: 0.75rem;
