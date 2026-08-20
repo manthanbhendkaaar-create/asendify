@@ -4879,3 +4879,12 @@ body::before {
         animation: none;
     }
 }
+
+
+/* Creator benchmark cards */
+.benchmark-card .channel-subscribers {
+    color: var(--gray);
+    font-size: 0.78rem;
+    line-height: 1.4;
+    margin-top: 8px;
+}
