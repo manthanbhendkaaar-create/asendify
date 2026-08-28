@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /book/
+Disallow: /book-web-design/
+
+Sitemap: https://asendify.co/sitemap.xml
