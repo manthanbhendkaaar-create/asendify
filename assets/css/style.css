@@ -3421,6 +3421,17 @@ ul {
     }
 }
 
+/* ---- Scroll Dark Overlay (page dims progressively as you scroll) ---- */
+.scroll-dark-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 950;
+    pointer-events: none;
+    background: #000;
+    opacity: 0;
+    will-change: opacity;
+}
+
 /* ---- Noise Texture Overlay ---- */
 body::before {
     content: '';
