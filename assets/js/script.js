@@ -28,6 +28,7 @@
         const eased = progress * progress;
 
         overlay.style.opacity = (eased * MAX_OPACITY).toFixed(3);
+        document.documentElement.style.setProperty('--luminate', eased.toFixed(3));
         ticking = false;
     }
 
