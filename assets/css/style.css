@@ -4714,8 +4714,8 @@ body::before {
     .uw-vortex-right {
         flex: none;
         width: 100%;
-        height: 65vh;
-        min-height: 420px;
+        height: 165vh;
+        min-height: 620px;
     }
 
     .uw-vortex-stage {

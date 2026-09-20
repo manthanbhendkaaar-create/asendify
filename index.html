@@ -1175,11 +1175,11 @@ twq('config','rd7up');
             }
 
             // Smoothing factor: lower = slower, smoother catch-up to the actual
-            // scroll position. Mobile's scroll runway is shorter than desktop's,
-            // so without extra damping here the swirl reaches full speed after
-            // very little scrolling and feels rushed — a lower ease factor
-            // spreads that same motion out so it reads as a normal, unhurried pace.
-            const EASE = isMobile ? 0.045 : 0.16;
+            // scroll position. The mobile runway now has a proper scroll distance
+            // of its own (see .uw-vortex-right height in the mobile media query),
+            // so the animation no longer needs heavy artificial damping to feel
+            // unhurried -- a lighter factor keeps it responsive instead of laggy.
+            const EASE = isMobile ? 0.13 : 0.16;
 
             function loop() {
                 const target = computeTargetProgress();
