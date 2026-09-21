@@ -3,4 +3,4 @@ Allow: /
 Disallow: /book/
 Disallow: /book-web-design/
 
-Sitemap: https://asendify.co/sitemap.xml
+Sitemap: https://www.asendify.co/sitemap.xml
