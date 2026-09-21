@@ -414,3 +414,13 @@ if (channelsTrack) {
     animate();
 }
 
+
+// ---- Conversion tracking: booking / playbook clicks (Microsoft Clarity custom events) ----
+document.addEventListener('click', function (e) {
+    const a = e.target.closest && e.target.closest('a[href]');
+    if (!a || typeof window.clarity !== 'function') return;
+    const h = a.getAttribute('href') || '';
+    if (/(^|\/)book\/?(#|\?|$)/.test(h)) window.clarity('event', 'book_click');
+    else if (/(^|\/)playbook\/?(#|\?|$)/.test(h)) window.clarity('event', 'playbook_click');
+    else if (/(^|\/)contact\/?(#|\?|$)/.test(h)) window.clarity('event', 'contact_click');
+}, true);
