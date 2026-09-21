@@ -4815,3 +4815,26 @@ body::before {
         animation: none;
     }
 }
+
+/* ============================================
+   SERVICE PAGES: "About this service" content (SEO)
+   ============================================ */
+.svc-about { padding: 40px 0 110px; }
+.svc-copy { max-width: 760px; margin: 0 auto; color: var(--gray); font-size: 1rem; line-height: 1.85; }
+.svc-copy p { margin-bottom: 18px; }
+.svc-copy a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+.svc-copy h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.55rem; color: var(--white); margin: 44px 0 14px; }
+.svc-steps { margin: 0 0 20px; padding-left: 22px; }
+.svc-steps li { margin-bottom: 12px; padding-left: 6px; }
+.svc-steps li::marker { color: var(--gold); font-weight: 600; }
+.svc-steps strong { color: var(--white); font-weight: 600; }
+.svc-faq { border-top: 1px solid var(--gray-dark); margin-bottom: 36px; }
+.svc-faq-item { border-bottom: 1px solid var(--gray-dark); padding: 18px 4px; }
+.svc-faq-item summary { cursor: pointer; list-style: none; color: var(--white); font-weight: 600; display: flex; justify-content: space-between; gap: 16px; }
+.svc-faq-item summary::-webkit-details-marker { display: none; }
+.svc-faq-item summary::after { content: '+'; color: var(--gold); font-size: 1.3rem; line-height: 1; transition: transform var(--transition); }
+.svc-faq-item[open] summary::after { transform: rotate(45deg); }
+.svc-faq-item summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 4px; }
+.svc-faq-item p { margin: 12px 0 0; }
+.svc-copy .work-cta { text-align: center; }
+@media (max-width: 640px) { .svc-about { padding: 20px 0 80px; } .svc-copy h3 { font-size: 1.3rem; } }
