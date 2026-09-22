@@ -4891,3 +4891,20 @@ body::before {
   .post-cta { padding: 30px 20px; }
   .post-grid { grid-template-columns: 1fr; }
 }
+
+/* ========== PROGRAMS / TIER CARDS ========== */
+.tier-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; align-items: stretch; }
+.tier-card { display: flex; flex-direction: column; gap: 10px; padding: 30px 24px; border-radius: 20px; background: #fff; border: 1px solid rgba(124, 58, 237, .16); }
+.tier-card-hi { border: 2px solid var(--gold); box-shadow: 0 20px 50px rgba(76, 29, 149, .14); }
+.tier-tag { align-self: flex-start; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); background: rgba(124, 58, 237, .08); padding: 5px 10px; border-radius: 999px; }
+.tier-name { font-family: var(--font-display); font-weight: 400; font-size: 1.45rem; color: var(--white); line-height: 1.2; margin-top: 4px; }
+.tier-sub { color: var(--gray); font-size: .9rem; }
+.tier-price { margin: 8px 0 4px; }
+.tier-price span { font-family: var(--font-display); font-size: 2.1rem; color: var(--white); }
+.tier-price small { color: var(--gray); font-size: .85rem; }
+.tier-feats { list-style: none; padding: 0; margin: 6px 0 18px; flex: 1; }
+.tier-feats li { position: relative; padding-left: 22px; margin-bottom: 10px; font-size: .92rem; color: var(--gray); line-height: 1.5; }
+.tier-feats li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+.tier-cta { text-align: center; justify-content: center; }
+@media (max-width: 1100px) { .tier-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .tier-grid { grid-template-columns: 1fr; } }
