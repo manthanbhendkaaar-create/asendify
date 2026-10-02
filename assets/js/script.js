@@ -428,7 +428,7 @@ document.addEventListener('click', function (e) {
 // ---- Payment safety notice (site-wide; added 2026-10-02) ----
 // Shown in every page footer and under each pricing grid, so clients know the only official ways to pay.
 (function () {
-    var MSG = '<strong>Payment safety:</strong> Asendify only takes payment through the PayPal checkout on our official websites or an invoice emailed from an <strong>@asendify.co</strong> address. We don’t take bank transfers, and no one from our team will ever ask you to pay a personal account, UPI ID, crypto wallet or gift card. If anyone does, don’t pay. Email <a href="mailto:montybhendkar@gmail.com" style="color:inherit;text-decoration:underline">montybhendkar@gmail.com</a>.';
+    var MSG = '<strong>Payment safety:</strong> Asendify only takes payment through the PayPal checkout on our official websites or an invoice emailed from an <strong>@asendify.co</strong> address. Our only official WhatsApp is <a href="https://wa.me/919096082894" style="color:inherit;text-decoration:underline">+91 90960 82894</a>. We don’t take bank transfers, and no one from our team will ever ask you to pay a personal account, UPI ID, crypto wallet or gift card. If anyone does, don’t pay. Email <a href="mailto:montybhendkar@gmail.com" style="color:inherit;text-decoration:underline">montybhendkar@gmail.com</a>.';
     function box(extra) {
         var d = document.createElement('div');
         d.className = 'pay-safety';
