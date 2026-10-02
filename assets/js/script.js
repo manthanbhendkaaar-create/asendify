@@ -453,3 +453,33 @@ document.addEventListener('click', function (e) {
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
 })();
+
+// ---- Double Money-Back Guarantee notice (site-wide; added 2026-10-02) ----
+// Every Asendify service and playbook is covered. Shown above the footer's payment-safety box on every page,
+// and under each pricing grid that doesn't already mention it. Terms: /policies (Refund Policy).
+(function () {
+    var MSG = '<strong>🛡 Double Money-Back Guarantee:</strong> every Asendify service and playbook is covered. If you don’t see results in your first month, you get double what you paid back. <a href="/policies/" style="color:inherit;text-decoration:underline">See our policies</a>.';
+    function box(extra) {
+        var d = document.createElement('div');
+        d.className = 'dmbg-note';
+        d.setAttribute('role', 'note');
+        d.style.cssText = 'margin:22px auto 0;max-width:820px;padding:12px 16px;border:1px solid rgba(46,204,113,.35);background:rgba(46,204,113,.07);border-radius:12px;font-size:13.5px;line-height:1.55;text-align:left;' + (extra || '');
+        d.innerHTML = MSG;
+        return d;
+    }
+    function run() {
+        var fb = document.getElementById('pay-safety-footer') || document.querySelector('.footer-bottom');
+        if (fb && !document.getElementById('dmbg-footer')) {
+            var f = box('margin:0 0 12px;max-width:none;');
+            f.id = 'dmbg-footer';
+            fb.parentNode.insertBefore(f, fb);
+        }
+        var card = document.querySelector('.tier-card, .pricing-card');
+        if (card && card.parentNode && !document.getElementById('dmbg-pricing') && !/money-back/i.test(card.parentNode.parentNode.textContent || '')) {
+            var p = box();
+            p.id = 'dmbg-pricing';
+            card.parentNode.parentNode.insertBefore(p, card.parentNode.nextSibling);
+        }
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+})();
