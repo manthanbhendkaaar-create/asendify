@@ -424,3 +424,32 @@ document.addEventListener('click', function (e) {
     else if (/(^|\/)playbook\/?(#|\?|$)/.test(h)) window.clarity('event', 'playbook_click');
     else if (/(^|\/)contact\/?(#|\?|$)/.test(h)) window.clarity('event', 'contact_click');
 }, true);
+
+// ---- Payment safety notice (site-wide; added 2026-10-02) ----
+// Shown in every page footer and under each pricing grid, so clients know the only official ways to pay.
+(function () {
+    var MSG = '<strong>Payment safety:</strong> Asendify only takes payment through the PayPal checkout on our official websites or an invoice emailed from an <strong>@asendify.co</strong> address. We don’t take bank transfers, and no one from our team will ever ask you to pay a personal account, UPI ID, crypto wallet or gift card. If anyone does, don’t pay. Email <a href="mailto:montybhendkar@gmail.com" style="color:inherit;text-decoration:underline">montybhendkar@gmail.com</a>.';
+    function box(extra) {
+        var d = document.createElement('div');
+        d.className = 'pay-safety';
+        d.setAttribute('role', 'note');
+        d.style.cssText = 'margin:22px auto 0;max-width:820px;padding:12px 16px;border:1px solid rgba(255,180,107,.35);background:rgba(255,180,107,.07);border-radius:12px;font-size:13.5px;line-height:1.55;text-align:left;' + (extra || '');
+        d.innerHTML = '🔒 ' + MSG;
+        return d;
+    }
+    function run() {
+        var fb = document.querySelector('.footer-bottom');
+        if (fb && !document.getElementById('pay-safety-footer')) {
+            var f = box('margin:0 0 18px;max-width:none;');
+            f.id = 'pay-safety-footer';
+            fb.parentNode.insertBefore(f, fb);
+        }
+        var card = document.querySelector('.tier-card, .pricing-card');
+        if (card && card.parentNode && !document.getElementById('pay-safety-pricing')) {
+            var p = box();
+            p.id = 'pay-safety-pricing';
+            card.parentNode.parentNode.insertBefore(p, card.parentNode.nextSibling);
+        }
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+})();
