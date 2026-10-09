@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /book/
+Disallow: /pay/
 
 # AI search and assistant crawlers: explicitly allowed
 User-agent: GPTBot
@@ -12,5 +13,6 @@ User-agent: PerplexityBot
 User-agent: Google-Extended
 Allow: /
 Disallow: /book/
+Disallow: /pay/
 
 Sitemap: https://www.asendify.co/sitemap.xml
