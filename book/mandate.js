@@ -2,13 +2,20 @@
 // In India: set up a Razorpay eNACH bank mandate first (Rs 0, nothing charged), then show the calendar.
 (function () {
   var FN = "https://pnokotvssodslxozepxe.supabase.co/functions/v1/mandate";
-  var CAL = "https://calendly.com/manthanbhendkaaar/30min?hide_event_type_details=1&hide_gdpr_banner=1";
+  var CAL_LINK = "manthan-bhendkar-5bceko/asendify";   // Cal.com event (rescheduling is turned off there)
   var $ = function (id) { return document.getElementById(id); };
-  function showCalendar(url) {
+  function showCalendar(prefill) {
     $("bookGate").hidden = true; $("bookMandate").hidden = true;
     var wrap = $("bookCal"); wrap.hidden = false;
-    wrap.innerHTML = '<div class="calendly-inline-widget" data-url="' + (url || CAL) + '" style="min-width:320px;height:700px;"></div>';
-    var s = document.createElement("script"); s.src = "https://assets.calendly.com/assets/external/widget.js"; s.async = true; document.body.appendChild(s);
+    wrap.innerHTML = '<div id="calInline" style="width:100%;min-width:300px;height:760px;overflow:auto"></div>';
+    (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    var cfg = { layout: "month_view", theme: "light" };
+    new URLSearchParams(location.search).forEach(function (v, k) { if (/^utm_/.test(k)) cfg[k] = v; });   // keeps per-inbox tracking
+    if (prefill && prefill.name) cfg.name = prefill.name;
+    if (prefill && prefill.email) cfg.email = prefill.email;
+    Cal("init", "asendify", { origin: "https://cal.com" });
+    Cal.ns.asendify("inline", { elementOrSelector: "#calInline", calLink: CAL_LINK, config: cfg });
+    Cal.ns.asendify("ui", { theme: "light", hideEventTypeDetails: false, layout: "month_view" });
   }
   function loadCheckout() {
     return new Promise(function (ok, bad) {
@@ -42,7 +49,7 @@
           handler: function (p) {
             say("Confirming your mandate…");
             post({ action: "done", order_id: r.order_id, payment_id: p.razorpay_payment_id }).then(function (d) {
-              if (d && d.ok) { say(""); showCalendar(d.booking_url); }
+              if (d && d.ok) { say(""); showCalendar({ name: $("bmName").value, email: $("bmEmail").value }); }
               else { go.disabled = false; say((d && d.error) || "The mandate wasn't completed. Please try again.", true); }
             });
           },

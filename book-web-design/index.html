@@ -165,13 +165,18 @@
                 <div>
                     <h3 class="section-heading reveal" style="font-size: 1.8rem; margin-bottom: 40px;">Available
                         Times:</h3>
-                    <!-- Calendly inline widget begin -->
-                    <div class="calendly-inline-widget"
-                        data-url="https://calendly.com/manthanbhendkaaar/30min?hide_event_type_details=1&hide_gdpr_banner=1"
-                        style="min-width:320px;height:700px;"></div>
-                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
-                        async></script>
-                    <!-- Calendly inline widget end -->
+                    <!-- Cal.com inline embed (rescheduling is turned off on this event) -->
+                    <div id="calInline" style="width:100%;min-width:300px;height:760px;overflow:auto"></div>
+                    <script>
+                    (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                    (function () {
+                      var cfg = { layout: "month_view", theme: "light" };
+                      new URLSearchParams(location.search).forEach(function (v, k) { if (/^utm_/.test(k)) cfg[k] = v; });
+                      Cal("init", "web", { origin: "https://cal.com" });
+                      Cal.ns.web("inline", { elementOrSelector: "#calInline", calLink: "manthan-bhendkar-5bceko/asendify-web", config: cfg });
+                      Cal.ns.web("ui", { theme: "light", layout: "month_view" });
+                    })();
+                    </script>
                 </div>
             </div>
         </div>
