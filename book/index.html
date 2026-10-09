@@ -128,8 +128,8 @@
                 <div class="section-tag reveal">Free Call</div>
                 <h1 class="section-heading reveal delay-1">Book Your <em>Call</em></h1>
                 <p class="section-sub reveal delay-2" style="max-width: 640px;">
-                    Booking a call is <strong>free</strong> &mdash; no deposit or payment is needed beforehand.
-                    We'll walk through your channel and goals, and recommend the right plan: our
+                    Booking a call is <strong>free</strong>. Clients in India set up a bank mandate when booking
+                    (nothing is charged). We'll walk through your channel and goals, and recommend the right plan: our
                     <strong>Growth Plan</strong> (£600/month) or our invite-only <strong>Elite Club</strong>
                     (from £10,000/month). Your package and payment are agreed on the call.
                 </p>
@@ -166,13 +166,29 @@
                 <div>
                     <h3 class="section-heading reveal" style="font-size: 1.8rem; margin-bottom: 40px;">Available
                         Times:</h3>
-                    <!-- Calendly inline widget begin -->
-                    <div class="calendly-inline-widget"
-                        data-url="https://calendly.com/manthanbhendkaaar/30min?hide_event_type_details=1&hide_gdpr_banner=1"
-                        style="min-width:320px;height:700px;"></div>
-                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
-                        async></script>
-                    <!-- Calendly inline widget end -->
+                    <!-- Booking: clients outside India pick a time straight away; clients in India first set up a
+                         bank mandate (Razorpay eNACH, nothing charged) and then pick a time. -->
+                    <div id="bookGate" style="min-width:320px;">
+                        <p class="contact-body" style="margin-bottom:16px;">Where are you based?</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+                            <button type="button" class="btn-primary" id="bookOutside">Outside India</button>
+                            <button type="button" class="btn-outline" id="bookIndia">In India</button>
+                        </div>
+                    </div>
+                    <form id="bookMandate" hidden style="min-width:320px;max-width:520px;">
+                        <p class="contact-body" style="margin-bottom:14px;"><strong>Free strategy call.</strong> To book, clients in India
+                            set up a bank mandate (eNACH) through Razorpay. <strong>Nothing is charged now.</strong> If you choose a package
+                            on the call, it is debited from this mandate only after you confirm the amount in writing, in &#8377; at that
+                            day's exchange rate. You can cancel the mandate any time through your bank. See our <a href="../policies/">policies</a>.</p>
+                        <input id="bmName" placeholder="Your name" autocomplete="name" required style="width:100%;margin-bottom:10px;padding:12px 14px;border-radius:10px;border:1px solid #d1d5db;background:#fff;color:#111827;font:inherit;">
+                        <input id="bmEmail" type="email" placeholder="Email" autocomplete="email" required style="width:100%;margin-bottom:10px;padding:12px 14px;border-radius:10px;border:1px solid #d1d5db;background:#fff;color:#111827;font:inherit;">
+                        <input id="bmPhone" type="tel" placeholder="Mobile number (10 digits)" autocomplete="tel" required style="width:100%;margin-bottom:10px;padding:12px 14px;border-radius:10px;border:1px solid #d1d5db;background:#fff;color:#111827;font:inherit;">
+                        <input id="bmCompany" placeholder="Channel / company (optional)" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1px solid #d1d5db;background:#fff;color:#111827;font:inherit;">
+                        <button type="submit" class="btn-primary" id="bmGo">Set up mandate and pick a time</button>
+                        <p id="bmMsg" style="margin-top:10px;font-size:14px;"></p>
+                    </form>
+                    <div id="bookCal" hidden></div>
+                    <script src="mandate.js?v=1"></script>
                 </div>
             </div>
         </div>
