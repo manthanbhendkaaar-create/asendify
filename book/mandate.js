@@ -1,4 +1,4 @@
-// Booking gate for the free strategy call. Outside India: show the calendar straight away.
+// Booking gate for the strategy call (after the channel form in brief.js). Outside India: show the calendar straight away.
 // In India: set up a Razorpay eNACH bank mandate first (Rs 0, nothing charged), then show the calendar.
 (function () {
   var FN = "https://pnokotvssodslxozepxe.supabase.co/functions/v1/mandate";
@@ -29,7 +29,7 @@
     return fetch(FN, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
       .then(function (r) { return r.json(); }).catch(function () { return { error: "Network error. Please try again." }; });
   }
-  $("bookOutside").addEventListener("click", function () { showCalendar(); });
+  $("bookOutside").addEventListener("click", function () { showCalendar(window.ASD_BRIEF); });
   $("bookIndia").addEventListener("click", function () { $("bookGate").hidden = true; $("bookMandate").hidden = false; });
   $("bookMandate").addEventListener("submit", function (e) {
     e.preventDefault();

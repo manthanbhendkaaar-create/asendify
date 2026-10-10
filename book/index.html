@@ -166,6 +166,48 @@
                         Times:</h3>
                     <!-- Booking: clients outside India pick a time straight away; clients in India first set up a
                          bank mandate (Razorpay eNACH, nothing charged) and then pick a time. -->
+                    <!-- Step 1: a short form about the channel. Its answers build the client's tailored strategy for the call. -->
+                    <form id="bookBrief" style="min-width:320px;max-width:560px;" novalidate>
+                        <p class="contact-body" style="margin-bottom:16px;">Tell us about your channel first. We'll prepare a strategy for <strong>your</strong> channel and walk you through it on the call. Takes about 2 minutes.</p>
+                        <div class="bf-grid">
+                            <label class="bf-l">Your name<input name="name" autocomplete="name" required></label>
+                            <label class="bf-l">Email<input name="email" type="email" autocomplete="email" required></label>
+                            <label class="bf-l bf-w">YouTube channel link <span class="bf-o">(leave empty if you haven't started)</span><input name="channel_url" placeholder="youtube.com/@yourchannel"></label>
+                            <label class="bf-l">What's your channel about?<input name="topic" placeholder="e.g. personal finance" required></label>
+                            <label class="bf-l">Category<select name="category" required>
+                                <option value="">Choose one</option><option value="finance">Personal finance &amp; investing</option><option value="trading">Trading &amp; crypto</option>
+                                <option value="business">Business &amp; entrepreneurship</option><option value="marketing">Marketing, agency &amp; freelancing</option><option value="tech">Tech, AI &amp; software</option>
+                                <option value="education">Education &amp; explainers</option><option value="fitness">Health &amp; fitness</option><option value="selfdev">Self-improvement &amp; productivity</option>
+                                <option value="gaming">Gaming</option><option value="entertainment">Entertainment, comedy &amp; commentary</option><option value="lifestyle">Lifestyle &amp; vlogs</option>
+                                <option value="food">Food &amp; cooking</option><option value="beauty">Beauty &amp; fashion</option><option value="travel">Travel</option><option value="realestate">Real estate</option>
+                                <option value="coaching">Coaching, consulting &amp; services</option><option value="other">Other</option></select></label>
+                            <label class="bf-l">Who is it for?<input name="audience" placeholder="e.g. busy professionals in their 30s" required></label>
+                            <label class="bf-l">What result do you help viewers get?<input name="outcome" placeholder="e.g. invest their first salary"></label>
+                            <label class="bf-l">Subscribers<select name="subs" required><option value="">Choose one</option><option value="none">Haven't started</option><option value="0-1k">Under 1K</option><option value="1k-10k">1K-10K</option><option value="10k-50k">10K-50K</option><option value="50k-100k">50K-100K</option><option value="100k-500k">100K-500K</option><option value="500k+">500K+</option></select></label>
+                            <label class="bf-l">Typical views per video<select name="views" required><option value="">Choose one</option><option value="none">No videos yet</option><option value="<100">Under 100</option><option value="100-1k">100-1K</option><option value="1k-10k">1K-10K</option><option value="10k-50k">10K-50K</option><option value="50k+">50K+</option></select></label>
+                            <label class="bf-l">How often you post<select name="freq" required><option value="">Choose one</option><option value="none">Not posting yet</option><option value="<1/mo">Less than once a month</option><option value="1-3/mo">1-3 times a month</option><option value="weekly">About once a week</option><option value="2-3/wk">2-3 times a week</option><option value="daily">Daily</option></select></label>
+                            <label class="bf-l">Format<select name="format"><option value="both">Long videos and Shorts</option><option value="long">Long videos</option><option value="shorts">Shorts</option></select></label>
+                            <label class="bf-l">On camera?<select name="style"><option value="face">Yes, I'm on camera</option><option value="faceless">Faceless / voiceover</option><option value="mix">A mix</option></select></label>
+                            <label class="bf-l">Main goal for the next 6 months<select name="goal" required><option value="">Choose one</option><option value="views">More views and subscribers</option><option value="leads">Leads and clients for my business</option><option value="product">Selling my product or course</option><option value="sponsors">Brand deals and ad revenue</option><option value="brand">Building my personal brand</option></select></label>
+                            <label class="bf-l">What do you sell? <span class="bf-o">(optional)</span><input name="sells" placeholder="e.g. a coaching programme"></label>
+                            <label class="bf-l">Biggest problem right now<select name="problem" required><option value="">Choose one</option><option value="views">Low views</option><option value="retention">People stop watching early</option><option value="ctr">People don't click (titles/thumbnails)</option><option value="consistency">Not posting consistently</option><option value="ideas">Running out of ideas</option><option value="conversion">Views but no sales or leads</option><option value="editing">Editing takes too long</option><option value="starting">Haven't started yet</option></select></label>
+                            <label class="bf-l">Who edits your videos?<select name="editor"><option value="self">I do</option><option value="freelancer">A freelancer</option><option value="team">A team or agency</option><option value="none">No one yet</option></select></label>
+                            <label class="bf-l bf-w">Tell us more about the problem <span class="bf-o">(optional)</span><textarea name="problem_detail" rows="3"></textarea></label>
+                            <label class="bf-l">Time you can give each week<select name="hours"><option value="3-6">3-6 hours</option><option value="<3">Under 3 hours</option><option value="6-10">6-10 hours</option><option value="10+">10+ hours</option></select></label>
+                            <label class="bf-l">Channels you admire <span class="bf-o">(optional)</span><input name="admire"></label>
+                            <input name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+                        </div>
+                        <button type="submit" class="btn-primary" id="bfGo" style="margin-top:6px;">Continue to booking</button>
+                        <p id="bfMsg" style="margin-top:10px;font-size:14px;"></p>
+                    </form>
+                    <style>
+                        .bf-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px;position:relative}
+                        .bf-l{display:block;font-size:13px;font-weight:600;margin-bottom:10px}
+                        .bf-w{grid-column:1/-1}
+                        .bf-o{font-weight:400;opacity:.7}
+                        .bf-l input,.bf-l select,.bf-l textarea{width:100%;margin-top:6px;padding:11px 13px;border-radius:10px;border:1px solid #d1d5db;background:#fff;color:#111827;font:inherit;font-weight:400}
+                        @media (max-width:640px){.bf-grid{grid-template-columns:1fr}}
+                    </style>
                     <div id="bookGate" style="min-width:320px;">
                         <p class="contact-body" style="margin-bottom:16px;">Where are you based?</p>
                         <div style="display:flex;flex-wrap:wrap;gap:12px;">
@@ -185,7 +227,8 @@
                         <p id="bmMsg" style="margin-top:10px;font-size:14px;"></p>
                     </form>
                     <div id="bookCal" hidden></div>
-                    <script src="mandate.js?v=2"></script>
+                    <script src="mandate.js?v=3"></script>
+                    <script src="brief.js?v=1"></script>
                 </div>
             </div>
         </div>
