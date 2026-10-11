@@ -483,3 +483,56 @@ document.addEventListener('click', function (e) {
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
 })();
+
+
+// ---- Traffic source hand-off (2026-10-11) ----
+// Remembers where a visitor first came from (AI search like ChatGPT/Perplexity, utm tags or another site)
+// for 30 days, and adds it to links into our shops/booking subdomains, so a sale is credited to the real
+// source instead of "asendify.co". AI visits are tagged utm_source=ai, utm_medium=<assistant>.
+(function () {
+    const AI = [
+        [/(^|\.)chatgpt\.com$|(^|\.)chat\.openai\.com$|(^|\.)openai\.com$/, 'chatgpt'],
+        [/(^|\.)perplexity\.ai$/, 'perplexity'],
+        [/(^|\.)gemini\.google\.com$|(^|\.)bard\.google\.com$/, 'gemini'],
+        [/(^|\.)copilot\.microsoft\.com$/, 'copilot'],
+        [/(^|\.)claude\.ai$/, 'claude'],
+        [/(^|\.)you\.com$|(^|\.)phind\.com$|(^|\.)meta\.ai$|(^|\.)grok\.com$|(^|\.)deepseek\.com$/, 'other-ai']
+    ];
+    const clean = v => String(v || '').toLowerCase().replace(/[^a-z0-9._-]/g, '').slice(0, 60);
+    const aiName = host => { host = clean(host).replace(/^www\./, ''); for (const [re, n] of AI) if (re.test(host)) return n; return ''; };
+    const KEY = 'asd_src', TTL = 30 * 864e5;
+    let src = null;
+    try {
+        const qs = new URLSearchParams(location.search);
+        const us = qs.get('utm_source');
+        let fresh = null;
+        if (us) {
+            const ai = aiName(us);
+            fresh = ai ? { s: 'ai', m: ai, c: clean(qs.get('utm_campaign')) || 'via-asendify' }
+                       : { s: clean(us), m: clean(qs.get('utm_medium')), c: clean(qs.get('utm_campaign')) };
+        } else if (document.referrer) {
+            const h = new URL(document.referrer).hostname.replace(/^www\./, '');
+            if (h && !/(^|\.)asendify\.co$/.test(h)) {
+                const ai = aiName(h);
+                fresh = ai ? { s: 'ai', m: ai, c: 'via-asendify' } : { s: 'ref', m: clean(h), c: 'via-asendify' };
+            }
+        }
+        if (fresh) localStorage.setItem(KEY, JSON.stringify({ ...fresh, t: Date.now() }));
+        const saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+        if (saved && Date.now() - saved.t < TTL) src = saved;
+    } catch (e) {}
+    if (!src) return;
+    document.addEventListener('click', function (ev) {
+        const a = ev.target && ev.target.closest && ev.target.closest('a[href]');
+        if (!a) return;
+        try {
+            const u = new URL(a.href, location.href);
+            if (!/(^|\.)asendify\.co$/.test(u.hostname) || u.hostname === location.hostname || /^(www\.)?asendify\.co$/.test(u.hostname)) return;
+            if (u.searchParams.has('utm_source')) return;
+            u.searchParams.set('utm_source', src.s);
+            if (src.m) u.searchParams.set('utm_medium', src.m);
+            if (src.c) u.searchParams.set('utm_campaign', src.c);
+            a.href = u.toString();
+        } catch (e) {}
+    }, true);
+})();
