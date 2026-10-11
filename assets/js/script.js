@@ -455,10 +455,10 @@ document.addEventListener('click', function (e) {
 })();
 
 // ---- Double Money-Back Guarantee notice (site-wide; added 2026-10-02) ----
-// Every Asendify service and playbook is covered. Shown above the footer's payment-safety box on every page,
+// Clients receive a signed guarantee contract; playbooks are covered too. Shown above the footer's payment-safety box on every page,
 // and under each pricing grid that doesn't already mention it. Terms: /policies (Refund Policy).
 (function () {
-    var MSG = '<strong>🛡 Double Money-Back Guarantee:</strong> every Asendify service and playbook is covered. If you don’t see results in your first month, you get double what you paid back. <a href="/policies/" style="color:inherit;text-decoration:underline">See our policies</a>.';
+    var MSG = '<strong>🛡 Double Money-Back Guarantee:</strong> clients receive a signed Double Money-Back Guarantee contract, and our playbooks are covered too. If you don’t see results in your first month, you get double what you paid back. <a href="/policies/" style="color:inherit;text-decoration:underline">See our policies</a>.';
     function box(extra) {
         var d = document.createElement('div');
         d.className = 'dmbg-note';
