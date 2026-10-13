@@ -535,15 +535,14 @@ twq('config','rd7up');
                     Simple <em>Pricing</em>
                 </h2>
                 <p class="section-sub reveal delay-2">
-                    Two partnership tiers. Built for creators serious about turning views into revenue.
+                    Both partnership tiers are full right now. The book, the Accelerator and coaching are open below.
                 </p>
             </div>
 
             <div class="elite-badge reveal delay-2">
                 <span class="elite-badge-dot"></span>
-                <strong>Invite Only.</strong> We only take on <strong>5 clients</strong> at Asendify — our
-                <strong>Elite Club</strong>, not an open roster. This option closes once the Elite Club is
-                filled.
+                <strong>Full.</strong> All <strong>5 Elite Club</strong> places and the Growth Plan are taken
+                right now. Join the waitlist below and we'll contact you, in order, when a place opens.
             </div>
 
             <div class="pricing-card reveal delay-2">
@@ -570,12 +569,14 @@ twq('config','rd7up');
                     </span>
                 </a>
 
-                <a href="./book" class="btn-primary btn-full btn-lg">Book a Call →</a>
-
-                <p class="pricing-note">
-                    No deposit is needed to book. Your package and payment are agreed on the
-                    call.
-                </p>
+                <div class="plan-full">Full &mdash; all places taken</div>
+                <form class="waitlist" data-plan="elite" autocomplete="on">
+                    <input type="text" name="name" placeholder="Your name" required maxlength="80">
+                    <input type="email" name="email" placeholder="Your email" required maxlength="120">
+                    <input type="url" name="channel" placeholder="Your YouTube channel link (optional)" maxlength="200">
+                    <button type="submit" class="btn-primary btn-full btn-lg">Join the Elite Club waitlist →</button>
+                    <p class="pricing-note waitlist-msg">We'll email you, in order, when a place opens. No payment, no call needed to join.</p>
+                </form>
 
                 <p class="pricing-note">
                     ⚠ We only sell through booked calls. If someone contacts you claiming to be Asendify outside of a
@@ -596,15 +597,17 @@ twq('config','rd7up');
                     <li>Unlimited edited videos (Shorts or long-form), made one at a time (fair-use limit applies)</li>
                     <li>The same hook, pacing and structure system we use for Elite Club clients</li>
                     <li>Built for growing channels that aren't ready for the Elite Club yet</li>
-                    <li>No invite needed &mdash; book a call to get started</li>
+                    <li>Currently full &mdash; join the waitlist to be told when a place opens</li>
                 </ul>
 
-                <a href="./book" class="btn-primary btn-full btn-lg">Book a Call →</a>
-
-                <p class="pricing-note">
-                    No payment is needed to book. Your package and payment are
-                    agreed on the call.
-                </p>
+                <div class="plan-full">Full &mdash; all places taken</div>
+                <form class="waitlist" data-plan="growth" autocomplete="on">
+                    <input type="text" name="name" placeholder="Your name" required maxlength="80">
+                    <input type="email" name="email" placeholder="Your email" required maxlength="120">
+                    <input type="url" name="channel" placeholder="Your YouTube channel link (optional)" maxlength="200">
+                    <button type="submit" class="btn-primary btn-full btn-lg">Join the Growth Plan waitlist →</button>
+                    <p class="pricing-note waitlist-msg">We'll email you, in order, when a place opens. No payment, no call needed to join.</p>
+                </form>
             </div>
         </div>
     </section>
@@ -1263,6 +1266,32 @@ twq('config','rd7up');
     </script>
 
     <script src="assets/js/script.js?v=82"></script>
+<style>
+.plan-full{display:inline-block;margin:6px 0 14px;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;background:rgba(255,80,80,.12);color:#ff7b7b;border:1px solid rgba(255,80,80,.35)}
+.waitlist{display:grid;gap:10px;margin-top:4px}
+.waitlist input{width:100%;box-sizing:border-box;padding:13px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:inherit;font:inherit;font-size:15px}
+.waitlist input:focus{outline:none;border-color:rgba(255,255,255,.4)}
+.waitlist .waitlist-msg{margin:4px 0 0}
+.waitlist.done input,.waitlist.done button{display:none}
+</style>
+<script>
+(function(){
+  var FN='https://pnokotvssodslxozepxe.supabase.co/functions/v1/waitlist';
+  document.querySelectorAll('form.waitlist').forEach(function(f){
+    f.addEventListener('submit',async function(e){
+      e.preventDefault();
+      var b=f.querySelector('button'),m=f.querySelector('.waitlist-msg');
+      b.disabled=true;b.textContent='Joining…';
+      try{
+        var r=await fetch(FN,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({plan:f.dataset.plan,name:f.name.value,email:f.email.value,channel:f.channel.value,source:'home'})});
+        var j=await r.json().catch(function(){return{}});
+        if(!r.ok||!j.ok){throw new Error(j.error||'Please try again.')}
+        f.classList.add('done');m.textContent="You're on the list. We'll email "+f.email.value+" when a place opens.";
+      }catch(err){b.disabled=false;b.textContent='Join the waitlist →';m.textContent=err.message||'Please try again.'}
+    });
+  });
+})();
+</script>
 </body>
 
 </html>
