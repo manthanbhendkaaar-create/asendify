@@ -575,7 +575,7 @@ twq('config','rd7up');
                     <input type="email" name="email" placeholder="Your email" required maxlength="120">
                     <input type="url" name="channel" placeholder="Your YouTube channel link (optional)" maxlength="200">
                     <button type="submit" class="btn-primary btn-full btn-lg">Join the Elite Club waitlist →</button>
-                    <p class="pricing-note waitlist-msg">We'll email you, in order, when a place opens. No payment, no call needed to join.</p>
+                    <p class="pricing-note waitlist-msg">Free to join: we email you, in order, when a place opens. To be offered a place first, you can reserve with a £500 refundable deposit after joining.</p>
                 </form>
 
                 <p class="pricing-note">
@@ -606,7 +606,7 @@ twq('config','rd7up');
                     <input type="email" name="email" placeholder="Your email" required maxlength="120">
                     <input type="url" name="channel" placeholder="Your YouTube channel link (optional)" maxlength="200">
                     <button type="submit" class="btn-primary btn-full btn-lg">Join the Growth Plan waitlist →</button>
-                    <p class="pricing-note waitlist-msg">We'll email you, in order, when a place opens. No payment, no call needed to join.</p>
+                    <p class="pricing-note waitlist-msg">Free to join: we email you, in order, when a place opens. To be offered a place first, you can reserve with a £500 refundable deposit after joining.</p>
                 </form>
             </div>
         </div>
@@ -1286,7 +1286,7 @@ twq('config','rd7up');
         var r=await fetch(FN,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({plan:f.dataset.plan,name:f.name.value,email:f.email.value,channel:f.channel.value,source:'home'})});
         var j=await r.json().catch(function(){return{}});
         if(!r.ok||!j.ok){throw new Error(j.error||'Please try again.')}
-        f.classList.add('done');m.textContent="You're on the list. We'll email "+f.email.value+" when a place opens.";
+        f.classList.add('done');var dep='https://playbook.asendify.co/deposit?utm_source=waitlist&plan='+encodeURIComponent(f.dataset.plan);m.innerHTML="You're on the list. We'll email <b>"+f.email.value.replace(/[<>&]/g,'')+"</b> when a place opens.<br><br>Want to be offered a place first? Places go in order of deposit: <a class=\"btn-primary btn-full btn-lg\" style=\"display:block;margin-top:10px\" href=\""+dep+"\">Reserve with a £500 refundable deposit →</a><span style=\"display:block;margin-top:8px\">Refunded in full any time until we offer you a place; credited to your first invoice when you join.</span>";
       }catch(err){b.disabled=false;b.textContent='Join the waitlist →';m.textContent=err.message||'Please try again.'}
     });
   });
