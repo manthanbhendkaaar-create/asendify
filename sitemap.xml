@@ -234,4 +234,9 @@
     <loc>https://www.asendify.co/blog/youtube-intro-length/</loc>
     <lastmod>2026-10-12</lastmod>
   </url>
+    <url>
+        <loc>https://www.asendify.co/books/</loc>
+        <lastmod>2026-10-13</lastmod>
+        <priority>0.9</priority>
+    </url>
 </urlset>
