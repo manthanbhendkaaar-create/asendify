@@ -4910,3 +4910,10 @@ body::before {
 @media (max-width: 640px) { .tier-grid { grid-template-columns: 1fr; } }
 .prog-buy { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin: 4px 0 44px; padding: 20px 24px; border-radius: 16px; background: rgba(124, 58, 237, .06); border: 1px solid rgba(124, 58, 237, .18); }
 .prog-buy .tier-price { margin: 0; }
+
+/* nav-books-fit (2026-10-13): room for the top-level "Books" link on narrow desktops */
+@media (min-width: 1025px) and (max-width: 1180px) {
+    .nav-inner { gap: 14px; padding: 0 16px; }
+    .nav-links { gap: 10px; }
+    .nav-link { letter-spacing: 0; }
+}
