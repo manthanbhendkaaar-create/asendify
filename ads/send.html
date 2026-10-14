@@ -1,0 +1,12 @@
+<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><title>Ad files</title>
+<p id="s">Sending the ad videos to Ads Manager…</p>
+<script>
+// 2026-10-14: hands the books-page ad videos to the Ads Manager window that opened this page (for upload), then closes.
+(async () => {
+  const files = ['Asendify-Books-ad-9x16.mp4', 'Asendify-Books-ad-4x5.mp4'];
+  const out = [];
+  for (const f of files) { const r = await fetch(f, { cache: 'no-store' }); out.push({ name: f, buf: await r.arrayBuffer() }); }
+  if (window.opener) { window.opener.postMessage({ asendifyAdFiles: out }, 'https://adsmanager.facebook.com', out.map(o => o.buf)); document.getElementById('s').textContent = 'Sent. You can close this tab.'; setTimeout(() => window.close(), 1500); }
+  else document.getElementById('s').textContent = 'Open this page from Ads Manager.';
+})();
+</script>
