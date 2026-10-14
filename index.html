@@ -280,9 +280,9 @@ twq('config','rd7up');
                             <span>200K</span>
                         </div>
                         <svg class="case-arrow" viewBox="0 0 160 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 78 C 55 92, 70 30, 145 15" stroke="#7c3aed" stroke-width="3"
+                            <path d="M15 78 C 55 92, 70 30, 145 15" stroke="#d4af37" stroke-width="3"
                                 fill="none" stroke-linecap="round" />
-                            <path d="M128 8 L147 14 L136 30" stroke="#7c3aed" stroke-width="3" fill="none"
+                            <path d="M128 8 L147 14 L136 30" stroke="#d4af37" stroke-width="3" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <div class="case-growth-end">
@@ -297,9 +297,9 @@ twq('config','rd7up');
                             <span>50K</span>
                         </div>
                         <svg class="case-arrow" viewBox="0 0 160 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 78 C 55 92, 70 30, 145 15" stroke="#7c3aed" stroke-width="3"
+                            <path d="M15 78 C 55 92, 70 30, 145 15" stroke="#d4af37" stroke-width="3"
                                 fill="none" stroke-linecap="round" />
-                            <path d="M128 8 L147 14 L136 30" stroke="#7c3aed" stroke-width="3" fill="none"
+                            <path d="M128 8 L147 14 L136 30" stroke="#d4af37" stroke-width="3" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <div class="case-growth-end">
@@ -314,9 +314,9 @@ twq('config','rd7up');
                             <span>50K</span>
                         </div>
                         <svg class="case-arrow" viewBox="0 0 160 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 78 C 55 92, 70 30, 145 15" stroke="#7c3aed" stroke-width="3"
+                            <path d="M15 78 C 55 92, 70 30, 145 15" stroke="#d4af37" stroke-width="3"
                                 fill="none" stroke-linecap="round" />
-                            <path d="M128 8 L147 14 L136 30" stroke="#7c3aed" stroke-width="3" fill="none"
+                            <path d="M128 8 L147 14 L136 30" stroke="#d4af37" stroke-width="3" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <div class="case-growth-end">
@@ -332,9 +332,9 @@ twq('config','rd7up');
                             <span>10K</span>
                         </div>
                         <svg class="case-arrow" viewBox="0 0 160 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 78 C 55 92, 70 30, 145 15" stroke="#7c3aed" stroke-width="3"
+                            <path d="M15 78 C 55 92, 70 30, 145 15" stroke="#d4af37" stroke-width="3"
                                 fill="none" stroke-linecap="round" />
-                            <path d="M128 8 L147 14 L136 30" stroke="#7c3aed" stroke-width="3" fill="none"
+                            <path d="M128 8 L147 14 L136 30" stroke="#d4af37" stroke-width="3" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <div class="case-growth-end">
@@ -841,8 +841,8 @@ twq('config','rd7up');
                             // Luxury gold mixed with hot crimson energy filaments pathways
                             let alpha = (1 - dist / 52) * 0.16;
                             ctx.strokeStyle = p.electricalCharge > 0.85
-                                ? `rgba(124, 58, 237, ${alpha * 2.5})`
-                                : `rgba(124, 58, 237, ${alpha})`;
+                                ? `rgba(212, 175, 55, ${alpha * 2.5})`
+                                : `rgba(212, 175, 55, ${alpha})`;
                             ctx.lineWidth = p.electricalCharge > 0.85 ? 0.8 : 0.4;
                             ctx.stroke();
                         }
@@ -853,7 +853,7 @@ twq('config','rd7up');
                 nodes.forEach(p => {
                     ctx.beginPath();
                     ctx.arc(p.x, p.y, p.r + (Math.sin(p.pulse) * 0.4), 0, Math.PI * 2);
-                    ctx.fillStyle = p.electricalCharge > 0.85 ? '#7c3aed' : '#7c3aed';
+                    ctx.fillStyle = p.electricalCharge > 0.85 ? '#d4af37' : '#d4af37';
                     ctx.fill();
                 });
 
@@ -938,7 +938,7 @@ twq('config','rd7up');
                 ctx.clearRect(0, 0, W, H);
 
                 const grad = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, W * 0.6);
-                grad.addColorStop(0, 'rgba(124,58,237,0.03)');
+                grad.addColorStop(0, 'rgba(212, 175, 55,0.03)');
                 grad.addColorStop(1, 'rgba(255,255,255,0)');
                 ctx.fillStyle = grad;
                 ctx.fillRect(0, 0, W, H);
@@ -1024,7 +1024,7 @@ twq('config','rd7up');
                         }
                         ctx.beginPath();
                         ctx.arc(x, b.y, b.r, 0, Math.PI * 2);
-                        ctx.strokeStyle = `rgba(124, 58, 237, ${b.opacity})`;
+                        ctx.strokeStyle = `rgba(212, 175, 55, ${b.opacity})`;
                         ctx.lineWidth = 1;
                         ctx.stroke();
                     });
@@ -1069,8 +1069,8 @@ twq('config','rd7up');
             spiralSVG.style.height = '100%';
             spiralSVG.style.transform = 'translateX(-50%)';
             spiralSVG.innerHTML =
-                '<path d="M200,800 C120,600 280,500 200,380 C120,260 280,160 200,20" stroke="#7c3aed" stroke-width="1.5" fill="none" opacity="0.5"/>' +
-                '<path d="M200,800 C280,620 120,480 200,360 C280,240 120,140 200,10" stroke="#7c3aed" stroke-width="1" fill="none" opacity="0.3"/>';
+                '<path d="M200,800 C120,600 280,500 200,380 C120,260 280,160 200,20" stroke="#d4af37" stroke-width="1.5" fill="none" opacity="0.5"/>' +
+                '<path d="M200,800 C280,620 120,480 200,360 C280,240 120,140 200,10" stroke="#d4af37" stroke-width="1" fill="none" opacity="0.3"/>';
             funnel.appendChild(spiralSVG);
 
             const videos = [
@@ -1273,8 +1273,8 @@ twq('config','rd7up');
 <style>
 .plan-full{display:inline-block;margin:6px 0 14px;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;background:rgba(255,80,80,.12);color:#ff7b7b;border:1px solid rgba(255,80,80,.35)}
 .waitlist{display:grid;gap:10px;margin-top:4px}
-.waitlist input{width:100%;box-sizing:border-box;padding:13px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:inherit;font:inherit;font-size:15px}
-.waitlist input:focus{outline:none;border-color:rgba(255,255,255,.4)}
+.waitlist input{width:100%;box-sizing:border-box;padding:13px 14px;border-radius:10px;border:1px solid rgba(5, 5, 5,.14);background:rgba(5, 5, 5,.04);color:inherit;font:inherit;font-size:15px}
+.waitlist input:focus{outline:none;border-color:rgba(5, 5, 5,.4)}
 .waitlist .waitlist-msg{margin:4px 0 0}
 .waitlist.done input,.waitlist.done button{display:none}
 </style>
