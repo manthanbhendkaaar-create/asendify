@@ -544,6 +544,11 @@ document.addEventListener('click', function (e) {
 (function () {
     try {
         if (sessionStorage.getItem('asd_sv') === '1') return;
+        // Our own browsers are not counted: ?internal=1 on any asendify.co page marks this browser for every *.asendify.co site.
+        var q0 = new URLSearchParams(location.search);
+        if (q0.get('internal') === '1') document.cookie = 'asd_internal=1; domain=.asendify.co; path=/; max-age=63072000; SameSite=Lax; Secure';
+        if (q0.get('internal') === '0') document.cookie = 'asd_internal=; domain=.asendify.co; path=/; max-age=0; SameSite=Lax; Secure';
+        if (/(^|;\s*)asd_internal=1/.test(document.cookie)) return;
         if (navigator.webdriver || /bot\b|bot\/|crawl|spider|slurp|preview|headless|lighthouse|scanner|facebookexternalhit/i.test(navigator.userAgent)) return;
         var clean = function (v) { return String(v || '').toLowerCase().replace(/[^a-z0-9._-]/g, '').slice(0, 60); };
         var qs = new URLSearchParams(location.search), src = '';
