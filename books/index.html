@@ -442,40 +442,7 @@
         </div>
     </footer>
 
-    <script>
-    // 2026-10-14: count real visits to this page by source for the Asendify Channels dashboard (books-page line).
-    // Same rules as the book shops: sent once per visit, only after a scroll/tap/mouse/key or 12 s on screen.
-    (function () {
-        try {
-            if (sessionStorage.getItem('asd_bv') === '1') return;
-            if (navigator.webdriver || /bot\b|bot\/|crawl|spider|slurp|preview|headless|lighthouse|scanner|facebookexternalhit/i.test(navigator.userAgent)) return;
-            var clean = function (v) { return String(v || '').toLowerCase().replace(/[^a-z0-9._-]/g, '').slice(0, 60); };
-            var qs = new URLSearchParams(location.search), src = '';
-            if (qs.get('utm_source')) src = [clean(qs.get('utm_source')), clean(qs.get('utm_medium')), clean(qs.get('utm_campaign'))].join('/');
-            if (!src && document.referrer) {
-                var h = new URL(document.referrer).hostname.replace(/^www\./, '');
-                if (h && !/(^|\.)asendify\.co$/.test(h)) src = 'ref/' + clean(h);
-            }
-            if (!src) {
-                var sv = JSON.parse(localStorage.getItem('asd_src') || 'null');
-                if (sv && Date.now() - sv.t < 30 * 864e5) src = [sv.s, sv.m, sv.c].map(clean).join('/');
-            }
-            src = src || 'direct';
-            var acts = ['scroll', 'pointerdown', 'touchstart', 'keydown', 'mousemove', 'wheel'], sent = false, shown = 0, tick;
-            var send = function (how) {
-                if (sent) return; sent = true; clearInterval(tick);
-                acts.forEach(function (e) { removeEventListener(e, onAct, true); });
-                try { sessionStorage.setItem('asd_bv', '1'); } catch (e) {}
-                fetch('https://playbook.asendify.co/api/ref', { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain' },
-                    body: JSON.stringify({ visit: src, page: '/books/', engaged: how, product: 'books' }) }).catch(function () {});
-            };
-            var onAct = function () { send('interact'); };
-            acts.forEach(function (e) { addEventListener(e, onAct, { capture: true, passive: true }); });
-            tick = setInterval(function () { if (document.visibilityState === 'visible' && (shown += 1000) >= 12000) send('time'); }, 1000);
-        } catch (e) {}
-    })();
-    </script>
-    <script src="../assets/js/script.js?v=82"></script>
+    <script src="../assets/js/script.js?v=83"></script>
     <script src="/assets/js/blossom.js?v=1" defer></script>
 </body>
 

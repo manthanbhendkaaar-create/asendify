@@ -536,3 +536,39 @@ document.addEventListener('click', function (e) {
         } catch (e) {}
     }, true);
 })();
+
+// 2026-10-15: count real visits to asendify.co by source for the Asendify Channels dashboard (Manthan's OK).
+// One visit per browser session for the whole site, recorded with the page it landed on: product 'books' when it
+// landed on the library page (/books/), 'hub' for any other page. Same rules as the book shops: sent only after a
+// scroll/tap/mouse/key or 12 s on screen; bots skipped. AI assistants show up via their utm tag or referrer.
+(function () {
+    try {
+        if (sessionStorage.getItem('asd_sv') === '1') return;
+        if (navigator.webdriver || /bot\b|bot\/|crawl|spider|slurp|preview|headless|lighthouse|scanner|facebookexternalhit/i.test(navigator.userAgent)) return;
+        var clean = function (v) { return String(v || '').toLowerCase().replace(/[^a-z0-9._-]/g, '').slice(0, 60); };
+        var qs = new URLSearchParams(location.search), src = '';
+        if (qs.get('utm_source')) src = [clean(qs.get('utm_source')), clean(qs.get('utm_medium')), clean(qs.get('utm_campaign'))].join('/');
+        if (!src && document.referrer) {
+            var h = new URL(document.referrer).hostname.replace(/^www\./, '');
+            if (h && !/(^|\.)asendify\.co$/.test(h)) src = 'ref/' + clean(h);
+        }
+        if (!src) {
+            var sv = JSON.parse(localStorage.getItem('asd_src') || 'null');
+            if (sv && Date.now() - sv.t < 30 * 864e5) src = [sv.s, sv.m, sv.c].map(clean).join('/');
+        }
+        src = src || 'direct';
+        var path = location.pathname.replace(/[^a-zA-Z0-9._\/-]/g, '').slice(0, 120) || '/';
+        var product = /^\/books(\/|$)/.test(path) ? 'books' : 'hub';
+        var acts = ['scroll', 'pointerdown', 'touchstart', 'keydown', 'mousemove', 'wheel'], sent = false, shown = 0, tick;
+        var send = function (how) {
+            if (sent) return; sent = true; clearInterval(tick);
+            acts.forEach(function (e) { removeEventListener(e, onAct, true); });
+            try { sessionStorage.setItem('asd_sv', '1'); } catch (e) {}
+            fetch('https://playbook.asendify.co/api/ref', { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain' },
+                body: JSON.stringify({ visit: src, page: path, engaged: how, product: product }) }).catch(function () {});
+        };
+        var onAct = function () { send('interact'); };
+        acts.forEach(function (e) { addEventListener(e, onAct, { capture: true, passive: true }); });
+        tick = setInterval(function () { if (document.visibilityState === 'visible' && (shown += 1000) >= 12000) send('time'); }, 1000);
+    } catch (e) {}
+})();
