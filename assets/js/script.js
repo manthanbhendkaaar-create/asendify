@@ -577,3 +577,21 @@ document.addEventListener('click', function (e) {
         tick = setInterval(function () { if (document.visibilityState === 'visible' && (shown += 1000) >= 12000) send('time'); }, 1000);
     } catch (e) {}
 })();
+
+// 2026-10-15 (Manthan: "books page visible everywhere"): slim bar at the top of every asendify.co page except the library itself.
+(function () {
+    try {
+        if (/^\/books(\/|$)/.test(location.pathname)) return;
+        var bar = document.createElement('a');
+        bar.className = 'asd-booksbar';
+        bar.href = '/books/';
+        bar.innerHTML = '<span>New: Asendify Books</span> &middot; 21 practical playbooks. Pick your problem &rarr;';
+        bar.setAttribute('style', 'display:block;text-align:center;padding:9px 14px;font:600 13px/1.4 Inter,system-ui,sans-serif;background:#d4af37;color:#111;text-decoration:none;position:relative;z-index:1001');
+        document.body.insertBefore(bar, document.body.firstChild);
+        var nav = document.getElementById('navbar');
+        if (nav && getComputedStyle(nav).position === 'fixed') {
+            var fix = function () { var h = bar.getBoundingClientRect().bottom; nav.style.top = Math.max(0, h) + 'px'; };
+            fix(); addEventListener('scroll', fix, { passive: true }); addEventListener('resize', fix);
+        }
+    } catch (e) {}
+})();
