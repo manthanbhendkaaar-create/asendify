@@ -130,6 +130,45 @@
                 <div class="section-header">
                     <div class="section-tag">Books</div>
                     <h1 class="section-heading">Every playbook we <em>publish</em></h1>
+                </div>
+                <!-- 2026-10-15: "pick your problem" starter for ad visitors (Manthan's OK). Cards are read from the full list below. -->
+                <style>
+                .pick{border:1px solid var(--gold-border);background:var(--gold-dim);border-radius:18px;padding:22px 20px;margin:0 0 36px}
+                .pick h2{font-size:clamp(1.3rem,3.6vw,1.75rem);margin:0 0 6px}
+                .pick .pick-sub{opacity:.75;margin:0 0 16px;font-size:.95rem}
+                .pick-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+                .pick-chip{font:inherit;font-size:.92rem;cursor:pointer;padding:9px 14px;border-radius:999px;border:1px solid var(--gold-border);background:transparent;color:inherit;transition:background .2s,border-color .2s}
+                .pick-chip:hover{border-color:var(--gold)}
+                .pick-chip[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#111;font-weight:600}
+                .pick-label{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
+                .pick-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+                .pick-card{display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:14px;border:1px solid var(--gold-border);background:rgba(0,0,0,.25);text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
+                .pick-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+                .pick-card .t{font-weight:700;font-size:1.02rem;line-height:1.3}
+                .pick-card .d{opacity:.75;font-size:.88rem;line-height:1.45}
+                .pick-card .p{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-size:.9rem;padding-top:6px}
+                .pick-card .go{color:var(--gold);font-weight:600}
+                .pick-more{display:inline-block;margin-top:14px;font-size:.9rem;color:var(--gold)}
+                @media (max-width:600px){.pick{padding:18px 14px}.pick-chips{gap:6px}.pick-chip{padding:7px 11px;font-size:.84rem}.pick .pick-sub{margin-bottom:12px}}
+                </style>
+                <div class="pick" id="pick">
+                    <h2>What do you want to fix first?</h2>
+                    <p class="pick-sub">Tap one. We'll show you the books for it.</p>
+                    <div class="pick-chips" role="group" aria-label="Choose a goal">
+                        <button type="button" class="pick-chip" data-k="playbook">Grow my YouTube channel</button>
+                        <button type="button" class="pick-chip" data-k="aiadvantage sellable money dubai">Make more money</button>
+                        <button type="button" class="pick-chip" data-k="steadymind caffeine environment problemfree">Stress, sleep &amp; focus</button>
+                        <button type="button" class="pick-chip" data-k="glowup approach ironclad defend">Confidence (men)</button>
+                        <button type="button" class="pick-chip" data-k="breakup redflags tate">Relationships &amp; people</button>
+                        <button type="button" class="pick-chip" data-k="thinking simulation autobiography">Big questions &amp; writing</button>
+                        <button type="button" class="pick-chip" data-k="lowerrisk steadymind">Protect my health</button>
+                        <button type="button" class="pick-chip" data-k="trading">Learn to trade</button>
+                    </div>
+                    <p class="pick-label" id="pickLabel">Start here</p>
+                    <div class="pick-list" id="pickList"></div>
+                    <a class="pick-more" href="#all-books">Or see all 21 books and the bundles &darr;</a>
+                </div>
+                <div class="section-header" id="all-books" style="margin-top:0">
                     <p class="post-lede">Each book is a complete, practical playbook written by Manthan Bhendkar, founder of Asendify: a method, the evidence behind it, and a 30-day plan. PDF, instant download, licensed to you with your name on every page. New titles are added here as they go live.</p>
                 </div>
                 <style>.books-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}</style>
@@ -442,6 +481,49 @@
         </div>
     </footer>
 
+
+<script>
+(function () {
+    // Builds the "pick your problem" cards from the full book list on this page (one source of truth for titles, prices, links).
+    var cards = {};
+    document.querySelectorAll('.books-grid .tier-card').forEach(function (c) {
+        var a = c.querySelector('a.tier-cta'); if (!a) return;
+        var u; try { u = new URL(a.href); } catch (e) { return; }
+        if (u.pathname !== '/' ) return;                       // bundles live on paths; only single books here
+        var key = u.hostname.split('.')[0];
+        var sub = (c.querySelector('.tier-sub') || {}).textContent || '';
+        var m = sub.match(/^[\s\S]*?[.:](\s|$)/); var first = (m ? m[0] : sub).trim().replace(/:$/, '.');
+        cards[key] = { title: (c.querySelector('.tier-name') || {}).textContent || '', price: (c.querySelector('.tier-price span') || {}).textContent || '',
+            tag: ((c.querySelector('.tier-tag') || {}).textContent || '').replace(/^New · /, ''), desc: first, href: a.href };
+    });
+    var list = document.getElementById('pickList'), label = document.getElementById('pickLabel');
+    if (!list) return;
+    function show(keys, title) {
+        list.replaceChildren();
+        keys.forEach(function (k) {
+            var b = cards[k]; if (!b) return;
+            var a = document.createElement('a'); a.className = 'pick-card'; a.href = b.href;
+            var tg = document.createElement('span'); tg.className = 'pick-label'; tg.style.margin = '0'; tg.textContent = b.tag;
+            var t = document.createElement('span'); t.className = 't'; t.textContent = b.title;
+            var d = document.createElement('span'); d.className = 'd'; d.textContent = b.desc;
+            var p = document.createElement('span'); p.className = 'p';
+            var pr = document.createElement('span'); pr.textContent = b.price + ' · PDF';
+            var go = document.createElement('span'); go.className = 'go'; go.textContent = 'See the book \u2192';
+            p.append(pr, go); a.append(tg, t, d, p); list.appendChild(a);
+        });
+        label.textContent = title;
+    }
+    var chips = document.querySelectorAll('.pick-chip');
+    chips.forEach(function (ch) {
+        ch.setAttribute('aria-pressed', 'false');
+        ch.addEventListener('click', function () {
+            chips.forEach(function (o) { o.setAttribute('aria-pressed', o === ch ? 'true' : 'false'); });
+            show(ch.dataset.k.split(' '), 'For: ' + ch.textContent);
+        });
+    });
+    show(['playbook', 'aiadvantage', 'steadymind'], 'Start here');
+})();
+</script>
     <script src="../assets/js/script.js?v=83"></script>
     <script src="/assets/js/blossom.js?v=1" defer></script>
 </body>
