@@ -11,6 +11,8 @@ User-agent: ClaudeBot
 User-agent: Claude-SearchBot
 User-agent: Claude-User
 User-agent: anthropic-ai
+User-agent: GrokBot
+User-agent: xAI-Bot
 User-agent: PerplexityBot
 User-agent: Google-Extended
 Allow: /
