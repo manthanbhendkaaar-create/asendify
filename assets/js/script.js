@@ -587,12 +587,12 @@ document.addEventListener('click', function (e) {
     if (/^\/books(\/|$)/.test(location.pathname)) return;
     var s = null;
     var src = (s && s.getAttribute('data-src')) || 'asendify';
-    var text = (s && s.getAttribute('data-text')) || 'New: Asendify Books · 21 practical playbooks. Pick your problem →';
+    var text = (s && s.getAttribute('data-text')) || 'New: Asendify Books · 22 practical playbooks. Pick your problem →';
     var href = '/books/';
     function build() {
       if (document.getElementById('asd-booksbar')) return;
       var bar = document.createElement('a');
-      bar.id = 'asd-booksbar'; bar.href = href; bar.textContent = innerWidth < 520 ? 'Asendify Books: 21 practical playbooks \u2192' : text;
+      bar.id = 'asd-booksbar'; bar.href = href; bar.textContent = innerWidth < 520 ? 'Asendify Books: 22 practical playbooks \u2192' : text;
       bar.setAttribute('style', 'position:fixed;top:0;left:0;right:0;z-index:2147483000;display:block;text-align:center;padding:8px 12px;' +
         'font:600 13px/1.35 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.1px;background:#d4af37;color:#111;' +
         'text-decoration:none;box-shadow:0 1px 0 rgba(0,0,0,.25);white-space:nowrap;overflow:hidden;text-overflow:ellipsis');
