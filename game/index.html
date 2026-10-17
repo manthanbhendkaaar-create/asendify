@@ -12,9 +12,17 @@
 <meta property="og:url" content="https://game.asendify.co/">
 <meta property="og:title" content="Asendify Daily – a 2-minute daily challenge">
 <meta property="og:description" content="10 calls. 2 minutes. How sharp are you today? A new free challenge every day.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://game.asendify.co/og.png">
+<meta property="og:image:secure_url" content="https://game.asendify.co/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Asendify Daily: 10 calls. 2 minutes. How sharp are you today?">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Asendify Daily – a 2-minute daily challenge">
 <meta name="twitter:description" content="10 calls. 2 minutes. How sharp are you today? A new free challenge every day.">
+<meta name="twitter:image" content="https://game.asendify.co/og.png">
+<meta name="twitter:image:alt" content="Asendify Daily: 10 calls. 2 minutes. How sharp are you today?">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffb7d0'/%3E%3Cstop offset='1' stop-color='%2378aaff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%230e0b16'/%3E%3Crect x='6' y='6' width='52' height='52' rx='12' fill='url(%23g)'/%3E%3Cpath d='M20 34l8 8 16-18' fill='none' stroke='%230e0b16' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +45,7 @@
   --font:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%}
 html,body{margin:0;padding:0}
 body{
@@ -157,6 +166,31 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);font-si
 footer a{color:var(--text);text-decoration:none;font-weight:600}
 footer a:hover{text-decoration:underline}
 footer .note{font-size:12px;opacity:.8;margin-top:6px}
+/* challenge */
+.banner{display:flex;gap:12px;align-items:center;background:linear-gradient(120deg,rgba(255,183,208,.16),rgba(120,170,255,.16));border:1.5px solid rgba(201,176,240,.45);border-radius:18px;padding:13px 15px;margin:6px 0 2px;font-size:16.5px;line-height:1.35;font-weight:600;animation:enter .35s ease both}
+.banner[hidden],.versus[hidden],.more[hidden]{display:none}
+.banner b{flex:0 0 36px;height:36px;border-radius:11px;display:grid;place-items:center;background:var(--grad);color:#120d1b;font-size:18px}
+.banner strong{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+.banner.old{background:var(--card);border-color:var(--line);font-weight:500;color:#e2dbec}
+.banner.old b{background:var(--card2);color:var(--text)}
+.versus{border-radius:20px;padding:14px 16px;margin-bottom:12px;border:1.5px solid var(--line);background:var(--card);display:flex;align-items:center;gap:14px}
+.versus.win{border-color:rgba(95,224,160,.6);background:linear-gradient(120deg,rgba(95,224,160,.14),rgba(120,170,255,.08))}
+.versus.lose{border-color:rgba(255,122,144,.55);background:linear-gradient(120deg,rgba(255,122,144,.13),rgba(255,183,208,.06))}
+.versus.tie{border-color:rgba(201,176,240,.55)}
+.versus .vs-title{margin:0 0 2px;font-size:20px;font-weight:800;letter-spacing:-.01em}
+.versus.win .vs-title{color:var(--good)}
+.versus.lose .vs-title{color:var(--bad)}
+.versus .vs-sub{margin:0;font-size:14.5px;color:var(--muted)}
+.vs-nums{margin-left:auto;display:flex;gap:10px;text-align:center;flex:0 0 auto}
+.vs-nums div{min-width:52px}
+.vs-nums strong{display:block;font-size:24px;line-height:1.1;font-variant-numeric:tabular-nums}
+.vs-nums span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.challenge{font-size:19px}
+.challenge small{display:block;font-size:13px;font-weight:600;opacity:.75;margin-top:2px;letter-spacing:0}
+.more{margin:2px 0 12px;padding:12px 2px 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;font-size:14px;color:var(--muted)}
+.more span{font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:11.5px;width:100%}
+.more a{color:var(--text);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(120,170,255,.5);padding-bottom:1px}
+.more a:hover{color:var(--blue)}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);background:var(--text);color:#120d1b;font-weight:700;padding:11px 18px;border-radius:999px;opacity:0;transition:all .25s;z-index:10;pointer-events:none;font-size:15px;max-width:calc(100% - 32px);text-align:center}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 @media (min-width:700px){
@@ -177,12 +211,13 @@ footer .note{font-size:12px;opacity:.8;margin-top:6px}
   </header>
 
   <main class="screen" id="s-start">
+    <div class="banner" id="banner" role="status" hidden><b aria-hidden="true">⚔️</b><span id="bannerText"></span></div>
     <h1>Asendify <span>Daily</span></h1>
     <p class="tag">10 calls. 2 minutes. How sharp are you today?</p>
     <ul class="steps">
       <li><b aria-hidden="true">⚡</b><span>Ten quick scenarios on money, business, YouTube, people and habits.</span></li>
       <li><b aria-hidden="true">👆</b><span>Tap a button, swipe the card, or use your ← → keys.</span></li>
-      <li><b aria-hidden="true">📤</b><span>Same 10 for everyone today. Share your score, come back tomorrow.</span></li>
+      <li><b aria-hidden="true">📤</b><span>Same 10 for everyone today. Challenge a friend, come back tomorrow.</span></li>
     </ul>
     <div class="stack">
       <button class="btn primary" id="startBtn" type="button">Play today's game</button>
@@ -222,11 +257,18 @@ footer .note{font-size:12px;opacity:.8;margin-top:6px}
     <p class="kicker" id="endKicker">Asendify Daily #1</p>
     <div class="score" aria-live="polite"><span id="score">0</span><small>/10</small></div>
     <p class="scoreline" id="scoreline"></p>
+    <div class="versus" id="versus" hidden>
+      <div><p class="vs-title" id="vsTitle"></p><p class="vs-sub" id="vsSub"></p></div>
+      <div class="vs-nums" aria-hidden="true"><div><strong id="vsYou">0</strong><span>You</span></div><div><strong id="vsFriend">0</strong><span>Friend</span></div></div>
+    </div>
     <div class="sharecard" id="sharecard">
       <p class="grid" id="grid" aria-label=""></p>
       <p>game.asendify.co</p>
     </div>
-    <div class="stack" id="shareWrap"><button class="btn primary" id="shareBtn" type="button">Share result</button></div>
+    <div class="stack" id="shareWrap">
+      <button class="btn primary challenge" id="challengeBtn" type="button"><span id="challengeLbl">Challenge a friend</span><small id="challengeSub">Send a link. See if they beat your score.</small></button>
+      <button class="btn ghost" id="shareBtn" type="button">Share result grid</button>
+    </div>
     <div class="stats" id="stats">
       <div><strong id="sStreak">0</strong><span>Streak</span></div>
       <div><strong id="sBest">0</strong><span>Best</span></div>
@@ -238,6 +280,11 @@ footer .note{font-size:12px;opacity:.8;margin-top:6px}
       <button class="btn ghost" id="practiceBtn" type="button">Play practice round</button>
       <button class="btn ghost" id="dailyBtn" type="button" hidden>Today's game</button>
     </div>
+    <nav class="more" id="more" aria-label="More from Asendify">
+      <span>More from Asendify</span>
+      <a href="https://www.asendify.co/books/?utm_source=game&amp;utm_medium=end" target="_blank" rel="noopener">All books</a>
+      <a href="https://playbook.asendify.co/affiliate?utm_source=game&amp;utm_medium=end" target="_blank" rel="noopener">Earn 30% recommending them</a>
+    </nav>
   </main>
 
   <footer>
@@ -569,6 +616,40 @@ function todayState(){
   return null;
 }
 
+/* ---------- Challenge links: ?c=<score 0-10>&d=<day number> ----------
+   Only changes banners and end-screen copy. Questions always come from dailySet(DAY),
+   so challenged and normal visitors get the exact same daily set. */
+var SITE="https://game.asendify.co/";
+function parseChallenge(){
+  var c,d;
+  try{var p=new URLSearchParams(window.location.search);c=p.get("c");d=p.get("d")}catch(e){return null}
+  if(c==null||d==null)return null;
+  c=c.trim();d=d.trim();
+  if(!/^\d{1,2}$/.test(c)||!/^\d{1,6}$/.test(d))return null;
+  var cs=parseInt(c,10),dn=parseInt(d,10);
+  if(cs<0||cs>DAILY_N||dn<1||dn>DAY+1)return null; // DAY+1 allows a friend one time zone ahead
+  return {score:cs,day:dn};
+}
+var incoming=parseChallenge();
+if(incoming&&incoming.day===DAY){store.challenge={day:DAY,score:incoming.score};save(store)}
+function activeChallenge(){
+  var c=store.challenge;
+  if(c&&c.day===DAY&&(c.score|0)===c.score&&c.score>=0&&c.score<=DAILY_N)return c;
+  return null;
+}
+function renderBanner(){
+  var b=$("banner"),t=$("bannerText"),ic=b.querySelector("b"),ch=activeChallenge();
+  if(ch){
+    b.className="banner";ic.textContent="⚔️";
+    t.innerHTML="Your friend scored <strong>"+ch.score+"/10</strong> today. Beat it.";
+    b.hidden=false;
+  }else if(incoming&&incoming.day!==DAY){
+    b.className="banner old";ic.textContent="📅";
+    t.textContent=incoming.day<DAY?"Your friend challenged you to an earlier day — play today's instead.":"Your friend's challenge is for tomorrow in their time zone — play today's instead.";
+    b.hidden=false;
+  }else b.hidden=true;
+}
+
 /* ---------- Screens ---------- */
 function show(id){
   ["s-start","s-play","s-end"].forEach(function(s){$(s).hidden=(s!==id)});
@@ -580,7 +661,9 @@ function renderStart(){
   var btn=$("startBtn");
   if(t&&t.answers.length>=DAILY_N)btn.textContent="See today's result";
   else if(t&&t.answers.length>0)btn.textContent="Continue today's game ("+t.answers.length+"/10)";
+  else if(activeChallenge())btn.textContent="Beat their "+activeChallenge().score+"/10 — play #"+DAY;
   else btn.textContent="Play today's game #"+DAY;
+  renderBanner();
   $("mStreak").textContent=liveStreak();
   $("mBest").textContent=store.best|0;
   show("s-start");
@@ -708,8 +791,18 @@ function finish(){
 
 function scoreOf(){var s=0;for(var i=0;i<set.length;i++)if(answers[i]===Q[set[i]][2])s++;return s}
 function gridOf(){return set.map(function(qi,i){return answers[i]===Q[qi][2]?"🟩":"🟥"}).join("")}
+function challengeUrl(){return SITE+"?c="+scoreOf()+"&d="+DAY}
 function shareText(){
-  return "Asendify Daily #"+DAY+"  "+scoreOf()+"/10\n"+gridOf()+"\ngame.asendify.co";
+  return "Asendify Daily #"+DAY+"  "+scoreOf()+"/10\n"+gridOf()+"\n"+challengeUrl();
+}
+function challengeText(){
+  var s=scoreOf(),ch=activeChallenge(),head;
+  if(ch){
+    if(s>ch.score)head="I beat your "+ch.score+"/10 on today's Asendify Daily with "+s+"/10. Rematch?";
+    else if(s<ch.score)head="You won this one: your "+ch.score+"/10 beat my "+s+"/10 on today's Asendify Daily. Rematch?";
+    else head="We tied on today's Asendify Daily, "+s+"/10 each. Rematch?";
+  }else head="I got "+s+"/10 on today's Asendify Daily. Can you beat me?";
+  return head+"\n"+gridOf()+"\n"+challengeUrl();
 }
 function scoreLine(s){
   if(s===10)return "Flawless. Frame this one.";
@@ -730,6 +823,25 @@ function renderEnd(){
   $("grid").setAttribute("aria-label",s+" right, "+(10-s)+" wrong");
   $("sharecard").hidden=!daily;
   $("shareWrap").hidden=!daily;
+
+  // friend challenge result (daily game only)
+  var ch=daily?activeChallenge():null,vs=$("versus");
+  if(ch){
+    var c=ch.score,res=s>c?"win":(s<c?"lose":"tie");
+    vs.className="versus "+res;
+    $("vsTitle").textContent=res==="win"?"You beat your friend!":(res==="lose"?"Your friend wins today":"Dead heat — you tied your friend");
+    $("vsSub").textContent=res==="win"?"Send it back and let them know.":(res==="lose"?"Send a rematch and get them back.":"Send a rematch to settle it.");
+    $("vsYou").textContent=s;
+    $("vsFriend").textContent=c;
+    vs.setAttribute("aria-label","You "+s+", your friend "+c);
+    vs.hidden=false;
+    $("challengeLbl").textContent="Rematch: send it back";
+    $("challengeSub").textContent=res==="win"?"Let them know you won.":"Challenge them again.";
+  }else{
+    vs.hidden=true;
+    $("challengeLbl").textContent="Challenge a friend";
+    $("challengeSub").textContent="Send a link. See if they can beat "+s+"/10.";
+  }
   $("sStreak").textContent=liveStreak();
   $("sBest").textContent=store.best|0;
 
@@ -774,17 +886,21 @@ function copyText(txt){
 function legacyCopy(txt){
   try{var ta=document.createElement("textarea");ta.value=txt;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();var ok=document.execCommand("copy");document.body.removeChild(ta);return ok}catch(e){return false}
 }
-function share(){
-  var txt=shareText();
+function shareOut(txt,okMsg){
+  function fallback(){copyText(txt).then(function(ok){toast(ok?okMsg:"Couldn't copy. Try again.")})}
   if(navigator.share){
-    navigator.share({text:txt}).catch(function(err){
-      if(err&&err.name==="AbortError")return;
-      copyText(txt).then(function(ok){toast(ok?"Result copied. Paste it anywhere!":"Couldn't copy. Try again.")});
-    });
+    try{
+      navigator.share({text:txt}).catch(function(err){
+        if(err&&err.name==="AbortError")return;
+        fallback();
+      });
+    }catch(e){fallback()}
     return;
   }
-  copyText(txt).then(function(ok){toast(ok?"Result copied. Paste it anywhere!":"Couldn't copy. Try again.")});
+  fallback();
 }
+function share(){shareOut(shareText(),"Result copied. Paste it anywhere!")}
+function challenge(){shareOut(challengeText(),"Challenge link copied. Send it to a friend!")}
 
 /* ---------- Countdown ---------- */
 var timer=null;
@@ -839,6 +955,7 @@ $("btnL").addEventListener("click",function(){answer(0)});
 $("btnR").addEventListener("click",function(){answer(1)});
 $("nextBtn").addEventListener("click",next);
 $("shareBtn").addEventListener("click",share);
+$("challengeBtn").addEventListener("click",challenge);
 document.addEventListener("keydown",function(e){
   if($("s-play").hidden||e.altKey||e.ctrlKey||e.metaKey||e.repeat)return;
   if(!answered){
@@ -850,7 +967,7 @@ document.addEventListener("keydown",function(e){
 });
 
 /* expose for testing */
-window.__asendifyDaily={dailySet:dailySet,Q:Q,TOPICS:TOPICS,shareText:shareText,day:function(){return DAY}};
+window.__asendifyDaily={dailySet:dailySet,Q:Q,TOPICS:TOPICS,shareText:shareText,challengeText:challengeText,challenge:activeChallenge,incoming:function(){return incoming},set:function(){return set.slice()},day:function(){return DAY}};
 
 renderStart();
 })();
