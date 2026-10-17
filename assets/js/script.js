@@ -5,45 +5,12 @@
 'use strict';
 
 
-// ---- Scroll Dark Overlay (page dims progressively as you scroll) ----
+// ---- Scroll Dark Overlay: switched off 2026-10-17 (Manthan: "stop the fading").
+// The page no longer dims as you scroll; the blossom petals turn blue instead (assets/js/blossom.js).
 (function () {
     const overlay = document.querySelector('.scroll-dark-overlay');
-    if (!overlay) return;
-
-    const MAX_OPACITY = 0.55;   // never goes fully black — content stays readable
-    const START_AT = 0.04;      // ignore the first 4% of scroll so the hero stays bright
-    const FULL_AT = 0.75;       // reaches max darkness by 75% down the page
-
-    let ticking = false;
-
-    function updateOverlay() {
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-        const raw = scrollable > 0 ? scrollTop / scrollable : 0;
-
-        let progress = (raw - START_AT) / (FULL_AT - START_AT);
-        progress = Math.min(Math.max(progress, 0), 1);
-
-        // ease-in so it darkens gently at first, then more noticeably near the bottom
-        const eased = progress * progress;
-
-        overlay.style.opacity = (eased * MAX_OPACITY).toFixed(3);
-        document.documentElement.style.setProperty('--luminate', eased.toFixed(3));
-        ticking = false;
-    }
-
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(updateOverlay);
-            ticking = true;
-        }
-    }, { passive: true });
-
-    window.addEventListener('resize', () => {
-        requestAnimationFrame(updateOverlay);
-    });
-
-    updateOverlay();
+    if (overlay) overlay.style.opacity = '0';
+    document.documentElement.style.setProperty('--luminate', '0');
 })();
 
 // ---- Navbar scroll effect (throttled for performance) ----
