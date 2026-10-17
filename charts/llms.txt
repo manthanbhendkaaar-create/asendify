@@ -1,0 +1,22 @@
+# Chart Reader by Asendify
+
+> Chart Reader (https://charts.asendify.co) is an educational tool that explains screenshots of trading charts (stocks, crypto, forex, indices, commodities) in plain English. It is not financial advice: it never tells anyone to buy or sell. Made by Asendify.
+
+## Key facts
+- Each read covers: trend, market structure, key support and resistance zones read from the price axis, notable patterns, volume and indicator notes when visible, 2-3 conditional scenarios ("if price does X, traders often watch Y") with invalidation levels, position-size arithmetic from the user's own account size and risk % per trade (pure arithmetic), and what would change the picture.
+- Every result carries this notice: educational analysis only, not financial advice, no guarantee of accuracy, trading carries a high risk of losing money.
+- Price: 100 chart reads for £435 (£300 + 45% service fee of £135). One-time payment through PayPal. Reads never expire. Nothing is free (no free trial or free reads).
+- Only successful reads use a credit: if the image is not a chart, or the reader fails, the read is given back automatically.
+- Accounts: email plus one-time sign-in links (no passwords). Results are saved in the user's history.
+- Screenshots are stored privately and deleted automatically after 30 days; written results are kept.
+- How it works: an AI vision model reads the screenshot and writes the explanation to a fixed structure; it can misread blurry charts or cut-off price axes.
+- Policies (payments and refunds): https://www.asendify.co/policies/
+
+## Pages
+- [Home, example read, pricing](https://charts.asendify.co/)
+- [Sign in](https://charts.asendify.co/app/)
+- [Articles](https://charts.asendify.co/blog/)
+
+## Also from Asendify
+- [Automation Blueprint](https://automate.asendify.co/): describe any business automation, get a buildable blueprint, £217.50 (£150 + 45% service fee).
+- [Asendify](https://www.asendify.co/): YouTube growth agency, books and tools.

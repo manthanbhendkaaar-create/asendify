@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#060d0b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230d9488'/%3E%3Cpath d='M7 22l6-7 5 4 7-9' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=1">
+<title>Confirming your payment | Chart Reader</title>
+</head>
+<body>
+<header class="nav"><div class="wrap"><a class="logo" href="/"><span class="mark"><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15l4.5-5 3.5 3 6-7"/></svg></span>Chart Reader</a></div></header>
+<main class="center"><div>
+  <div class="spin" id="spin"></div>
+  <h1 id="h">Confirming your payment…</h1>
+  <p id="p">This takes a few seconds. Please keep this page open.</p>
+  <p id="act" hidden><a class="btn ghost" href="/app/">Go to sign in</a></p>
+</div></main>
+<footer><div class="wrap"><div>Chart Reader is made by <a href="https://www.asendify.co/">Asendify</a>. Educational analysis only, not financial advice.</div><nav><a href="https://www.asendify.co/policies/">Policies</a><a href="https://www.asendify.co/">asendify.co</a></nav></div></footer>
+<script src="/assets/api.js?v=1"></script>
+<script>
+(function () {
+  'use strict';
+  var Q = new URLSearchParams(location.search), pid = Q.get('pid') || '', token = Q.get('token') || '', tries = 0;
+  function $(id) { return document.getElementById(id); }
+  function stop(h, p, act) { $('spin').hidden = true; $('h').textContent = h; $('p').textContent = p; $('act').hidden = !act; }
+  if (!/^[0-9a-f-]{36}$/.test(pid) || !/^[A-Z0-9]{8,30}$/.test(token)) return stop('This link is not complete', 'If you paid, your sign-in link is in your email.', true);
+  function go() {
+    tries++;
+    CR.api('confirm', { pid: pid, token: token }).then(function (j) {
+      if (j && j.session) { CR.setS(j.session); $('h').textContent = 'Payment received'; $('p').textContent = 'Opening Chart Reader…'; location.replace('/app/?welcome=1'); return; }
+      if (j && j.signin) return stop('Your reads are ready', j.message || 'Use the sign-in link we emailed you.', true);
+      if (j && j.pending) { if (tries < 8) { $('p').textContent = j.message || 'PayPal is still processing your payment…'; setTimeout(go, 5000); return; } return stop('Payment is processing', j.message || 'We email your sign-in link as soon as PayPal confirms the payment.', false); }
+      if (j && j._status === 0 && tries < 4) { setTimeout(go, 4000); return; }
+      stop('We could not confirm this payment', (j && (j.message || j.error)) || 'Please try again.', true);
+    });
+  }
+  go();
+})();
+</script>
+</body>
+</html>
