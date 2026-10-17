@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#060d0b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230d9488'/%3E%3Cpath d='M7 22l6-7 5 4 7-9' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=1">
+<title>Your charts | Chart Reader</title>
+</head>
+<body>
+<div class="testbar" id="testbar" hidden>Preview: test mode. Test credits only, results are the canned example.</div>
+<header class="nav"><div class="wrap"><a class="logo" href="/"><span class="mark"><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15l4.5-5 3.5 3 6-7"/></svg></span>Chart Reader</a></div></header>
+<main class="app"><div class="wrap">
+
+<section id="signin" hidden>
+  <div class="panel" style="max-width:560px;margin:30px auto">
+    <h1 style="font-size:28px;margin:0 0 6px">Sign in</h1>
+    <p class="small" style="margin:0 0 18px">Enter the email you bought your reads with. We email you a sign-in link (no password needed).</p>
+    <form id="signinForm" novalidate>
+      <div class="field"><label for="siEmail">Email</label><input id="siEmail" type="email" autocomplete="email" maxlength="120" placeholder="you@example.com" required></div>
+      <button class="btn pri" type="submit" id="siBtn" style="width:100%">Email me a sign-in link</button>
+      <div class="msg" id="siMsg" role="status"></div>
+    </form>
+    <p class="small" style="margin:16px 0 0">No reads yet? <a href="/#pricing">Get 100 chart reads</a>.</p>
+  </div>
+</section>
+
+<section id="main" hidden>
+  <div class="topline">
+    <div><h1>Your charts</h1><div class="small" id="who"></div></div>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="badge" id="credits">– reads left</span><button class="btn ghost sm" type="button" id="out">Sign out</button></div>
+  </div>
+  <div class="msg i" id="welcome" hidden></div>
+
+  <div class="panel" id="uploadPanel">
+    <form id="readForm" novalidate>
+      <label class="drop" id="drop" for="file"><input id="file" type="file" accept="image/png,image/jpeg,image/webp"><b>Upload a chart screenshot</b><span>Tap to choose, or drop an image here. PNG, JPG or WebP.</span></label>
+      <div class="preview" id="preview"><img id="previewImg" alt="Your chart screenshot"></div>
+      <div class="row3" style="margin-top:16px">
+        <div class="field"><label for="timeframe">Timeframe <span class="hint">Optional</span></label><input id="timeframe" maxlength="30" placeholder="e.g. 4H, Daily"></div>
+        <div class="field"><label for="market">Market <span class="hint">Optional</span></label><input id="market" maxlength="60" placeholder="e.g. BTC/USD, Apple"></div>
+        <div class="field"><label for="currency">Account currency</label><select id="currency"><option>GBP</option><option>USD</option><option>EUR</option><option>INR</option><option>AUD</option><option>CAD</option><option>AED</option><option>SGD</option><option>JPY</option><option>CHF</option><option>USDT</option></select></div>
+      </div>
+      <div class="row2">
+        <div class="field" id="f-account"><label for="account">Account size <span class="hint">Optional, for the position-size maths</span></label><input id="account" inputmode="decimal" maxlength="16" placeholder="e.g. 10000"><div class="err" id="e-account"></div></div>
+        <div class="field" id="f-risk"><label for="risk">Risk per trade (%) <span class="hint">Optional, e.g. 1</span></label><input id="risk" inputmode="decimal" maxlength="8" placeholder="e.g. 1"><div class="err" id="e-risk"></div></div>
+      </div>
+      <div class="field"><label for="extra">Anything else? <span class="hint">Optional. For example what you are trying to learn from this chart.</span></label><textarea id="extra" maxlength="500" style="min-height:80px"></textarea></div>
+      <button class="btn pri" type="submit" id="readBtn" style="width:100%">Read my chart (uses 1 read)</button>
+      <div class="msg" id="readMsg" role="status"></div>
+      <p class="small" style="margin:12px 0 0">A read is only used when it succeeds. Screenshots are deleted after 30 days. Educational analysis only, not financial advice.</p>
+    </form>
+  </div>
+
+  <div id="result"></div>
+
+  <div class="panel">
+    <h2 style="font-size:20px;margin:0 0 12px">History</h2>
+    <div class="hist" id="hist"><p class="small">No reads yet.</p></div>
+  </div>
+</section>
+
+</div></main>
+<footer><div class="wrap"><div>Chart Reader is made by <a href="https://www.asendify.co/">Asendify</a>. Educational analysis only, not financial advice.</div><nav><a href="https://www.asendify.co/policies/">Policies</a><a href="https://www.asendify.co/">asendify.co</a></nav></div></footer>
+<script src="/assets/api.js?v=1"></script>
+<script src="/assets/render.js?v=1"></script>
+<script>
+(function () {
+  'use strict';
+  function $(id) { return document.getElementById(id); }
+  var Q = new URLSearchParams(location.search), S = CR.getS(), image = null, busy = false, credits = 0;
+  if (CR.PREVIEW) $('testbar').hidden = false;
+  function msg(el, t, k) { el.textContent = t; el.className = 'msg on ' + (k || 'e'); }
+  function signinView(note) { $('main').hidden = true; $('signin').hidden = false; if (note) msg($('siMsg'), note, 'i'); }
+  function fmtDate(s) { try { return new Date(s).toLocaleString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }); } catch (e) { return s; } }
+  function setCredits(n) { credits = n; $('credits').textContent = n + (n === 1 ? ' read left' : ' reads left'); var b = $('readBtn'); if (n < 1) { b.disabled = true; b.textContent = 'No reads left'; msg($('readMsg'), 'You have used all your reads. Get another 100 on the home page.', 'i'); } else if (!busy) { b.disabled = false; b.textContent = 'Read my chart (uses 1 read)'; } }
+  function load() {
+    CR.api('me', { s: S }).then(function (j) {
+      if (j._status === 401) { CR.setS(''); return signinView('Please sign in again.'); }
+      if (!j.ok) return signinView(j.error || 'Please sign in.');
+      $('signin').hidden = true; $('main').hidden = false;
+      $('who').textContent = 'Signed in as ' + j.email;
+      setCredits(j.credits);
+      var h = $('hist'); h.innerHTML = '';
+      if (!j.reads.length) h.innerHTML = '<p class="small">No reads yet. Upload your first chart above.</p>';
+      j.reads.forEach(function (r) {
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'hi';
+        var l = document.createElement('span'); l.textContent = [r.instrument || r.market || 'Chart', r.timeframe].filter(Boolean).join(' · ');
+        var rt = document.createElement('small'); rt.textContent = fmtDate(r.created_at) + (r.trend ? ' · ' + r.trend : '');
+        b.appendChild(l); b.appendChild(rt); b.addEventListener('click', function () { open(r.id); }); h.appendChild(b);
+      });
+      if (Q.get('id')) open(Q.get('id'));
+    });
+  }
+  function show(read, img) {
+    var out = $('result');
+    out.innerHTML = '<div class="panel">' + (img ? '<div class="shot"><img alt="Your chart" src="' + ChartRender.esc(img) + '"></div>' : (read.imageDeleted ? '<p class="small">Screenshot deleted after 30 days; the read is kept.</p>' : '')) + ChartRender.renderRead(read.result, { date: fmtDate(read.created_at), label: read.result.test ? 'Test mode sample' : '' }) + '</div>';
+    out.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  function open(id) {
+    if (!/^[0-9a-f-]{36}$/.test(id)) return;
+    CR.api('get', { s: S, id: id }).then(function (j) {
+      if (j.ok) { show(j.read, j.read.image); try { history.replaceState(null, '', '/app/?id=' + id); } catch (e) {} }
+      else if (j._status === 401) signinView('Please sign in again.');
+    });
+  }
+  // image: resize in the browser to max 1600 px, JPEG, under 2 MB
+  function pick(file) {
+    if (!file) return;
+    if (!/^image\/(png|jpeg|webp)$/.test(file.type)) return msg($('readMsg'), 'Please choose a PNG, JPG or WebP image.');
+    var url = URL.createObjectURL(file), im = new Image();
+    im.onload = function () {
+      var k = Math.min(1, 1600 / Math.max(im.naturalWidth, im.naturalHeight)), w = Math.round(im.naturalWidth * k), h = Math.round(im.naturalHeight * k);
+      var c = document.createElement('canvas'); c.width = w; c.height = h; var x = c.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, w, h); x.drawImage(im, 0, 0, w, h);
+      var q = 0.92, d = c.toDataURL('image/jpeg', q);
+      while (d.length * 0.75 > 1.95 * 1024 * 1024 && q > 0.4) { q -= 0.1; d = c.toDataURL('image/jpeg', q); }
+      URL.revokeObjectURL(url);
+      if (d.length * 0.75 > 2 * 1024 * 1024) return msg($('readMsg'), 'That image is too large. Please try a smaller screenshot.');
+      image = d; $('previewImg').src = d; $('preview').style.display = 'block'; $('readMsg').className = 'msg';
+    };
+    im.onerror = function () { msg($('readMsg'), 'We could not open that image. Please try another screenshot.'); };
+    im.src = url;
+  }
+  $('file').addEventListener('change', function () { pick(this.files[0]); });
+  var drop = $('drop');
+  ['dragenter', 'dragover'].forEach(function (e) { drop.addEventListener(e, function (ev) { ev.preventDefault(); drop.classList.add('over'); }); });
+  ['dragleave', 'drop'].forEach(function (e) { drop.addEventListener(e, function (ev) { ev.preventDefault(); drop.classList.remove('over'); }); });
+  drop.addEventListener('drop', function (ev) { pick(ev.dataTransfer.files[0]); });
+  $('readForm').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (busy || credits < 1) return;
+    if (!image) return msg($('readMsg'), 'Please upload a chart screenshot first.');
+    var notes = { timeframe: $('timeframe').value, market: $('market').value, currency: $('currency').value, account: $('account').value, risk: $('risk').value, extra: $('extra').value };
+    ['account', 'risk'].forEach(function (k) { $('f-' + k).classList.remove('bad'); });
+    busy = true; var b = $('readBtn'); b.disabled = true; b.textContent = 'Reading your chart…'; msg($('readMsg'), 'Reading your chart. This usually takes 15 to 40 seconds.', 'i');
+    CR.api('read', { s: S, image: image, notes: notes }).then(function (j) {
+      busy = false;
+      if (j.ok && j.read) { $('readMsg').className = 'msg'; setCredits(j.credits); show(j.read, j.read.image); load(); return; }
+      if (j._status === 401) return signinView('Please sign in again.');
+      if (j.errors) Object.keys(j.errors).forEach(function (k) { var f = $('f-' + k); if (f) { f.classList.add('bad'); $('e-' + k).textContent = j.errors[k]; } });
+      if (typeof j.credits === 'number') setCredits(j.credits); else setCredits(credits);
+      msg($('readMsg'), j.message || j.error || 'Something went wrong. No read was used. Please try again.', j.refused ? 'i' : 'e');
+    });
+  });
+  $('out').addEventListener('click', function () { CR.api('logout', { s: S }); CR.setS(''); S = ''; signinView('You are signed out.'); });
+  $('signinForm').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var e = $('siEmail').value.trim(); if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(e)) return msg($('siMsg'), 'Please enter a valid email address.');
+    $('siBtn').disabled = true;
+    CR.api('login_request', { email: e }).then(function (j) { $('siBtn').disabled = false; msg($('siMsg'), j.message || j.error || 'Please try again.', j.ok ? 'i' : 'e'); });
+  });
+  if (Q.get('welcome')) { var w = $('welcome'); w.hidden = false; w.className = 'msg on i'; w.textContent = CR.PREVIEW ? 'Test account created with 100 test reads. No payment was taken.' : 'Payment received: 100 reads added. We also emailed you a sign-in link for your other devices.'; }
+  if (S) load(); else signinView();
+})();
+</script>
+</body>
+</html>

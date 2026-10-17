@@ -1,0 +1,15 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/blog", "destination": "https://playbook.asendify.co/api/blog?svc=charts" },
+    { "source": "/blog/", "destination": "https://playbook.asendify.co/api/blog?svc=charts" },
+    { "source": "/blog/:slug", "destination": "https://playbook.asendify.co/api/blog?svc=charts&slug=:slug" },
+    { "source": "/blog/:slug/", "destination": "https://playbook.asendify.co/api/blog?svc=charts&slug=:slug" },
+    { "source": "/blog-sitemap.xml", "destination": "https://playbook.asendify.co/api/blog?svc=charts&sitemap=1" }
+  ],
+  "headers": [
+    { "source": "/(.*)", "headers": [ { "key": "X-Content-Type-Options", "value": "nosniff" }, { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" } ] },
+    { "source": "/(app|login|paid)/(.*)", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" }, { "key": "Referrer-Policy", "value": "no-referrer" } ] }
+  ]
+}

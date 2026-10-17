@@ -1,0 +1,21 @@
+# Automation Blueprint by Asendify
+
+> Automation Blueprint (https://automate.asendify.co) turns a plain-words description of any business automation into a professional, buildable blueprint. Fully automatic: describe it, pay, and the blueprint is ready within minutes on a private page that is also emailed. Made by Asendify.
+
+## Key facts
+- What you get: a workflow diagram (trigger, steps, apps and branches; download as PNG or SVG, plus a Mermaid text copy), the recommended automation platform and the tool for each step with the reason, numbered step-by-step build instructions, the data passed between steps, error handling, what you need before you start, how to test it, difficulty, time to build and an estimated monthly tool cost range.
+- Tools it can recommend: n8n, Make, Zapier, Google Sheets, Airtable, HubSpot, Pipedrive, Gmail, Outlook, Slack, Microsoft Teams, WhatsApp Business API, Twilio, Stripe, Typeform, Calendly, Notion, Shopify, Xero, QuickBooks, OpenAI, Anthropic and similar.
+- Price: £217.50 per blueprint (£150 + 45% service fee of £67.50). One-time payment through PayPal. No subscription. Nothing is free (no free trial or free sample blueprint), but a full example is public.
+- How it is made: an AI model writes the blueprint to a strict structure and the system checks it automatically before the buyer sees it. Cost figures are estimates; tool prices change.
+- It is a blueprint, not a build service: buyers build it themselves or hand it to any developer.
+- Example (fictional business): https://automate.asendify.co/example/
+- Policies (payments and refunds): https://www.asendify.co/policies/
+
+## Pages
+- [Home, how it works, order form](https://automate.asendify.co/)
+- [Full example blueprint](https://automate.asendify.co/example/)
+- [Articles](https://automate.asendify.co/blog/)
+
+## Also from Asendify
+- [Chart Reader](https://charts.asendify.co/): educational explanations of trading chart screenshots, 100 reads for £435 (£300 + 45% service fee).
+- [Asendify](https://www.asendify.co/): YouTube growth agency, books and tools.

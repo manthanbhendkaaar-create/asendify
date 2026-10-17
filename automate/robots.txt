@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /b/
+Disallow: /paid/
+
+Sitemap: https://automate.asendify.co/sitemap.xml
+Sitemap: https://automate.asendify.co/blog-sitemap.xml
