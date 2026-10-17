@@ -163,7 +163,7 @@
   function show(t, k) { msg.textContent = t; msg.className = 'msg on ' + (k || 'e'); }
   if (/checkout=cancelled/.test(location.search)) show('Checkout cancelled: nothing was charged.', 'i');
   if (PREVIEW) { $('testbar').hidden = false; buy.disabled = false; buy.textContent = 'Test purchase (preview, no payment)'; }
-  else api('config').then(function (c) { var ok = !!(c && c.ready); buy.disabled = !ok; buy.textContent = ok ? 'Pay £435 with PayPal' : 'Opening soon'; if (!ok) show('Chart Reader is opening soon. Buying will switch on here shortly.', 'i'); });
+  else api('config').then(function (c) { var ok = !!(c && c.ok === true && c.ready === true && c.price && c.price.total === '435.00'); buy.disabled = !ok; buy.textContent = ok ? 'Pay £435 with PayPal' : 'Opening soon'; if (!ok) show('Chart Reader is opening soon. Buying will switch on here shortly.', 'i'); });
   $('buyForm').addEventListener('submit', function (ev) {
     ev.preventDefault();
     var email = $('email').value.trim(), f = $('f-email');
