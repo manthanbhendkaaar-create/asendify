@@ -32,3 +32,4 @@ Disallow: /book/
 Disallow: /pay/
 
 Sitemap: https://www.asendify.co/sitemap.xml
+Sitemap: https://www.asendify.co/blog-sitemap.xml
