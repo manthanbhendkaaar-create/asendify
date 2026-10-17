@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://game.asendify.co/sitemap.xml
+Sitemap: https://game.asendify.co/blog-sitemap.xml

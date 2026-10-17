@@ -1,0 +1,11 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/blog", "destination": "https://playbook.asendify.co/api/blog?svc=game" },
+    { "source": "/blog/", "destination": "https://playbook.asendify.co/api/blog?svc=game" },
+    { "source": "/blog/:slug", "destination": "https://playbook.asendify.co/api/blog?svc=game&slug=:slug" },
+    { "source": "/blog/:slug/", "destination": "https://playbook.asendify.co/api/blog?svc=game&slug=:slug" },
+    { "source": "/blog-sitemap.xml", "destination": "https://playbook.asendify.co/api/blog?svc=game&sitemap=1" }
+  ]
+}
