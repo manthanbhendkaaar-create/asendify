@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Asendify Daily – a 2-minute daily challenge</title>
+<meta name="description" content="10 quick calls. 2 minutes. A free daily challenge on money, business, YouTube, people and habits. Play, see your score and share it.">
+<meta name="theme-color" content="#0e0b16">
+<link rel="canonical" href="https://game.asendify.co/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Asendify Daily">
+<meta property="og:url" content="https://game.asendify.co/">
+<meta property="og:title" content="Asendify Daily – a 2-minute daily challenge">
+<meta property="og:description" content="10 calls. 2 minutes. How sharp are you today? A new free challenge every day.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Asendify Daily – a 2-minute daily challenge">
+<meta name="twitter:description" content="10 calls. 2 minutes. How sharp are you today? A new free challenge every day.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffb7d0'/%3E%3Cstop offset='1' stop-color='%2378aaff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%230e0b16'/%3E%3Crect x='6' y='6' width='52' height='52' rx='12' fill='url(%23g)'/%3E%3Cpath d='M20 34l8 8 16-18' fill='none' stroke='%230e0b16' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0e0b16;
+  --bg2:#17121f;
+  --card:#1d1727;
+  --card2:#251d32;
+  --line:rgba(255,255,255,.09);
+  --text:#f6f2fb;
+  --muted:#b3a9c2;
+  --pink:#ffb7d0;
+  --blue:#78aaff;
+  --grad:linear-gradient(120deg,#ffb7d0 0%,#c9b0f0 50%,#78aaff 100%);
+  --good:#5fe0a0;
+  --bad:#ff7a90;
+  --radius:22px;
+  --font:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font);
+  min-height:100vh;min-height:100dvh;
+  overflow-x:hidden;
+  -webkit-tap-highlight-color:transparent;
+}
+.glow{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.glow::before,.glow::after{content:"";position:absolute;width:70vmax;height:70vmax;border-radius:50%;filter:blur(90px);opacity:.22}
+.glow::before{background:var(--pink);top:-35vmax;left:-25vmax}
+.glow::after{background:var(--blue);bottom:-40vmax;right:-30vmax}
+#app{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:14px 16px 24px;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 0 14px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:-.01em;color:var(--text);text-decoration:none;background:none;border:0;padding:0;cursor:pointer;font-family:inherit}
+.brand i{width:30px;height:30px;border-radius:9px;background:var(--grad);display:grid;place-items:center;font-style:normal;color:#0e0b16;font-size:16px}
+.brand b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pill{font-size:13px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 11px;white-space:nowrap}
+.screen{flex:1;display:flex;flex-direction:column}
+.screen[hidden]{display:none}
+h1{font-size:clamp(40px,12vw,58px);line-height:.95;letter-spacing:-.03em;margin:18px 0 12px;font-weight:800}
+h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{font-size:19px;color:var(--muted);margin:0 0 22px;line-height:1.35}
+.steps{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px}
+.steps li{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:13px 14px;font-size:16px;line-height:1.3}
+.steps b{flex:0 0 32px;height:32px;border-radius:10px;display:grid;place-items:center;background:var(--card2);font-size:16px}
+.btn{appearance:none;border:0;font-family:inherit;cursor:pointer;border-radius:18px;font-size:18px;font-weight:800;padding:17px 20px;min-height:58px;width:100%;transition:transform .12s ease,filter .2s ease,background .2s;letter-spacing:-.01em}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible,.choice:focus-visible,a:focus-visible,summary:focus-visible,.brand:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.primary{background:var(--grad);color:#120d1b;box-shadow:0 10px 30px -10px rgba(255,183,208,.55)}
+.primary:hover{filter:brightness(1.06)}
+.ghost{background:transparent;color:var(--text);border:1.5px solid var(--line)}
+.ghost:hover{background:rgba(255,255,255,.04)}
+.stack{display:grid;gap:10px}
+.mini-stats{display:flex;gap:10px;margin-top:16px}
+.mini-stats div{flex:1;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px;text-align:center}
+.mini-stats strong{display:block;font-size:22px}
+.mini-stats span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+
+/* play */
+.progress{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;margin-bottom:14px}
+.progress i{height:7px;border-radius:9px;background:rgba(255,255,255,.1);transition:background .3s}
+.progress i.now{background:rgba(255,255,255,.35)}
+.progress i.ok{background:var(--good)}
+.progress i.no{background:var(--bad)}
+.deck{position:relative;flex:0 0 auto;margin-bottom:14px}
+.card{position:relative;background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px 22px;min-height:250px;display:flex;flex-direction:column;box-shadow:0 20px 50px -25px rgba(0,0,0,.8);touch-action:pan-y;user-select:none;-webkit-user-select:none;will-change:transform;transition:border-color .25s,box-shadow .25s}
+.card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.55;pointer-events:none}
+.card.enter{animation:enter .38s cubic-bezier(.2,.9,.3,1.2) both}
+.card.exitL{animation:exitL .3s ease-in both}
+.card.exitR{animation:exitR .3s ease-in both}
+.card.right{box-shadow:0 0 0 2px var(--good),0 20px 50px -20px rgba(95,224,160,.4)}
+.card.wrong{box-shadow:0 0 0 2px var(--bad),0 20px 50px -20px rgba(255,122,144,.4);animation:shake .4s ease both}
+@keyframes enter{from{opacity:0;transform:translateY(24px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes exitL{to{opacity:0;transform:translateX(-120%) rotate(-12deg)}}
+@keyframes exitR{to{opacity:0;transform:translateX(120%) rotate(12deg)}}
+@keyframes shake{0%,100%{transform:none}20%{transform:translateX(-8px)}40%{transform:translateX(7px)}60%{transform:translateX(-5px)}80%{transform:translateX(3px)}}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}
+.chip{font-size:12.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#120d1b;background:var(--grad);border-radius:999px;padding:5px 10px;max-width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qnum{font-size:13px;color:var(--muted);font-weight:600}
+.prompt{margin:0 0 8px;font-size:15px;font-weight:600;color:var(--pink)}
+.scenario{margin:0;font-size:clamp(22px,6.3vw,27px);line-height:1.22;font-weight:800;letter-spacing:-.015em;flex:1}
+.hint{margin-top:16px;font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between}
+.stamp{position:absolute;top:16px;right:16px;font-weight:800;font-size:15px;padding:6px 11px;border-radius:10px;opacity:0;transform:scale(.6) rotate(8deg);transition:all .25s cubic-bezier(.2,.9,.3,1.4);pointer-events:none}
+.card.right .stamp{opacity:1;transform:scale(1) rotate(6deg);background:var(--good);color:#06281a}
+.card.wrong .stamp{opacity:1;transform:scale(1) rotate(6deg);background:var(--bad);color:#2e0710}
+.card.answered .qnum{visibility:hidden}
+.drag-l{box-shadow:-6px 0 0 0 rgba(255,183,208,.5)}
+.drag-r{box-shadow:6px 0 0 0 rgba(120,170,255,.5)}
+.choices[hidden]{display:none}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choice{appearance:none;font-family:inherit;cursor:pointer;border-radius:20px;min-height:88px;padding:12px 10px;font-size:18px;font-weight:800;color:var(--text);background:var(--card);border:2px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;transition:transform .12s,background .2s,border-color .2s;letter-spacing:-.01em;line-height:1.15}
+.choice .k{font-size:13px;font-weight:600;color:var(--muted)}
+.choice.l{border-color:rgba(255,183,208,.45)}
+.choice.r{border-color:rgba(120,170,255,.45)}
+.choice.l:hover{background:rgba(255,183,208,.08)}
+.choice.r:hover{background:rgba(120,170,255,.08)}
+.choice:active{transform:scale(.96)}
+.feedback{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px 16px 14px;animation:enter .3s ease both}
+.feedback[hidden]{display:none}
+.verdict{margin:0 0 6px;font-size:19px;font-weight:800}
+.verdict.ok{color:var(--good)}
+.verdict.no{color:var(--bad)}
+.explain{margin:0 0 12px;font-size:16px;line-height:1.45;color:#e2dbec}
+.deeper{display:inline-block;font-size:14.5px;font-weight:600;color:var(--blue);text-decoration:none;margin-bottom:14px;line-height:1.35}
+.deeper:hover{text-decoration:underline}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* end */
+.kicker{margin:10px 0 0;color:var(--muted);font-weight:600;font-size:15px;text-transform:uppercase;letter-spacing:.08em}
+.score{font-size:92px;line-height:1;font-weight:800;letter-spacing:-.04em;margin:6px 0 4px}
+.score span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.score small{font-size:40px;color:var(--muted)}
+.scoreline{margin:0 0 16px;font-size:19px;color:#e2dbec}
+.sharecard{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:12px}
+.grid{font-size:25px;letter-spacing:2px;line-height:1.2;margin:0 0 4px;word-break:break-all}
+.sharecard p{margin:0;color:var(--muted);font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.stats div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 6px;text-align:center}
+.stats strong{display:block;font-size:24px;font-variant-numeric:tabular-nums}
+.stats span{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.weak{background:linear-gradient(120deg,rgba(255,183,208,.12),rgba(120,170,255,.12));border:1px solid var(--line);border-radius:18px;padding:14px 16px;margin-bottom:12px;font-size:16px;line-height:1.4}
+.weak a{color:var(--blue);font-weight:600;text-decoration:none}
+.weak a:hover{text-decoration:underline}
+details{background:var(--card);border:1px solid var(--line);border-radius:18px;margin-bottom:12px}
+summary{cursor:pointer;padding:14px 16px;font-weight:600;font-size:16px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--muted)}
+details[open] summary::after{content:"–"}
+.review{list-style:none;margin:0;padding:0 16px 10px}
+.review li{border-top:1px solid var(--line);padding:12px 0;font-size:14.5px;line-height:1.4}
+.review b{display:block;font-size:15px;margin-bottom:3px}
+.review .ans{color:var(--muted)}
+.review a{color:var(--blue);text-decoration:none;font-weight:600}
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);text-align:center;line-height:1.6}
+footer a{color:var(--text);text-decoration:none;font-weight:600}
+footer a:hover{text-decoration:underline}
+footer .note{font-size:12px;opacity:.8;margin-top:6px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);background:var(--text);color:#120d1b;font-weight:700;padding:11px 18px;border-radius:999px;opacity:0;transition:all .25s;z-index:10;pointer-events:none;font-size:15px;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (min-width:700px){
+  #app{padding-top:28px}
+  .card{min-height:270px;padding:24px 24px 26px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<div id="app">
+  <header class="top">
+    <button class="brand" id="home" type="button" aria-label="Asendify Daily home"><i aria-hidden="true">✓</i><span>Asendify <b>Daily</b></span></button>
+    <span class="pill" id="pill">#1</span>
+  </header>
+
+  <main class="screen" id="s-start">
+    <h1>Asendify <span>Daily</span></h1>
+    <p class="tag">10 calls. 2 minutes. How sharp are you today?</p>
+    <ul class="steps">
+      <li><b aria-hidden="true">⚡</b><span>Ten quick scenarios on money, business, YouTube, people and habits.</span></li>
+      <li><b aria-hidden="true">👆</b><span>Tap a button, swipe the card, or use your ← → keys.</span></li>
+      <li><b aria-hidden="true">📤</b><span>Same 10 for everyone today. Share your score, come back tomorrow.</span></li>
+    </ul>
+    <div class="stack">
+      <button class="btn primary" id="startBtn" type="button">Play today's game</button>
+      <button class="btn ghost" id="practiceStart" type="button">Practice round</button>
+    </div>
+    <div class="mini-stats" id="miniStats">
+      <div><strong id="mStreak">0</strong><span>Streak</span></div>
+      <div><strong id="mBest">0</strong><span>Best</span></div>
+    </div>
+  </main>
+
+  <main class="screen" id="s-play" hidden>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+    <div class="deck">
+      <article class="card" id="card" aria-labelledby="scenario">
+        <div class="card-top"><span class="chip" id="chip">Topic</span><span class="qnum" id="qnum">1 / 10</span></div>
+        <p class="prompt" id="prompt">Red flag or green flag?</p>
+        <h2 class="scenario" id="scenario">…</h2>
+        <div class="hint" aria-hidden="true"><span id="hintL">← swipe</span><span id="hintR">swipe →</span></div>
+        <span class="stamp" id="stamp" aria-hidden="true"></span>
+      </article>
+    </div>
+    <div class="choices" id="choices">
+      <button class="choice l" id="btnL" type="button"><span id="lblL">Red flag</span><span class="k" aria-hidden="true">←</span></button>
+      <button class="choice r" id="btnR" type="button"><span id="lblR">Green flag</span><span class="k" aria-hidden="true">→</span></button>
+    </div>
+    <section class="feedback" id="feedback" hidden>
+      <p class="verdict" id="verdict"></p>
+      <p class="explain" id="explain"></p>
+      <a class="deeper" id="deeper" href="#" target="_blank" rel="noopener"></a>
+      <button class="btn primary" id="nextBtn" type="button">Next →</button>
+    </section>
+    <div class="sr" aria-live="polite" id="live"></div>
+  </main>
+
+  <main class="screen" id="s-end" hidden>
+    <p class="kicker" id="endKicker">Asendify Daily #1</p>
+    <div class="score" aria-live="polite"><span id="score">0</span><small>/10</small></div>
+    <p class="scoreline" id="scoreline"></p>
+    <div class="sharecard" id="sharecard">
+      <p class="grid" id="grid" aria-label=""></p>
+      <p>game.asendify.co</p>
+    </div>
+    <div class="stack" id="shareWrap"><button class="btn primary" id="shareBtn" type="button">Share result</button></div>
+    <div class="stats" id="stats">
+      <div><strong id="sStreak">0</strong><span>Streak</span></div>
+      <div><strong id="sBest">0</strong><span>Best</span></div>
+      <div><strong id="countdown">--:--:--</strong><span>Next game</span></div>
+    </div>
+    <div class="weak" id="weak"></div>
+    <details id="reviewBox"><summary>Review today's answers</summary><ul class="review" id="review"></ul></details>
+    <div class="stack">
+      <button class="btn ghost" id="practiceBtn" type="button">Play practice round</button>
+      <button class="btn ghost" id="dailyBtn" type="button" hidden>Today's game</button>
+    </div>
+  </main>
+
+  <footer>
+    <a href="https://www.asendify.co/?utm_source=game&amp;utm_medium=footer" target="_blank" rel="noopener">Made by Asendify</a> · <a href="https://www.asendify.co/books/?utm_source=game&amp;utm_medium=footer" target="_blank" rel="noopener">All books</a>
+    <div class="note">Just for fun and learning. Not financial, legal or medical advice.</div>
+  </footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- Topics -> products ---------- */
+var TOPICS = {
+  retention:{n:"YouTube retention",b:"Secrets to Become a Celebrity on YouTube",u:"https://playbook.asendify.co/"},
+  aiadvantage:{n:"AI for business",b:"The AI Advantage",u:"https://aiadvantage.asendify.co/"},
+  sellable:{n:"Sellable business",b:"Zero to Sellable",u:"https://sellable.asendify.co/"},
+  realestate:{n:"Property",b:"Real Estate: Everything You Need to Know",u:"https://realestate.asendify.co/"},
+  dubai:{n:"Dubai money myths",b:"Why Dubai Makes People Rich (and Who It Doesn't)",u:"https://dubai.asendify.co/"},
+  tate:{n:"Influencer advice",b:"Why You Shouldn't Listen to Andrew Tate",u:"https://tate.asendify.co/"},
+  money:{n:"Online business money",b:"How Asendify Makes Its Money",u:"https://money.asendify.co/"},
+  problemfree:{n:"Problem solving",b:"A Problem-Free Life",u:"https://problemfree.asendify.co/"},
+  thinking:{n:"Critical thinking",b:"Thinking for Yourself",u:"https://thinking.asendify.co/"},
+  environment:{n:"Habits & focus",b:"Leverage Your Environment",u:"https://environment.asendify.co/"},
+  redflags:{n:"People red flags",b:"Red Flags",u:"https://redflags.asendify.co/"},
+  defend:{n:"Staying safe",b:"How to Never Get Punched in the Face",u:"https://defend.asendify.co/"},
+  breakup:{n:"Breakups",b:"Scientific Ways to Get Over a Breakup",u:"https://breakup.asendify.co/"},
+  approach:{n:"Confidence",b:"How to Cold Approach Girls",u:"https://approach.asendify.co/"},
+  autobiography:{n:"Life story writing",b:"How to Write Your Own Autobiography",u:"https://autobiography.asendify.co/"},
+  simulation:{n:"Mindset",b:"We Are in a Simulation: How to Win in It",u:"https://simulation.asendify.co/"},
+  trading:{n:"Trading basics",b:"Chart Edge",u:"https://trading.asendify.co/"},
+  glowup:{n:"Glow-up habits",b:"Glow Up Protocol",u:"https://glowup.asendify.co/"},
+  caffeine:{n:"Caffeine",b:"Caffeine Leverage",u:"https://caffeine.asendify.co/"},
+  outbound:{n:"Cold email",b:"Asendify Outbound",u:"https://outbound.asendify.co/"},
+  web:{n:"Roofing websites",b:"Asendify Web",u:"https://web.asendify.co/"},
+  morningstarr:{n:"Agency automation",b:"MorningstarrAI",u:"https://morningstarr.asendify.co/"},
+  agency:{n:"Video editing",b:"Asendify agency",u:"https://www.asendify.co/youtube/"}
+};
+
+/* Question kinds. Option 0 = left button, option 1 = right button. */
+var KINDS = {
+  flag:{p:"Red flag or green flag?",o:["Red flag","Green flag"]},
+  move:{p:"Smart move or mistake?",o:["Mistake","Smart move"]},
+  watch:{p:"Would viewers keep watching or leave?",o:["They leave","Keep watching"]},
+  deal:{p:"Good deal or money pit?",o:["Money pit","Good deal"]},
+  reply:{p:"Gets a reply or ignored?",o:["Ignored","Gets a reply"]},
+  myth:{p:"Myth or fact?",o:["Myth","Fact"]}
+};
+
+/* ---------- Question bank: [topic, kind, correct option (0/1), scenario, explanation] ---------- */
+var Q = [
+/* retention */
+["retention","watch",0,"The video opens with 40 seconds of “Hey guys, before we start, smash that subscribe button…”","The first seconds decide whether people stay. Lead with the hook or the payoff and ask for the sub later."],
+["retention","watch",1,"First line: “I lived on the cheapest menu in town for 30 days. Day 3 almost broke me.”","A clear promise plus an open question gives viewers a reason to stick around and find out."],
+["retention","move",0,"Your thumbnail promises a big reveal, but the video never actually shows it.","Breaking the thumbnail's promise makes viewers click away and trust your next video less."],
+["retention","move",1,"Mid-video tease: “The third mistake cost me the most — we'll get there.”","An open loop gives viewers a reason to keep watching through the middle, where many videos lose people."],
+["retention","myth",0,"Longer videos always do better, so stretch every upload to 20 minutes.","Padding hurts retention. The right length is whatever your content can fill without filler."],
+["retention","myth",1,"YouTube looks at how long people watch, not just how many click.","YouTube has said it weighs signals like watch time and viewer satisfaction, not only clicks."],
+["retention","watch",0,"Twelve minutes of one static talking-head shot: no cuts, no visuals, no change of pace.","With nothing new to look at, attention drifts and viewers leave for the next video."],
+
+/* aiadvantage */
+["aiadvantage","move",1,"A shop owner has AI draft product descriptions, then edits each one before publishing.","AI makes a fast first draft. A human check catches mistakes and keeps the brand's voice."],
+["aiadvantage","move",0,"Pasting customers' private details into a random free AI tool without reading its privacy terms.","Customer data deserves care. Check where it goes and how it's used before you paste it anywhere."],
+["aiadvantage","myth",1,"AI chatbots can state wrong facts with total confidence.","These “hallucinations” are well known, so anything important needs checking before you rely on it."],
+["aiadvantage","move",1,"Using AI to sort 200 customer reviews into the top five complaints.","Summarising lots of feedback quickly is a great AI job. You still decide what to fix first."],
+["aiadvantage","myth",0,"Once a business adds AI, it no longer needs to understand its customers.","AI is a tool, not a strategy. Knowing what customers want still decides what to build and say."],
+["aiadvantage","move",0,"Letting AI fire off replies to angry customers with no human ever checking them.","Upset customers need judgement and care. One tone-deaf auto-reply can lose the relationship."],
+
+/* sellable */
+["sellable","deal",0,"Buying a business where every client relationship lives only in the founder's head.","When the founder leaves, the clients may follow. If it can't run without the owner, it's risk, not an asset."],
+["sellable","flag",1,"Buyer's view: written processes let a new hire run key tasks without the owner.","Documented systems mean the business keeps working after the sale. That's what buyers want."],
+["sellable","deal",0,"Paying full price for a business where over half the revenue comes from one client.","If that one client leaves, the business shrinks overnight. That risk should come off the price."],
+["sellable","deal",1,"A fair price for a business with clean monthly books, written processes and many loyal customers.","Clear numbers, systems that run without the owner and spread-out revenue are what make a business worth buying."],
+["sellable","flag",1,"Buyer's view: steady repeat revenue from many customers on ongoing plans.","Predictable income spread across many customers is one of the most attractive things to a buyer."],
+["sellable","myth",1,"Buyers mostly value a business on what it earns, not on how hard the owner works.","Valuations usually start from profit and cash flow. Long hours alone don't add value."],
+
+/* realestate */
+["realestate","flag",0,"The seller insists: “No need for a survey or inspection, it's perfect.”","A seller who discourages checks may be hiding something. Always get an independent inspection."],
+["realestate","flag",0,"A “landlord” wants a deposit by gift card before you've seen the flat.","Upfront payment in hard-to-trace ways before a viewing is a classic rental scam pattern."],
+["realestate","move",1,"Before buying, you check the title, ask for recent utility bills and visit at night too.","Due diligence finds problems before they're yours: legal issues, running costs, noise, safety."],
+["realestate","myth",1,"Gross rental yield is the yearly rent divided by the property price.","That's gross yield. Net yield also subtracts costs like maintenance, fees, insurance and empty months."],
+["realestate","myth",0,"Buying a home always beats renting, whatever your situation.","It depends on your finances, how long you'll stay, local prices and costs. Sometimes renting wins."],
+["realestate","deal",0,"Bargain price, but the survey finds major foundation cracks and damp everywhere.","Structural and damp repairs can cost far more than the discount. Cheap isn't the same as good value."],
+["realestate","move",0,"Picking a mortgage by monthly payment alone, ignoring total interest and fees.","A lower monthly payment over a longer term can mean paying much more overall. Compare the total cost."],
+
+/* dubai */
+["dubai","myth",1,"Dubai Land Department charges a 4% fee when a property is transferred.","Yes, the DLD transfer fee is 4%. Budget for it on top of the purchase price."],
+["dubai","move",0,"Paying off-plan instalments into a personal bank account your agent gave you.","Off-plan payments should go into the project's escrow account, not someone's personal account."],
+["dubai","myth",1,"In Dubai, residential rental contracts are registered through Ejari.","Ejari is Dubai's system for registering tenancy contracts, so registering your lease is part of renting."],
+["dubai","myth",0,"Moving to Dubai automatically makes you rich.","Location doesn't create income. Results depend on your skills, earnings and spending once there."],
+["dubai","myth",1,"Owning Dubai property worth AED 2M+ can open a path to a Golden Visa.","It's a possible route. Rules change, so always check the current requirements first."],
+["dubai","move",1,"Setting aside the 4% DLD fee on top of the price before you make an offer.","Knowing the full cost upfront avoids nasty surprises at transfer time."],
+
+/* tate */
+["tate","myth",0,"If someone is rich, their life advice will work for you too.","Their results may come from luck, timing or things you can't copy. Judge advice on evidence, not wealth."],
+["tate","flag",0,"An influencer says his course is the only way out, and anyone who disagrees is a loser.","Treating critics as enemies shuts down questions. Good ideas can survive being challenged."],
+["tate","flag",1,"A mentor admits his own mistakes and tells you to check his claims yourself.","Openness about mistakes and inviting scrutiny are signs someone cares about the truth."],
+["tate","flag",0,"“Quit your job today. My paid group will replace your salary.”","Big income promises to get you to quit and pay are a pressure tactic. Real plans come with real risks."],
+["tate","myth",0,"Flexing supercars on camera proves someone runs a profitable business.","Cars can be rented, borrowed or financed. Profit shows up in accounts, not in videos."],
+["tate","flag",0,"Advice that tells you to cut off friends and family who “hold you back”.","Pushing you away from your support network makes you easier to influence. Be wary."],
+["tate","move",1,"Treating the people you date with respect, even when nobody's watching.","Respect builds trust and lasting relationships. Real confidence doesn't need to put anyone down."],
+
+/* money */
+["money","myth",0,"Revenue and profit are the same thing.","Revenue is money coming in. Profit is what's left after paying all the costs."],
+["money","myth",1,"Many online businesses earn a big share from repeat customers, not just first-time buyers.","Keeping customers is usually cheaper than finding new ones, so repeat buyers matter a lot."],
+["money","myth",1,"Selling one more copy of a digital product costs very little compared with physical goods.","No stock or shipping per copy is why digital products can have strong margins."],
+["money","myth",0,"A viral video guarantees the business behind it is profitable.","Views aren't sales. A business still needs something people pay for and costs it can cover."],
+["money","move",1,"Tracking which channel each sale came from before spending more on ads.","If you know what actually brings customers, you can put money where it works."],
+["money","move",0,"Spending more on ads to win each customer than that customer will ever pay you.","Every new customer then loses you money. Customer value must beat the cost to get them."],
+
+/* problemfree */
+["problemfree","move",1,"Your car starts making a new noise, so you book a check now instead of waiting.","Small problems caught early are usually cheaper and easier to fix than big breakdowns."],
+["problemfree","move",0,"Replying to a heated message instantly, while you're still furious.","Anger makes for messages you regret. Wait, cool down, then reply."],
+["problemfree","move",1,"Backing up your phone's photos before anything goes wrong.","Prevention is cheap. Recovering lost data is often expensive or impossible."],
+["problemfree","myth",0,"If you ignore a small problem, it usually goes away on its own.","Most problems grow when ignored: a leak, a debt, a misunderstanding. Deal with them small."],
+["problemfree","move",1,"Writing down the problem and three possible fixes before deciding.","Putting it on paper calms things down and helps you see options you'd otherwise miss."],
+["problemfree","move",0,"Saying yes to every request, then missing deadlines you never had time for.","Overcommitting creates new problems. A polite “no” now prevents a broken promise later."],
+
+/* thinking */
+["thinking","flag",0,"“Everyone smart already agrees. Only idiots question this.”","This shames you out of asking questions instead of giving evidence. Classic manipulation."],
+["thinking","myth",0,"If lots of people believe something, it must be true.","Popularity isn't proof. Crowds have been wrong many times; look at the evidence."],
+["thinking","flag",1,"An article links to where its numbers come from so you can check them.","Showing sources invites checking. That's a sign of honest information."],
+["thinking","move",0,"Sharing a shocking headline before reading the article.","Headlines are written to grab attention and can mislead. Read and check before you share."],
+["thinking","flag",0,"“Decide now — this offer vanishes in 10 minutes!”","Pressure to decide fast is meant to stop you thinking. Good offers survive a pause."],
+["thinking","myth",0,"If two things happen together, one must cause the other.","Correlation isn't causation. A third factor, or pure coincidence, can link them."],
+["thinking","move",1,"Seeking out the best argument against your own view before you decide.","Testing your view against strong objections is how you catch your own blind spots."],
+
+/* environment */
+["environment","move",1,"Leaving your phone in another room while you study.","Out of sight, out of reach. Removing the temptation beats resisting it every few minutes."],
+["environment","move",0,"Keeping a bowl of sweets on your desk while trying to snack less.","What's in front of you gets eaten. Make the habit you want easy and the one you don't, harder."],
+["environment","move",1,"Laying out your gym clothes the night before a morning workout.","Fewer steps between you and the habit means less chance of talking yourself out of it."],
+["environment","myth",0,"Willpower alone beats a distracting environment every time.","Willpower runs low. Designing your space so the good choice is the easy one works better."],
+["environment","move",0,"Working from bed with the TV on to get comfortable.","Mixing rest and work spaces makes it harder to focus and harder to switch off later."],
+["environment","move",1,"Keeping a water bottle where you'll see it all day.","Visible cues trigger habits. See it, sip it."],
+
+/* redflags */
+["redflags","flag",0,"They demand your phone passwords because “if you've got nothing to hide…”","Trust isn't built through surveillance. Demanding access is about control."],
+["redflags","flag",1,"They accept a “no” the first time, without sulking or pushing.","Respecting boundaries is one of the clearest signs of a healthy person to be around."],
+["redflags","flag",0,"They keep score of every favour and bring it up in every argument.","Using kindness as leverage turns a relationship into a debt. That's not care."],
+["redflags","flag",1,"A friend is genuinely happy for you when you share good news.","People who celebrate your wins are the ones worth keeping close."],
+["redflags","flag",0,"They get angry whenever you see your friends without them.","Isolating someone from friends is a controlling pattern, not a sign of love."],
+["redflags","flag",1,"After a mistake, they apologise and actually change what they do.","Changed behaviour is what makes an apology real."],
+["redflags","flag",0,"They're charming to you but rude to the waiter.","How someone treats people who can't do anything for them shows who they really are."],
+
+/* defend */
+["defend","move",1,"A stranger starts shouting at you. You stay calm, keep your distance and walk away.","Distance and leaving are the safest options. No argument is worth getting hurt over."],
+["defend","move",0,"Someone bumps into you, so you square up to “win” the moment.","Escalating over a bump risks injury, or worse, for nothing. Let it go."],
+["defend","move",1,"Choosing a well-lit, busy route home late at night.","Avoiding risky spots is the easiest safety move there is."],
+["defend","move",0,"Mocking a drunk person who is already angry.","Alcohol and anger make people unpredictable. Don't add fuel; move away."],
+["defend","myth",0,"Walking away from a fight means you lost.","Getting home unhurt is the win. Walking away takes more control than swinging."],
+["defend","move",1,"Using a calm voice and open hands to show you're not a threat.","Calm body language and tone help lower the temperature of a tense situation."],
+
+/* breakup */
+["breakup","move",0,"Checking your ex's social media every hour “just to see”.","Constant checking reopens the wound. Space helps you heal faster."],
+["breakup","move",1,"Muting or unfollowing your ex for a while to give yourself space.","Fewer reminders means fewer setbacks. It's self-care, not pettiness."],
+["breakup","myth",1,"Regular exercise and good sleep can help lift your mood after a breakup.","Both are well known to support mood and stress levels when life gets hard."],
+["breakup","move",0,"Texting your ex at 2am after a few drinks.","Late-night, emotional texts rarely go the way you hope. Put the phone down until morning."],
+["breakup","move",1,"Leaning on friends and keeping a daily routine in the weeks after a breakup.","Support and structure help you feel steady while emotions settle."],
+["breakup","myth",0,"The best way to get over it is to never talk about your feelings.","Bottling it up tends to drag things out. Talking to someone you trust helps."],
+
+/* approach */
+["approach","move",1,"Opening with a genuine, friendly comment about something you both notice.","A natural, low-pressure opener is easy to respond to and feels respectful."],
+["approach","move",1,"She has headphones in and looks busy, so you let her be.","Reading the situation is part of confidence. Not every moment is a good moment."],
+["approach","move",0,"She says she's not interested, so you keep trying to change her mind.","No means no. Respect it, wish her a good day and move on."],
+["approach","move",0,"Using a scripted line designed to make someone feel insecure.","Manipulation tactics are disrespectful and backfire. Be honest and kind instead."],
+["approach","move",1,"After a polite “no”, you smile, say “have a nice day” and leave.","Handling rejection gracefully is real confidence, and it leaves everyone feeling fine."],
+["approach","move",0,"She's giving short answers and turning away, but you keep talking.","Body language says a lot. When someone's disengaging, end things politely."],
+
+/* autobiography */
+["autobiography","move",1,"Opening chapter one with a vivid moment instead of “I was born on…”","Starting in a scene pulls readers in. Background can come later."],
+["autobiography","move",0,"Writing only the highlights and cutting every struggle.","Readers connect with challenges and how you changed. The hard parts give the story meaning."],
+["autobiography","move",1,"Jotting memories in a notebook for weeks before shaping chapters.","Collecting raw material first makes structuring the story much easier."],
+["autobiography","move",0,"Publishing private details about real people without thinking about their privacy.","Other people's lives are part of your story, but consider their privacy before you publish."],
+["autobiography","myth",0,"You have to be famous for your life story to be worth writing.","Ordinary lives make great stories. Honesty and detail matter more than fame."],
+["autobiography","move",1,"Using real dialogue and small sensory details to bring scenes to life.","Specific details make readers feel like they were there."],
+
+/* simulation */
+["simulation","move",1,"Treating a failure like a lost level: note what went wrong, then retry.","Failure is feedback. Players who adjust and retry are the ones who level up."],
+["simulation","myth",0,"You need everything figured out before you start.","Most people learn by doing. Start small and adjust as you go."],
+["simulation","move",0,"Grinding the same easy task forever because it feels safe.","Comfort zones don't level you up. Growth comes from slightly harder challenges."],
+["simulation","move",1,"Picking one main quest for the year instead of ten at once.","Focus beats scatter. One clear goal gets far more progress."],
+["simulation","myth",1,"Small daily actions can add up to big results over time.","Consistency compounds. Tiny wins every day stack up."],
+["simulation","move",0,"Copying someone else's goals without asking if you want them.","Chasing someone else's win condition can leave you empty even when you hit it."],
+
+/* trading */
+["trading","move",0,"Putting your whole account on one trade because the chart “looks certain”.","Nothing on a chart is certain. Risking everything on one trade can wipe you out."],
+["trading","move",1,"Deciding your stop-loss before you enter the trade.","Planning your exit in advance limits losses and removes panic decisions."],
+["trading","myth",0,"A chart pattern guarantees what the price will do next.","Patterns suggest probabilities, not certainties. Price can do anything."],
+["trading","move",0,"Doubling your position after every loss to win it back.","Chasing losses grows risk fast and can blow up an account."],
+["trading","move",1,"Keeping a journal of every entry, exit and the reason behind it.","A journal shows what actually works for you and what's just emotion."],
+["trading","myth",1,"Past performance doesn't guarantee future results.","It's the standard warning for a reason: markets change."],
+["trading","move",1,"Practising on a demo account before using real money.","Learning the platform and your strategy without risking cash is just sensible."],
+
+/* glowup */
+["glowup","move",1,"Wearing sunscreen every day, even when it's cloudy.","UV rays get through clouds. Daily sunscreen is one of the most recommended skin habits."],
+["glowup","myth",0,"Sleep has nothing to do with how your skin looks.","Poor sleep often shows up as tired eyes and dull skin. Rest matters."],
+["glowup","move",1,"Getting a haircut that suits your face shape and keeping it maintained.","A fitting, well-kept haircut is one of the quickest ways to look sharper."],
+["glowup","move",0,"Starting five new skincare products at once.","If something irritates your skin or works brilliantly, you won't know which one it was."],
+["glowup","myth",1,"Strength training can help improve your posture.","Stronger back and core muscles help support better posture."],
+["glowup","move",1,"Drinking more water and cutting back on sugary drinks.","A simple swap that helps your energy and overall health."],
+["glowup","myth",0,"A real glow-up needs expensive products.","Sleep, sunscreen, movement, grooming and consistency do most of the work."],
+
+/* caffeine */
+["caffeine","myth",1,"Caffeine can affect your sleep even hours after your last cup.","Caffeine stays in your system for hours, so an afternoon coffee can still hit your night."],
+["caffeine","move",0,"Having a large coffee right before bed.","Caffeine is a stimulant. Late cups make it harder to fall and stay asleep."],
+["caffeine","myth",1,"Up to 400mg of caffeine a day is the commonly cited limit for most healthy adults.","That's the figure health agencies like the US FDA publish. Some people need less, so check with a doctor."],
+["caffeine","move",1,"Setting a caffeine cut-off in the early afternoon to protect your sleep.","A cut-off time keeps the focus boost without wrecking your night."],
+["caffeine","myth",0,"Caffeine can replace sleep.","It can mask tiredness for a while, but it doesn't give your body what sleep does."],
+["caffeine","move",0,"Stacking energy drinks to pull an all-nighter before an exam.","Lots of caffeine plus no sleep usually means worse focus and memory, not better."],
+
+/* outbound */
+["outbound","reply",1,"Subject: “Quick question about your checkout page” — short, personal, one clear ask.","Short, relevant and easy to answer. That's what gets replies."],
+["outbound","reply",0,"A 600-word cold email about your company's history with no question at the end.","Long emails about you, with no clear ask, give the reader no reason to respond."],
+["outbound","reply",0,"“Dear Sir/Madam, we are a leading provider of synergistic solutions…”","Generic openers and buzzwords scream mass email. Personal and specific wins."],
+["outbound","reply",1,"It mentions something specific the prospect posted last week and ties it to one idea.","Showing you did your homework earns attention fast."],
+["outbound","reply",0,"First email: five links, three attachments and a request for a one-hour call.","Too much, too soon. Links and attachments can also hurt deliverability. Start with a small ask."],
+["outbound","move",1,"Sending a polite follow-up a few days later when there's no reply.","People are busy. A friendly nudge often gets the reply the first email didn't."],
+["outbound","move",0,"Blasting thousands of emails on day one from a brand-new domain.","New domains need gradual warm-up. Sudden volume is a fast way into spam folders."],
+
+/* web */
+["web","move",1,"A roofer's site with a tap-to-call number at the top of the mobile page.","Homeowners with a leak want to call now. Make it one tap."],
+["web","move",0,"Hiding the quote form four clicks deep on the website.","Every extra step loses leads. Put the form or the phone number where people land."],
+["web","move",1,"Showing real before-and-after photos of the company's own roofs.","Real work builds trust far better than stock photos."],
+["web","move",0,"A homepage that takes ages to load on a phone.","Slow mobile pages make visitors give up before they ever see your offer."],
+["web","move",1,"Listing the towns you actually serve so local searchers can find you.","Clear service areas help both customers and search engines match you to local searches."],
+["web","flag",0,"A roofing site with no reviews, no address and only stock photos.","Homeowners look for proof a company is real and trusted. This gives them none."],
+
+/* morningstarr */
+["morningstarr","move",0,"Sticking with hours of daily copy-paste from forms to spreadsheets when a tool could do it.","Repetitive copy-paste is exactly the kind of busywork automation handles well."],
+["morningstarr","move",1,"Automating the client onboarding checklist so no step gets forgotten.","Automated checklists keep onboarding consistent, even on busy weeks."],
+["morningstarr","move",0,"Automating a messy process before you've written down how it should work.","Automating chaos just makes faster chaos. Map the process first."],
+["morningstarr","move",1,"AI drafts weekly report summaries; a manager reviews them before they go out.","Automation does the heavy lifting; a human keeps quality and context right."],
+["morningstarr","myth",0,"Automation is only worth it for huge companies.","Small teams often gain the most: every hour saved matters more when there are few people."],
+["morningstarr","move",1,"Testing a new automation on a few real cases before switching it on for everyone.","A small test catches mistakes before they hit every client."],
+
+/* agency */
+["agency","watch",1,"Quick cuts, clear captions and a visual for every key point.","Regular visual changes and captions keep the eye busy and the message clear."],
+["agency","watch",0,"The audio is quiet and muffled for the whole first minute.","Bad audio is one of the fastest ways to lose viewers. People forgive the picture before the sound."],
+["agency","watch",0,"Background music is louder than the person speaking.","If viewers can't hear the words, they won't stay to figure them out."],
+["agency","watch",1,"Zooms and B-roll show exactly what the speaker is describing.","Showing while telling makes ideas easier to follow and more engaging."],
+["agency","watch",0,"The video starts with a 15-second animated logo intro.","Long intros delay the value. Viewers came for the content, not the logo."],
+["agency","watch",1,"A quick flash of the best moment, then straight into the story.","Previewing the payoff hooks viewers, then getting moving keeps them."]
+];
+
+/* ---------- Helpers ---------- */
+var LAUNCH = Date.UTC(2026,9,17);
+var KEY = "asendifyDaily.v1";
+var DAILY_N = 10;
+function $(id){return document.getElementById(id)}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]})}
+function link(key){return TOPICS[key].u+"?utm_source=game&utm_medium=daily&utm_campaign="+key}
+function todayNum(){
+  var d=new Date();
+  return Math.round((Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())-LAUNCH)/86400000)+1;
+}
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function shuffle(arr,rnd){for(var i=arr.length-1;i>0;i--){var j=Math.floor(rnd()*(i+1));var t=arr[i];arr[i]=arr[j];arr[j]=t}return arr}
+function range(n){var a=[];for(var i=0;i<n;i++)a.push(i);return a}
+
+/* Order a set so no topic appears twice in a row (when possible). */
+function noRepeatOrder(idx,rnd){
+  var pool=idx.slice(),out=[];
+  while(pool.length){
+    var prev=out.length?Q[out[out.length-1]][0]:null;
+    var counts={};pool.forEach(function(i){counts[Q[i][0]]=(counts[Q[i][0]]||0)+1});
+    var best=-1,bestC=-1;
+    for(var k=0;k<pool.length;k++){var t=Q[pool[k]][0];if(t!==prev&&counts[t]>bestC){bestC=counts[t];best=k}}
+    if(best<0)best=0;
+    out.push(pool.splice(best,1)[0]);
+  }
+  return out;
+}
+
+/* Pick n questions from a pool, preferring unique topics. */
+function pickFrom(pool,n,rnd){
+  var picked=[],used={},rest=[];
+  for(var i=0;i<pool.length&&picked.length<n;i++){
+    var t=Q[pool[i]][0];
+    if(!used[t]){used[t]=1;picked.push(pool[i])}else rest.push(pool[i]);
+  }
+  for(var j=0;picked.length<n&&j<rest.length;j++)picked.push(rest[j]);
+  return picked;
+}
+
+/* Daily set: the bank is cycled so questions don't repeat until most have been used. */
+function dailySet(day){
+  var per=Math.floor(Q.length/DAILY_N);
+  var cycle=Math.floor((day-1)/per);
+  var slot=(day-1)-cycle*per;
+  var rnd=mulberry32((cycle+1000)*2654435761>>>0);
+  var pool=shuffle(range(Q.length),rnd);
+  var set=[];
+  for(var s=0;s<=slot;s++){
+    set=pickFrom(pool,DAILY_N,rnd);
+    var taken={};set.forEach(function(i){taken[i]=1});
+    pool=pool.filter(function(i){return !taken[i]});
+    if(pool.length<DAILY_N&&s<slot)pool=shuffle(range(Q.length),rnd);
+  }
+  return noRepeatOrder(set,mulberry32(day*7919+17));
+}
+function practiceSet(){
+  var pool=shuffle(range(Q.length),Math.random);
+  return noRepeatOrder(pickFrom(pool,DAILY_N,Math.random),Math.random);
+}
+
+/* ---------- Storage (always optional) ---------- */
+function load(){try{var s=window.localStorage.getItem(KEY);return s?JSON.parse(s)||{}:{}}catch(e){return {}}}
+function save(st){try{window.localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+var store=load();
+if(typeof store!=="object"||store===null)store={};
+
+/* ---------- State ---------- */
+var DAY=todayNum();
+var mode="daily";   // or "practice"
+var set=[];         // question indices
+var answers=[];     // chosen option per question
+var cur=0;
+var answered=false;
+var busy=false;
+
+function liveStreak(){
+  var last=store.last|0,st=store.streak|0;
+  return (last===DAY||last===DAY-1)?st:0;
+}
+function todayState(){
+  var t=store.today;
+  if(t&&t.day===DAY&&Array.isArray(t.answers))return t;
+  return null;
+}
+
+/* ---------- Screens ---------- */
+function show(id){
+  ["s-start","s-play","s-end"].forEach(function(s){$(s).hidden=(s!==id)});
+  window.scrollTo(0,0);
+}
+function renderStart(){
+  $("pill").textContent="#"+DAY;
+  var t=todayState();
+  var btn=$("startBtn");
+  if(t&&t.answers.length>=DAILY_N)btn.textContent="See today's result";
+  else if(t&&t.answers.length>0)btn.textContent="Continue today's game ("+t.answers.length+"/10)";
+  else btn.textContent="Play today's game #"+DAY;
+  $("mStreak").textContent=liveStreak();
+  $("mBest").textContent=store.best|0;
+  show("s-start");
+}
+
+function startDaily(){
+  mode="daily";
+  set=dailySet(DAY);
+  var t=todayState();
+  answers=t?t.answers.slice(0,DAILY_N):[];
+  if(answers.length>=DAILY_N){renderEnd();return}
+  cur=answers.length;
+  beginPlay();
+}
+function startPractice(){
+  mode="practice";
+  set=practiceSet();
+  answers=[];cur=0;
+  beginPlay();
+}
+function beginPlay(){
+  $("pill").textContent=mode==="daily"?"#"+DAY:"Practice";
+  buildProgress();
+  show("s-play");
+  renderQ(true);
+}
+function buildProgress(){
+  var p=$("progress");p.innerHTML="";
+  for(var i=0;i<DAILY_N;i++){
+    var el=document.createElement("i");
+    if(i<answers.length)el.className=answers[i]===Q[set[i]][2]?"ok":"no";
+    else if(i===cur)el.className="now";
+    p.appendChild(el);
+  }
+}
+
+function renderQ(first){
+  var q=Q[set[cur]],k=KINDS[q[1]],tp=TOPICS[q[0]];
+  var card=$("card");
+  card.className="card";
+  void card.offsetWidth;
+  card.classList.add("enter");
+  card.style.transform="";
+  $("chip").textContent=tp.n;
+  $("qnum").textContent=(cur+1)+" / "+DAILY_N;
+  $("prompt").textContent=k.p;
+  $("scenario").textContent=q[3];
+  $("lblL").textContent=k.o[0];
+  $("lblR").textContent=k.o[1];
+  $("hintL").textContent="← "+k.o[0];
+  $("hintR").textContent=k.o[1]+" →";
+  $("btnL").setAttribute("aria-label",k.o[0]+" (left arrow)");
+  $("btnR").setAttribute("aria-label",k.o[1]+" (right arrow)");
+  $("choices").hidden=false;
+  $("feedback").hidden=true;
+  $("stamp").textContent="";
+  answered=false;busy=false;
+  $("live").textContent="Question "+(cur+1)+" of 10. "+k.p+" "+q[3];
+  if(!first)$("btnL").focus({preventScroll:true});
+}
+
+function answer(choice){
+  if(answered||busy)return;
+  answered=true;
+  var q=Q[set[cur]],k=KINDS[q[1]],tp=TOPICS[q[0]];
+  var ok=choice===q[2];
+  answers[cur]=choice;
+  if(mode==="daily"){
+    store.today={day:DAY,answers:answers.slice()};
+    save(store);
+  }
+  var card=$("card");
+  card.classList.remove("enter","drag-l","drag-r");
+  card.style.transform="";
+  card.classList.add("answered",ok?"right":"wrong");
+  $("stamp").textContent=ok?"Correct":"Nope";
+  var bar=$("progress").children[cur];
+  if(bar)bar.className=ok?"ok":"no";
+  var v=$("verdict");
+  v.className="verdict "+(ok?"ok":"no");
+  v.textContent=(ok?"✓ Correct — ":"✗ Not quite — ")+k.o[q[2]].toLowerCase()+".";
+  $("explain").textContent=q[4];
+  var a=$("deeper");
+  a.href=link(q[0]);
+  a.textContent="Go deeper: "+tp.b+" →";
+  $("nextBtn").textContent=cur===DAILY_N-1?"See my score →":"Next →";
+  $("choices").hidden=true;
+  $("feedback").hidden=false;
+  $("live").textContent=v.textContent+" "+q[4];
+  $("nextBtn").focus({preventScroll:true});
+  card.dataset.dir=choice===0?"L":"R";
+}
+
+function next(){
+  if(!answered||busy)return;
+  busy=true;
+  var card=$("card");
+  var dir=card.dataset.dir==="L"?"exitL":"exitR";
+  card.classList.remove("right","wrong","enter");
+  card.classList.add(dir);
+  setTimeout(function(){
+    cur++;
+    if(cur>=DAILY_N){finish();return}
+    var bars=$("progress").children;
+    if(bars[cur])bars[cur].className="now";
+    renderQ(false);
+  },reduceMotion()?0:260);
+}
+function reduceMotion(){try{return window.matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){return false}}
+
+function finish(){
+  busy=false;
+  if(mode==="daily"){
+    var last=store.last|0;
+    if(last!==DAY){
+      store.streak=(last===DAY-1)?(store.streak|0)+1:1;
+      store.last=DAY;
+      store.best=Math.max(store.best|0,store.streak);
+    }
+    store.today={day:DAY,answers:answers.slice()};
+    save(store);
+  }
+  renderEnd();
+}
+
+function scoreOf(){var s=0;for(var i=0;i<set.length;i++)if(answers[i]===Q[set[i]][2])s++;return s}
+function gridOf(){return set.map(function(qi,i){return answers[i]===Q[qi][2]?"🟩":"🟥"}).join("")}
+function shareText(){
+  return "Asendify Daily #"+DAY+"  "+scoreOf()+"/10\n"+gridOf()+"\ngame.asendify.co";
+}
+function scoreLine(s){
+  if(s===10)return "Flawless. Frame this one.";
+  if(s>=8)return "Sharp as they come.";
+  if(s>=6)return "Solid instincts. A couple slipped by.";
+  if(s>=4)return "Decent. Tomorrow's yours.";
+  return "Rough day. Comeback starts tomorrow.";
+}
+
+function renderEnd(){
+  var s=scoreOf(),daily=mode==="daily";
+  $("pill").textContent=daily?"#"+DAY:"Practice";
+  $("endKicker").textContent=daily?"Asendify Daily #"+DAY:"Practice round";
+  $("score").textContent=s;
+  $("scoreline").textContent=scoreLine(s);
+  var g=gridOf();
+  $("grid").textContent=g;
+  $("grid").setAttribute("aria-label",s+" right, "+(10-s)+" wrong");
+  $("sharecard").hidden=!daily;
+  $("shareWrap").hidden=!daily;
+  $("sStreak").textContent=liveStreak();
+  $("sBest").textContent=store.best|0;
+
+  // weakest topic: first missed question's topic; if none, suggest today's first topic
+  var miss=-1;for(var i=0;i<set.length;i++){if(answers[i]!==Q[set[i]][2]){miss=i;break}}
+  var w=$("weak");
+  if(miss>=0){
+    var key=Q[set[miss]][0];
+    w.innerHTML="Your weakest topic "+(daily?"today":"this round")+": <strong>"+esc(TOPICS[key].n)+"</strong><br><a href=\""+esc(link(key))+"\" target=\"_blank\" rel=\"noopener\">"+esc(TOPICS[key].b)+" →</a>";
+  }else{
+    var k2=Q[set[0]][0];
+    w.innerHTML="No weak spots "+(daily?"today":"this round")+". Keep the streak going.<br><a href=\""+esc(link(k2))+"\" target=\"_blank\" rel=\"noopener\">Explore: "+esc(TOPICS[k2].b)+" →</a>";
+  }
+
+  // review list
+  var html="";
+  set.forEach(function(qi,i){
+    var q=Q[qi],k=KINDS[q[1]],ok=answers[i]===q[2];
+    html+="<li><b>"+(ok?"🟩 ":"🟥 ")+esc(q[3])+"</b><span class=\"ans\">Answer: "+esc(k.o[q[2]])+". "+esc(q[4])+"</span> <a href=\""+esc(link(q[0]))+"\" target=\"_blank\" rel=\"noopener\">"+esc(TOPICS[q[0]].b)+" →</a></li>";
+  });
+  $("review").innerHTML=html;
+  $("reviewBox").open=false;
+  $("reviewBox").querySelector("summary").textContent=daily?"Review today's answers":"Review this round";
+
+  $("practiceBtn").textContent=daily?"Play practice round":"Another practice round";
+  var t=todayState();
+  var db=$("dailyBtn");
+  db.hidden=daily;
+  db.textContent=(t&&t.answers.length>=DAILY_N)?"Back to today's result":"Play today's game #"+DAY;
+  show("s-end");
+  tick();
+}
+
+/* ---------- Share ---------- */
+function toast(msg){var t=$("toast");t.textContent=msg;t.classList.add("show");clearTimeout(toast._t);toast._t=setTimeout(function(){t.classList.remove("show")},2200)}
+function copyText(txt){
+  if(navigator.clipboard&&window.isSecureContext){
+    return navigator.clipboard.writeText(txt).then(function(){return true},function(){return legacyCopy(txt)});
+  }
+  return Promise.resolve(legacyCopy(txt));
+}
+function legacyCopy(txt){
+  try{var ta=document.createElement("textarea");ta.value=txt;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();var ok=document.execCommand("copy");document.body.removeChild(ta);return ok}catch(e){return false}
+}
+function share(){
+  var txt=shareText();
+  if(navigator.share){
+    navigator.share({text:txt}).catch(function(err){
+      if(err&&err.name==="AbortError")return;
+      copyText(txt).then(function(ok){toast(ok?"Result copied. Paste it anywhere!":"Couldn't copy. Try again.")});
+    });
+    return;
+  }
+  copyText(txt).then(function(ok){toast(ok?"Result copied. Paste it anywhere!":"Couldn't copy. Try again.")});
+}
+
+/* ---------- Countdown ---------- */
+var timer=null;
+function tick(){
+  clearTimeout(timer);
+  if($("s-end").hidden)return;
+  var now=new Date(),mid=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1);
+  var ms=mid-now;
+  if(ms<=0||todayNum()!==DAY){$("countdown").textContent="Ready!";DAY=todayNum();setTimeout(function(){renderStart()},800);return}
+  var h=Math.floor(ms/3600000),m=Math.floor(ms%3600000/60000),s=Math.floor(ms%60000/1000);
+  $("countdown").textContent=(h<10?"0":"")+h+":"+(m<10?"0":"")+m+":"+(s<10?"0":"")+s;
+  timer=setTimeout(tick,1000-(ms%1000)+5);
+}
+
+/* ---------- Swipe ---------- */
+(function(){
+  var card=$("card"),sx=0,sy=0,dx=0,active=false,pid=null;
+  card.addEventListener("pointerdown",function(e){
+    if(answered||busy||e.pointerType==="mouse")return;
+    active=true;pid=e.pointerId;sx=e.clientX;sy=e.clientY;dx=0;
+    card.classList.remove("enter");
+  });
+  card.addEventListener("pointermove",function(e){
+    if(!active||e.pointerId!==pid)return;
+    dx=e.clientX-sx;var dy=e.clientY-sy;
+    if(Math.abs(dy)>Math.abs(dx)*1.3&&Math.abs(dx)<20)return;
+    card.style.transition="none";
+    card.style.transform="translateX("+dx+"px) rotate("+(dx/18)+"deg)";
+    card.classList.toggle("drag-l",dx<-30);
+    card.classList.toggle("drag-r",dx>30);
+  });
+  function end(){
+    if(!active)return;active=false;
+    card.style.transition="";
+    card.classList.remove("drag-l","drag-r");
+    if(Math.abs(dx)>80){answer(dx<0?0:1)}
+    else card.style.transform="";
+    dx=0;
+  }
+  card.addEventListener("pointerup",end);
+  card.addEventListener("pointercancel",end);
+  card.addEventListener("pointerleave",end);
+})();
+
+/* ---------- Events ---------- */
+$("startBtn").addEventListener("click",startDaily);
+$("practiceStart").addEventListener("click",startPractice);
+$("practiceBtn").addEventListener("click",startPractice);
+$("dailyBtn").addEventListener("click",startDaily);
+$("home").addEventListener("click",renderStart);
+$("btnL").addEventListener("click",function(){answer(0)});
+$("btnR").addEventListener("click",function(){answer(1)});
+$("nextBtn").addEventListener("click",next);
+$("shareBtn").addEventListener("click",share);
+document.addEventListener("keydown",function(e){
+  if($("s-play").hidden||e.altKey||e.ctrlKey||e.metaKey||e.repeat)return;
+  if(!answered){
+    if(e.key==="ArrowLeft"){e.preventDefault();answer(0)}
+    else if(e.key==="ArrowRight"){e.preventDefault();answer(1)}
+  }else if(e.key==="ArrowRight"||(e.key==="Enter"&&document.activeElement===document.body)){
+    e.preventDefault();next();
+  }
+});
+
+/* expose for testing */
+window.__asendifyDaily={dailySet:dailySet,Q:Q,TOPICS:TOPICS,shareText:shareText,day:function(){return DAY}};
+
+renderStart();
+})();
+</script>
+</body>
+</html>
