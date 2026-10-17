@@ -46,6 +46,11 @@
     }
     if (r.what_changes && r.what_changes.length) h.push(card('What would change the picture', '<ul>' + r.what_changes.map(function (w) { return '<li>' + esc(w) + '</li>'; }).join('') + '</ul>'));
     if (r.quality_note) h.push('<p class="fine qn">Note on this read: ' + esc(r.quality_note) + '</p>');
+    // 2026-10-17 (Manthan): every read recommends the trading book and the business book.
+    h.push(card('Keep learning', '<ul class="books">' +
+      '<li><a href="https://trading.asendify.co/?utm_source=charts&amp;utm_medium=read&amp;utm_campaign=trading" target="_blank" rel="noopener"><b>Chart Edge</b></a> — the playbook for technical analysis, trading strategies and risk management.</li>' +
+      '<li><a href="https://sellable.asendify.co/?utm_source=charts&amp;utm_medium=read&amp;utm_campaign=sellable" target="_blank" rel="noopener"><b>Zero to Sellable</b></a> — how to build a business from first idea to systems that run without you.</li>' +
+      '</ul>', 'learn'));
     h.push('<p class="notice bottom" role="note">' + esc(NOTICE) + '</p>');
     h.push('</article>');
     return h.join('');
