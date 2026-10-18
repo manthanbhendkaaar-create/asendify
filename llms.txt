@@ -78,6 +78,7 @@
 - [Privacy Policy](https://www.asendify.co/privacy/)
 
 ## Tools
+- [YouTube Channel Roast](https://www.asendify.co/roast/): free AI tool. Paste a YouTube channel link and get a score out of 100 for titles, thumbnails and upload consistency, blunt roasts and 3 fixes. No sign-up, 3 roasts a day.
 - [Asendify Daily](https://game.asendify.co/): a free 2-minute daily challenge game (10 quick calls on money, business, YouTube, people and habits), with a daily answers page.
 - [Automation Blueprint](https://automate.asendify.co/): describe any business automation in plain words and get a diagram, the tools to use, build steps and cost estimates. £150 + 45% service fee = £217.50 per blueprint.
 - [Chart Reader](https://charts.asendify.co/): upload a trading chart screenshot and get an educational plain-English read (trend, levels, scenarios, position-size maths). Not financial advice. 100 reads for £300 + 45% service fee = £435.
