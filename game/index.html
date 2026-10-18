@@ -295,6 +295,49 @@ footer .note{font-size:12px;opacity:.8;margin-top:6px}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
+/* 2026-10-18: play tracking (visits, plays, finishes, shares, clicks to products) -> playbook.asendify.co/api/ref -> game_events.
+   No personal data: a random player id in this browser only. Our own browsers (?internal=1 cookie) and bots are not counted. */
+(function(){
+  var API="https://playbook.asendify.co/api/ref", qs=new URLSearchParams(location.search), off=false, pid="", src="direct";
+  try{
+    if(qs.get("internal")==="1")document.cookie="asd_internal=1; domain=.asendify.co; path=/; max-age=63072000; SameSite=Lax; Secure";
+    off=/(^|;\s*)asd_internal=1/.test(document.cookie)||navigator.webdriver||/bot\b|bot\/|crawl|spider|headless|lighthouse|preview/i.test(navigator.userAgent);
+  }catch(e){}
+  try{pid=localStorage.getItem("ad_pid")||"";if(!pid){pid=Math.random().toString(36).slice(2,12)+Date.now().toString(36);localStorage.setItem("ad_pid",pid)}}catch(e){pid="x"+Math.random().toString(36).slice(2,10)}
+  try{
+    var c=function(v){return String(v||"").toLowerCase().replace(/[^a-z0-9._-]/g,"").slice(0,60)};
+    var f=qs.get("utm_source")?[c(qs.get("utm_source")),c(qs.get("utm_medium")),c(qs.get("utm_campaign"))].join("/"):"";
+    if(!f&&qs.get("c"))f="challenge/friend";
+    if(!f&&document.referrer){var h=new URL(document.referrer).hostname.replace(/^www\./,"");if(h&&h!==location.hostname)f="ref/"+c(h)}
+    if(f){localStorage.setItem("ad_src",f);localStorage.setItem("ad_src_at",String(Date.now()))}
+    var s2=localStorage.getItem("ad_src"),at=+(localStorage.getItem("ad_src_at")||0);
+    if(s2&&Date.now()-at<30*864e5)src=s2;
+  }catch(e){}
+  function send(ev,x){
+    if(off)return;
+    var b={g:ev,src:src,p:pid};x=x||{};for(var k in x)b[k]=x[k];
+    try{var body=JSON.stringify(b);if(navigator.sendBeacon&&navigator.sendBeacon(API,new Blob([body],{type:"text/plain"})))return;
+      fetch(API,{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"text/plain"},body:body}).catch(function(){})}catch(e){}
+  }
+  window.__adTrack=send;
+  var seen=false;try{seen=sessionStorage.getItem("ad_v")==="1"}catch(e){}
+  if(!seen){var done=false,acts=["scroll","pointerdown","touchstart","keydown","mousemove","wheel"];
+    var go=function(){if(done)return;done=true;acts.forEach(function(e){removeEventListener(e,go,true)});try{sessionStorage.setItem("ad_v","1")}catch(e){}send("visit")};
+    acts.forEach(function(e){addEventListener(e,go,true)});setTimeout(go,12000)}
+  document.addEventListener("click",function(e){
+    var t=e.target&&e.target.closest?e.target.closest("button,a"):null;if(!t)return;
+    var id=t.id||"";
+    if(id==="startBtn"||id==="dailyBtn")send("play",{m:"daily"});
+    else if(id==="practiceStart"||id==="practiceBtn")send("play",{m:"practice"});
+    else if(id==="shareBtn")send("share");
+    else if(id==="challengeBtn")send("challenge");
+    else if(t.tagName==="A"&&t.href&&!/^https:\/\/game\.asendify\.co/.test(t.href)&&/asendify\.co/.test(t.href)){
+      try{var u=new URL(t.href);send("out",{t:(u.hostname.replace(/\.asendify\.co$/,"")+u.pathname).slice(0,120)})}catch(err){}
+    }
+  },true);
+})();
+</script>
+<script>
 (function(){
 "use strict";
 
@@ -776,6 +819,7 @@ function reduceMotion(){try{return window.matchMedia("(prefers-reduced-motion: r
 
 function finish(){
   busy=false;
+  try{window.__adTrack&&window.__adTrack("finish",{m:mode,d:DAY,s:scoreOf()})}catch(e){}
   if(mode==="daily"){
     var last=store.last|0;
     if(last!==DAY){
