@@ -1,0 +1,23 @@
+# Asendify Notes
+
+> Asendify Notes (https://notes.asendify.co) is a private, Notion-style workspace for notes, docs and projects, made by Asendify. It runs in any modern web browser.
+
+## Key facts
+- Pages inside pages (unlimited nesting), a block editor with slash commands (headings, bullet/numbered lists, to-dos, toggles, tables, quotes, code, images), drag to reorder blocks.
+- Databases with text, number, select, checkbox, date and link properties, viewable as a table or a board (drag cards between columns). Each row is also a full page.
+- Full-text search (Ctrl/Cmd K), trash with 30-day restore, read-only share links (can be turned off at any time), export a page to Markdown or the whole workspace to JSON at any time.
+- Sign-in with one-time email links (no passwords). Light and dark mode. Saves automatically; editing in two tabs never silently overwrites.
+- Price: £1,450 a year = £1,000 + 45% service fee (£450), shown in full before paying. No free plan, no free trial. It does not renew automatically. After a year ends, editing stops but notes are kept and can be exported for 30 days.
+- One workspace per person; 2 GB of image storage.
+- Installable Windows, macOS and Android apps are on the roadmap and not available yet.
+- Not affiliated with Notion.
+- Policies (payments and refunds): https://www.asendify.co/policies/
+
+## Pages
+- [Home, features, pricing](https://notes.asendify.co/)
+- [Sign in](https://notes.asendify.co/app/)
+- [Articles](https://notes.asendify.co/blog/)
+
+## Also from Asendify
+- [All Asendify books](https://www.asendify.co/books/)
+- [Asendify](https://www.asendify.co/)

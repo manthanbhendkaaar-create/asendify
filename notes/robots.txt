@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /app/
+Disallow: /login/
+Disallow: /paid/
+Disallow: /s/
+
+Sitemap: https://notes.asendify.co/sitemap.xml
+Sitemap: https://notes.asendify.co/blog-sitemap.xml
