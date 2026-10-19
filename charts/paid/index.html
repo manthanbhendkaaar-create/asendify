@@ -25,13 +25,13 @@
 <script>
 (function () {
   'use strict';
-  var Q = new URLSearchParams(location.search), pid = Q.get('pid') || '', token = Q.get('token') || '', tries = 0;
+  var Q = new URLSearchParams(location.search), pid = Q.get('pid') || '', token = Q.get('token') || '', tries = 0, dodo = Q.get('dodo') === '1'; // 2026-10-19: Dodo card returns
   function $(id) { return document.getElementById(id); }
   function stop(h, p, act) { $('spin').hidden = true; $('h').textContent = h; $('p').textContent = p; $('act').hidden = !act; }
-  if (!/^[0-9a-f-]{36}$/.test(pid) || !/^[A-Z0-9]{8,30}$/.test(token)) return stop('This link is not complete', 'If you paid, your sign-in link is in your email.', true);
+  if (!/^[0-9a-f-]{36}$/.test(pid) || (!dodo && !/^[A-Z0-9]{8,30}$/.test(token))) return stop('This link is not complete', 'If you paid, your sign-in link is in your email.', true);
   function go() {
     tries++;
-    CR.api('confirm', { pid: pid, token: token }).then(function (j) {
+    CR.api('confirm', dodo ? { pid: pid, dodo: 1, subscription_id: Q.get('subscription_id') || '', payment_id: Q.get('payment_id') || '' } : { pid: pid, token: token }).then(function (j) {
       if (j && j.session) { CR.setS(j.session); $('h').textContent = 'Payment received'; $('p').textContent = 'Opening Chart Reader…'; location.replace('/app/?welcome=1'); return; }
       if (j && j.signin) return stop('Your reads are ready', j.message || 'Use the sign-in link we emailed you.', true);
       if (j && j.pending) { if (tries < 8) { $('p').textContent = j.message || 'PayPal is still processing your payment…'; setTimeout(go, 5000); return; } return stop('Payment is processing', j.message || 'We email your sign-in link as soon as PayPal confirms the payment.', false); }

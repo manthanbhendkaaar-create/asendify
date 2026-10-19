@@ -27,13 +27,13 @@
   var PREVIEW = /\.vercel\.app$/.test(H) || /^(localhost|127\.0\.0\.1)$/.test(H);
   var ov = ''; try { ov = PREVIEW ? sessionStorage.getItem('au_api') || '' : ''; } catch (e) {}
   var API = (PREVIEW ? (ov || 'https://ironclad-git-automate-charts-manthan-s-projects23.vercel.app') : 'https://playbook.asendify.co') + '/api/config?au=';
-  var oid = Q.get('oid') || '', token = Q.get('token') || '', tries = 0;
+  var oid = Q.get('oid') || '', token = Q.get('token') || '', tries = 0, dodo = Q.get('dodo') === '1'; // 2026-10-19: Dodo card returns
   function $(id) { return document.getElementById(id); }
   function stop(h, p, again) { $('spin').hidden = true; $('h').textContent = h; $('p').textContent = p; $('act').hidden = !again; }
-  if (!/^[0-9a-f-]{36}$/.test(oid) || !/^[A-Z0-9]{8,30}$/.test(token)) return stop('This link is not complete', 'If you paid, your private link is in your email. Otherwise you can start again.', true);
+  if (!/^[0-9a-f-]{36}$/.test(oid) || (!dodo && !/^[A-Z0-9]{8,30}$/.test(token))) return stop('This link is not complete', 'If you paid, your private link is in your email. Otherwise you can start again.', true);
   function go() {
     tries++;
-    fetch(API + 'confirm', { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: PREVIEW ? 'include' : 'omit', body: JSON.stringify({ oid: oid, token: token }) })
+    fetch(API + 'confirm', { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: PREVIEW ? 'include' : 'omit', body: JSON.stringify(dodo ? { oid: oid, dodo: 1, subscription_id: Q.get('subscription_id') || '', payment_id: Q.get('payment_id') || '' } : { oid: oid, token: token }) })
       .then(function (r) { return r.json(); })
       .then(function (j) {
         if (j && j.link) { try { sessionStorage.removeItem('au_draft'); } catch (e) {} $('h').textContent = 'Payment received'; $('p').textContent = 'Opening your blueprint…'; location.replace(j.link); return; }

@@ -153,9 +153,11 @@
         <input id="email" name="email" type="email" autocomplete="email" maxlength="120" required placeholder="you@company.com">
         <div class="err" id="e-email"></div>
       </div>
+      <button class="paybtn btn pri" type="button" id="buyCard" style="width:100%;margin-bottom:10px" hidden>Pay £217.50 by card</button>
       <button class="paybtn btn pri" type="submit" id="buy" style="width:100%" disabled>Opening soon</button>
+      <p class="small" id="cardNote" hidden style="margin:10px 0 0"><b>One-time charge.</b> Card checkout by Dodo Payments (Visa, Mastercard, Amex, Apple Pay, Google Pay). Dodo shows "On Demand Subscription" only because your card is saved securely with them: there is no subscription and you are never charged again unless you choose to buy something else. Indian card? Switch "Pay in GBP" at the top of the checkout to ₹ INR or $ USD.</p>
       <div class="msg" id="msg" role="status"></div>
-      <p class="small" style="margin:14px 0 0">You pay on PayPal's secure page (cards accepted). By ordering you agree to our <a href="https://www.asendify.co/policies/">policies</a>.</p>
+      <p class="small" style="margin:14px 0 0">You pay on Dodo's or PayPal's secure page. By ordering you agree to our <a href="https://www.asendify.co/policies/">policies</a>.</p>
     </form>
     <aside class="pricebox" id="pricing">
       <h3>One blueprint</h3>
@@ -209,21 +211,26 @@
   var cnt = function () { $('count').textContent = $('description').value.length + ' / 3000'; }; cnt();
   $('description').addEventListener('input', cnt);
   if (PREVIEW) { $('testbar').hidden = false; buy.disabled = false; buy.textContent = 'Test checkout (preview, no payment)'; }
-  else api('config').then(function (c) { ready = !!(c && c.ok === true && c.ready === true && c.price && c.price.total === '217.50'); buy.disabled = !ready; buy.textContent = ready ? 'Pay £217.50 with PayPal' : 'Opening soon'; if (!ready) show('Automation Blueprint is opening soon. Ordering will switch on here shortly.', 'i'); });
+  else api('config').then(function (c) { ready = !!(c && c.ok === true && c.ready === true && c.price && c.price.total === '217.50'); buy.disabled = !ready; buy.textContent = ready ? 'Pay £217.50 with PayPal' : 'Opening soon'; if (ready && c.dodo) { $('buyCard').hidden = false; $('cardNote').hidden = false; buy.classList.add('alt'); } if (!ready) show('Automation Blueprint is opening soon. Ordering will switch on here shortly.', 'i'); });
   function fieldErr(name, text) { var f = $('f-' + name); if (!f) return; f.classList.toggle('bad', !!text); $('e-' + name).textContent = text || ''; }
+  var gw = ''; // 2026-10-19: 'dodo' when the card button was clicked
+  if (PREVIEW) { $('buyCard').hidden = false; $('cardNote').hidden = false; }
+  $('buyCard').addEventListener('click', function () { gw = 'dodo'; if (form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event('submit', { cancelable: true })); });
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
+    var useDodo = gw === 'dodo'; gw = '';
     var data = { description: $('description').value.trim(), tools: $('tools').value.trim(), budget: $('budget').value, level: $('level').value, email: $('email').value.trim() };
     try { sessionStorage.setItem('au_draft', JSON.stringify(data)); } catch (e) {}
     var bad = false;
     if (data.description.length < 40) { fieldErr('description', 'Please describe the automation in a few sentences (at least 40 characters).'); bad = true; } else fieldErr('description');
-    if (!PREVIEW && !/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(data.email)) { fieldErr('email', 'Please enter a valid email address.'); bad = true; } else fieldErr('email');
+    if ((!PREVIEW || useDodo) && !/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(data.email)) { fieldErr('email', 'Please enter a valid email address.'); bad = true; } else fieldErr('email');
     if (bad) { form.querySelector('.bad textarea, .bad input').focus(); return; }
-    var label = buy.textContent; buy.disabled = true; buy.textContent = PREVIEW ? 'Creating test order…' : 'Opening PayPal…'; msg.className = 'msg';
-    api(PREVIEW ? 'test_checkout' : 'checkout', data).then(function (j) {
+    var btn = useDodo ? $('buyCard') : buy, label = btn.textContent; btn.disabled = true; btn.textContent = useDodo ? 'Opening secure card checkout…' : PREVIEW ? 'Creating test order…' : 'Opening PayPal…'; msg.className = 'msg';
+    if (useDodo) data.gw = 'dodo';
+    api(useDodo ? 'checkout' : PREVIEW ? 'test_checkout' : 'checkout', data).then(function (j) {
       if (j && j.approve) { location.href = j.approve; return; }
       if (j && j.link) { location.href = j.link; return; }
-      buy.disabled = false; buy.textContent = label;
+      btn.disabled = false; btn.textContent = label;
       if (j && j.errors) Object.keys(j.errors).forEach(function (k) { fieldErr(k, j.errors[k]); });
       show((j && (j.message || j.error)) || 'Checkout could not start. Nothing was charged. Please try again.');
     });
