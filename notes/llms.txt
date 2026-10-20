@@ -70,6 +70,11 @@
 
 Last updated: 20 October 2026
 
+## Free tool
+- [Workspace Planner](https://notes.asendify.co/workspace-planner/): Answer a few questions (what you manage: projects, notes, clients, content, meetings, goals, reading or a journal; solo, sharing or a team) to get a suggested workspace layout of pages and databases with properties and views, the matching Asendify Notes templates, and Markdown/CSV downloads to import. Free, runs in the browser.
+- Who it's for: anyone setting up a Notion-style workspace for work or personal life.
+- More free tools from Asendify: https://www.asendify.co/tools/
+
 ## Pages
 - [Home, features, pricing](https://notes.asendify.co/)
 - [Sign in](https://notes.asendify.co/app/)

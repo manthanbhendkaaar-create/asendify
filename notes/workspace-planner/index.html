@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workspace Planner: Pages, Databases and Views for Your Notes | Asendify Notes</title>
+<meta name="description" content="Free workspace planner: pick what you manage (projects, notes, clients, content) and whether you work solo or in a team to get a suggested layout of pages, databases and views.">
+<link rel="canonical" href="https://notes.asendify.co/workspace-planner/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Asendify Notes">
+<meta property="og:title" content="How should I set up my workspace? Free workspace planner">
+<meta property="og:description" content="Answer a few questions, get pages, databases, properties and views to build, plus Markdown and CSV to import.">
+<meta property="og:url" content="https://notes.asendify.co/workspace-planner/">
+<meta property="og:image" content="https://notes.asendify.co/workspace-planner/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://notes.asendify.co/workspace-planner/og.png">
+<link rel="icon" href="https://notes.asendify.co/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Workspace Planner",
+   "url": "https://notes.asendify.co/workspace-planner/",
+   "applicationCategory": "ProductivityApplication",
+   "operatingSystem": "Any (web browser)",
+   "isAccessibleForFree": true,
+   "description": "Free workspace planner: answer a few questions (what you manage: projects, notes, clients, content, meetings, goals, reading or a journal; solo or team) and get a suggested workspace layout of pages and databases with properties and views, downloadable as Markdown and CSV. Works for Asendify Notes or any Notion-style app.",
+   "dateModified": "2026-10-20",
+   "inLanguage": "en",
+   "publisher": {
+    "@type": "Organization",
+    "name": "Asendify",
+    "url": "https://www.asendify.co/"
+   },
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP"
+   },
+   "about": {
+    "@type": "SoftwareApplication",
+    "name": "Asendify Notes",
+    "url": "https://notes.asendify.co/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How should I organise a Notion-style workspace?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Keep a small number of top-level pages, put anything you track (tasks, clients, content, meetings) in a database rather than loose pages, and give each database two or three views for the ways you look at it, such as a board by status and a calendar by date. A Home page with linked views of what matters today ties it together."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should I use one database or many?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "One database per kind of thing: tasks, projects, clients, content and so on. Link them with relations (a task belongs to a project, a project to a client) instead of copying the same information into several places."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What views should each database have?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Use a board for anything that moves through stages, a calendar for anything with a date, a timeline for projects with start and end dates, a gallery for visual items like content or books, and a table or list for quick editing and searching."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does Asendify Notes have templates for this?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Asendify Notes has 10 built-in templates: second brain, task board, simple CRM, content calendar, meeting notes, goals (OKRs), habit tracker, journal, reading list and team wiki. The planner tells you which ones match your answers."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can my team edit the workspace together?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not in Asendify Notes: each account has one owner, and others can only read, through read-only public links or up to 50 free view-only guests. If your team needs to edit together, the layout from this planner still works in any Notion-style tool that supports shared editing."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I import the suggested layout?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You can download it as a Markdown outline and as CSV files with the suggested properties as column headings. Asendify Notes imports Markdown files as pages and CSV files as databases; you then add the views."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Asendify Notes",
+     "item": "https://notes.asendify.co/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Workspace planner",
+     "item": "https://notes.asendify.co/workspace-planner/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style>
+:root { --bg:#fff; --soft:#f7f7f5; --text:#1f1f1d; --muted:#6b6a67; --line:#e9e9e7; --accent:#2f6fde; --pill:#eef3fd; --warn:#9a5b00; --warnbg:#fff6e5; }
+@media (prefers-color-scheme: dark) { :root { --bg:#191919; --soft:#202020; --text:#e6e6e4; --muted:#9b9a97; --line:#2f2f2f; --accent:#6b9cf0; --pill:#1f2a3d; --warn:#f0b35a; --warnbg:#2a2214; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font:17px/1.6 Inter,-apple-system,"Segoe UI",Roboto,sans-serif; }
+a { color:inherit; }
+.wrap { max-width:900px; margin:0 auto; padding:0 16px; }
+header.top { display:flex; justify-content:space-between; align-items:center; padding:16px 0; gap:12px; }
+.brand { display:flex; gap:10px; align-items:center; font-weight:700; text-decoration:none; }
+.brand img { width:28px; height:28px; }
+nav a { text-decoration:none; color:var(--muted); margin-left:18px; font-size:15px; } nav a:hover { color:var(--text); }
+.btn { display:inline-block; padding:11px 18px; border-radius:10px; border:1px solid var(--line); text-decoration:none; background:var(--bg); cursor:pointer; font:inherit; font-weight:600; color:inherit; font-size:15px; }
+.btn.primary { background:var(--text); color:var(--bg); border-color:var(--text); }
+.eyebrow { display:inline-block; margin-top:28px; font-size:13px; font-weight:600; color:var(--accent); background:var(--pill); border-radius:999px; padding:4px 12px; }
+h1 { font-size:clamp(30px,5vw,46px); line-height:1.1; letter-spacing:-.03em; margin:14px 0 14px; }
+h2 { font-size:clamp(24px,3.4vw,30px); letter-spacing:-.02em; margin:44px 0 10px; }
+.answer { font-size:18px; margin:0 0 10px; } .updated { color:var(--muted); font-size:14px; margin:0 0 20px; }
+.card { border:1px solid var(--line); border-radius:14px; padding:20px; background:var(--soft); margin:16px 0; }
+.q { margin:0 0 18px; } .q:last-child { margin-bottom:0; } .q > b { display:block; margin-bottom:8px; }
+.opts { display:flex; flex-wrap:wrap; gap:8px; }
+.opt { display:flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--line); border-radius:10px; background:var(--bg); cursor:pointer; font-size:15px; }
+.opt input { accent-color:var(--accent); width:16px; height:16px; margin:0; }
+.opt:has(input:checked) { border-color:var(--accent); }
+.ws { border:1px solid var(--line); border-radius:12px; background:var(--bg); padding:16px; margin-top:14px; }
+.ws > h3 { margin:0 0 6px; font-size:18px; }
+.tree { list-style:none; padding:0; margin:8px 0 0; } .tree li { padding:8px 0; border-top:1px solid var(--line); }
+.tree li:first-child { border-top:0; }
+.tree .t { font-weight:600; } .tree .s { color:var(--muted); font-size:14px; }
+.db { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--accent); background:var(--pill); border-radius:6px; padding:1px 6px; margin-right:6px; vertical-align:2px; }
+.props { font-size:14px; color:var(--muted); margin:4px 0 0; } .views { font-size:14px; margin:4px 0 0; }
+.views span { display:inline-block; border:1px solid var(--line); border-radius:6px; padding:0 7px; margin:2px 4px 2px 0; font-size:13px; }
+.tpl { font-size:13px; color:var(--muted); margin-top:4px; }
+.warn { background:var(--warnbg); color:var(--warn); border-radius:10px; padding:12px 14px; font-size:15px; margin-top:14px; }
+.err { color:#c0392b; font-weight:600; }
+.share { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+.tbl { overflow-x:auto; } table { border-collapse:collapse; width:100%; font-size:15px; } td,th { border-bottom:1px solid var(--line); padding:9px 8px; text-align:left; vertical-align:top; } th { color:var(--muted); font-size:13px; }
+details { border-bottom:1px solid var(--line); padding:14px 0; } summary { cursor:pointer; font-weight:600; } details p { color:var(--muted); margin:8px 0 0; }
+p.m { color:var(--muted); }
+footer { border-top:1px solid var(--line); padding:26px 0 40px; margin-top:50px; color:var(--muted); font-size:14px; display:flex; gap:16px; flex-wrap:wrap; justify-content:space-between; }
+@media (max-width:600px) { nav a:not(.signin) { display:none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="https://notes.asendify.co/"><img src="https://notes.asendify.co/favicon.svg" alt="" width="28" height="28">Asendify Notes</a>
+  <nav><a href="https://notes.asendify.co/#features">Features</a><a href="https://notes.asendify.co/#pricing">Pricing</a><a class="signin" href="https://notes.asendify.co/app/">Sign in</a></nav>
+</header>
+<main>
+<span class="eyebrow">Free tool</span>
+<h1>How should I set up my notes workspace?</h1>
+<p class="answer">Give each thing you track its own database (tasks, clients, content, meetings), link them with relations, and give each one two or three views: a board by status, a calendar by date, a table for editing. Add a Home page that shows what matters today. Tick what you manage below for a layout to copy.</p>
+<p class="updated">Last updated: <time datetime="2026-10-20">20 October 2026</time> · Free, no sign-up, nothing leaves your browser.</p>
+
+<div class="card" id="form">
+  <div class="q"><b>What do you want to manage?</b><div class="opts">
+    <label class="opt"><input type="checkbox" name="m" value="projects" checked> Projects and tasks</label>
+    <label class="opt"><input type="checkbox" name="m" value="notes" checked> Notes and knowledge</label>
+    <label class="opt"><input type="checkbox" name="m" value="clients"> Clients</label>
+    <label class="opt"><input type="checkbox" name="m" value="content"> Content</label>
+    <label class="opt"><input type="checkbox" name="m" value="meetings"> Meetings</label>
+    <label class="opt"><input type="checkbox" name="m" value="goals"> Goals and habits</label>
+    <label class="opt"><input type="checkbox" name="m" value="reading"> Reading and learning</label>
+    <label class="opt"><input type="checkbox" name="m" value="journal"> Journal</label>
+  </div></div>
+  <div class="q"><b>Who will use it?</b><div class="opts">
+    <label class="opt"><input type="radio" name="who" value="solo" checked> Just me</label>
+    <label class="opt"><input type="radio" name="who" value="share"> Me, sharing pages with clients or family to read</label>
+    <label class="opt"><input type="radio" name="who" value="team"> A team that edits together</label>
+  </div></div>
+  <div class="q"><b>Keep work and personal life apart?</b><div class="opts">
+    <label class="opt"><input type="radio" name="sep" value="1"> Yes, separate workspaces</label>
+    <label class="opt"><input type="radio" name="sep" value="0" checked> No, one workspace</label>
+  </div></div>
+  <div class="q"><b>How do you like to see tasks?</b><div class="opts">
+    <label class="opt"><input type="radio" name="look" value="board" checked> Board (columns by status)</label>
+    <label class="opt"><input type="radio" name="look" value="table"> Table or list</label>
+  </div></div>
+</div>
+<div id="out" aria-live="polite"></div>
+
+<h2>How the layout is chosen</h2>
+<div class="tbl"><table>
+<tr><th>If you track…</th><th>You get a database with these views</th></tr>
+<tr><td>Things that move through stages (tasks, clients, content)</td><td>Board grouped by status</td></tr>
+<tr><td>Things with a date (due dates, meetings, publish dates)</td><td>Calendar</td></tr>
+<tr><td>Projects with a start and end</td><td>Timeline</td></tr>
+<tr><td>Visual items (content, books)</td><td>Gallery</td></tr>
+<tr><td>Everything</td><td>A table or list for quick editing and search</td></tr>
+</table></div>
+<p class="m">The planner follows fixed rules from your answers; it doesn't send them anywhere. Each database also gets the properties it needs (status, dates, relations between databases) so the views work.</p>
+
+<h2>How Asendify Notes helps</h2>
+<p><a href="https://notes.asendify.co/?utm_source=tool&amp;utm_medium=workspace-planner&amp;utm_campaign=helps">Asendify Notes</a> is a private, Notion-style workspace with everything this layout uses: pages inside pages, databases with 15 property types including status, relations, rollups and formulas, six views (table, board, list, gallery, calendar and timeline) with their own filters and sorts, linked databases for a Home page, and up to 20 workspaces to keep work and personal apart.</p>
+<p>It comes with 10 built-in templates: second brain, task board, simple CRM, content calendar, meeting notes, goals (OKRs), habit tracker, journal, reading list and team wiki. The plan above names the ones to start from. You can also import the Markdown and CSV files from this planner.</p>
+<p>Asendify Notes costs £1,450 a year (£1,000 + 45% service fee). There is no free plan or trial, and each account has one owner: others can read shared pages but not edit them.</p>
+<p><a class="btn primary" href="https://notes.asendify.co/?utm_source=tool&amp;utm_medium=workspace-planner&amp;utm_campaign=cta#features">See Asendify Notes</a></p>
+
+<h2>Questions</h2>
+<details><summary>How should I organise a Notion-style workspace?</summary><p>Keep a small number of top-level pages, put anything you track (tasks, clients, content, meetings) in a database rather than loose pages, and give each database two or three views for the ways you look at it, such as a board by status and a calendar by date. A Home page with linked views of what matters today ties it together.</p></details>
+<details><summary>Should I use one database or many?</summary><p>One database per kind of thing: tasks, projects, clients, content and so on. Link them with relations (a task belongs to a project, a project to a client) instead of copying the same information into several places.</p></details>
+<details><summary>What views should each database have?</summary><p>Use a board for anything that moves through stages, a calendar for anything with a date, a timeline for projects with start and end dates, a gallery for visual items like content or books, and a table or list for quick editing and searching.</p></details>
+<details><summary>Does Asendify Notes have templates for this?</summary><p>Yes. Asendify Notes has 10 built-in templates: second brain, task board, simple CRM, content calendar, meeting notes, goals (OKRs), habit tracker, journal, reading list and team wiki. The planner tells you which ones match your answers.</p></details>
+<details><summary>Can my team edit the workspace together?</summary><p>Not in Asendify Notes: each account has one owner, and others can only read, through read-only public links or up to 50 free view-only guests. If your team needs to edit together, the layout from this planner still works in any Notion-style tool that supports shared editing.</p></details>
+<details><summary>Can I import the suggested layout?</summary><p>You can download it as a Markdown outline and as CSV files with the suggested properties as column headings. Asendify Notes imports Markdown files as pages and CSV files as databases; you then add the views.</p></details>
+</main>
+<footer><span>© Asendify · <a href="https://www.asendify.co/">asendify.co</a> · <a href="https://www.asendify.co/tools/">All free tools</a></span><span><a href="https://www.asendify.co/policies/">Policies</a> · <a href="https://www.asendify.co/privacy/">Privacy</a> · <a href="https://notes.asendify.co/blog/">Articles</a></span></footer>
+</div>
+<script>
+(function(){
+'use strict';
+var $=function(i){return document.getElementById(i)};
+// Each block: databases with properties and views, the matching built-in template, and where it lives (work/personal).
+function plan(a){
+ var m=a.manage,board=a.look!=='table',dbs=[],pages=[],tpls=[];
+ if(!m.length)return {err:'Tick at least one thing you want to manage.'};
+ var has=function(k){return m.indexOf(k)>=0};
+ var tv=board?['Board by Status','Calendar by Due','List: due this week']:['Table sorted by Due','Calendar by Due','List: due this week'];
+ if(has('projects')){
+  dbs.push({name:'Projects',area:'work',props:['Name','Status (status: Not started, In progress, Done)','Start and end (date)','Priority (select)'].concat(has('clients')?['Client (relation → Clients)']:[]).concat(['Tasks (relation → Tasks)','Open tasks (rollup: count)']),views:['Timeline by dates','Table','Board by Status'],why:'One row per project; each project page holds its brief and notes.'});
+  dbs.push({name:'Tasks',area:'work',props:['Name','Status (status: To do, Doing, Done)','Due (date)','Priority (select: High, Medium, Low)','Project (relation → Projects)'],views:tv,why:'Every to-do in one place, linked to its project.'});
+  tpls.push('Task board');
+ }
+ if(has('clients')){
+  dbs.push({name:'Clients',area:'work',props:['Name','Stage (status: Lead, Active, Past)','Email (email)','Phone (phone)','Monthly value (number, GBP)','Next follow-up (date)'].concat(has('projects')?['Projects (relation → Projects)']:[]),views:['Board by Stage','Table','Calendar by Next follow-up'],why:'Your client list and pipeline; each client page keeps contacts, notes and links.'});
+  tpls.push('Simple CRM');
+ }
+ if(has('content')){
+  dbs.push({name:'Content',area:'work',props:['Title','Status (status: Idea, Drafting, Scheduled, Published)','Platform (multi-select)','Publish date (date)','Link (URL)'],views:['Calendar by Publish date','Board by Status','Gallery'],why:'Ideas to published posts; draft each piece inside its row page.'});
+  tpls.push('Content calendar');
+ }
+ if(has('meetings')){
+  dbs.push({name:'Meeting notes',area:'work',props:['Title','Date (date)','Type (select: Client, Team, 1:1)'].concat(has('clients')?['Client (relation → Clients)']:[]).concat(['Action items (text)']),views:['List sorted by Date (newest first)','Calendar by Date'],why:'One page per meeting, linked to the client so it shows on their page.'});
+  tpls.push('Meeting notes');
+ }
+ if(has('notes')){
+  dbs.push({name:'Notes',area:'work',props:['Title','Type (select: Idea, Reference, How-to)','Tags (multi-select)','Created (created time)','Edited (edited time)'],views:['List sorted by Edited','Table grouped by Type','Gallery'],why:'A second brain: capture fast, sort later with tags and @ mentions.'});
+  tpls.push('Second brain');
+ }
+ if(has('goals')){
+  dbs.push({name:'Goals',area:'personal',props:['Goal','Quarter (select)','Status (status)','Progress (number, %)','Target date (date)'],views:['Timeline by Target date','Board by Status'],why:'A few goals per quarter with progress you update weekly.'});
+  dbs.push({name:'Habit tracker',area:'personal',props:['Day (date)','One checkbox per habit','Done today (formula: count of ticks)'],views:['Table sorted by Day','Calendar by Day'],why:'One row per day; tick each habit.'});
+  tpls.push('Goals (OKRs)','Habit tracker');
+ }
+ if(has('reading')){
+  dbs.push({name:'Reading list',area:'personal',props:['Title','Author (text)','Status (status: To read, Reading, Done)','Type (select: Book, Course, Article)','Rating (select)'],views:['Board by Status','Gallery'],why:'What to read next and your notes on each one.'});
+  tpls.push('Reading list');
+ }
+ if(has('journal')){
+  dbs.push({name:'Journal',area:'personal',props:['Entry','Date (date)','Mood (select)'],views:['Calendar by Date','List sorted by Date (newest first)'],why:'One entry per day, private to you.'});
+  tpls.push('Journal');
+ }
+ if(a.who!=='solo'){pages.push({name:a.who==='team'?'Team wiki':'Shared pages',area:'work',why:a.who==='team'?'How we work, processes and onboarding, as pages inside pages.':'Pages you share as read-only links or with view-only guests (for example a client portal page per client).'});if(a.who==='team')tpls.push('Team wiki')}
+ var spaces;
+ if(a.sep){
+  var work=dbs.filter(function(d){return d.area==='work'}),pers=dbs.filter(function(d){return d.area==='personal'});
+  spaces=[{name:'Work',dbs:work,pages:pages}];
+  if(pers.length)spaces.push({name:'Personal',dbs:pers,pages:[]});
+  if(!work.length&&!pages.length)spaces=[{name:'Personal',dbs:pers,pages:[]}];
+ }else spaces=[{name:'My workspace',dbs:dbs,pages:pages}];
+ var HV={'Tasks':'tasks due this week','Clients':'follow-ups this week','Content':'content scheduled this week','Meeting notes':'recent meetings','Notes':'recently edited notes','Goals':'this quarter\'s goals','Habit tracker':'today\'s habits','Reading list':'what you are reading now','Journal':'this week\'s journal entries','Projects':'projects in progress'};
+ spaces.forEach(function(s){var v=s.dbs.map(function(d){return HV[d.name]}).filter(Boolean);s.home={name:'Home',why:v.length?'A dashboard of linked views: '+v.join(', ')+'.':'A dashboard page linking to the pages below.'}});
+ return {spaces:spaces,templates:tpls,dbCount:dbs.length,team:a.who==='team',share:a.who==='share'};
+}
+if(typeof module!=='undefined')module.exports={plan:plan};
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function answers(){var f=$('form');return {manage:[].filter.call(f.querySelectorAll('input[name=m]'),function(i){return i.checked}).map(function(i){return i.value}),who:f.querySelector('input[name=who]:checked').value,sep:f.querySelector('input[name=sep]:checked').value==='1',look:f.querySelector('input[name=look]:checked').value}}
+var last=null;
+function render(){
+ var a=answers(),p=plan(a),h='';last=p;
+ if(p.err){$('out').innerHTML='<div class="card"><p class="err">'+p.err+'</p></div>';save(a);return}
+ h+='<div class="card"><b style="font-size:19px">Your suggested layout</b><p class="m" style="margin:4px 0 0">'+p.spaces.length+' workspace'+(p.spaces.length>1?'s':'')+', '+p.dbCount+' database'+(p.dbCount===1?'':'s')+'. Start from these Asendify Notes templates: <b id="rTpl">'+esc(p.templates.join(', '))+'</b>.</p>';
+ p.spaces.forEach(function(s){
+  h+='<div class="ws"><h3>'+esc(s.name)+'</h3><ul class="tree">';
+  h+='<li><div class="t">🏠 '+esc(s.home.name)+'</div><div class="s">'+esc(s.home.why)+'</div></li>';
+  s.dbs.forEach(function(d){h+='<li><div class="t"><span class="db">Database</span>'+esc(d.name)+'</div><div class="s">'+esc(d.why)+'</div><div class="props">Properties: '+esc(d.props.join(' · '))+'</div><div class="views">Views: '+d.views.map(function(v){return '<span>'+esc(v)+'</span>'}).join('')+'</div></li>'});
+  s.pages.forEach(function(pg){h+='<li><div class="t">📄 '+esc(pg.name)+'</div><div class="s">'+esc(pg.why)+'</div></li>'});
+  h+='</ul></div>'});
+ if(p.team)h+='<div class="warn"><b>Honest note:</b> Asendify Notes has one owner per account; others can read pages but not edit them. For a team that edits together, use this layout in a Notion-style tool with shared editing.</div>';
+ if(p.share)h+='<p class="m" style="margin-top:14px">Sharing: in Asendify Notes you can share any page as a read-only public link or invite up to 50 view-only guests by email, free.</p>';
+ h+='<div class="share"><button class="btn primary" type="button" id="mdBtn">Download as Markdown</button><button class="btn" type="button" id="csvBtn">Download CSV for each database</button><button class="btn" type="button" id="linkBtn">Copy link to this plan</button></div></div>';
+ $('out').innerHTML=h;
+ $('mdBtn').onclick=function(){dl('workspace-plan.md',md(p),'text/markdown')};
+ $('csvBtn').onclick=function(){p.spaces.forEach(function(s){s.dbs.forEach(function(d,i){setTimeout(function(){dl(d.name.toLowerCase().replace(/[^a-z0-9]+/g,'-')+'.csv',csv(d),'text/csv')},i*250)})})};
+ $('linkBtn').onclick=function(){var b=this,u=location.origin+location.pathname+'?'+qs(a);if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(function(){b.textContent='Link copied ✓'},function(){});};
+ save(a);
+}
+function md(p){var o='# Workspace plan\n\nTemplates to start from in Asendify Notes: '+p.templates.join(', ')+'\n';
+ p.spaces.forEach(function(s){o+='\n## '+s.name+'\n\n### '+s.home.name+'\n'+s.home.why+'\n';
+  s.dbs.forEach(function(d){o+='\n### '+d.name+' (database)\n'+d.why+'\n\nProperties:\n'+d.props.map(function(x){return '- '+x}).join('\n')+'\n\nViews:\n'+d.views.map(function(x){return '- '+x}).join('\n')+'\n'});
+  s.pages.forEach(function(pg){o+='\n### '+pg.name+'\n'+pg.why+'\n'})});
+ return o+'\nMade with the free Workspace Planner: https://notes.asendify.co/workspace-planner/\n'}
+function csv(d){return d.props.map(function(x){var n=x.replace(/\s*\(.*$/,'');return '"'+n.replace(/"/g,'""')+'"'}).join(',')+'\n'}
+function dl(name,text,type){var b=new Blob([text],{type:type+';charset=utf-8'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(u);a.remove()},500)}
+function qs(a){var q=new URLSearchParams();q.set('m',a.manage.join(','));q.set('who',a.who);q.set('sep',a.sep?'1':'0');q.set('look',a.look);return q.toString()}
+function save(a){try{history.replaceState(null,'','?'+qs(a))}catch(e){}}
+var q=new URLSearchParams(location.search),f=$('form');
+if(q.has('m')){var ms=q.get('m').split(',');[].forEach.call(f.querySelectorAll('input[name=m]'),function(i){i.checked=ms.indexOf(i.value)>=0})}
+['who','sep','look'].forEach(function(k){if(q.has(k)){var e=f.querySelector('input[name='+k+'][value="'+String(q.get(k)).replace(/[^a-z0-9]/g,'')+'"]');if(e)e.checked=true}});
+[].forEach.call(f.querySelectorAll('input'),function(i){i.addEventListener('change',render)});
+render();
+})();
+</script>
+<script>/* 2026-10-20: real-visit counter for the Asendify Channels dashboard (same rules as the book shops). */
+(function(){try{if(sessionStorage.getItem('asd_sv')==='1')return;var q0=new URLSearchParams(location.search);
+if(q0.get('internal')==='1')document.cookie='asd_internal=1; domain=.asendify.co; path=/; max-age=63072000; SameSite=Lax; Secure';
+if(/(^|;\s*)asd_internal=1/.test(document.cookie))return;
+if(navigator.webdriver||/bot\b|bot\/|crawl|spider|slurp|preview|headless|lighthouse|scanner|facebookexternalhit/i.test(navigator.userAgent))return;
+var c=function(v){return String(v||'').toLowerCase().replace(/[^a-z0-9._-]/g,'').slice(0,60)};var src='';
+if(q0.get('utm_source'))src=[c(q0.get('utm_source')),c(q0.get('utm_medium')),c(q0.get('utm_campaign'))].join('/');
+if(!src&&document.referrer){var h=new URL(document.referrer).hostname.replace(/^www\./,'');if(h&&!/(^|\.)asendify\.co$/.test(h))src='ref/'+c(h);}
+src=src||'direct';var path=location.pathname.replace(/[^a-zA-Z0-9._\/-]/g,'').slice(0,120)||'/';
+var acts=['scroll','pointerdown','touchstart','keydown','mousemove','wheel'],sent=false,shown=0,tick;
+var send=function(how){if(sent)return;sent=true;clearInterval(tick);acts.forEach(function(e){removeEventListener(e,on,true)});
+try{sessionStorage.setItem('asd_sv','1')}catch(e){}
+fetch('https://playbook.asendify.co/api/ref',{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain'},body:JSON.stringify({visit:src,page:path,engaged:how,product:'notes'})}).catch(function(){})};
+var on=function(){send('interact')};acts.forEach(function(e){addEventListener(e,on,{capture:true,passive:true})});
+tick=setInterval(function(){if(document.visibilityState==='visible'&&(shown+=1000)>=12000)send('time')},1000);}catch(e){}})();</script>
+</body>
+</html>

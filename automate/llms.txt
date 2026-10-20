@@ -52,6 +52,11 @@
 
 Last updated: 20 October 2026
 
+## Free tool
+- [Automation Hours Calculator](https://www.asendify.co/automate/automation-hours-calculator/): List the tasks you repeat with the minutes each takes and how often you do them to see the total hours per month you could automate, ranked with the biggest time sink first (optional hourly cost turns hours into money). Free, runs in the browser.
+- Who it's for: business owners and teams deciding what to automate first.
+- More free tools from Asendify: https://www.asendify.co/tools/
+
 ## Pages
 - [Home, how it works, order form](https://automate.asendify.co/)
 - [Full example blueprint](https://automate.asendify.co/example/)

@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Automation Hours Calculator: How Many Hours Could You Automate? | Automation Blueprint</title>
+<meta name="description" content="Free calculator: list your repeated tasks with minutes and frequency to see total hours per month you could automate, ranked with the biggest time sink first.">
+<link rel="canonical" href="https://www.asendify.co/automate/automation-hours-calculator/">
+<meta name="theme-color" content="#070b14">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Automation Blueprint by Asendify">
+<meta property="og:title" content="How many hours a month could I automate? Free calculator">
+<meta property="og:description" content="List your repeated tasks, get total hours per month and a ranked list of what to automate first.">
+<meta property="og:url" content="https://www.asendify.co/automate/automation-hours-calculator/">
+<meta property="og:image" content="https://www.asendify.co/automate/automation-hours-calculator/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.asendify.co/automate/automation-hours-calculator/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%236366f1'/%3E%3Crect x='6' y='7' width='9' height='7' rx='2' fill='none' stroke='white' stroke-width='2'/%3E%3Crect x='17' y='18' width='9' height='7' rx='2' fill='none' stroke='white' stroke-width='2'/%3E%3Cpath d='M10.5 14v7.5H17' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Automation Hours Calculator",
+   "url": "https://www.asendify.co/automate/automation-hours-calculator/",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Any (web browser)",
+   "isAccessibleForFree": true,
+   "description": "Free automation hours calculator: list the tasks you repeat with the minutes each takes and how often you do them, and see the total hours per month you could automate, ranked so the biggest time sink comes first. Optional hourly cost turns hours into money.",
+   "dateModified": "2026-10-20",
+   "inLanguage": "en",
+   "publisher": {
+    "@type": "Organization",
+    "name": "Asendify",
+    "url": "https://www.asendify.co/"
+   },
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP"
+   },
+   "about": {
+    "@type": "SoftwareApplication",
+    "name": "Automation Blueprint",
+    "url": "https://automate.asendify.co/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do I work out which tasks to automate first?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "List every task you repeat, how many minutes it takes and how often it happens, then convert each to hours per month. The task with the most hours is usually the best first candidate, as long as it follows the same steps every time."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How are daily, weekly and monthly tasks converted to hours per month?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Daily tasks are multiplied by your working days per month (22 by default), weekly tasks by 52 ÷ 12 = 4.33, and monthly tasks by 1. Then minutes × times per month × people ÷ 60 gives hours per month."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What makes a task a good fit for automation?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It happens often, follows the same steps each time, moves information between apps (forms, email, spreadsheets, CRM) and has a clear trigger. Tasks that need judgement every time are better kept human or only partly automated."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does the calculator save my tasks?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Everything runs in your browser. Your list is kept in the page address so you can copy a link to it; nothing is uploaded."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How accurate is it?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It is exact arithmetic on your estimates. Most people underestimate how long small tasks take, so timing a task once or twice gives a better number than guessing."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Asendify",
+     "item": "https://www.asendify.co/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Free tools",
+     "item": "https://www.asendify.co/tools/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Automation hours calculator",
+     "item": "https://www.asendify.co/automate/automation-hours-calculator/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style>
+:root{--bg:#070b14;--bg2:#0b1220;--card:#0f1729;--line:rgba(148,163,184,.16);--ink:#e8eefc;--mut:#94a3b8;--acc:#38bdf8;--acc2:#818cf8;--bad:#f87171}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;overflow-x:hidden}
+a{color:var(--acc)}.wrap{max-width:920px;margin:0 auto;padding:0 16px}
+.nav{position:sticky;top:0;z-index:20;background:rgba(7,11,20,.78);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{max-width:1120px;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:62px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:800;letter-spacing:-.02em;font-size:17px}
+.mark{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#38bdf8,#6366f1);display:grid;place-items:center;box-shadow:0 6px 20px rgba(56,189,248,.35)}.mark svg{width:18px;height:18px}
+.nav nav{display:flex;align-items:center;gap:20px}.nav nav a{color:var(--mut);text-decoration:none;font-size:14.5px;font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:12px 18px;font:700 15px/1.2 Inter,sans-serif;text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn.pri{background:linear-gradient(135deg,#7dd3fc,#38bdf8 45%,#818cf8);color:#06101f!important;box-shadow:0 10px 30px rgba(56,189,248,.28)}
+.btn.ghost{background:rgba(255,255,255,.06);color:#fff;border:1px solid var(--line)}.btn.sm{padding:9px 14px;font-size:14px;border-radius:10px}
+.eyebrow{display:inline-block;margin-top:40px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h1{font-size:clamp(30px,4.6vw,46px);line-height:1.1;letter-spacing:-.025em;margin:10px 0 14px}
+h2{font-size:clamp(22px,3vw,30px);letter-spacing:-.015em;margin:44px 0 10px}
+.answer{font-size:18px;margin:0 0 10px}.updated{font-size:13.5px;color:var(--mut);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin:16px 0}
+input,select{font:inherit;padding:9px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg2);color:var(--ink);width:100%;min-width:0}
+input:focus,select:focus{outline:2px solid var(--acc);outline-offset:1px}
+.row{display:grid;grid-template-columns:minmax(0,2.4fr) minmax(0,.9fr) minmax(0,.8fr) minmax(0,1.1fr) minmax(0,.7fr) 34px;gap:8px;align-items:end;margin-bottom:10px}
+.row label{display:flex;flex-direction:column;gap:4px;font-size:12.5px;color:var(--mut);font-weight:600}
+.del{border:0;background:none;color:var(--mut);font-size:20px;cursor:pointer;height:40px}
+.settings{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.settings label{display:flex;flex-direction:column;gap:4px;font-size:14px;font-weight:600}.settings small{color:var(--mut);font-weight:400;font-size:12.5px}
+.unit{display:flex;gap:8px}.unit select{width:auto;flex:none}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.r{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:14px}.r .k{color:var(--mut);font-size:13.5px}
+.r .big{font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.15;overflow-wrap:anywhere;background:linear-gradient(90deg,#7dd3fc,#818cf8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.r p{margin:6px 0 0;font-size:14px;color:var(--mut)}
+ol.rank{list-style:none;padding:0;margin:16px 0 0;counter-reset:n}ol.rank li{counter-increment:n;padding:10px 0;border-bottom:1px solid var(--line)}
+ol.rank li .top{display:flex;justify-content:space-between;gap:12px}ol.rank li .top b:before{content:counter(n) ". ";color:var(--acc)}
+.bar{height:8px;background:rgba(255,255,255,.06);border-radius:6px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;background:linear-gradient(90deg,#38bdf8,#818cf8)}
+.err{color:var(--bad);font-weight:600}.mutt{color:var(--mut);font-size:14px}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14.5px}td,th{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left}th{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:.06em}
+details{border-bottom:1px solid var(--line);padding:12px 0}summary{font-weight:600;cursor:pointer}details p{color:var(--mut);margin:8px 0 0}
+p{color:#cfd8ea}.share{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+footer{border-top:1px solid var(--line);margin-top:56px;padding:28px 0 44px;color:var(--mut);font-size:14px}footer .wrap{display:flex;flex-direction:column;gap:8px}footer nav{display:flex;gap:16px;flex-wrap:wrap}footer a{color:var(--mut)}
+@media (max-width:700px){.hide-m{display:none}.row{grid-template-columns:1fr 1fr;padding:12px;border:1px solid var(--line);border-radius:12px}.row .name{grid-column:1/-1}.row .del{grid-column:2;justify-self:end}.r .big{font-size:26px}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="https://automate.asendify.co/?utm_source=tool&amp;utm_medium=automation-hours-calculator&amp;utm_campaign=logo"><span class="mark"><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="3" width="7" height="5" rx="1.5"/><rect x="11" y="12" width="7" height="5" rx="1.5"/><path d="M5.5 8v6.5H11"/></svg></span>Automation Blueprint</a>
+  <nav><a class="hide-m" href="https://www.asendify.co/tools/">Free tools</a><a class="btn pri sm" href="https://automate.asendify.co/?utm_source=tool&amp;utm_medium=automation-hours-calculator&amp;utm_campaign=header#start">Get my blueprint</a></nav>
+</div></header>
+<main class="wrap">
+<span class="eyebrow">Free tool</span>
+<h1>How many hours a month could I automate?</h1>
+<p class="answer">Add up minutes per task × times per month × people ÷ 60 for every task you repeat. Five 10-minute tasks done daily already come to about 18 hours a month (22 working days). Start with the task at the top of your ranked list.</p>
+<p class="updated">Last updated: <time datetime="2026-10-20">20 October 2026</time> · Free, no sign-up, nothing leaves your browser.</p>
+
+<div class="card">
+ <p class="mutt" style="margin:0 0 12px">The four rows below are examples. Replace them with your own tasks.</p>
+ <div id="rows"></div>
+ <button class="btn ghost sm" type="button" id="addBtn">+ Add a task</button>
+ <div class="settings">
+  <label>Working days per month<input type="number" id="days" min="1" max="31" step="1" value="22" inputmode="numeric"><small>Used for daily tasks</small></label>
+  <label>Hourly cost (optional)<span class="unit"><input type="number" id="rate" min="0" step="any" value="" placeholder="e.g. 25" inputmode="decimal"><select id="cur" aria-label="Currency"><option>GBP</option><option>USD</option><option>EUR</option><option>INR</option><option>AED</option></select></span><small>Turns hours into money</small></label>
+ </div>
+</div>
+<div class="card" id="out" aria-live="polite"></div>
+
+<h2>How the numbers are worked out</h2>
+<div class="tbl"><table>
+<tr><th>How often</th><th>Times per month</th></tr>
+<tr><td>Per working day</td><td>Times × working days per month (22 by default)</td></tr>
+<tr><td>Per week</td><td>Times × 52 ÷ 12 (4.33)</td></tr>
+<tr><td>Per month</td><td>Times × 1</td></tr>
+</table></div>
+<p>Hours per month for each task = minutes × times per month × people ÷ 60. The list is sorted by hours, biggest first, and each bar shows that task's share of the total.</p>
+
+<h2>How Automation Blueprint helps</h2>
+<p>Found your biggest time sink? <a href="https://automate.asendify.co/?utm_source=tool&amp;utm_medium=automation-hours-calculator&amp;utm_campaign=helps">Automation Blueprint</a> turns a plain-words description of that task into a buildable blueprint: a workflow diagram, the recommended platform and tool for each step, numbered build steps, error handling, how to test it, time to build and an estimated monthly tool cost. Build it yourself or hand it to any developer.</p>
+<p>£217.50 per blueprint (£150 + 45% service fee), one-time. <a href="https://automate.asendify.co/example/?utm_source=tool&amp;utm_medium=automation-hours-calculator&amp;utm_campaign=example">Read a full example first</a>. Use "Copy my top task" above to paste your task straight into the description box.</p>
+<p><a class="btn pri" href="https://automate.asendify.co/?utm_source=tool&amp;utm_medium=automation-hours-calculator&amp;utm_campaign=cta#start">Describe my task</a></p>
+
+<h2>Questions</h2>
+<details><summary>How do I work out which tasks to automate first?</summary><p>List every task you repeat, how many minutes it takes and how often it happens, then convert each to hours per month. The task with the most hours is usually the best first candidate, as long as it follows the same steps every time.</p></details>
+<details><summary>How are daily, weekly and monthly tasks converted to hours per month?</summary><p>Daily tasks are multiplied by your working days per month (22 by default), weekly tasks by 52 ÷ 12 = 4.33, and monthly tasks by 1. Then minutes × times per month × people ÷ 60 gives hours per month.</p></details>
+<details><summary>What makes a task a good fit for automation?</summary><p>It happens often, follows the same steps each time, moves information between apps (forms, email, spreadsheets, CRM) and has a clear trigger. Tasks that need judgement every time are better kept human or only partly automated.</p></details>
+<details><summary>Does the calculator save my tasks?</summary><p>No. Everything runs in your browser. Your list is kept in the page address so you can copy a link to it; nothing is uploaded.</p></details>
+<details><summary>How accurate is it?</summary><p>It is exact arithmetic on your estimates. Most people underestimate how long small tasks take, so timing a task once or twice gives a better number than guessing.</p></details>
+</main>
+<footer><div class="wrap">
+  <div>Automation Blueprint is made by <a href="https://www.asendify.co/">Asendify</a>.</div>
+  <nav><a href="https://automate.asendify.co/">Automation Blueprint</a><a href="https://automate.asendify.co/example/">Example blueprint</a><a href="https://www.asendify.co/tools/">All free tools</a><a href="https://www.asendify.co/policies/">Policies</a></nav>
+</div></footer>
+<script>
+(function(){
+'use strict';
+var $=function(i){return document.getElementById(i)};
+var EX=[['Copying form enquiries into the CRM',5,8,'day',1],['Sending invoice reminders',10,6,'week',1],['Weekly client report',45,4,'week',1],['Onboarding a new client (emails, folders, invites)',60,3,'month',1]];
+var FREQ={day:'per working day',week:'per week',month:'per month'};
+function perMonth(times,freq,days){return freq==='day'?times*days:freq==='week'?times*52/12:times}
+function rank(tasks,days){
+ var out=[],total=0;
+ tasks.forEach(function(t,i){var m=+t.mins,x=+t.times,p=t.people===''||t.people==null?1:+t.people;if(!(m>0)||!(x>0)||!(p>0))return;
+  var h=m*perMonth(x,t.freq,days)*p/60;total+=h;out.push({i:i,name:t.name||('Task '+(i+1)),hours:h,mins:m,times:x,freq:t.freq,people:p})});
+ out.sort(function(a,b){return b.hours-a.hours});
+ return {list:out,total:total};
+}
+if(typeof module!=='undefined')module.exports={rank:rank,perMonth:perMonth};
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function nf(x,d){return isFinite(x)?new Intl.NumberFormat('en-GB',{maximumFractionDigits:d===undefined?1:d}).format(x):'–'}
+function money(x,cur){try{return new Intl.NumberFormat(cur==='INR'?'en-IN':'en-GB',{style:'currency',currency:cur,maximumFractionDigits:0}).format(x)}catch(e){return cur+' '+Math.round(x)}}
+function rowHTML(t){return '<div class="row"><label class="name">Task<input type="text" maxlength="80" data-f="name" value="'+esc(t[0])+'" placeholder="What do you do?"></label>'
+ +'<label>Minutes each<input type="number" min="0" step="any" data-f="mins" value="'+t[1]+'" inputmode="decimal"></label>'
+ +'<label>Times<input type="number" min="0" step="any" data-f="times" value="'+t[2]+'" inputmode="decimal"></label>'
+ +'<label>How often<select data-f="freq"><option value="day"'+(t[3]==='day'?' selected':'')+'>per working day</option><option value="week"'+(t[3]==='week'?' selected':'')+'>per week</option><option value="month"'+(t[3]==='month'?' selected':'')+'>per month</option></select></label>'
+ +'<label>People<input type="number" min="1" step="1" data-f="people" value="'+t[4]+'" inputmode="numeric"></label>'
+ +'<button class="del" type="button" aria-label="Remove task" title="Remove">×</button></div>'}
+function read(){return [].map.call(document.querySelectorAll('#rows .row'),function(r){var o={};[].forEach.call(r.querySelectorAll('[data-f]'),function(e){o[e.dataset.f]=e.value});return o})}
+function addRow(t){var d=document.createElement('div');d.innerHTML=rowHTML(t);var row=d.firstChild;$('rows').appendChild(row);
+ row.querySelector('.del').onclick=function(){row.remove();calc()};
+ [].forEach.call(row.querySelectorAll('input,select'),function(e){e.addEventListener('input',calc);e.addEventListener('change',calc)})}
+function calc(){
+ var days=+$('days').value||0,rate=parseFloat($('rate').value),cur=$('cur').value,tasks=read(),h;
+ if(!(days>0&&days<=31)){$('out').innerHTML='<p class="err">Working days per month must be between 1 and 31.</p>';return}
+ var r=rank(tasks,days);
+ if(!r.list.length){$('out').innerHTML='<p class="err">Add at least one task with minutes and how often you do it.</p>';save(tasks);return}
+ var hasRate=isFinite(rate)&&rate>0;
+ h='<div class="res"><div class="r"><div class="k">Hours per month you could automate</div><div class="big" id="rTotal">'+nf(r.total)+'</div><p>About '+nf(r.total*12,0)+' hours a year, across '+r.list.length+' task'+(r.list.length>1?'s':'')+'.</p></div>'
+ +'<div class="r"><div class="k">Biggest time sink</div><div class="big" id="rTop" style="font-size:22px">'+esc(r.list[0].name)+'</div><p>'+nf(r.list[0].hours)+' hours a month ('+nf(r.list[0].hours/r.total*100,0)+'% of the total).</p></div>';
+ if(hasRate)h+='<div class="r"><div class="k">Value of that time</div><div class="big" id="rValue">'+money(r.total*rate,cur)+'</div><p>a month at '+money(rate,cur)+' an hour ('+money(r.total*rate*12,cur)+' a year).</p></div>';
+ h+='</div><ol class="rank" id="rRank">';
+ r.list.forEach(function(t){h+='<li><div class="top"><b>'+esc(t.name)+'</b><span>'+nf(t.hours)+' h/month'+(hasRate?' · '+money(t.hours*rate,cur):'')+'</span></div><div class="mutt">'+nf(t.mins)+' min × '+nf(t.times)+' '+FREQ[t.freq]+(t.people>1?' × '+nf(t.people,0)+' people':'')+'</div><div class="bar"><i style="width:'+(t.hours/r.list[0].hours*100)+'%"></i></div></li>'});
+ h+='</ol><div class="share"><button class="btn ghost" type="button" id="copyBtn">Copy my top task</button><button class="btn ghost" type="button" id="linkBtn">Copy link to my list</button></div>';
+ $('out').innerHTML=h;
+ var top=r.list[0];
+ var txt='Automate this task: "'+top.name+'". It takes about '+nf(top.mins)+' minutes and happens '+nf(top.times)+' times '+FREQ[top.freq]+(top.people>1?' across '+nf(top.people,0)+' people':'')+', about '+nf(top.hours)+' hours a month.';
+ $('copyBtn').onclick=function(){copy(txt,this,'Copied ✓')};
+ $('linkBtn').onclick=function(){copy(location.origin+location.pathname+'?'+qs(tasks),this,'Link copied ✓')};
+ save(tasks);
+}
+function qs(tasks){var p=new URLSearchParams();p.set('t',JSON.stringify(tasks.slice(0,30).map(function(t){return [String(t.name).slice(0,80),t.mins,t.times,t.freq,t.people]})));p.set('days',$('days').value);p.set('rate',$('rate').value);p.set('cur',$('cur').value);return p.toString()}
+function save(tasks){try{history.replaceState(null,'','?'+qs(tasks))}catch(e){}}
+function copy(t,b,done){var ok=function(){b.textContent=done};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,ok)}else ok()}
+var q=new URLSearchParams(location.search),start=EX;
+try{var t=JSON.parse(q.get('t')||'null');if(Array.isArray(t)&&t.length)start=t.slice(0,30).map(function(x){var f=['day','week','month'].indexOf(x[3])>=0?x[3]:'week';var n=function(v,d){v=parseFloat(v);return isFinite(v)&&v>=0?v:d};return [String(x[0]||'').slice(0,80),n(x[1],0),n(x[2],0),f,n(x[4],1)||1]})}catch(e){}
+if(q.has('days')){var dd=parseFloat(q.get('days'));if(dd>0&&dd<=31)$('days').value=String(dd)}
+if(q.has('rate')){var rr=parseFloat(q.get('rate'));$('rate').value=isFinite(rr)&&rr>=0?String(rr):''}
+if(q.has('cur')&&[].some.call($('cur').options,function(o){return o.value===q.get('cur')}))$('cur').value=q.get('cur');
+start.forEach(addRow);
+$('addBtn').onclick=function(){addRow(['',10,1,'week',1]);calc()};
+['days','rate','cur'].forEach(function(i){$(i).addEventListener('input',calc);$(i).addEventListener('change',calc)});
+calc();
+})();
+</script>
+<script>/* 2026-10-20: real-visit counter for the Asendify Channels dashboard (same rules as the book shops). */
+(function(){try{if(sessionStorage.getItem('asd_sv')==='1')return;var q0=new URLSearchParams(location.search);
+if(q0.get('internal')==='1')document.cookie='asd_internal=1; domain=.asendify.co; path=/; max-age=63072000; SameSite=Lax; Secure';
+if(/(^|;\s*)asd_internal=1/.test(document.cookie))return;
+if(navigator.webdriver||/bot\b|bot\/|crawl|spider|slurp|preview|headless|lighthouse|scanner|facebookexternalhit/i.test(navigator.userAgent))return;
+var c=function(v){return String(v||'').toLowerCase().replace(/[^a-z0-9._-]/g,'').slice(0,60)};var src='';
+if(q0.get('utm_source'))src=[c(q0.get('utm_source')),c(q0.get('utm_medium')),c(q0.get('utm_campaign'))].join('/');
+if(!src&&document.referrer){var h=new URL(document.referrer).hostname.replace(/^www\./,'');if(h&&!/(^|\.)asendify\.co$/.test(h))src='ref/'+c(h);}
+src=src||'direct';var path=location.pathname.replace(/[^a-zA-Z0-9._\/-]/g,'').slice(0,120)||'/';
+var acts=['scroll','pointerdown','touchstart','keydown','mousemove','wheel'],sent=false,shown=0,tick;
+var send=function(how){if(sent)return;sent=true;clearInterval(tick);acts.forEach(function(e){removeEventListener(e,on,true)});
+try{sessionStorage.setItem('asd_sv','1')}catch(e){}
+fetch('https://playbook.asendify.co/api/ref',{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain'},body:JSON.stringify({visit:src,page:path,engaged:how,product:'automate'})}).catch(function(){})};
+var on=function(){send('interact')};acts.forEach(function(e){addEventListener(e,on,{capture:true,passive:true})});
+tick=setInterval(function(){if(document.visibilityState==='visible'&&(shown+=1000)>=12000)send('time')},1000);}catch(e){}})();</script>
+</body>
+</html>
