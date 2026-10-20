@@ -274,8 +274,6 @@ function plan(a){
   tpls.push('Journal');
  }
  if(a.who!=='solo'){pages.push({name:a.who==='team'?'Team wiki':'Shared pages',area:'work',why:a.who==='team'?'How we work, processes and onboarding, as pages inside pages.':'Pages you share as read-only links or with view-only guests (for example a client portal page per client).'});if(a.who==='team')tpls.push('Team wiki')}
- var home={name:'Home',why:'A dashboard of linked views: '+[has('projects')?'tasks due this week':null,has('clients')?'follow-ups this week':null,has('content')?'content scheduled this week':null,has('meetings')?'recent meetings':null,has('notes')?'recently edited notes':null,has('goals')?'this quarter\'s goals':null].filter(Boolean).join(', ')+'.'};
- if(home.why==='A dashboard of linked views: .')home.why='A dashboard page with linked views of the databases below.';
  var spaces;
  if(a.sep){
   var work=dbs.filter(function(d){return d.area==='work'}),pers=dbs.filter(function(d){return d.area==='personal'});
@@ -283,7 +281,8 @@ function plan(a){
   if(pers.length)spaces.push({name:'Personal',dbs:pers,pages:[]});
   if(!work.length&&!pages.length)spaces=[{name:'Personal',dbs:pers,pages:[]}];
  }else spaces=[{name:'My workspace',dbs:dbs,pages:pages}];
- spaces.forEach(function(s){s.home=home});
+ var HV={'Tasks':'tasks due this week','Clients':'follow-ups this week','Content':'content scheduled this week','Meeting notes':'recent meetings','Notes':'recently edited notes','Goals':'this quarter\'s goals','Habit tracker':'today\'s habits','Reading list':'what you are reading now','Journal':'this week\'s journal entries','Projects':'projects in progress'};
+ spaces.forEach(function(s){var v=s.dbs.map(function(d){return HV[d.name]}).filter(Boolean);s.home={name:'Home',why:v.length?'A dashboard of linked views: '+v.join(', ')+'.':'A dashboard page linking to the pages below.'}});
  return {spaces:spaces,templates:tpls,dbCount:dbs.length,team:a.who==='team',share:a.who==='share'};
 }
 if(typeof module!=='undefined')module.exports={plan:plan};
