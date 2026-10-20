@@ -31,9 +31,9 @@
   { "@type": "WebSite", "@id": "https://notes.asendify.co/#website", "name": "Asendify Notes", "url": "https://notes.asendify.co/", "publisher": { "@id": "https://notes.asendify.co/#org" } },
   { "@type": "SoftwareApplication", "@id": "https://notes.asendify.co/#app", "name": "Asendify Notes", "applicationCategory": "BusinessApplication", "applicationSubCategory": "Note-taking and knowledge management", "operatingSystem": "Web browser (Windows, macOS, Linux, Android, iOS)",
     "description": "A private, Notion-style workspace: nested pages, a block editor with slash commands (headings, lists, to-dos, tables, code, images, quotes), table and board databases with properties, full-text search, read-only share links, trash with restore and export to JSON or Markdown at any time.",
-    "offers": { "@type": "Offer", "price": "1450.00", "priceCurrency": "GBP", "description": "One year: £1,000 plus a 45% service fee (£450) = £1,450. Paid once a year, never renews automatically.", "url": "https://notes.asendify.co/#pricing" } },
+    "offers": { "@type": "Offer", "price": "1450.00", "priceCurrency": "GBP", "description": "One year: £1,000 plus a 45% service fee (£450) = £1,450. Card payments can renew automatically each year if the buyer chooses; auto-renew can be turned off any time.", "url": "https://notes.asendify.co/#pricing" } },
   { "@type": "FAQPage", "mainEntity": [
-    { "@type": "Question", "name": "How much does Asendify Notes cost?", "acceptedAnswer": { "@type": "Answer", "text": "£1,450 a year: £1,000 plus a 45% service fee of £450, shown in full before you pay. There is no free plan and no free trial. It does not renew by itself: we email you before your year ends." } },
+    { "@type": "Question", "name": "How much does Asendify Notes cost?", "acceptedAnswer": { "@type": "Answer", "text": "£1,450 a year: £1,000 plus a 45% service fee of £450, shown in full before you pay. There is no free plan and no free trial. If you pay by card you can choose auto-renew (£1,450 on the same date each year, turn it off any time); we email you 14 and 3 days before any renewal." } },
     { "@type": "Question", "name": "Is Asendify Notes like Notion?", "acceptedAnswer": { "@type": "Answer", "text": "It works in a similar way: pages inside pages, a block editor with slash commands, and databases you can view as a table or a board. It is a separate product made by Asendify, not affiliated with Notion." } },
     { "@type": "Question", "name": "Can I get my notes out?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Export any page as Markdown, or your whole workspace as JSON, at any time. If your year ends you can still export everything for 30 days." } },
     { "@type": "Question", "name": "Can I share a page?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Create a read-only link for any page. People with the link can read that page and the pages inside it, but cannot edit. Turning sharing off stops the link immediately." } },
@@ -114,12 +114,13 @@ footer { border-top:1px solid var(--line); padding:26px 0 40px; color:var(--mute
       <ul>
         <li>One workspace for one person, unlimited pages</li>
         <li>2 GB of image storage</li>
-        <li>Paid once a year. It never renews by itself: we email you before your year ends</li>
+        <li>Pay by card and choose auto-renew if you like: £1,450 on the same date each year, turn it off any time in Settings. We email you 14 and 3 days before every renewal</li>
         <li>No free plan or trial</li>
       </ul>
       <form id="buy">
         <input type="email" id="email" required placeholder="Your email (it becomes your account)" autocomplete="email">
-        <div class="pay"><button class="btn primary" data-gw="dodo">Pay by card</button><button class="btn" data-gw="paypal">Pay with PayPal</button></div>
+        <label style="display:flex;gap:8px;align-items:flex-start;text-align:left;font-size:14px;color:var(--muted)"><input type="checkbox" id="renew" style="width:auto;margin-top:4px"> Card only: renew automatically every year (£1,450 charged to this card on the same date each year until I turn it off in Settings).</label>
+        <div class="pay"><button class="btn primary" data-gw="dodo">Pay by card</button><button class="btn" data-gw="paypal">Pay with PayPal (1 year)</button></div>
         <div class="msg" id="msg"></div>
       </form>
       <p class="sub" style="font-size:13px">Payments and refunds: <a href="https://www.asendify.co/policies/">Asendify policies</a>.</p>
@@ -129,11 +130,12 @@ footer { border-top:1px solid var(--line); padding:26px 0 40px; color:var(--mute
   <section id="faq">
     <h2>Questions</h2>
     <details><summary>Is Asendify Notes like Notion?</summary><p>It works in a similar way: pages inside pages, a block editor with slash commands, and databases you can view as a table or a board. It is a separate product made by Asendify, not affiliated with Notion.</p></details>
+    <details><summary>Does it renew automatically?</summary><p>Only if you choose. Paying by card, you can tick auto-renew: we then charge £1,450 to the same card on the same date each year, and email you 14 and 3 days before. Turn it off any time in Settings and nothing more is charged. PayPal payments are one year at a time.</p></details>
     <details><summary>Why £1,450 a year?</summary><p>It's £1,000 plus a 45% service fee, shown in full before you pay. You get one private workspace with unlimited pages. Nothing is added at checkout.</p></details>
     <details><summary>Is there a free trial?</summary><p>No. Asendify Notes is paid from the start.</p></details>
     <details><summary>Can I get my notes out?</summary><p>Yes, any time: Markdown for a page, JSON for everything. If your year ends you can still export for 30 days.</p></details>
     <details><summary>Can I share a page?</summary><p>Yes, with a read-only link. People can read the page and the pages inside it, not edit. You can turn it off whenever you like.</p></details>
-    <details><summary>What happens when my year ends?</summary><p>Editing stops until you renew. Your notes are kept, and you can export them for 30 days.</p></details>
+    <details><summary>What happens when my year ends?</summary><p>With auto-renew on, a new year starts on that date. Otherwise editing stops until you renew. Your notes are kept, and you can export them for 30 days.</p></details>
     <details><summary>Are there apps for Windows, Mac or Android?</summary><p>Asendify Notes runs in any modern browser on all of them today. Installable apps are on the roadmap but not available yet.</p></details>
   </section>
 
@@ -154,7 +156,7 @@ footer { border-top:1px solid var(--line); padding:26px 0 40px; color:var(--mute
   form.addEventListener('submit', function (e) {
     e.preventDefault(); if (!open) return;
     msg.textContent = 'Opening the secure checkout…';
-    fetch(API + 'checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: PREVIEW ? 'include' : 'omit', body: JSON.stringify({ email: document.getElementById('email').value, gw: gw }) })
+    fetch(API + 'checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: PREVIEW ? 'include' : 'omit', body: JSON.stringify({ email: document.getElementById('email').value, gw: gw, autoRenew: gw === 'dodo' && document.getElementById('renew').checked }) })
       .then(function (r) { return r.json(); }).then(function (j) { if (j.approve) location.href = j.approve; else msg.textContent = j.message || j.error || 'Something went wrong. Nothing was charged.'; })
       .catch(function () { msg.textContent = 'We could not reach the server. Nothing was charged.'; });
   });

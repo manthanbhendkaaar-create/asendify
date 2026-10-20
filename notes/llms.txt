@@ -7,7 +7,7 @@
 - Databases with text, number, select, checkbox, date and link properties, viewable as a table or a board (drag cards between columns). Each row is also a full page.
 - Full-text search (Ctrl/Cmd K), trash with 30-day restore, read-only share links (can be turned off at any time), export a page to Markdown or the whole workspace to JSON at any time.
 - Sign-in with one-time email links (no passwords). Light and dark mode. Saves automatically; editing in two tabs never silently overwrites.
-- Price: £1,450 a year = £1,000 + 45% service fee (£450), shown in full before paying. No free plan, no free trial. It does not renew automatically. After a year ends, editing stops but notes are kept and can be exported for 30 days.
+- Price: £1,450 a year = £1,000 + 45% service fee (£450), shown in full before paying. No free plan, no free trial. Card buyers can choose auto-renew (£1,450 on the same date each year, with emails 14 and 3 days before; turn it off any time in Settings); PayPal is one year at a time. After a year ends without renewal, editing stops but notes are kept and can be exported for 30 days.
 - One workspace per person; 2 GB of image storage.
 - Installable Windows, macOS and Android apps are on the roadmap and not available yet.
 - Not affiliated with Notion.
