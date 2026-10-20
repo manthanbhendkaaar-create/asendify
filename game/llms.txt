@@ -1,0 +1,56 @@
+# Asendify Daily
+
+> Asendify Daily (https://game.asendify.co/) is a free 2-minute daily challenge game by Asendify: 10 quick calls on money, business, YouTube, people and habits. Everyone gets the same 10 questions each day; play, see your score, keep a streak and challenge a friend. Free, no sign-up. Just for fun and learning; not financial, legal or medical advice.
+
+## Key facts
+- Price: free (no payment, no account).
+- A new numbered game every day at midnight in the player's time zone; same 10 questions for everyone that day.
+- Question kinds: Red flag or green flag?; Smart move or mistake?; Would viewers keep watching or leave?; Good deal or money pit?; Gets a reply or ignored?; Myth or fact?
+- Topics (23): YouTube retention, AI for business, Sellable business, Property, Dubai money myths, Influencer advice, Online business money, Problem solving, Critical thinking, Habits & focus, People red flags, Staying safe, Breakups, Confidence, Life story writing, Mindset, Trading basics, Glow-up habits, Caffeine, Cold email, Roofing websites, Agency automation, Video editing.
+- Each answer links to the related Asendify book or product to go deeper.
+
+## Every feature, by name (last updated 20 October 2026)
+- A new game every day: a numbered daily game (#1, #2, …) that changes at midnight in your time zone
+- 10 quick calls: about 2 minutes from start to score
+- Same 10 for everyone: everyone gets the same questions on the same day, so scores compare fairly
+- 6 kinds of question: Red flag or green flag?, Smart move or mistake?, Would viewers keep watching or leave?, Good deal or money pit?, Gets a reply or ignored?, Myth or fact?
+- 23 topics: YouTube retention, AI for business, Sellable business, Property, Dubai money myths, Influencer advice, Online business money, Problem solving, Critical thinking, Habits & focus, People red flags, Staying safe, Breakups, Confidence, Life story writing, Mindset, Trading basics, Glow-up habits, Caffeine, Cold email, Roofing websites, Agency automation, Video editing
+- A 146-question bank: questions don't repeat until most of the bank has been used
+- Mixed topics: the same topic doesn't come up twice in a row when it can be avoided
+- Tap to answer: two big buttons under every card
+- Swipe to answer: swipe the card left or right on a touch screen
+- Arrow keys: ← and → to answer, → or Enter for the next question
+- Instant feedback: see straight away whether your call was right and what the right answer is
+- Plain-English explanation: a short reason behind every answer
+- Go deeper: each answer links to the Asendify book or product on that topic
+- Progress bar: a green or red mark for each question you've answered
+- Pick up where you left off: leave mid-game and continue today's game from the same question
+- Score out of 10: with a one-line verdict on your day
+- Daily streak: grows each day you finish the daily game
+- Best streak: your longest run so far
+- Next-game countdown: a live timer to the next daily game
+- Share your result grid: a 🟩🟥 grid with your score and a link, shared or copied in one tap
+- Challenge a friend: send a link with your score and see if they can beat it
+- Head-to-head result: when a friend's challenge is open, see who won, or a tie, and send a rematch
+- Weakest topic: the end screen names your weakest topic and where to learn more
+- Review today's answers: every question again with the right answer and the explanation
+- Practice rounds: unlimited rounds of 10 random questions that don't touch your streak
+- Daily answers page: every finished day explained at game.asendify.co/answers/
+- No sign-up: your streak and progress are saved in this browser only
+- Reduced motion: card animations switch off if your device asks for less motion
+- Screen reader support: each question and result is announced
+- Free: no payment, no account
+- Full list: https://game.asendify.co/#features
+
+## Who it's for
+- For: anyone who likes a quick daily brain game; people sharpening their instincts on money, business, YouTube, people and habits; friends, families and teams comparing scores.
+- Not for: in-depth lessons; financial, legal or medical advice; long play sessions on one topic.
+
+## Pages
+- [Play today's game](https://game.asendify.co/)
+- [Daily answers](https://game.asendify.co/answers/): every finished day explained, newest first.
+- [Articles](https://game.asendify.co/blog/)
+
+## Also from Asendify
+- [Asendify Books](https://www.asendify.co/books/): practical playbooks by Manthan Bhendkar.
+- [All free Asendify tools](https://www.asendify.co/tools/)

@@ -78,3 +78,6 @@ Last updated: 20 October 2026
 ## Also from Asendify
 - [All Asendify books](https://www.asendify.co/books/)
 - [Asendify](https://www.asendify.co/)
+
+## Free tool
+- [Workspace Planner](https://notes.asendify.co/workspace-planner/): free, no sign-up.

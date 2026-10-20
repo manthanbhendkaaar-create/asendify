@@ -60,3 +60,6 @@ Last updated: 20 October 2026
 ## Also from Asendify
 - [Chart Reader](https://charts.asendify.co/): educational explanations of trading chart screenshots, 100 reads for £435 (£300 + 45% service fee).
 - [Asendify](https://www.asendify.co/): YouTube growth agency, books and tools.
+
+## Free tool
+- [Automation Hours Calculator](https://www.asendify.co/automate/automation-hours-calculator/): free, no sign-up.
