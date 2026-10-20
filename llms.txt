@@ -79,7 +79,15 @@
 - [Privacy Policy](https://www.asendify.co/privacy/)
 
 ## Tools
-- [All free Asendify tools](https://www.asendify.co/tools/): one page listing 25 free calculators, checkers and timers (the 22 below, plus the YouTube Channel Roast, the Retention Revenue Calculator and Asendify Daily), grouped by problem.
+- [All free Asendify tools](https://www.asendify.co/tools/): one page listing 32 free calculators, checkers and timers (the 22 book tools and 7 software/service tools below, plus the YouTube Channel Roast, the Retention Revenue Calculator and Asendify Daily), grouped by problem.
+- Free tools for Asendify's software and services (free to use, added 20 October 2026):
+  - [Cold Email Volume Calculator](https://outbound.asendify.co/cold-email-volume-calculator/): Enter your monthly cold email target to see the inboxes, sending domains, daily sends and new leads per month you need. For: founders, agencies and sales teams planning cold email (from Asendify Outbound).
+  - [Roofing Website Checker](https://web.asendify.co/roofing-website-checker/): Tick 20 checks (tap-to-call, quote form, reviews, photos, licence, service areas, speed) for a score out of 100 and your top fixes. For: roofing company owners and their web designers (from Asendify Web).
+  - [Automation ROI Calculator](https://morningstarr.asendify.co/automation-roi-calculator/): Task minutes, times per week and hourly cost give hours and money saved per month, plus payback time for a build cost you enter. For: business and agency owners deciding whether a task is worth automating (from MorningstarrAI).
+  - [Pune Rent Affordability Calculator](https://realty.asendify.co/pune-rent-affordability-calculator/): Rent you can afford at the 30% and 25% rules, plus deposit, brokerage and the cash you need upfront. For: people renting a flat in Pune; general guidance (from Asendify Realty).
+  - [Risk Reward Calculator](https://www.asendify.co/charts/risk-reward-calculator/): Entry, stop and target give reward:risk and the breakeven win rate; account size and risk % give position size. For: traders checking a setup (education, not financial advice; from Chart Reader).
+  - [Automation Hours Calculator](https://www.asendify.co/automate/automation-hours-calculator/): List the tasks you repeat to see total hours per month you could automate, ranked with the biggest first. For: business owners and teams choosing what to automate first (from Automation Blueprint).
+  - [Workspace Planner](https://notes.asendify.co/workspace-planner/): Pick what you manage and how you work to get a layout of pages, databases and views, with Markdown and CSV to import. For: anyone setting up a Notion-style workspace (from Asendify Notes).
 - Free tools on the Asendify book sites (one per book, free to use):
   - [YouTube Hook Checker](https://playbook.asendify.co/hook-checker/): Paste your intro script and get a score out of 100 with fixes for the first 30 seconds: promise, proof, open loops and pacing. For: YouTube creators and editors who want more viewers to stay past the intro.
   - [AI Time Savings Calculator](https://aiadvantage.asendify.co/ai-time-savings-calculator/): List the tasks you repeat to see hours saved, value after tool costs, payback time and what to automate first. For: small business owners and teams deciding what to automate with AI.

@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Risk Reward Calculator: Ratio, Breakeven Win Rate and Position Size | Chart Reader</title>
+<meta name="description" content="Free risk:reward calculator: entry, stop and target give the risk-to-reward ratio and breakeven win rate; account size and risk % give position size. Educational, not advice.">
+<link rel="canonical" href="https://www.asendify.co/charts/risk-reward-calculator/">
+<meta name="theme-color" content="#060d0b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Chart Reader by Asendify">
+<meta property="og:title" content="Is this trade worth taking? Free risk:reward calculator">
+<meta property="og:description" content="Risk:reward, breakeven win rate, position size and money at risk from your entry, stop, target and risk %.">
+<meta property="og:url" content="https://www.asendify.co/charts/risk-reward-calculator/">
+<meta property="og:image" content="https://www.asendify.co/charts/risk-reward-calculator/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.asendify.co/charts/risk-reward-calculator/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230d9488'/%3E%3Cpath d='M7 22l6-7 5 4 7-9' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Risk Reward Calculator",
+   "url": "https://www.asendify.co/charts/risk-reward-calculator/",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (web browser)",
+   "isAccessibleForFree": true,
+   "description": "Free risk:reward calculator for traders: enter entry, stop-loss and target to get the risk-to-reward ratio, the breakeven win rate, and the position size and money at risk from your account size and risk % per trade. Educational, not financial advice.",
+   "dateModified": "2026-10-20",
+   "inLanguage": "en",
+   "publisher": {
+    "@type": "Organization",
+    "name": "Asendify",
+    "url": "https://www.asendify.co/"
+   },
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP"
+   },
+   "about": {
+    "@type": "SoftwareApplication",
+    "name": "Chart Reader",
+    "url": "https://charts.asendify.co/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do I calculate risk to reward?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Risk is the distance from your entry to your stop-loss; reward is the distance from your entry to your target. Divide reward by risk. Entry 100, stop 95 and target 110 risk 5 to make 10, so the reward:risk is 2:1 (often written as a 1:2 risk-to-reward)."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What win rate do I need to break even?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Before costs, breakeven win rate = 1 ÷ (1 + reward:risk). At 1:1 you need to win 50% of trades, at 2:1 about 33.3% and at 3:1 25%. Fees and slippage push the real number a little higher."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How is position size worked out from risk %?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Money at risk = account size × risk %. Position size = money at risk ÷ risk per share or unit, rounded down. A £10,000 account risking 1% has £100 at risk; with a £5 stop distance that is 20 shares."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is a higher risk:reward always better?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not on its own. Far targets are hit less often, so a 4:1 setup with a low win rate can do worse than a 1.5:1 setup that wins more often. Expectancy combines both: win rate × reward:risk − loss rate, in units of risk (R)."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does this work for short trades?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. If your stop is above your entry the calculator treats the trade as a short, and the target must be below the entry."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is this financial advice?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It is arithmetic on the prices you enter and does not recommend any trade. Trading carries a high risk of losing money, and most retail traders lose money."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Asendify",
+     "item": "https://www.asendify.co/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Free tools",
+     "item": "https://www.asendify.co/tools/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Risk reward calculator",
+     "item": "https://www.asendify.co/charts/risk-reward-calculator/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style>
+:root{--bg:#060d0b;--bg2:#0a1512;--card:#0d1a16;--line:rgba(148,163,184,.16);--ink:#e8eefc;--mut:#94a3b8;--acc:#34d399;--acc2:#22d3ee;--warn:#fbbf24;--bad:#f87171}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;overflow-x:hidden}
+a{color:var(--acc)}.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+.nav{position:sticky;top:0;z-index:20;background:rgba(6,13,11,.8);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{max-width:1120px;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:62px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:800;letter-spacing:-.02em;font-size:17px}
+.mark{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#34d399,#0d9488);display:grid;place-items:center;box-shadow:0 6px 20px rgba(52,211,153,.35)}.mark svg{width:18px;height:18px}
+.nav nav{display:flex;align-items:center;gap:20px}.nav nav a{color:var(--mut);text-decoration:none;font-size:14.5px;font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:12px 18px;font:700 15px/1.2 Inter,sans-serif;text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn.pri{background:linear-gradient(135deg,#6ee7b7,#34d399 45%,#22d3ee);color:#03140d!important;box-shadow:0 10px 30px rgba(52,211,153,.28)}
+.btn.ghost{background:rgba(255,255,255,.06);color:#fff;border:1px solid var(--line)}.btn.sm{padding:9px 14px;font-size:14px;border-radius:10px}
+.eyebrow{display:inline-block;margin-top:40px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h1{font-size:clamp(30px,4.6vw,46px);line-height:1.1;letter-spacing:-.025em;margin:10px 0 14px}
+h2{font-size:clamp(22px,3vw,30px);letter-spacing:-.015em;margin:44px 0 10px}
+.answer{font-size:18px;margin:0 0 10px}.updated{font-size:13.5px;color:var(--mut);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;margin:16px 0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:14.5px}label small{font-weight:400;color:var(--mut);font-size:12.5px}
+input,select{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg2);color:var(--ink);width:100%;min-width:0}
+input:focus,select:focus{outline:2px solid var(--acc);outline-offset:1px}
+.unit{display:flex;gap:8px}.unit select{width:auto;flex:none}
+.chk{flex-direction:row;align-items:center;gap:8px;font-weight:500;margin-top:12px}.chk input{width:auto}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.r{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:14px}.r .k{color:var(--mut);font-size:13.5px}
+.r .big{font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.15;overflow-wrap:anywhere}.r p{margin:6px 0 0;font-size:14px;color:var(--mut)}
+.ok{color:var(--acc)}.mid{color:var(--warn)}.bad{color:var(--bad)}.err{color:var(--bad);font-weight:600}
+.viz{margin-top:14px;height:16px;border-radius:8px;overflow:hidden;display:flex;border:1px solid var(--line)}.viz i{display:block;height:100%}.viz .rk{background:rgba(248,113,113,.75)}.viz .rw{background:rgba(52,211,153,.8)}
+.vizl{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mut);margin-top:4px}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14.5px}td,th{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left}th{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:.06em}
+.notice{font-size:13.5px;color:var(--mut);border-left:3px solid var(--warn);padding:8px 12px;background:rgba(251,191,36,.06);border-radius:0 10px 10px 0}
+details{border-bottom:1px solid var(--line);padding:12px 0}summary{font-weight:600;cursor:pointer}details p{color:var(--mut);margin:8px 0 0}
+p{color:#cfd8ea}.share{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+footer{border-top:1px solid var(--line);margin-top:56px;padding:28px 0 44px;color:var(--mut);font-size:14px}footer .wrap{display:flex;flex-direction:column;gap:8px}footer nav{display:flex;gap:16px;flex-wrap:wrap}footer a{color:var(--mut)}
+@media (max-width:640px){.hide-m{display:none}.r .big{font-size:26px}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="https://charts.asendify.co/?utm_source=tool&amp;utm_medium=risk-reward-calculator&amp;utm_campaign=logo"><span class="mark"><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15l4.5-5 3.5 3 6-7"/></svg></span>Chart Reader</a>
+  <nav><a class="hide-m" href="https://www.asendify.co/tools/">Free tools</a><a class="btn pri sm" href="https://charts.asendify.co/?utm_source=tool&amp;utm_medium=risk-reward-calculator&amp;utm_campaign=header#pricing">Get 100 reads</a></nav>
+</div></header>
+<main class="wrap">
+<span class="eyebrow">Free tool · Educational</span>
+<h1>Is this trade worth the risk? Risk:reward calculator</h1>
+<p class="answer">Reward:risk = (target − entry) ÷ (entry − stop). To break even before costs you must win more than 1 ÷ (1 + reward:risk) of trades: 50% at 1:1, 33.3% at 2:1, 25% at 3:1. Size the trade so the stop loses only your chosen % of the account.</p>
+<p class="updated">Last updated: <time datetime="2026-10-20">20 October 2026</time> · Free, no sign-up, nothing leaves your browser · Educational, not financial advice.</p>
+
+<div class="card">
+ <div class="fields">
+  <label>Entry price<input type="number" id="entry" min="0" step="any" value="100" inputmode="decimal"></label>
+  <label>Stop-loss price<input type="number" id="stop" min="0" step="any" value="95" inputmode="decimal"><small>Below entry = long, above = short</small></label>
+  <label>Target price<input type="number" id="target" min="0" step="any" value="110" inputmode="decimal"></label>
+  <label>Account size<span class="unit"><input type="number" id="acct" min="0" step="any" value="10000" inputmode="decimal"><select id="cur" aria-label="Currency"><option>GBP</option><option>USD</option><option>EUR</option><option>INR</option><option>AED</option></select></span></label>
+  <label>Risk per trade (%)<input type="number" id="risk" min="0" max="100" step="0.1" value="1" inputmode="decimal"><small>Many traders use 1% or less</small></label>
+  <label>Your win rate (%, optional)<input type="number" id="win" min="0" max="100" step="1" value="" placeholder="e.g. 45" inputmode="numeric"><small>To see expectancy per trade</small></label>
+ </div>
+ <label class="chk"><input type="checkbox" id="frac"> Allow fractional units (crypto, fractional shares)</label>
+</div>
+<div class="card" id="out" aria-live="polite"></div>
+
+<h2>Breakeven win rate by reward:risk</h2>
+<div class="tbl"><table>
+<tr><th>Reward : risk</th><th>Breakeven win rate (before costs)</th></tr>
+<tr><td>1 : 1</td><td>50.0%</td></tr><tr><td>1.5 : 1</td><td>40.0%</td></tr><tr><td>2 : 1</td><td>33.3%</td></tr><tr><td>3 : 1</td><td>25.0%</td></tr><tr><td>4 : 1</td><td>20.0%</td></tr>
+</table></div>
+<p>Formula: breakeven win rate = 1 ÷ (1 + reward:risk). Expectancy per trade in R (units of risk) = win rate × reward:risk − (1 − win rate). Position size = (account × risk %) ÷ |entry − stop|, rounded down.</p>
+<p class="notice">Educational tool, not financial advice. It does not recommend any trade, market or broker. Trading carries a high risk of losing money, and leveraged products can lose more than you deposit.</p>
+
+<h2>How Chart Reader helps</h2>
+<p><a href="https://charts.asendify.co/?utm_source=tool&amp;utm_medium=risk-reward-calculator&amp;utm_campaign=helps">Chart Reader</a> explains any stock, crypto or forex chart screenshot in plain English: the trend, market structure, support and resistance zones, patterns, 2–3 conditional scenarios with invalidation levels, and position-size arithmetic for your own account size and risk % per trade. It is educational and never tells you to buy or sell.</p>
+<p>100 chart reads cost £435 (£300 + 45% service fee), one-time; reads never expire. <a href="https://charts.asendify.co/?utm_source=tool&amp;utm_medium=risk-reward-calculator&amp;utm_campaign=example#example">See an example read</a>.</p>
+<p><a class="btn pri" href="https://charts.asendify.co/?utm_source=tool&amp;utm_medium=risk-reward-calculator&amp;utm_campaign=cta#pricing">See Chart Reader</a></p>
+
+<h2>Questions</h2>
+<details><summary>How do I calculate risk to reward?</summary><p>Risk is the distance from your entry to your stop-loss; reward is the distance from your entry to your target. Divide reward by risk. Entry 100, stop 95 and target 110 risk 5 to make 10, so the reward:risk is 2:1 (often written as a 1:2 risk-to-reward).</p></details>
+<details><summary>What win rate do I need to break even?</summary><p>Before costs, breakeven win rate = 1 ÷ (1 + reward:risk). At 1:1 you need to win 50% of trades, at 2:1 about 33.3% and at 3:1 25%. Fees and slippage push the real number a little higher.</p></details>
+<details><summary>How is position size worked out from risk %?</summary><p>Money at risk = account size × risk %. Position size = money at risk ÷ risk per share or unit, rounded down. A £10,000 account risking 1% has £100 at risk; with a £5 stop distance that is 20 shares.</p></details>
+<details><summary>Is a higher risk:reward always better?</summary><p>Not on its own. Far targets are hit less often, so a 4:1 setup with a low win rate can do worse than a 1.5:1 setup that wins more often. Expectancy combines both: win rate × reward:risk − loss rate, in units of risk (R).</p></details>
+<details><summary>Does this work for short trades?</summary><p>Yes. If your stop is above your entry the calculator treats the trade as a short, and the target must be below the entry.</p></details>
+<details><summary>Is this financial advice?</summary><p>No. It is arithmetic on the prices you enter and does not recommend any trade. Trading carries a high risk of losing money, and most retail traders lose money.</p></details>
+</main>
+<footer><div class="wrap">
+  <div>Chart Reader is made by <a href="https://www.asendify.co/">Asendify</a>. Educational only, not financial advice.</div>
+  <nav><a href="https://charts.asendify.co/">Chart Reader</a><a href="https://trading.asendify.co/position-size-calculator/">Position size calculator</a><a href="https://www.asendify.co/tools/">All free tools</a><a href="https://www.asendify.co/policies/">Policies</a></nav>
+</div></footer>
+<script>
+(function(){
+'use strict';
+var $=function(i){return document.getElementById(i)};
+var IDS=['entry','stop','target','acct','cur','risk','win','frac'];
+function num(i){var x=parseFloat(String($(i).value).replace(/[, ]/g,''));return isFinite(x)?x:0}
+function rr(o){
+ if(!(o.entry>0)||!(o.stop>0))return {err:'Enter an entry price and a stop-loss price.'};
+ if(o.entry===o.stop)return {err:'The stop must be below the entry (long) or above it (short).'};
+ if(!(o.target>0))return {err:'Enter a target price.'};
+ var dir=o.stop<o.entry?'long':'short';
+ if(dir==='long'?o.target<=o.entry:o.target>=o.entry)return {err:'For a '+dir+' trade the target must be '+(dir==='long'?'above':'below')+' the entry.'};
+ var risk=Math.abs(o.entry-o.stop),reward=Math.abs(o.target-o.entry),ratio=reward/risk;
+ var r={dir:dir,risk:risk,reward:reward,ratio:ratio,breakeven:1/(1+ratio),stopPct:risk/o.entry,targetPct:reward/o.entry};
+ if(o.acct>0&&o.riskPct>0&&o.riskPct<=100){
+  r.riskMoney=o.acct*o.riskPct/100;
+  var raw=r.riskMoney/risk;r.units=o.frac?Math.floor(raw*10000+1e-9)/10000:Math.floor(raw+1e-9);
+  r.atRisk=r.units*risk;r.profit=r.units*reward;r.value=r.units*o.entry;
+ }
+ if(o.win>0&&o.win<=100){var p=o.win/100;r.expR=p*ratio-(1-p)}
+ return r;
+}
+if(typeof module!=='undefined')module.exports={rr:rr};
+function money(x,cur){if(!isFinite(x))return '–';var d=Math.abs(x)<100&&x%1?2:0,s;try{s=new Intl.NumberFormat(cur==='INR'?'en-IN':'en-GB',{style:'currency',currency:cur,minimumFractionDigits:d,maximumFractionDigits:d}).format(Math.abs(x))}catch(e){s=cur+' '+Math.abs(x).toFixed(d)}return (x<0?'−':'')+s}
+function nf(x,d){return isFinite(x)?new Intl.NumberFormat('en-GB',{maximumFractionDigits:d===undefined?2:d}).format(x):'–'}
+function pct(x,d){return isFinite(x)?(x*100).toFixed(d===undefined?1:d)+'%':'–'}
+function calc(){
+ var cur=$('cur').value,o={entry:num('entry'),stop:num('stop'),target:num('target'),acct:num('acct'),riskPct:num('risk'),win:num('win'),frac:$('frac').checked};
+ var r=rr(o),h;
+ if(r.err){$('out').innerHTML='<p class="err">'+r.err+'</p>';save();return}
+ var cls=r.ratio>=2?'ok':r.ratio>=1?'mid':'bad';
+ h='<div class="res">'
+ +'<div class="r"><div class="k">Reward : risk ('+(r.dir==='long'?'long':'short')+')</div><div class="big '+cls+'" id="rRatio">'+nf(r.ratio)+' : 1</div><p>Risk 1 to make '+nf(r.ratio)+'. As risk-to-reward: 1 : '+nf(r.ratio)+'.</p></div>'
+ +'<div class="r"><div class="k">Breakeven win rate</div><div class="big" id="rBE">'+pct(r.breakeven)+'</div><p>You must win more than this share of trades like it, before costs.</p></div>';
+ if(r.units!==undefined){
+  h+='<div class="r"><div class="k">Position size</div><div class="big" id="rSize">'+nf(r.units,4)+'</div><p>units / shares. Value '+money(r.value,cur)+'.</p></div>'
+  +'<div class="r"><div class="k">Money at risk → at target</div><div class="big" id="rRisk">'+money(r.atRisk,cur)+'</div><p>Loss if the stop is hit (limit '+money(r.riskMoney,cur)+'). Profit at target about '+money(r.profit,cur)+'.</p></div>';
+ }
+ if(r.expR!==undefined)h+='<div class="r"><div class="k">Expectancy at '+nf(o.win,0)+'% wins</div><div class="big '+(r.expR>0?'ok':'bad')+'" id="rExp">'+(r.expR>=0?'+':'−')+nf(Math.abs(r.expR))+'R</div><p>Average result per trade in units of risk'+(r.riskMoney?' (about '+money(r.expR*r.riskMoney,cur)+')':'')+', before costs.</p></div>';
+ h+='</div>';
+ h+='<div class="viz" aria-hidden="true"><i class="rk" style="width:'+(100/(1+r.ratio))+'%"></i><i class="rw" style="width:'+(100*r.ratio/(1+r.ratio))+'%"></i></div><div class="vizl"><span>Stop: −'+pct(r.stopPct,2)+' from entry</span><span>Target: +'+pct(r.targetPct,2)+' from entry</span></div>';
+ if(r.units===0)h+='<p class="bad" style="margin-top:12px"><b>Your stop is too wide for this risk:</b> even 1 unit would risk '+money(r.risk,cur)+'. Allow fractional units, use a tighter stop that still makes sense on the chart, or skip the trade.</p>';
+ if(o.riskPct>2)h+='<p class="bad" style="margin-top:12px">You are risking '+nf(o.riskPct)+'% per trade. Ten losses in a row would leave '+pct(Math.pow(1-o.riskPct/100,10),0)+' of the account.</p>';
+ h+='<div class="share"><button class="btn ghost" type="button" id="copyBtn">Copy my result</button><button class="btn ghost" type="button" id="linkBtn">Copy link to this result</button></div>';
+ $('out').innerHTML=h;
+ var txt='Entry '+o.entry+', stop '+o.stop+', target '+o.target+': reward:risk '+nf(r.ratio)+':1, breakeven win rate '+pct(r.breakeven)+(r.units!==undefined?', size '+nf(r.units,4)+' units risking '+money(r.atRisk,cur):'')+'.';
+ $('copyBtn').onclick=function(){copy(txt,this,'Copied ✓')};
+ $('linkBtn').onclick=function(){copy(location.origin+location.pathname+'?'+qs(),this,'Link copied ✓')};
+ save();
+}
+function qs(){var p=new URLSearchParams();IDS.forEach(function(i){var e=$(i);p.set(i,e.type==='checkbox'?(e.checked?'1':'0'):String(e.value).slice(0,20))});return p.toString()}
+function save(){try{history.replaceState(null,'','?'+qs())}catch(e){}}
+function copy(t,b,done){var ok=function(){b.textContent=done};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,ok)}else ok()}
+var q=new URLSearchParams(location.search);
+IDS.forEach(function(i){if(!q.has(i))return;var e=$(i),v=q.get(i).slice(0,20);
+ if(e.type==='checkbox'){e.checked=v==='1';return}
+ if(e.tagName==='SELECT'){if([].some.call(e.options,function(x){return x.value===v}))e.value=v;return}
+ var x=parseFloat(v);e.value=isFinite(x)&&x>=0?String(x):''});
+IDS.forEach(function(i){$(i).addEventListener('input',calc);$(i).addEventListener('change',calc)});
+calc();
+})();
+</script>
+<script>/* 2026-10-20: real-visit counter for the Asendify Channels dashboard (same rules as the book shops). */
+(function(){try{if(sessionStorage.getItem('asd_sv')==='1')return;var q0=new URLSearchParams(location.search);
+if(q0.get('internal')==='1')document.cookie='asd_internal=1; domain=.asendify.co; path=/; max-age=63072000; SameSite=Lax; Secure';
+if(/(^|;\s*)asd_internal=1/.test(document.cookie))return;
+if(navigator.webdriver||/bot\b|bot\/|crawl|spider|slurp|preview|headless|lighthouse|scanner|facebookexternalhit/i.test(navigator.userAgent))return;
+var c=function(v){return String(v||'').toLowerCase().replace(/[^a-z0-9._-]/g,'').slice(0,60)};var src='';
+if(q0.get('utm_source'))src=[c(q0.get('utm_source')),c(q0.get('utm_medium')),c(q0.get('utm_campaign'))].join('/');
+if(!src&&document.referrer){var h=new URL(document.referrer).hostname.replace(/^www\./,'');if(h&&!/(^|\.)asendify\.co$/.test(h))src='ref/'+c(h);}
+src=src||'direct';var path=location.pathname.replace(/[^a-zA-Z0-9._\/-]/g,'').slice(0,120)||'/';
+var acts=['scroll','pointerdown','touchstart','keydown','mousemove','wheel'],sent=false,shown=0,tick;
+var send=function(how){if(sent)return;sent=true;clearInterval(tick);acts.forEach(function(e){removeEventListener(e,on,true)});
+try{sessionStorage.setItem('asd_sv','1')}catch(e){}
+fetch('https://playbook.asendify.co/api/ref',{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain'},body:JSON.stringify({visit:src,page:path,engaged:how,product:'charts'})}).catch(function(){})};
+var on=function(){send('interact')};acts.forEach(function(e){addEventListener(e,on,{capture:true,passive:true})});
+tick=setInterval(function(){if(document.visibilityState==='visible'&&(shown+=1000)>=12000)send('time')},1000);}catch(e){}})();</script>
+</body>
+</html>

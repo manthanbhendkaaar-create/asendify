@@ -54,6 +54,11 @@
 
 Last updated: 20 October 2026
 
+## Free tool
+- [Risk Reward Calculator](https://www.asendify.co/charts/risk-reward-calculator/): Enter entry, stop-loss and target to get the reward:risk ratio and breakeven win rate, plus position size and money at risk from your account size and risk % per trade, and expectancy if you enter a win rate. Educational, not financial advice. Free, runs in the browser.
+- Who it's for: traders who want to check a setup's risk before taking it.
+- More free tools from Asendify: https://www.asendify.co/tools/
+
 ## Pages
 - [Home, example read, pricing](https://charts.asendify.co/)
 - [Sign in](https://charts.asendify.co/app/)
