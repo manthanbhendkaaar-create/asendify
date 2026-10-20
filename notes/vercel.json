@@ -3,22 +3,6 @@
   "trailingSlash": true,
   "rewrites": [
     {
-      "source": "/login",
-      "destination": "/app/index.html"
-    },
-    {
-      "source": "/login/",
-      "destination": "/app/index.html"
-    },
-    {
-      "source": "/paid",
-      "destination": "/app/index.html"
-    },
-    {
-      "source": "/paid/",
-      "destination": "/app/index.html"
-    },
-    {
       "source": "/blog",
       "destination": "https://playbook.asendify.co/api/blog?svc=notes"
     },
