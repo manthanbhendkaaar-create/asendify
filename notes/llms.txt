@@ -15,6 +15,61 @@
 - Not affiliated with Notion.
 - Policies (payments and refunds): https://www.asendify.co/policies/
 
+## Every feature, by name
+- Pages inside pages: nest pages as deep as you like and open any of them from the sidebar tree
+- Move pages: move a page, with everything inside it, anywhere in the tree or to another workspace
+- Favourites and recently edited: pin the pages you use most and jump back to what you just worked on
+- Slash commands: type / to add any block
+- Headings and toggle headings: section headings, also available as collapsible toggles
+- Bullet, numbered and to-do lists: checklists you can tick off inside any page
+- Toggle lists: hide detail under a line you can open and close
+- Tables inside pages: simple editable tables right in the page
+- Code blocks: with syntax highlighting
+- Quotes, callouts and dividers: callouts take an emoji of your choice
+- Images and PDFs: upload images (up to 3 MB each) and PDFs (up to 5 MB each)
+- Drag to reorder: drag blocks up and down, nest and un-nest them
+- @ page mentions: type @ to link to another page
+- Backlinks: every page shows which pages link to it
+- Page icons and covers: an emoji icon and a cover image for any page
+- Page fonts, full width and page lock: default, serif or mono font; full-width layout; lock a page against accidental edits
+- Databases: every row is also a full page
+- 15 property types: text, number, select, multi-select, status, checkbox, date, URL, email, phone, relation, rollup, formula, created time and edited time
+- Number formats: plain number, percent, GBP, USD, EUR or INR
+- Six database views: table, board (kanban), list, gallery, calendar and timeline
+- Filters, sorts and group by: set separately for each view
+- Relations and rollups: link databases and roll up count, sum, average, min or max
+- Formulas: calculated properties
+- Linked databases: show a database inside another page
+- 10 templates: second brain, task board, simple CRM, content calendar, meeting notes, goals (OKRs), habit tracker, journal, reading list and team wiki
+- Import Markdown and CSV: a .md file becomes a page, a .csv file becomes a database
+- Search everything (Ctrl K / Cmd K): find any page by title or text, across all your workspaces
+- Up to 20 workspaces: keep work, clients and personal life apart and switch in one click
+- Page history: restore any version from the last 30 days, name versions and compare them
+- Comments: comment on pages and mark comments as resolved
+- Duplicate pages: copy a page with everything inside it
+- Read-only public link: anyone with the link can read the page and the pages inside it; turn it off any time
+- View-only guests: invite up to 50 people by email to read a page, free
+- Export everything: Markdown + CSV (zip) or JSON, at any time
+- Trash with 30-day restore: deleted pages wait 30 days before they are gone for good
+- Passwordless sign-in: a one-time sign-in link sent to your email
+- Autosave and sync: every change saves itself and shows up on your other devices; editing in two tabs never silently overwrites
+- Light and dark mode: follows your device setting
+- Runs in any modern browser: Windows, macOS, Linux, Android and iPhone
+
+## Who Asendify Notes is for
+- Freelancers, founders and consultants who want one private place for notes, docs, tasks and client work.
+- People who like the Notion way of working (pages, blocks, databases) and want it in a simpler, private workspace.
+- Anyone who shares finished pages with clients or family as read-only links or view-only guests.
+- People who want to keep work, clients and personal life in separate workspaces.
+
+## Who it's not for
+- Teams who need several people editing the same workspace: there is one owner per account, and guests can only read.
+- Anyone looking for a free plan or a free trial: there isn't one.
+- People who need installable desktop or mobile apps or offline use today: it runs in the browser, and apps are on the roadmap.
+- Teams that need integrations or an API to connect other tools: Asendify Notes doesn't offer them.
+
+Last updated: 20 October 2026
+
 ## Pages
 - [Home, features, pricing](https://notes.asendify.co/)
 - [Sign in](https://notes.asendify.co/app/)

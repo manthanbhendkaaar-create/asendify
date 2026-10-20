@@ -28,19 +28,157 @@
 {
  "@context": "https://schema.org",
  "@graph": [
-  { "@type": "Organization", "@id": "https://charts.asendify.co/#org", "name": "Chart Reader by Asendify", "url": "https://charts.asendify.co/", "parentOrganization": { "@type": "Organization", "name": "Asendify", "url": "https://www.asendify.co/" } },
-  { "@type": "WebSite", "@id": "https://charts.asendify.co/#website", "name": "Chart Reader", "url": "https://charts.asendify.co/", "publisher": { "@id": "https://charts.asendify.co/#org" } },
-  { "@type": "WebApplication", "@id": "https://charts.asendify.co/#app", "name": "Chart Reader", "applicationCategory": "EducationalApplication", "operatingSystem": "Any (web browser)",
-    "description": "Educational explanations of trading chart screenshots (stocks, crypto, forex): trend, market structure, support and resistance, patterns, volume and indicator notes, conditional scenarios with invalidation levels, and position-size arithmetic from your own account size and risk percentage. Not financial advice.",
-    "offers": { "@type": "Offer", "price": "435.00", "priceCurrency": "GBP", "description": "100 chart reads: £300 plus 45% service fee (£135) = £435, one-time payment. Reads never expire.", "url": "https://charts.asendify.co/#pricing" } },
-  { "@type": "FAQPage", "mainEntity": [
-    { "@type": "Question", "name": "Is this financial advice?", "acceptedAnswer": { "@type": "Answer", "text": "No. Chart Reader is educational. It explains what a chart shows and what traders often watch, using conditional wording. It never tells you to buy or sell, there is no guarantee of accuracy, and trading carries a high risk of losing money." } },
-    { "@type": "Question", "name": "How much does it cost?", "acceptedAnswer": { "@type": "Answer", "text": "100 chart reads for £435: £300 plus a 45% service fee of £135. One-time payment through PayPal. Reads never expire." } },
-    { "@type": "Question", "name": "What counts as a read?", "acceptedAnswer": { "@type": "Answer", "text": "Only a successful read uses one. If the image is not a chart, or the reader fails, the read is given back automatically." } },
-    { "@type": "Question", "name": "Which charts work?", "acceptedAnswer": { "@type": "Answer", "text": "Screenshots of candlestick, bar or line charts from platforms such as TradingView, MetaTrader, broker apps or exchanges, for stocks, crypto, forex, indices or commodities. A readable price axis gives the best results." } },
-    { "@type": "Question", "name": "What happens to my screenshots?", "acceptedAnswer": { "@type": "Answer", "text": "They are stored privately and deleted automatically after 30 days. The written results stay in your history." } },
-    { "@type": "Question", "name": "How do I sign in?", "acceptedAnswer": { "@type": "Answer", "text": "With your email. There are no passwords: we email you a sign-in link that works once." } }
-  ] }
+  {
+   "@type": "Organization",
+   "@id": "https://charts.asendify.co/#org",
+   "name": "Chart Reader by Asendify",
+   "url": "https://charts.asendify.co/",
+   "parentOrganization": {
+    "@type": "Organization",
+    "name": "Asendify",
+    "url": "https://www.asendify.co/"
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://charts.asendify.co/#website",
+   "name": "Chart Reader",
+   "url": "https://charts.asendify.co/",
+   "publisher": {
+    "@id": "https://charts.asendify.co/#org"
+   }
+  },
+  {
+   "@type": "WebApplication",
+   "@id": "https://charts.asendify.co/#app",
+   "name": "Chart Reader",
+   "applicationCategory": "EducationalApplication",
+   "operatingSystem": "Any (web browser)",
+   "description": "Educational explanations of trading chart screenshots (stocks, crypto, forex): trend, market structure, support and resistance, patterns, volume and indicator notes, conditional scenarios with invalidation levels, and position-size arithmetic from your own account size and risk percentage. Not financial advice.",
+   "offers": {
+    "@type": "Offer",
+    "price": "435.00",
+    "priceCurrency": "GBP",
+    "description": "100 chart reads: £300 plus 45% service fee (£135) = £435, one-time payment. Reads never expire.",
+    "url": "https://charts.asendify.co/#pricing"
+   },
+   "featureList": [
+    "Upload any chart screenshot: PNG, JPG or WebP; tap to choose or drop the image in",
+    "Automatic resizing: images are resized in your browser before upload (up to 1600 px, under 2 MB)",
+    "Any platform: screenshots from TradingView, MetaTrader, broker apps or exchanges",
+    "Any market: stocks, crypto, forex, indices and commodities",
+    "Chart types: candlestick, bar, line and Heikin Ashi charts",
+    "Instrument and timeframe: read from the chart when they are visible",
+    "Trend direction: up, down, sideways or unclear, with a 2–3 sentence explanation",
+    "Market structure: higher highs and lows, ranges and breakouts in plain English",
+    "Support and resistance zones: read from the price axis, each with a label and why it matters",
+    "Chart pattern notes: up to six notable patterns, with where they are and how clear they are",
+    "Volume and indicator notes: only when volume or indicators are visible on your screenshot",
+    "2–3 conditional scenarios: \"If price does X, traders often watch Y\"",
+    "Trigger and invalidation levels: each scenario has a level and the price that would cancel it",
+    "What would change the picture: the signs that would make the read out of date",
+    "Quality note: says when a blurry chart or cut-off axis limits the read",
+    "Never invents prices: if the price axis can't be read, levels are left blank instead of guessed",
+    "Position-size arithmetic: risk amount = account size × risk % per trade",
+    "Size for each scenario: units = risk amount ÷ distance from level to invalidation, with distance %, position value and leverage",
+    "11 account currencies: GBP, USD, EUR, INR, AUD, CAD, AED, SGD, JPY, CHF and USDT",
+    "Optional notes: add the timeframe, the market and what you want to learn from the chart",
+    "No buy or sell calls: an automatic check rejects any read that tells you to buy or sell",
+    "Not-a-chart check: photos, memes or documents are turned away and the read is given back",
+    "Only successful reads count: if a read fails, it is given back automatically",
+    "Saved history: every read is saved to your account to reopen and compare later",
+    "Private screenshots: stored privately and deleted after 30 days; the written read stays",
+    "Passwordless sign-in: a one-time sign-in link by email",
+    "100 reads that never expire: one pack, no subscription",
+    "No app to install: works in any modern browser on phone or computer"
+   ],
+   "dateModified": "2026-10-20"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Is this financial advice?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Chart Reader is educational. It explains what a chart shows and what traders often watch, using conditional wording. It never tells you to buy or sell, there is no guarantee of accuracy, and trading carries a high risk of losing money. Always make your own decisions."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How much does it cost?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "100 chart reads for £435: £300 plus a 45% service fee of £135. One-time payment through PayPal. Reads never expire."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What counts as a read?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Only a successful read uses one. If the image is not a chart, or the reader fails, the read is given back automatically."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which charts work?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Screenshots of candlestick, bar or line charts from platforms such as TradingView, MetaTrader, broker apps or exchanges, for stocks, crypto, forex, indices or commodities. A readable price axis gives the best results. Images are resized in your browser before upload (max 2 MB)."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Who reads the chart?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "An AI vision model reads your screenshot and writes the explanation to a fixed structure. It can misread a blurry chart or a cut-off price axis, so always check the levels yourself."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What happens to my screenshots?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "They are stored privately and deleted automatically after 30 days. The written results stay in your history."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I sign in?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "With your email. There are no passwords: we email you a sign-in link that works once. You can ask for a new link any time on the sign-in page."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Refunds and policies",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Please see our policies."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does Chart Reader tell me when to buy or sell?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Every read uses conditional wording (\"if price does X, traders often watch Y\"), and an automatic check rejects any read that tells you to buy or sell."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can it work out my position size?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, as pure arithmetic. Add your account size and risk % per trade, and each scenario shows the size that matches the distance between its level and its invalidation. It ignores fees, spread, slippage and contract sizes."
+     }
+    }
+   ]
+  }
  ]
 }
 </script>
@@ -57,6 +195,7 @@
 .paybtn.alt{background:linear-gradient(135deg,#2a2416 0%,#1a160d 100%) !important;color:#f2d27a !important;box-shadow:0 0 0 1.5px rgba(212,175,55,.75) inset,0 10px 24px -12px rgba(212,175,55,.5) !important}
 @media (prefers-reduced-motion:reduce){.paybtn:after{display:none}.paybtn{transition:none}}
 @media (max-width:480px){.paybtn{min-height:56px;font-size:17px !important;padding:15px 20px !important}}
+.fl{columns:2 300px;column-gap:36px;padding-left:20px;margin:22px 0 0}.fl li{break-inside:avoid;margin:0 0 9px;color:#cfd8ea}.fl li b{color:#fff}.who{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:22px}.who ul{padding-left:20px;margin:8px 0 0;color:#cfd8ea}.who li{margin:0 0 8px}.updated{margin:10px 0 0;color:var(--mut);font-size:13.5px}
 </style>
 </head>
 <body>
@@ -74,6 +213,7 @@
     <p class="lead">Chart Reader explains any stock, crypto or forex chart screenshot: the trend, the structure, key support and resistance, patterns, what traders often watch next, and the position-size arithmetic for your own risk rule.</p>
     <div class="ctas"><a class="btn pri" href="#pricing">Get 100 chart reads</a><a class="btn ghost" href="#example">See an example</a></div>
     <p class="price-line"><b>£435</b> for 100 reads (£300 + 45% service fee). One-time payment. Reads never expire.</p>
+    <p class="updated">Last updated: <time datetime="2026-10-20">20 October 2026</time></p>
     <p class="notice" style="margin-top:18px;max-width:600px"><b>Educational only.</b> Not financial advice: nothing here tells you to buy or sell. No guarantee of accuracy. Trading carries a high risk of losing money.</p>
   </div>
   <div class="chartcard"><!--CHART:START--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" role="img" aria-labelledby="c1-t" font-family="Inter, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif"><title id="c1-t">Fictional example chart EXAMPLE/USD on the 4-hour timeframe, with support and resistance zones</title><rect width="800" height="470" fill="#0b1411"/><line x1="14" x2="716" y1="342.7" y2="342.7" stroke="#1f2d28" stroke-width="1"/><text x="726" y="346.7" font-size="12" fill="#6b7f78">80.00</text><line x1="14" x2="716" y1="294.5" y2="294.5" stroke="#1f2d28" stroke-width="1"/><text x="726" y="298.5" font-size="12" fill="#6b7f78">85.00</text><line x1="14" x2="716" y1="246.2" y2="246.2" stroke="#1f2d28" stroke-width="1"/><text x="726" y="250.2" font-size="12" fill="#6b7f78">90.00</text><line x1="14" x2="716" y1="198.0" y2="198.0" stroke="#1f2d28" stroke-width="1"/><text x="726" y="202.0" font-size="12" fill="#6b7f78">95.00</text><line x1="14" x2="716" y1="149.8" y2="149.8" stroke="#1f2d28" stroke-width="1"/><text x="726" y="153.8" font-size="12" fill="#6b7f78">100.00</text><line x1="14" x2="716" y1="101.5" y2="101.5" stroke="#1f2d28" stroke-width="1"/><text x="726" y="105.5" font-size="12" fill="#6b7f78">105.00</text><line x1="14" x2="716" y1="53.3" y2="53.3" stroke="#1f2d28" stroke-width="1"/><text x="726" y="57.3" font-size="12" fill="#6b7f78">110.00</text><rect x="14" y="62.9" width="702" height="9.6" fill="#f87171" fill-opacity="0.13"/><line x1="14" x2="716" y1="62.9" y2="62.9" stroke="#f87171" stroke-opacity=".55" stroke-dasharray="5 5"/><line x1="14" x2="716" y1="72.6" y2="72.6" stroke="#f87171" stroke-opacity=".55" stroke-dasharray="5 5"/><text x="24" y="56.9" font-size="12.5" font-weight="700" fill="#f87171">Resistance 108–109</text><rect x="14" y="140.1" width="702" height="14.5" fill="#34d399" fill-opacity="0.14"/><line x1="14" x2="716" y1="140.1" y2="140.1" stroke="#34d399" stroke-opacity=".55" stroke-dasharray="5 5"/><line x1="14" x2="716" y1="154.6" y2="154.6" stroke="#34d399" stroke-opacity=".55" stroke-dasharray="5 5"/><text x="24" y="134.1" font-size="12.5" font-weight="700" fill="#34d399">Support 99.5–101 (old range top)</text><rect x="14" y="198.0" width="702" height="9.6" fill="#34d399" fill-opacity="0.08"/><line x1="14" x2="716" y1="198.0" y2="198.0" stroke="#34d399" stroke-opacity=".55" stroke-dasharray="5 5"/><line x1="14" x2="716" y1="207.6" y2="207.6" stroke="#34d399" stroke-opacity=".55" stroke-dasharray="5 5"/><text x="484" y="192.0" font-size="12.5" font-weight="700" fill="#34d399">Support 94–95 (range floor)</text><line x1="19.6" x2="19.6" y1="316.2" y2="328.7" stroke="#f87171" stroke-width="1.2"/><rect x="16.1" y="319.6" width="6.9" height="8.9" fill="#f87171" rx="1"/><rect x="16.1" y="409.3" width="6.9" height="38.7" fill="#f87171" fill-opacity=".35"/><line x1="30.7" x2="30.7" y1="312.1" y2="328.5" stroke="#34d399" stroke-width="1.2"/><rect x="27.3" y="316.5" width="6.9" height="11.9" fill="#34d399" rx="1"/><rect x="27.3" y="412.4" width="6.9" height="35.6" fill="#34d399" fill-opacity=".35"/><line x1="41.9" x2="41.9" y1="312.1" y2="320.2" stroke="#34d399" stroke-width="1.2"/><rect x="38.4" y="312.3" width="6.9" height="4.2" fill="#34d399" rx="1"/><rect x="38.4" y="406.6" width="6.9" height="41.4" fill="#34d399" fill-opacity=".35"/><line x1="53.0" x2="53.0" y1="290.3" y2="320.7" stroke="#34d399" stroke-width="1.2"/><rect x="49.5" y="298.9" width="6.9" height="13.4" fill="#34d399" rx="1"/><rect x="49.5" y="419.2" width="6.9" height="28.8" fill="#34d399" fill-opacity=".35"/><line x1="64.1" x2="64.1" y1="281.7" y2="305.3" stroke="#34d399" stroke-width="1.2"/><rect x="60.7" y="284.1" width="6.9" height="14.8" fill="#34d399" rx="1"/><rect x="60.7" y="404.0" width="6.9" height="44.0" fill="#34d399" fill-opacity=".35"/><line x1="75.3" x2="75.3" y1="265.3" y2="288.8" stroke="#34d399" stroke-width="1.2"/><rect x="71.8" y="272.8" width="6.9" height="11.3" fill="#34d399" rx="1"/><rect x="71.8" y="407.8" width="6.9" height="40.2" fill="#34d399" fill-opacity=".35"/><line x1="86.4" x2="86.4" y1="257.0" y2="277.9" stroke="#34d399" stroke-width="1.2"/><rect x="83.0" y="264.7" width="6.9" height="8.1" fill="#34d399" rx="1"/><rect x="83.0" y="411.0" width="6.9" height="37.0" fill="#34d399" fill-opacity=".35"/><line x1="97.6" x2="97.6" y1="262.6" y2="270.8" stroke="#f87171" stroke-width="1.2"/><rect x="94.1" y="264.7" width="6.9" height="2.3" fill="#f87171" rx="1"/><rect x="94.1" y="406.4" width="6.9" height="41.6" fill="#f87171" fill-opacity=".35"/><line x1="108.7" x2="108.7" y1="242.4" y2="268.4" stroke="#34d399" stroke-width="1.2"/><rect x="105.3" y="250.0" width="6.9" height="17.0" fill="#34d399" rx="1"/><rect x="105.3" y="413.6" width="6.9" height="34.4" fill="#34d399" fill-opacity=".35"/><line x1="119.9" x2="119.9" y1="233.7" y2="256.9" stroke="#34d399" stroke-width="1.2"/><rect x="116.4" y="242.2" width="6.9" height="7.8" fill="#34d399" rx="1"/><rect x="116.4" y="408.6" width="6.9" height="39.4" fill="#34d399" fill-opacity=".35"/><line x1="131.0" x2="131.0" y1="229.8" y2="244.3" stroke="#34d399" stroke-width="1.2"/><rect x="127.5" y="231.1" width="6.9" height="11.1" fill="#34d399" rx="1"/><rect x="127.5" y="408.8" width="6.9" height="39.2" fill="#34d399" fill-opacity=".35"/><line x1="142.1" x2="142.1" y1="216.2" y2="237.5" stroke="#34d399" stroke-width="1.2"/><rect x="138.7" y="219.4" width="6.9" height="11.7" fill="#34d399" rx="1"/><rect x="138.7" y="404.4" width="6.9" height="43.6" fill="#34d399" fill-opacity=".35"/><line x1="153.3" x2="153.3" y1="216.4" y2="222.6" stroke="#34d399" stroke-width="1.2"/><rect x="149.8" y="219.0" width="6.9" height="1.2" fill="#34d399" rx="1"/><rect x="149.8" y="409.2" width="6.9" height="38.8" fill="#34d399" fill-opacity=".35"/><line x1="164.4" x2="164.4" y1="207.1" y2="224.7" stroke="#34d399" stroke-width="1.2"/><rect x="161.0" y="214.2" width="6.9" height="4.9" fill="#34d399" rx="1"/><rect x="161.0" y="416.4" width="6.9" height="31.6" fill="#34d399" fill-opacity=".35"/><line x1="175.6" x2="175.6" y1="190.4" y2="222.8" stroke="#34d399" stroke-width="1.2"/><rect x="172.1" y="191.6" width="6.9" height="22.6" fill="#34d399" rx="1"/><rect x="172.1" y="409.8" width="6.9" height="38.2" fill="#34d399" fill-opacity=".35"/><line x1="186.7" x2="186.7" y1="155.5" y2="196.6" stroke="#34d399" stroke-width="1.2"/><rect x="183.3" y="156.1" width="6.9" height="35.5" fill="#34d399" rx="1"/><rect x="183.3" y="416.8" width="6.9" height="31.2" fill="#34d399" fill-opacity=".35"/><line x1="197.9" x2="197.9" y1="132.2" y2="160.9" stroke="#34d399" stroke-width="1.2"/><rect x="194.4" y="140.3" width="6.9" height="15.8" fill="#34d399" rx="1"/><rect x="194.4" y="412.8" width="6.9" height="35.2" fill="#34d399" fill-opacity=".35"/><line x1="209.0" x2="209.0" y1="139.4" y2="170.2" stroke="#f87171" stroke-width="1.2"/><rect x="205.5" y="140.3" width="6.9" height="26.4" fill="#f87171" rx="1"/><rect x="205.5" y="409.6" width="6.9" height="38.4" fill="#f87171" fill-opacity=".35"/><line x1="220.1" x2="220.1" y1="165.1" y2="188.4" stroke="#f87171" stroke-width="1.2"/><rect x="216.7" y="166.6" width="6.9" height="19.5" fill="#f87171" rx="1"/><rect x="216.7" y="417.6" width="6.9" height="30.4" fill="#f87171" fill-opacity=".35"/><line x1="231.3" x2="231.3" y1="184.0" y2="213.5" stroke="#f87171" stroke-width="1.2"/><rect x="227.8" y="186.1" width="6.9" height="20.9" fill="#f87171" rx="1"/><rect x="227.8" y="418.6" width="6.9" height="29.4" fill="#f87171" fill-opacity=".35"/><line x1="242.4" x2="242.4" y1="192.7" y2="215.2" stroke="#34d399" stroke-width="1.2"/><rect x="239.0" y="195.0" width="6.9" height="12.0" fill="#34d399" rx="1"/><rect x="239.0" y="407.6" width="6.9" height="40.4" fill="#34d399" fill-opacity=".35"/><line x1="253.6" x2="253.6" y1="175.3" y2="195.6" stroke="#34d399" stroke-width="1.2"/><rect x="250.1" y="177.6" width="6.9" height="17.5" fill="#34d399" rx="1"/><rect x="250.1" y="403.6" width="6.9" height="44.4" fill="#34d399" fill-opacity=".35"/><line x1="264.7" x2="264.7" y1="137.2" y2="179.8" stroke="#34d399" stroke-width="1.2"/><rect x="261.3" y="145.2" width="6.9" height="32.4" fill="#34d399" rx="1"/><rect x="261.3" y="415.8" width="6.9" height="32.2" fill="#34d399" fill-opacity=".35"/><line x1="275.9" x2="275.9" y1="142.4" y2="148.2" stroke="#34d399" stroke-width="1.2"/><rect x="272.4" y="144.5" width="6.9" height="1.2" fill="#34d399" rx="1"/><rect x="272.4" y="405.9" width="6.9" height="42.1" fill="#34d399" fill-opacity=".35"/><line x1="287.0" x2="287.0" y1="141.9" y2="166.8" stroke="#f87171" stroke-width="1.2"/><rect x="283.5" y="144.5" width="6.9" height="17.2" fill="#f87171" rx="1"/><rect x="283.5" y="418.1" width="6.9" height="29.9" fill="#f87171" fill-opacity=".35"/><line x1="298.1" x2="298.1" y1="153.9" y2="186.2" stroke="#f87171" stroke-width="1.2"/><rect x="294.7" y="161.7" width="6.9" height="19.9" fill="#f87171" rx="1"/><rect x="294.7" y="415.8" width="6.9" height="32.2" fill="#f87171" fill-opacity=".35"/><line x1="309.3" x2="309.3" y1="181.5" y2="205.3" stroke="#f87171" stroke-width="1.2"/><rect x="305.8" y="181.7" width="6.9" height="17.7" fill="#f87171" rx="1"/><rect x="305.8" y="407.6" width="6.9" height="40.4" fill="#f87171" fill-opacity=".35"/><line x1="320.4" x2="320.4" y1="192.2" y2="204.6" stroke="#f87171" stroke-width="1.2"/><rect x="317.0" y="199.3" width="6.9" height="3.4" fill="#f87171" rx="1"/><rect x="317.0" y="418.5" width="6.9" height="29.5" fill="#f87171" fill-opacity=".35"/><line x1="331.6" x2="331.6" y1="161.3" y2="209.5" stroke="#34d399" stroke-width="1.2"/><rect x="328.1" y="167.2" width="6.9" height="35.5" fill="#34d399" rx="1"/><rect x="328.1" y="408.4" width="6.9" height="39.6" fill="#34d399" fill-opacity=".35"/><line x1="342.7" x2="342.7" y1="153.4" y2="172.6" stroke="#34d399" stroke-width="1.2"/><rect x="339.3" y="156.2" width="6.9" height="11.1" fill="#34d399" rx="1"/><rect x="339.3" y="404.3" width="6.9" height="43.7" fill="#34d399" fill-opacity=".35"/><line x1="353.9" x2="353.9" y1="146.0" y2="157.7" stroke="#34d399" stroke-width="1.2"/><rect x="350.4" y="150.7" width="6.9" height="5.5" fill="#34d399" rx="1"/><rect x="350.4" y="415.9" width="6.9" height="32.1" fill="#34d399" fill-opacity=".35"/><line x1="365.0" x2="365.0" y1="148.3" y2="162.6" stroke="#f87171" stroke-width="1.2"/><rect x="361.5" y="150.7" width="6.9" height="11.6" fill="#f87171" rx="1"/><rect x="361.5" y="417.0" width="6.9" height="31.0" fill="#f87171" fill-opacity=".35"/><line x1="376.1" x2="376.1" y1="154.8" y2="200.8" stroke="#f87171" stroke-width="1.2"/><rect x="372.7" y="162.3" width="6.9" height="33.6" fill="#f87171" rx="1"/><rect x="372.7" y="416.6" width="6.9" height="31.4" fill="#f87171" fill-opacity=".35"/><line x1="387.3" x2="387.3" y1="192.2" y2="211.0" stroke="#f87171" stroke-width="1.2"/><rect x="383.8" y="195.9" width="6.9" height="7.8" fill="#f87171" rx="1"/><rect x="383.8" y="408.6" width="6.9" height="39.4" fill="#f87171" fill-opacity=".35"/><line x1="398.4" x2="398.4" y1="190.1" y2="204.5" stroke="#34d399" stroke-width="1.2"/><rect x="395.0" y="198.4" width="6.9" height="5.3" fill="#34d399" rx="1"/><rect x="395.0" y="403.7" width="6.9" height="44.3" fill="#34d399" fill-opacity=".35"/><line x1="409.6" x2="409.6" y1="130.0" y2="206.4" stroke="#34d399" stroke-width="1.2"/><rect x="406.1" y="132.5" width="6.9" height="65.8" fill="#34d399" rx="1"/><rect x="406.1" y="384.2" width="6.9" height="63.8" fill="#34d399" fill-opacity=".35"/><line x1="420.7" x2="420.7" y1="132.0" y2="148.3" stroke="#f87171" stroke-width="1.2"/><rect x="417.3" y="132.5" width="6.9" height="7.9" fill="#f87171" rx="1"/><rect x="417.3" y="398.3" width="6.9" height="49.7" fill="#f87171" fill-opacity=".35"/><line x1="431.9" x2="431.9" y1="123.8" y2="144.0" stroke="#34d399" stroke-width="1.2"/><rect x="428.4" y="123.9" width="6.9" height="16.5" fill="#34d399" rx="1"/><rect x="428.4" y="387.1" width="6.9" height="60.9" fill="#34d399" fill-opacity=".35"/><line x1="443.0" x2="443.0" y1="115.7" y2="133.0" stroke="#f87171" stroke-width="1.2"/><rect x="439.5" y="123.9" width="6.9" height="2.8" fill="#f87171" rx="1"/><rect x="439.5" y="395.9" width="6.9" height="52.1" fill="#f87171" fill-opacity=".35"/><line x1="454.1" x2="454.1" y1="113.4" y2="130.8" stroke="#34d399" stroke-width="1.2"/><rect x="450.7" y="115.5" width="6.9" height="11.2" fill="#34d399" rx="1"/><rect x="450.7" y="398.7" width="6.9" height="49.3" fill="#34d399" fill-opacity=".35"/><line x1="465.3" x2="465.3" y1="110.0" y2="117.9" stroke="#34d399" stroke-width="1.2"/><rect x="461.8" y="112.2" width="6.9" height="3.3" fill="#34d399" rx="1"/><rect x="461.8" y="390.6" width="6.9" height="57.4" fill="#34d399" fill-opacity=".35"/><line x1="476.4" x2="476.4" y1="92.9" y2="113.8" stroke="#34d399" stroke-width="1.2"/><rect x="473.0" y="99.8" width="6.9" height="12.4" fill="#34d399" rx="1"/><rect x="473.0" y="386.8" width="6.9" height="61.2" fill="#34d399" fill-opacity=".35"/><line x1="487.6" x2="487.6" y1="93.9" y2="104.5" stroke="#34d399" stroke-width="1.2"/><rect x="484.1" y="94.8" width="6.9" height="5.0" fill="#34d399" rx="1"/><rect x="484.1" y="391.3" width="6.9" height="56.7" fill="#34d399" fill-opacity=".35"/><line x1="498.7" x2="498.7" y1="84.6" y2="101.3" stroke="#34d399" stroke-width="1.2"/><rect x="495.3" y="85.3" width="6.9" height="9.5" fill="#34d399" rx="1"/><rect x="495.3" y="397.0" width="6.9" height="51.0" fill="#34d399" fill-opacity=".35"/><line x1="509.9" x2="509.9" y1="76.7" y2="88.6" stroke="#34d399" stroke-width="1.2"/><rect x="506.4" y="83.2" width="6.9" height="2.2" fill="#34d399" rx="1"/><rect x="506.4" y="386.5" width="6.9" height="61.5" fill="#34d399" fill-opacity=".35"/><line x1="521.0" x2="521.0" y1="74.1" y2="90.9" stroke="#34d399" stroke-width="1.2"/><rect x="517.5" y="74.4" width="6.9" height="8.8" fill="#34d399" rx="1"/><rect x="517.5" y="398.4" width="6.9" height="49.6" fill="#34d399" fill-opacity=".35"/><line x1="532.1" x2="532.1" y1="67.2" y2="74.7" stroke="#f87171" stroke-width="1.2"/><rect x="528.7" y="74.4" width="6.9" height="1.2" fill="#f87171" rx="1"/><rect x="528.7" y="388.2" width="6.9" height="59.8" fill="#f87171" fill-opacity=".35"/><line x1="543.3" x2="543.3" y1="67.9" y2="105.3" stroke="#f87171" stroke-width="1.2"/><rect x="539.8" y="74.4" width="6.9" height="29.0" fill="#f87171" rx="1"/><rect x="539.8" y="405.2" width="6.9" height="42.8" fill="#f87171" fill-opacity=".35"/><line x1="554.4" x2="554.4" y1="90.5" y2="103.6" stroke="#34d399" stroke-width="1.2"/><rect x="551.0" y="93.1" width="6.9" height="10.2" fill="#34d399" rx="1"/><rect x="551.0" y="410.9" width="6.9" height="37.1" fill="#34d399" fill-opacity=".35"/><line x1="565.6" x2="565.6" y1="66.8" y2="100.7" stroke="#34d399" stroke-width="1.2"/><rect x="562.1" y="69.0" width="6.9" height="24.1" fill="#34d399" rx="1"/><rect x="562.1" y="412.7" width="6.9" height="35.3" fill="#34d399" fill-opacity=".35"/><line x1="576.7" x2="576.7" y1="67.6" y2="80.5" stroke="#f87171" stroke-width="1.2"/><rect x="573.3" y="69.0" width="6.9" height="6.8" fill="#f87171" rx="1"/><rect x="573.3" y="407.8" width="6.9" height="40.2" fill="#f87171" fill-opacity=".35"/><line x1="587.9" x2="587.9" y1="70.2" y2="90.4" stroke="#f87171" stroke-width="1.2"/><rect x="584.4" y="75.8" width="6.9" height="8.3" fill="#f87171" rx="1"/><rect x="584.4" y="405.4" width="6.9" height="42.6" fill="#f87171" fill-opacity=".35"/><line x1="599.0" x2="599.0" y1="82.4" y2="95.2" stroke="#f87171" stroke-width="1.2"/><rect x="595.5" y="84.1" width="6.9" height="7.2" fill="#f87171" rx="1"/><rect x="595.5" y="408.7" width="6.9" height="39.3" fill="#f87171" fill-opacity=".35"/><line x1="610.1" x2="610.1" y1="76.9" y2="94.6" stroke="#34d399" stroke-width="1.2"/><rect x="606.7" y="78.0" width="6.9" height="13.3" fill="#34d399" rx="1"/><rect x="606.7" y="418.0" width="6.9" height="30.0" fill="#34d399" fill-opacity=".35"/><line x1="621.3" x2="621.3" y1="74.7" y2="91.6" stroke="#f87171" stroke-width="1.2"/><rect x="617.8" y="78.0" width="6.9" height="6.0" fill="#f87171" rx="1"/><rect x="617.8" y="416.9" width="6.9" height="31.1" fill="#f87171" fill-opacity=".35"/><line x1="632.4" x2="632.4" y1="75.9" y2="102.7" stroke="#f87171" stroke-width="1.2"/><rect x="629.0" y="83.9" width="6.9" height="15.9" fill="#f87171" rx="1"/><rect x="629.0" y="418.3" width="6.9" height="29.7" fill="#f87171" fill-opacity=".35"/><line x1="643.6" x2="643.6" y1="99.2" y2="113.7" stroke="#f87171" stroke-width="1.2"/><rect x="640.1" y="99.9" width="6.9" height="6.5" fill="#f87171" rx="1"/><rect x="640.1" y="421.3" width="6.9" height="26.7" fill="#f87171" fill-opacity=".35"/><line x1="654.7" x2="654.7" y1="96.8" y2="111.4" stroke="#34d399" stroke-width="1.2"/><rect x="651.3" y="98.1" width="6.9" height="8.2" fill="#34d399" rx="1"/><rect x="651.3" y="413.8" width="6.9" height="34.2" fill="#34d399" fill-opacity=".35"/><line x1="665.9" x2="665.9" y1="90.0" y2="112.2" stroke="#f87171" stroke-width="1.2"/><rect x="662.4" y="98.1" width="6.9" height="7.6" fill="#f87171" rx="1"/><rect x="662.4" y="413.0" width="6.9" height="35.0" fill="#f87171" fill-opacity=".35"/><line x1="677.0" x2="677.0" y1="104.2" y2="123.8" stroke="#f87171" stroke-width="1.2"/><rect x="673.5" y="105.7" width="6.9" height="12.0" fill="#f87171" rx="1"/><rect x="673.5" y="418.9" width="6.9" height="29.1" fill="#f87171" fill-opacity=".35"/><line x1="688.1" x2="688.1" y1="110.0" y2="127.0" stroke="#f87171" stroke-width="1.2"/><rect x="684.7" y="117.7" width="6.9" height="8.3" fill="#f87171" rx="1"/><rect x="684.7" y="417.1" width="6.9" height="30.9" fill="#f87171" fill-opacity=".35"/><line x1="699.3" x2="699.3" y1="112.6" y2="132.5" stroke="#34d399" stroke-width="1.2"/><rect x="695.8" y="120.6" width="6.9" height="5.4" fill="#34d399" rx="1"/><rect x="695.8" y="410.5" width="6.9" height="37.5" fill="#34d399" fill-opacity=".35"/><line x1="710.4" x2="710.4" y1="114.5" y2="136.3" stroke="#f87171" stroke-width="1.2"/><rect x="707.0" y="120.6" width="6.9" height="9.5" fill="#f87171" rx="1"/><rect x="707.0" y="423.3" width="6.9" height="24.7" fill="#f87171" fill-opacity=".35"/><rect x="720" y="120.1" width="62" height="20" rx="4" fill="#34d399"/><text x="726" y="134.1" font-size="12" font-weight="700" fill="#03140d">102.04</text><text x="18" y="22" font-size="13" font-weight="700" fill="#e8f0ed">EXAMPLE/USD · 4H</text><text x="146" y="22" font-size="12" fill="#6b7f78">Fictional chart for illustration</text><text x="18" y="378" font-size="11" fill="#6b7f78">Volume</text></svg><!--CHART:END--><div class="cap"><span>Example chart (fictional)</span><span>Zones as Chart Reader marks them</span></div></div>
@@ -140,6 +280,59 @@
   </div>
 </div></section>
 
+<section class="s alt" id="features"><div class="wrap">
+  <p class="kick">Every feature</p>
+  <h2>Every feature, by name</h2>
+  <p class="sub">Everything Chart Reader does today, in plain words.</p>
+  <ul class="fl">
+      <li><b>Upload any chart screenshot</b>: PNG, JPG or WebP; tap to choose or drop the image in</li>
+      <li><b>Automatic resizing</b>: images are resized in your browser before upload (up to 1600 px, under 2 MB)</li>
+      <li><b>Any platform</b>: screenshots from TradingView, MetaTrader, broker apps or exchanges</li>
+      <li><b>Any market</b>: stocks, crypto, forex, indices and commodities</li>
+      <li><b>Chart types</b>: candlestick, bar, line and Heikin Ashi charts</li>
+      <li><b>Instrument and timeframe</b>: read from the chart when they are visible</li>
+      <li><b>Trend direction</b>: up, down, sideways or unclear, with a 2–3 sentence explanation</li>
+      <li><b>Market structure</b>: higher highs and lows, ranges and breakouts in plain English</li>
+      <li><b>Support and resistance zones</b>: read from the price axis, each with a label and why it matters</li>
+      <li><b>Chart pattern notes</b>: up to six notable patterns, with where they are and how clear they are</li>
+      <li><b>Volume and indicator notes</b>: only when volume or indicators are visible on your screenshot</li>
+      <li><b>2–3 conditional scenarios</b>: "If price does X, traders often watch Y"</li>
+      <li><b>Trigger and invalidation levels</b>: each scenario has a level and the price that would cancel it</li>
+      <li><b>What would change the picture</b>: the signs that would make the read out of date</li>
+      <li><b>Quality note</b>: says when a blurry chart or cut-off axis limits the read</li>
+      <li><b>Never invents prices</b>: if the price axis can't be read, levels are left blank instead of guessed</li>
+      <li><b>Position-size arithmetic</b>: risk amount = account size × risk % per trade</li>
+      <li><b>Size for each scenario</b>: units = risk amount ÷ distance from level to invalidation, with distance %, position value and leverage</li>
+      <li><b>11 account currencies</b>: GBP, USD, EUR, INR, AUD, CAD, AED, SGD, JPY, CHF and USDT</li>
+      <li><b>Optional notes</b>: add the timeframe, the market and what you want to learn from the chart</li>
+      <li><b>No buy or sell calls</b>: an automatic check rejects any read that tells you to buy or sell</li>
+      <li><b>Not-a-chart check</b>: photos, memes or documents are turned away and the read is given back</li>
+      <li><b>Only successful reads count</b>: if a read fails, it is given back automatically</li>
+      <li><b>Saved history</b>: every read is saved to your account to reopen and compare later</li>
+      <li><b>Private screenshots</b>: stored privately and deleted after 30 days; the written read stays</li>
+      <li><b>Passwordless sign-in</b>: a one-time sign-in link by email</li>
+      <li><b>100 reads that never expire</b>: one pack, no subscription</li>
+      <li><b>No app to install</b>: works in any modern browser on phone or computer</li>
+  </ul>
+</div></section>
+
+<section class="s" id="who"><div class="wrap">
+  <p class="kick">Is it for you?</p>
+  <h2>Who it's for, and who it's not for</h2>
+  <div class="who">
+    <div class="feat"><h3>Chart Reader is for</h3><ul>
+        <li>Beginner and improving traders who want to understand what a chart is showing, in plain English.</li>
+        <li>People learning technical analysis who want a consistent structure (trend, levels, patterns, scenarios) to check their own read against.</li>
+        <li>Traders who want the position-size maths for their own risk rule worked out for each scenario.</li>
+    </ul></div>
+    <div class="feat"><h3>It's not for</h3><ul>
+        <li>Anyone looking for buy or sell signals or trade calls: Chart Reader never gives them.</li>
+        <li>Traders who need live data, alerts or automated trading: it reads one screenshot at a time.</li>
+        <li>Anyone who wants guaranteed accuracy: it is an AI read that can be wrong, so check the levels yourself.</li>
+    </ul></div>
+  </div>
+</div></section>
+
 <section class="s alt" id="faq"><div class="wrap">
   <p class="kick">FAQ</p>
   <h2>Questions</h2>
@@ -152,6 +345,8 @@
     <details><summary>What happens to my screenshots?</summary><p>They are stored privately and deleted automatically after 30 days. The written results stay in your history.</p></details>
     <details><summary>How do I sign in?</summary><p>With your email. There are no passwords: we email you a sign-in link that works once. You can ask for a new link any time on the <a href="/app/">sign-in page</a>.</p></details>
     <details><summary>Refunds and policies</summary><p>Please see our <a href="https://www.asendify.co/policies/">policies</a>.</p></details>
+    <details><summary>Does Chart Reader tell me when to buy or sell?</summary><p>No. Every read uses conditional wording ("if price does X, traders often watch Y"), and an automatic check rejects any read that tells you to buy or sell.</p></details>
+    <details><summary>Can it work out my position size?</summary><p>Yes, as pure arithmetic. Add your account size and risk % per trade, and each scenario shows the size that matches the distance between its level and its invalidation. It ignores fees, spread, slippage and contract sizes.</p></details>
   </div>
 </div></section>
 </main>

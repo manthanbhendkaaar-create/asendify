@@ -11,6 +11,47 @@
 - Example (fictional business): https://automate.asendify.co/example/
 - Policies (payments and refunds): https://www.asendify.co/policies/
 
+## Every feature, by name
+- Describe it in plain words: up to 3,000 characters: what starts it, what should happen and where the result goes
+- Build around your tools: list the tools you already use and the blueprint uses them
+- Budget setting: under £50, £50–200, £200–500 or over £500 a month, or not sure
+- Technical level setting: not technical, some no-code experience, or comfortable with code and APIs
+- Workflow diagram: the trigger, every step, AI steps, decisions (branches) and outputs, with the app for each
+- Download the diagram: as PNG or SVG
+- Mermaid code: copy the diagram as Mermaid text
+- Main platform recommendation: for example n8n, Make or Zapier, with the reason it fits you
+- Tools for each step: what each tool does in the workflow, why it was picked and its rough cost
+- Numbered build steps: exact instructions for each step, including the nodes or modules and settings
+- Data in and data out: what each step receives and passes on, so the fields line up
+- Error handling: what can go wrong (rate limits, bad data, failed AI output, duplicates) and how to handle it
+- Before you start: the accounts, API keys and access you need
+- Assumptions: what the blueprint assumed about your setup
+- Test it before going live: a testing checklist
+- Difficulty: Beginner, Intermediate or Advanced
+- Time to build: an estimate in hours
+- Monthly cost estimate: a low–high range in GBP, with what drives the cost
+- Automatic quality checks: the diagram must have a trigger, every step must connect and there must be no loops; failed drafts are rewritten (up to 3 attempts)
+- Works with mainstream tools: n8n, Make, Zapier, Google Sheets, Airtable, HubSpot, Pipedrive, Gmail, Outlook, Slack, Microsoft Teams, WhatsApp Business API, Twilio, Stripe, Typeform, Tally, Calendly, Notion, Shopify, Xero, QuickBooks, OpenAI and Anthropic
+- Fully automatic: no calls and no waiting for someone to reply
+- Ready in minutes: the page updates by itself when the blueprint is done
+- Private link: a long random link only you and the people you share it with can open
+- Emailed to you: the private link is also sent to your email
+- Hand it to anyone: build it yourself or give it to any developer or automation freelancer
+- Full example to read first: a complete example blueprint is on the site
+- One-time price: £217.50 per blueprint, no subscription
+
+## Who Automation Blueprint is for
+- Small business owners, founders and agencies who know what they want automated but not how to build it.
+- People who want a plan to hand to a developer or automation freelancer before paying for the build.
+- No-code builders who want the right platform, tools, steps and error handling laid out for one workflow.
+
+## Who it's not for
+- Anyone who wants the automation built and running for them: this product is the blueprint, not the build.
+- People who need exact tool prices: the costs are estimates, and providers change their plans.
+- Projects that need a live consultation or ongoing support: it is fully automatic, with no calls.
+
+Last updated: 20 October 2026
+
 ## Pages
 - [Home, how it works, order form](https://automate.asendify.co/)
 - [Full example blueprint](https://automate.asendify.co/example/)

@@ -28,21 +28,147 @@
 {
  "@context": "https://schema.org",
  "@graph": [
-  { "@type": "Organization", "@id": "https://automate.asendify.co/#org", "name": "Automation Blueprint by Asendify", "url": "https://automate.asendify.co/", "parentOrganization": { "@type": "Organization", "name": "Asendify", "url": "https://www.asendify.co/" } },
-  { "@type": "WebSite", "@id": "https://automate.asendify.co/#website", "name": "Automation Blueprint", "url": "https://automate.asendify.co/", "publisher": { "@id": "https://automate.asendify.co/#org" } },
-  { "@type": "Service", "@id": "https://automate.asendify.co/#service", "name": "Automation Blueprint", "serviceType": "Business process automation design",
-    "provider": { "@id": "https://automate.asendify.co/#org" },
-    "description": "Describe a business automation in plain words and receive a blueprint: workflow diagram (trigger, steps, apps and branches), recommended tools for each step with reasons, step-by-step build instructions, data passed between steps, error handling, an estimated monthly tool cost range, difficulty and time to build.",
-    "offers": { "@type": "Offer", "price": "217.50", "priceCurrency": "GBP", "description": "One blueprint: £150 plus 45% service fee (£67.50) = £217.50, one-time payment.", "url": "https://automate.asendify.co/#start" } },
-  { "@type": "FAQPage", "mainEntity": [
-    { "@type": "Question", "name": "What exactly do I get?", "acceptedAnswer": { "@type": "Answer", "text": "A private web page (also emailed to you) with a workflow diagram you can download as PNG or SVG, a Mermaid text copy, the recommended platform and tools for each step with reasons, numbered build instructions, the data passed between steps, error handling, what you need before you start, how to test it, the difficulty, the time to build and an estimated monthly tool cost range." } },
-    { "@type": "Question", "name": "How much does it cost?", "acceptedAnswer": { "@type": "Answer", "text": "£217.50 per blueprint: £150 plus a 45% service fee of £67.50. It is a one-time payment through PayPal, not a subscription." } },
-    { "@type": "Question", "name": "How long does it take?", "acceptedAnswer": { "@type": "Answer", "text": "Usually a few minutes after payment. The page updates by itself and we email you the private link." } },
-    { "@type": "Question", "name": "Who writes the blueprint?", "acceptedAnswer": { "@type": "Answer", "text": "An AI model writes it to a strict structure, and our system checks it automatically (for example that the diagram is complete and every step connects) before you see it." } },
-    { "@type": "Question", "name": "Which tools can it recommend?", "acceptedAnswer": { "@type": "Answer", "text": "Mainstream tools such as n8n, Make, Zapier, Google Sheets, Airtable, HubSpot, Pipedrive, Gmail, Outlook, Slack, Microsoft Teams, WhatsApp Business API, Twilio, Stripe, Typeform, Calendly, Notion, Shopify, Xero, QuickBooks, OpenAI and Anthropic. Tell us what you already use and it builds around those." } },
-    { "@type": "Question", "name": "Do you build the automation for me?", "acceptedAnswer": { "@type": "Answer", "text": "No. This product is the blueprint. You can build it yourself by following the steps, or hand it to any developer or automation freelancer." } },
-    { "@type": "Question", "name": "Are the cost estimates exact?", "acceptedAnswer": { "@type": "Answer", "text": "No. They are estimates for the volume you describe. Tool prices and plans change, so check each provider's pricing page before you commit." } }
-  ] }
+  {
+   "@type": "Organization",
+   "@id": "https://automate.asendify.co/#org",
+   "name": "Automation Blueprint by Asendify",
+   "url": "https://automate.asendify.co/",
+   "parentOrganization": {
+    "@type": "Organization",
+    "name": "Asendify",
+    "url": "https://www.asendify.co/"
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://automate.asendify.co/#website",
+   "name": "Automation Blueprint",
+   "url": "https://automate.asendify.co/",
+   "publisher": {
+    "@id": "https://automate.asendify.co/#org"
+   }
+  },
+  {
+   "@type": [
+    "Service",
+    "WebApplication"
+   ],
+   "@id": "https://automate.asendify.co/#service",
+   "name": "Automation Blueprint",
+   "serviceType": "Business process automation design",
+   "provider": {
+    "@id": "https://automate.asendify.co/#org"
+   },
+   "description": "Describe a business automation in plain words and receive a blueprint: workflow diagram (trigger, steps, apps and branches), recommended tools for each step with reasons, step-by-step build instructions, data passed between steps, error handling, an estimated monthly tool cost range, difficulty and time to build.",
+   "offers": {
+    "@type": "Offer",
+    "price": "217.50",
+    "priceCurrency": "GBP",
+    "description": "One blueprint: £150 plus 45% service fee (£67.50) = £217.50, one-time payment.",
+    "url": "https://automate.asendify.co/#start"
+   },
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Any (web browser)",
+   "featureList": [
+    "Describe it in plain words: up to 3,000 characters: what starts it, what should happen and where the result goes",
+    "Build around your tools: list the tools you already use and the blueprint uses them",
+    "Budget setting: under £50, £50–200, £200–500 or over £500 a month, or not sure",
+    "Technical level setting: not technical, some no-code experience, or comfortable with code and APIs",
+    "Workflow diagram: the trigger, every step, AI steps, decisions (branches) and outputs, with the app for each",
+    "Download the diagram: as PNG or SVG",
+    "Mermaid code: copy the diagram as Mermaid text",
+    "Main platform recommendation: for example n8n, Make or Zapier, with the reason it fits you",
+    "Tools for each step: what each tool does in the workflow, why it was picked and its rough cost",
+    "Numbered build steps: exact instructions for each step, including the nodes or modules and settings",
+    "Data in and data out: what each step receives and passes on, so the fields line up",
+    "Error handling: what can go wrong (rate limits, bad data, failed AI output, duplicates) and how to handle it",
+    "Before you start: the accounts, API keys and access you need",
+    "Assumptions: what the blueprint assumed about your setup",
+    "Test it before going live: a testing checklist",
+    "Difficulty: Beginner, Intermediate or Advanced",
+    "Time to build: an estimate in hours",
+    "Monthly cost estimate: a low–high range in GBP, with what drives the cost",
+    "Automatic quality checks: the diagram must have a trigger, every step must connect and there must be no loops; failed drafts are rewritten (up to 3 attempts)",
+    "Works with mainstream tools: n8n, Make, Zapier, Google Sheets, Airtable, HubSpot, Pipedrive, Gmail, Outlook, Slack, Microsoft Teams, WhatsApp Business API, Twilio, Stripe, Typeform, Tally, Calendly, Notion, Shopify, Xero, QuickBooks, OpenAI and Anthropic",
+    "Fully automatic: no calls and no waiting for someone to reply",
+    "Ready in minutes: the page updates by itself when the blueprint is done",
+    "Private link: a long random link only you and the people you share it with can open",
+    "Emailed to you: the private link is also sent to your email",
+    "Hand it to anyone: build it yourself or give it to any developer or automation freelancer",
+    "Full example to read first: a complete example blueprint is on the site",
+    "One-time price: £217.50 per blueprint, no subscription"
+   ],
+   "dateModified": "2026-10-20"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What exactly do I get?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A private web page (also emailed to you) with a workflow diagram you can download as PNG or SVG, a Mermaid text copy, the recommended platform and tools for each step with reasons, numbered build instructions, the data passed between steps, error handling, what you need before you start, how to test it, the difficulty, the time to build and an estimated monthly tool cost range."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How much does it cost?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "£217.50 per blueprint: £150 plus a 45% service fee of £67.50. It is a one-time payment through PayPal, not a subscription."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How long does it take?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Usually a few minutes after payment. The page updates by itself and we email you the private link."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Who writes the blueprint?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "An AI model writes it to a strict structure, and our system checks it automatically (for example that the diagram is complete and every step connects) before you see it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which tools can it recommend?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Mainstream tools such as n8n, Make, Zapier, Google Sheets, Airtable, HubSpot, Pipedrive, Gmail, Outlook, Slack, Microsoft Teams, WhatsApp Business API, Twilio, Stripe, Typeform, Calendly, Notion, Shopify, Xero, QuickBooks, OpenAI and Anthropic. Tell us what you already use and it builds around those."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you build the automation for me?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. This product is the blueprint. You can build it yourself by following the steps, or hand it to any developer or automation freelancer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Are the cost estimates exact?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. They are estimates for the volume you describe. Tool prices and plans change, so check each provider's pricing page before you commit."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is my request private?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Your blueprint lives at a private link with a long random code; only people you share it with can open it. See our policies for details, including payments and refunds."
+     }
+    }
+   ]
+  }
  ]
 }
 </script>
@@ -59,6 +185,7 @@
 .paybtn.alt{background:linear-gradient(135deg,#2a2416 0%,#1a160d 100%) !important;color:#f2d27a !important;box-shadow:0 0 0 1.5px rgba(212,175,55,.75) inset,0 10px 24px -12px rgba(212,175,55,.5) !important}
 @media (prefers-reduced-motion:reduce){.paybtn:after{display:none}.paybtn{transition:none}}
 @media (max-width:480px){.paybtn{min-height:56px;font-size:17px !important;padding:15px 20px !important}}
+.fl{columns:2 300px;column-gap:36px;padding-left:20px;margin:22px 0 0}.fl li{break-inside:avoid;margin:0 0 9px;color:#cfd8ea}.fl li b{color:#fff}.who{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:22px}.who ul{padding-left:20px;margin:8px 0 0;color:#cfd8ea}.who li{margin:0 0 8px}.updated{margin:10px 0 0;color:var(--mut);font-size:13.5px}
 </style>
 </head>
 <body>
@@ -77,6 +204,7 @@
     <p class="lead">Write what you want automated in plain words. You get a clear workflow diagram, the right tools for each step, step-by-step build instructions, error handling and a monthly cost estimate, ready to build yourself or hand to a developer.</p>
     <div class="ctas"><a class="btn pri" href="#start">Get my blueprint</a><a class="btn ghost" href="/example/">See a full example</a></div>
     <p class="price-line"><b>£217.50</b> per blueprint (£150 + 45% service fee). One-time payment, no subscription.</p>
+    <p class="updated">Last updated: <time datetime="2026-10-20">20 October 2026</time></p>
   </div>
   <div class="hero-card" aria-hidden="true"><div class="bar"><i></i><i></i><i></i></div><div class="frame"><!--HERO:START--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 556 1258" width="556" height="1258" role="img" aria-labelledby="hero-t" font-family="Inter, -apple-system, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif"><title id="hero-t">Website enquiry to qualified sales lead: automation diagram</title><defs><pattern id="hero-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#dbe6f5" stroke-width="1"/></pattern><marker id="hero-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs><rect width="556" height="1258" fill="#f7faff"/><rect width="556" height="1258" fill="url(#hero-grid)"/><path d="M278.0 124 C278.0 154.0 278.0 154.0 278.0 184" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#hero-arr)"/><path d="M278.0 282 C278.0 312.0 278.0 312.0 278.0 342" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#hero-arr)"/><path d="M278.0 440 C278.0 470.0 278.0 470.0 278.0 500" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#hero-arr)"/><path d="M278.0 598 C278.0 628.0 278.0 628.0 278.0 658" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#hero-arr)"/><path d="M278.0 756 C278.0 786.0 146.0 786.0 146.0 816" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#hero-arr)"/><path d="M146.0 914 C146.0 944.0 200.0 944.0 200.0 974" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#hero-arr)"/><path d="M278.0 756 C278.0 786.0 410.0 786.0 410.0 816" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#hero-arr)"/><path d="M200.0 1072 C200.0 1102.0 278.0 1102.0 278.0 1132" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#hero-arr)"/><path d="M410.0 914 C410.0 945.0 356.0 945.0 356.0 976 L356.0 1072 C356.0 1102.0 278.0 1102.0 278.0 1132" fill="none" stroke="#64748b" stroke-width="1.8" marker-end="url(#hero-arr)"/><g><rect x="161.0" y="31" width="236" height="96" rx="14" fill="#0f172a" opacity=".07"/><rect x="160.0" y="28" width="236" height="96" rx="14" fill="#ffffff" stroke="#047857" stroke-opacity=".5" stroke-width="1.3"/><path d="M176.0 28.5h204" stroke="#047857" stroke-width="3" stroke-linecap="round"/><circle cx="181.0" cy="47" r="4.5" fill="#047857"/><text x="193.0" y="51" font-size="10.5" font-weight="700" letter-spacing="1.2" fill="#047857">TRIGGER</text><text x="176.0" y="74" font-size="15" font-weight="600" fill="#0f172a">New website enquiry</text><text x="176.0" y="93" font-size="15" font-weight="600" fill="#0f172a">submitted</text><text x="176.0" y="111" font-size="12.5" fill="#64748b">Typeform</text></g><g><rect x="161.0" y="189" width="236" height="96" rx="14" fill="#0f172a" opacity=".07"/><rect x="160.0" y="186" width="236" height="96" rx="14" fill="#ffffff" stroke="#1d4ed8" stroke-opacity=".5" stroke-width="1.3"/><path d="M176.0 186.5h204" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/><circle cx="181.0" cy="205" r="4.5" fill="#1d4ed8"/><text x="193.0" y="209" font-size="10.5" font-weight="700" letter-spacing="1.2" fill="#1d4ed8">ACTION</text><text x="176.0" y="232" font-size="15" font-weight="600" fill="#0f172a">Clean, validate and</text><text x="176.0" y="251" font-size="15" font-weight="600" fill="#0f172a">de-duplicate</text><text x="176.0" y="269" font-size="12.5" fill="#64748b">n8n</text></g><g><rect x="161.0" y="347" width="236" height="96" rx="14" fill="#0f172a" opacity=".07"/><rect x="160.0" y="344" width="236" height="96" rx="14" fill="#ffffff" stroke="#1d4ed8" stroke-opacity=".5" stroke-width="1.3"/><path d="M176.0 344.5h204" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/><circle cx="181.0" cy="363" r="4.5" fill="#1d4ed8"/><text x="193.0" y="367" font-size="10.5" font-weight="700" letter-spacing="1.2" fill="#1d4ed8">ACTION</text><text x="176.0" y="390" font-size="15" font-weight="600" fill="#0f172a">Find or create the</text><text x="176.0" y="409" font-size="15" font-weight="600" fill="#0f172a">contact</text><text x="176.0" y="427" font-size="12.5" fill="#64748b">HubSpot</text></g><g><rect x="161.0" y="505" width="236" height="96" rx="14" fill="#0f172a" opacity=".07"/><rect x="160.0" y="502" width="236" height="96" rx="14" fill="#ffffff" stroke="#6d28d9" stroke-opacity=".5" stroke-width="1.3"/><path d="M176.0 502.5h204" stroke="#6d28d9" stroke-width="3" stroke-linecap="round"/><circle cx="181.0" cy="521" r="4.5" fill="#6d28d9"/><text x="193.0" y="525" font-size="10.5" font-weight="700" letter-spacing="1.2" fill="#6d28d9">AI STEP</text><text x="176.0" y="548" font-size="15" font-weight="600" fill="#0f172a">Score the lead and</text><text x="176.0" y="567" font-size="15" font-weight="600" fill="#0f172a">summarise needs</text><text x="176.0" y="585" font-size="12.5" fill="#64748b">OpenAI</text></g><g><rect x="161.0" y="663" width="236" height="96" rx="14" fill="#0f172a" opacity=".07"/><rect x="160.0" y="660" width="236" height="96" rx="14" fill="#ffffff" stroke="#b45309" stroke-opacity=".5" stroke-width="1.3"/><path d="M176.0 660.5h204" stroke="#b45309" stroke-width="3" stroke-linecap="round"/><path d="M181.0 673l6 6-6 6-6-6z" fill="#b45309"/><text x="193.0" y="683" font-size="10.5" font-weight="700" letter-spacing="1.2" fill="#b45309">DECISION</text><text x="176.0" y="714" font-size="15" font-weight="600" fill="#0f172a">Score 70 or higher?</text><text x="176.0" y="743" font-size="12.5" fill="#64748b">n8n IF node</text></g><g><rect x="29.0" y="821" width="236" height="96" rx="14" fill="#0f172a" opacity=".07"/><rect x="28.0" y="818" width="236" height="96" rx="14" fill="#ffffff" stroke="#1d4ed8" stroke-opacity=".5" stroke-width="1.3"/><path d="M44.0 818.5h204" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/><circle cx="49.0" cy="837" r="4.5" fill="#1d4ed8"/><text x="61.0" y="841" font-size="10.5" font-weight="700" letter-spacing="1.2" fill="#1d4ed8">ACTION</text><text x="44.0" y="864" font-size="15" font-weight="600" fill="#0f172a">Alert sales with the</text><text x="44.0" y="883" font-size="15" font-weight="600" fill="#0f172a">summary</text><text x="44.0" y="901" font-size="12.5" fill="#64748b">Slack</text></g><g><rect x="83.0" y="979" width="236" height="96" rx="14" fill="#0f172a" opacity=".07"/><rect x="82.0" y="976" width="236" height="96" rx="14" fill="#ffffff" stroke="#1d4ed8" stroke-opacity=".5" stroke-width="1.3"/><path d="M98.0 976.5h204" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/><circle cx="103.0" cy="995" r="4.5" fill="#1d4ed8"/><text x="115.0" y="999" font-size="10.5" font-weight="700" letter-spacing="1.2" fill="#1d4ed8">ACTION</text><text x="98.0" y="1022" font-size="15" font-weight="600" fill="#0f172a">Email a call booking</text><text x="98.0" y="1041" font-size="15" font-weight="600" fill="#0f172a">link</text><text x="98.0" y="1059" font-size="12.5" fill="#64748b">Gmail + Calendly</text></g><g><rect x="293.0" y="821" width="236" height="96" rx="14" fill="#0f172a" opacity=".07"/><rect x="292.0" y="818" width="236" height="96" rx="14" fill="#ffffff" stroke="#1d4ed8" stroke-opacity=".5" stroke-width="1.3"/><path d="M308.0 818.5h204" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/><circle cx="313.0" cy="837" r="4.5" fill="#1d4ed8"/><text x="325.0" y="841" font-size="10.5" font-weight="700" letter-spacing="1.2" fill="#1d4ed8">ACTION</text><text x="308.0" y="864" font-size="15" font-weight="600" fill="#0f172a">Enrol in nurture</text><text x="308.0" y="883" font-size="15" font-weight="600" fill="#0f172a">sequence</text><text x="308.0" y="901" font-size="12.5" fill="#64748b">HubSpot</text></g><g><rect x="161.0" y="1137" width="236" height="96" rx="14" fill="#0f172a" opacity=".07"/><rect x="160.0" y="1134" width="236" height="96" rx="14" fill="#ffffff" stroke="#0e7490" stroke-opacity=".5" stroke-width="1.3"/><path d="M176.0 1134.5h204" stroke="#0e7490" stroke-width="3" stroke-linecap="round"/><circle cx="181.0" cy="1153" r="4.5" fill="#0e7490"/><text x="193.0" y="1157" font-size="10.5" font-weight="700" letter-spacing="1.2" fill="#0e7490">RESULT</text><text x="176.0" y="1180" font-size="15" font-weight="600" fill="#0f172a">Log the lead for</text><text x="176.0" y="1199" font-size="15" font-weight="600" fill="#0f172a">reporting</text><text x="176.0" y="1217" font-size="12.5" fill="#64748b">Google Sheets</text></g><g><rect x="192.5" y="776.0" width="39.0" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1"/><text x="212.0" y="791.5" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">Yes</text></g><g><rect x="328.0" y="776.0" width="32.0" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1"/><text x="344.0" y="791.5" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">No</text></g></svg><!--HERO:END--></div><span class="lbl">Example blueprint</span></div>
 </div></section>
@@ -166,6 +294,58 @@
       <div class="break"><div><span>Blueprint</span><span>£150.00</span></div><div><span>Service fee (45%)</span><span>£67.50</span></div><div class="t"><span>Total</span><span>£217.50</span></div></div>
       <ul class="ticks"><li>Workflow diagram (PNG, SVG, Mermaid)</li><li>Tools for each step, with reasons</li><li>Step-by-step build instructions</li><li>Data between steps and error handling</li><li>Cost estimate, difficulty and build time</li><li>Private link, emailed to you</li></ul>
     </aside>
+  </div>
+</div></section>
+
+<section class="s alt" id="features"><div class="wrap">
+  <p class="kick">Every feature</p>
+  <h2>Every feature, by name</h2>
+  <p class="sub">Everything Automation Blueprint does today, in plain words.</p>
+  <ul class="fl">
+      <li><b>Describe it in plain words</b>: up to 3,000 characters: what starts it, what should happen and where the result goes</li>
+      <li><b>Build around your tools</b>: list the tools you already use and the blueprint uses them</li>
+      <li><b>Budget setting</b>: under £50, £50–200, £200–500 or over £500 a month, or not sure</li>
+      <li><b>Technical level setting</b>: not technical, some no-code experience, or comfortable with code and APIs</li>
+      <li><b>Workflow diagram</b>: the trigger, every step, AI steps, decisions (branches) and outputs, with the app for each</li>
+      <li><b>Download the diagram</b>: as PNG or SVG</li>
+      <li><b>Mermaid code</b>: copy the diagram as Mermaid text</li>
+      <li><b>Main platform recommendation</b>: for example n8n, Make or Zapier, with the reason it fits you</li>
+      <li><b>Tools for each step</b>: what each tool does in the workflow, why it was picked and its rough cost</li>
+      <li><b>Numbered build steps</b>: exact instructions for each step, including the nodes or modules and settings</li>
+      <li><b>Data in and data out</b>: what each step receives and passes on, so the fields line up</li>
+      <li><b>Error handling</b>: what can go wrong (rate limits, bad data, failed AI output, duplicates) and how to handle it</li>
+      <li><b>Before you start</b>: the accounts, API keys and access you need</li>
+      <li><b>Assumptions</b>: what the blueprint assumed about your setup</li>
+      <li><b>Test it before going live</b>: a testing checklist</li>
+      <li><b>Difficulty</b>: Beginner, Intermediate or Advanced</li>
+      <li><b>Time to build</b>: an estimate in hours</li>
+      <li><b>Monthly cost estimate</b>: a low–high range in GBP, with what drives the cost</li>
+      <li><b>Automatic quality checks</b>: the diagram must have a trigger, every step must connect and there must be no loops; failed drafts are rewritten (up to 3 attempts)</li>
+      <li><b>Works with mainstream tools</b>: n8n, Make, Zapier, Google Sheets, Airtable, HubSpot, Pipedrive, Gmail, Outlook, Slack, Microsoft Teams, WhatsApp Business API, Twilio, Stripe, Typeform, Tally, Calendly, Notion, Shopify, Xero, QuickBooks, OpenAI and Anthropic</li>
+      <li><b>Fully automatic</b>: no calls and no waiting for someone to reply</li>
+      <li><b>Ready in minutes</b>: the page updates by itself when the blueprint is done</li>
+      <li><b>Private link</b>: a long random link only you and the people you share it with can open</li>
+      <li><b>Emailed to you</b>: the private link is also sent to your email</li>
+      <li><b>Hand it to anyone</b>: build it yourself or give it to any developer or automation freelancer</li>
+      <li><b>Full example to read first</b>: a complete example blueprint is on the site</li>
+      <li><b>One-time price</b>: £217.50 per blueprint, no subscription</li>
+  </ul>
+</div></section>
+
+<section class="s" id="who"><div class="wrap">
+  <p class="kick">Is it for you?</p>
+  <h2>Who it's for, and who it's not for</h2>
+  <div class="who">
+    <div class="feat"><h3>Automation Blueprint is for</h3><ul>
+        <li>Small business owners, founders and agencies who know what they want automated but not how to build it.</li>
+        <li>People who want a plan to hand to a developer or automation freelancer before paying for the build.</li>
+        <li>No-code builders who want the right platform, tools, steps and error handling laid out for one workflow.</li>
+    </ul></div>
+    <div class="feat"><h3>It's not for</h3><ul>
+        <li>Anyone who wants the automation built and running for them: this product is the blueprint, not the build.</li>
+        <li>People who need exact tool prices: the costs are estimates, and providers change their plans.</li>
+        <li>Projects that need a live consultation or ongoing support: it is fully automatic, with no calls.</li>
+    </ul></div>
   </div>
 </div></section>
 

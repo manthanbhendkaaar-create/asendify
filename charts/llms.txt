@@ -12,6 +12,48 @@
 - How it works: an AI vision model reads the screenshot and writes the explanation to a fixed structure; it can misread blurry charts or cut-off price axes.
 - Policies (payments and refunds): https://www.asendify.co/policies/
 
+## Every feature, by name
+- Upload any chart screenshot: PNG, JPG or WebP; tap to choose or drop the image in
+- Automatic resizing: images are resized in your browser before upload (up to 1600 px, under 2 MB)
+- Any platform: screenshots from TradingView, MetaTrader, broker apps or exchanges
+- Any market: stocks, crypto, forex, indices and commodities
+- Chart types: candlestick, bar, line and Heikin Ashi charts
+- Instrument and timeframe: read from the chart when they are visible
+- Trend direction: up, down, sideways or unclear, with a 2–3 sentence explanation
+- Market structure: higher highs and lows, ranges and breakouts in plain English
+- Support and resistance zones: read from the price axis, each with a label and why it matters
+- Chart pattern notes: up to six notable patterns, with where they are and how clear they are
+- Volume and indicator notes: only when volume or indicators are visible on your screenshot
+- 2–3 conditional scenarios: "If price does X, traders often watch Y"
+- Trigger and invalidation levels: each scenario has a level and the price that would cancel it
+- What would change the picture: the signs that would make the read out of date
+- Quality note: says when a blurry chart or cut-off axis limits the read
+- Never invents prices: if the price axis can't be read, levels are left blank instead of guessed
+- Position-size arithmetic: risk amount = account size × risk % per trade
+- Size for each scenario: units = risk amount ÷ distance from level to invalidation, with distance %, position value and leverage
+- 11 account currencies: GBP, USD, EUR, INR, AUD, CAD, AED, SGD, JPY, CHF and USDT
+- Optional notes: add the timeframe, the market and what you want to learn from the chart
+- No buy or sell calls: an automatic check rejects any read that tells you to buy or sell
+- Not-a-chart check: photos, memes or documents are turned away and the read is given back
+- Only successful reads count: if a read fails, it is given back automatically
+- Saved history: every read is saved to your account to reopen and compare later
+- Private screenshots: stored privately and deleted after 30 days; the written read stays
+- Passwordless sign-in: a one-time sign-in link by email
+- 100 reads that never expire: one pack, no subscription
+- No app to install: works in any modern browser on phone or computer
+
+## Who Chart Reader is for
+- Beginner and improving traders who want to understand what a chart is showing, in plain English.
+- People learning technical analysis who want a consistent structure (trend, levels, patterns, scenarios) to check their own read against.
+- Traders who want the position-size maths for their own risk rule worked out for each scenario.
+
+## Who it's not for
+- Anyone looking for buy or sell signals or trade calls: Chart Reader never gives them.
+- Traders who need live data, alerts or automated trading: it reads one screenshot at a time.
+- Anyone who wants guaranteed accuracy: it is an AI read that can be wrong, so check the levels yourself.
+
+Last updated: 20 October 2026
+
 ## Pages
 - [Home, example read, pricing](https://charts.asendify.co/)
 - [Sign in](https://charts.asendify.co/app/)

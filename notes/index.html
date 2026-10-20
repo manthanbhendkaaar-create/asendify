@@ -27,19 +27,185 @@
 {
  "@context": "https://schema.org",
  "@graph": [
-  { "@type": "Organization", "@id": "https://notes.asendify.co/#org", "name": "Asendify Notes", "url": "https://notes.asendify.co/", "parentOrganization": { "@type": "Organization", "name": "Asendify", "url": "https://www.asendify.co/" } },
-  { "@type": "WebSite", "@id": "https://notes.asendify.co/#website", "name": "Asendify Notes", "url": "https://notes.asendify.co/", "publisher": { "@id": "https://notes.asendify.co/#org" } },
-  { "@type": "SoftwareApplication", "@id": "https://notes.asendify.co/#app", "name": "Asendify Notes", "applicationCategory": "BusinessApplication", "applicationSubCategory": "Note-taking and knowledge management", "operatingSystem": "Web browser (Windows, macOS, Linux, Android, iOS)",
-    "description": "A private, Notion-style workspace: nested pages, a block editor with slash commands (headings, lists, to-dos, tables, code, images, quotes), table and board databases with properties, full-text search, read-only share links, trash with restore and export to JSON or Markdown at any time.",
-    "offers": { "@type": "Offer", "price": "1450.00", "priceCurrency": "GBP", "description": "One year: £1,000 plus a 45% service fee (£450) = £1,450. Card payments can renew automatically each year if the buyer chooses; auto-renew can be turned off any time.", "url": "https://notes.asendify.co/#pricing" } },
-  { "@type": "FAQPage", "mainEntity": [
-    { "@type": "Question", "name": "How much does Asendify Notes cost?", "acceptedAnswer": { "@type": "Answer", "text": "£1,450 a year: £1,000 plus a 45% service fee of £450, shown in full before you pay. There is no free plan and no free trial. If you pay by card you can choose auto-renew (£1,450 on the same date each year, turn it off any time); we email you 14 and 3 days before any renewal." } },
-    { "@type": "Question", "name": "Is Asendify Notes like Notion?", "acceptedAnswer": { "@type": "Answer", "text": "It works in a similar way: pages inside pages, a block editor with slash commands, and databases you can view as a table or a board. It is a separate product made by Asendify, not affiliated with Notion." } },
-    { "@type": "Question", "name": "Can I get my notes out?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Export any page as Markdown, or your whole workspace as JSON, at any time. If your year ends you can still export everything for 30 days." } },
-    { "@type": "Question", "name": "Can I share a page?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Create a read-only link for any page. People with the link can read that page and the pages inside it, but cannot edit. Turning sharing off stops the link immediately." } },
-    { "@type": "Question", "name": "Do I need a password?", "acceptedAnswer": { "@type": "Answer", "text": "No. You sign in with a one-time link sent to your email." } },
-    { "@type": "Question", "name": "Are there desktop and mobile apps?", "acceptedAnswer": { "@type": "Answer", "text": "Asendify Notes runs in any modern browser on Windows, macOS, Linux, Android and iPhone. Installable Windows, macOS and Android apps are on the roadmap; they are not available yet." } }
-  ] }
+  {
+   "@type": "Organization",
+   "@id": "https://notes.asendify.co/#org",
+   "name": "Asendify Notes",
+   "url": "https://notes.asendify.co/",
+   "parentOrganization": {
+    "@type": "Organization",
+    "name": "Asendify",
+    "url": "https://www.asendify.co/"
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://notes.asendify.co/#website",
+   "name": "Asendify Notes",
+   "url": "https://notes.asendify.co/",
+   "publisher": {
+    "@id": "https://notes.asendify.co/#org"
+   }
+  },
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://notes.asendify.co/#app",
+   "name": "Asendify Notes",
+   "applicationCategory": "BusinessApplication",
+   "applicationSubCategory": "Note-taking and knowledge management",
+   "operatingSystem": "Web browser (Windows, macOS, Linux, Android, iOS)",
+   "description": "A private, Notion-style workspace: nested pages, a block editor with slash commands (headings, lists, to-dos, tables, code, images, quotes), table and board databases with properties, full-text search, read-only share links, trash with restore and export to JSON or Markdown at any time.",
+   "offers": {
+    "@type": "Offer",
+    "price": "1450.00",
+    "priceCurrency": "GBP",
+    "description": "One year: £1,000 plus a 45% service fee (£450) = £1,450. Card payments can renew automatically each year if the buyer chooses; auto-renew can be turned off any time.",
+    "url": "https://notes.asendify.co/#pricing"
+   },
+   "featureList": [
+    "Pages inside pages: nest pages as deep as you like and open any of them from the sidebar tree",
+    "Move pages: move a page, with everything inside it, anywhere in the tree or to another workspace",
+    "Favourites and recently edited: pin the pages you use most and jump back to what you just worked on",
+    "Slash commands: type / to add any block",
+    "Headings and toggle headings: section headings, also available as collapsible toggles",
+    "Bullet, numbered and to-do lists: checklists you can tick off inside any page",
+    "Toggle lists: hide detail under a line you can open and close",
+    "Tables inside pages: simple editable tables right in the page",
+    "Code blocks: with syntax highlighting",
+    "Quotes, callouts and dividers: callouts take an emoji of your choice",
+    "Images and PDFs: upload images (up to 3 MB each) and PDFs (up to 5 MB each)",
+    "Drag to reorder: drag blocks up and down, nest and un-nest them",
+    "@ page mentions: type @ to link to another page",
+    "Backlinks: every page shows which pages link to it",
+    "Page icons and covers: an emoji icon and a cover image for any page",
+    "Page fonts, full width and page lock: default, serif or mono font; full-width layout; lock a page against accidental edits",
+    "Databases: every row is also a full page",
+    "15 property types: text, number, select, multi-select, status, checkbox, date, URL, email, phone, relation, rollup, formula, created time and edited time",
+    "Number formats: plain number, percent, GBP, USD, EUR or INR",
+    "Six database views: table, board (kanban), list, gallery, calendar and timeline",
+    "Filters, sorts and group by: set separately for each view",
+    "Relations and rollups: link databases and roll up count, sum, average, min or max",
+    "Formulas: calculated properties",
+    "Linked databases: show a database inside another page",
+    "10 templates: second brain, task board, simple CRM, content calendar, meeting notes, goals (OKRs), habit tracker, journal, reading list and team wiki",
+    "Import Markdown and CSV: a .md file becomes a page, a .csv file becomes a database",
+    "Search everything (Ctrl K / Cmd K): find any page by title or text, across all your workspaces",
+    "Up to 20 workspaces: keep work, clients and personal life apart and switch in one click",
+    "Page history: restore any version from the last 30 days, name versions and compare them",
+    "Comments: comment on pages and mark comments as resolved",
+    "Duplicate pages: copy a page with everything inside it",
+    "Read-only public link: anyone with the link can read the page and the pages inside it; turn it off any time",
+    "View-only guests: invite up to 50 people by email to read a page, free",
+    "Export everything: Markdown + CSV (zip) or JSON, at any time",
+    "Trash with 30-day restore: deleted pages wait 30 days before they are gone for good",
+    "Passwordless sign-in: a one-time sign-in link sent to your email",
+    "Autosave and sync: every change saves itself and shows up on your other devices; editing in two tabs never silently overwrites",
+    "Light and dark mode: follows your device setting",
+    "Runs in any modern browser: Windows, macOS, Linux, Android and iPhone"
+   ],
+   "dateModified": "2026-10-20"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Is Asendify Notes like Notion?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It works in a similar way: pages inside pages, a block editor with slash commands, and databases you can view as a table or a board. It is a separate product made by Asendify, not affiliated with Notion."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does it renew automatically?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Only if you choose. Paying by card, you can tick auto-renew: we then charge £1,450 to the same card on the same date each year, and email you 14 and 3 days before. Turn it off any time in Settings and nothing more is charged. PayPal payments are one year at a time."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why £1,450 a year?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It's £1,000 plus a 45% service fee, shown in full before you pay. You get one private workspace with unlimited pages. Nothing is added at checkout."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is there a free trial?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Asendify Notes is paid from the start."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I get my notes out?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, any time: Markdown for a page, JSON for everything. If your year ends you can still export for 30 days."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I share a page?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, with a read-only link. People can read the page and the pages inside it, not edit. You can turn it off whenever you like."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What happens when my year ends?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "With auto-renew on, a new year starts on that date. Otherwise editing stops until you renew. Your notes are kept, and you can export them for 30 days."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Are there apps for Windows, Mac or Android?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Asendify Notes runs in any modern browser on all of them today. Installable apps are on the roadmap but not available yet."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How much does Asendify Notes cost?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "£1,450 a year: £1,000 plus a 45% service fee of £450, shown in full before you pay. There is no free plan and no free trial. If you pay by card you can choose auto-renew (£1,450 on the same date each year, turn it off any time); we email you 14 and 3 days before any renewal."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I need a password?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. You sign in with a one-time link sent to your email."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can other people edit my pages?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Each account has one owner who edits. You can invite up to 50 guests by email to read a page (free, view only) or make a read-only public link."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I move my notes over from Notion?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Notion can export pages as Markdown and databases as CSV files. Asendify Notes imports both: a Markdown file becomes a page and a CSV file becomes a database."
+     }
+    }
+   ]
+  }
  ]
 }
 </script>
@@ -75,6 +241,7 @@ section { padding:56px 0; } h2 { font-size:clamp(26px,4vw,36px); letter-spacing:
 details { border-bottom:1px solid var(--line); padding:14px 0; } summary { cursor:pointer; font-weight:600; } details p { color:var(--muted); margin:8px 0 0; }
 footer { border-top:1px solid var(--line); padding:26px 0 40px; color:var(--muted); font-size:14px; display:flex; gap:16px; flex-wrap:wrap; justify-content:space-between; }
 @media (max-width:600px) { nav a:not(.signin) { display:none; } }
+.fl { columns:2 300px; column-gap:32px; padding-left:20px; margin:20px 0 0; } .fl li { break-inside:avoid; margin:0 0 8px; } .fl li b { color:var(--text); } .updated { color:var(--muted); font-size:14px; margin:14px 0 0; }
 </style>
 </head>
 <body>
@@ -88,6 +255,7 @@ footer { border-top:1px solid var(--line); padding:26px 0 40px; color:var(--mute
     <h1>Your notes, docs and projects in one private workspace.</h1>
     <p>Pages inside pages, a fast block editor, and databases you can switch between a table and a board. Notion-style, without the clutter.</p>
     <a class="btn primary" href="#pricing">Get Asendify Notes</a> <a class="btn" href="/app/">Sign in</a>
+    <p class="updated">Last updated: <time datetime="2026-10-20">20 October 2026</time></p>
     <div class="shot"><img src="/og.png" alt="Asendify Notes: a roadmap board with To do, Doing and Done columns" width="1200" height="630"></div>
   </div>
 
@@ -107,6 +275,70 @@ footer { border-top:1px solid var(--line); padding:26px 0 40px; color:var(--mute
       <div class="f"><b>No passwords</b><span>Sign in with a one-time link sent to your email. Sessions stay on your own device.</span></div>
       <div class="f"><b>Works everywhere</b><span>Runs in any modern browser on Windows, macOS, Linux, Android and iPhone, with light and dark mode. Installable apps are on the roadmap.</span></div>
       <div class="f"><b>Safe saving</b><span>Every change saves on its own and shows up on your other devices. If you edit the same page in two tabs, nothing is silently overwritten.</span></div>
+    </div>
+  </section>
+
+  <section id="all-features">
+    <h2>Every feature, by name</h2>
+    <p style="color:var(--muted)">The full list of what Asendify Notes does today. Nothing here is on a roadmap.</p>
+    <ul class="fl">
+      <li><b>Pages inside pages</b>: nest pages as deep as you like and open any of them from the sidebar tree</li>
+      <li><b>Move pages</b>: move a page, with everything inside it, anywhere in the tree or to another workspace</li>
+      <li><b>Favourites and recently edited</b>: pin the pages you use most and jump back to what you just worked on</li>
+      <li><b>Slash commands</b>: type / to add any block</li>
+      <li><b>Headings and toggle headings</b>: section headings, also available as collapsible toggles</li>
+      <li><b>Bullet, numbered and to-do lists</b>: checklists you can tick off inside any page</li>
+      <li><b>Toggle lists</b>: hide detail under a line you can open and close</li>
+      <li><b>Tables inside pages</b>: simple editable tables right in the page</li>
+      <li><b>Code blocks</b>: with syntax highlighting</li>
+      <li><b>Quotes, callouts and dividers</b>: callouts take an emoji of your choice</li>
+      <li><b>Images and PDFs</b>: upload images (up to 3 MB each) and PDFs (up to 5 MB each)</li>
+      <li><b>Drag to reorder</b>: drag blocks up and down, nest and un-nest them</li>
+      <li><b>@ page mentions</b>: type @ to link to another page</li>
+      <li><b>Backlinks</b>: every page shows which pages link to it</li>
+      <li><b>Page icons and covers</b>: an emoji icon and a cover image for any page</li>
+      <li><b>Page fonts, full width and page lock</b>: default, serif or mono font; full-width layout; lock a page against accidental edits</li>
+      <li><b>Databases</b>: every row is also a full page</li>
+      <li><b>15 property types</b>: text, number, select, multi-select, status, checkbox, date, URL, email, phone, relation, rollup, formula, created time and edited time</li>
+      <li><b>Number formats</b>: plain number, percent, GBP, USD, EUR or INR</li>
+      <li><b>Six database views</b>: table, board (kanban), list, gallery, calendar and timeline</li>
+      <li><b>Filters, sorts and group by</b>: set separately for each view</li>
+      <li><b>Relations and rollups</b>: link databases and roll up count, sum, average, min or max</li>
+      <li><b>Formulas</b>: calculated properties</li>
+      <li><b>Linked databases</b>: show a database inside another page</li>
+      <li><b>10 templates</b>: second brain, task board, simple CRM, content calendar, meeting notes, goals (OKRs), habit tracker, journal, reading list and team wiki</li>
+      <li><b>Import Markdown and CSV</b>: a .md file becomes a page, a .csv file becomes a database</li>
+      <li><b>Search everything (Ctrl K / Cmd K)</b>: find any page by title or text, across all your workspaces</li>
+      <li><b>Up to 20 workspaces</b>: keep work, clients and personal life apart and switch in one click</li>
+      <li><b>Page history</b>: restore any version from the last 30 days, name versions and compare them</li>
+      <li><b>Comments</b>: comment on pages and mark comments as resolved</li>
+      <li><b>Duplicate pages</b>: copy a page with everything inside it</li>
+      <li><b>Read-only public link</b>: anyone with the link can read the page and the pages inside it; turn it off any time</li>
+      <li><b>View-only guests</b>: invite up to 50 people by email to read a page, free</li>
+      <li><b>Export everything</b>: Markdown + CSV (zip) or JSON, at any time</li>
+      <li><b>Trash with 30-day restore</b>: deleted pages wait 30 days before they are gone for good</li>
+      <li><b>Passwordless sign-in</b>: a one-time sign-in link sent to your email</li>
+      <li><b>Autosave and sync</b>: every change saves itself and shows up on your other devices; editing in two tabs never silently overwrites</li>
+      <li><b>Light and dark mode</b>: follows your device setting</li>
+      <li><b>Runs in any modern browser</b>: Windows, macOS, Linux, Android and iPhone</li>
+    </ul>
+  </section>
+
+  <section id="who">
+    <h2>Who it's for, and who it's not for</h2>
+    <div class="grid">
+      <div class="f"><b>Asendify Notes is for</b><ul style="padding-left:20px;margin:6px 0 0;color:var(--muted);font-size:15px">
+        <li>Freelancers, founders and consultants who want one private place for notes, docs, tasks and client work.</li>
+        <li>People who like the Notion way of working (pages, blocks, databases) and want it in a simpler, private workspace.</li>
+        <li>Anyone who shares finished pages with clients or family as read-only links or view-only guests.</li>
+        <li>People who want to keep work, clients and personal life in separate workspaces.</li>
+      </ul></div>
+      <div class="f"><b>It's not for</b><ul style="padding-left:20px;margin:6px 0 0;color:var(--muted);font-size:15px">
+        <li>Teams who need several people editing the same workspace: there is one owner per account, and guests can only read.</li>
+        <li>Anyone looking for a free plan or a free trial: there isn't one.</li>
+        <li>People who need installable desktop or mobile apps or offline use today: it runs in the browser, and apps are on the roadmap.</li>
+        <li>Teams that need integrations or an API to connect other tools: Asendify Notes doesn't offer them.</li>
+      </ul></div>
     </div>
   </section>
 
@@ -142,6 +374,10 @@ footer { border-top:1px solid var(--line); padding:26px 0 40px; color:var(--mute
     <details><summary>Can I share a page?</summary><p>Yes, with a read-only link. People can read the page and the pages inside it, not edit. You can turn it off whenever you like.</p></details>
     <details><summary>What happens when my year ends?</summary><p>With auto-renew on, a new year starts on that date. Otherwise editing stops until you renew. Your notes are kept, and you can export them for 30 days.</p></details>
     <details><summary>Are there apps for Windows, Mac or Android?</summary><p>Asendify Notes runs in any modern browser on all of them today. Installable apps are on the roadmap but not available yet.</p></details>
+    <details><summary>How much does Asendify Notes cost?</summary><p>£1,450 a year: £1,000 plus a 45% service fee of £450, shown in full before you pay. There is no free plan and no free trial. If you pay by card you can choose auto-renew (£1,450 on the same date each year, turn it off any time); we email you 14 and 3 days before any renewal.</p></details>
+    <details><summary>Do I need a password?</summary><p>No. You sign in with a one-time link sent to your email.</p></details>
+    <details><summary>Can other people edit my pages?</summary><p>No. Each account has one owner who edits. You can invite up to 50 guests by email to read a page (free, view only) or make a read-only public link.</p></details>
+    <details><summary>Can I move my notes over from Notion?</summary><p>Notion can export pages as Markdown and databases as CSV files. Asendify Notes imports both: a Markdown file becomes a page and a CSV file becomes a database.</p></details>
   </section>
 
   <footer><span>© Asendify · <a href="https://www.asendify.co/">asendify.co</a></span><span><a href="https://www.asendify.co/policies/">Policies</a> · <a href="https://www.asendify.co/privacy/">Privacy</a> · <a href="/blog/">Articles</a></span></footer>
