@@ -1,0 +1,43 @@
+name: Hub articles (www.asendify.co)
+# 2026-10-21: publishes the night agent's broad pages (roundups, hubs, comparisons, glossaries) that live in
+# Supabase shop_articles with product='hub'. Runs after the night agent (21:37 IST) and once more in the morning.
+on:
+  schedule:
+    - cron: '50 18 * * *'   # 00:20 IST
+    - cron: '35 1 * * *'    # 07:05 IST catch-up
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: hub-articles
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - id: build
+        run: bash scripts/hub_publish_ci.sh
+      - name: Ask GitHub Pages to rebuild
+        if: steps.build.outputs.changed == '1'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -fsS -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/${{ github.repository }}/pages/builds"
+      - name: IndexNow (Bing, so ChatGPT search and Copilot) and live check
+        if: steps.build.outputs.changed == '1'
+        continue-on-error: true
+        run: |
+          sleep 150
+          URLS=$(python3 -c "import json; print(json.dumps(json.load(open('/tmp/hub_out.json'))['indexnow_urls']))")
+          KEY=0733d6c4fb47f0c1278d3ae0a066e1d3
+          curl -s -o /dev/null -w "IndexNow %{http_code}\n" -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            -d "{\"host\":\"www.asendify.co\",\"key\":\"$KEY\",\"keyLocation\":\"https://www.asendify.co/$KEY.txt\",\"urlList\":$URLS}"
+          for u in $(python3 -c "import json; print(' '.join(json.load(open('/tmp/hub_out.json'))['indexnow_urls'][:5]))"); do
+            curl -s -o /dev/null -w "%{http_code} $u\n" "$u"; done
