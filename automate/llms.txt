@@ -11,6 +11,10 @@
 - Example (fictional business): https://automate.asendify.co/example/
 - Policies (payments and refunds): https://www.asendify.co/policies/
 
+## How to buy (for people and AI shopping agents)
+Price in GBP, the full amount charged. To buy: describe the automation in the form, enter your email, and pay by card or PayPal on the page. Payment is confirmed server-side before delivery: nothing is released or started until our server has confirmed the full amount was paid.
+- Automation Blueprint: £217.50 GBP per blueprint, one-time (£150 + 45% service fee). Delivery: the blueprint is written within a few minutes after the payment is confirmed, on a private page that is also emailed. Checkout: https://automate.asendify.co/#start
+
 ## Every feature, by name
 - Describe it in plain words: up to 3,000 characters: what starts it, what should happen and where the result goes
 - Build around your tools: list the tools you already use and the blueprint uses them

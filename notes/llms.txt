@@ -15,6 +15,10 @@
 - Not affiliated with Notion.
 - Policies (payments and refunds): https://www.asendify.co/policies/
 
+## How to buy (for people and AI shopping agents)
+Price in GBP, the full amount charged. To buy: enter your email and pay by card or PayPal in the pricing section. Payment is confirmed server-side before delivery: nothing is released or started until our server has confirmed the full amount was paid.
+- Asendify Notes, one year: £1,450.00 GBP a year (£1,000 + 45% service fee). Delivery: your workspace opens as soon as the payment is confirmed (sign in with a one-time email link). Checkout: https://notes.asendify.co/#pricing
+
 ## Every feature, by name
 - Pages inside pages: nest pages as deep as you like and open any of them from the sidebar tree
 - Move pages: move a page, with everything inside it, anywhere in the tree or to another workspace

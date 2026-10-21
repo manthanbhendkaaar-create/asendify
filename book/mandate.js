@@ -2,9 +2,12 @@
 // In India: set up a Razorpay eNACH bank mandate first (Rs 0, nothing charged), then show the calendar.
 (function () {
   var FN = "https://pnokotvssodslxozepxe.supabase.co/functions/v1/mandate";
-  var CAL_LINK = "manthan-bhendkar-5bceko/asendify";   // Cal.com event (rescheduling is turned off there)
+  // 2026-10-20: the Cal.com event is no longer in the page. The human-gate function sends it (window.ASD_CAL) only after
+  // the channel form passed the "you're a real person" check, so bots and AI agents can't reach the calendar from here.
   var $ = function (id) { return document.getElementById(id); };
   function showCalendar(prefill) {
+    var CAL_LINK = window.ASD_CAL && window.ASD_CAL.calLink;
+    if (!CAL_LINK) { location.reload(); return; }
     $("bookGate").hidden = true; $("bookMandate").hidden = true;
     var wrap = $("bookCal"); wrap.hidden = false;
     wrap.innerHTML = '<div id="calInline" style="width:100%;min-width:300px;height:760px;overflow:auto"></div>';

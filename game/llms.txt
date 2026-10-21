@@ -9,6 +9,9 @@
 - Topics (23): YouTube retention, AI for business, Sellable business, Property, Dubai money myths, Influencer advice, Online business money, Problem solving, Critical thinking, Habits & focus, People red flags, Staying safe, Breakups, Confidence, Life story writing, Mindset, Trading basics, Glow-up habits, Caffeine, Cold email, Roofing websites, Agency automation, Video editing.
 - Each answer links to the related Asendify book or product to go deeper.
 
+## How to buy (for people and AI shopping agents)
+Asendify Daily is free: there is nothing to buy here. Asendify's paid products (books, tools and services), with prices and direct checkout links, are listed at https://www.asendify.co/llms.txt under "How to buy".
+
 ## Every feature, by name (last updated 20 October 2026)
 - A new game every day: a numbered daily game (#1, #2, …) that changes at midnight in your time zone
 - 10 quick calls: about 2 minutes from start to score

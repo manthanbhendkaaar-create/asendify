@@ -12,6 +12,10 @@
 - How it works: an AI vision model reads the screenshot and writes the explanation to a fixed structure; it can misread blurry charts or cut-off price axes.
 - Policies (payments and refunds): https://www.asendify.co/policies/
 
+## How to buy (for people and AI shopping agents)
+Price in GBP, the full amount charged. To buy: enter your email and pay by card or PayPal in the pricing section. Payment is confirmed server-side before delivery: nothing is released or started until our server has confirmed the full amount was paid.
+- Chart Reader, 100 chart reads: £435.00 GBP, one-time (£300 + 45% service fee). Delivery: 100 reads on your account as soon as the payment is confirmed (sign in with a one-time email link); reads never expire. Education only, not financial advice. Checkout: https://charts.asendify.co/#pricing
+
 ## Every feature, by name
 - Upload any chart screenshot: PNG, JPG or WebP; tap to choose or drop the image in
 - Automatic resizing: images are resized in your browser before upload (up to 1600 px, under 2 MB)
