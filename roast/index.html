@@ -29,7 +29,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"WebApplication","name":"YouTube Channel Roast","url":"https://www.asendify.co/roast/","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Asendify","url":"https://www.asendify.co/"},"description":"Free AI tool that scores a YouTube channel's titles, thumbnails and upload consistency out of 100 and gives 3 fixes."},
+{"@type":"WebApplication","name":"YouTube Channel Roast","url":"https://www.asendify.co/roast/","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Asendify","url":"https://www.asendify.co/"},"description":"Free AI tool that scores a YouTube channel's titles, thumbnails and upload consistency out of 100 and gives 3 fixes.","dateModified":"2026-10-21"},
+{"@type":"WebPage","name":"Roast my YouTube channel","url":"https://www.asendify.co/roast/","dateModified":"2026-10-21","publisher":{"@type":"Organization","name":"Asendify","url":"https://www.asendify.co/"}},
 {"@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"What does the YouTube Channel Roast check?","acceptedAnswer":{"@type":"Answer","text":"Your latest uploads: the titles, the thumbnails and how regularly you post. Titles and thumbnails are each 40% of the score, consistency is 20%."}},
 {"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes. No sign-up and no card. Each person gets 3 roasts a day."}},
@@ -100,6 +101,7 @@ section.info{padding:30px 0}
 .how{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
 .how div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
 .how b{color:var(--gold)}
+.checks ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:15px}.checks li{margin:3px 0}
 details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0}
 summary{cursor:pointer;font-weight:800}
 details p{color:var(--muted);margin:10px 0 0}
@@ -171,11 +173,43 @@ footer a{color:var(--muted)}
     <div><b>Thumbnails · 40%</b><p>Readable at phone size, one clear idea, contrast and text.</p></div>
     <div><b>Consistency · 20%</b><p>How often and how regularly you've uploaded lately.</p></div>
   </div>
+  <h2 style="margin-top:28px">Everything it checks, by name</h2>
+  <div class="how checks">
+    <div><b>What it reads</b><ul>
+      <li>Your public channel page: channel name, handle, subscriber count and profile picture</li>
+      <li>Your latest 15 public uploads from YouTube's public feed: title, upload date, view count and whether it's a Short</li>
+      <li>The thumbnails of your 8 most recent uploads</li>
+    </ul></div>
+    <div><b>Titles (40% of the score)</b><ul>
+      <li>Curiosity</li><li>Clarity</li><li>Specificity</li><li>Length</li><li>Clickability: would a stranger click?</li>
+    </ul></div>
+    <div><b>Thumbnails (40%)</b><ul>
+      <li>Readability on a phone</li><li>Contrast</li><li>Focal point</li><li>Amount of text</li><li>Consistency across your uploads</li><li>Emotion</li>
+    </ul></div>
+    <div><b>Consistency (20%, worked out from your upload dates)</b><ul>
+      <li>Uploads in the last 30 days (about 11 a month gets full marks)</li>
+      <li>Days since your last upload (points come off after 14 quiet days)</li>
+      <li>Average gap between uploads</li>
+      <li>Longest gap between uploads (a gap over 14 days and 4 times your usual gap costs points)</li>
+    </ul></div>
+    <div><b>What you get back</b><ul>
+      <li>Overall score out of 100, plus separate title, thumbnail and consistency scores</li>
+      <li>A one-line verdict</li><li>5 one-line roasts</li><li>3 fixes you can do this week</li>
+      <li>Your best and worst title, and a rewrite of the worst one</li>
+      <li>A share link for your roast</li>
+    </ul></div>
+    <div><b>What it doesn't check</b><ul>
+      <li>Spoken hooks, audio or editing inside the video</li><li>Your retention graph or any private analytics</li><li>Private or unlisted videos</li>
+      <li>Your looks, voice or identity: it roasts packaging choices only</li>
+    </ul></div>
+  </div>
+  <p class="fine" style="margin-top:14px">A channel needs at least 3 public uploads to be roasted.</p>
   <h2 style="margin-top:28px">Questions</h2>
   <details><summary>What does it check?</summary><p>Your latest public uploads: titles, thumbnails and how regularly you post.</p></details>
   <details><summary>Does it judge hooks or retention?</summary><p>No. YouTube doesn't let outside tools read a video's audio or retention graph, so the roast only covers what's public.</p></details>
   <details><summary>Will it make fun of how I look?</summary><p>No. It roasts packaging choices only, never anyone's face, body, voice or identity.</p></details>
   <details><summary>Is it really free?</summary><p>Yes. No sign-up, no card. 3 roasts per person per day. A channel roasted in the last 24 hours shows the same result.</p></details>
+  <p class="fine" style="margin-top:22px">Last updated: <time datetime="2026-10-21">21 October 2026</time></p>
 </section>
 </main>
 
