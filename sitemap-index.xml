@@ -27,7 +27,6 @@
   <sitemap><loc>https://web.asendify.co/sitemap.xml</loc></sitemap>
   <sitemap><loc>https://morningstarr.asendify.co/sitemap.xml</loc></sitemap>
   <sitemap><loc>https://realestate.asendify.co/sitemap.xml</loc></sitemap>
-  <sitemap><loc>https://realestate.asendify.co/blog-sitemap.xml</loc></sitemap>
   <sitemap><loc>https://realty.asendify.co/sitemap.xml</loc></sitemap>
   <sitemap><loc>https://www.asendify.co/blog-sitemap.xml</loc></sitemap>
   <sitemap><loc>https://outbound.asendify.co/blog-sitemap.xml</loc></sitemap>
@@ -40,4 +39,8 @@
   <sitemap><loc>https://automate.asendify.co/blog-sitemap.xml</loc></sitemap>
   <sitemap><loc>https://charts.asendify.co/sitemap.xml</loc></sitemap>
   <sitemap><loc>https://charts.asendify.co/blog-sitemap.xml</loc></sitemap>
+  <sitemap><loc>https://ai.asendify.co/sitemap.xml</loc></sitemap>
+  <sitemap><loc>https://ai.asendify.co/blog-sitemap.xml</loc></sitemap>
+  <sitemap><loc>https://notes.asendify.co/sitemap.xml</loc></sitemap>
+  <sitemap><loc>https://notes.asendify.co/blog-sitemap.xml</loc></sitemap>
 </sitemapindex>
