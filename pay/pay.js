@@ -1,5 +1,7 @@
 // Private payment set-up page (asendify.co/pay). Clients in India set up a Razorpay eNACH bank mandate
 // (Rs 0 authorisation, nothing charged). ?for=asendify|morningstarr|web|outbound records which company it is for.
+// 2026-10-22: clients outside India save a card on Dodo Payments (card mandate only, nothing charged). The server
+// (playbook.asendify.co/api/config?sc=start|confirm) makes the checkout and confirms the card with Dodo itself.
 (function () {
   var FN = "https://pnokotvssodslxozepxe.supabase.co/functions/v1/mandate";
   var NAMES = { asendify: "Asendify", morningstarr: "MorningstarrAI", web: "Asendify Web", outbound: "Asendify Outbound" };
@@ -21,7 +23,7 @@
       .then(function (r) { return r.json(); }).catch(function () { return { error: "Network error. Please try again." }; });
   }
   $("payIndia").addEventListener("click", function () { $("payGate").hidden = true; $("payMandate").hidden = false; });
-  $("payOutside").addEventListener("click", function () { $("payGate").hidden = true; $("payOutsideMsg").hidden = false; });
+  $("payOutside").addEventListener("click", function () { $("payGate").hidden = true; $("scForm").hidden = false; });
   $("payMandate").addEventListener("submit", function (e) {
     e.preventDefault();
     var msg = $("pmMsg"), go = $("pmGo");
@@ -50,5 +52,31 @@
         rzp.open();
       })
       .catch(function (err) { go.disabled = false; say(err.message || "Something went wrong.", true); });
+  });
+
+  // ---------- Save your card (outside India): Dodo Payments card mandate, nothing charged ----------
+  var SC = "https://playbook.asendify.co/api/config";
+  var scMsg = $("scMsg"), scGo = $("scGo");
+  var scSay = function (t, bad) { scMsg.textContent = t; scMsg.style.color = bad ? "#b91c1c" : ""; };
+  function scPost(op, body) {
+    return fetch(SC + "?sc=" + op, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
+      .then(function (r) { return r.json(); }).catch(function () { return { error: "Network error. Please try again." }; });
+  }
+  function scConfirm(n) {
+    scPost("confirm", { ref: q.get("sref"), subscription_id: q.get("subscription_id") || "" }).then(function (d) {
+      if (d && d.saved) { $("scForm").hidden = true; $("scDone").hidden = false; return; }
+      if (d && d.pending && n < 6) { scSay("Confirming your card with Dodo Payments… Nothing has been charged."); return setTimeout(function () { scConfirm(n + 1); }, 3000); }
+      if (d && d.pending) { scGo.disabled = false; return scSay("Your card is still being confirmed. You'll get an email once it's saved. Nothing has been charged."); }
+      scGo.disabled = false; scSay((d && d.error) || "Your card was not saved. Nothing was charged. Please try again.", true);
+    });
+  }
+  if (q.get("card") === "1" && q.get("sref")) { $("payGate").hidden = true; $("scForm").hidden = false; scGo.disabled = true; scSay("Confirming your card…"); scConfirm(0); }
+  $("scForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    scGo.disabled = true; scSay("Opening the secure card page…");
+    scPost("start", { name: $("scName").value, email: $("scEmail").value, brand: brand, hp: $("scHp").value }).then(function (r) {
+      if (r && r.url) { location.href = r.url; return; }
+      scGo.disabled = false; scSay((r && r.error) || "Something went wrong. Please try again.", true);
+    });
   });
 })();
