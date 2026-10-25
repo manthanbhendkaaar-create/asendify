@@ -4956,3 +4956,7 @@ body::before {
 @keyframes redshine{0%,62%{left:-60%}100%{left:130%}}
 @media (prefers-reduced-motion:reduce){.btn-red-shine::after{animation:none;display:none!important}}
 .nav-link.nav-books.btn-red-shine{color:#fff!important}
+/* 2026-10-25 (Manthan: "whichever button is sending people from services we have stopped to products we offer now, make the button shining red"):
+   dropdown items, tier buttons and CTAs that lead to a current product (books, Accelerator, Instant Website, free tools). */
+.nav-dropdown-link.btn-red-shine{font-weight:600;margin:3px 0;border-radius:8px;box-shadow:0 6px 16px -8px rgba(224,27,27,.75),inset 0 1px 0 rgba(255,255,255,.25)!important}
+.asd-founder .btn-primary.btn-red-shine{display:inline-block}
