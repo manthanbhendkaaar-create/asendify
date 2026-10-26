@@ -48,8 +48,8 @@
     if (r.quality_note) h.push('<p class="fine qn">Note on this read: ' + esc(r.quality_note) + '</p>');
     // 2026-10-17 (Manthan): every read recommends the trading book and the business book.
     h.push(card('Keep learning', '<ul class="books">' +
-      '<li><a href="https://trading.asendify.co/?utm_source=charts&amp;utm_medium=read&amp;utm_campaign=trading" target="_blank" rel="noopener"><b>Chart Edge</b></a> — the playbook for technical analysis, trading strategies and risk management.</li>' +
-      '<li><a href="https://sellable.asendify.co/?utm_source=charts&amp;utm_medium=read&amp;utm_campaign=sellable" target="_blank" rel="noopener"><b>Zero to Sellable</b></a> — how to build a business from first idea to systems that run without you.</li>' +
+      '<li><a href="https://trading.asendify.co/?utm_source=charts&amp;utm_medium=read&amp;utm_campaign=trading" target="_blank" rel="noopener"><b>Secrets of Chart Reading Most Traders Miss</b></a> — the playbook for technical analysis, trading strategies and risk management.</li>' +
+      '<li><a href="https://sellable.asendify.co/?utm_source=charts&amp;utm_medium=read&amp;utm_campaign=sellable" target="_blank" rel="noopener"><b>Secrets to Building a Business Someone Will Buy</b></a> — how to build a business from first idea to systems that run without you.</li>' +
       '</ul>', 'learn'));
     h.push('<p class="notice bottom" role="note">' + esc(NOTICE) + '</p>');
     h.push('</article>');
