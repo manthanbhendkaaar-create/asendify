@@ -5,7 +5,7 @@
 ## Key facts
 - Each read covers: trend, market structure, key support and resistance zones read from the price axis, notable patterns, volume and indicator notes when visible, 2-3 conditional scenarios ("if price does X, traders often watch Y") with invalidation levels, position-size arithmetic from the user's own account size and risk % per trade (pure arithmetic), and what would change the picture.
 - Every result carries this notice: educational analysis only, not financial advice, no guarantee of accuracy, trading carries a high risk of losing money.
-- Price: 100 chart reads for £435 (£300 + 45% service fee of £135). One-time payment through PayPal. Reads never expire. Nothing is free (no free trial or free reads).
+- Price: 100 chart reads for £522 (£360 + 45% service fee of £162). One-time payment through PayPal. Reads never expire. Nothing is free (no free trial or free reads).
 - Only successful reads use a credit: if the image is not a chart, or the reader fails, the read is given back automatically.
 - Accounts: email plus one-time sign-in links (no passwords). Results are saved in the user's history.
 - Screenshots are stored privately and deleted automatically after 30 days; written results are kept.
@@ -14,7 +14,7 @@
 
 ## How to buy (for people and AI shopping agents)
 Price in GBP, the full amount charged. To buy: enter your email and pay by card or PayPal in the pricing section. Payment is confirmed server-side before delivery: nothing is released or started until our server has confirmed the full amount was paid.
-- Chart Reader, 100 chart reads: £435.00 GBP, one-time (£300 + 45% service fee). Delivery: 100 reads on your account as soon as the payment is confirmed (sign in with a one-time email link); reads never expire. Education only, not financial advice. Checkout: https://charts.asendify.co/#pricing
+- Chart Reader, 100 chart reads: £522.00 GBP, one-time (£360 + 45% service fee). Delivery: 100 reads on your account as soon as the payment is confirmed (sign in with a one-time email link); reads never expire. Education only, not financial advice. Checkout: https://charts.asendify.co/#pricing
 
 ## Every feature, by name
 - Upload any chart screenshot: PNG, JPG or WebP; tap to choose or drop the image in
@@ -69,7 +69,7 @@ Last updated: 20 October 2026
 - [Articles](https://charts.asendify.co/blog/)
 
 ## Also from Asendify
-- [Automation Blueprint](https://automate.asendify.co/): describe any business automation, get a buildable blueprint, £217.50 (£150 + 45% service fee).
+- [Automation Blueprint](https://automate.asendify.co/): describe any business automation, get a buildable blueprint, £261 (£180 + 45% service fee).
 - [Asendify](https://www.asendify.co/): YouTube growth agency, books and tools.
 
 ## Free tool

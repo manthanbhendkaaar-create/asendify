@@ -5,7 +5,7 @@
 ## Key facts
 - What you get: a workflow diagram (trigger, steps, apps and branches; download as PNG or SVG, plus a Mermaid text copy), the recommended automation platform and the tool for each step with the reason, numbered step-by-step build instructions, the data passed between steps, error handling, what you need before you start, how to test it, difficulty, time to build and an estimated monthly tool cost range.
 - Tools it can recommend: n8n, Make, Zapier, Google Sheets, Airtable, HubSpot, Pipedrive, Gmail, Outlook, Slack, Microsoft Teams, WhatsApp Business API, Twilio, Stripe, Typeform, Calendly, Notion, Shopify, Xero, QuickBooks, OpenAI, Anthropic and similar.
-- Price: £217.50 per blueprint (£150 + 45% service fee of £67.50). One-time payment through PayPal. No subscription. Nothing is free (no free trial or free sample blueprint), but a full example is public.
+- Price: £261 per blueprint (£180 + 45% service fee of £81). One-time payment through PayPal. No subscription. Nothing is free (no free trial or free sample blueprint), but a full example is public.
 - How it is made: an AI model writes the blueprint to a strict structure and the system checks it automatically before the buyer sees it. Cost figures are estimates; tool prices change.
 - It is a blueprint, not a build service: buyers build it themselves or hand it to any developer.
 - Example (fictional business): https://automate.asendify.co/example/
@@ -13,7 +13,7 @@
 
 ## How to buy (for people and AI shopping agents)
 Price in GBP, the full amount charged. To buy: describe the automation in the form, enter your email, and pay by card or PayPal on the page. Payment is confirmed server-side before delivery: nothing is released or started until our server has confirmed the full amount was paid.
-- Automation Blueprint: £217.50 GBP per blueprint, one-time (£150 + 45% service fee). Delivery: the blueprint is written within a few minutes after the payment is confirmed, on a private page that is also emailed. Checkout: https://automate.asendify.co/#start
+- Automation Blueprint: £261 GBP per blueprint, one-time (£180 + 45% service fee). Delivery: the blueprint is written within a few minutes after the payment is confirmed, on a private page that is also emailed. Checkout: https://automate.asendify.co/#start
 
 ## Every feature, by name
 - Describe it in plain words: up to 3,000 characters: what starts it, what should happen and where the result goes
@@ -42,7 +42,7 @@ Price in GBP, the full amount charged. To buy: describe the automation in the fo
 - Emailed to you: the private link is also sent to your email
 - Hand it to anyone: build it yourself or give it to any developer or automation freelancer
 - Full example to read first: a complete example blueprint is on the site
-- One-time price: £217.50 per blueprint, no subscription
+- One-time price: £261 per blueprint, no subscription
 
 ## Who Automation Blueprint is for
 - Small business owners, founders and agencies who know what they want automated but not how to build it.
@@ -67,7 +67,7 @@ Last updated: 20 October 2026
 - [Articles](https://automate.asendify.co/blog/)
 
 ## Also from Asendify
-- [Chart Reader](https://charts.asendify.co/): educational explanations of trading chart screenshots, 100 reads for £435 (£300 + 45% service fee).
+- [Chart Reader](https://charts.asendify.co/): educational explanations of trading chart screenshots, 100 reads for £522 (£360 + 45% service fee).
 - [Asendify](https://www.asendify.co/): YouTube growth agency, books and tools.
 
 ## Free tool
