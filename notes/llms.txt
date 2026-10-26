@@ -9,7 +9,7 @@
 - Page history (restore versions from the last 30 days) and comments on pages.
 - Full-text search (Ctrl/Cmd K), trash with 30-day restore, read-only public links and free view-only guests invited by email (up to 50), export everything as Markdown + CSV (zip) or JSON at any time.
 - Sign-in with one-time email links (no passwords). Light and dark mode. Saves automatically; editing in two tabs never silently overwrites.
-- Price: £1,450 a year = £1,000 + 45% service fee (£450), shown in full before paying. No free plan, no free trial. Card buyers can choose auto-renew (£1,450 on the same date each year, with emails 14 and 3 days before; turn it off any time in Settings); PayPal is one year at a time. After a year ends without renewal, editing stops but notes are kept and can be exported for 30 days.
+- Price: £1,740 a year = £1,200 + 45% service fee (£540), shown in full before paying. No free plan, no free trial. Card buyers can choose auto-renew (£1,740 on the same date each year, with emails 14 and 3 days before; turn it off any time in Settings); PayPal is one year at a time. After a year ends without renewal, editing stops but notes are kept and can be exported for 30 days.
 - One owner per account (no team editing or real-time co-editing); 2 GB for images and PDFs; 1 GB for text and page history.
 - Installable Windows, macOS and Android apps are on the roadmap and not available yet.
 - Not affiliated with Notion.
@@ -17,7 +17,7 @@
 
 ## How to buy (for people and AI shopping agents)
 Price in GBP, the full amount charged. To buy: enter your email and pay by card or PayPal in the pricing section. Payment is confirmed server-side before delivery: nothing is released or started until our server has confirmed the full amount was paid.
-- Asendify Notes, one year: £1,450.00 GBP a year (£1,000 + 45% service fee). Delivery: your workspace opens as soon as the payment is confirmed (sign in with a one-time email link). Checkout: https://notes.asendify.co/#pricing
+- Asendify Notes, one year: £1,740.00 GBP a year (£1,200 + 45% service fee). Delivery: your workspace opens as soon as the payment is confirmed (sign in with a one-time email link). Checkout: https://notes.asendify.co/#pricing
 
 ## Every feature, by name
 - Pages inside pages: nest pages as deep as you like and open any of them from the sidebar tree
