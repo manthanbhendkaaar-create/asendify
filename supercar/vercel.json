@@ -1,0 +1,20 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/blog", "destination": "https://playbook.asendify.co/api/blog?svc=supercar" },
+    { "source": "/blog/", "destination": "https://playbook.asendify.co/api/blog?svc=supercar" },
+    { "source": "/blog/:slug", "destination": "https://playbook.asendify.co/api/blog?svc=supercar&slug=:slug" },
+    { "source": "/blog/:slug/", "destination": "https://playbook.asendify.co/api/blog?svc=supercar&slug=:slug" },
+    { "source": "/blog-sitemap.xml", "destination": "https://playbook.asendify.co/api/blog?svc=supercar&sitemap=1" },
+    { "source": "/example", "destination": "https://playbook.asendify.co/api/config?sp=example" },
+    { "source": "/example/", "destination": "https://playbook.asendify.co/api/config?sp=example" },
+    { "source": "/p/:token", "destination": "https://playbook.asendify.co/api/config?sp=page&t=:token" },
+    { "source": "/p/:token/", "destination": "https://playbook.asendify.co/api/config?sp=page&t=:token" }
+  ],
+  "headers": [
+    { "source": "/(.*)", "headers": [ { "key": "X-Content-Type-Options", "value": "nosniff" }, { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" } ] },
+    { "source": "/paid/(.*)", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" }, { "key": "Referrer-Policy", "value": "no-referrer" } ] },
+    { "source": "/p/(.*)", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" }, { "key": "Referrer-Policy", "value": "no-referrer" } ] }
+  ]
+}

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /paid/
+Disallow: /p/
+Sitemap: https://supercar.asendify.co/sitemap.xml
+Sitemap: https://supercar.asendify.co/blog-sitemap.xml

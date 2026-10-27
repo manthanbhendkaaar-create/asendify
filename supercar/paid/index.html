@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confirming your payment | Supercar Planner</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#070b14">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=1">
+</head>
+<body>
+<header class="nav"><div class="wrap"><a class="logo" href="/"><span class="mark"><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2"><path d="M3 12l2-4h10l2 4v3H3z"/><circle cx="7" cy="15" r="1.5"/><circle cx="13" cy="15" r="1.5"/></svg></span>Supercar Planner</a></div></header>
+<main class="center"><div>
+  <div class="spin" id="spin"></div>
+  <h1 id="h">Confirming your payment…</h1>
+  <p id="p">This takes a few seconds. Please keep this page open.</p>
+  <p id="act" hidden><a class="btn ghost" href="/#start">Back to the order form</a></p>
+</div></main>
+<footer><div class="wrap"><div>Supercar Planner is made by <a href="https://www.asendify.co/">Asendify</a>.</div><nav><a href="https://www.asendify.co/">asendify.co</a></nav></div></footer>
+<script>
+(function () {
+  'use strict';
+  var H = location.hostname, Q = new URLSearchParams(location.search);
+  var PREVIEW = /\.vercel\.app$/.test(H) || /^(localhost|127\.0\.0\.1)$/.test(H);
+  var ov = ''; try { ov = PREVIEW ? sessionStorage.getItem('sc_api') || '' : ''; } catch (e) {}
+  var API = (PREVIEW ? (ov || 'https://ironclad-git-supercar-manthan-s-projects23.vercel.app') : 'https://playbook.asendify.co') + '/api/config?sp=';
+  var oid = Q.get('oid') || '', token = Q.get('token') || '', tries = 0, dodo = Q.get('dodo') === '1';
+  function $(id) { return document.getElementById(id); }
+  function stop(h, p, again) { $('spin').hidden = true; $('h').textContent = h; $('p').textContent = p; $('act').hidden = !again; }
+  if (!/^[0-9a-f-]{36}$/.test(oid) || (!dodo && !/^[A-Z0-9]{8,30}$/.test(token))) return stop('This link is not complete', 'If you paid, your private link is in your email. Otherwise you can start again.', true);
+  function go() {
+    tries++;
+    fetch(API + 'confirm', { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: PREVIEW ? 'include' : 'omit', body: JSON.stringify(dodo ? { oid: oid, dodo: 1, subscription_id: Q.get('subscription_id') || '', payment_id: Q.get('payment_id') || '' } : { oid: oid, token: token }) })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (j && j.link) { try { sessionStorage.removeItem('sc_draft'); } catch (e) {} $('h').textContent = 'Payment received'; $('p').textContent = 'Opening your planner…'; location.replace(j.link); return; }
+        if (j && j.pending) { if (tries < 8) { $('p').textContent = j.message || 'Still processing your payment…'; setTimeout(go, 5000); return; } return stop('Payment is processing', j.message || 'We email your private link as soon as the payment is confirmed.', false); }
+        stop('We could not confirm this payment', (j && (j.message || j.error)) || 'Please try again.', true);
+      })
+      .catch(function () { if (tries < 4) setTimeout(go, 4000); else stop('We could not reach the server', 'If you paid, your private link is emailed to you. Please check your inbox in a few minutes.', false); });
+  }
+  go();
+})();
+</script>
+<script src="https://www.asendify.co/assets/js/blossom.js?v=5" defer></script>
+</body>
+</html>
