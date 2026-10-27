@@ -401,7 +401,7 @@
   var cnt = function () { $('count').textContent = $('description').value.length + ' / 3000'; }; cnt();
   $('description').addEventListener('input', cnt);
   if (PREVIEW) { $('testbar').hidden = false; buy.disabled = false; buy.textContent = 'Test checkout (preview, no payment)'; }
-  else api('config').then(function (c) { ready = !!(c && c.ok === true && c.ready === true && c.price && c.price.total === '217.50'); buy.disabled = !ready; buy.textContent = ready ? 'Pay £261 with PayPal' : 'Opening soon'; if (ready && c.dodo) { $('buyCard').hidden = false; $('cardNote').hidden = false; buy.classList.add('alt'); } if (!ready) show('Automation Blueprint is opening soon. Ordering will switch on here shortly.', 'i'); });
+  else api('config').then(function (c) { ready = !!(c && c.ok === true && c.ready === true && c.price && c.price.total === '261.00'); buy.disabled = !ready; buy.textContent = ready ? 'Pay £261 with PayPal' : 'Opening soon'; if (ready && c.dodo) { $('buyCard').hidden = false; $('cardNote').hidden = false; buy.classList.add('alt'); } if (!ready) show('Automation Blueprint is opening soon. Ordering will switch on here shortly.', 'i'); });
   function fieldErr(name, text) { var f = $('f-' + name); if (!f) return; f.classList.toggle('bad', !!text); $('e-' + name).textContent = text || ''; }
   var gw = ''; // 2026-10-19: 'dodo' when the card button was clicked
   if (PREVIEW) { $('buyCard').hidden = false; $('cardNote').hidden = false; }
