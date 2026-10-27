@@ -223,7 +223,8 @@ window.__roastSrc=function(){
   var qs=new URLSearchParams(location.search),src='';
   if(qs.get('utm_source'))src=[clean(qs.get('utm_source')),clean(qs.get('utm_medium')),clean(qs.get('utm_campaign'))].join('/');
   if(!src&&qs.get('r'))src='shared/roast';
-  if(!src&&document.referrer){try{var h=new URL(document.referrer).hostname.replace(/^www\./,'');if(h&&!/(^|\.)asendify\.co$/.test(h))src='ref/'+clean(h)}catch(e){}}
+  var own='';if(!src&&document.referrer){try{var h=new URL(document.referrer).hostname.replace(/^www\./,'');if(h&&!/(^|\.)asendify\.co$/.test(h))src='ref/'+clean(h);else if(h)own='site/'+(clean(h.replace(/\.?asendify\.co$/,''))||'www');}catch(e){}}
+  var m0=document.cookie.match(/(^|;\s*)asd_src=([a-z0-9._\/-]{1,80})/);if(src)document.cookie='asd_src='+src+'; domain=.asendify.co; path=/; max-age=604800; SameSite=Lax; Secure';else if(m0)src=m0[2];else if(own)src=own;
   return src||'direct';
 };
 // Visit counting (same rules as every asendify.co page): one per session, after engagement or 12 s, bots and our own browsers skipped.
