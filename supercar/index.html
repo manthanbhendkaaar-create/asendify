@@ -191,6 +191,7 @@
     if (bad) { var fb = form.querySelector('.bad select, .bad input'); if (fb) fb.focus(); return; }
     var btn = useDodo ? $('buyCard') : buy, label = btn.textContent; btn.disabled = true; btn.textContent = useDodo ? 'Opening secure card checkout…' : PREVIEW ? 'Creating test order…' : 'Opening PayPal…'; msg.className = 'msg';
     if (useDodo) data.gw = 'dodo';
+    try { var ck = function (n) { var m = document.cookie.match(new RegExp('(?:^|; )' + n + '=([^;]*)')); return m ? decodeURIComponent(m[1]) : ''; }; data.fbp = ck('_fbp'); data.fbc = ck('_fbc'); data.fbclid = new URLSearchParams(location.search).get('fbclid') || ''; } catch (e) {} // Meta click ids for the server-side Purchase (Conversions API)
     try { if (!PREVIEW && window.fbq) fbq('track', 'InitiateCheckout', { content_name: 'supercar_planner', value: 435, currency: 'GBP' }); } catch (e) {}
     api(useDodo ? 'checkout' : PREVIEW ? 'test_checkout' : 'checkout', data).then(function (j) {
       if (j && j.approve) { location.href = j.approve; return; }

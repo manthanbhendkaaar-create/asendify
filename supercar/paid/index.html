@@ -40,7 +40,7 @@
       .then(function (j) {
         if (j && j.link) { try { sessionStorage.removeItem('sc_draft'); } catch (e) {} $('h').textContent = 'Payment received'; $('p').textContent = 'Opening your planner…';
           /* Meta Purchase once per order, only after the server confirmed the payment (28 Oct 2026) */
-          try { var pk = 'sc_purch_' + oid; if (!PREVIEW && window.fbq && !localStorage.getItem(pk)) { localStorage.setItem(pk, '1'); fbq('track', 'Purchase', { content_name: 'supercar_planner', value: 435, currency: 'GBP' }); } } catch (e) {}
+          try { var pk = 'sc_purch_' + oid; if (!PREVIEW && window.fbq && !localStorage.getItem(pk)) { localStorage.setItem(pk, '1'); fbq('track', 'Purchase', { content_name: 'supercar_planner', value: 435, currency: 'GBP' }, { eventID: oid }); } } catch (e) {}
           setTimeout(function () { location.replace(j.link) }, 400); return; }
         if (j && j.pending) { if (tries < 8) { $('p').textContent = j.message || 'Still processing your payment…'; setTimeout(go, 5000); return; } return stop('Payment is processing', j.message || 'We email your private link as soon as the payment is confirmed.', false); }
         stop('We could not confirm this payment', (j && (j.message || j.error)) || 'Please try again.', true);
