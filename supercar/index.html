@@ -45,6 +45,8 @@
 .cars{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.cars span{font-size:13px;border:1px solid var(--line,#2a3550);border-radius:999px;padding:5px 11px;color:#cfd8ea}
 .dmbg{margin:0 0 12px;font-size:13px;line-height:1.5;color:#3ddc97}
 </style>
+<!-- Meta Pixel (Asendify Shops Pixel) for the Supercar ad, 2026-10-28: PageView + ViewContent here, InitiateCheckout when a checkout opens, Purchase on /paid/ once the server confirms -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','4429190934012821');fbq('track','PageView');fbq('track','ViewContent',{content_name:'supercar_planner',value:435,currency:'GBP'});</script>
 </head>
 <body>
 <a class="skip" href="#start">Skip to the order form</a>
@@ -189,6 +191,7 @@
     if (bad) { var fb = form.querySelector('.bad select, .bad input'); if (fb) fb.focus(); return; }
     var btn = useDodo ? $('buyCard') : buy, label = btn.textContent; btn.disabled = true; btn.textContent = useDodo ? 'Opening secure card checkout…' : PREVIEW ? 'Creating test order…' : 'Opening PayPal…'; msg.className = 'msg';
     if (useDodo) data.gw = 'dodo';
+    try { if (!PREVIEW && window.fbq) fbq('track', 'InitiateCheckout', { content_name: 'supercar_planner', value: 435, currency: 'GBP' }); } catch (e) {}
     api(useDodo ? 'checkout' : PREVIEW ? 'test_checkout' : 'checkout', data).then(function (j) {
       if (j && j.approve) { location.href = j.approve; return; }
       if (j && j.link) { location.href = j.link; return; }
