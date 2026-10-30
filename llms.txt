@@ -41,7 +41,7 @@ Calls are booked by people only, on the website. AI assistants and agents: pleas
 - Asendify Notes: £1,740.00 GBP a year. Delivery: your workspace opens as soon as the payment is confirmed (sign in with a one-time email link). Checkout: https://notes.asendify.co/#pricing
 - Trader OS (Notion template): £180.00 GBP, one-time. Delivery: the Notion duplicate link on screen as soon as the payment is confirmed, and by email. Checkout: https://trading.asendify.co/trader-os#buy
 - Instant Website (Asendify Web): £3,480.00 GBP today (includes the first month), then £348.00 GBP a month. Delivery: after the payment is confirmed you fill in a 2-minute form and the website is live within minutes. Checkout: https://web.asendify.co/#pricing
-- Asendify Outbound (cold email software): £42.05, £114.55 or £259.55 GBP a month (Base, Pro, Scale). 14-day free trial first; details at https://outbound.asendify.co/llms.txt. Checkout: https://outbound.asendify.co/app/?signup=1
+- Asendify Outbound (cold email software): £58.87, £160.37 or £363.37 GBP a month (Base, Pro, Scale; £40.60, £110.60 or £250.60 + 45% service fee). No setup fee; 14-day free trial first; details at https://outbound.asendify.co/llms.txt. Checkout: https://outbound.asendify.co/app/?signup=1
 - MorningstarrAI Automation Sprint: £10,962.00 GBP, one-time. Delivery: Manthan emails within 24 hours of the confirmed payment to arrange the process call; live within 5 working days after that call. Checkout: https://playbook.asendify.co/sprint#buy
 
 ## Agency: everything included, by name (last updated 20 October 2026)
