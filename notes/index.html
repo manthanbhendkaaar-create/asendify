@@ -244,6 +244,12 @@ footer { border-top:1px solid var(--line); padding:26px 0 40px; color:var(--mute
 @media (max-width:600px) { nav a:not(.signin) { display:none; } }
 .fl { columns:2 300px; column-gap:32px; padding-left:20px; margin:20px 0 0; } .fl li { break-inside:avoid; margin:0 0 8px; } .fl li b { color:var(--text); } .updated { color:var(--muted); font-size:14px; margin:14px 0 0; }
 </style>
+<script>/* 2026-10-30 affiliate ref (paid-entry programme): ?ref=<code> is kept 30 days in a .asendify.co cookie and sent with the checkout; the server checks it. */
+(function(){function c(v){return String(v||'').toLowerCase().replace(/[^a-z0-9-]/g,'').slice(0,32)}var d=/(^|\.)asendify\.co$/.test(location.hostname)?'; domain=.asendify.co':'';
+var q=c(new URLSearchParams(location.search).get('ref'));if(q.length>=2){var m0=document.cookie.match(/(?:^|;\s*)asd_ref=([a-z0-9-]{2,32})/);document.cookie='asd_ref='+q+d+'; path=/; max-age=2592000; SameSite=Lax; Secure';
+if(!m0||m0[1]!==q)fetch('https://playbook.asendify.co/api/ref',{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain'},body:JSON.stringify({ref:q,product:'notes'})}).catch(function(){});}
+window.asdRef=function(){var m=document.cookie.match(/(?:^|;\s*)asd_ref=([a-z0-9-]{2,32})/);return m?m[1]:(q.length>=2?q:'')};
+window.asdSelf=function(){var m=document.cookie.match(/(?:^|;\s*)asd_aff=([a-z0-9-]{2,32})/);return m?m[1]:''};})();</script>
 </head>
 <body>
 <div class="wrap">
@@ -406,7 +412,7 @@ footer { border-top:1px solid var(--line); padding:26px 0 40px; color:var(--mute
   form.addEventListener('submit', function (e) {
     e.preventDefault(); if (!open) return;
     msg.textContent = 'Opening the secure checkout…';
-    fetch(API + 'checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: PREVIEW ? 'include' : 'omit', body: JSON.stringify({ email: document.getElementById('email').value, gw: gw, autoRenew: gw === 'dodo' && document.getElementById('renew').checked }) })
+    fetch(API + 'checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: PREVIEW ? 'include' : 'omit', body: JSON.stringify({ ref: (window.asdRef ? asdRef() : ''), affSelf: (window.asdSelf ? asdSelf() : ''), email: document.getElementById('email').value, gw: gw, autoRenew: gw === 'dodo' && document.getElementById('renew').checked }) })
       .then(function (r) { return r.json(); }).then(function (j) { if (j.approve) location.href = j.approve; else msg.textContent = j.message || j.error || 'Something went wrong. Nothing was charged.'; })
       .catch(function () { msg.textContent = 'We could not reach the server. Nothing was charged.'; });
   });
