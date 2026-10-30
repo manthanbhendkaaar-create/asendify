@@ -219,7 +219,7 @@ var acts=['scroll','pointerdown','touchstart','keydown','mousemove','wheel'],sen
 var send=function(how){if(sent)return;sent=true;clearInterval(tick);acts.forEach(function(e){removeEventListener(e,on,true)});
 try{sessionStorage.setItem('asd_sv','1')}catch(e){}
 fetch('https://playbook.asendify.co/api/ref',{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain'},body:JSON.stringify({visit:src,page:path,engaged:how})}).catch(function(){})};
-var adClick=/^[a-z0-9._-]+\/paid\//.test(src);if(adClick){send('landed');return;}
+var adClick=/^[a-z0-9._-]+\/paid\//.test(src);if(adClick){var vis=function(){return document.visibilityState==='visible'&&!document.prerendering};var go=function(){if(vis()){removeEventListener('visibilitychange',go);setTimeout(function(){if(vis())send('landed');else addEventListener('visibilitychange',go);},1000);}};if(vis())go();else{addEventListener('visibilitychange',go);document.addEventListener('prerenderingchange',go);}return;}
 var on=function(){send('interact')};acts.forEach(function(e){addEventListener(e,on,{capture:true,passive:true})});
 tick=setInterval(function(){if(document.visibilityState==='visible'&&(shown+=1000)>=12000)send('time')},1000);}catch(e){}})();</script>
 </body>
