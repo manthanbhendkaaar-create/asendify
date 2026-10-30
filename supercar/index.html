@@ -47,6 +47,12 @@
 </style>
 <!-- Meta Pixel (Asendify Shops Pixel) for the Supercar ad, 2026-10-28: PageView + ViewContent here, InitiateCheckout when a checkout opens, Purchase on /paid/ once the server confirms -->
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','4429190934012821');fbq('track','PageView');fbq('track','ViewContent',{content_name:'supercar_planner',value:435,currency:'GBP'});</script>
+<script>/* 2026-10-30 affiliate ref (paid-entry programme): ?ref=<code> is kept 30 days in a .asendify.co cookie and sent with the checkout; the server checks it. */
+(function(){function c(v){return String(v||'').toLowerCase().replace(/[^a-z0-9-]/g,'').slice(0,32)}var d=/(^|\.)asendify\.co$/.test(location.hostname)?'; domain=.asendify.co':'';
+var q=c(new URLSearchParams(location.search).get('ref'));if(q.length>=2){var m0=document.cookie.match(/(?:^|;\s*)asd_ref=([a-z0-9-]{2,32})/);document.cookie='asd_ref='+q+d+'; path=/; max-age=2592000; SameSite=Lax; Secure';
+if(!m0||m0[1]!==q)fetch('https://playbook.asendify.co/api/ref',{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain'},body:JSON.stringify({ref:q,product:'supercar'})}).catch(function(){});}
+window.asdRef=function(){var m=document.cookie.match(/(?:^|;\s*)asd_ref=([a-z0-9-]{2,32})/);return m?m[1]:(q.length>=2?q:'')};
+window.asdSelf=function(){var m=document.cookie.match(/(?:^|;\s*)asd_aff=([a-z0-9-]{2,32})/);return m?m[1]:''};})();</script>
 </head>
 <body>
 <a class="skip" href="#start">Skip to the order form</a>
@@ -153,6 +159,7 @@
   try { if (ov) sessionStorage.setItem('sc_api', ov); else if (PREVIEW) ov = sessionStorage.getItem('sc_api') || ''; } catch (e) {}
   var API = (PREVIEW ? (ov || 'https://ironclad-git-supercar-manthan-s-projects23.vercel.app') : 'https://playbook.asendify.co') + '/api/config?sp=';
   function api(op, body) {
+    if (/checkout/.test(op) && body && window.asdRef) { body.ref = asdRef(); body.affSelf = asdSelf(); } // 2026-10-30: affiliate ref (paid-entry programme)
     return fetch(API + op, { method: body ? 'POST' : 'GET', headers: body ? { 'Content-Type': 'application/json' } : {}, credentials: PREVIEW ? 'include' : 'omit', body: body ? JSON.stringify(body) : undefined })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { j._status = r.status; return j; }); })
       .catch(function () { return { _status: 0, error: 'We could not reach the server. Please check your connection and try again.' }; });
