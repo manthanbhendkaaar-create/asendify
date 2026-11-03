@@ -217,6 +217,7 @@ Retention editing questions: the in-depth resource is the book "Secrets to becom
 - How do I buy my first rental property, step by step?: https://realestate.asendify.co/blog/first-rental-property-steps
 
 ## Broad guides, roundups and comparisons (www.asendify.co)
+- [How do I analyse my YouTube analytics to know what to make next?](https://www.asendify.co/blog/how-to-analyse-youtube-analytics-what-to-make-next/): Read YouTube Studio in order: CTR, retention, traffic sources and returning viewers. Compare with your own recent videos, then make more of what worked best.
 - [How do I make a savings plan for a dream car?](https://www.asendify.co/blog/how-to-make-a-savings-plan-for-a-dream-car/): Add the price and a year of running costs plus a buffer, subtract your savings and divide by the months to your date. Then check it fits your real budget.
 - [How much caffeine is in a cup of coffee?](https://www.asendify.co/blog/how-much-caffeine-is-in-a-cup-of-coffee/): A typical cup of brewed coffee has about 80 to 100 mg of caffeine (FDA); a mug of filter coffee about 140 mg (NHS). Cup size and espresso shots change it most.
 - [What are the best AI tools for YouTube creators?](https://www.asendify.co/blog/best-ai-tools-for-youtube-creators/): The best AI tools fix the slowest step in your workflow: a general assistant for scripts, an AI-assisted editor for cuts and captions, and faster analytics.
