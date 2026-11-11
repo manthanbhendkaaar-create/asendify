@@ -435,6 +435,7 @@ document.addEventListener('click', function (e) {
         return d;
     }
     function run() {
+        return; // 2026-11-11 (Manthan): no money-back guarantee anywhere; notice disabled.
         var fb = document.getElementById('pay-safety-footer') || document.querySelector('.footer-bottom');
         if (fb && !document.getElementById('dmbg-footer')) {
             var f = box('margin:0 0 12px;max-width:none;');
