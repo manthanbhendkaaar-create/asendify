@@ -10,4 +10,4 @@
 - Refunds: every sale is final; no money-back guarantee. Duplicate or failed charges are fixed or refunded.
 - Example planner (public): https://supercar.asendify.co/example/
 - Articles: https://supercar.asendify.co/blog/
-- Maker: Asendify (https://www.asendify.co/), which also publishes 24 practical playbooks (https://www.asendify.co/books/) and the Automation Blueprint app (https://automate.asendify.co/).
+- Maker: Asendify (https://www.asendify.co/), which also publishes 25 practical playbooks (https://www.asendify.co/books/) and the Automation Blueprint app (https://automate.asendify.co/).

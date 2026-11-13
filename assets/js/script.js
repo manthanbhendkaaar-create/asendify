@@ -559,7 +559,7 @@ document.addEventListener('click', function (e) {
     if (/^\/books(\/|$)/.test(location.pathname)) return;
     var s = null;
     var src = (s && s.getAttribute('data-src')) || 'asendify';
-    var BOOKS_COUNT = 24;
+    var BOOKS_COUNT = 25;
     var text = (s && s.getAttribute('data-text')) || 'New: Asendify Books · ' + BOOKS_COUNT + ' practical playbooks. Pick your problem →';
     var href = '/books/';
     function build() {
