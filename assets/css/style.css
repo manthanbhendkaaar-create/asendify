@@ -3289,10 +3289,6 @@ ul {
         text-align: center;
     }
 
-    .cta-banner {
-        zoom: 75%;
-    }
-
     .formspree {
         width: 100%;
         max-width: 70%;
@@ -4960,3 +4956,15 @@ body::before {
    dropdown items, tier buttons and CTAs that lead to a current product (books, Accelerator, Instant Website, free tools). */
 .nav-dropdown-link.btn-red-shine{font-weight:600;margin:3px 0;border-radius:8px;box-shadow:0 6px 16px -8px rgba(224,27,27,.75),inset 0 1px 0 rgba(255,255,255,.25)!important}
 .asd-founder .btn-primary.btn-red-shine{display:inline-block}
+
+/* 2026-11-14 phones: offer box right under the homepage headline (like the book pages) */
+.hero-offer-m{display:none}
+@media (max-width: 768px){
+  .hero-offer-m{display:block;margin:18px auto 6px;max-width:420px;text-align:left;border:1px solid rgba(212,175,55,.45);border-radius:16px;padding:16px 18px;background:rgba(18,15,8,.92)}
+  .hero-offer-m .ho-tag{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#d4af37;font-weight:700}
+  .hero-offer-m .ho-title{display:block;font-size:17px;line-height:1.35;color:#fff;font-weight:600;margin:6px 0 10px}
+  .hero-offer-m .ho-price{font-size:30px;font-weight:800;color:#d4af37;line-height:1}
+  .hero-offer-m .ho-note{font-size:13px;color:rgba(255,255,255,.7);margin-left:6px}
+  .hero-offer-m .ho-btn{display:block;text-align:center;margin-top:14px;padding:14px 16px;border-radius:12px;background:linear-gradient(135deg,#f3d27a,#d4af37);color:#111;font-weight:800;font-size:16px;text-decoration:none}
+  .uw-handcrafted-body{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+}
