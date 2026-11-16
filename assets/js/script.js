@@ -533,7 +533,7 @@ document.addEventListener('click', function (e) {
         var path = location.pathname.replace(/[^a-zA-Z0-9._\/-]/g, '').slice(0, 120) || '/';
         // 2026-10-20: visits that land on the Accelerator page get their own product key ('accelerator') so the page shows
         // on the Channels dashboard; same landing-page rule as 'books', so a session is still counted once.
-        var product = /^\/books(\/|$)/.test(path) ? 'books' : /^\/accelerator(\/|$)/.test(path) ? 'accelerator' : 'hub';
+        var product = /^\/books(\/|$)/.test(path) ? 'books' : /^\/accelerator(\/|$)/.test(path) ? 'accelerator' : /^\/retention-doctor(\/|$)/.test(path) ? 'doctor' : 'hub'; // 2026-11-16: Retention Doctor landing (www.asendify.co/retention-doctor/) counts as product 'doctor'
         var acts = ['scroll', 'pointerdown', 'touchstart', 'keydown', 'mousemove', 'wheel'], sent = false, shown = 0, tick;
         var send = function (how) {
             if (sent) return; sent = true; clearInterval(tick);
