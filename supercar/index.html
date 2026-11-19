@@ -276,21 +276,18 @@ window.asdSelf=function(){var m=document.cookie.match(/(?:^|;\s*)asd_aff=([a-z0-
     if (!ready) show('Supercar Planner is opening soon. Ordering will switch on here shortly.', 'i');
   });
   function fieldErr(name, text) { var f = $('f-' + name); if (!f) return; f.classList.toggle('bad', !!text); var e = $('e-' + name); if (e) e.textContent = text || ''; }
-  var gw = '';
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
-    var useDodo = gw === 'dodo'; gw = '';
     var data = { car: carSel.value, custom_name: $('custom_name').value.trim(), custom_price: $('custom_price').value.trim(), currency: $('currency').value, email: $('email').value.trim() };
     try { sessionStorage.setItem('sc_draft', JSON.stringify(data)); } catch (e) {}
     var bad = false;
     if (!data.car || (data.car === 'custom' && !(Number(data.custom_price) >= 5000))) { fieldErr('car', data.car === 'custom' ? 'Enter the price you expect to pay (at least £5,000).' : 'Pick the car you are planning for.'); bad = true; } else fieldErr('car');
-    if ((!PREVIEW || useDodo) && !/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(data.email)) { fieldErr('email', 'Please enter a valid email address.'); bad = true; } else fieldErr('email');
+    if (!PREVIEW && !/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(data.email)) { fieldErr('email', 'Please enter a valid email address.'); bad = true; } else fieldErr('email');
     if (bad) { var fb = form.querySelector('.bad select, .bad input'); if (fb) fb.focus(); return; }
-    var btn = useDodo ? $('buyCard') : buy, label = btn.textContent; btn.disabled = true; btn.textContent = useDodo ? 'Opening secure card checkout…' : PREVIEW ? 'Creating test order…' : 'Opening PayPal…'; msg.className = 'msg';
-    if (useDodo) data.gw = 'dodo';
+    var btn = buy, label = btn.textContent; btn.disabled = true; btn.textContent = PREVIEW ? 'Creating test order…' : 'Opening PayPal…'; msg.className = 'msg';
     try { var ck = function (n) { var m = document.cookie.match(new RegExp('(?:^|; )' + n + '=([^;]*)')); return m ? decodeURIComponent(m[1]) : ''; }; data.fbp = ck('_fbp'); data.fbc = ck('_fbc'); data.fbclid = new URLSearchParams(location.search).get('fbclid') || ''; } catch (e) {} // Meta click ids for the server-side Purchase (Conversions API)
     try { if (!PREVIEW && window.fbq) fbq('track', 'InitiateCheckout', { content_name: 'supercar_planner', value: 49, currency: 'GBP' }); } catch (e) {}
-    api(useDodo ? 'checkout' : PREVIEW ? 'test_checkout' : 'checkout', data).then(function (j) {
+    api(PREVIEW ? 'test_checkout' : 'checkout', data).then(function (j) {
       if (j && j.approve) { location.href = j.approve; return; }
       if (j && j.link) { location.href = j.link; return; }
       btn.disabled = false; btn.textContent = label;
