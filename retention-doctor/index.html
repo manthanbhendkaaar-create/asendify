@@ -45,6 +45,143 @@
 .rd-card{border:1px solid rgba(212,175,55,.3);border-radius:14px;padding:16px 18px;background:rgba(212,175,55,.04)}
 .rd-card b{display:block;margin:0 0 4px}.rd-by{columns:2;column-gap:28px}@media(max-width:640px){.rd-by{columns:1}}
 .rd-ex{border:1px dashed rgba(212,175,55,.45);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+/* 2026-11-19 visual redesign (Manthan: "make the retention doctor page ... a bit more visual"). Layout + inline SVG only; same words. */
+:root{--rd-red:#ff6b5e;--rd-green:#5fd38d;--rd-card:#0f0f0f;--rd-line:rgba(212,175,55,.22)}
+.rdv-wide{max-width:1120px}
+.rdv-narrow{max-width:820px;margin-left:auto;margin-right:auto}
+.rdv-ico{width:22px;height:22px;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.rdv-ico-wrap{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.28);color:var(--gold)}
+/* hero */
+.rdv-hero{display:grid;grid-template-columns:1fr;gap:34px;align-items:center}
+@media(min-width:960px){.rdv-hero{grid-template-columns:1.02fr 1fr;gap:48px}}
+.rdv-hero .post-lede{margin-bottom:14px}
+.rdv-hook{display:block;color:var(--white);font-family:var(--font-display);font-weight:400;font-size:1.32rem;line-height:1.4;margin:0 0 10px}
+.rdv-graph{position:relative;border:1px solid var(--rd-line);border-radius:18px;background:radial-gradient(120% 90% at 85% 0%,rgba(212,175,55,.12),transparent 60%),var(--rd-card);padding:14px 14px 10px;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.02) inset}
+.rdv-graph svg{display:block;width:100%;height:auto}
+.rdv-tag{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(212,175,55,.4);border-radius:999px;padding:2px 9px;font-weight:600}
+.rdv-cap{font-size:.78rem;color:var(--gray);margin:6px 4px 0}
+/* price box */
+.rdv-buy{display:grid!important;grid-template-columns:1fr;gap:18px!important;padding:24px!important;margin:30px 0 26px!important;background:linear-gradient(135deg,rgba(212,175,55,.1),rgba(212,175,55,.03))!important;border-color:rgba(212,175,55,.3)!important}
+@media(min-width:860px){.rdv-buy{grid-template-columns:minmax(260px,1fr) auto;align-items:center}}
+.rdv-buy .tier-price span{font-size:2.8rem;line-height:1}
+.rdv-terms{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px;font-size:.86rem;color:var(--gray)}
+.rdv-terms li{display:flex;gap:8px;align-items:flex-start;line-height:1.45}
+.rdv-terms .rdv-ico{width:16px;height:16px;color:var(--gold);margin-top:2px}
+.rdv-ctas{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.rdv-ctas a{justify-content:center;text-align:center}
+.rdv-ctas .btn-outline{margin-left:0!important}
+.rdv-signin{font-size:13px;opacity:.8;margin:0;grid-column:1/-1}
+/* trust row */
+.rdv-trust{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:0 0 10px}
+@media(min-width:860px){.rdv-trust{grid-template-columns:repeat(4,1fr)}}
+.rdv-trust div{display:flex;gap:10px;align-items:center;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);font-size:.86rem;color:var(--white);line-height:1.35}
+.rdv-trust .rdv-ico{color:var(--gold)}
+/* divider */
+.rdv-div{border:0;height:1px;margin:64px auto;max-width:820px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.55),transparent);position:relative;overflow:visible}
+.rdv-div::after{content:"";position:absolute;left:50%;top:-4px;width:8px;height:8px;background:var(--gold);transform:translateX(-50%) rotate(45deg);box-shadow:0 0 14px rgba(212,175,55,.7)}
+h2.rdv-h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.6rem,3vw,2.1rem);color:var(--white);line-height:1.2;margin:0 0 8px;text-align:center}
+.rdv-sub{color:var(--gray);text-align:center;margin:0 auto 28px;max-width:620px}
+/* steps */
+.rdv-steps{list-style:none;padding:0;margin:0;display:grid;gap:16px;grid-template-columns:1fr;counter-reset:st}
+@media(min-width:860px){.rdv-steps{grid-template-columns:repeat(3,1fr);gap:22px}}
+.rdv-step{position:relative;padding:22px 20px 20px;border-radius:16px;background:var(--rd-card);border:1px solid rgba(255,255,255,.08)}
+.rdv-step::before{counter-increment:st;content:counter(st);position:absolute;top:16px;right:18px;font-family:var(--font-display);font-size:2.4rem;line-height:1;color:rgba(212,175,55,.22)}
+.rdv-step b{display:block;color:var(--white);font-weight:600;margin:14px 0 4px;font-size:1.02rem}
+.rdv-step span{color:var(--gray);font-size:.92rem;line-height:1.55;display:block}
+@media(min-width:860px){.rdv-step:not(:last-child)::after{content:"";position:absolute;top:44px;right:-18px;width:14px;height:14px;border-top:2px solid var(--gold);border-right:2px solid var(--gold);transform:rotate(45deg);opacity:.7}}
+/* example report */
+.rdv-report{border:1px solid rgba(212,175,55,.35);border-radius:20px;background:var(--rd-card);overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+.rdv-rhead{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(212,175,55,.05)}
+.rdv-rhead b{color:var(--white);font-weight:600}
+.rdv-rhead small{color:var(--gray)}
+.rdv-rbody{display:grid;grid-template-columns:1fr;gap:22px;padding:22px 20px}
+@media(min-width:860px){.rdv-rbody{grid-template-columns:200px 1fr 1fr;gap:28px}}
+.rdv-dialbox{text-align:center}
+.rdv-dial{position:relative;width:150px;height:150px;margin:0 auto}
+.rdv-dial svg{width:150px;height:150px;transform:rotate(-90deg)}
+.rdv-dial .rdv-dialnum{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--font-display);font-size:2.6rem;color:var(--white);line-height:1}
+.rdv-dial .rdv-dialnum small{font-family:var(--font-body);font-size:.75rem;color:var(--gray);margin-top:4px}
+.rdv-dialbox p{margin:10px 0 0;font-size:.85rem;color:var(--gray)}
+.rdv-k{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 10px}
+.rdv-drops{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.rdv-drops li{display:grid;grid-template-columns:58px 1fr;gap:10px;align-items:start;font-size:.92rem;color:var(--gray);line-height:1.5}
+.rdv-ts{font-variant-numeric:tabular-nums;font-weight:700;font-size:.82rem;text-align:center;border-radius:8px;padding:3px 0;background:rgba(255,107,94,.12);color:var(--rd-red);border:1px solid rgba(255,107,94,.35)}
+.rdv-ts.up{background:rgba(95,211,141,.1);color:var(--rd-green);border-color:rgba(95,211,141,.35)}
+.rdv-drops b,.rdv-fixes b{color:var(--white)}
+.rdv-fixes{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:fx}
+.rdv-fixes li{position:relative;padding:10px 12px 10px 44px;border-radius:12px;background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);font-size:.9rem;color:var(--gray);line-height:1.5}
+.rdv-fixes li::before{counter-increment:fx;content:counter(fx);position:absolute;left:12px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#050505;font-weight:700;font-size:.78rem;display:flex;align-items:center;justify-content:center}
+.rdv-rfoot{margin:0;padding:12px 20px;border-top:1px dashed rgba(212,175,55,.3);font-size:13px;color:var(--gray)}
+/* cards with icons */
+.rdv-cards{display:grid;gap:16px;grid-template-columns:1fr;margin:0}
+@media(min-width:640px){.rdv-cards{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.rdv-cards{grid-template-columns:repeat(3,1fr)}}
+.rdv-cards .rd-card{padding:20px;border-radius:16px;background:var(--rd-card);border:1px solid rgba(255,255,255,.08);transition:border-color .3s,transform .3s}
+.rdv-cards .rd-card:hover{border-color:rgba(212,175,55,.45);transform:translateY(-2px)}
+.rdv-cards .rd-card b{color:var(--white);font-weight:600;margin:14px 0 6px;font-size:1.02rem}
+.rdv-cards .rd-card span{color:var(--gray);font-size:.93rem;line-height:1.6}
+.rdv-feats{columns:auto!important;list-style:none!important;padding:0!important;margin:0!important;display:grid;gap:10px;grid-template-columns:1fr}
+@media(min-width:640px){.rdv-feats{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.rdv-feats{grid-template-columns:repeat(4,1fr)}}
+.rdv-feats li{display:flex;gap:12px;align-items:center;margin:0!important;padding:12px 14px!important;border-radius:12px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);color:var(--white);font-size:.88rem;line-height:1.4}
+.rdv-feats li .rdv-ico{color:var(--gold);width:20px;height:20px}
+.rdv-who{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:760px){.rdv-who{grid-template-columns:1fr 1fr}}
+.rdv-who .rd-card{padding:22px;border-radius:16px;line-height:1.65;color:var(--gray)}
+.rdv-who .rd-card b{display:flex!important;align-items:center;gap:10px;color:var(--white);font-size:1.05rem;margin:0 0 10px!important}
+.rdv-who .rdv-yes{border-color:rgba(95,211,141,.35);background:rgba(95,211,141,.05)}
+.rdv-who .rdv-no{border-color:rgba(255,107,94,.3);background:rgba(255,107,94,.04)}
+.rdv-yes b .rdv-ico{color:var(--rd-green)}.rdv-no b .rdv-ico{color:var(--rd-red)}
+.rdv-faq .svc-faq{border-top:0}
+.rdv-faq .svc-faq-item{border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px 18px;margin:0 0 10px;background:var(--rd-card)}
+.rdv-faq .svc-faq-item[open]{border-color:rgba(212,175,55,.4)}
+/* CTA panels */
+.rdv-panel{display:grid;grid-template-columns:1fr;gap:22px;align-items:center;padding:28px 24px;border-radius:20px;border:1px solid rgba(212,175,55,.3);background:radial-gradient(90% 120% at 100% 0%,rgba(212,175,55,.12),transparent 60%),var(--rd-card);margin:0 0 22px}
+@media(min-width:860px){.rdv-panel{grid-template-columns:1.3fr 1fr;padding:34px 36px}}
+.rdv-panel h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.5rem,2.6vw,1.9rem);color:var(--white);margin:0 0 10px;line-height:1.25}
+.rdv-panel p{color:var(--gray);margin:0 0 18px;line-height:1.7}
+.rdv-panel p a{color:var(--gold)}
+.rdv-mini{display:block;width:100%;height:auto;max-width:360px;margin:0 auto}
+.rdv-more{font-size:14px;opacity:.85;margin:18px 0 0;text-align:center;color:var(--gray)}
+.rdv-more a{color:var(--gold)}
+@media(max-width:640px){
+ .rdv-div{margin:46px auto}
+ .rdv-buy .btn-primary,.rdv-buy .btn-outline{padding:14px 16px;white-space:normal}
+ .rdv-hook{font-size:1.18rem}
+ .rdv-panel .btn-primary,.rdv-panel .btn-outline{width:100%;justify-content:center;text-align:center;white-space:normal}
+}
+/* fix (also broken on the live page): the gold button inside .svc-copy inherited gold link colour, so its text was invisible */
+.svc-copy a.btn-primary{color:#050505;text-decoration:none}
+.svc-copy a.btn-outline{text-decoration:none}
+.rdv-signin a{color:var(--gold)}
+.rdv-legend{display:none;list-style:none;margin:8px 4px 0;padding:0;flex-wrap:wrap;gap:6px 14px;font-size:.82rem;color:var(--white)}
+.rdv-legend li{display:flex;align-items:center;gap:6px}
+.rdv-legend i{display:inline-block;width:9px;height:9px;border-radius:50%}
+.rdv-legend .rdv-lfix{flex-basis:100%;padding:8px 10px;border:1px solid var(--gold);border-radius:10px;background:#17140a;display:block}
+.rdv-legend .rdv-lfix b{color:var(--gold)}
+@media(max-width:640px){.rdv-graph .rdv-lbl{display:none}.rdv-graph .rdv-ax{font-size:19px}.rdv-legend{display:flex}}
+.rdv-ico-wrap .rdv-ico{width:24px;height:24px}
+@media(max-width:639px){
+ .rdv-cards .rd-card{display:grid;grid-template-columns:44px 1fr;column-gap:14px;align-items:start;padding:16px}
+ .rdv-cards .rd-card .rdv-ico-wrap{grid-row:span 2}
+ .rdv-cards .rd-card b{margin:0 0 4px!important}
+ .rdv-feats li{padding:10px 12px!important}
+}
+/* invite page */
+.rdv-ticket{position:relative;border-radius:20px;padding:24px;background:linear-gradient(135deg,#1a1608,#0d0d0d 60%);border:1px solid rgba(212,175,55,.45);box-shadow:0 30px 80px rgba(0,0,0,.55);overflow:hidden}
+.rdv-ticket::before,.rdv-ticket::after{content:"";position:absolute;top:50%;width:26px;height:26px;border-radius:50%;background:var(--bg-primary);border:1px solid rgba(212,175,55,.45);transform:translateY(-50%)}
+.rdv-ticket::before{left:-14px}.rdv-ticket::after{right:-14px}
+.rdv-ticket-top{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-bottom:16px;border-bottom:1px dashed rgba(212,175,55,.4);margin-bottom:16px}
+.rdv-ticket-top b{font-family:var(--font-display);font-weight:400;font-size:1.5rem;color:var(--white);line-height:1.2}
+.rdv-ticket-top b em{color:var(--gold)}
+.rdv-chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.rdv-chips li{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.3);font-size:.85rem;color:var(--white);line-height:1.2}
+.rdv-chips .rdv-ico{width:16px;height:16px;color:var(--gold)}
+.rdv-form{display:block!important;padding:26px!important;margin:30px 0 0!important}
+.rdv-form h2{font-family:var(--font-display);font-weight:400;font-size:1.5rem;color:var(--white);margin:0 0 12px}
+.rdv-form .rdv-after{font-size:.9rem;color:var(--gray);margin:12px 0 16px}
+.rdv-fb{border-radius:18px;padding:24px;background:var(--rd-card);border:1px solid rgba(255,255,255,.08)}
+.rdv-fb h2{display:flex;align-items:center;gap:12px;margin-top:0!important}
 </style>
 </head>
 
@@ -136,49 +273,232 @@
 
     <main>
         <section class="post-wrap">
-            <div class="container post-container">
-                <nav class="post-crumbs" aria-label="Breadcrumb"><a href="../">Home</a> / <a href="../books/">Books &amp; tools</a></nav>
-                <div class="section-tag">Monthly tool · for YouTube creators</div>
-                <h1 class="post-title">Retention <em>Doctor</em></h1>
-                <p class="post-lede" style="margin-left:0">See the exact second viewers leave every video, and the fix. Retention Doctor reads your YouTube retention graphs and turns them into a short to-do list: where people leave, why, and the Retention playbook technique that fixes it. Connect one channel (read-only) and your first reports are ready in a minute.</p>
-                <p style="font-size:14px;opacity:.75;margin:6px 0 14px">Last updated: <time datetime="2026-11-16">16 November 2026</time></p>
-                <div class="prog-buy">
-                    <div class="tier-price"><span>£145</span> <small>a month</small></div><small style="display:block;opacity:.7;margin:-4px 0 10px">£100 + £45 service fee (45%). Renews monthly through PayPal. No free trial. Cancel any time from your account page; access runs to the end of the month you paid for.</small>
-                    <a href="https://playbook.asendify.co/doctor/app/?subscribe=1&amp;utm_source=www&amp;utm_medium=landing&amp;utm_campaign=retention_doctor" class="btn-primary rd-glow">Start Retention Doctor &rarr;</a>
-                    <a href="https://playbook.asendify.co/doctor/free/?utm_source=www&amp;utm_medium=landing&amp;utm_campaign=free_check" class="btn-outline rd-glow" style="margin-left:10px">Free: find where viewers leave your last video &rarr;</a>
-                    <p style="font-size:13px;opacity:.75;margin:10px 0 0">The free check shows the single worst drop-off moment in your latest video (one per channel). Already subscribed? <a href="https://playbook.asendify.co/doctor/app/?utm_source=www&amp;utm_medium=landing&amp;utm_campaign=retention_doctor">Sign in</a></p>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/><path d="M8 12.5l2-2 1.5 1.5 2-2.5"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 6.3-6.3"/><path d="M14.7 6.3L13 4.6a4 4 0 0 0-5.6 5.6l1.7 1.7"/><path d="M4 20l5-5"/></symbol>
+<symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4 18a9 9 0 1 1 16 0"/><path d="M12 14l4-5"/><circle cx="12" cy="14" r="1.3"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M4 6.5l1.5 1.5L8 5.5"/><path d="M4 12.5l1.5 1.5L8 11.5"/><path d="M4 18.5l1.5 1.5L8 17.5"/><path d="M11 7h9M11 13h9M11 19h9"/></symbol>
+<symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M4 16l5-5 4 3 7-7"/><path d="M15 7h5v5"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5L7 21l5-2.5 5 2.5-1.5-7.5"/></symbol>
+<symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></symbol>
+<symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21a6 6 0 0 1-6-6c0-3.5 3-5.5 3.5-9 2.5 1.5 4 4 4 6 1-1 1.5-2 1.5-3.5 2 1.5 3 4 3 6.5a6 6 0 0 1-6 6z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.2v5.6l4.6-2.8z"/></symbol>
+<symbol id="i-percent" viewBox="0 0 24 24"><path d="M19 5L5 19"/><circle cx="7" cy="7" r="2.3"/><circle cx="17" cy="17" r="2.3"/></symbol>
+<symbol id="i-compare" viewBox="0 0 24 24"><path d="M5 20V10M10 20V4M15 20v-7M20 20V8"/></symbol>
+<symbol id="i-shapes" viewBox="0 0 24 24"><path d="M3 5c3 0 3 5 6 5s3 4 6 4 3 5 6 5"/><path d="M3 20h18"/></symbol>
+<symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 3l3 3-3 3"/><path d="M4 11V9a3 3 0 0 1 3-3h13"/><path d="M7 21l-3-3 3-3"/><path d="M20 13v2a3 3 0 0 1-3 3H4"/></symbol>
+<symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20"/><path d="M9 8h7"/></symbol>
+<symbol id="i-type" viewBox="0 0 24 24"><path d="M4 7V5h16v2"/><path d="M12 5v14"/><path d="M9 19h6"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+<symbol id="i-xc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M9 9l6 6M15 9l-6 6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+<symbol id="i-checkc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8 12.3l2.7 2.7L16 9.7"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+<symbol id="i-card" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6 15h4"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></symbol>
+<symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M3 13h18M12 9v12"/><path d="M12 9c-1.5-3-5-4-5-1.5S10 9 12 9zM12 9c1.5-3 5-4 5-1.5S14 9 12 9z"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+            <div class="container post-container rdv-wide">
+                <div class="rdv-hero">
+                    <div>
+                        <nav class="post-crumbs" aria-label="Breadcrumb"><a href="../">Home</a> / <a href="../books/">Books &amp; tools</a></nav>
+                        <div class="section-tag">Monthly tool · for YouTube creators</div>
+                        <h1 class="post-title">Retention <em>Doctor</em></h1>
+                        <p class="post-lede" style="margin-left:0"><span class="rdv-hook">See the exact second viewers leave every video, and the fix.</span> Retention Doctor reads your YouTube retention graphs and turns them into a short to-do list: where people leave, why, and the Retention playbook technique that fixes it. Connect one channel (read-only) and your first reports are ready in a minute.</p>
+                        <p style="font-size:14px;opacity:.75;margin:6px 0 0">Last updated: <time datetime="2026-11-16">16 November 2026</time></p>
+                    </div>
+                    <figure class="rdv-graph" style="margin:0">
+                        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:2px 4px 8px"><span style="color:var(--white);font-weight:600;font-size:.92rem">Audience retention</span><span class="rdv-tag">Example graph</span></div>
+                        <svg viewBox="0 0 560 300" role="img" aria-labelledby="rdvGT rdvGD">
+                            <title id="rdvGT">Example retention graph</title>
+                            <desc id="rdvGD">An example audience retention curve. 61% of viewers are still watching at 0:30. A red marker shows 8.4% of viewers leave at 2:12, with a callout for the fix: a pattern interrupt just before 2:12 and cut the tangent. A green dot marks a rewatch spike at 6:05.</desc>
+                            <defs>
+                                <linearGradient id="rdvArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4af37" stop-opacity=".38"/><stop offset="1" stop-color="#d4af37" stop-opacity="0"/></linearGradient>
+                                <filter id="rdvGlow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                            </defs>
+                            <g class="rdv-ax" font-family="Manrope, system-ui, sans-serif" font-size="12" fill="#8a8a8a">
+                                <g stroke="rgba(255,255,255,.07)" stroke-width="1">
+                                    <line x1="50" y1="30" x2="530" y2="30"/><line x1="50" y1="90" x2="530" y2="90"/><line x1="50" y1="150" x2="530" y2="150"/><line x1="50" y1="210" x2="530" y2="210"/><line x1="50" y1="270" x2="530" y2="270" stroke="rgba(255,255,255,.18)"/>
+                                </g>
+                                <text x="42" y="34" text-anchor="end">100%</text><text x="42" y="94" text-anchor="end">75%</text><text x="42" y="154" text-anchor="end">50%</text><text x="42" y="214" text-anchor="end">25%</text>
+                                <text x="50" y="290" text-anchor="middle">0:00</text><text x="170" y="290" text-anchor="middle">2:00</text><text x="290" y="290" text-anchor="middle">4:00</text><text x="410" y="290" text-anchor="middle">6:00</text><text x="530" y="290" text-anchor="end">8:00</text>
+                            </g>
+                            <path d="M50,30 L58,66 L68,97.2 L80,123.6 L110,133.2 L150,140.4 L178,142.8 L186,163 L220,166.8 L300,174 L380,181.2 L405,183.6 L415,171.6 L430,186 L490,193.2 L520,210 L530,217.2 L530,270 L50,270 Z" fill="url(#rdvArea)"/>
+                            <path d="M50,30 L58,66 L68,97.2 L80,123.6 L110,133.2 L150,140.4 L178,142.8 L186,163 L220,166.8 L300,174 L380,181.2 L405,183.6 L415,171.6 L430,186 L490,193.2 L520,210 L530,217.2" fill="none" stroke="#d4af37" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" filter="url(#rdvGlow)"/>
+                            <!-- 0:30 hold -->
+                            <circle cx="80" cy="123.6" r="5" fill="#050505" stroke="#d4af37" stroke-width="2.5"/>
+                            <text class="rdv-lbl" x="90" y="116" font-family="Manrope, system-ui, sans-serif" font-size="13" font-weight="600" fill="#f5f5f5">61% at 0:30</text>
+                            <!-- 2:12 drop -->
+                            <line x1="182" y1="30" x2="182" y2="270" stroke="#ff6b5e" stroke-width="1.6" stroke-dasharray="5 5"/>
+                            <circle cx="183" cy="155" r="7" fill="#ff6b5e" opacity=".25"/>
+                            <circle cx="183" cy="155" r="4" fill="#ff6b5e"/>
+                            <g class="rdv-lbl"><rect x="192" y="38" width="190" height="30" rx="15" fill="#2a1311" stroke="#ff6b5e"/>
+                            <text x="287" y="58" text-anchor="middle" font-family="Manrope, system-ui, sans-serif" font-size="14" font-weight="700" fill="#ff8a80">8.4% leave at 2:12</text></g>
+                            <!-- fix callout -->
+                            <g class="rdv-lbl">
+                            <path d="M190,150 C215,140 225,118 248,112" fill="none" stroke="#d4af37" stroke-width="1.4" stroke-dasharray="3 4"/>
+                            <rect x="248" y="84" width="276" height="54" rx="10" fill="#17140a" stroke="#d4af37"/>
+                            <text font-family="Manrope, system-ui, sans-serif" font-size="13" fill="#f5f5f5"><tspan x="262" y="106" font-weight="700" fill="#d4af37">Fix:</tspan><tspan dx="6">a pattern interrupt just before</tspan><tspan x="262" y="125">2:12 and cut the tangent.</tspan></text>
+                            </g>
+                            <!-- 6:05 rewatch -->
+                            <circle cx="415" cy="171.6" r="5" fill="#5fd38d"/>
+                            <text class="rdv-lbl" x="415" y="160" text-anchor="middle" font-family="Manrope, system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#5fd38d">Rewatch at 6:05</text>
+                        </svg>
+                        <ul class="rdv-legend" aria-hidden="true">
+                            <li><i style="background:#d4af37"></i>61% at 0:30</li>
+                            <li><i style="background:#ff6b5e"></i>8.4% leave at 2:12</li>
+                            <li class="rdv-lfix"><b>Fix:</b> a pattern interrupt just before 2:12 and cut the tangent.</li>
+                            <li><i style="background:#5fd38d"></i>Rewatch at 6:05</li>
+                        </ul>
+                        <figcaption class="rdv-cap">Example only (made-up channel). Your report uses your channel's real numbers from YouTube.</figcaption>
+                    </figure>
                 </div>
-                <div class="rd-ex">
-                    <p style="margin:0 0 8px"><b>Example report</b> (made-up channel)</p>
-                    <p style="margin:0 0 6px">"I Tried Every Index Fund" · Retention Score <b>58/100</b></p>
-                    <p style="margin:0 0 6px">• Only <b>61%</b> still watching at 0:30 (aim for 70%+). Fix: the cold open rule + Promise, Proof, Path.</p>
-                    <p style="margin:0 0 6px">• <b>8.4%</b> leave at 2:12. Fix: a pattern interrupt just before 2:12 and cut the tangent.</p>
-                    <p style="margin:0 0 6px">• Viewers rewatch at 6:05: do more of that.</p>
-                    <p style="margin:0;opacity:.7;font-size:13px">Example only. Your report uses your channel's real numbers from YouTube.</p>
+
+                <div class="prog-buy rdv-buy">
+                    <div>
+                        <div class="tier-price"><span>£145</span> <small>a month</small></div>
+                        <ul class="rdv-terms">
+                            <li><svg class="rdv-ico" aria-hidden="true"><use href="#i-check"/></svg><span>£100 + £45 service fee (45%).</span></li>
+                            <li><svg class="rdv-ico" aria-hidden="true"><use href="#i-check"/></svg><span>Renews monthly through PayPal.</span></li>
+                            <li><svg class="rdv-ico" aria-hidden="true"><use href="#i-check"/></svg><span>No free trial.</span></li>
+                            <li><svg class="rdv-ico" aria-hidden="true"><use href="#i-check"/></svg><span>Cancel any time from your account page; access runs to the end of the month you paid for.</span></li>
+                        </ul>
+                    </div>
+                    <div class="rdv-ctas">
+                        <a href="https://playbook.asendify.co/doctor/app/?subscribe=1&amp;utm_source=www&amp;utm_medium=landing&amp;utm_campaign=retention_doctor" class="btn-primary rd-glow">Start Retention Doctor &rarr;</a>
+                        <a href="https://playbook.asendify.co/doctor/free/?utm_source=www&amp;utm_medium=landing&amp;utm_campaign=free_check" class="btn-outline rd-glow" style="margin-left:10px">Free: find where viewers leave your last video &rarr;</a>
+                    </div>
+                    <p class="rdv-signin">The free check shows the single worst drop-off moment in your latest video (one per channel). Already subscribed? <a href="https://playbook.asendify.co/doctor/app/?utm_source=www&amp;utm_medium=landing&amp;utm_campaign=retention_doctor">Sign in</a></p>
                 </div>
-                <div class="svc-copy post-body">
-<h2>What you get every week</h2>
-<div class="rd-grid">
-<div class="rd-card"><b>Retention Score</b><span>One number from 0 to 100 for the channel, updated after every upload, with a chart since the day you joined.</span></div><div class="rd-card"><b>New-upload alert</b><span>About 48 hours after each upload: an email with where viewers left that video and the fix.</span></div><div class="rd-card"><b>Monday 3-fix plan</b><span>The three fixes that would keep the most viewers, ticked off as you do them.</span></div><div class="rd-card"><b>Before and after</b><span>When a fix works on your next videos, you see the real numbers before and after.</span></div><div class="rd-card"><b>Pre-upload check</b><span>Paste your opening script and title before you publish and get a score and the misses. Unlimited.</span></div><div class="rd-card"><b>Upload streak</b><span>Weeks in a row with an upload and a fix applied.</span></div>
+
+                <div class="rdv-trust" role="list" aria-label="Key facts">
+                    <div role="listitem"><svg class="rdv-ico" aria-hidden="true"><use href="#i-shield"/></svg><span>Read-only YouTube connection</span></div>
+                    <div role="listitem"><svg class="rdv-ico" aria-hidden="true"><use href="#i-xc"/></svg><span>Self-serve cancel</span></div>
+                    <div role="listitem"><svg class="rdv-ico" aria-hidden="true"><use href="#i-user"/></svg><span>One channel per subscription</span></div>
+                    <div role="listitem"><svg class="rdv-ico" aria-hidden="true"><use href="#i-phone"/></svg><span>Works for Shorts too</span></div>
+                </div>
+
+                <hr class="rdv-div">
+
+                <h2 class="rdv-h2">How it works</h2>
+                <p class="rdv-sub">Connect one channel (read-only) and your first reports are ready in a minute.</p>
+                <ol class="rdv-steps">
+                    <li class="rdv-step"><span class="rdv-ico-wrap"><svg class="rdv-ico" aria-hidden="true"><use href="#i-link"/></svg></span><b>Connect read-only</b><span>Google sign-in with read-only access. It can't upload, edit, delete or comment.</span></li>
+                    <li class="rdv-step"><span class="rdv-ico-wrap"><svg class="rdv-ico" aria-hidden="true"><use href="#i-search"/></svg></span><b>We find the drop seconds</b><span>Retention Doctor reads each video's audience retention graph and shows the exact timestamps where viewers leave.</span></li>
+                    <li class="rdv-step"><span class="rdv-ico-wrap"><svg class="rdv-ico" aria-hidden="true"><use href="#i-wrench"/></svg></span><b>You get the fix</b><span>The Retention playbook technique that fixes each drop, explained in plain words.</span></li>
+                </ol>
+
+                <hr class="rdv-div">
+
+                <div class="rdv-narrow">
+                    <h2 class="rdv-h2">What a report looks like</h2>
+                    <p class="rdv-sub">Every video gets a drop-off report, a Retention Score and the playbook technique that fixes it.</p>
+                    <div class="rdv-report" role="region" aria-label="Example report">
+                        <div class="rdv-rhead"><span><b>Example report</b> <small>(made-up channel)</small></span><span class="rdv-tag">Example report</span></div>
+                        <div class="rdv-rbody">
+                            <div class="rdv-dialbox">
+                                <div class="rdv-dial" role="img" aria-label="Retention Score 58 out of 100">
+                                    <svg viewBox="0 0 150 150" aria-hidden="true"><circle cx="75" cy="75" r="60" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="12"/><circle cx="75" cy="75" r="60" fill="none" stroke="#d4af37" stroke-width="12" stroke-linecap="round" stroke-dasharray="218.7 377"/></svg>
+                                    <div class="rdv-dialnum" aria-hidden="true">58<small>/100</small></div>
+                                </div>
+                                <p>"I Tried Every Index Fund" · Retention Score <b>58/100</b></p>
+                            </div>
+                            <div>
+                                <p class="rdv-k">Where viewers leave</p>
+                                <ul class="rdv-drops">
+                                    <li><span class="rdv-ts">0:30</span><span>Only <b>61%</b> still watching at 0:30 (aim for 70%+).</span></li>
+                                    <li><span class="rdv-ts">2:12</span><span><b>8.4%</b> leave at 2:12.</span></li>
+                                    <li><span class="rdv-ts up">6:05</span><span>Viewers rewatch at 6:05.</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="rdv-k">Top 3 fixes</p>
+                                <ol class="rdv-fixes">
+                                    <li><b>Fix:</b> the cold open rule + Promise, Proof, Path.</li>
+                                    <li><b>Fix:</b> a pattern interrupt just before 2:12 and cut the tangent.</li>
+                                    <li>Viewers rewatch at 6:05: <b>do more of that.</b></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <p class="rdv-rfoot">Example only. Your report uses your channel's real numbers from YouTube.</p>
+                    </div>
+                </div>
+
+                <hr class="rdv-div">
+
+                <div class="svc-copy post-body" style="max-width:none">
+<h2 class="rdv-h2">What you get every week</h2>
+<div class="rd-grid rdv-cards">
+<div class="rd-card"><span class="rdv-ico-wrap"><svg class="rdv-ico" aria-hidden="true"><use href="#i-gauge"/></svg></span><b>Retention Score</b><span>One number from 0 to 100 for the channel, updated after every upload, with a chart since the day you joined.</span></div><div class="rd-card"><span class="rdv-ico-wrap"><svg class="rdv-ico" aria-hidden="true"><use href="#i-bell"/></svg></span><b>New-upload alert</b><span>About 48 hours after each upload: an email with where viewers left that video and the fix.</span></div><div class="rd-card"><span class="rdv-ico-wrap"><svg class="rdv-ico" aria-hidden="true"><use href="#i-list"/></svg></span><b>Monday 3-fix plan</b><span>The three fixes that would keep the most viewers, ticked off as you do them.</span></div><div class="rd-card"><span class="rdv-ico-wrap"><svg class="rdv-ico" aria-hidden="true"><use href="#i-trend"/></svg></span><b>Before and after</b><span>When a fix works on your next videos, you see the real numbers before and after.</span></div><div class="rd-card"><span class="rdv-ico-wrap"><svg class="rdv-ico" aria-hidden="true"><use href="#i-pen"/></svg></span><b>Pre-upload check</b><span>Paste your opening script and title before you publish and get a score and the misses. Unlimited.</span></div><div class="rd-card"><span class="rdv-ico-wrap"><svg class="rdv-ico" aria-hidden="true"><use href="#i-flame"/></svg></span><b>Upload streak</b><span>Weeks in a row with an upload and a fix applied.</span></div>
 </div>
-<h2>Everything inside, by name</h2>
-<ul class="rd-by">
-<li>Per-video drop-off report with timestamps</li><li>Retention Score 0-100 per video and per channel</li><li>Score trend chart since you joined</li><li>30-second intro hold (2-3 seconds for Shorts)</li><li>Average percentage viewed per video</li><li>Retention vs similar-length YouTube videos</li><li>Graph shapes: the Cliff, the Step, the Slow Bleed, the Spike</li><li>Rewatch spikes ("do more of this")</li><li>Ending cliff check</li><li>The 40% re-hook check</li><li>Fix list using the Retention playbook's named techniques</li><li>Monday 3-fix plan with tick boxes</li><li>Before-and-after wins from your own numbers</li><li>Pre-upload Hook Checker (unlimited)</li><li>Title check (length, number, tension, capitals)</li><li>New-upload email alert</li><li>Upload streak</li><li>Read-only Google sign-in</li><li>One channel per subscription</li><li>Self-serve cancel button</li>
+
+<hr class="rdv-div">
+
+<h2 class="rdv-h2">Everything inside, by name</h2>
+<ul class="rd-by rdv-feats">
+<li><svg class="rdv-ico" aria-hidden="true"><use href="#i-clock"/></svg>Per-video drop-off report with timestamps</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-gauge"/></svg>Retention Score 0-100 per video and per channel</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-trend"/></svg>Score trend chart since you joined</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-play"/></svg>30-second intro hold (2-3 seconds for Shorts)</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-percent"/></svg>Average percentage viewed per video</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-compare"/></svg>Retention vs similar-length YouTube videos</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-shapes"/></svg>Graph shapes: the Cliff, the Step, the Slow Bleed, the Spike</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-repeat"/></svg>Rewatch spikes ("do more of this")</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-flag"/></svg>Ending cliff check</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-target"/></svg>The 40% re-hook check</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-book"/></svg>Fix list using the Retention playbook's named techniques</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-list"/></svg>Monday 3-fix plan with tick boxes</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-award"/></svg>Before-and-after wins from your own numbers</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-pen"/></svg>Pre-upload Hook Checker (unlimited)</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-type"/></svg>Title check (length, number, tension, capitals)</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-mail"/></svg>New-upload email alert</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-flame"/></svg>Upload streak</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-shield"/></svg>Read-only Google sign-in</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-user"/></svg>One channel per subscription</li><li><svg class="rdv-ico" aria-hidden="true"><use href="#i-xc"/></svg>Self-serve cancel button</li>
 </ul>
-<h2>Who it's for</h2>
-<div class="rd-grid">
-<div class="rd-card"><b>For you if</b>You post on YouTube (or edit for one channel), you have videos with a few hundred views or more, and you want to know exactly which part of each video loses people.</div>
-<div class="rd-card"><b>Not for you if</b>Your channel is brand new with no views yet (YouTube needs views before it shows retention), or you want more views without changing the videos.</div>
+
+<hr class="rdv-div">
+
+<div class="rdv-narrow">
+<h2 class="rdv-h2">Who it's for</h2>
+<div class="rd-grid rdv-who">
+<div class="rd-card rdv-yes"><b><svg class="rdv-ico" aria-hidden="true"><use href="#i-checkc"/></svg>For you if</b>You post on YouTube (or edit for one channel), you have videos with a few hundred views or more, and you want to know exactly which part of each video loses people.</div>
+<div class="rd-card rdv-no"><b><svg class="rdv-ico" aria-hidden="true"><use href="#i-xc"/></svg>Not for you if</b>Your channel is brand new with no views yet (YouTube needs views before it shows retention), or you want more views without changing the videos.</div>
 </div>
-<h2>Questions</h2>
+
+<hr class="rdv-div">
+
+<h2 class="rdv-h2">Questions</h2>
+<div class="rdv-faq">
 <div class="svc-faq"><details class="svc-faq-item"><summary>Is there a tool that tells me why viewers leave my YouTube videos?</summary><p>Yes. Retention Doctor by Asendify connects to your channel read-only, reads each video's audience retention graph and shows the exact timestamps where viewers leave, with the Retention playbook technique that fixes each drop. It costs £145 a month (£100 + 45% service fee) and you can cancel any time from your account page.</p></details><details class="svc-faq-item"><summary>Can Retention Doctor change anything on my channel?</summary><p>No. It asks Google only for read-only access (youtube.readonly and yt-analytics.readonly). It can't upload, edit, delete or comment.</p></details><details class="svc-faq-item"><summary>How much does it cost?</summary><p>£145 a month: £100 + a 45% service fee. It renews every month through PayPal. There is no free trial.</p></details><details class="svc-faq-item"><summary>How do I cancel?</summary><p>Press Cancel subscription on your account page. PayPal stops the payments at once and you keep access until the end of the month you paid for.</p></details><details class="svc-faq-item"><summary>How many channels can I connect?</summary><p>One channel per subscription. The first channel you connect stays linked to that subscription.</p></details><details class="svc-faq-item"><summary>Does it work for Shorts?</summary><p>Yes. For Shorts it checks the first 2 to 3 seconds instead of the first 30, because that is where a Short is decided.</p></details><details class="svc-faq-item"><summary>Do I need the Retention playbook?</summary><p>No. Every fix is explained in plain words. The technique names come from the Retention playbook, so the book goes deeper if you want it.</p></details><details class="svc-faq-item"><summary>How is it different from Asendify AI?</summary><p>Retention Doctor only does retention: where viewers leave and how to fix it. Asendify AI is the full YouTube growth assistant you can ask anything about your channel.</p></details></div>
+</div>
+</div>
+
+<hr class="rdv-div">
+
+<div class="rdv-panel">
+<div>
 <h2>Try it free on your last video</h2>
 <p>Sign in with Google (read-only) and see the single worst drop-off moment in your latest video, with the likely cause. One free check per channel. The fixes, every other video and the weekly plan are in the full tool.</p>
 <a href="https://playbook.asendify.co/doctor/free/?utm_source=www&amp;utm_medium=landing&amp;utm_campaign=free_check" class="btn-outline rd-glow">Free: find where viewers leave your last video &rarr;</a>
+</div>
+<svg class="rdv-mini" viewBox="0 0 320 170" role="img" aria-label="Illustration: a retention curve with the single worst drop-off moment highlighted">
+<rect x="1" y="1" width="318" height="168" rx="14" fill="#0a0a0a" stroke="rgba(212,175,55,.25)"/>
+<path d="M20,30 L40,62 L70,74 L110,80 L128,82 L136,112 L180,118 L240,126 L300,134 L300,150 L20,150 Z" fill="rgba(212,175,55,.14)"/>
+<path d="M20,30 L40,62 L70,74 L110,80 L128,82 L136,112 L180,118 L240,126 L300,134" fill="none" stroke="#d4af37" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="133" cy="98" r="22" fill="none" stroke="#ff6b5e" stroke-width="2.5"/>
+<path d="M149,114 L166,131" stroke="#ff6b5e" stroke-width="4" stroke-linecap="round"/>
+<rect x="168" y="22" width="132" height="26" rx="13" fill="#2a1311" stroke="#ff6b5e"/>
+<text x="234" y="40" text-anchor="middle" font-family="Manrope, system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#ff8a80">Worst drop-off</text>
+</svg>
+</div>
+
+<div class="rdv-panel">
+<div>
 <h2>Ready to see where viewers leave?</h2>
 <p>£145 a month (£100 + 45% service fee). Cancel any time. Read the subscription terms on our <a href="../policies/">policies page</a>. Questions? Email <a href="mailto:ceo@asendify.co">ceo@asendify.co</a>.</p>
 <a href="https://playbook.asendify.co/doctor/app/?subscribe=1&amp;utm_source=www&amp;utm_medium=landing&amp;utm_campaign=retention_doctor" class="btn-primary rd-glow">Start Retention Doctor &rarr;</a>
-<p style="font-size:14px;opacity:.8;margin:18px 0 0">Want the full method behind the fixes? <a href="https://playbook.asendify.co/?utm_source=www&amp;utm_medium=page&amp;utm_campaign=retention_doctor">The Retention Editing Playbook</a> · Free tool: <a href="https://playbook.asendify.co/hook-checker/?utm_source=www&amp;utm_medium=page" data-tool>Hook Checker</a> · Full growth assistant: <a href="https://ai.asendify.co/?utm_source=www&amp;utm_medium=page&amp;utm_campaign=retention_doctor">Asendify AI</a></p>
+</div>
+<div class="rdv-trust" style="grid-template-columns:1fr;margin:0">
+<div><svg class="rdv-ico" aria-hidden="true"><use href="#i-shield"/></svg><span>Read-only Google sign-in</span></div>
+<div><svg class="rdv-ico" aria-hidden="true"><use href="#i-xc"/></svg><span>Self-serve cancel button</span></div>
+<div><svg class="rdv-ico" aria-hidden="true"><use href="#i-card"/></svg><span>Renews monthly through PayPal</span></div>
+</div>
+</div>
+<p class="rdv-more">Want the full method behind the fixes? <a href="https://playbook.asendify.co/?utm_source=www&amp;utm_medium=page&amp;utm_campaign=retention_doctor">The Retention Editing Playbook</a> · Free tool: <a href="https://playbook.asendify.co/hook-checker/?utm_source=www&amp;utm_medium=page" data-tool>Hook Checker</a> · Full growth assistant: <a href="https://ai.asendify.co/?utm_source=www&amp;utm_medium=page&amp;utm_campaign=retention_doctor">Asendify AI</a></p>
                 </div>
             </div>
         </section>

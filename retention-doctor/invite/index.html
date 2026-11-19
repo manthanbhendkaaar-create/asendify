@@ -34,6 +34,143 @@
 .rd-card{border:1px solid rgba(212,175,55,.3);border-radius:14px;padding:16px 18px;background:rgba(212,175,55,.04)}
 .rd-card b{display:block;margin:0 0 4px}.rd-by{columns:2;column-gap:28px}@media(max-width:640px){.rd-by{columns:1}}
 .rd-ex{border:1px dashed rgba(212,175,55,.45);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+/* 2026-11-19 visual redesign (Manthan: "make the retention doctor page ... a bit more visual"). Layout + inline SVG only; same words. */
+:root{--rd-red:#ff6b5e;--rd-green:#5fd38d;--rd-card:#0f0f0f;--rd-line:rgba(212,175,55,.22)}
+.rdv-wide{max-width:1120px}
+.rdv-narrow{max-width:820px;margin-left:auto;margin-right:auto}
+.rdv-ico{width:22px;height:22px;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.rdv-ico-wrap{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.28);color:var(--gold)}
+/* hero */
+.rdv-hero{display:grid;grid-template-columns:1fr;gap:34px;align-items:center}
+@media(min-width:960px){.rdv-hero{grid-template-columns:1.02fr 1fr;gap:48px}}
+.rdv-hero .post-lede{margin-bottom:14px}
+.rdv-hook{display:block;color:var(--white);font-family:var(--font-display);font-weight:400;font-size:1.32rem;line-height:1.4;margin:0 0 10px}
+.rdv-graph{position:relative;border:1px solid var(--rd-line);border-radius:18px;background:radial-gradient(120% 90% at 85% 0%,rgba(212,175,55,.12),transparent 60%),var(--rd-card);padding:14px 14px 10px;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.02) inset}
+.rdv-graph svg{display:block;width:100%;height:auto}
+.rdv-tag{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(212,175,55,.4);border-radius:999px;padding:2px 9px;font-weight:600}
+.rdv-cap{font-size:.78rem;color:var(--gray);margin:6px 4px 0}
+/* price box */
+.rdv-buy{display:grid!important;grid-template-columns:1fr;gap:18px!important;padding:24px!important;margin:30px 0 26px!important;background:linear-gradient(135deg,rgba(212,175,55,.1),rgba(212,175,55,.03))!important;border-color:rgba(212,175,55,.3)!important}
+@media(min-width:860px){.rdv-buy{grid-template-columns:minmax(260px,1fr) auto;align-items:center}}
+.rdv-buy .tier-price span{font-size:2.8rem;line-height:1}
+.rdv-terms{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px;font-size:.86rem;color:var(--gray)}
+.rdv-terms li{display:flex;gap:8px;align-items:flex-start;line-height:1.45}
+.rdv-terms .rdv-ico{width:16px;height:16px;color:var(--gold);margin-top:2px}
+.rdv-ctas{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.rdv-ctas a{justify-content:center;text-align:center}
+.rdv-ctas .btn-outline{margin-left:0!important}
+.rdv-signin{font-size:13px;opacity:.8;margin:0;grid-column:1/-1}
+/* trust row */
+.rdv-trust{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:0 0 10px}
+@media(min-width:860px){.rdv-trust{grid-template-columns:repeat(4,1fr)}}
+.rdv-trust div{display:flex;gap:10px;align-items:center;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);font-size:.86rem;color:var(--white);line-height:1.35}
+.rdv-trust .rdv-ico{color:var(--gold)}
+/* divider */
+.rdv-div{border:0;height:1px;margin:64px auto;max-width:820px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.55),transparent);position:relative;overflow:visible}
+.rdv-div::after{content:"";position:absolute;left:50%;top:-4px;width:8px;height:8px;background:var(--gold);transform:translateX(-50%) rotate(45deg);box-shadow:0 0 14px rgba(212,175,55,.7)}
+h2.rdv-h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.6rem,3vw,2.1rem);color:var(--white);line-height:1.2;margin:0 0 8px;text-align:center}
+.rdv-sub{color:var(--gray);text-align:center;margin:0 auto 28px;max-width:620px}
+/* steps */
+.rdv-steps{list-style:none;padding:0;margin:0;display:grid;gap:16px;grid-template-columns:1fr;counter-reset:st}
+@media(min-width:860px){.rdv-steps{grid-template-columns:repeat(3,1fr);gap:22px}}
+.rdv-step{position:relative;padding:22px 20px 20px;border-radius:16px;background:var(--rd-card);border:1px solid rgba(255,255,255,.08)}
+.rdv-step::before{counter-increment:st;content:counter(st);position:absolute;top:16px;right:18px;font-family:var(--font-display);font-size:2.4rem;line-height:1;color:rgba(212,175,55,.22)}
+.rdv-step b{display:block;color:var(--white);font-weight:600;margin:14px 0 4px;font-size:1.02rem}
+.rdv-step span{color:var(--gray);font-size:.92rem;line-height:1.55;display:block}
+@media(min-width:860px){.rdv-step:not(:last-child)::after{content:"";position:absolute;top:44px;right:-18px;width:14px;height:14px;border-top:2px solid var(--gold);border-right:2px solid var(--gold);transform:rotate(45deg);opacity:.7}}
+/* example report */
+.rdv-report{border:1px solid rgba(212,175,55,.35);border-radius:20px;background:var(--rd-card);overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+.rdv-rhead{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(212,175,55,.05)}
+.rdv-rhead b{color:var(--white);font-weight:600}
+.rdv-rhead small{color:var(--gray)}
+.rdv-rbody{display:grid;grid-template-columns:1fr;gap:22px;padding:22px 20px}
+@media(min-width:860px){.rdv-rbody{grid-template-columns:200px 1fr 1fr;gap:28px}}
+.rdv-dialbox{text-align:center}
+.rdv-dial{position:relative;width:150px;height:150px;margin:0 auto}
+.rdv-dial svg{width:150px;height:150px;transform:rotate(-90deg)}
+.rdv-dial .rdv-dialnum{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--font-display);font-size:2.6rem;color:var(--white);line-height:1}
+.rdv-dial .rdv-dialnum small{font-family:var(--font-body);font-size:.75rem;color:var(--gray);margin-top:4px}
+.rdv-dialbox p{margin:10px 0 0;font-size:.85rem;color:var(--gray)}
+.rdv-k{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 10px}
+.rdv-drops{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.rdv-drops li{display:grid;grid-template-columns:58px 1fr;gap:10px;align-items:start;font-size:.92rem;color:var(--gray);line-height:1.5}
+.rdv-ts{font-variant-numeric:tabular-nums;font-weight:700;font-size:.82rem;text-align:center;border-radius:8px;padding:3px 0;background:rgba(255,107,94,.12);color:var(--rd-red);border:1px solid rgba(255,107,94,.35)}
+.rdv-ts.up{background:rgba(95,211,141,.1);color:var(--rd-green);border-color:rgba(95,211,141,.35)}
+.rdv-drops b,.rdv-fixes b{color:var(--white)}
+.rdv-fixes{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:fx}
+.rdv-fixes li{position:relative;padding:10px 12px 10px 44px;border-radius:12px;background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);font-size:.9rem;color:var(--gray);line-height:1.5}
+.rdv-fixes li::before{counter-increment:fx;content:counter(fx);position:absolute;left:12px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#050505;font-weight:700;font-size:.78rem;display:flex;align-items:center;justify-content:center}
+.rdv-rfoot{margin:0;padding:12px 20px;border-top:1px dashed rgba(212,175,55,.3);font-size:13px;color:var(--gray)}
+/* cards with icons */
+.rdv-cards{display:grid;gap:16px;grid-template-columns:1fr;margin:0}
+@media(min-width:640px){.rdv-cards{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.rdv-cards{grid-template-columns:repeat(3,1fr)}}
+.rdv-cards .rd-card{padding:20px;border-radius:16px;background:var(--rd-card);border:1px solid rgba(255,255,255,.08);transition:border-color .3s,transform .3s}
+.rdv-cards .rd-card:hover{border-color:rgba(212,175,55,.45);transform:translateY(-2px)}
+.rdv-cards .rd-card b{color:var(--white);font-weight:600;margin:14px 0 6px;font-size:1.02rem}
+.rdv-cards .rd-card span{color:var(--gray);font-size:.93rem;line-height:1.6}
+.rdv-feats{columns:auto!important;list-style:none!important;padding:0!important;margin:0!important;display:grid;gap:10px;grid-template-columns:1fr}
+@media(min-width:640px){.rdv-feats{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.rdv-feats{grid-template-columns:repeat(4,1fr)}}
+.rdv-feats li{display:flex;gap:12px;align-items:center;margin:0!important;padding:12px 14px!important;border-radius:12px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);color:var(--white);font-size:.88rem;line-height:1.4}
+.rdv-feats li .rdv-ico{color:var(--gold);width:20px;height:20px}
+.rdv-who{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:760px){.rdv-who{grid-template-columns:1fr 1fr}}
+.rdv-who .rd-card{padding:22px;border-radius:16px;line-height:1.65;color:var(--gray)}
+.rdv-who .rd-card b{display:flex!important;align-items:center;gap:10px;color:var(--white);font-size:1.05rem;margin:0 0 10px!important}
+.rdv-who .rdv-yes{border-color:rgba(95,211,141,.35);background:rgba(95,211,141,.05)}
+.rdv-who .rdv-no{border-color:rgba(255,107,94,.3);background:rgba(255,107,94,.04)}
+.rdv-yes b .rdv-ico{color:var(--rd-green)}.rdv-no b .rdv-ico{color:var(--rd-red)}
+.rdv-faq .svc-faq{border-top:0}
+.rdv-faq .svc-faq-item{border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px 18px;margin:0 0 10px;background:var(--rd-card)}
+.rdv-faq .svc-faq-item[open]{border-color:rgba(212,175,55,.4)}
+/* CTA panels */
+.rdv-panel{display:grid;grid-template-columns:1fr;gap:22px;align-items:center;padding:28px 24px;border-radius:20px;border:1px solid rgba(212,175,55,.3);background:radial-gradient(90% 120% at 100% 0%,rgba(212,175,55,.12),transparent 60%),var(--rd-card);margin:0 0 22px}
+@media(min-width:860px){.rdv-panel{grid-template-columns:1.3fr 1fr;padding:34px 36px}}
+.rdv-panel h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.5rem,2.6vw,1.9rem);color:var(--white);margin:0 0 10px;line-height:1.25}
+.rdv-panel p{color:var(--gray);margin:0 0 18px;line-height:1.7}
+.rdv-panel p a{color:var(--gold)}
+.rdv-mini{display:block;width:100%;height:auto;max-width:360px;margin:0 auto}
+.rdv-more{font-size:14px;opacity:.85;margin:18px 0 0;text-align:center;color:var(--gray)}
+.rdv-more a{color:var(--gold)}
+@media(max-width:640px){
+ .rdv-div{margin:46px auto}
+ .rdv-buy .btn-primary,.rdv-buy .btn-outline{padding:14px 16px;white-space:normal}
+ .rdv-hook{font-size:1.18rem}
+ .rdv-panel .btn-primary,.rdv-panel .btn-outline{width:100%;justify-content:center;text-align:center;white-space:normal}
+}
+/* fix (also broken on the live page): the gold button inside .svc-copy inherited gold link colour, so its text was invisible */
+.svc-copy a.btn-primary{color:#050505;text-decoration:none}
+.svc-copy a.btn-outline{text-decoration:none}
+.rdv-signin a{color:var(--gold)}
+.rdv-legend{display:none;list-style:none;margin:8px 4px 0;padding:0;flex-wrap:wrap;gap:6px 14px;font-size:.82rem;color:var(--white)}
+.rdv-legend li{display:flex;align-items:center;gap:6px}
+.rdv-legend i{display:inline-block;width:9px;height:9px;border-radius:50%}
+.rdv-legend .rdv-lfix{flex-basis:100%;padding:8px 10px;border:1px solid var(--gold);border-radius:10px;background:#17140a;display:block}
+.rdv-legend .rdv-lfix b{color:var(--gold)}
+@media(max-width:640px){.rdv-graph .rdv-lbl{display:none}.rdv-graph .rdv-ax{font-size:19px}.rdv-legend{display:flex}}
+.rdv-ico-wrap .rdv-ico{width:24px;height:24px}
+@media(max-width:639px){
+ .rdv-cards .rd-card{display:grid;grid-template-columns:44px 1fr;column-gap:14px;align-items:start;padding:16px}
+ .rdv-cards .rd-card .rdv-ico-wrap{grid-row:span 2}
+ .rdv-cards .rd-card b{margin:0 0 4px!important}
+ .rdv-feats li{padding:10px 12px!important}
+}
+/* invite page */
+.rdv-ticket{position:relative;border-radius:20px;padding:24px;background:linear-gradient(135deg,#1a1608,#0d0d0d 60%);border:1px solid rgba(212,175,55,.45);box-shadow:0 30px 80px rgba(0,0,0,.55);overflow:hidden}
+.rdv-ticket::before,.rdv-ticket::after{content:"";position:absolute;top:50%;width:26px;height:26px;border-radius:50%;background:var(--bg-primary);border:1px solid rgba(212,175,55,.45);transform:translateY(-50%)}
+.rdv-ticket::before{left:-14px}.rdv-ticket::after{right:-14px}
+.rdv-ticket-top{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-bottom:16px;border-bottom:1px dashed rgba(212,175,55,.4);margin-bottom:16px}
+.rdv-ticket-top b{font-family:var(--font-display);font-weight:400;font-size:1.5rem;color:var(--white);line-height:1.2}
+.rdv-ticket-top b em{color:var(--gold)}
+.rdv-chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.rdv-chips li{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.3);font-size:.85rem;color:var(--white);line-height:1.2}
+.rdv-chips .rdv-ico{width:16px;height:16px;color:var(--gold)}
+.rdv-form{display:block!important;padding:26px!important;margin:30px 0 0!important}
+.rdv-form h2{font-family:var(--font-display);font-weight:400;font-size:1.5rem;color:var(--white);margin:0 0 12px}
+.rdv-form .rdv-after{font-size:.9rem;color:var(--gray);margin:12px 0 16px}
+.rdv-fb{border-radius:18px;padding:24px;background:var(--rd-card);border:1px solid rgba(255,255,255,.08)}
+.rdv-fb h2{display:flex;align-items:center;gap:12px;margin-top:0!important}
 </style>
 </head>
 
@@ -125,23 +262,95 @@
 
     <main>
         <section class="post-wrap">
-            <div class="container post-container">
-                <div class="section-tag">Personal invite</div>
-                <h1 class="post-title">You're invited to try Retention <em>Doctor</em> free for a month</h1>
-                <p class="post-lede" style="margin-left:0">Manthan picked you to try Retention Doctor before almost anyone else. Connect your channel (read-only), see exactly where viewers leave each video and the fix, and then tell us what to fix in the tool. That's all we ask.</p>
-                <div class="prog-buy" style="display:block">
-                    <p style="margin:0 0 10px"><b>Start your free month</b> · 30 days, one channel, no card, nothing is charged. After 30 days access simply stops unless you choose to subscribe.</p>
-                    <input id="ivCode" placeholder="Invite code (RD-XXXXXX-XXXXXX)" style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(212,175,55,.4);background:transparent;color:inherit;margin:0 0 8px">
-                    <input id="ivEmail" type="email" placeholder="The email your invite was sent to" style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(212,175,55,.4);background:transparent;color:inherit;margin:0 0 10px">
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/><path d="M8 12.5l2-2 1.5 1.5 2-2.5"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 6.3-6.3"/><path d="M14.7 6.3L13 4.6a4 4 0 0 0-5.6 5.6l1.7 1.7"/><path d="M4 20l5-5"/></symbol>
+<symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4 18a9 9 0 1 1 16 0"/><path d="M12 14l4-5"/><circle cx="12" cy="14" r="1.3"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M4 6.5l1.5 1.5L8 5.5"/><path d="M4 12.5l1.5 1.5L8 11.5"/><path d="M4 18.5l1.5 1.5L8 17.5"/><path d="M11 7h9M11 13h9M11 19h9"/></symbol>
+<symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M4 16l5-5 4 3 7-7"/><path d="M15 7h5v5"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5L7 21l5-2.5 5 2.5-1.5-7.5"/></symbol>
+<symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></symbol>
+<symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21a6 6 0 0 1-6-6c0-3.5 3-5.5 3.5-9 2.5 1.5 4 4 4 6 1-1 1.5-2 1.5-3.5 2 1.5 3 4 3 6.5a6 6 0 0 1-6 6z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.2v5.6l4.6-2.8z"/></symbol>
+<symbol id="i-percent" viewBox="0 0 24 24"><path d="M19 5L5 19"/><circle cx="7" cy="7" r="2.3"/><circle cx="17" cy="17" r="2.3"/></symbol>
+<symbol id="i-compare" viewBox="0 0 24 24"><path d="M5 20V10M10 20V4M15 20v-7M20 20V8"/></symbol>
+<symbol id="i-shapes" viewBox="0 0 24 24"><path d="M3 5c3 0 3 5 6 5s3 4 6 4 3 5 6 5"/><path d="M3 20h18"/></symbol>
+<symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 3l3 3-3 3"/><path d="M4 11V9a3 3 0 0 1 3-3h13"/><path d="M7 21l-3-3 3-3"/><path d="M20 13v2a3 3 0 0 1-3 3H4"/></symbol>
+<symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20"/><path d="M9 8h7"/></symbol>
+<symbol id="i-type" viewBox="0 0 24 24"><path d="M4 7V5h16v2"/><path d="M12 5v14"/><path d="M9 19h6"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+<symbol id="i-xc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M9 9l6 6M15 9l-6 6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+<symbol id="i-checkc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8 12.3l2.7 2.7L16 9.7"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+<symbol id="i-card" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6 15h4"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></symbol>
+<symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M3 13h18M12 9v12"/><path d="M12 9c-1.5-3-5-4-5-1.5S10 9 12 9zM12 9c1.5-3 5-4 5-1.5S14 9 12 9z"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+</svg>
+
+            <div class="container post-container rdv-wide">
+                <div class="rdv-hero">
+                    <div>
+                        <div class="section-tag">Personal invite</div>
+                        <h1 class="post-title">You're invited to try Retention <em>Doctor</em> free for a month</h1>
+                        <p class="post-lede" style="margin-left:0">Manthan picked you to try Retention Doctor before almost anyone else. Connect your channel (read-only), see exactly where viewers leave each video and the fix, and then tell us what to fix in the tool. That's all we ask.</p>
+                    </div>
+                    <div class="rdv-ticket" role="img" aria-label="Invite: Retention Doctor free month. 30 days, one channel, no card.">
+                        <div class="rdv-ticket-top" aria-hidden="true"><b>Retention <em>Doctor</em></b><span class="rdv-tag">Invite</span></div>
+                        <ul class="rdv-chips" aria-hidden="true">
+                            <li><svg class="rdv-ico"><use href="#i-cal"/></svg>30 days</li>
+                            <li><svg class="rdv-ico"><use href="#i-user"/></svg>one channel</li>
+                            <li><svg class="rdv-ico"><use href="#i-card"/></svg>no card</li>
+                        </ul>
+                        <svg viewBox="0 0 320 110" aria-hidden="true" style="display:block;width:100%;height:auto;margin-top:18px">
+                            <path d="M10,12 L28,40 L60,50 L100,55 L118,57 L126,80 L170,84 L230,90 L310,97 L310,108 L10,108 Z" fill="rgba(212,175,55,.14)"/>
+                            <path d="M10,12 L28,40 L60,50 L100,55 L118,57 L126,80 L170,84 L230,90 L310,97" fill="none" stroke="#d4af37" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+                            <line x1="122" y1="6" x2="122" y2="108" stroke="#ff6b5e" stroke-dasharray="4 4" stroke-width="1.5"/>
+                            <circle cx="122" cy="68" r="5" fill="#ff6b5e"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <ol class="rdv-steps" style="margin-top:34px">
+                    <li class="rdv-step"><span class="rdv-ico-wrap"><svg class="rdv-ico" aria-hidden="true"><use href="#i-link"/></svg></span><b>Connect your channel</b><span>Read-only.</span></li>
+                    <li class="rdv-step"><span class="rdv-ico-wrap"><svg class="rdv-ico" aria-hidden="true"><use href="#i-search"/></svg></span><b>See where viewers leave</b><span>Exactly where viewers leave each video, and the fix.</span></li>
+                    <li class="rdv-step"><span class="rdv-ico-wrap"><svg class="rdv-ico" aria-hidden="true"><use href="#i-chat"/></svg></span><b>Tell us what to fix</b><span>In the tool. That's all we ask.</span></li>
+                </ol>
+
+                <div class="rdv-narrow">
+                <div class="prog-buy rdv-buy rdv-form" style="display:block">
+                    <h2><b>Start your free month</b></h2>
+                    <ul class="rdv-chips">
+                        <li><svg class="rdv-ico" aria-hidden="true"><use href="#i-cal"/></svg>30 days</li>
+                        <li><svg class="rdv-ico" aria-hidden="true"><use href="#i-user"/></svg>one channel</li>
+                        <li><svg class="rdv-ico" aria-hidden="true"><use href="#i-card"/></svg>no card, nothing is charged.</li>
+                    </ul>
+                    <p class="rdv-after">After 30 days access simply stops unless you choose to subscribe.</p>
+                    <input id="ivCode" placeholder="Invite code (RD-XXXXXX-XXXXXX)" aria-label="Invite code" style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(212,175,55,.4);background:transparent;color:inherit;margin:0 0 8px">
+                    <input id="ivEmail" type="email" placeholder="The email your invite was sent to" aria-label="The email your invite was sent to" style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(212,175,55,.4);background:transparent;color:inherit;margin:0 0 10px">
                     <button id="ivGo" class="btn-primary rd-glow" style="border:0;cursor:pointer">Start my free month &rarr;</button>
                     <p id="ivMsg" style="margin:10px 0 0;font-size:15px"></p>
                 </div>
-                <div class="svc-copy post-body">
-<h2>Tell us what to fix</h2>
+
+                <hr class="rdv-div">
+
+                <div class="svc-copy post-body rdv-fb">
+<h2><span class="rdv-ico-wrap"><svg class="rdv-ico" aria-hidden="true"><use href="#i-chat"/></svg></span>Tell us what to fix</h2>
 <p>Anything that confused you, felt wrong, or that you wish it did. Manthan reads every message.</p>
-<textarea id="fbText" rows="6" style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(212,175,55,.4);background:transparent;color:inherit"></textarea>
+<textarea id="fbText" rows="6" aria-label="Your feedback" style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(212,175,55,.4);background:transparent;color:inherit"></textarea>
 <p><button id="fbGo" class="btn-outline" style="cursor:pointer">Send feedback</button> <span id="fbMsg" style="font-size:15px"></span></p>
 <p style="font-size:14px;opacity:.8">What Retention Doctor is: <a href="../">Retention Doctor</a> · Questions: <a href="mailto:ceo@asendify.co">ceo@asendify.co</a></p>
+                </div>
                 </div>
             </div>
         </section>
