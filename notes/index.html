@@ -59,7 +59,7 @@
     "@type": "Offer",
     "price": "1740.00",
     "priceCurrency": "GBP",
-    "description": "One year: £1,200 plus a 45% service fee (£540) = £1,740. Card payments can renew automatically each year if the buyer chooses; auto-renew can be turned off any time.",
+    "description": "One year: £1,200 plus a 45% service fee (£540) = £1,740. Paid with PayPal one year at a time; nothing renews automatically.",
     "url": "https://notes.asendify.co/#pricing",
     "availability": "https://schema.org/InStock"
    },
@@ -122,7 +122,7 @@
      "name": "Does it renew automatically?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Only if you choose. Paying by card, you can tick auto-renew: we then charge £1,740 to the same card on the same date each year, and email you 14 and 3 days before. Turn it off any time in Settings and nothing more is charged. PayPal payments are one year at a time."
+      "text": "No. You pay with PayPal (card or PayPal balance) for one year at a time and nothing is charged automatically. We email you 14 and 3 days before your year ends so you can renew if you want to."
      }
     },
     {
@@ -162,7 +162,7 @@
      "name": "What happens when my year ends?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "With auto-renew on, a new year starts on that date. Otherwise editing stops until you renew. Your notes are kept, and you can export them for 30 days."
+      "text": "Editing stops until you renew with PayPal. Your notes are kept, and you can export them for 30 days."
      }
     },
     {
@@ -178,7 +178,7 @@
      "name": "How much does Asendify Notes cost?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "£1,740 a year: £1,200 plus a 45% service fee of £540, shown in full before you pay. There is no free plan and no free trial. If you pay by card you can choose auto-renew (£1,740 on the same date each year, turn it off any time); we email you 14 and 3 days before any renewal."
+      "text": "£1,740 a year: £1,200 plus a 45% service fee of £540, shown in full before you pay. There is no free plan and no free trial. You pay with PayPal (card or PayPal balance) for one year at a time, with no automatic renewals; we email you 14 and 3 days before your year ends."
      }
     },
     {
@@ -452,13 +452,12 @@ window.asdSelf=function(){var m=document.cookie.match(/(?:^|;\s*)asd_aff=([a-z0-
         <li>One owner, up to 20 workspaces, unlimited pages</li>
         <li>Free view-only guests (up to 50)</li>
         <li>2 GB for images and PDFs</li>
-        <li>Pay by card and choose auto-renew if you like: £1,740 on the same date each year, turn it off any time in Settings. We email you 14 and 3 days before every renewal</li>
+        <li>Pay with PayPal (card or PayPal balance) for one year at a time: no automatic renewals. We email you 14 and 3 days before your year ends</li>
         <li>No free plan or trial</li>
       </ul>
       <form id="buy">
         <input type="email" id="email" required placeholder="Your email (it becomes your account)" autocomplete="email">
-        <label style="display:flex;gap:8px;align-items:flex-start;text-align:left;font-size:14px;color:var(--muted)"><input type="checkbox" id="renew" style="width:auto;margin-top:4px"> Card only: renew automatically every year (£1,740 charged to this card on the same date each year until I turn it off in Settings).</label>
-        <div class="pay"><button class="btn primary" data-gw="dodo">Pay by card</button><button class="btn" data-gw="paypal">Pay with PayPal (1 year)</button></div>
+        <div class="pay"><button class="btn primary" data-gw="paypal">Pay with PayPal (1 year, card or PayPal)</button></div>
         <div class="msg" id="msg"></div>
       </form>
       <p class="sub" style="font-size:13px">Payments and refunds: <a href="https://www.asendify.co/policies/">Asendify policies</a>.</p>
@@ -468,14 +467,14 @@ window.asdSelf=function(){var m=document.cookie.match(/(?:^|;\s*)asd_aff=([a-z0-
   <section id="faq">
     <h2>Questions</h2>
     <details><summary>Is Asendify Notes like Notion?</summary><p>It works in a similar way: pages inside pages, a block editor with slash commands, and databases you can view as a table or a board. It is a separate product made by Asendify, not affiliated with Notion.</p></details>
-    <details><summary>Does it renew automatically?</summary><p>Only if you choose. Paying by card, you can tick auto-renew: we then charge £1,740 to the same card on the same date each year, and email you 14 and 3 days before. Turn it off any time in Settings and nothing more is charged. PayPal payments are one year at a time.</p></details>
+    <details><summary>Does it renew automatically?</summary><p>No. You pay with PayPal (card or PayPal balance) for one year at a time and nothing is charged automatically. We email you 14 and 3 days before your year ends so you can renew if you want to.</p></details>
     <details><summary>Why £1,740 a year?</summary><p>It's £1,200 plus a 45% service fee, shown in full before you pay. You get one private workspace with unlimited pages. Nothing is added at checkout.</p></details>
     <details><summary>Is there a free trial?</summary><p>No. Asendify Notes is paid from the start.</p></details>
     <details><summary>Can I get my notes out?</summary><p>Yes, any time: Markdown for a page, JSON for everything. If your year ends you can still export for 30 days.</p></details>
     <details><summary>Can I share a page?</summary><p>Yes, with a read-only link. People can read the page and the pages inside it, not edit. You can turn it off whenever you like.</p></details>
-    <details><summary>What happens when my year ends?</summary><p>With auto-renew on, a new year starts on that date. Otherwise editing stops until you renew. Your notes are kept, and you can export them for 30 days.</p></details>
+    <details><summary>What happens when my year ends?</summary><p>Editing stops until you renew with PayPal. Your notes are kept, and you can export them for 30 days.</p></details>
     <details><summary>Are there apps for Windows, Mac or Android?</summary><p>Asendify Notes runs in any modern browser on all of them today. Installable apps are on the roadmap but not available yet.</p></details>
-    <details><summary>How much does Asendify Notes cost?</summary><p>£1,740 a year: £1,200 plus a 45% service fee of £540, shown in full before you pay. There is no free plan and no free trial. If you pay by card you can choose auto-renew (£1,740 on the same date each year, turn it off any time); we email you 14 and 3 days before any renewal.</p></details>
+    <details><summary>How much does Asendify Notes cost?</summary><p>£1,740 a year: £1,200 plus a 45% service fee of £540, shown in full before you pay. There is no free plan and no free trial. You pay with PayPal (card or PayPal balance) for one year at a time, with no automatic renewals; we email you 14 and 3 days before your year ends.</p></details>
     <details><summary>Do I need a password?</summary><p>No. You sign in with a one-time link sent to your email.</p></details>
     <details><summary>Can other people edit my pages?</summary><p>No. Each account has one owner who edits. You can invite up to 50 guests by email to read a page (free, view only) or make a read-only public link.</p></details>
     <details><summary>Can I move my notes over from Notion?</summary><p>Notion can export pages as Markdown and databases as CSV files. Asendify Notes imports both: a Markdown file becomes a page and a CSV file becomes a database.</p></details>
@@ -491,14 +490,14 @@ window.asdSelf=function(){var m=document.cookie.match(/(?:^|;\s*)asd_aff=([a-z0-
   fetch(API + 'config', { credentials: PREVIEW ? 'include' : 'omit' }).then(function (r) { return r.json(); }).then(function (c) {
     open = !!c.salesOpen;
     if (!open) { msg.textContent = 'Opening soon. Nothing can be charged yet.'; form.querySelectorAll('button').forEach(function (b) { b.disabled = true; }); }
-    else { if (!c.dodo) form.querySelector('[data-gw=dodo]').style.display = 'none'; if (!c.paypal) form.querySelector('[data-gw=paypal]').style.display = 'none'; }
+    else if (!c.paypal) { msg.textContent = 'Checkout is being set up. Nothing can be charged yet.'; form.querySelectorAll('button').forEach(function (b) { b.disabled = true; }); }
   }).catch(function () {});
-  var gw = 'dodo';
+  var gw = 'paypal';
   form.querySelectorAll('button').forEach(function (b) { b.addEventListener('click', function () { gw = b.getAttribute('data-gw'); }); });
   form.addEventListener('submit', function (e) {
     e.preventDefault(); if (!open) return;
     msg.textContent = 'Opening the secure checkout…';
-    fetch(API + 'checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: PREVIEW ? 'include' : 'omit', body: JSON.stringify({ ref: (window.asdRef ? asdRef() : ''), affSelf: (window.asdSelf ? asdSelf() : ''), email: document.getElementById('email').value, gw: gw, autoRenew: gw === 'dodo' && document.getElementById('renew').checked }) })
+    fetch(API + 'checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: PREVIEW ? 'include' : 'omit', body: JSON.stringify({ ref: (window.asdRef ? asdRef() : ''), affSelf: (window.asdSelf ? asdSelf() : ''), email: document.getElementById('email').value, gw: 'paypal' }) })
       .then(function (r) { return r.json(); }).then(function (j) { if (j.approve) location.href = j.approve; else msg.textContent = j.message || j.error || 'Something went wrong. Nothing was charged.'; })
       .catch(function () { msg.textContent = 'We could not reach the server. Nothing was charged.'; });
   });
