@@ -197,6 +197,59 @@
 @media (prefers-reduced-motion:reduce){.paybtn:after{display:none}.paybtn{transition:none}}
 @media (max-width:480px){.paybtn{min-height:56px;font-size:17px !important;padding:15px 20px !important}}
 .fl{columns:2 300px;column-gap:36px;padding-left:20px;margin:22px 0 0}.fl li{break-inside:avoid;margin:0 0 9px;color:#cfd8ea}.fl li b{color:#fff}.who{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:22px}.who ul{padding-left:20px;margin:8px 0 0;color:#cfd8ea}.who li{margin:0 0 8px}.updated{margin:10px 0 0;color:var(--mut);font-size:13.5px}
+:root{--vp-gold:#34d399;--vp-ink:#e8eefc;--vp-mut:#94a3b8;--vp-card:#0f1729;--vp-bg:#070b14}
+/* 2026-11-19 visual pass (Manthan: "make all the other products ... visually appealing like the retention doctor"). Layout + inline SVG only; same words, links and scripts. */
+.vp-ico{width:22px;height:22px;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.vp-icw{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:color-mix(in srgb,var(--vp-gold) 12%,transparent);border:1px solid color-mix(in srgb,var(--vp-gold) 32%,transparent);color:var(--vp-gold);margin:0 0 14px}
+.vp-icw .vp-ico{width:24px;height:24px}
+.vp-trust{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:22px 0 0;padding:0;list-style:none;max-width:760px}
+@media(min-width:860px){.vp-trust{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.vp-trust li{display:flex;gap:10px;align-items:center;padding:11px 13px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);font-size:.86rem;color:var(--vp-ink);line-height:1.35;margin:0}
+.vp-trust .vp-ico{color:var(--vp-gold);width:18px;height:18px}
+.vp-div{display:block;border:0;height:1px;margin:0 auto;max-width:820px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--vp-gold) 60%,transparent),transparent);position:relative;overflow:visible}
+.vp-div::after{content:"";position:absolute;left:50%;top:-4px;width:8px;height:8px;background:var(--vp-gold);transform:translateX(-50%) rotate(45deg);box-shadow:0 0 14px color-mix(in srgb,var(--vp-gold) 70%,transparent)}
+.vp-mock{position:relative;border:1px solid color-mix(in srgb,var(--vp-gold) 25%,transparent);border-radius:18px;background:radial-gradient(120% 90% at 85% 0%,color-mix(in srgb,var(--vp-gold) 13%,transparent),transparent 60%),var(--vp-card);padding:14px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.vp-mock svg{display:block;width:100%;height:auto}
+.vp-mock-tag{position:absolute;top:-11px;left:18px;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--vp-gold);background:var(--vp-bg);border:1px solid color-mix(in srgb,var(--vp-gold) 45%,transparent);border-radius:999px;padding:2px 10px;font-weight:700}
+.vp-hero{display:grid;grid-template-columns:minmax(0,1fr);gap:34px;align-items:center}
+@media(min-width:960px){.vp-hero{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px}}
+.vp-steps{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:16px;grid-template-columns:minmax(0,1fr);counter-reset:vpst}
+@media(min-width:860px){.vp-steps{grid-template-columns:repeat(var(--vp-n,3),minmax(0,1fr));gap:22px}}
+.vp-step{position:relative;padding:22px 20px 20px;border-radius:16px;background:var(--vp-card);border:1px solid rgba(255,255,255,.08);margin:0}
+.vp-step::before{counter-increment:vpst;content:counter(vpst);position:absolute;top:14px;right:18px;font-size:2.4rem;line-height:1;font-weight:700;color:color-mix(in srgb,var(--vp-gold) 25%,transparent)}
+@media(min-width:860px){.vp-step:not(:last-child)::after{content:"";position:absolute;top:42px;right:-17px;width:12px;height:12px;border-top:2px solid var(--vp-gold);border-right:2px solid var(--vp-gold);transform:rotate(45deg);opacity:.7}}
+.vp-cardhov{transition:border-color .3s,transform .3s}
+.vp-cardhov:hover{border-color:color-mix(in srgb,var(--vp-gold) 50%,transparent);transform:translateY(-2px)}
+.vp-checks{list-style:none!important;padding:0!important;display:grid;gap:10px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:700px){.vp-checks{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.vp-checks li{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);line-height:1.5;margin:0}
+.vp-checks li>.vp-ico{color:var(--vp-gold);width:18px;height:18px;margin-top:3px}
+.vp-yes{border-color:rgba(95,211,141,.35)!important;background:rgba(95,211,141,.05)!important}
+.vp-no{border-color:rgba(255,107,94,.3)!important;background:rgba(255,107,94,.04)!important}
+.vp-yes .vp-badge{color:#5fd38d}.vp-no .vp-badge{color:#ff6b5e}
+.vp-badge{display:inline-flex;vertical-align:-5px;margin-right:8px}
+.vp-badge .vp-ico{width:22px;height:22px}
+.vp-panel{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;align-items:center;padding:28px 24px;border-radius:20px;border:1px solid color-mix(in srgb,var(--vp-gold) 32%,transparent);background:radial-gradient(90% 120% at 100% 0%,color-mix(in srgb,var(--vp-gold) 13%,transparent),transparent 60%),var(--vp-card)}
+@media(min-width:860px){.vp-panel{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);padding:34px 36px}}
+.vp-mini{display:block;width:100%;height:auto;max-width:340px;margin:0 auto}
+.vp-ex{position:relative;border:1px dashed color-mix(in srgb,var(--vp-gold) 50%,transparent);border-radius:16px;padding:18px 18px 16px;background:var(--vp-card)}
+.vp-exlbl{display:inline-block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--vp-bg);background:var(--vp-gold);border-radius:999px;padding:2px 9px;margin:0 0 10px}
+@media(max-width:639px){.vp-icrow{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:14px;align-items:start}.vp-icrow>.vp-icw{grid-row:span 3;margin:0}}
+@media (prefers-reduced-motion:reduce){.vp-cardhov{transition:none}}
+
+.vp-tpltrust{margin:18px 0 6px;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.st .vp-sti{position:absolute;top:24px;right:22px;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.25);color:#34d399}
+.st .vp-sti .vp-ico{width:20px;height:20px}
+@media(min-width:861px){.steps3 .st:not(:last-child)::after{content:"";position:absolute;top:36px;right:-13px;width:10px;height:10px;border-top:2px solid #34d399;border-right:2px solid #34d399;transform:rotate(45deg);opacity:.75}}
+.fl.vp-checks{columns:auto;padding-left:0;margin:22px 0 0}.fl.vp-checks li{margin:0}
+.who .feat h3{display:flex;align-items:center}
+#free-tool .vp-panel{text-align:left}#free-tool .vp-panel .sub{margin:0 0 22px}
+main>section.s,body>section.s{position:relative}
+section.s::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(820px,86%);height:1px;background:linear-gradient(90deg,transparent,rgba(52,211,153,.55),transparent)}
+section.s::after{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;background:#34d399;transform:translateX(-50%) rotate(45deg);box-shadow:0 0 14px rgba(52,211,153,.7)}
+details[open]{border-color:rgba(52,211,153,.45)}
+@media(max-width:639px){.vp-trust li{font-size:.8rem;padding:10px}}
+
 </style>
 <script>/* 2026-10-30 affiliate ref (paid-entry programme): ?ref=<code> is kept 30 days in a .asendify.co cookie and sent with the checkout; the server checks it. */
 (function(){function c(v){return String(v||'').toLowerCase().replace(/[^a-z0-9-]/g,'').slice(0,32)}var d=/(^|\.)asendify\.co$/.test(location.hostname)?'; domain=.asendify.co':'';
@@ -220,6 +273,7 @@ window.asdSelf=function(){var m=document.cookie.match(/(?:^|;\s*)asd_aff=([a-z0-
     <p class="lead">Chart Reader explains any stock, crypto or forex chart screenshot: the trend, the structure, key support and resistance, patterns, what traders often watch next, and the position-size arithmetic for your own risk rule.</p>
     <div class="ctas"><a class="btn pri" href="#pricing">Get 100 chart reads</a><a class="btn ghost" href="#example">See an example</a></div>
     <p class="price-line"><b>£522</b> for 100 reads (£360 + 45% service fee). One-time payment. Reads never expire.</p>
+    <ul class="vp-trust vp-tpltrust" aria-label="Key facts"><li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>One-time payment.</li><li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Reads never expire.</li><li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>A read is only used when it succeeds.</li><li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/></svg>Saved history</li></ul>
     <p class="updated">Last updated: <time datetime="2026-10-20">20 October 2026</time></p>
     <p class="notice" style="margin-top:18px;max-width:600px"><b>Educational only.</b> Not financial advice: nothing here tells you to buy or sell. No guarantee of accuracy. Trading carries a high risk of losing money.</p>
   </div>
@@ -231,12 +285,12 @@ window.asdSelf=function(){var m=document.cookie.match(/(?:^|;\s*)asd_aff=([a-z0-
   <h2>What you get for each chart</h2>
   <p class="sub">The same clear structure every time, so you learn to read charts faster yourself.</p>
   <div class="grid3">
-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h3>Trend and structure</h3><p>Direction, higher highs and lows, ranges and breakouts, explained in a few plain sentences.</p></div>
-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 8h18M3 16h18"/><path d="M7 4v16M17 4v16" opacity=".5"/></svg></div><h3>Key levels</h3><p>Support and resistance zones read from the price axis, with why each one matters.</p></div>
-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 18l5-9 4 6 3-4 4 7"/></svg></div><h3>Patterns and volume</h3><p>Notable chart patterns, plus volume and indicator notes when they are visible.</p></div>
-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3v6a6 6 0 0 0 6 6h6"/><path d="M15 12l3 3-3 3"/><path d="M6 21v-4"/></svg></div><h3>2–3 scenarios</h3><p>"If price does X, traders often watch Y", each with an invalidation level that would cancel it.</p></div>
-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 19h8" /></svg></div><h3>Position-size maths</h3><p>From your account size and risk % per trade: the risk amount and the size that matches each scenario's levels.</p></div>
-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></div><h3>Saved history</h3><p>Every read is saved to your account, so you can come back to it and compare later.</p></div>
+    <div class="feat vp-cardhov"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h3>Trend and structure</h3><p>Direction, higher highs and lows, ranges and breakouts, explained in a few plain sentences.</p></div>
+    <div class="feat vp-cardhov"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 8h18M3 16h18"/><path d="M7 4v16M17 4v16" opacity=".5"/></svg></div><h3>Key levels</h3><p>Support and resistance zones read from the price axis, with why each one matters.</p></div>
+    <div class="feat vp-cardhov"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 18l5-9 4 6 3-4 4 7"/></svg></div><h3>Patterns and volume</h3><p>Notable chart patterns, plus volume and indicator notes when they are visible.</p></div>
+    <div class="feat vp-cardhov"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3v6a6 6 0 0 0 6 6h6"/><path d="M15 12l3 3-3 3"/><path d="M6 21v-4"/></svg></div><h3>2–3 scenarios</h3><p>"If price does X, traders often watch Y", each with an invalidation level that would cancel it.</p></div>
+    <div class="feat vp-cardhov"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 19h8" /></svg></div><h3>Position-size maths</h3><p>From your account size and risk % per trade: the risk amount and the size that matches each scenario's levels.</p></div>
+    <div class="feat vp-cardhov"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></div><h3>Saved history</h3><p>Every read is saved to your account, so you can come back to it and compare later.</p></div>
   </div>
 </div></section>
 
@@ -245,9 +299,9 @@ window.asdSelf=function(){var m=document.cookie.match(/(?:^|;\s*)asd_aff=([a-z0-
   <h2>From screenshot to explanation in seconds</h2>
   <p class="sub">No passwords, no app to install.</p>
   <div class="steps3">
-    <div class="st"><h3>Buy 100 reads</h3><p>Pay £522 once with PayPal (cards accepted). Your account is your email; we send you a sign-in link.</p></div>
-    <div class="st"><h3>Upload a screenshot</h3><p>From TradingView, MetaTrader, your broker or exchange. Add the timeframe, market and your risk rule if you like.</p></div>
-    <div class="st"><h3>Read and learn</h3><p>The explanation appears in seconds and is saved in your history. A read is only used when it succeeds.</p></div>
+    <div class="st vp-cardhov"><span class="vp-sti"><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></span><h3>Buy 100 reads</h3><p>Pay £522 once with PayPal (cards accepted). Your account is your email; we send you a sign-in link.</p></div>
+    <div class="st vp-cardhov"><span class="vp-sti"><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg></span><h3>Upload a screenshot</h3><p>From TradingView, MetaTrader, your broker or exchange. Add the timeframe, market and your risk rule if you like.</p></div>
+    <div class="st vp-cardhov"><span class="vp-sti"><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H20v16H5.5A1.5 1.5 0 0 0 4 20.5z"/><path d="M4 20.5A1.5 1.5 0 0 0 5.5 22H20v-3"/></svg></span><h3>Read and learn</h3><p>The explanation appears in seconds and is saved in your history. A read is only used when it succeeds.</p></div>
   </div>
 </div></section>
 
@@ -292,35 +346,35 @@ window.asdSelf=function(){var m=document.cookie.match(/(?:^|;\s*)asd_aff=([a-z0-
   <p class="kick">Every feature</p>
   <h2>Every feature, by name</h2>
   <p class="sub">Everything Chart Reader does today, in plain words.</p>
-  <ul class="fl">
-      <li><b>Upload any chart screenshot</b>: PNG, JPG or WebP; tap to choose or drop the image in</li>
-      <li><b>Automatic resizing</b>: images are resized in your browser before upload (up to 1600 px, under 2 MB)</li>
-      <li><b>Any platform</b>: screenshots from TradingView, MetaTrader, broker apps or exchanges</li>
-      <li><b>Any market</b>: stocks, crypto, forex, indices and commodities</li>
-      <li><b>Chart types</b>: candlestick, bar, line and Heikin Ashi charts</li>
-      <li><b>Instrument and timeframe</b>: read from the chart when they are visible</li>
-      <li><b>Trend direction</b>: up, down, sideways or unclear, with a 2–3 sentence explanation</li>
-      <li><b>Market structure</b>: higher highs and lows, ranges and breakouts in plain English</li>
-      <li><b>Support and resistance zones</b>: read from the price axis, each with a label and why it matters</li>
-      <li><b>Chart pattern notes</b>: up to six notable patterns, with where they are and how clear they are</li>
-      <li><b>Volume and indicator notes</b>: only when volume or indicators are visible on your screenshot</li>
-      <li><b>2–3 conditional scenarios</b>: "If price does X, traders often watch Y"</li>
-      <li><b>Trigger and invalidation levels</b>: each scenario has a level and the price that would cancel it</li>
-      <li><b>What would change the picture</b>: the signs that would make the read out of date</li>
-      <li><b>Quality note</b>: says when a blurry chart or cut-off axis limits the read</li>
-      <li><b>Never invents prices</b>: if the price axis can't be read, levels are left blank instead of guessed</li>
-      <li><b>Position-size arithmetic</b>: risk amount = account size × risk % per trade</li>
-      <li><b>Size for each scenario</b>: units = risk amount ÷ distance from level to invalidation, with distance %, position value and leverage</li>
-      <li><b>11 account currencies</b>: GBP, USD, EUR, INR, AUD, CAD, AED, SGD, JPY, CHF and USDT</li>
-      <li><b>Optional notes</b>: add the timeframe, the market and what you want to learn from the chart</li>
-      <li><b>No buy or sell calls</b>: an automatic check rejects any read that tells you to buy or sell</li>
-      <li><b>Not-a-chart check</b>: photos, memes or documents are turned away and the read is given back</li>
-      <li><b>Only successful reads count</b>: if a read fails, it is given back automatically</li>
-      <li><b>Saved history</b>: every read is saved to your account to reopen and compare later</li>
-      <li><b>Private screenshots</b>: stored privately and deleted after 30 days; the written read stays</li>
-      <li><b>Passwordless sign-in</b>: a one-time sign-in link by email</li>
-      <li><b>100 reads that never expire</b>: one pack, no subscription</li>
-      <li><b>No app to install</b>: works in any modern browser on phone or computer</li>
+  <ul class="fl vp-checks">
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Upload any chart screenshot</b>: PNG, JPG or WebP; tap to choose or drop the image in</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Automatic resizing</b>: images are resized in your browser before upload (up to 1600 px, under 2 MB)</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Any platform</b>: screenshots from TradingView, MetaTrader, broker apps or exchanges</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Any market</b>: stocks, crypto, forex, indices and commodities</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Chart types</b>: candlestick, bar, line and Heikin Ashi charts</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Instrument and timeframe</b>: read from the chart when they are visible</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Trend direction</b>: up, down, sideways or unclear, with a 2–3 sentence explanation</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Market structure</b>: higher highs and lows, ranges and breakouts in plain English</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Support and resistance zones</b>: read from the price axis, each with a label and why it matters</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Chart pattern notes</b>: up to six notable patterns, with where they are and how clear they are</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Volume and indicator notes</b>: only when volume or indicators are visible on your screenshot</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>2–3 conditional scenarios</b>: "If price does X, traders often watch Y"</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Trigger and invalidation levels</b>: each scenario has a level and the price that would cancel it</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>What would change the picture</b>: the signs that would make the read out of date</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Quality note</b>: says when a blurry chart or cut-off axis limits the read</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Never invents prices</b>: if the price axis can't be read, levels are left blank instead of guessed</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Position-size arithmetic</b>: risk amount = account size × risk % per trade</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Size for each scenario</b>: units = risk amount ÷ distance from level to invalidation, with distance %, position value and leverage</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>11 account currencies</b>: GBP, USD, EUR, INR, AUD, CAD, AED, SGD, JPY, CHF and USDT</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Optional notes</b>: add the timeframe, the market and what you want to learn from the chart</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>No buy or sell calls</b>: an automatic check rejects any read that tells you to buy or sell</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Not-a-chart check</b>: photos, memes or documents are turned away and the read is given back</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Only successful reads count</b>: if a read fails, it is given back automatically</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Saved history</b>: every read is saved to your account to reopen and compare later</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Private screenshots</b>: stored privately and deleted after 30 days; the written read stays</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Passwordless sign-in</b>: a one-time sign-in link by email</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>100 reads that never expire</b>: one pack, no subscription</span></li>
+      <li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>No app to install</b>: works in any modern browser on phone or computer</span></li>
   </ul>
 </div></section>
 
@@ -328,12 +382,12 @@ window.asdSelf=function(){var m=document.cookie.match(/(?:^|;\s*)asd_aff=([a-z0-
   <p class="kick">Is it for you?</p>
   <h2>Who it's for, and who it's not for</h2>
   <div class="who">
-    <div class="feat"><h3>Chart Reader is for</h3><ul>
+    <div class="feat vp-yes"><h3><span class="vp-badge"><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Chart Reader is for</h3><ul>
         <li>Beginner and improving traders who want to understand what a chart is showing, in plain English.</li>
         <li>People learning technical analysis who want a consistent structure (trend, levels, patterns, scenarios) to check their own read against.</li>
         <li>Traders who want the position-size maths for their own risk rule worked out for each scenario.</li>
     </ul></div>
-    <div class="feat"><h3>It's not for</h3><ul>
+    <div class="feat vp-no"><h3><span class="vp-badge"><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span>It's not for</h3><ul>
         <li>Anyone looking for buy or sell signals or trade calls: Chart Reader never gives them.</li>
         <li>Traders who need live data, alerts or automated trading: it reads one screenshot at a time.</li>
         <li>Anyone who wants guaranteed accuracy: it is an AI read that can be wrong, so check the levels yourself.</li>
@@ -342,10 +396,16 @@ window.asdSelf=function(){var m=document.cookie.match(/(?:^|;\s*)asd_aff=([a-z0-
 </div></section>
 
 <section class="s" id="free-tool"><div class="wrap" style="text-align:center">
+  <div class="vp-panel"><div class="vp-paneltext">
   <p class="kick">Free tool</p>
   <h2>Risk-Reward Calculator</h2>
   <p class="sub">Work out the reward-to-risk of a trade idea before you take it. Free, no sign-up.</p>
   <a class="btn ghost" href="https://www.asendify.co/charts/risk-reward-calculator/">Open the free calculator</a>
+</div><svg class="vp-mini" viewBox="0 0 300 200" aria-hidden="true"><rect x="4" y="4" width="292" height="192" rx="16" fill="#0b1220" stroke="rgba(148,163,184,.25)"/>
+<rect x="24" y="40" width="252" height="34" rx="8" fill="rgba(52,211,153,.12)" stroke="rgba(52,211,153,.5)"/><text x="36" y="62" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="700" fill="#6ee7b7">Reward</text>
+<rect x="24" y="80" width="252" height="2" fill="#e8eefc"/><text x="36" y="100" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#cbd5e1">Entry</text>
+<rect x="24" y="108" width="252" height="22" rx="8" fill="rgba(248,113,113,.12)" stroke="rgba(248,113,113,.5)"/><text x="36" y="123" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="700" fill="#fca5a5">Risk</text>
+<text x="150" y="168" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="22" font-weight="800" fill="#e8eefc">1 : 2</text></svg></div>
 </div></section>
 
 <section class="s alt" id="faq"><div class="wrap">
