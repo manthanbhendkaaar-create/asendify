@@ -82,8 +82,9 @@ ol.vx-steps,ul.vx-steps{list-style:none!important;padding:0!important;margin:18p
 
 /* icon cards (works on a ul/ol or div grid) */
 ul.vx-cards,ol.vx-cards,div.vx-cards{list-style:none!important;padding:0!important;margin:16px 0 22px!important;display:grid;gap:14px;grid-template-columns:1fr}
-@media(min-width:640px){.vx-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(min-width:1000px){.vx-cards.vx-c3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:640px){ul.vx-cards,ol.vx-cards,div.vx-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1000px){ul.vx-cards.vx-c3,ol.vx-cards.vx-c3,div.vx-cards.vx-c3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:1000px){ul.vx-cards.vx-c3>li,div.vx-cards.vx-c3>div{grid-template-columns:1fr;row-gap:12px}ul.vx-cards.vx-c3>li>.vx-ico-wrap{grid-row:auto}}
 .vx-cards>li,.vx-cards>div{display:grid;grid-template-columns:44px 1fr;column-gap:14px;align-items:start;margin:0!important;padding:16px 18px!important;border-radius:16px;background:var(--vx-card);border:1px solid var(--vx-soft);color:var(--vx-gray);line-height:1.6;font-size:.94rem;transition:border-color .3s,transform .3s}
 .vx-cards>li:hover,.vx-cards>div:hover{border-color:rgba(212,175,55,.45);transform:translateY(-2px)}
 .vx-cards>li::marker{content:none}
@@ -179,9 +180,8 @@ ul.vx-fl>li .vx-ico{color:var(--vx-gold);width:20px;height:20px;margin-top:2px}
 
 /* service pages: a little wider so copy and illustration sit side by side */
 .svc-copy.vx-svc{max-width:980px}
-.vx-svc>p,.vx-svc>h3,.vx-svc>.svc-faq{max-width:760px;margin-left:auto;margin-right:auto}
-.vx-svc>.vx-note{max-width:760px;margin-left:auto;margin-right:auto}
-.vx-svc>ol.vx-steps{max-width:none}
+.vx-svc>*:not(.vx-intro){max-width:860px;margin-left:auto!important;margin-right:auto!important}
+@media(max-width:640px){.vx-steps>li{padding:16px!important}.vx-steps>li .vx-ico-wrap{margin-bottom:8px}}
 
 /* program pages in a wide container: keep long copy readable */
 .vx-wide .vx-copy{max-width:860px;margin-left:auto;margin-right:auto}
