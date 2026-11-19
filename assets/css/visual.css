@@ -215,3 +215,17 @@ ul.vx-fl>li .vx-ico{color:var(--vx-gold);width:20px;height:20px;margin-top:2px}
 .how b .vx-ico{width:18px;height:18px;margin:-3px 6px 0 0}
 .vx-roast-intro{display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
 .vx-roast-intro .vx-mock{margin-top:6px}
+
+/* fit-and-finish */
+.vx-hero{margin-bottom:36px}
+.vx-hero .vx-trust,.vx-split .vx-trust{grid-template-columns:repeat(2,minmax(0,1fr))}
+.vx-strip>li>span{min-width:0;overflow-wrap:anywhere}
+@media(max-width:520px){
+ .vx-fan{height:230px;max-width:340px}
+ .vx-fan img{width:100px;margin-left:-50px}
+ .vx-fan img:nth-child(1){transform:translateX(-80px) rotate(-14deg)}
+ .vx-fan img:nth-child(2){transform:translateX(-42px) rotate(-7deg)}
+ .vx-fan img:nth-child(4){transform:translateX(42px) rotate(7deg)}
+ .vx-fan img:nth-child(5){transform:translateX(80px) rotate(14deg)}
+}
+@media(max-width:640px){.vx-mock{padding:10px 10px 8px;border-radius:14px}}
