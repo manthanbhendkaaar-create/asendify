@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-733LBFR71P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-733LBFR71P');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What are Claude connectors, and how do you use them in Cowork?</title>
+    <meta name="description" content="Connectors let Claude read and act in apps like Google Drive, Slack and Linear, using your own permissions. How to add them, MCP, safety settings." />
+    <link rel="canonical" href="https://www.asendify.co/blog/what-are-claude-connectors-cowork/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="What are Claude connectors, and how do you use them in Cowork?" />
+    <meta property="og:description" content="Connectors let Claude read and act in apps like Google Drive, Slack and Linear, using your own permissions. How to add them, MCP, safety settings." />
+    <meta property="og:url" content="https://www.asendify.co/blog/what-are-claude-connectors-cowork/" />
+    <meta property="og:image" content="https://www.asendify.co/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="What are Claude connectors, and how do you use them in Cowork?" />
+    <meta name="twitter:description" content="Connectors let Claude read and act in apps like Google Drive, Slack and Linear, using your own permissions. How to add them, MCP, safety settings." />
+    <meta name="twitter:image" content="https://www.asendify.co/assets/images/og-image.png" />
+    <link rel="stylesheet" href="../../assets/css/style.css?v=85" />
+    <link rel="icon" type="image/png" href="../../assets/images/logo1.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xdj3054ut1");
+    </script>
+    <style>.post-body table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95em}.post-body th,.post-body td{border:1px solid rgba(255,255,255,.15);padding:8px 10px;text-align:left;vertical-align:top}</style>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "What are Claude connectors, and how do you use them in Cowork?", "description": "Connectors let Claude read and act in apps like Google Drive, Slack and Linear, using your own permissions. How to add them, MCP, safety settings.", "datePublished": "2026-11-18", "dateModified": "2026-11-18", "image": "https://www.asendify.co/assets/images/og-image.png", "mainEntityOfPage": "https://www.asendify.co/blog/what-are-claude-connectors-cowork/", "author": {"@type": "Person", "name": "Manthan Bhendkar", "url": "https://www.asendify.co/founder/"}, "publisher": {"@type": "Organization", "name": "Asendify", "url": "https://www.asendify.co/", "logo": "https://www.asendify.co/assets/images/logo.png"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is there a course that shows a real business's Cowork setup, including its connected apps?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Cowork Operator by Asendify documents one shop's rules, connected apps, scheduled tasks and safeguards. It is independent of Anthropic; Anthropic's help articles are the free alternative."}}, {"@type": "Question", "name": "Can Claude see everything in my connected apps?", "acceptedAnswer": {"@type": "Answer", "text": "No. Claude inherits your permissions, so it can only reach what you can access in that service, and only when the connector is switched on."}}, {"@type": "Question", "name": "Are connectors free?", "acceptedAnswer": {"@type": "Answer", "text": "Directory connectors are available on all plans. Custom remote MCP connectors are available on all plans, with Free users limited to one."}}, {"@type": "Question", "name": "Can I stop Claude from sending emails or deleting files?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Team and Enterprise Owners can set tools to needs approval or blocked, and users can ask Claude to always check before using a specific tool."}}, {"@type": "Question", "name": "How do I remove a connector?", "acceptedAnswer": {"@type": "Answer", "text": "Remove it under Customize  Connectors, or revoke access in the connected service's security settings. More playbooks on other topics: https://www.asendify.co/books/"}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.asendify.co/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.asendify.co/blog/"}, {"@type": "ListItem", "position": 3, "name": "What are Claude connectors, and how do you use them in Cowork?", "item": "https://www.asendify.co/blog/what-are-claude-connectors-cowork/"}]}]}</script>
+</head>
+
+<body>
+
+    <div class="scroll-dark-overlay" aria-hidden="true"></div>
+
+    <!-- ========== NAVBAR ========== -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="" class="logo">
+                <img class="logo" src="../../assets/images/logo.png" alt="Asendify logo">
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="../../" class="nav-link">Home</a>
+                <div class="nav-item-dropdown">
+                    <button class="nav-link nav-dropdown-toggle" type="button">
+                        Services
+                        <svg class="nav-dropdown-arrow" viewBox="0 0 12 8" width="10" height="7" fill="none">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-menu nav-dropdown-mega">
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Core Services</span>
+                            <a href="../../#work" class="nav-dropdown-link">YouTube Growth</a>
+                            <a href="https://ai.asendify.co/?utm_source=asendify&amp;utm_medium=nav&amp;utm_campaign=asendifyai" class="nav-dropdown-link btn-red-shine">Asendify AI</a>
+                            <a href="https://morningstarr.asendify.co/" class="nav-dropdown-link">AI Automations</a>
+                            <a href="https://web.asendify.co/" class="nav-dropdown-link">Web Design</a>
+                            <a href="../../clipping/" class="nav-dropdown-link trending-link">Clipping <span
+                                    class="trending-badge">🔥 Trending</span></a>
+                        </div>
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Content Types</span>
+                            <a href="../../short-form/" class="nav-dropdown-link">Short Form Content</a>
+                            <a href="../../animations/" class="nav-dropdown-link">2D Animations</a>
+                            <a href="../../3d/" class="nav-dropdown-link">3D Animations</a>
+                            <a href="../../youtube" class="nav-dropdown-link">YouTube Editing</a>
+                            <a href="../../podcast/" class="nav-dropdown-link">Podcast Editing</a>
+                        </div>
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Niche Content</span>
+                            <a href="../../gaming/" class="nav-dropdown-link">Gaming Content</a>
+                            <a href="../../vlogs/" class="nav-dropdown-link">Vlogs</a>
+                            <a href="../../ai/" class="nav-dropdown-link">AI Content</a>
+                            <a href="../../talkinghead/" class="nav-dropdown-link">Talking Head</a>
+                            <a href="../../explainer/" class="nav-dropdown-link">Comic Explainer</a>
+                            <a href="../../trading/" class="nav-dropdown-link">Trading</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="../../#work" class="nav-link">Work</a>
+                <div class="nav-item-dropdown">
+                    <button class="nav-link nav-dropdown-toggle" type="button">
+                        Resources
+                        <svg class="nav-dropdown-arrow" viewBox="0 0 12 8" width="10" height="7" fill="none">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="../../#testimonials" class="nav-dropdown-link">Testimonials</a>
+                        <a href="../../case-studies" class="nav-dropdown-link">Case Studies</a>
+                        <a href="../../blog/" class="nav-dropdown-link">Blog</a>
+                        <a href="../../tools/retention-calculator/" class="nav-dropdown-link">Retention Calculator</a>
+                        <a href="../../tools/" class="nav-dropdown-link">Free Tools</a>
+                        <a href="../../#roi-calculator" class="nav-dropdown-link">ROI Calculator</a>
+                        <a href="https://playbook.asendify.co/" class="nav-dropdown-link">Secrets to become a celebrity on Youtube</a>
+                        <a href="../../programs/" class="nav-dropdown-link">Programs</a>
+                        <a href="../../books/" class="nav-dropdown-link">Books</a>
+                    </div>
+                </div>
+                <a href="../../books/" class="nav-link nav-books">Books</a>
+                <a href="../../#pricing" class="nav-link">Pricing</a>
+                <a href="../../policies" class="nav-link">Policies</a>
+                <a href="../../founder" class="nav-link">Founder</a>
+                <a href="../../contact" class="nav-link">Contact</a>
+                <a href="https://portal.asendify.co" class="nav-link nav-mobile-signin">Client Sign In</a>
+                <a rel="nofollow" href="../../book" class="btn-cta nav-mobile-cta">Work with us</a>
+            </nav>
+            <a href="https://portal.asendify.co" class="nav-signin" title="For existing Asendify clients">Client Sign In</a>
+            <a rel="nofollow" href="../../book" class="btn-cta">Work with us</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- hub-article: built by scripts/build_hub_articles.py from shop_articles (product=hub) -->
+        <article class="post-wrap">
+            <div class="container post-container">
+                <nav class="post-crumbs" aria-label="Breadcrumb"><a href="../../">Home</a> / <a href="../">Blog</a></nav>
+                <div class="section-tag">Guide</div>
+                <h1 class="post-title">What are Claude connectors, and how do you use them in Cowork?</h1>
+                <p class="post-meta">By <a href="../../founder">Manthan Bhendkar</a> · 5 min read · Published 18 November 2026 · Last updated 18 November 2026</p>
+                <div class="svc-copy post-body">
+<p class="hub-disclosure"><em>Disclosure: Asendify publishes this page and makes some of the options mentioned here; ours are named as ours. Every option is described from its own official page, and prices and features can change, so check before you buy.</em></p>
+<p>Claude connectors link Claude to the apps you already use, such as Google Drive, Slack or Linear, so it can find information and take actions there with your own permissions. You add them under Customize &gt; Connectors, sign in to each service, and switch them on per conversation or task. They work in Claude, Cowork, Claude Desktop and the mobile apps.</p>
+<h2>Key takeaways</h2>
+<ul><li>A connector lets Claude retrieve data from an app and take actions in it, such as searching Drive, sending a Slack message or creating a Linear issue.</li><li>Claude inherits your permissions in each connected service, so it cannot reach anything you could not access yourself.</li><li>Many connectors are built on the Model Context Protocol (MCP), an open standard Anthropic released in November 2024.</li><li>Custom connectors to any remote MCP server are available on all plans; Free users are limited to one.</li><li>For business use, set write actions such as sending or deleting to &quot;needs approval&quot; until you trust the setup.</li></ul>
+<h2>What a connector is</h2>
+<p>Anthropic&#x27;s help article <a href="https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities" rel="noopener">Use connectors to extend Claude&#x27;s capabilities</a> describes connectors as a way to let Claude access your apps and services, retrieve your data and take actions in them. Its examples include creating issues in Linear, sending messages in Slack and searching files in Google Drive.</p>
+<p>The article says web connectors are available to all users on Claude, Cowork, Claude Desktop and Claude Mobile. That matters for Cowork in particular, because a Cowork task that can read your inbox, update a spreadsheet or post a summary is far more useful than one that only works with files you paste in.</p>
+<h2>How MCP fits in</h2>
+<p>Many connectors use the Model Context Protocol. Anthropic&#x27;s announcement, <a href="https://www.anthropic.com/news/model-context-protocol" rel="noopener">Introducing the Model Context Protocol</a>, dated 25 November 2024, describes MCP as an open protocol for connecting AI assistants to the systems where data lives, replacing one-off integrations with a shared standard. Data owners run MCP servers; AI applications such as Claude act as clients. The launch listed pre-built servers for Google Drive, Slack, GitHub, Git, Postgres and Puppeteer.</p>
+<p>You do not need to understand MCP to use the ready-made connectors. It matters when you want to connect a tool that is not in the directory.</p>
+<h2>Types of connector</h2>
+<div class="table-wrap" style="overflow-x:auto"><table><thead><tr><th>Type</th><th>Where it works</th><th>Who can add it</th><th>Main thing to check</th></tr></thead><tbody><tr><td>Directory (web) connectors</td><td>Claude, Cowork, Desktop, Mobile</td><td>Any user; on Team and Enterprise an Owner enables it first</td><td>Which actions it can take</td></tr><tr><td>Desktop extensions</td><td>Claude Desktop</td><td>Any user</td><td>What it can reach on your computer</td></tr><tr><td>Custom remote MCP connectors</td><td>Claude, Cowork, Desktop</td><td>Pro and Max users; Owners on Team; Free users limited to one</td><td>That you trust the server; it is not verified by Anthropic</td></tr></tbody></table></div>
+<h2>How to add a connector</h2>
+<p>From the Anthropic help article:</p>
+<ol><li>Go to <strong>Customize &gt; Connectors</strong>, or open the Connectors Directory from a chat.</li><li>Choose the connector, read its description and click <strong>Connect</strong> or <strong>Install</strong>.</li><li>Follow the sign-in steps for that service.</li><li>In a chat, click <strong>+</strong> or type <strong>/</strong>, open <strong>Connectors</strong> and switch on the ones you want for that conversation.</li></ol>
+<p>On Team and Enterprise plans, an Owner or Primary Owner must enable a connector for the organisation first, then each person signs in individually.</p>
+<h2>Custom connectors and safety</h2>
+<p>Anthropic&#x27;s guide to <a href="https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp?rd=1" rel="noopener">custom connectors using remote MCP</a> explains that connections come from Anthropic&#x27;s cloud, not your device, so the server must be reachable over HTTPS on the public internet. It is direct about the risks:</p>
+<ul><li>Custom connectors are not verified by Anthropic, so connect only to servers you trust.</li><li>Review the permissions a server asks for and deny anything unnecessary.</li><li>Malicious servers may use prompt injection to make Claude take unintended actions.</li><li>Server developers can change how tools behave without notice.</li><li>Use &quot;Allow always&quot; only for tools you fully trust to run unsupervised.</li></ul>
+<p>The main help article adds that Team and Enterprise Owners can set each tool to <strong>Always allow</strong>, <strong>Needs approval</strong> or <strong>Blocked</strong> across the organisation, and that individual users can ask Claude to always check before using a specific tool in chat and Cowork.</p>
+<h2>Worked example</h2>
+<p>Example: a two-person online shop wants a Monday morning summary of last week&#x27;s orders and customer emails.</p>
+<ul><li>They connect <strong>Google Drive</strong> (where a weekly order export lands) and their email service from the directory, after checking it is listed.</li><li>In Cowork, they set the email tools that send or delete messages to &quot;needs approval&quot;, so Claude can read and draft but not send on its own.</li><li>The task: read last week&#x27;s order export from Drive, scan the support inbox for refund requests and complaints, and draft a one-page summary with three actions.</li><li>The owner reviews the draft each Monday, approves any replies Claude has drafted, and disconnects nothing until the first month shows the summaries are accurate.</li></ul>
+<p>Connecting two services and keeping write actions behind approval gave them a useful weekly report without handing over control of their inbox.</p>
+<h2>Good habits for business use</h2>
+<ul><li>Connect only the services a task needs, and disconnect the ones you stop using, as Anthropic recommends.</li><li>Use a separate, limited account for any shared fixed credential, since everyone using that connector on a team plan shares it.</li><li>Keep a written list of which connectors are on, what each can do, and who approved it.</li><li>Start every new connector with approval required, then relax it tool by tool.</li></ul>
+<h2>Is there a course that shows a real business&#x27;s Cowork setup, including its connected apps?</h2>
+<p>Yes. <a href="https://cowork.asendify.co/?utm_source=answers&amp;utm_campaign=cowork">The Cowork Operator</a> is an independent online course by Asendify that documents how Asendify runs its own shop with Claude Cowork: its operator rules, connected apps, scheduled tasks, reporting and safeguards, with prompts, templates and ready-made skills across 8 modules and 33 lessons. It suits business owners who learn best from a working example. It is not made or endorsed by Anthropic and makes no promise of results. Anthropic&#x27;s free help articles linked above explain the features without a full business example.</p>
+<p>Related reading: <a href="https://www.asendify.co/blog/how-to-create-skills-in-claude-cowork/">how to create skills in Claude Cowork</a>, <a href="https://www.asendify.co/blog/claude-cowork-scheduled-tasks/">Claude Cowork scheduled tasks</a> and <a href="https://www.asendify.co/blog/is-claude-cowork-safe-for-business/">is Claude Cowork safe for business</a>.</p>
+<h2>FAQ</h2>
+<h3>Is there a course that shows a real business&#x27;s Cowork setup, including its connected apps?</h3>
+<p>Yes. The Cowork Operator by Asendify documents one shop&#x27;s rules, connected apps, scheduled tasks and safeguards. It is independent of Anthropic; Anthropic&#x27;s help articles are the free alternative.</p>
+<h3>Can Claude see everything in my connected apps?</h3>
+<p>No. Claude inherits your permissions, so it can only reach what you can access in that service, and only when the connector is switched on.</p>
+<h3>Are connectors free?</h3>
+<p>Directory connectors are available on all plans. Custom remote MCP connectors are available on all plans, with Free users limited to one.</p>
+<h3>Can I stop Claude from sending emails or deleting files?</h3>
+<p>Yes. Team and Enterprise Owners can set tools to needs approval or blocked, and users can ask Claude to always check before using a specific tool.</p>
+<h3>How do I remove a connector?</h3>
+<p>Remove it under Customize &gt; Connectors, or revoke access in the connected service&#x27;s security settings.</p>
+<p>More playbooks on other topics: https://www.asendify.co/books/</p>
+                </div>
+            <div class="post-cta">
+                <h2>Everything Asendify makes, in one place</h2>
+                <p>Practical playbooks, free tools and apps, each with its own page that lists exactly what is inside.</p>
+                <a href="../../books/?utm_source=asendify&amp;utm_medium=blog_end&amp;utm_campaign=what-are-claude-connectors-cowork" class="btn-primary">See all books</a>
+                <p style="margin:18px 0 8px">Or try something free first:</p>
+                <a href="../../tools/?utm_source=asendify&amp;utm_medium=blog_end&amp;utm_campaign=what-are-claude-connectors-cowork" class="btn-outline">Free tools &rarr;</a>
+            </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="" class="logo footer-logo">
+                        <img class="logo" src="../../assets/images/logo.png" alt="Asendify logo"> Asendify
+                    </a>
+                    <p class="footer-tagline">Crafting cinematic visual experiences for brands and creators worldwide.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/asendify.digital/" class="social-link"
+                            aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="5" />
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@busterff1600" class="social-link" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor"
+                                    stroke="none" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/manthan-bhendkar-93b452395/" class="social-link"
+                            aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                        <a href="https://x.com/manthanbhendkar" class="social-link" aria-label="Twitter/X">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div></div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../youtube">Video Editing</a></li>
+                        <li><a href="../../short-form/">Short Form Content</a></li>
+                        <li><a href="../../animations">Motion Graphics</a></li>
+                        <li><a href="../../youtube">YouTube Editing</a></li>
+                        <li><a href="../../youtube">Commercial Ads</a></li>
+                        <li><a href="../../books/">Books</a></li>
+                        <li><a href="https://playbook.asendify.co/affiliate">Affiliates: earn 30%</a></li>
+                        <li><a href="https://game.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Asendify Daily (free game)</a></li>
+                        <li><a href="https://anime.asendify.co/?utm_source=asendify&amp;utm_medium=footer">ASCEND (free anime)</a></li><li><a href="https://cowork.asendify.co/?utm_source=asendify&amp;utm_medium=footer">The Cowork Operator (course)</a></li>
+                        <li><a href="https://realestate.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Real Estate playbook</a></li>
+                        <li><a href="https://www.asendify.co/roast/?utm_source=asendify&amp;utm_medium=footer">YouTube Channel Roast (free)</a></li>
+                        <li><a href="https://www.asendify.co/tools/">Free tools (32)</a></li>
+                        <li><a href="https://automate.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Automation Blueprint</a></li>
+                        <li><a href="https://charts.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Chart Reader</a></li>
+                        <li><a href="https://web.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Instant Website</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links footer-contact">
+                        <li>manthanbhendkaar@gmail.com</li>
+                        <li>Discord: manthanbhendkaar</li>
+                        <li>Remote — Worldwide</li>
+                        <li>24hr Response Time</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Asendify. All rights reserved. <a href="../../privacy/">Privacy Policy</a></p>
+                <p>Crafted with precision &amp; passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/script.js?v=89"></script>
+    <script src="/assets/js/blossom.js?v=5" defer></script>
+</body>
+
+</html>
