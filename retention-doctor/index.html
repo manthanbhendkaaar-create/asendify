@@ -154,6 +154,16 @@ h2.rdv-h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.6rem
 .svc-copy a.btn-primary{color:#050505;text-decoration:none}
 .svc-copy a.btn-outline{text-decoration:none}
 .rdv-signin a{color:var(--gold)}
+/* 2026-11-19 one-time downsell card (secondary to the Doctor CTA) */
+.rdv-down{display:grid;grid-template-columns:auto 1fr;gap:14px 16px;align-items:center;padding:18px 20px;border-radius:16px;border:1px dashed rgba(212,175,55,.38);background:rgba(255,255,255,.02);margin:0 0 26px}
+@media(min-width:760px){.rdv-down{grid-template-columns:auto 1fr auto;gap:18px}}
+.rdv-down-ico{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);color:var(--gold)}
+.rdv-down-ico .rdv-ico{width:22px;height:22px}
+.rdv-down-txt{display:block}
+.rdv-down-txt b{display:block;color:var(--white);font-weight:600;font-size:1.02rem;line-height:1.35;margin:0 0 3px}
+.rdv-down-txt span{display:block;color:var(--gray);font-size:.88rem;line-height:1.5}
+.rdv-down a.btn-outline{grid-column:1/-1;justify-content:center;text-align:center;white-space:normal;margin:0!important;text-decoration:none}
+@media(min-width:760px){.rdv-down a.btn-outline{grid-column:auto;white-space:nowrap}}
 .rdv-legend{display:none;list-style:none;margin:8px 4px 0;padding:0;flex-wrap:wrap;gap:6px 14px;font-size:.82rem;color:var(--white)}
 .rdv-legend li{display:flex;align-items:center;gap:6px}
 .rdv-legend i{display:inline-block;width:9px;height:9px;border-radius:50%}
@@ -382,6 +392,12 @@ h2.rdv-h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.6rem
                     <p class="rdv-signin">The free check shows the single worst drop-off moment in your latest video (one per channel). Already subscribed? <a href="https://playbook.asendify.co/doctor/app/?utm_source=www&amp;utm_medium=landing&amp;utm_campaign=retention_doctor">Sign in</a></p>
                 </div>
 
+                <div class="rdv-down" id="rdv-down-top" role="note" aria-label="One-time option">
+                <span class="rdv-down-ico"><svg class="rdv-ico" aria-hidden="true"><use href="#i-book"/></svg></span>
+                <div class="rdv-down-txt"><b>Not ready for a monthly tool? Get the playbook</b><span>The same retention system as a one-time guide: Secrets to become a celebrity on Youtube (£150 + £67.50 service fee).</span></div>
+                <a href="https://playbook.asendify.co/?utm_source=doctor&amp;utm_medium=downsell&amp;utm_campaign=doctor_page" class="btn-outline">£217.50 one-time &rarr;</a>
+                </div>
+
                 <div class="rdv-trust" role="list" aria-label="Key facts">
                     <div role="listitem"><svg class="rdv-ico" aria-hidden="true"><use href="#i-shield"/></svg><span>Read-only YouTube connection</span></div>
                     <div role="listitem"><svg class="rdv-ico" aria-hidden="true"><use href="#i-xc"/></svg><span>Self-serve cancel</span></div>
@@ -497,6 +513,11 @@ h2.rdv-h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.6rem
 <div><svg class="rdv-ico" aria-hidden="true"><use href="#i-xc"/></svg><span>Self-serve cancel button</span></div>
 <div><svg class="rdv-ico" aria-hidden="true"><use href="#i-card"/></svg><span>Renews monthly through PayPal</span></div>
 </div>
+</div>
+<div class="rdv-down" id="rdv-down-end" role="note" aria-label="One-time option">
+<span class="rdv-down-ico"><svg class="rdv-ico" aria-hidden="true"><use href="#i-book"/></svg></span>
+<div class="rdv-down-txt"><b>Not ready for a monthly tool? Get the playbook</b><span>The same retention system as a one-time guide: Secrets to become a celebrity on Youtube (£150 + £67.50 service fee).</span></div>
+<a href="https://playbook.asendify.co/?utm_source=doctor&amp;utm_medium=downsell&amp;utm_campaign=doctor_page" class="btn-outline">£217.50 one-time &rarr;</a>
 </div>
 <p class="rdv-more">Want the full method behind the fixes? <a href="https://playbook.asendify.co/?utm_source=www&amp;utm_medium=page&amp;utm_campaign=retention_doctor">The Retention Editing Playbook</a> · Free tool: <a href="https://playbook.asendify.co/hook-checker/?utm_source=www&amp;utm_medium=page" data-tool>Hook Checker</a> · Full growth assistant: <a href="https://ai.asendify.co/?utm_source=www&amp;utm_medium=page&amp;utm_campaign=retention_doctor">Asendify AI</a></p>
                 </div>
