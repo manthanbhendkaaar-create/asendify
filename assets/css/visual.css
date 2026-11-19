@@ -1,0 +1,231 @@
+/* ==========================================================================
+   visual.css (2026-11-19, Manthan: "make all the other products and everything
+   visually appealing like the retention doctor"). Shared look for product and
+   landing pages: illustrated hero mockups, how-it-works strips, icon cards,
+   trust rows, gold dividers, cleaner price boxes. Layout + inline SVG only;
+   page words, prices, links and scripts are unchanged.
+   Works with or without style.css (tokens fall back to the same values).
+   ========================================================================== */
+:root{
+  --vx-gold:var(--gold,#d4af37);
+  --vx-white:var(--white,#f5f5f5);
+  --vx-gray:var(--gray,#9a9a9a);
+  --vx-card:#0f0f0f;
+  --vx-line:rgba(212,175,55,.22);
+  --vx-soft:rgba(255,255,255,.08);
+  --vx-red:#ff6b5e;
+  --vx-green:#5fd38d;
+  --vx-display:var(--font-display,'Fraunces',serif);
+}
+/* icons */
+.vx-ico{width:22px;height:22px;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+.vx-ico-wrap{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex:0 0 44px;border-radius:12px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.28);color:var(--vx-gold)}
+.vx-ico-wrap .vx-ico{width:24px;height:24px}
+.vx-sprite{position:absolute;width:0;height:0;overflow:hidden}
+
+/* wide container helper */
+.vx-wide{max-width:1120px}
+
+/* hero: copy on the left, illustrated mockup on the right */
+.vx-hero{display:grid;grid-template-columns:1fr;gap:30px;align-items:center;margin:0 0 8px}
+@media(min-width:960px){.vx-hero{grid-template-columns:1.05fr 1fr;gap:48px}}
+.vx-hero>*{min-width:0}
+.vx-hero .post-lede{margin-left:0;margin-bottom:14px}
+.vx-hero .section-header{text-align:left;margin-bottom:0}
+.vx-hero .section-header .post-lede{text-align:left}
+@media(max-width:959px){.vx-hero .section-header{text-align:center}.vx-hero .section-header .post-lede{text-align:center;margin-left:auto}}
+.vx-mock{position:relative;margin:0;border:1px solid var(--vx-line);border-radius:18px;background:radial-gradient(120% 90% at 85% 0%,rgba(212,175,55,.12),transparent 60%),var(--vx-card);padding:14px 14px 10px;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.02) inset}
+.vx-mock svg{display:block;width:100%;height:auto}
+.vx-mock-top{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:2px 4px 8px;color:var(--vx-white);font-weight:600;font-size:.92rem}
+.vx-tag{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--vx-gold);border:1px solid rgba(212,175,55,.4);border-radius:999px;padding:2px 9px;font-weight:600;white-space:nowrap}
+.vx-cap{font-size:.78rem;color:var(--vx-gray);margin:6px 4px 0}
+
+/* trust row */
+.vx-trust{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0 10px}
+@media(min-width:860px){.vx-trust{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.vx-trust>div{display:flex;gap:10px;align-items:center;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);font-size:.86rem;color:var(--vx-white);line-height:1.35;text-align:left}
+.vx-trust .vx-ico{color:var(--vx-gold)}
+.vx-trust.vx-center{max-width:1000px;margin-left:auto;margin-right:auto}
+
+/* gold divider with diamond */
+.vx-div{border:0;height:1px;margin:60px auto;max-width:820px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.55),transparent);position:relative;overflow:visible}
+.vx-div::after{content:"";position:absolute;left:50%;top:-4px;width:8px;height:8px;background:var(--vx-gold);transform:translateX(-50%) rotate(45deg);box-shadow:0 0 14px rgba(212,175,55,.7)}
+.vx-div.vx-tight{margin:40px auto}
+@media(max-width:640px){.vx-div{margin:44px auto}}
+
+/* section headings inside long copy */
+.vx-copy h2{font-family:var(--vx-display);font-weight:400;color:var(--vx-white)}
+.vx-h2c{text-align:center}
+
+/* price box (works on .prog-buy) */
+.vx-buy{display:grid!important;grid-template-columns:1fr;gap:16px!important;padding:24px!important;margin:26px 0 20px!important;background:linear-gradient(135deg,rgba(212,175,55,.11),rgba(212,175,55,.03))!important;border:1px solid rgba(212,175,55,.32)!important;border-radius:18px!important;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+@media(min-width:860px){.vx-buy{grid-template-columns:minmax(240px,1fr) auto;align-items:center}}
+.vx-buy .tier-price span{font-size:2.6rem;line-height:1}
+.vx-buy .vx-ctas{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.vx-buy .vx-ctas a{justify-content:center;text-align:center;margin-left:0!important}
+.vx-buy.book-alt{grid-template-columns:1fr;background:var(--vx-card)!important;border-color:rgba(255,255,255,.1)!important;box-shadow:none}
+@media(min-width:860px){.vx-buy.book-alt{grid-template-columns:auto 1fr auto}}
+.vx-buy.book-alt .vx-ico-wrap{display:none}
+@media(min-width:860px){.vx-buy.book-alt .vx-ico-wrap{display:inline-flex}}
+@media(max-width:640px){.vx-buy .btn-primary,.vx-buy .btn-outline{width:100%;white-space:normal;padding:14px 16px}}
+
+/* how-it-works steps (works on ol.svc-steps) */
+ol.vx-steps,ul.vx-steps{list-style:none!important;padding:0!important;margin:18px 0 22px!important;display:grid;gap:16px;grid-template-columns:1fr;counter-reset:vxst}
+@media(min-width:760px){.vx-steps.vx-n2,.vx-steps.vx-n4{grid-template-columns:repeat(2,minmax(0,1fr))}.vx-steps.vx-n3{grid-template-columns:repeat(3,minmax(0,1fr))}.vx-steps.vx-n6{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1100px){.vx-wide .vx-steps.vx-n4{grid-template-columns:repeat(4,minmax(0,1fr))}.vx-wide .vx-steps.vx-n6{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.vx-steps>li{position:relative;margin:0!important;padding:20px 20px 18px!important;border-radius:16px;background:var(--vx-card);border:1px solid var(--vx-soft);color:var(--vx-gray);line-height:1.6;font-size:.95rem;transition:border-color .3s,transform .3s}
+.vx-steps>li:hover{border-color:rgba(212,175,55,.4)}
+.vx-steps>li::marker{content:none}
+.vx-steps>li::before{counter-increment:vxst;content:counter(vxst,decimal-leading-zero);position:absolute;top:14px;right:16px;font-family:var(--vx-display);font-size:2rem;line-height:1;color:rgba(212,175,55,.24)}
+.vx-steps>li .vx-ico-wrap{display:flex;margin:0 0 12px}
+.vx-steps>li strong,.vx-steps>li b{display:block;color:var(--vx-white);font-weight:600;margin:0 0 4px;font-size:1.02rem;padding-right:38px}
+
+/* icon cards (works on a ul/ol or div grid) */
+ul.vx-cards,ol.vx-cards,div.vx-cards{list-style:none!important;padding:0!important;margin:16px 0 22px!important;display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:640px){ul.vx-cards,ol.vx-cards,div.vx-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1000px){ul.vx-cards.vx-c3,ol.vx-cards.vx-c3,div.vx-cards.vx-c3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:1000px){ul.vx-cards.vx-c3>li,div.vx-cards.vx-c3>div{grid-template-columns:1fr;row-gap:12px}ul.vx-cards.vx-c3>li>.vx-ico-wrap{grid-row:auto}}
+.vx-cards>li,.vx-cards>div{display:grid;grid-template-columns:44px 1fr;column-gap:14px;align-items:start;margin:0!important;padding:16px 18px!important;border-radius:16px;background:var(--vx-card);border:1px solid var(--vx-soft);color:var(--vx-gray);line-height:1.6;font-size:.94rem;transition:border-color .3s,transform .3s}
+.vx-cards>li:hover,.vx-cards>div:hover{border-color:rgba(212,175,55,.45);transform:translateY(-2px)}
+.vx-cards>li::marker{content:none}
+.vx-cards>li>.vx-ico-wrap,.vx-cards>div>.vx-ico-wrap{grid-row:span 3}
+.vx-cards>li>span.vx-t,.vx-cards>div>span.vx-t{min-width:0}
+.vx-cards b,.vx-cards strong{color:var(--vx-white);font-weight:600}
+
+/* compact checklist grid */
+ul.vx-checks{list-style:none!important;padding:0!important;margin:14px 0 22px!important;display:grid;gap:10px;grid-template-columns:1fr}
+@media(min-width:640px){ul.vx-checks{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.vx-checks>li{display:flex;gap:12px;align-items:flex-start;margin:0!important;padding:12px 14px!important;border-radius:12px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);color:var(--vx-white);font-size:.92rem;line-height:1.5}
+.vx-checks>li::marker{content:none}
+.vx-checks>li>.vx-ico{color:var(--vx-gold);width:20px;height:20px;margin-top:1px}
+
+/* callout card (who it's for etc.) */
+.vx-callout{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;padding:20px 22px;border-radius:16px;border:1px solid rgba(95,211,141,.32);background:rgba(95,211,141,.045);margin:26px 0}
+.vx-callout .vx-ico-wrap{color:var(--vx-green);background:rgba(95,211,141,.1);border-color:rgba(95,211,141,.3)}
+.vx-callout h3,.vx-callout h2{margin:0 0 6px!important}
+.vx-callout p{margin:0!important}
+.vx-note{padding:14px 18px;border-left:3px solid var(--vx-gold);background:rgba(212,175,55,.06);border-radius:0 12px 12px 0;color:var(--vx-white)}
+
+/* who / not who */
+.vx-who{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:760px){.vx-who{grid-template-columns:1fr 1fr}}
+.vx-who>div{padding:22px!important;border-radius:16px!important}
+.vx-who .vx-yes{border:1px solid rgba(95,211,141,.35)!important;background:rgba(95,211,141,.05)!important}
+.vx-who .vx-no{border:1px solid rgba(255,107,94,.3)!important;background:rgba(255,107,94,.04)!important}
+.vx-who h3{display:flex;align-items:center;gap:10px}
+.vx-yes h3 .vx-ico{color:var(--vx-green)}.vx-no h3 .vx-ico{color:var(--vx-red)}
+
+/* intro: copy + mockup side by side inside long copy */
+.vx-intro{display:grid;grid-template-columns:1fr;gap:26px;align-items:center;margin:0 0 10px}
+@media(min-width:900px){.vx-intro{grid-template-columns:1.1fr 1fr;gap:40px}}
+.vx-intro>*{min-width:0}
+
+/* FAQ (works on .svc-faq) */
+.vx-faq{border-top:0!important}
+.vx-faq .svc-faq-item,.vx-faq>details{border:1px solid var(--vx-soft)!important;border-radius:12px;padding:16px 18px!important;margin:0 0 10px!important;background:var(--vx-card)}
+.vx-faq .svc-faq-item[open],.vx-faq>details[open]{border-color:rgba(212,175,55,.4)!important}
+
+/* CTA panel polish (works on .post-cta) */
+.vx-panel{background:radial-gradient(90% 120% at 100% 0%,rgba(212,175,55,.14),transparent 60%),var(--vx-card)!important;border:1px solid rgba(212,175,55,.32)!important;border-radius:20px!important}
+
+/* tables */
+.vx-table{border:1px solid var(--vx-line);border-radius:16px;background:var(--vx-card);overflow-x:auto;margin:10px 0 18px}
+.vx-table table{min-width:560px}
+.vx-table tr:first-child th{color:var(--vx-gold);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}
+
+/* tier cards (programs / books) */
+.vx-tiers .tier-card{position:relative;background:var(--vx-card);border-color:var(--vx-soft);transition:border-color .3s,transform .3s}
+.vx-tiers .tier-card:hover{border-color:rgba(212,175,55,.45);transform:translateY(-3px)}
+.vx-tiers .tier-card-hi{border:2px solid var(--vx-gold)}
+.vx-tiers .tier-card>.vx-ico-wrap{margin:0 0 4px}
+.vx-tiers .tier-price{padding:10px 0 8px;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+
+/* section tag chips for category headings */
+.vx-cat-h{display:flex!important;align-items:center;gap:12px}
+
+/* tool cards */
+.vx-tools .tool-card{background:var(--vx-card);border-color:var(--vx-soft)}
+.vx-tools .tool-card:hover{border-color:rgba(212,175,55,.5)}
+.vx-tools .tool-card .vx-ico-wrap{width:38px;height:38px;flex-basis:38px;border-radius:10px}
+.vx-tools .tool-card .vx-ico-wrap .vx-ico{width:20px;height:20px}
+.vx-tools .tool-card .vx-th{display:flex;align-items:center;justify-content:space-between;gap:10px}
+
+/* mini step strip (centered, used on home + standalone pages) */
+.vx-strip{display:grid;grid-template-columns:1fr;gap:14px;max-width:1000px;margin:22px auto 6px;padding:0;list-style:none;counter-reset:vxs}
+@media(min-width:760px){.vx-strip{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.vx-strip>li{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:14px;background:var(--vx-card);border:1px solid var(--vx-soft);color:var(--vx-gray);font-size:.92rem;line-height:1.5;text-align:left;margin:0}
+.vx-strip>li b{display:block;color:var(--vx-white);font-weight:600;margin:0 0 2px}
+
+/* home: product feature split */
+.vx-split{display:grid;grid-template-columns:1fr;gap:30px;align-items:center;max-width:1120px;margin:0 auto}
+@media(min-width:960px){.vx-split{grid-template-columns:1fr 1fr;gap:48px}}
+.vx-split>*{min-width:0}
+.vx-split .section-header{text-align:left;margin-bottom:18px}
+@media(max-width:959px){.vx-split .section-header{text-align:center}}
+.vx-split .section-sub{margin-left:0}
+@media(max-width:959px){.vx-split .section-sub{margin-left:auto}}
+
+/* home: everything-included grid */
+ul.vx-fl{columns:auto!important;list-style:none!important;padding:0!important;display:grid;gap:12px;grid-template-columns:1fr;max-width:1100px}
+@media(min-width:640px){ul.vx-fl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1000px){ul.vx-fl{grid-template-columns:repeat(3,minmax(0,1fr))}}
+ul.vx-fl>li{display:flex;gap:12px;align-items:flex-start;margin:0!important;padding:14px 16px;border-radius:14px;background:var(--vx-card);border:1px solid var(--vx-soft);font-size:.92rem;line-height:1.5}
+ul.vx-fl>li .vx-ico{color:var(--vx-gold);width:20px;height:20px;margin-top:2px}
+
+/* pricing card polish (home) */
+.vx-price-card{background:radial-gradient(90% 80% at 100% 0%,rgba(212,175,55,.1),transparent 60%),var(--vx-card)!important}
+
+/* reduced motion */
+@media (prefers-reduced-motion:reduce){.vx-cards>li,.vx-cards>div,.vx-steps>li,.vx-tiers .tier-card{transition:none}}
+
+/* service pages: a little wider so copy and illustration sit side by side */
+.svc-copy.vx-svc{max-width:980px}
+.vx-svc>*:not(.vx-intro){max-width:860px;margin-left:auto!important;margin-right:auto!important}
+@media(max-width:640px){.vx-steps>li{padding:16px!important}.vx-steps>li .vx-ico-wrap{margin-bottom:8px}}
+
+/* program pages in a wide container: keep long copy readable */
+.vx-wide .vx-copy{max-width:860px;margin-left:auto;margin-right:auto}
+.vx-wide .post-cta{max-width:860px;margin-left:auto;margin-right:auto}
+.vx-wide>.prog-buy.book-alt{max-width:860px;margin-left:auto!important;margin-right:auto!important}
+
+/* home: product split helpers */
+@media(min-width:960px){.vx-split .vx-btns{justify-content:flex-start!important}.vx-split .vx-lnote{text-align:left!important}}
+.vx-cover-badge{display:block;width:112px;height:auto;aspect-ratio:400/566;margin:0 auto 18px;border-radius:6px;box-shadow:0 14px 34px rgba(0,0,0,.6),0 0 0 1px rgba(201,168,76,.3);transform:rotate(-3deg)}
+
+/* books: fanned real covers */
+.vx-fan{position:relative;height:330px;max-width:480px;width:100%;margin:0 auto}
+.vx-fan::before{content:"";position:absolute;left:10%;right:10%;bottom:6px;height:40px;border-radius:50%;background:radial-gradient(closest-side,rgba(212,175,55,.28),transparent)}
+.vx-fan img{position:absolute;bottom:24px;left:50%;width:150px;height:auto;aspect-ratio:400/566;margin-left:-75px;border-radius:6px;box-shadow:0 18px 40px rgba(0,0,0,.65),0 0 0 1px rgba(201,168,76,.28);transform-origin:50% 100%}
+.vx-fan img:nth-child(1){transform:translateX(-120px) rotate(-16deg);z-index:1}
+.vx-fan img:nth-child(2){transform:translateX(-62px) rotate(-8deg);z-index:2}
+.vx-fan img:nth-child(3){transform:translateY(-14px);z-index:5}
+.vx-fan img:nth-child(4){transform:translateX(62px) rotate(8deg);z-index:2}
+.vx-fan img:nth-child(5){transform:translateX(120px) rotate(16deg);z-index:1}
+@media(max-width:520px){
+ .vx-fan{height:250px}
+ .vx-fan img{width:112px;margin-left:-56px}
+ .vx-fan img:nth-child(1){transform:translateX(-92px) rotate(-16deg)}
+ .vx-fan img:nth-child(2){transform:translateX(-48px) rotate(-8deg)}
+ .vx-fan img:nth-child(4){transform:translateX(48px) rotate(8deg)}
+ .vx-fan img:nth-child(5){transform:translateX(92px) rotate(16deg)}
+}
+
+/* roast page (standalone styles) */
+.vx-roast .vx-strip{margin-top:26px}
+.how b .vx-ico{width:18px;height:18px;margin:-3px 6px 0 0}
+.vx-roast-intro{display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
+.vx-roast-intro .vx-mock{margin-top:6px}
+
+/* fit-and-finish */
+.vx-hero{margin-bottom:36px}
+.vx-hero .vx-trust,.vx-split .vx-trust{grid-template-columns:repeat(2,minmax(0,1fr))}
+.vx-strip>li>span{min-width:0;overflow-wrap:anywhere}
+@media(max-width:520px){
+ .vx-fan{height:230px;max-width:340px}
+ .vx-fan img{width:100px;margin-left:-50px}
+ .vx-fan img:nth-child(1){transform:translateX(-80px) rotate(-14deg)}
+ .vx-fan img:nth-child(2){transform:translateX(-42px) rotate(-7deg)}
+ .vx-fan img:nth-child(4){transform:translateX(42px) rotate(7deg)}
+ .vx-fan img:nth-child(5){transform:translateX(80px) rotate(14deg)}
+}
+@media(max-width:640px){.vx-mock{padding:10px 10px 8px;border-radius:14px}}

@@ -108,12 +108,24 @@ details p{color:var(--muted);margin:10px 0 0}
 footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:14px;text-align:center}
 footer a{color:var(--muted)}
 </style>
+<link rel="stylesheet" href="../assets/css/visual.css?v=1" />
 </head>
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" class="vx-sprite" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+<symbol id="vx-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+<symbol id="vx-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="vx-flame" viewBox="0 0 24 24"><path d="M12 21a6 6 0 0 1-6-6c0-3.5 3-5.5 3.5-9 2.5 1.5 4 4 4 6 1-1 1.5-2 1.5-3.5 2 1.5 3 4 3 6.5a6 6 0 0 1-6 6z"/></symbol>
+<symbol id="vx-gift" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M3 13h18M12 9v12"/><path d="M12 9c-1.5-3-5-4-5-1.5S10 9 12 9zM12 9c1.5-3 5-4 5-1.5S14 9 12 9z"/></symbol>
+<symbol id="vx-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+<symbol id="vx-list" viewBox="0 0 24 24"><path d="M4 6.5l1.5 1.5L8 5.5"/><path d="M4 12.5l1.5 1.5L8 11.5"/><path d="M4 18.5l1.5 1.5L8 17.5"/><path d="M11 7h9M11 13h9M11 19h9"/></symbol>
+<symbol id="vx-pen" viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></symbol>
+<symbol id="vx-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.2v5.6l4.6-2.8z"/></symbol>
+<symbol id="vx-xc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M9 9l6 6M15 9l-6 6"/></symbol>
+</svg>
 <div class="wrap">
 <header><a class="brand" href="https://www.asendify.co/?utm_source=roast&amp;utm_medium=header">Asend<span>ify</span></a><a href="https://game.asendify.co/?utm_source=roast&amp;utm_medium=header" style="font-size:14px;color:var(--muted)">Daily game</a></header>
 
-<main>
+<main class="vx-roast">
 <div class="hero" id="top">
   <span class="kicker">Free AI tool</span>
   <h1>Roast my <em>YouTube channel</em></h1>
@@ -124,6 +136,7 @@ footer a{color:var(--muted)}
   </form>
   <div class="err" id="err" role="alert"></div>
   <p class="fine">Free. No sign-up. 3 roasts a day. Brutal about your packaging, never about you.</p>
+  <ol class="vx-strip"><li><span class="vx-ico-wrap"><svg class="vx-ico" aria-hidden="true"><use href="#vx-link"/></svg></span><span><b>Paste your channel link</b> youtube.com/@yourchannel</span></li><li><span class="vx-ico-wrap"><svg class="vx-ico" aria-hidden="true"><use href="#vx-flame"/></svg></span><span><b>AI tears into it</b> Your titles, thumbnails and upload habits.</span></li><li><span class="vx-ico-wrap"><svg class="vx-ico" aria-hidden="true"><use href="#vx-list"/></svg></span><span><b>Score out of 100</b> And exactly what to fix.</span></li></ol>
 </div>
 
 <div class="load" id="load"><div class="flame">🔥</div><p id="loadmsg">Reading your latest uploads…</p></div>
@@ -167,43 +180,46 @@ footer a{color:var(--muted)}
 </div>
 
 <section class="info">
-  <h2>How the score works</h2>
+  <div class="vx-roast-intro"><div><h2>How the score works</h2>
   <div class="how">
-    <div><b>Titles · 40%</b><p>Curiosity, clarity, length and whether a stranger would click.</p></div>
-    <div><b>Thumbnails · 40%</b><p>Readable at phone size, one clear idea, contrast and text.</p></div>
-    <div><b>Consistency · 20%</b><p>How often and how regularly you've uploaded lately.</p></div>
+    <div><b><svg class="vx-ico" aria-hidden="true"><use href="#vx-pen"/></svg>Titles · 40%</b><p>Curiosity, clarity, length and whether a stranger would click.</p></div>
+    <div><b><svg class="vx-ico" aria-hidden="true"><use href="#vx-play"/></svg>Thumbnails · 40%</b><p>Readable at phone size, one clear idea, contrast and text.</p></div>
+    <div><b><svg class="vx-ico" aria-hidden="true"><use href="#vx-cal"/></svg>Consistency · 20%</b><p>How often and how regularly you've uploaded lately.</p></div>
   </div>
+  </div><figure class="vx-mock"><div class="vx-mock-top"><span>What you get back</span><span class="vx-tag">Example</span></div><svg viewBox="0 0 520 300" role="img" aria-labelledby="vxRoT vxRoD"><title id="vxRoT">Roast result illustration</title><desc id="vxRoD">Illustration of a roast result: an overall score out of 100 with separate title, thumbnail and consistency scores, and 3 fixes.</desc><g font-family="Manrope, system-ui, sans-serif"><rect x="0.5" y="0.5" width="519" height="299" rx="16" fill="#101010" stroke="rgba(255,255,255,.09)"/><circle cx="34" cy="34" r="16" fill="#222" stroke="rgba(212,175,55,.4)"/><text x="60" y="39" font-size="13" fill="#f4f1ea">youtube.com/@yourchannel</text><circle cx="92" cy="142" r="54" fill="none" stroke="#262626" stroke-width="13"/><circle cx="92" cy="142" r="54" fill="none" stroke="#d4af37" stroke-width="13" stroke-linecap="round" stroke-dasharray="220 340" transform="rotate(-90 92 142)"/><text x="92" y="150" text-anchor="middle" font-size="22" fill="#f4f1ea" font-family="Fraunces, serif">/100</text><text x="180" y="96" font-size="12.5" fill="#a8a29a">Titles · 40%</text><rect x="180" y="104" width="310" height="9" rx="4.5" fill="#262626"/><rect x="180" y="104" width="217" height="9" rx="4.5" fill="#d4af37"/><text x="180" y="136" font-size="12.5" fill="#a8a29a">Thumbnails · 40%</text><rect x="180" y="144" width="310" height="9" rx="4.5" fill="#262626"/><rect x="180" y="144" width="148" height="9" rx="4.5" fill="#d4af37"/><text x="180" y="176" font-size="12.5" fill="#a8a29a">Consistency · 20%</text><rect x="180" y="184" width="310" height="9" rx="4.5" fill="#262626"/><rect x="180" y="184" width="254" height="9" rx="4.5" fill="#d4af37"/><line x1="20" y1="222" x2="500" y2="222" stroke="rgba(255,255,255,.07)"/><text x="20" y="246" font-size="12" font-weight="700" fill="#d4af37">3 fixes, starting today</text><circle cx="29" cy="270" r="9" fill="#7bd88f"/><text x="29" y="274" text-anchor="middle" font-size="11" font-weight="800" fill="#0b0b0b">1</text><rect x="44" y="266" width="155" height="8" rx="4" fill="#262626"/><circle cx="194" cy="270" r="9" fill="#7bd88f"/><text x="194" y="274" text-anchor="middle" font-size="11" font-weight="800" fill="#0b0b0b">2</text><rect x="209" y="266" width="130" height="8" rx="4" fill="#262626"/><circle cx="359" cy="270" r="9" fill="#7bd88f"/><text x="359" y="274" text-anchor="middle" font-size="11" font-weight="800" fill="#0b0b0b">3</text><rect x="374" y="266" width="142" height="8" rx="4" fill="#262626"/></g></svg><figcaption class="vx-cap">Example layout only. Your roast uses your channel's public uploads.</figcaption></figure></div>
+  <hr class="vx-div vx-tight">
   <h2 style="margin-top:28px">Everything it checks, by name</h2>
   <div class="how checks">
-    <div><b>What it reads</b><ul>
+    <div><b><svg class="vx-ico" aria-hidden="true"><use href="#vx-eye"/></svg>What it reads</b><ul>
       <li>Your public channel page: channel name, handle, subscriber count and profile picture</li>
       <li>Your latest 15 public uploads from YouTube's public feed: title, upload date, view count and whether it's a Short</li>
       <li>The thumbnails of your 8 most recent uploads</li>
     </ul></div>
-    <div><b>Titles (40% of the score)</b><ul>
+    <div><b><svg class="vx-ico" aria-hidden="true"><use href="#vx-pen"/></svg>Titles (40% of the score)</b><ul>
       <li>Curiosity</li><li>Clarity</li><li>Specificity</li><li>Length</li><li>Clickability: would a stranger click?</li>
     </ul></div>
-    <div><b>Thumbnails (40%)</b><ul>
+    <div><b><svg class="vx-ico" aria-hidden="true"><use href="#vx-play"/></svg>Thumbnails (40%)</b><ul>
       <li>Readability on a phone</li><li>Contrast</li><li>Focal point</li><li>Amount of text</li><li>Consistency across your uploads</li><li>Emotion</li>
     </ul></div>
-    <div><b>Consistency (20%, worked out from your upload dates)</b><ul>
+    <div><b><svg class="vx-ico" aria-hidden="true"><use href="#vx-cal"/></svg>Consistency (20%, worked out from your upload dates)</b><ul>
       <li>Uploads in the last 30 days (about 11 a month gets full marks)</li>
       <li>Days since your last upload (points come off after 14 quiet days)</li>
       <li>Average gap between uploads</li>
       <li>Longest gap between uploads (a gap over 14 days and 4 times your usual gap costs points)</li>
     </ul></div>
-    <div><b>What you get back</b><ul>
+    <div><b><svg class="vx-ico" aria-hidden="true"><use href="#vx-gift"/></svg>What you get back</b><ul>
       <li>Overall score out of 100, plus separate title, thumbnail and consistency scores</li>
       <li>A one-line verdict</li><li>5 one-line roasts</li><li>3 fixes you can do this week</li>
       <li>Your best and worst title, and a rewrite of the worst one</li>
       <li>A share link for your roast</li>
     </ul></div>
-    <div><b>What it doesn't check</b><ul>
+    <div><b><svg class="vx-ico" aria-hidden="true"><use href="#vx-xc"/></svg>What it doesn't check</b><ul>
       <li>Spoken hooks, audio or editing inside the video</li><li>Your retention graph or any private analytics</li><li>Private or unlisted videos</li>
       <li>Your looks, voice or identity: it roasts packaging choices only</li>
     </ul></div>
   </div>
   <p class="fine" style="margin-top:14px">A channel needs at least 3 public uploads to be roasted.</p>
+  <hr class="vx-div vx-tight">
   <h2 style="margin-top:28px">Questions</h2>
   <details><summary>What does it check?</summary><p>Your latest public uploads: titles, thumbnails and how regularly you post.</p></details>
   <details><summary>Does it judge hooks or retention?</summary><p>No. YouTube doesn't let outside tools read a video's audio or retention graph, so the roast only covers what's public.</p></details>
