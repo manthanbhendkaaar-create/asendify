@@ -45,6 +45,60 @@
 .dmbg{margin:0 0 12px;font-size:13px;line-height:1.5;color:#3ddc97}
 /* 2026-11-13: on phones the price sits in a box right under the headline, everything else below it (like the book pages) */
 @media (max-width:900px){.hero .wrap>div:first-child{display:flex;flex-direction:column;min-width:0}.hero .wrap>div:first-child>*{order:3}.hero .wrap>div:first-child>.eyebrow{order:1;align-self:flex-start}.hero .wrap>div:first-child>h1{order:2}.hero .wrap>div:first-child>.price-line{order:2;margin:12px 0 18px;padding:12px 14px;border:1px solid rgba(255,255,255,.18);border-radius:12px;background:rgba(255,255,255,.05);font-size:15px}.hero .wrap>div:first-child>.price-line b{font-size:20px}}
+:root{--vp-gold:#38bdf8;--vp-ink:#e8eefc;--vp-mut:#94a3b8;--vp-card:#0f1729;--vp-bg:#070b14}
+/* 2026-11-19 visual pass (Manthan: "make all the other products ... visually appealing like the retention doctor"). Layout + inline SVG only; same words, links and scripts. */
+.vp-ico{width:22px;height:22px;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.vp-icw{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:color-mix(in srgb,var(--vp-gold) 12%,transparent);border:1px solid color-mix(in srgb,var(--vp-gold) 32%,transparent);color:var(--vp-gold);margin:0 0 14px}
+.vp-icw .vp-ico{width:24px;height:24px}
+.vp-trust{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:22px 0 0;padding:0;list-style:none;max-width:760px}
+@media(min-width:860px){.vp-trust{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.vp-trust li{display:flex;gap:10px;align-items:center;padding:11px 13px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);font-size:.86rem;color:var(--vp-ink);line-height:1.35;margin:0}
+.vp-trust .vp-ico{color:var(--vp-gold);width:18px;height:18px}
+.vp-div{display:block;border:0;height:1px;margin:0 auto;max-width:820px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--vp-gold) 60%,transparent),transparent);position:relative;overflow:visible}
+.vp-div::after{content:"";position:absolute;left:50%;top:-4px;width:8px;height:8px;background:var(--vp-gold);transform:translateX(-50%) rotate(45deg);box-shadow:0 0 14px color-mix(in srgb,var(--vp-gold) 70%,transparent)}
+.vp-mock{position:relative;border:1px solid color-mix(in srgb,var(--vp-gold) 25%,transparent);border-radius:18px;background:radial-gradient(120% 90% at 85% 0%,color-mix(in srgb,var(--vp-gold) 13%,transparent),transparent 60%),var(--vp-card);padding:14px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.vp-mock svg{display:block;width:100%;height:auto}
+.vp-mock-tag{position:absolute;top:-11px;left:18px;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--vp-gold);background:var(--vp-bg);border:1px solid color-mix(in srgb,var(--vp-gold) 45%,transparent);border-radius:999px;padding:2px 10px;font-weight:700}
+.vp-hero{display:grid;grid-template-columns:minmax(0,1fr);gap:34px;align-items:center}
+@media(min-width:960px){.vp-hero{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px}}
+.vp-steps{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:16px;grid-template-columns:minmax(0,1fr);counter-reset:vpst}
+@media(min-width:860px){.vp-steps{grid-template-columns:repeat(var(--vp-n,3),minmax(0,1fr));gap:22px}}
+.vp-step{position:relative;padding:22px 20px 20px;border-radius:16px;background:var(--vp-card);border:1px solid rgba(255,255,255,.08);margin:0}
+.vp-step::before{counter-increment:vpst;content:counter(vpst);position:absolute;top:14px;right:18px;font-size:2.4rem;line-height:1;font-weight:700;color:color-mix(in srgb,var(--vp-gold) 25%,transparent)}
+@media(min-width:860px){.vp-step:not(:last-child)::after{content:"";position:absolute;top:42px;right:-17px;width:12px;height:12px;border-top:2px solid var(--vp-gold);border-right:2px solid var(--vp-gold);transform:rotate(45deg);opacity:.7}}
+.vp-cardhov{transition:border-color .3s,transform .3s}
+.vp-cardhov:hover{border-color:color-mix(in srgb,var(--vp-gold) 50%,transparent);transform:translateY(-2px)}
+.vp-checks{list-style:none!important;padding:0!important;display:grid;gap:10px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:700px){.vp-checks{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.vp-checks li{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);line-height:1.5;margin:0}
+.vp-checks li>.vp-ico{color:var(--vp-gold);width:18px;height:18px;margin-top:3px}
+.vp-yes{border-color:rgba(95,211,141,.35)!important;background:rgba(95,211,141,.05)!important}
+.vp-no{border-color:rgba(255,107,94,.3)!important;background:rgba(255,107,94,.04)!important}
+.vp-yes .vp-badge{color:#5fd38d}.vp-no .vp-badge{color:#ff6b5e}
+.vp-badge{display:inline-flex;vertical-align:-5px;margin-right:8px}
+.vp-badge .vp-ico{width:22px;height:22px}
+.vp-panel{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;align-items:center;padding:28px 24px;border-radius:20px;border:1px solid color-mix(in srgb,var(--vp-gold) 32%,transparent);background:radial-gradient(90% 120% at 100% 0%,color-mix(in srgb,var(--vp-gold) 13%,transparent),transparent 60%),var(--vp-card)}
+@media(min-width:860px){.vp-panel{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);padding:34px 36px}}
+.vp-mini{display:block;width:100%;height:auto;max-width:340px;margin:0 auto}
+.vp-ex{position:relative;border:1px dashed color-mix(in srgb,var(--vp-gold) 50%,transparent);border-radius:16px;padding:18px 18px 16px;background:var(--vp-card)}
+.vp-exlbl{display:inline-block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--vp-bg);background:var(--vp-gold);border-radius:999px;padding:2px 9px;margin:0 0 10px}
+@media(max-width:639px){.vp-icrow{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:14px;align-items:start}.vp-icrow>.vp-icw{grid-row:span 3;margin:0}}
+@media (prefers-reduced-motion:reduce){.vp-cardhov{transition:none}}
+
+.hero-card .frame{height:auto!important}.hero-card .frame:after{display:none}
+.vp-carsvg{display:block;width:100%;height:auto;margin:0 0 12px}
+.vp-sctrust{margin:18px 0 6px;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.st .vp-sti{position:absolute;top:24px;right:22px;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.25);color:#7dd3fc}
+.st .vp-sti .vp-ico{width:20px;height:20px}
+@media(min-width:861px){.steps3 .st:not(:last-child)::after{content:"";position:absolute;top:36px;right:-13px;width:10px;height:10px;border-top:2px solid #38bdf8;border-right:2px solid #38bdf8;transform:rotate(45deg);opacity:.75}}
+.vp-exwrap{text-align:center}.vp-exwrap .vp-exlbl{color:#06101f}
+#example .vp-panel .sub{margin-bottom:22px}
+main>section.s{position:relative}
+main>section.s::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(820px,86%);height:1px;background:linear-gradient(90deg,transparent,rgba(56,189,248,.55),transparent)}
+main>section.s::after{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;background:#38bdf8;transform:translateX(-50%) rotate(45deg);box-shadow:0 0 14px rgba(56,189,248,.7)}
+.faqs details[open]{border-color:rgba(56,189,248,.45)}
+@media(max-width:639px){.vp-trust li{font-size:.8rem;padding:10px}}
+
 </style>
 <!-- Meta Pixel (Asendify Shops Pixel) for the Supercar ad, 2026-10-28: PageView + ViewContent here, InitiateCheckout when a checkout opens, Purchase on /paid/ once the server confirms -->
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','4429190934012821');fbq('track','PageView');fbq('track','ViewContent',{content_name:'supercar_planner',value:49,currency:'GBP'});</script>
@@ -71,9 +125,30 @@ window.asdSelf=function(){var m=document.cookie.match(/(?:^|;\s*)asd_aff=([a-z0-
     <p class="lead">People who own supercars rarely got there by wishing. They used a few unglamorous secrets: buy the right used car and let the first owner pay the depreciation, spread the cost only when the maths says so, know the true running cost before the badge, and grow income before cutting lattes. The planner turns those into your own numbers: when you can afford it at your saving rate, what you must put away each month to hit your date, whether buying outright or spreading the cost is really cheaper, what your budget actually buys once running costs are counted, and a plan of realistic ways to earn the gap, written around your skills.</p>
     <div class="ctas"><a class="btn pri" href="#start">Build my plan</a><a class="btn ghost" href="/example/">See a full example</a></div>
     <p class="price-line"><b>£49</b> per planner (£33.79 + 45% service fee). One-time payment, no subscription.</p>
+    <ul class="vp-trust vp-sctrust" aria-label="Key facts"><li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>One-time payment, no subscription.</li><li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>Fully automatic</li><li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16v-3l2-5h14l2 5v3"/><path d="M3 16h18v2H3z"/><circle cx="7.5" cy="16.5" r="1.5"/><circle cx="16.5" cy="16.5" r="1.5"/></svg>About 40 cars, or your own</li><li><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.3-4.9L4 8"/><path d="M4 4v4h4"/><path d="M4 13a8 8 0 0 0 14.3 4.9L20 16"/><path d="M20 20v-4h-4"/></svg>Saved as you type</li></ul>
     <p class="updated">Last updated: <time datetime="2026-11-15">15 November 2026</time></p>
   </div>
   <div class="hero-card" aria-hidden="true"><div class="bar"><i></i><i></i><i></i></div><div class="frame" style="padding:18px;background:#0b1220">
+    <svg class="vp-carsvg" viewBox="0 0 520 210" aria-hidden="true">
+<defs><linearGradient id="vpscBody" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#dc2626"/><stop offset="1" stop-color="#f87171"/></linearGradient>
+<linearGradient id="vpscFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#38bdf8" stop-opacity=".35"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></linearGradient></defs>
+<g stroke="rgba(148,163,184,.15)"><path d="M20 40h480M20 90h480M20 140h480"/></g>
+<path d="M20 40h480" stroke="#fbbf24" stroke-dasharray="6 5" stroke-width="1.6"/>
+<rect x="392" y="14" width="108" height="22" rx="11" fill="#1f1a08" stroke="#fbbf24" stroke-opacity=".7"/><text x="446" y="29" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="800" fill="#fde68a">£76,000</text>
+<path d="M20 150 C90 140 150 128 220 112 S360 70 470 42 L470 160 L20 160Z" fill="url(#vpscFill)"/>
+<path d="M20 150 C90 140 150 128 220 112 S360 70 470 42" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+<circle cx="470" cy="42" r="6" fill="#fbbf24"/><circle cx="20" cy="150" r="5" fill="#38bdf8"/>
+<text x="20" y="176" font-family="Inter,system-ui,sans-serif" font-size="10.5" fill="#94a3b8">£9,000 saved</text><text x="470" y="176" text-anchor="end" font-family="Inter,system-ui,sans-serif" font-size="10.5" fill="#94a3b8">8 years 2 months</text>
+<g transform="translate(150 96)">
+<path d="M8 66 C10 52 22 46 44 44 L78 30 C92 24 120 22 140 26 L176 40 C196 42 210 48 214 60 L214 70 L8 70Z" fill="url(#vpscBody)"/>
+<path d="M84 34 L102 28 C112 26 126 26 136 29 L158 40 L84 42Z" fill="#0b1220" opacity=".85"/>
+<path d="M30 56h40M150 56h30" stroke="#fff" stroke-opacity=".35" stroke-width="2" stroke-linecap="round"/>
+<circle cx="52" cy="70" r="15" fill="#0b1220"/><circle cx="52" cy="70" r="7" fill="#cbd5e1"/>
+<circle cx="172" cy="70" r="15" fill="#0b1220"/><circle cx="172" cy="70" r="7" fill="#cbd5e1"/>
+<path d="M206 54h8" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+</g>
+<rect x="20" y="190" width="480" height="8" rx="4" fill="rgba(148,163,184,.15)"/><rect x="20" y="190" width="130" height="8" rx="4" fill="#38bdf8"/>
+</svg>
     <div class="hero-stats"><div><span>Car</span><b>Porsche 911 Carrera</b></div><div><span>Price planned for</span><b>£76,000</b></div><div><span>Time to the car at £600/mo</span><b>8 years 2 months</b></div><div><span>Needed for 36 months</span><b>£1,866/mo</b></div><div><span>Cheapest over 3 years</span><b>Pay cash</b></div><div><span>Income gap to close</span><b>£1,266/mo</b></div></div>
     <p style="color:#94a3b8;font-size:12.5px;margin:12px 0 0">Example planner (fictional buyer). Yours uses your numbers.</p>
   </div><span class="lbl">Example planner</span></div>
@@ -84,12 +159,12 @@ window.asdSelf=function(){var m=document.cookie.match(/(?:^|;\s*)asd_aff=([a-z0-
   <h2>Four tools, one private page, saved as you type</h2>
   <p class="sub">Everything inside, by name: target and timeline, buying outright vs spreading the cost, what your budget really buys, the income plan, editable running costs and about 40 cars. Everything recalculates the moment you change a number; replace any estimate with a real quote.</p>
   <div class="grid3">
-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 16l4-5 4 3 6-8"/></svg></div><h3>Target and timeline</h3><p>Months to the car at your saving rate and return, a savings chart against the goal, and the exact monthly amount for any deadline. The goal includes a first-year running-cost reserve, so you are not broke the day after you buy.</p></div>
-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div><h3>Buying outright vs spreading the cost</h3><p>Buying outright and the common ways of spreading the cost, side by side: up front, per month, and the true cost over the years you keep the car, counting depreciation, interest, the money cash would have earned, and what the car is still worth.</p></div>
-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h7"/></svg></div><h3>What your budget really buys</h3><p>Every car in the list a used example fits your budget, ranked by what it costs you per year to own, not by sticker price. Depreciation, insurance, servicing, tyres, tax and fuel at your mileage.</p></div>
-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Income plan</h3><p>Fill in your take-home pay, skills, hours and situation. The planner writes 3 to 5 realistic ways to earn the monthly gap using what you already know, with first steps for this week, conservative ranges, honest risks and a 90-day plan.</p></div>
-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></div><h3>Running costs you can edit</h3><p>Typical insurance, servicing, tyres, road tax and fuel or electricity for each car, in your currency. Type in your own quotes and every tab updates.</p></div>
-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 4v16M4 8h16"/></svg></div><h3>About 40 cars, or your own</h3><p>From an Alpine A110 to a Bugatti Chiron, with typical UK new and used prices and depreciation. Planning for a car we do not list? Enter its price and the planner does the rest.</p></div>
+    <div class="feat vp-cardhov"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 16l4-5 4 3 6-8"/></svg></div><h3>Target and timeline</h3><p>Months to the car at your saving rate and return, a savings chart against the goal, and the exact monthly amount for any deadline. The goal includes a first-year running-cost reserve, so you are not broke the day after you buy.</p></div>
+    <div class="feat vp-cardhov"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div><h3>Buying outright vs spreading the cost</h3><p>Buying outright and the common ways of spreading the cost, side by side: up front, per month, and the true cost over the years you keep the car, counting depreciation, interest, the money cash would have earned, and what the car is still worth.</p></div>
+    <div class="feat vp-cardhov"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h7"/></svg></div><h3>What your budget really buys</h3><p>Every car in the list a used example fits your budget, ranked by what it costs you per year to own, not by sticker price. Depreciation, insurance, servicing, tyres, tax and fuel at your mileage.</p></div>
+    <div class="feat vp-cardhov"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Income plan</h3><p>Fill in your take-home pay, skills, hours and situation. The planner writes 3 to 5 realistic ways to earn the monthly gap using what you already know, with first steps for this week, conservative ranges, honest risks and a 90-day plan.</p></div>
+    <div class="feat vp-cardhov"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></div><h3>Running costs you can edit</h3><p>Typical insurance, servicing, tyres, road tax and fuel or electricity for each car, in your currency. Type in your own quotes and every tab updates.</p></div>
+    <div class="feat vp-cardhov"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 4v16M4 8h16"/></svg></div><h3>About 40 cars, or your own</h3><p>From an Alpine A110 to a Bugatti Chiron, with typical UK new and used prices and depreciation. Planning for a car we do not list? Enter its price and the planner does the rest.</p></div>
   </div>
   <div class="cars" aria-label="Cars in the planner"><span>Porsche 911</span><span>911 GT3</span><span>Cayman GT4</span><span>Taycan Turbo S</span><span>Audi R8</span><span>Nissan GT-R</span><span>Corvette C8</span><span>McLaren 570S · 720S · Artura · 750S</span><span>Ferrari Roma · 488 · F8 · 296 · 812 · SF90 · Purosangue</span><span>Lamborghini Huracán · Temerario · Urus · Aventador · Revuelto</span><span>Aston Martin Vantage · DB12 · DBX707</span><span>Maserati MC20</span><span>Bentley Continental GT</span><span>Mercedes-AMG GT</span><span>Honda NSX</span><span>BMW M2 · M4</span><span>Lotus Emira</span><span>Alpine A110</span><span>Bugatti Chiron</span></div>
 </div></section>
@@ -99,17 +174,20 @@ window.asdSelf=function(){var m=document.cookie.match(/(?:^|;\s*)asd_aff=([a-z0-
   <h2>Three steps, two minutes</h2>
   <p class="sub">Fully automatic: no calls, no waiting for someone to get back to you.</p>
   <div class="steps3">
-    <div class="st"><h3>Pick the car</h3><p>Choose it from the list, or "another car" with its price, and give us the email for your private link.</p></div>
-    <div class="st"><h3>Pay once</h3><p>£49.00, one-time, with PayPal (card works inside PayPal). The planner is yours for good.</p></div>
-    <div class="st"><h3>Fill in your numbers</h3><p>Savings, monthly saving, income, skills, hours. The timeline, cost comparison and shortlist are instant; the income plan is written in a minute or two.</p></div>
+    <div class="st vp-cardhov"><span class="vp-sti"><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16v-3l2-5h14l2 5v3"/><path d="M3 16h18v2H3z"/><circle cx="7.5" cy="16.5" r="1.5"/><circle cx="16.5" cy="16.5" r="1.5"/></svg></span><h3>Pick the car</h3><p>Choose it from the list, or "another car" with its price, and give us the email for your private link.</p></div>
+    <div class="st vp-cardhov"><span class="vp-sti"><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></span><h3>Pay once</h3><p>£49.00, one-time, with PayPal (card works inside PayPal). The planner is yours for good.</p></div>
+    <div class="st vp-cardhov"><span class="vp-sti"><svg class="vp-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></svg></span><h3>Fill in your numbers</h3><p>Savings, monthly saving, income, skills, hours. The timeline, cost comparison and shortlist are instant; the income plan is written in a minute or two.</p></div>
   </div>
 </div></section>
 
 <section class="s alt" id="example"><div class="wrap">
   <p class="kick">Example</p>
   <h2>See exactly what you get</h2>
+  <div class="vp-panel"><div>
   <p class="sub">A complete planner for a fictional video editor saving for a used Porsche 911 Carrera: £9,000 saved, £600 a month, 36-month deadline.</p>
   <p><a class="btn pri" href="/example/">Open the example planner</a></p>
+  </div><div class="vp-exwrap"><span class="vp-exlbl">Example</span><svg class="vp-mini" viewBox="0 0 330 200" aria-hidden="true"><rect x="4" y="4" width="322" height="192" rx="16" fill="#0b1220" stroke="rgba(148,163,184,.25)"/><circle cx="22" cy="24" r="4" fill="#334155"/><circle cx="36" cy="24" r="4" fill="#334155"/><circle cx="50" cy="24" r="4" fill="#334155"/><text x="70" y="28" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="700" fill="#e8eefc">Porsche 911 Carrera</text><rect x="18" y="46" width="70" height="22" rx="11" fill="#38bdf8"/><text x="53" y="61" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#06101f">Timeline</text><rect x="94" y="46" width="70" height="22" rx="11" fill="rgba(148,163,184,.12)"/><text x="129" y="61" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#cbd5e1">Cost</text><rect x="170" y="46" width="70" height="22" rx="11" fill="rgba(148,163,184,.12)"/><text x="205" y="61" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#cbd5e1">Shortlist</text><rect x="246" y="46" width="70" height="22" rx="11" fill="rgba(148,163,184,.12)"/><text x="281" y="61" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#cbd5e1">Income plan</text>
+<path d="M24 82h220" stroke="#fbbf24" stroke-dasharray="5 4"/><rect x="30" y="152" width="16" height="18" rx="3" fill="#38bdf8" opacity="0.35"/><rect x="56" y="144" width="16" height="26" rx="3" fill="#38bdf8" opacity="0.41"/><rect x="82" y="136" width="16" height="34" rx="3" fill="#38bdf8" opacity="0.47"/><rect x="108" y="126" width="16" height="44" rx="3" fill="#38bdf8" opacity="0.53"/><rect x="134" y="116" width="16" height="54" rx="3" fill="#38bdf8" opacity="0.59"/><rect x="160" y="106" width="16" height="64" rx="3" fill="#38bdf8" opacity="0.65"/><rect x="186" y="94" width="16" height="76" rx="3" fill="#38bdf8" opacity="0.71"/><rect x="212" y="82" width="16" height="88" rx="3" fill="#38bdf8" opacity="0.77"/><rect x="238" y="70" width="16" height="100" rx="3" fill="#38bdf8" opacity="0.83"/><g font-family="Inter,system-ui,sans-serif"><text x="268" y="110" font-size="9" fill="#94a3b8">£600/mo</text><text x="268" y="128" font-size="13" font-weight="800" fill="#e8eefc">36</text><text x="268" y="142" font-size="9" fill="#94a3b8">months</text></g></svg></div></div>
 </div></section>
 
 <section class="s" id="start"><div class="wrap">
