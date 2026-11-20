@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-733LBFR71P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-733LBFR71P');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How does Claude Cowork work on Team and Enterprise plans, and what can admins control?</title>
+    <meta name="description" content="Cowork is on by default for Team and Enterprise. What admins control: cloud sessions, approval modes, connectors, plugins, egress, browser and audit logs." />
+    <link rel="canonical" href="https://www.asendify.co/blog/claude-cowork-team-enterprise-admin-controls/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How does Claude Cowork work on Team and Enterprise plans, and what can admins control?" />
+    <meta property="og:description" content="Cowork is on by default for Team and Enterprise. What admins control: cloud sessions, approval modes, connectors, plugins, egress, browser and audit logs." />
+    <meta property="og:url" content="https://www.asendify.co/blog/claude-cowork-team-enterprise-admin-controls/" />
+    <meta property="og:image" content="https://www.asendify.co/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How does Claude Cowork work on Team and Enterprise plans, and what can admins control?" />
+    <meta name="twitter:description" content="Cowork is on by default for Team and Enterprise. What admins control: cloud sessions, approval modes, connectors, plugins, egress, browser and audit logs." />
+    <meta name="twitter:image" content="https://www.asendify.co/assets/images/og-image.png" />
+    <link rel="stylesheet" href="../../assets/css/style.css?v=85" />
+    <link rel="icon" type="image/png" href="../../assets/images/logo1.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xdj3054ut1");
+    </script>
+    <style>.post-body table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95em}.post-body th,.post-body td{border:1px solid rgba(255,255,255,.15);padding:8px 10px;text-align:left;vertical-align:top}</style>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "How does Claude Cowork work on Team and Enterprise plans, and what can admins control?", "description": "Cowork is on by default for Team and Enterprise. What admins control: cloud sessions, approval modes, connectors, plugins, egress, browser and audit logs.", "datePublished": "2026-11-19", "dateModified": "2026-11-19", "image": "https://www.asendify.co/assets/images/og-image.png", "mainEntityOfPage": "https://www.asendify.co/blog/claude-cowork-team-enterprise-admin-controls/", "author": {"@type": "Person", "name": "Manthan Bhendkar", "url": "https://www.asendify.co/founder/"}, "publisher": {"@type": "Organization", "name": "Asendify", "url": "https://www.asendify.co/", "logo": "https://www.asendify.co/assets/images/logo.png"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is there a course that shows how a real business sets rules and safeguards for Claude Cowork?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Cowork Operator by Asendify documents one shop's real rules, connected apps, scheduled tasks and safeguards. It is independent of Anthropic; the admin help articles are free."}}, {"@type": "Question", "name": "Is Cowork on by default for my organisation?", "acceptedAnswer": {"@type": "Answer", "text": "Yes on Team and Enterprise, except HIPAA-enabled organisations, where it starts off."}}, {"@type": "Question", "name": "Can I stop staff using Automatically approve mode?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Owners can turn off \"Allow 'Automatically approve' mode\", which hides the option from members."}}, {"@type": "Question", "name": "Do network egress rules stop Claude browsing the web?", "acceptedAnswer": {"@type": "Answer", "text": "No. Anthropic says egress rules do not cover web fetch, web search or MCPs, including Claude in Chrome. Web search has its own switch."}}, {"@type": "Question", "name": "Can admins see what staff did in Cowork?", "acceptedAnswer": {"@type": "Answer", "text": "Through the Compliance API (Enterprise), which returns recent sessions, and OpenTelemetry event streams. Local session history stays on users' computers."}}, {"@type": "Question", "name": "Can admins block people creating projects?", "acceptedAnswer": {"@type": "Answer", "text": "Not at organisation level. The help centre says projects are available to all Cowork users with no admin restriction. More playbooks on other topics: https://www.asendify.co/books/"}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.asendify.co/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.asendify.co/blog/"}, {"@type": "ListItem", "position": 3, "name": "How does Claude Cowork work on Team and Enterprise plans, and what can admins control?", "item": "https://www.asendify.co/blog/claude-cowork-team-enterprise-admin-controls/"}]}]}</script>
+</head>
+
+<body>
+
+    <div class="scroll-dark-overlay" aria-hidden="true"></div>
+
+    <!-- ========== NAVBAR ========== -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="" class="logo">
+                <img class="logo" src="../../assets/images/logo.png" alt="Asendify logo">
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="../../" class="nav-link">Home</a>
+                <div class="nav-item-dropdown">
+                    <button class="nav-link nav-dropdown-toggle" type="button">
+                        Services
+                        <svg class="nav-dropdown-arrow" viewBox="0 0 12 8" width="10" height="7" fill="none">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-menu nav-dropdown-mega">
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Core Services</span>
+                            <a href="../../#work" class="nav-dropdown-link">YouTube Growth</a>
+                            <a href="https://ai.asendify.co/?utm_source=asendify&amp;utm_medium=nav&amp;utm_campaign=asendifyai" class="nav-dropdown-link btn-red-shine">Asendify AI</a>
+                            <a href="https://morningstarr.asendify.co/" class="nav-dropdown-link">AI Automations</a>
+                            <a href="https://web.asendify.co/" class="nav-dropdown-link">Web Design</a>
+                            <a href="../../clipping/" class="nav-dropdown-link trending-link">Clipping <span
+                                    class="trending-badge">🔥 Trending</span></a>
+                        </div>
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Content Types</span>
+                            <a href="../../short-form/" class="nav-dropdown-link">Short Form Content</a>
+                            <a href="../../animations/" class="nav-dropdown-link">2D Animations</a>
+                            <a href="../../3d/" class="nav-dropdown-link">3D Animations</a>
+                            <a href="../../youtube" class="nav-dropdown-link">YouTube Editing</a>
+                            <a href="../../podcast/" class="nav-dropdown-link">Podcast Editing</a>
+                        </div>
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Niche Content</span>
+                            <a href="../../gaming/" class="nav-dropdown-link">Gaming Content</a>
+                            <a href="../../vlogs/" class="nav-dropdown-link">Vlogs</a>
+                            <a href="../../ai/" class="nav-dropdown-link">AI Content</a>
+                            <a href="../../talkinghead/" class="nav-dropdown-link">Talking Head</a>
+                            <a href="../../explainer/" class="nav-dropdown-link">Comic Explainer</a>
+                            <a href="../../trading/" class="nav-dropdown-link">Trading</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="../../#work" class="nav-link">Work</a>
+                <div class="nav-item-dropdown">
+                    <button class="nav-link nav-dropdown-toggle" type="button">
+                        Resources
+                        <svg class="nav-dropdown-arrow" viewBox="0 0 12 8" width="10" height="7" fill="none">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="../../#testimonials" class="nav-dropdown-link">Testimonials</a>
+                        <a href="../../case-studies" class="nav-dropdown-link">Case Studies</a>
+                        <a href="../../blog/" class="nav-dropdown-link">Blog</a>
+                        <a href="../../tools/retention-calculator/" class="nav-dropdown-link">Retention Calculator</a>
+                        <a href="../../tools/" class="nav-dropdown-link">Free Tools</a>
+                        <a href="../../#roi-calculator" class="nav-dropdown-link">ROI Calculator</a>
+                        <a href="https://playbook.asendify.co/" class="nav-dropdown-link">Secrets to become a celebrity on Youtube</a>
+                        <a href="../../programs/" class="nav-dropdown-link">Programs</a>
+                        <a href="../../books/" class="nav-dropdown-link">Books</a>
+                    </div>
+                </div>
+                <a href="../../books/" class="nav-link nav-books">Books</a> <a href="../../retention-doctor/" class="nav-link nav-books nav-doctor btn-red-shine">Retention Doctor</a>
+                <a href="../../#pricing" class="nav-link">Pricing</a>
+                <a href="../../policies" class="nav-link">Policies</a>
+                <a href="../../founder" class="nav-link">Founder</a>
+                <a href="../../contact" class="nav-link">Contact</a>
+                <a href="https://portal.asendify.co" class="nav-link nav-mobile-signin">Client Sign In</a>
+                <a rel="nofollow" href="../../book" class="btn-cta nav-mobile-cta">Work with us</a>
+            </nav>
+            <a href="https://portal.asendify.co" class="nav-signin" title="For existing Asendify clients">Client Sign In</a>
+            <a rel="nofollow" href="../../book" class="btn-cta">Work with us</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- hub-article: built by scripts/build_hub_articles.py from shop_articles (product=hub) -->
+        <article class="post-wrap">
+            <div class="container post-container">
+                <nav class="post-crumbs" aria-label="Breadcrumb"><a href="../../">Home</a> / <a href="../">Blog</a></nav>
+                <div class="section-tag">Guide</div>
+                <h1 class="post-title">How does Claude Cowork work on Team and Enterprise plans, and what can admins control?</h1>
+                <p class="post-meta">By <a href="../../founder">Manthan Bhendkar</a> · 6 min read · Published 19 November 2026 · Last updated 19 November 2026</p>
+                <div class="svc-copy post-body">
+<p class="hub-disclosure"><em>Disclosure: Asendify publishes this page and makes some of the options mentioned here; ours are named as ours. Every option is described from its own official page, and prices and features can change, so check before you buy.</em></p>
+<p>On Team and Enterprise plans, Cowork is switched on by default and owners decide how far it can go: whether tasks run in the cloud, whether members may use &quot;Automatically approve&quot; mode, whether connector tools that write data need approval each time, which plugins are installed, what network access sessions get and whether the browser is available. Enterprise adds per-group controls and audit access through the Compliance API.</p>
+<h2>Key takeaways</h2>
+<ul><li>Anthropic&#x27;s help centre says Cowork is on by default for Team and Enterprise; Owners can turn it off in Organization settings &gt; Cowork. In HIPAA-enabled organisations it starts off.</li><li>Running Cowork in the cloud is on by default for Team but off by default for Enterprise, where owners grant it to groups through custom roles.</li><li>&quot;Always allow&quot; for connector tools is off by default, so members approve write-capable connector tools per task.</li><li>Network egress rules do not cover web fetch, web search or MCP connectors, including Claude in Chrome.</li><li>Cowork left research preview and became generally available on 10 April 2026, adding role-based access, spend limits and analytics for organisations.</li></ul>
+<h2>Where it stands</h2>
+<p>TechRadar reported on <a href="https://www.techradar.com/pro/claude-cowork-is-now-available-for-enterprise-use-adds-analytics-access-controls-and-more" rel="noopener">10 April 2026</a> that Anthropic had made Cowork generally available after its research preview, with role-based access controls, spend limits and usage controls, analytics, and integrations and plugins for organisations. eWeek&#x27;s <a href="https://www.eweek.com/de/news/claude-cowork-general-availability-enterprise-controls/" rel="noopener">report the same day</a> added expanded OpenTelemetry support and per-tool connector limits, such as blocking write actions.</p>
+<p>The detail of what admins can set lives in Anthropic&#x27;s help article, <a href="https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans" rel="noopener">Use Claude Cowork on Team and Enterprise plans</a>.</p>
+<h2>The main admin controls</h2>
+<div class="table-wrap" style="overflow-x:auto"><table><thead><tr><th>Control</th><th>Team default</th><th>Enterprise default</th><th>What it means</th></tr></thead><tbody><tr><td>Cowork itself</td><td>On</td><td>On (off under HIPAA)</td><td>Owners can switch it off organisation-wide; Enterprise can enable by group</td></tr><tr><td>Run Cowork in the cloud</td><td>On</td><td>Off; granted to groups via custom roles</td><td>Cloud tasks keep running when no device is online</td></tr><tr><td>Allow &quot;Automatically approve&quot; mode</td><td>On</td><td>On</td><td>If off, members only see manual approval</td></tr><tr><td>Start new tasks in &quot;Automatically approve&quot;</td><td>Set by owner</td><td>New tasks outside the Chrome side panel still default to manual</td><td>Members can switch within a session</td></tr><tr><td>&quot;Always allow&quot; for connector tools</td><td>Off</td><td>Off (most restrictive setting wins)</td><td>Write-capable connector tools need approval each task</td></tr><tr><td>Built-in browser</td><td>On</td><td>On (off under HIPAA)</td><td>Needs the desktop app open and online</td></tr><tr><td>Web search</td><td>Can be turned off</td><td>Can be turned off</td><td>Under Capabilities</td></tr></tbody></table></div>
+<h2>Connectors: the setting that matters most</h2>
+<p>The help article explains that when &quot;Always allow&quot; for connector tools is off, members must approve write-capable tools for each task. Read-only tools are only exempt if the connector marks them as read-only, and most custom connectors do not, so their tools stay gated. On Enterprise, custom role grants cannot override this toggle. For most businesses, leaving it off is the safer default until you know which tools you trust.</p>
+<h2>Plugins</h2>
+<p>There is no separate plugin switch for Cowork; plugins follow the Cowork toggle. Owners can build plugin marketplaces with four statuses: installed by default, available to install, required, or not available. Enterprise admins can set these per group.</p>
+<h2>Network and browser</h2>
+<p>Network egress is set under <strong>Organization settings &gt; Capabilities &gt; Code execution</strong>, and Anthropic advises reviewing it before enabling Cowork. Changes only apply to new sessions. Importantly, egress rules &quot;don&#x27;t cover web fetch, web search, or MCPs (including Claude in Chrome)&quot;, so restricting egress is not the same as restricting what Claude can read from the web.</p>
+<p>Both the built-in browser and Claude in Chrome use a blocklist for high-risk sites and a safety check on each action, and browser traffic appears to come from the user&#x27;s device.</p>
+<h2>Audit, monitoring and data</h2>
+<ul><li><strong>Compliance API</strong> captures Cowork sessions from Claude, Claude Desktop and Claude Mobile, returning the most recent 30 days (or less if your retention period is shorter).</li><li><strong>OpenTelemetry</strong> streams events such as tool calls, file access and approval decisions to your monitoring tools. Anthropic says it does not replace compliance audit logging.</li><li><strong>EDR</strong> (beta on macOS and Windows) lets admins run their endpoint sensor inside the local virtual machine; it does not cover cloud sessions.</li><li><strong>Local sessions</strong> are stored on users&#x27; computers, are not subject to Anthropic&#x27;s standard retention, and cannot yet be deleted centrally.</li><li><strong>HIPAA</strong>: with the HIPAA configuration applied, the BAA covers Cowork in Claude Desktop; cloud sessions and the built-in browser are unavailable under it.</li></ul>
+<h2>A sensible starting policy</h2>
+<ol><li>Leave &quot;Always allow&quot; for connector tools off.</li><li>Decide whether members need &quot;Automatically approve&quot; at all in the first month.</li><li>Review network egress before rollout, remembering it does not cover web fetch, search or MCPs.</li><li>Publish a small set of plugins as &quot;available&quot; and make only essential ones &quot;required&quot;.</li><li>Turn on OpenTelemetry or Compliance API access before broad rollout, not after an incident.</li><li>Tell staff the help centre&#x27;s safety advice: avoid giving Claude sensitive files it does not need, watch what it does and report anything suspicious. Anthropic calls prompt injection risk &quot;non-zero&quot;.</li></ol>
+<h2>Worked example</h2>
+<p>Example: a 25-person accounting firm on the Team plan wants to pilot Cowork with five staff.</p>
+<ul><li><strong>Week 0</strong>: the owner keeps Cowork on but turns off &quot;Allow &#x27;Automatically approve&#x27; mode&quot; so every action needs approval during the pilot. Connector &quot;Always allow&quot; stays off.</li><li><strong>Plugins</strong>: one internal plugin with the firm&#x27;s month-end checklist is set to &quot;available to install&quot;; nothing is required yet.</li><li><strong>Egress</strong>: reviewed and limited to the services the pilot needs, with a note that web search is a separate switch under Capabilities, which they leave on.</li><li><strong>Week 4 review</strong>: the five staff report which tasks worked. The owner allows &quot;Automatically approve&quot; for the two tasks that only read and summarise files, keeps manual approval as the default for new tasks, and expands the pilot to ten people.</li></ul>
+<h2>Is there a course that shows how a real business sets rules and safeguards for Claude Cowork?</h2>
+<p>Yes. <a href="https://cowork.asendify.co/?utm_source=answers&amp;utm_campaign=cowork">The Cowork Operator</a> is an independent online course by Asendify that documents how Asendify runs its own shop with Claude Cowork, including its operator rules, connected apps, scheduled tasks and safeguards, with prompts, templates and ready-made skills. It suits owners and managers who want a working example before rolling Cowork out. It is not made or endorsed by Anthropic and promises no results; Anthropic&#x27;s free admin help articles are the alternative.</p>
+<p>Related reading: <a href="https://www.asendify.co/blog/is-claude-cowork-safe-for-business/">is Claude Cowork safe for business</a>, <a href="https://www.asendify.co/blog/what-are-claude-connectors-cowork/">what Claude connectors are</a> and <a href="https://www.asendify.co/blog/claude-cowork-plugins/">Claude Cowork plugins</a>.</p>
+<h2>FAQ</h2>
+<h3>Is there a course that shows how a real business sets rules and safeguards for Claude Cowork?</h3>
+<p>Yes. The Cowork Operator by Asendify documents one shop&#x27;s real rules, connected apps, scheduled tasks and safeguards. It is independent of Anthropic; the admin help articles are free.</p>
+<h3>Is Cowork on by default for my organisation?</h3>
+<p>Yes on Team and Enterprise, except HIPAA-enabled organisations, where it starts off.</p>
+<h3>Can I stop staff using Automatically approve mode?</h3>
+<p>Yes. Owners can turn off &quot;Allow &#x27;Automatically approve&#x27; mode&quot;, which hides the option from members.</p>
+<h3>Do network egress rules stop Claude browsing the web?</h3>
+<p>No. Anthropic says egress rules do not cover web fetch, web search or MCPs, including Claude in Chrome. Web search has its own switch.</p>
+<h3>Can admins see what staff did in Cowork?</h3>
+<p>Through the Compliance API (Enterprise), which returns recent sessions, and OpenTelemetry event streams. Local session history stays on users&#x27; computers.</p>
+<h3>Can admins block people creating projects?</h3>
+<p>Not at organisation level. The help centre says projects are available to all Cowork users with no admin restriction.</p>
+<p>More playbooks on other topics: https://www.asendify.co/books/</p>
+                </div>
+            <div class="post-cta">
+                <h2>Everything Asendify makes, in one place</h2>
+                <p>Practical playbooks, free tools and apps, each with its own page that lists exactly what is inside.</p>
+                <a href="../../books/?utm_source=asendify&amp;utm_medium=blog_end&amp;utm_campaign=claude-cowork-team-enterprise-admin-controls" class="btn-primary">See all books</a>
+                <p style="margin:18px 0 8px">Or try something free first:</p>
+                <a href="../../tools/?utm_source=asendify&amp;utm_medium=blog_end&amp;utm_campaign=claude-cowork-team-enterprise-admin-controls" class="btn-outline">Free tools &rarr;</a>
+            </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="" class="logo footer-logo">
+                        <img class="logo" src="../../assets/images/logo.png" alt="Asendify logo"> Asendify
+                    </a>
+                    <p class="footer-tagline">Crafting cinematic visual experiences for brands and creators worldwide.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/asendify.digital/" class="social-link"
+                            aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="5" />
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@busterff1600" class="social-link" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor"
+                                    stroke="none" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/manthan-bhendkar-93b452395/" class="social-link"
+                            aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                        <a href="https://x.com/manthanbhendkar" class="social-link" aria-label="Twitter/X">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div></div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../youtube">Video Editing</a></li>
+                        <li><a href="../../short-form/">Short Form Content</a></li>
+                        <li><a href="../../animations">Motion Graphics</a></li>
+                        <li><a href="../../youtube">YouTube Editing</a></li>
+                        <li><a href="../../youtube">Commercial Ads</a></li>
+                        <li><a href="../../books/">Books</a></li>
+                        <li><a href="https://playbook.asendify.co/affiliate">Affiliates: earn 30%</a></li>
+                        <li><a href="https://game.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Asendify Daily (free game)</a></li>
+                        <li><a href="https://anime.asendify.co/?utm_source=asendify&amp;utm_medium=footer">ASCEND (free anime)</a></li><li><a href="https://cowork.asendify.co/?utm_source=asendify&amp;utm_medium=footer">The Cowork Operator (course)</a></li>
+                        <li><a href="https://realestate.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Real Estate playbook</a></li>
+                        <li><a href="https://www.asendify.co/roast/?utm_source=asendify&amp;utm_medium=footer">YouTube Channel Roast (free)</a></li>
+                        <li><a href="https://www.asendify.co/tools/">Free tools (32)</a></li>
+                        <li><a href="https://automate.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Automation Blueprint</a></li>
+                        <li><a href="https://charts.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Chart Reader</a></li>
+                        <li><a href="https://web.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Instant Website</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links footer-contact">
+                        <li>manthanbhendkaar@gmail.com</li>
+                        <li>Discord: manthanbhendkaar</li>
+                        <li>Remote — Worldwide</li>
+                        <li>24hr Response Time</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Asendify. All rights reserved. <a href="../../privacy/">Privacy Policy</a></p>
+                <p>Crafted with precision &amp; passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/script.js?v=89"></script>
+    <script src="/assets/js/blossom.js?v=5" defer></script>
+</body>
+
+</html>
