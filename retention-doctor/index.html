@@ -35,6 +35,38 @@
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xdj3054ut1");
     </script>
+    <script>
+    /* 2026-11-20 (RULE 122): Meta pixel 4429190934012821 (Asendify Shops Pixel) for the Retention Doctor ads: PageView +
+       ViewContent here; InitiateCheckout, Subscribe and Purchase fire in the app (playbook.asendify.co/doctor/app/) only after
+       PayPal confirms the subscription. Same consent rule as the shops: Europe/* time zones see a banner first; the answer is
+       shared with playbook.asendify.co through the asf_consent cookie on .asendify.co. No personal data is sent. */
+    (function () {
+      var K = 'asf_consent';
+      var getC = function () { var v = null; try { v = localStorage.getItem(K); } catch (e) {} if (v) return v; try { var m = document.cookie.match(/(?:^|; )asf_consent=(yes|no)(?:;|$)/); return m ? m[1] : null; } catch (e) { return null; } };
+      var setC = function (v) { try { localStorage.setItem(K, v); } catch (e) {} try { document.cookie = K + '=' + v + '; domain=.asendify.co; path=/; max-age=31536000; SameSite=Lax; Secure'; } catch (e) {} };
+      var start = function () {
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '4429190934012821'); fbq('track', 'PageView');
+        fbq('track', 'ViewContent', { content_name: 'Retention Doctor', content_ids: ['doctor'], content_type: 'product', value: 145, currency: 'GBP' });
+      };
+      var banner = function () {
+        var b = document.createElement('div');
+        b.id = 'cookieBar';
+        b.style.cssText = 'position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:560px;margin:0 auto;padding:14px 16px;border-radius:14px;background:#15171c;color:#e8e9ec;border:1px solid rgba(255,255,255,.15);box-shadow:0 8px 30px rgba(0,0,0,.4);font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif';
+        b.innerHTML = 'We use cookies to measure our ads and improve this page.<div style="display:flex;gap:8px;margin-top:10px"><button type="button" id="ckYes" style="flex:1;padding:10px;border:0;border-radius:10px;background:#ffb46b;color:#111;font-weight:700;cursor:pointer">Accept</button><button type="button" id="ckNo" style="flex:1;padding:10px;border:1px solid rgba(255,255,255,.25);border-radius:10px;background:transparent;color:inherit;cursor:pointer">Decline</button></div>';
+        document.body.appendChild(b);
+        b.querySelector('#ckYes').onclick = function () { setC('yes'); b.remove(); start(); };
+        b.querySelector('#ckNo').onclick = function () { setC('no'); b.remove(); };
+      };
+      try {
+        if (navigator.webdriver) return;
+        var eu = false; try { eu = /^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone); } catch (e) {}
+        var c = getC();
+        if (!eu || c === 'yes') start();
+        else if (c !== 'no') { if (document.body) banner(); else document.addEventListener('DOMContentLoaded', banner); }
+      } catch (e) {}
+    })();
+    </script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "@id": "https://www.asendify.co/retention-doctor/#app", "name": "Retention Doctor", "alternateName": "Retention Doctor by Asendify", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://www.asendify.co/retention-doctor/", "description": "A monthly tool for YouTube creators that reads each video's audience retention graph, shows where viewers leave and names the Retention playbook technique that fixes each drop.", "publisher": {"@type": "Organization", "name": "Asendify", "url": "https://www.asendify.co/"}, "offers": {"@type": "Offer", "price": "145.00", "priceCurrency": "GBP", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "145.00", "priceCurrency": "GBP", "billingDuration": "P1M", "unitText": "month"}, "availability": "https://schema.org/InStock", "url": "https://www.asendify.co/retention-doctor/"}, "featureList": ["Per-video drop-off report", "Retention Score 0-100 with trend", "Monday 3-fix plan", "Before-and-after wins", "Pre-upload hook and title check", "New-upload email alert", "Upload streak", "Read-only YouTube connection", "Self-serve cancel"], "dateModified": "2026-11-16"}, {"@type": "WebPage", "@id": "https://www.asendify.co/retention-doctor/#page", "url": "https://www.asendify.co/retention-doctor/", "name": "Retention Doctor", "dateModified": "2026-11-16", "isPartOf": {"@id": "https://www.asendify.co/#website"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.asendify.co/"}, {"@type": "ListItem", "position": 2, "name": "Retention Doctor", "item": "https://www.asendify.co/retention-doctor/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is there a tool that tells me why viewers leave my YouTube videos?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Retention Doctor by Asendify connects to your channel read-only, reads each video's audience retention graph and shows the exact timestamps where viewers leave, with the Retention playbook technique that fixes each drop. It costs £145 a month (£100 + 45% service fee) and you can cancel any time from your account page."}}, {"@type": "Question", "name": "Can Retention Doctor change anything on my channel?", "acceptedAnswer": {"@type": "Answer", "text": "No. It asks Google only for read-only access (youtube.readonly and yt-analytics.readonly). It can't upload, edit, delete or comment."}}, {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "£145 a month: £100 + a 45% service fee. It renews every month through PayPal. There is no free trial."}}, {"@type": "Question", "name": "How do I cancel?", "acceptedAnswer": {"@type": "Answer", "text": "Press Cancel subscription on your account page. PayPal stops the payments at once and you keep access until the end of the month you paid for."}}, {"@type": "Question", "name": "How many channels can I connect?", "acceptedAnswer": {"@type": "Answer", "text": "One channel per subscription. The first channel you connect stays linked to that subscription."}}, {"@type": "Question", "name": "Does it work for Shorts?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. For Shorts it checks the first 2 to 3 seconds instead of the first 30, because that is where a Short is decided."}}, {"@type": "Question", "name": "Do I need the Retention playbook?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every fix is explained in plain words. The technique names come from the Retention playbook, so the book goes deeper if you want it."}}, {"@type": "Question", "name": "How is it different from Asendify AI?", "acceptedAnswer": {"@type": "Answer", "text": "Retention Doctor only does retention: where viewers leave and how to fix it. Asendify AI is the full YouTube growth assistant you can ask anything about your channel."}}]}]}</script>
 <style>
 /* 2026-11-16 (Manthan: "make the button to go to the tool glowing"): gold glow on every Retention Doctor button. Box-shadow only, so no layout shift. */
