@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-733LBFR71P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-733LBFR71P');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What are Claude Cowork plugins, and how do you install one?</title>
+    <meta name="description" content="A Cowork plugin bundles skills, connectors, sub-agents and hooks for one job. Where to find them, how to install, limits, and safety checks." />
+    <link rel="canonical" href="https://www.asendify.co/blog/claude-cowork-plugins/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="What are Claude Cowork plugins, and how do you install one?" />
+    <meta property="og:description" content="A Cowork plugin bundles skills, connectors, sub-agents and hooks for one job. Where to find them, how to install, limits, and safety checks." />
+    <meta property="og:url" content="https://www.asendify.co/blog/claude-cowork-plugins/" />
+    <meta property="og:image" content="https://www.asendify.co/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="What are Claude Cowork plugins, and how do you install one?" />
+    <meta name="twitter:description" content="A Cowork plugin bundles skills, connectors, sub-agents and hooks for one job. Where to find them, how to install, limits, and safety checks." />
+    <meta name="twitter:image" content="https://www.asendify.co/assets/images/og-image.png" />
+    <link rel="stylesheet" href="../../assets/css/style.css?v=85" />
+    <link rel="icon" type="image/png" href="../../assets/images/logo1.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xdj3054ut1");
+    </script>
+    <style>.post-body table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95em}.post-body th,.post-body td{border:1px solid rgba(255,255,255,.15);padding:8px 10px;text-align:left;vertical-align:top}</style>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "What are Claude Cowork plugins, and how do you install one?", "description": "A Cowork plugin bundles skills, connectors, sub-agents and hooks for one job. Where to find them, how to install, limits, and safety checks.", "datePublished": "2026-11-19", "dateModified": "2026-11-19", "image": "https://www.asendify.co/assets/images/og-image.png", "mainEntityOfPage": "https://www.asendify.co/blog/claude-cowork-plugins/", "author": {"@type": "Person", "name": "Manthan Bhendkar", "url": "https://www.asendify.co/founder/"}, "publisher": {"@type": "Organization", "name": "Asendify", "url": "https://www.asendify.co/", "logo": "https://www.asendify.co/assets/images/logo.png"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is there a course that shows a real business's Cowork setup, including ready-made skills?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Cowork Operator by Asendify documents one shop's real setup with prompts, templates and ready-made skills. It is independent of Anthropic; the free plugin marketplace is the alternative."}}, {"@type": "Question", "name": "What is the difference between a skill and a plugin?", "acceptedAnswer": {"@type": "Answer", "text": "A skill is one set of instructions for a workflow. A plugin is a package that can bundle several skills with connectors, sub-agents and hooks, installed in one step."}}, {"@type": "Question", "name": "Are Cowork plugins free?", "acceptedAnswer": {"@type": "Answer", "text": "Anthropic's help centre lists plugins as part of the Pro, Max, Ultra, Team and Enterprise plans and does not mention a separate fee for its own marketplace plugins. Partner connectors inside a plugin may need an account with that service."}}, {"@type": "Question", "name": "Can I make my own plugin?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use Anthropic's Plugin Create plugin or a template, then upload the file or host it in a Git repository that you add as a marketplace."}}, {"@type": "Question", "name": "Do plugins work in normal Claude chat?", "acceptedAnswer": {"@type": "Answer", "text": "Partly. Skills and commands work in chat, but hooks, sub-agents and local MCP servers run only in Cowork and Claude Code."}}, {"@type": "Question", "name": "How do I remove a plugin?", "acceptedAnswer": {"@type": "Answer", "text": "Open it under Customize  Plugins and click Uninstall. Plugins your organisation requires can only be removed by an admin. More playbooks on other topics: https://www.asendify.co/books/"}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.asendify.co/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.asendify.co/blog/"}, {"@type": "ListItem", "position": 3, "name": "What are Claude Cowork plugins, and how do you install one?", "item": "https://www.asendify.co/blog/claude-cowork-plugins/"}]}]}</script>
+</head>
+
+<body>
+
+    <div class="scroll-dark-overlay" aria-hidden="true"></div>
+
+    <!-- ========== NAVBAR ========== -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="" class="logo">
+                <img class="logo" src="../../assets/images/logo.png" alt="Asendify logo">
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="../../" class="nav-link">Home</a>
+                <div class="nav-item-dropdown">
+                    <button class="nav-link nav-dropdown-toggle" type="button">
+                        Services
+                        <svg class="nav-dropdown-arrow" viewBox="0 0 12 8" width="10" height="7" fill="none">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-menu nav-dropdown-mega">
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Core Services</span>
+                            <a href="../../#work" class="nav-dropdown-link">YouTube Growth</a>
+                            <a href="https://ai.asendify.co/?utm_source=asendify&amp;utm_medium=nav&amp;utm_campaign=asendifyai" class="nav-dropdown-link btn-red-shine">Asendify AI</a>
+                            <a href="https://morningstarr.asendify.co/" class="nav-dropdown-link">AI Automations</a>
+                            <a href="https://web.asendify.co/" class="nav-dropdown-link">Web Design</a>
+                            <a href="../../clipping/" class="nav-dropdown-link trending-link">Clipping <span
+                                    class="trending-badge">🔥 Trending</span></a>
+                        </div>
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Content Types</span>
+                            <a href="../../short-form/" class="nav-dropdown-link">Short Form Content</a>
+                            <a href="../../animations/" class="nav-dropdown-link">2D Animations</a>
+                            <a href="../../3d/" class="nav-dropdown-link">3D Animations</a>
+                            <a href="../../youtube" class="nav-dropdown-link">YouTube Editing</a>
+                            <a href="../../podcast/" class="nav-dropdown-link">Podcast Editing</a>
+                        </div>
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Niche Content</span>
+                            <a href="../../gaming/" class="nav-dropdown-link">Gaming Content</a>
+                            <a href="../../vlogs/" class="nav-dropdown-link">Vlogs</a>
+                            <a href="../../ai/" class="nav-dropdown-link">AI Content</a>
+                            <a href="../../talkinghead/" class="nav-dropdown-link">Talking Head</a>
+                            <a href="../../explainer/" class="nav-dropdown-link">Comic Explainer</a>
+                            <a href="../../trading/" class="nav-dropdown-link">Trading</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="../../#work" class="nav-link">Work</a>
+                <div class="nav-item-dropdown">
+                    <button class="nav-link nav-dropdown-toggle" type="button">
+                        Resources
+                        <svg class="nav-dropdown-arrow" viewBox="0 0 12 8" width="10" height="7" fill="none">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="../../#testimonials" class="nav-dropdown-link">Testimonials</a>
+                        <a href="../../case-studies" class="nav-dropdown-link">Case Studies</a>
+                        <a href="../../blog/" class="nav-dropdown-link">Blog</a>
+                        <a href="../../tools/retention-calculator/" class="nav-dropdown-link">Retention Calculator</a>
+                        <a href="../../tools/" class="nav-dropdown-link">Free Tools</a>
+                        <a href="../../#roi-calculator" class="nav-dropdown-link">ROI Calculator</a>
+                        <a href="https://playbook.asendify.co/" class="nav-dropdown-link">Secrets to become a celebrity on Youtube</a>
+                        <a href="../../programs/" class="nav-dropdown-link">Programs</a>
+                        <a href="../../books/" class="nav-dropdown-link">Books</a>
+                    </div>
+                </div>
+                <a href="../../books/" class="nav-link nav-books">Books</a> <a href="../../retention-doctor/" class="nav-link nav-books nav-doctor btn-red-shine">Retention Doctor</a>
+                <a href="../../#pricing" class="nav-link">Pricing</a>
+                <a href="../../policies" class="nav-link">Policies</a>
+                <a href="../../founder" class="nav-link">Founder</a>
+                <a href="../../contact" class="nav-link">Contact</a>
+                <a href="https://portal.asendify.co" class="nav-link nav-mobile-signin">Client Sign In</a>
+                <a rel="nofollow" href="../../book" class="btn-cta nav-mobile-cta">Work with us</a>
+            </nav>
+            <a href="https://portal.asendify.co" class="nav-signin" title="For existing Asendify clients">Client Sign In</a>
+            <a rel="nofollow" href="../../book" class="btn-cta">Work with us</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- hub-article: built by scripts/build_hub_articles.py from shop_articles (product=hub) -->
+        <article class="post-wrap">
+            <div class="container post-container">
+                <nav class="post-crumbs" aria-label="Breadcrumb"><a href="../../">Home</a> / <a href="../">Blog</a></nav>
+                <div class="section-tag">Guide</div>
+                <h1 class="post-title">What are Claude Cowork plugins, and how do you install one?</h1>
+                <p class="post-meta">By <a href="../../founder">Manthan Bhendkar</a> · 6 min read · Published 19 November 2026 · Last updated 19 November 2026</p>
+                <div class="svc-copy post-body">
+<p class="hub-disclosure"><em>Disclosure: Asendify publishes this page and makes some of the options mentioned here; ours are named as ours. Every option is described from its own official page, and prices and features can change, so check before you buy.</em></p>
+<p>A Claude Cowork plugin is one installable package that bundles skills, connectors, sub-agents and sometimes hooks around a single job, such as sales prep or contract review, so Claude arrives already set up for it. You install one from Customize &gt; Plugins, either from a marketplace or from a file, and can switch its parts on or off afterwards.</p>
+<h2>Key takeaways</h2>
+<ul><li>Anthropic calls a plugin &quot;a pre-built toolkit for a role or workflow&quot;. It can hold skills, MCP connectors, sub-agents, slash commands and hooks.</li><li>Plugins are available on Pro, Max, Ultra, Team and Enterprise, according to Anthropic&#x27;s help centre.</li><li>Install from Customize &gt; Plugins. Anthropic&#x27;s Knowledge Work marketplace is added by default, and a GitHub repository can act as your own marketplace.</li><li>Hooks, sub-agents and local MCP servers run only in Cowork and Claude Code, not in normal chat.</li><li>Install only from sources you trust: a local MCP server runs on your computer with the same permissions as any other program.</li></ul>
+<h2>What a plugin contains</h2>
+<p>Anthropic&#x27;s Cowork documentation, <a href="https://claude.com/docs/cowork/guide/plugins" rel="noopener">Install plugins</a>, says a plugin&#x27;s manifest can declare any combination of four parts:</p>
+<div class="table-wrap" style="overflow-x:auto"><table><thead><tr><th>Component</th><th>What it adds</th><th>Runs in normal chat?</th></tr></thead><tbody><tr><td>Skills</td><td>Reusable instructions that teach Claude a workflow</td><td>Yes</td></tr><tr><td>Connectors</td><td>MCP servers that give Claude access to an outside service</td><td>Yes (remote)</td></tr><tr><td>Agents (sub-agents)</td><td>Specialised helpers Claude can hand work to</td><td>No, Cowork and Code only</td></tr><tr><td>Hooks</td><td>Scripts that run at set points in a session</td><td>No, Cowork and Code only</td></tr></tbody></table></div>
+<p>Anthropic&#x27;s product guide, <a href="https://claude.com/resources/guides/claude-cowork-product-guide/extending-claude-cowork-with-plugins" rel="noopener">Extending Claude Cowork with plugins</a>, explains why this matters: with a plugin, &quot;Claude knows the vocabulary, the steps, and the outputs your workflow expects,&quot; so you stop re-explaining the same process every session. Its example is a customer success &quot;Renewal prep&quot; plugin: typing /prep-renewal Acme Corp pulls the account from Salesforce, checks support tickets, reviews recent call notes and saves a briefing to a Google Doc.</p>
+<h2>Plans and where plugins work</h2>
+<p>The help article <a href="https://support.claude.com/en/articles/13837440-use-plugins-in-claude-cowork" rel="noopener">Use plugins in Claude</a> lists Pro, Max, Ultra, Team and Enterprise. Plugins are saved to your account, so the same plugins appear in web chat, the Chat tab of the desktop app and Cowork, and sync to Claude Code (v2.1.273 or later) when you sign in with the same account. Skills and commands work everywhere; hooks, sub-agents and local MCP servers run only in Cowork and Claude Code, so they show greyed out in chat.</p>
+<p>Anthropic&#x27;s library covers functions such as sales, finance, legal, marketing, HR, engineering, design, operations and data analysis, and some plugins are built by partners.</p>
+<h2>How to install a plugin</h2>
+<p>From Anthropic&#x27;s documentation:</p>
+<ol><li>Open <strong>Customize</strong> in the sidebar, then <strong>Plugins</strong> (in the desktop app, open the Cowork tab first).</li><li>Browse the marketplace and pick a plugin. The default is Anthropic&#x27;s Knowledge Work catalogue; you can add others, such as Financial Services, Legal or Life Sciences.</li><li>Click <strong>Install</strong> or <strong>Add</strong>. If the plugin includes a connector that needs a login, you are asked to sign in.</li><li>Open the installed plugin and review its skills, connectors, agents and hooks. Turn off any part you do not need.</li></ol>
+<p>To use it, type / or click + in a chat or Cowork task to see its skills. In Cowork you can call a specific command as /plugin-name:command.</p>
+<p>You can also upload a plugin file you built, or add a Git repository as a marketplace: paste a https://github.com/owner/repo URL (public GitLab and Bitbucket repositories also work) and click <strong>Update</strong> later to pull new versions.</p>
+<h2>Limits</h2>
+<p>The Cowork documentation sets these default limits:</p>
+<div class="table-wrap" style="overflow-x:auto"><table><thead><tr><th>Limit</th><th>Value</th></tr></thead><tbody><tr><td>Plugin package size (uncompressed)</td><td>200 MB</td></tr><tr><td>Files per plugin package</td><td>5,000</td></tr><tr><td>Marketplace repository archive</td><td>512 MB</td></tr><tr><td>Plugins per marketplace</td><td>500</td></tr><tr><td>Marketplaces you can add</td><td>25</td></tr></tbody></table></div>
+<p>The in-app viewer previews files up to 1 MB; bigger files are still available to Claude when it runs.</p>
+<h2>Customising and building your own</h2>
+<p>In Cowork, open an installed plugin and click <strong>Customize</strong>. This starts a Cowork task in which Claude helps adapt the plugin&#x27;s skills and connectors to how you work. To build from scratch, Anthropic offers a Plugin Create plugin that walks you through it, or you can start from one of its templates.</p>
+<p>The product guide&#x27;s advice is to start small: one skill for your most repetitive task, then add a sub-agent only when a job needs its own separate context. It also says to skip plugins for one-off questions; they pay off on repeated work that spans several tools.</p>
+<h2>Team and Enterprise controls</h2>
+<ul><li>Owners turn on skill and plugin sharing in the admin Policy settings. Shared plugins are view-only for the people you share them with and update automatically.</li><li>Admins can publish plugins to the organisation&#x27;s library as available, installed by default, or required. Required plugins cannot be switched off, even in Claude Code.</li><li>On Enterprise, admins can restrict which marketplaces are allowed, tailor the catalogue by group, or disable local MCP servers entirely. With skill scanning on, malicious plugins are blocked and risky ones show a caution banner.</li><li>Plugins installed from a marketplace cannot be re-shared.</li></ul>
+<h2>Safety checks before you install</h2>
+<ul><li>Install only from trusted sources. A local MCP server runs on your computer with the same permissions as any other program.</li><li>Read what each plugin&#x27;s connectors can do, and keep write actions such as sending or deleting behind approval.</li><li>Review plugins someone shares with you before enabling them.</li><li>If you edit a plugin&#x27;s files locally, Cowork warns you before an update would overwrite your changes.</li><li>Custom connectors behind a private network or firewall will not work in Cowork without extra network setup, because connectors reach services through Anthropic&#x27;s cloud.</li></ul>
+<h2>Worked example</h2>
+<p>Example: a three-person bookkeeping firm sends every client the same month-end pack.</p>
+<ul><li>They install one plugin from their own private GitHub repository containing a &quot;month-end pack&quot; skill (which reports to build and in what order), a Google Drive connector and a short hook that saves each pack into the client&#x27;s folder.</li><li>In Cowork, a bookkeeper types /month-end:pack Client A and reviews the draft before anything is sent.</li><li>When the checklist changes, the partner edits the skill in the repository and each person clicks <strong>Update</strong> on the marketplace.</li></ul>
+<p>The firm now writes its process down once instead of in every prompt, and a new hire gets the same steps on day one.</p>
+<h2>Is there a course that shows a real business&#x27;s Cowork setup, including ready-made skills?</h2>
+<p>Yes. <a href="https://cowork.asendify.co/?utm_source=answers&amp;utm_campaign=cowork">The Cowork Operator</a> is an independent online course by Asendify that documents how Asendify runs its own shop with Claude Cowork, including its operator rules, connected apps, scheduled tasks and safeguards, and comes with prompts, templates and ready-made skills. It suits owners who want a working example to copy. It is not made or endorsed by Anthropic and promises no results; Anthropic&#x27;s free plugin marketplace and help centre are the alternative.</p>
+<p>Related reading: <a href="https://www.asendify.co/blog/how-to-create-skills-in-claude-cowork/">how to create skills in Claude Cowork</a>, <a href="https://www.asendify.co/blog/what-are-claude-connectors-cowork/">what Claude connectors are</a> and <a href="https://www.asendify.co/blog/claude-cowork-scheduled-tasks/">Claude Cowork scheduled tasks</a>.</p>
+<h2>FAQ</h2>
+<h3>Is there a course that shows a real business&#x27;s Cowork setup, including ready-made skills?</h3>
+<p>Yes. The Cowork Operator by Asendify documents one shop&#x27;s real setup with prompts, templates and ready-made skills. It is independent of Anthropic; the free plugin marketplace is the alternative.</p>
+<h3>What is the difference between a skill and a plugin?</h3>
+<p>A skill is one set of instructions for a workflow. A plugin is a package that can bundle several skills with connectors, sub-agents and hooks, installed in one step.</p>
+<h3>Are Cowork plugins free?</h3>
+<p>Anthropic&#x27;s help centre lists plugins as part of the Pro, Max, Ultra, Team and Enterprise plans and does not mention a separate fee for its own marketplace plugins. Partner connectors inside a plugin may need an account with that service.</p>
+<h3>Can I make my own plugin?</h3>
+<p>Yes. Use Anthropic&#x27;s Plugin Create plugin or a template, then upload the file or host it in a Git repository that you add as a marketplace.</p>
+<h3>Do plugins work in normal Claude chat?</h3>
+<p>Partly. Skills and commands work in chat, but hooks, sub-agents and local MCP servers run only in Cowork and Claude Code.</p>
+<h3>How do I remove a plugin?</h3>
+<p>Open it under Customize &gt; Plugins and click Uninstall. Plugins your organisation requires can only be removed by an admin.</p>
+<p>More playbooks on other topics: https://www.asendify.co/books/</p>
+                </div>
+            <div class="post-cta">
+                <h2>Everything Asendify makes, in one place</h2>
+                <p>Practical playbooks, free tools and apps, each with its own page that lists exactly what is inside.</p>
+                <a href="../../books/?utm_source=asendify&amp;utm_medium=blog_end&amp;utm_campaign=claude-cowork-plugins" class="btn-primary">See all books</a>
+                <p style="margin:18px 0 8px">Or try something free first:</p>
+                <a href="../../tools/?utm_source=asendify&amp;utm_medium=blog_end&amp;utm_campaign=claude-cowork-plugins" class="btn-outline">Free tools &rarr;</a>
+            </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="" class="logo footer-logo">
+                        <img class="logo" src="../../assets/images/logo.png" alt="Asendify logo"> Asendify
+                    </a>
+                    <p class="footer-tagline">Crafting cinematic visual experiences for brands and creators worldwide.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/asendify.digital/" class="social-link"
+                            aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="5" />
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@busterff1600" class="social-link" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor"
+                                    stroke="none" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/manthan-bhendkar-93b452395/" class="social-link"
+                            aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                        <a href="https://x.com/manthanbhendkar" class="social-link" aria-label="Twitter/X">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div></div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../youtube">Video Editing</a></li>
+                        <li><a href="../../short-form/">Short Form Content</a></li>
+                        <li><a href="../../animations">Motion Graphics</a></li>
+                        <li><a href="../../youtube">YouTube Editing</a></li>
+                        <li><a href="../../youtube">Commercial Ads</a></li>
+                        <li><a href="../../books/">Books</a></li>
+                        <li><a href="https://playbook.asendify.co/affiliate">Affiliates: earn 30%</a></li>
+                        <li><a href="https://game.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Asendify Daily (free game)</a></li>
+                        <li><a href="https://anime.asendify.co/?utm_source=asendify&amp;utm_medium=footer">ASCEND (free anime)</a></li><li><a href="https://cowork.asendify.co/?utm_source=asendify&amp;utm_medium=footer">The Cowork Operator (course)</a></li>
+                        <li><a href="https://realestate.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Real Estate playbook</a></li>
+                        <li><a href="https://www.asendify.co/roast/?utm_source=asendify&amp;utm_medium=footer">YouTube Channel Roast (free)</a></li>
+                        <li><a href="https://www.asendify.co/tools/">Free tools (32)</a></li>
+                        <li><a href="https://automate.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Automation Blueprint</a></li>
+                        <li><a href="https://charts.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Chart Reader</a></li>
+                        <li><a href="https://web.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Instant Website</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links footer-contact">
+                        <li>manthanbhendkaar@gmail.com</li>
+                        <li>Discord: manthanbhendkaar</li>
+                        <li>Remote — Worldwide</li>
+                        <li>24hr Response Time</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Asendify. All rights reserved. <a href="../../privacy/">Privacy Policy</a></p>
+                <p>Crafted with precision &amp; passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/script.js?v=89"></script>
+    <script src="/assets/js/blossom.js?v=5" defer></script>
+</body>
+
+</html>
