@@ -164,10 +164,10 @@
             <div class="section-header">
                 <div class="section-tag reveal">Privacy</div>
                 <h1 class="section-heading reveal delay-1">Privacy <em>Policy</em></h1>
-                <p class="section-sub reveal delay-2">Effective Date: 5 October 2026</p>
+                <p class="section-sub reveal delay-2">Effective Date: 20 November 2026</p>
                 <p class="section-sub reveal delay-2" style="max-width: 640px; margin: 16px auto 0;">
                     This policy explains what information Asendify collects, how we use it, and the choices you have,
-                    including how we use YouTube API Services.
+                    including how we use YouTube API Services and the Google user data you share through Sign in with Google.
                 </p>
             </div>
 
@@ -207,7 +207,7 @@
                     <h3 class="policy-title">YouTube API Services</h3>
                     <ul class="policy-items">
                         <li>Asendify uses <strong>YouTube API Services</strong> in an internal tool that uploads and manages videos on YouTube channels that Asendify owns and operates. By using any feature that relies on YouTube API Services, you agree to be bound by the <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube Terms of Service</a>. Google's handling of data is described in the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
-                        <li>The tool signs in only with Google accounts that Asendify controls, using Google OAuth. It does not ask members of the public to sign in with their Google accounts.</li>
+                        <li>The tool signs in only with Google accounts that Asendify controls, using Google OAuth. It does not ask members of the public to sign in with their Google accounts. (Retention Doctor and Asendify AI, which creators connect to their own channels, are covered in section 05.)</li>
                         <li><strong>What it accesses:</strong> the channel's basic details and branding, the videos it uploads (titles, descriptions, tags, thumbnails and privacy status), public view counts for those videos, YouTube Analytics reports for our own channels, and comments it posts on our own videos.</li>
                         <li><strong>How it's used:</strong> to publish our videos, keep channel details up to date, and produce an internal daily report of how many views our own videos received. This data is not shared with third parties or used for advertising.</li>
                         <li><strong>Storage:</strong> OAuth tokens are stored only on Asendify's own computer. Public view counts for our own videos are kept for up to 36 months for internal reporting. Any other data retrieved from YouTube API Services is refreshed or deleted within 30 days, in line with YouTube's Developer Policies.</li>
@@ -216,8 +216,23 @@
                     </ul>
                 </div>
 
-                <div class="policy-block reveal delay-2">
+                <div class="policy-block reveal delay-2" id="google-sign-in">
                     <div class="policy-number">05</div>
+                    <h3 class="policy-title">Retention Doctor and Asendify AI (Sign in with Google)</h3>
+                    <ul class="policy-items">
+                        <li><strong>Who this covers:</strong> creators who connect their own YouTube channel to <strong>Retention Doctor</strong> (www.asendify.co/retention-doctor and playbook.asendify.co/doctor, including the free check) or to <strong>Asendify AI</strong> (ai.asendify.co) with "Sign in with Google". Both are read-only: they can never upload, edit, delete, comment or change anything on your channel or Google account.</li>
+                        <li><strong>What Google user data we access:</strong> only the permissions you approve on Google's consent screen: <em>youtube.readonly</em> (your channel's ID, name and basic details, and your videos' titles, publish dates and lengths), <em>yt-analytics.readonly</em> (YouTube Analytics reports for your own channel and videos, such as views, watch time, average view duration, audience retention curves, traffic sources and countries), and <em>openid</em> and <em>email</em> (your Google account ID and email address, used to identify you and link the channel to your account).</li>
+                        <li><strong>How we use it:</strong> only to provide the features you see in the product: finding where viewers leave each of your videos, scoring retention, showing you the fix, emailing you the report for your new uploads, and (in Asendify AI) answering the questions you ask about your own channel. We do not use it for advertising, we do not sell it, and we do not use it to build profiles of you.</li>
+                        <li><strong>Sharing:</strong> we do not share Google user data with anyone except the service providers that run the product for us, who may use it only to provide that service: Vercel (hosting), Supabase (database), our email provider (to send your reports to you) and, for Asendify AI only, Anthropic's Claude API (the channel data needed to answer your question is sent to generate the answer). Retention Doctor does not send your YouTube data to any AI provider. We may also disclose data if the law requires it. Google user data is never used to develop, improve or train AI or machine-learning models, ours or anyone else's.</li>
+                        <li><strong>Storage and security:</strong> data is sent only over encrypted connections (HTTPS). If you connect a channel to a paid or invited account, Google's refresh token is encrypted (AES-256-GCM) and stored in our database, used only by our servers to read your reports, and never shown in your browser. The free check uses Google's access once, revokes it immediately and does not keep the token. The reports we compute (for example retention scores, drop-off points and fixes for your videos) are stored so you can see them again.</li>
+                        <li><strong>Retention and deletion:</strong> YouTube data is kept only while your channel is connected and is refreshed or deleted within 30 days, in line with YouTube's Developer Policies. When you disconnect your channel or your account ends, we revoke our access and delete the YouTube data we hold within 30 days. You can disconnect at any time inside the product or on your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google account permissions page</a>, and you can ask us to delete all your data at any time by emailing <strong>ceo@asendify.co</strong>; we'll delete it within 7 days.</li>
+                        <li><strong>YouTube and Google terms:</strong> by connecting a channel you agree to the <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube Terms of Service</a>; Google's own handling of data is described in the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
+                        <li><strong>Limited Use:</strong> Retention Doctor's use and transfer of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements. The same applies to Asendify AI.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-block reveal delay-2">
+                    <div class="policy-number">06</div>
                     <h3 class="policy-title">Cookies on this website</h3>
                     <ul class="policy-items">
                         <li>Our website may use essential cookies and privacy-friendly analytics to keep the site working and understand overall traffic. You can block or delete cookies in your browser settings.</li>
@@ -225,7 +240,7 @@
                 </div>
 
                 <div class="policy-block reveal delay-2">
-                    <div class="policy-number">06</div>
+                    <div class="policy-number">07</div>
                     <h3 class="policy-title">Keeping and deleting data</h3>
                     <ul class="policy-items">
                         <li>We keep personal information only for as long as we need it for the purposes above, or as required for tax and accounting records.</li>
@@ -234,7 +249,7 @@
                 </div>
 
                 <div class="policy-block reveal delay-2">
-                    <div class="policy-number">07</div>
+                    <div class="policy-number">08</div>
                     <h3 class="policy-title">Changes to this policy</h3>
                     <ul class="policy-items">
                         <li>If we change this policy we'll update this page and the effective date above.</li>
