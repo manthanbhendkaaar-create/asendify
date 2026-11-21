@@ -1,6 +1,6 @@
 # Asendify
 
-> Asendify is a UAE-based YouTube growth agency founded by Manthan Bhendkar. It offers retention-engineered video editing, YouTube channel growth, AI automations and web design for creators, finance channels and investment firms (VC, PE, investment banking).
+> Asendify is a YouTube growth agency founded by Manthan Bhendkar. It offers retention-engineered video editing, YouTube channel growth, AI automations and web design for creators, finance channels and investment firms (VC, PE, investment banking).
 
 ## Services
 - [YouTube Growth & Video Editing](https://www.asendify.co/youtube/): Retention-focused long-form YouTube editing and channel growth.
