@@ -144,6 +144,100 @@ def fmt_date(iso):
     return d, f'{d.day} {d.strftime("%B %Y")}'
 
 
+# ---------- Retention Playbook buy boxes (2026-11-21, Manthan "yes buy box"; RULE 147 retention-focus pages) ----------
+PB_URL = 'https://playbook.asendify.co/'
+PB_PRICE = '£1,000'
+PB_GET = [
+    ('The book', 'Secrets to become a celebrity on Youtube: The Retention Editing Playbook (PDF, licensed to you)'),
+    ('Chapter Workbook', 'one worksheet for each chapter'),
+    ('One-Page Cheat Sheet', 'the core steps on a single page'),
+    ('Edit Review Scorecard + Hook Script Templates', 'to use on every video you put money behind'),
+    ('The 30-Day Growth Plan', 'every step from the book with a tick box'),
+    ('Retention Tracker', 'per video, plus a spreadsheet version with the calculations set up'),
+]
+PB_TOPICS = (
+    ('ads', r'\b(ads?|advert\w*|hooks?|scroll\w*|thruplay|hold rate|vsl|ugc|creative|cpm|meta|facebook|instagram ads?|skip\w*)\b',
+     'Paying for video ads?', 'The Retention Playbook shows how to hold viewers past the first 3 seconds and all the way to your offer.'),
+    ('agency', r'\b(agenc\w*|clients?|editors?)\b',
+     'Run ads or videos for clients?', 'Give every editor the same retention checklist: it is all in the Retention Playbook.'),
+    ('podcast', r'\b(podcasts?|episodes?|cold open)\b',
+     'Making a podcast?', 'Cold opens, open loops and pacing for full episodes and clips: the system is in the Retention Playbook.'),
+    ('events', r'\b(events?|roadshows?|recaps?|promo\w*|webinars?|launch(?:es)?)\b',
+     'Promoting an event?', 'Make promos and recaps people watch long enough to book: the Retention Playbook shows how.'),
+    ('youtube', r'\b(youtube|shorts|reels|tiktok|subscribers?|watch time|retention graph|audience retention)\b',
+     'Growing a channel?', "The edit system behind OverSimplified's growth from 10K to 9M subscribers, step by step: the Retention Playbook."),
+)
+PB_GENERIC = ('Putting money behind video?', 'Every second a viewer stays is worth money. The Retention Playbook is the step-by-step system for holding attention.')
+
+
+PB_BUYBOX_RE = re.compile(r'playbook\.asendify\.co/?\?[^)\s]*utm_medium=buybox', re.I)
+
+
+def is_retention_page(r):
+    """RULE 147 retention-focus pages: their buy box links the playbook ROOT (not /doctor). Retention Doctor pages are left alone."""
+    md = r.get('body_md') or ''
+    head = ' '.join(str(r.get(k) or '') for k in ('keyword', 'title')).lower()
+    return bool(PB_BUYBOX_RE.search(md)) and 'doctor' not in head
+
+
+def pb_topic(r):
+    text = ' '.join(str(r.get(k) or '') for k in ('keyword', 'title', 'description')).lower()
+    for key, pat, lead, line in PB_TOPICS:
+        if re.search(pat, text):
+            return key, lead, line
+    return ('generic',) + PB_GENERIC
+
+
+def pb_link(where):
+    return f'{PB_URL}?utm_source=asendify&amp;utm_medium=article&amp;utm_campaign=retention_buybox&amp;utm_content={where}'
+
+
+def strip_md_buybox(md):
+    """The night agent writes its own buy-box lines into body_md; the template now adds the boxes, so drop those lines."""
+    out = []
+    for ln in md.split('\n'):
+        if PB_BUYBOX_RE.search(ln):
+            continue
+        out.append(ln)
+    return '\n'.join(out)
+
+
+def pb_boxes(r):
+    key, lead, line = pb_topic(r)
+    get_li = ''.join(f'<li><b>{esc(a)}</b>: {esc(b)}</li>' for a, b in PB_GET)
+    top = (f'<aside class="rbx rbx-top" data-topic="{key}"><p><strong>{esc(lead)}</strong> {esc(line)}</p>'
+           f'<a class="rbx-btn" href="{pb_link("top")}">See the Retention Playbook &rarr;</a></aside>')
+    mid = (f'<aside class="rbx rbx-mid"><div class="rbx-k">The Retention Playbook &middot; {PB_PRICE}</div>'
+           f'<h3>What you get</h3><ul>{get_li}</ul>'
+           f'<p class="rbx-for"><b>Who it is for:</b> people who put money behind video: your own ads, client ads, podcasts, events and roadshows, YouTube and Shorts.</p>'
+           f'<a class="rbx-btn" href="{pb_link("mid")}">Get the playbook &middot; {PB_PRICE} &rarr;</a></aside>')
+    end = (f'<section class="rbx rbx-end"><div class="rbx-k">Secrets to become a celebrity on Youtube: The Retention Editing Playbook</div>'
+           f'<h2>Keep viewers watching, so every video you pay for works harder</h2>'
+           f'<p>{esc(line)} It is the same retention system we use on client channels, written down step by step.</p>'
+           f'<h3>After you pay, you get</h3><ul>{get_li}</ul>'
+           f'<p class="rbx-price">{PB_PRICE} one-time &middot; instant download, book and Bonus Pack together</p>'
+           f'<a class="rbx-btn rbx-btn-lg" href="{pb_link("end")}">Get the Retention Playbook &rarr;</a></section>')
+    sticky = (f'<div class="rbx-sticky" id="rbx-sticky" role="complementary" aria-label="Retention Playbook">'
+              f'<a href="{pb_link("sticky")}">Get the Retention Playbook &middot; {PB_PRICE} &rarr;</a>'
+              f'<button type="button" aria-label="Close" onclick="var b=document.getElementById(\'rbx-sticky\');b.hidden=true;document.body.classList.remove(\'rbx-pad\');try{{sessionStorage.setItem(\'rbx-x\',\'1\')}}catch(e){{}}">&times;</button></div>'
+              f'<script>(function(){{try{{if(sessionStorage.getItem("rbx-x")){{document.getElementById("rbx-sticky").hidden=true;return}}}}catch(e){{}}document.body.classList.add("rbx-pad")}})();</script>')
+    return top, mid, end, sticky
+
+
+PB_CSS = ('.post-wrap .rbx,.rbx{border:1px solid rgba(212,175,55,.38)!important;background:linear-gradient(180deg,rgba(212,175,55,.09),rgba(212,175,55,.03))!important;border-radius:16px!important;padding:18px 20px!important;margin:26px 0!important;color:#efe9dc;display:block}'
+          '.rbx p{margin:0 0 12px}.rbx ul{margin:8px 0 14px;padding-left:20px}.rbx li{margin:4px 0}'
+          '.rbx-k{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#e6c86a;margin-bottom:6px}'
+          '.rbx h2,.rbx h3{margin:4px 0 10px;color:#fff}.rbx-for{font-size:.95em;color:#d9d4cb}'
+          '.rbx-btn{display:inline-block;background:#f3eee4;color:#0b0b0d !important;font-weight:700;text-decoration:none;border-radius:999px;padding:11px 20px;box-shadow:0 0 0 4px rgba(212,175,55,.18)}'
+          '.rbx-btn:hover{background:#fff}.rbx-btn-lg{padding:14px 26px;font-size:1.05em}'
+          '.post-wrap .rbx-end{padding:26px 24px!important;margin-top:36px!important}.rbx-price{font-weight:700;color:#fff}'
+          '.rbx-sticky{display:none}'
+          '@media (max-width:759px){.post-wrap .rbx,.rbx{padding:16px!important}.rbx-sticky:not([hidden]){display:flex;position:fixed;left:8px;right:8px;bottom:calc(8px + env(safe-area-inset-bottom));z-index:60;align-items:center;gap:8px;background:#141210;border:1px solid rgba(212,175,55,.45);border-radius:14px;padding:10px 10px 10px 14px;box-shadow:0 8px 30px rgba(0,0,0,.5)}'
+          '.rbx-sticky a{flex:1;color:#f3e6c4;font-weight:700;text-decoration:none;font-size:15px}'
+          '.rbx-sticky button{background:none;border:0;color:#bdb6a6;font-size:22px;line-height:1;padding:4px 8px;cursor:pointer}'
+          'body.rbx-pad{padding-bottom:calc(76px + env(safe-area-inset-bottom))}}')
+
+
 # ---------- page ----------
 def split_template(t):
     head_end = t.index('</head>')
@@ -166,12 +260,36 @@ def page(r, T):
     slug, title, desc = r['slug'], r['title'].strip(), (r.get('description') or '').strip()
     url = f'{SITE}/blog/{slug}/'
     body_md = r.get('body_md') or ''
+    retention = is_retention_page(r)
+    if retention:
+        body_md = strip_md_buybox(body_md)
     body = md_to_html(body_md)
     if re.search(r'asendify', body_md, re.I) and not re.search(r'disclos', body_md, re.I):
         body = ('<p class="hub-disclosure"><em>Disclosure: Asendify publishes this page and makes some of the options '
                 'mentioned here; ours are named as ours. Every option is described from its own official page, and prices '
                 'and features can change, so check before you buy.</em></p>\n') + body
     words = len(re.sub(r'<[^>]+>', ' ', body).split())
+    pb_end = pb_sticky = ''
+    if retention:
+        pb_top, pb_mid, pb_end, pb_sticky = pb_boxes(r)
+        # top box after the first real answer paragraph (skip the disclosure line)
+        m = None
+        for mm in re.finditer(r'</p>', body):
+            if 'hub-disclosure' not in body[max(0, body.rfind('<p', 0, mm.start())):mm.start()]:
+                m = mm; break
+        if m:
+            body = body[:m.end()] + '\n' + pb_top + body[m.end():]
+        else:
+            body = pb_top + body
+        # mid box before the middle h2 (or after the 3rd paragraph)
+        hs = [x.start() for x in re.finditer(r'<h2>', body)]
+        if len(hs) >= 2:
+            at = hs[len(hs) // 2]
+            body = body[:at] + pb_mid + '\n' + body[at:]
+        else:
+            ps = [x.end() for x in re.finditer(r'</p>', body)]
+            at = ps[min(3, len(ps) - 1)] if ps else len(body)
+            body = body[:at] + '\n' + pb_mid + body[at:]
     mins = max(3, round(words / 230))
     pub_d, pub = fmt_date(r['published_at'])
     upd_d, upd = fmt_date(r.get('updated_at') or r['published_at'])
@@ -208,7 +326,7 @@ def page(r, T):
             f'    <meta name="twitter:image" content="{og}" />\n'
             f'    <link rel="stylesheet" href="{T["css"]}" />\n    ' + '\n    '.join(T['head_tail']) + '\n'
             f'    {T["clarity"]}\n'
-            f'    <style>.post-body table{{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95em}}.post-body th,.post-body td{{border:1px solid rgba(255,255,255,.15);padding:8px 10px;text-align:left;vertical-align:top}}</style>\n'
+            f'    <style>.post-body table{{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95em}}.post-body th,.post-body td{{border:1px solid rgba(255,255,255,.15);padding:8px 10px;text-align:left;vertical-align:top}}</style>\n' + (f'    <style>{PB_CSS}</style>\n' if retention else '') + f''
             f'    <script type="application/ld+json">{ld}</script>\n</head>\n\n')
     main = (f'<main>\n        {HUB_MARK}\n        <article class="post-wrap">\n            <div class="container post-container">\n'
             f'                <nav class="post-crumbs" aria-label="Breadcrumb"><a href="../../">Home</a> / <a href="../">Blog</a></nav>\n'
@@ -216,13 +334,15 @@ def page(r, T):
             f'                <h1 class="post-title">{t}</h1>\n'
             f'                <p class="post-meta">By <a href="../../founder">Manthan Bhendkar</a> · {mins} min read · Published {pub} · Last updated {upd}</p>\n'
             f'                <div class="svc-copy post-body">\n{body}\n                </div>\n'
+            + (pb_end if retention else (
             f'            <div class="post-cta">\n'
             f'                <h2>Everything Asendify makes, in one place</h2>\n'
             f'                <p>Practical playbooks, free tools and apps, each with its own page that lists exactly what is inside.</p>\n'
             f'                <a href="../../books/?utm_source=asendify&amp;utm_medium=blog_end&amp;utm_campaign={esc(slug)}" class="btn-primary">See all books</a>\n'
             f'                <p style="margin:18px 0 8px">Or try something free first:</p>\n'
             f'                <a href="../../tools/?utm_source=asendify&amp;utm_medium=blog_end&amp;utm_campaign={esc(slug)}" class="btn-outline">Free tools &rarr;</a>\n'
-            f'            </div>\n            </div>\n        </article>\n    </main>')
+            f'            </div>\n'))
+            + f'            </div>\n        </article>\n    </main>' + (pb_sticky if retention else ''))
     return head + T['nav'] + main + T['footer'], mins
 
 
