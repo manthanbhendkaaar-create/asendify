@@ -234,6 +234,17 @@ body{background:var(--ax-bg)}
 .ax-tool b{font-size:16px}
 .ax-tool span{color:var(--ax-mute);font-size:13.5px;line-height:1.5}
 
+
+/* "After you pay, you get" blocks */
+.ax-get{margin:14px 0 18px;padding:16px 16px 6px;border-radius:14px;background:rgba(212,175,55,.05);border:1px solid rgba(212,175,55,.2)}
+.ax-get-t{display:block;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ax-gold2);font-weight:800;margin-bottom:10px}
+.ax-get ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.ax-get li{position:relative;padding:0 0 9px 26px;color:#e3ded5;font-size:14.5px;line-height:1.5;border-bottom:1px solid rgba(244,241,234,.06)}
+.ax-get li:last-child{border-bottom:0}
+.ax-get li:before{content:"";position:absolute;left:0;top:3px;width:16px;height:16px;border-radius:50%;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.5)}
+.ax-get li:after{content:"";position:absolute;left:5px;top:7px;width:6px;height:3.5px;border-left:1.6px solid var(--ax-gold2);border-bottom:1.6px solid var(--ax-gold2);transform:rotate(-45deg)}
+.ax-tier .ax-get,.ax-card .ax-get{margin:4px 0 6px}
+
 /* final cta */
 .ax-final{text-align:center;padding:90px 32px;border-radius:28px;overflow:hidden}
 .ax-final .ax-lead{margin:0 auto 28px}
@@ -528,19 +539,11 @@ twq('config','rd7up');
       <div class="ax-reveal">
         <span class="ax-eyebrow"><i></i>Monthly tool &middot; for YouTube creators</span>
         <h2 class="ax-h2">Retention Doctor: the exact second, <em>and the fix.</em></h2>
-        <p class="ax-lead">It reads your YouTube retention graphs and turns them into a short to-do list: where people leave, why, and the Retention playbook technique that fixes it.</p>
-        <ul class="ax-bul">
-          <li>Drop-off timestamps for every video, long-form and Shorts</li>
-          <li>A plain-English reason and the fix for each drop</li>
-          <li>A 0&ndash;100 Retention Score, updated after every upload</li>
-          <li>Read-only Google sign-in: it can't upload, edit, delete or comment</li>
-        </ul>
-        <div class="ax-meta">
-          <div><small>Who it's for</small><strong>Creators and editors who want to know what to change in the next edit</strong></div>
-          <div><small>Setup</small><strong>Connect one channel; first reports in about a minute</strong></div>
-        </div>
+        <p class="ax-lead">Know exactly where viewers leave every video and what to change in your next edit. It reads your YouTube retention graphs and turns them into a short to-do list.</p>
+        <div class="ax-meta" style="grid-template-columns:1fr;margin-top:20px"><div><small>Who it's for</small><strong>Creators and editors who edit their own videos and want the fix, not just the graph</strong></div></div>
+        <div class="ax-get"><span class="ax-get-t">After you pay, you get:</span><ul><li>Your first reports about a minute after you connect one channel (read-only Google sign-in)</li><li>A drop-off report for every video: exact timestamps, why viewers leave, and the Retention playbook fix</li><li>A 0&ndash;100 Retention Score per video and per channel, with a trend chart since you joined</li><li>An email about 48 hours after each upload with where viewers left and the fix</li><li>A Monday 3-fix plan with tick boxes, plus before-and-after numbers when a fix works</li><li>Unlimited pre-upload Hook Checker and title check, for long-form and Shorts</li></ul></div>
         <div class="ax-price"><b>£145</b><span>a month &middot; cancel any time</span></div>
-        <p class="ax-fine">£100 + £45 service fee (45%). Renews monthly through PayPal. No free trial; the free check shows the worst drop-off moment in your latest video (one per channel).</p>
+        <p class="ax-fine">£100 + £45 service fee (45%). Renews monthly through PayPal; cancel from your account page and access runs to the end of the month you paid for. No free trial: the free check shows the worst drop-off moment in your latest video (one per channel).</p>
         <div class="ax-ctas">
           <a class="ax-btn ax-btn-gold rd-glow" href="https://playbook.asendify.co/doctor/app/?subscribe=1&amp;utm_source=www&amp;utm_medium=home&amp;utm_campaign=retention_doctor">Start Retention Doctor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg></a>
           <a class="ax-btn ax-btn-line" href="https://playbook.asendify.co/doctor/free/?utm_source=www&amp;utm_medium=home&amp;utm_campaign=free_check">Free check</a>
@@ -571,31 +574,31 @@ twq('config','rd7up');
   <div class="ax-wrap">
     <div class="ax-sec-head ax-reveal">
       <div><span class="ax-eyebrow"><i></i>Done for you</span><h2 class="ax-h2">Our team edits <em>every video.</em></h2>
-      <p class="ax-lead" style="margin:0">Retention-engineered editing, made by hand by the Asendify team: hooks, pacing and structure cut frame by frame. Five clients at a time.</p></div>
+      <p class="ax-lead" style="margin:0">Hand over the editing and get videos built to hold viewers: retention-engineered by hand by the Asendify team, hooks, pacing and structure cut frame by frame. Five clients at a time.</p></div>
     </div>
     <div class="ax-tiers">
       <div class="ax-tier ax-glass ax-reveal">
         <span class="ax-badge full">Full &middot; waitlist open</span>
         <h3>Growth Plan</h3>
+        <p>Consistent, retention-focused edits for growing channels that aren't ready for the Elite Club yet.</p>
+        <div class="ax-get"><span class="ax-get-t">Once your place starts, you get:</span><ul><li>Retention-focused editing from the Asendify team</li><li>Unlimited edited videos, Shorts or long-form, made one at a time (fair-use limit applies)</li><li>The same hook, pacing and structure system we use for Elite Club clients</li></ul></div>
         <div class="p">£840<small>/ month</small></div>
-        <p>For growing channels that aren't ready for the Elite Club yet.</p>
-        <ul class="ax-bul"><li>Retention-focused editing from the Asendify team</li><li>Unlimited edited videos (Shorts or long-form), one at a time, fair-use limit</li><li>The same hook, pacing and structure system as Elite Club</li></ul>
         <a class="ax-btn ax-btn-line" href="./contact">Join the waitlist</a>
       </div>
       <div class="ax-tier ax-glass ax-reveal">
         <span class="ax-badge full">Full &middot; waitlist open</span>
         <h3>Elite Club</h3>
+        <p>A dedicated team on your channel, for high-net-worth creators who want every video at its best.</p>
+        <div class="ax-get"><span class="ax-get-t">Once your place starts, you get:</span><ul><li>Dedicated editor(s) assigned to your channel</li><li>Retention-engineered editing on every video, unlimited edited videos (Shorts or long-form), made one at a time (fair-use limit applies)</li><li>Unlimited revisions and fast turnaround, built around your upload schedule</li><li>A private community with the other Elite Club members: 5 creators growing alongside you</li></ul></div>
         <div class="p">£14,000<small>/ month minimum</small></div>
-        <p>For high-net-worth creators who want a dedicated team and peers.</p>
-        <ul class="ax-bul"><li>Dedicated editor(s) on your channel, unlimited revisions</li><li>Unlimited edited videos, fast turnaround around your schedule</li><li>Private community with the other Elite Club members</li></ul>
         <a class="ax-btn ax-btn-line" href="./contact">Join the waitlist</a>
       </div>
       <div class="ax-tier ax-glass ax-reveal">
         <span class="ax-badge gold">Partnership</span>
         <h3>Clipping</h3>
-        <div class="p" style="font-size:22px;line-height:1.3">Same structure as our core partnership</div>
-        <p>Dedicated clipper(s) turning your long-form videos into short clips.</p>
-        <ul class="ax-bul"><li>Clips cut from your podcasts and long videos</li><li>Built on the same retention system</li></ul>
+        <p>Reach new audiences on Shorts, Reels and TikTok from the long videos you already make.</p>
+        <div class="ax-get"><span class="ax-get-t">Once your partnership starts, you get:</span><ul><li>Dedicated clipper(s) assigned to your content</li><li>Your long-form videos, streams and podcasts turned into short clips</li><li>Moments picked for retention and edited with hooks, captions and pacing</li></ul></div>
+        <div class="p" style="font-size:19px;line-height:1.35">Package and price agreed on a booked call</div>
         <a class="ax-btn ax-btn-line" href="./clipping/">See clipping</a>
       </div>
     </div>
@@ -618,26 +621,30 @@ twq('config','rd7up');
       <div class="ax-books-main ax-glass ax-reveal" id="playbook">
         <span class="ax-badge open">Instant download</span>
         <h3 style="font-size:26px;margin:16px 0 8px;letter-spacing:-.01em">Asendify Books</h3>
-        <p class="ax-lead" style="font-size:15.5px">25 practical playbooks: our full retention-editing system for creators, plus building software with AI, money, trading, real estate, focus and more.</p>
+        <p class="ax-lead" style="font-size:15.5px">Do it yourself with a proven system: 25 practical playbooks, led by our full retention-editing system for creators, plus building software with AI, money, trading, real estate, focus and more.</p>
         <div class="ax-shelf" aria-hidden="true">
           <span style="--c1:#d4af37;--c2:#6b5214"></span><span style="--c1:#e0463a;--c2:#5a1610"></span><span style="--c1:#5b8cff;--c2:#1a2a5c"></span><span style="--c1:#8fe3ad;--c2:#1d4a2e"></span><span style="--c1:#c58cff;--c2:#3c1d5c"></span><span style="--c1:#f3d98b;--c2:#7a5a12"></span><span style="--c1:#ff9d6b;--c2:#5c2a12"></span><span style="--c1:#9aa4b2;--c2:#2a2f36"></span>
         </div>
-        <ul class="ax-list"><li><span>Secrets to become a celebrity on YouTube (the retention book)</span><b>£1,000</b></li><li><span>Single playbooks</span><b>£49 &ndash; £1,000</b></li><li><span>Topic bundles (5 playbooks)</span><b>up to 17% off</b></li><li><span>The Asendify Library (23 playbooks)</span><b>£17,435</b></li></ul>
+        <div class="ax-get"><span class="ax-get-t">After you pay, you get:</span><ul><li>The full book as a PDF, instant download, licensed to you with your name on every page</li><li>Its Bonus Pack in the same download: a chapter-by-chapter workbook, a one-page cheat sheet, the book&rsquo;s plan as a day-by-day tick list, templates and a progress tracker</li><li>A spreadsheet with working calculations for most titles</li><li>The retention book itself: the full 38-page system in 13 parts, from the diagnosis worksheet and hooks to pacing, pattern interrupts, a pre-export checklist and a 30-day plan</li></ul></div>
+        <ul class="ax-list"><li><span>Secrets to become a celebrity on YouTube (the retention book)</span><b>£1,000</b></li><li><span>Single playbooks</span><b>£49 &ndash; £1,000</b></li><li><span>Topic bundles: 5 playbooks, each licensed to you</span><b>up to 17% off</b></li><li><span>The Asendify Library: all 23 playbooks, every download link right after payment</span><b>£17,435</b></li></ul>
         <div class="ax-ctas" style="margin-top:18px"><a class="ax-btn ax-btn-light" href="https://playbook.asendify.co/">Get the retention book</a><a class="ax-btn ax-btn-ghost" href="./books/">See all 25 books &rarr;</a></div>
       </div>
       <div class="ax-books-side">
         <div class="ax-card ax-glass ax-reveal">
           <span class="ax-badge gold">Self-paced course</span>
           <h3>Retention Editing Accelerator</h3>
+          <p>Apply the retention-editing system to your own videos, lesson by lesson.</p>
+          <div class="ax-get"><span class="ax-get-t">After you pay, you get:</span><ul><li>Instant access to 6 modules and 24 lessons, and you keep access</li><li>Checklists, templates, worked examples and an assignment in every lesson</li><li>A private course site with progress tracking, plus the whole course as a PDF</li></ul></div>
           <div class="p">£2,428.69<small>one-time</small></div>
-          <p>Six modules with worked examples and an assignment in every lesson. Book buyers get £100 off.</p>
+          <p class="ax-fine" style="margin:0">£1,674.96 course + 45% service fee. Book buyers get £100 off.</p>
           <a class="ax-btn ax-btn-line" href="./accelerator/">See the Accelerator</a>
         </div>
         <div class="ax-card ax-glass ax-reveal">
           <span class="ax-badge gold">1:1 or small group</span>
           <h3>Personal Coaching</h3>
+          <p>Three months of personal guidance growing your channel through better retention, while you keep control of your editing.</p>
+          <div class="ax-get"><span class="ax-get-t">After you pay, you get:</span><ul><li>Regular coaching calls for 3 months, 1:1 or small group</li><li>Written feedback on your videos between calls</li><li>A retention diagnostic of your channel at the start and the end</li><li>Our checklists, templates and the retention book</li></ul></div>
           <div class="p">£7,308<small>3 months</small></div>
-          <p>Calls plus written feedback on your videos between calls.</p>
           <a class="ax-btn ax-btn-line" href="./coaching/">See coaching</a>
         </div>
       </div>
@@ -655,25 +662,25 @@ twq('config','rd7up');
       <div class="ax-card ax-glass ax-reveal">
         <span class="ax-badge open">Self-serve software</span>
         <h3>Asendify AI</h3>
+        <p>A YouTube growth assistant that answers from your own channel's analytics, for creators who want more than retention.</p>
+        <div class="ax-get"><span class="ax-get-t">After you pay, you get:</span><ul><li>Read-only connection to your YouTube Studio: it can&rsquo;t upload, edit or delete</li><li>Retention curve diagnosis, drop-off and rewatch-spike finders, first-30-seconds hook review</li><li>Title workshop, thumbnail idea briefs and a script doctor</li><li>Access for the 1, 4, 8 or 12 months you prepay, with a usage meter; no automatic renewal</li></ul></div>
         <div class="p">£1,566<small>/ month, prepaid</small></div>
-        <p>A YouTube growth AI that answers from your own channel's analytics: drop-off seconds, hooks, titles, thumbnail ideas, scripts and traffic.</p>
-        <dl><dt>Who it's for</dt><dd>Creators who want a full assistant, not just retention</dd><dt>Plans</dt><dd>1, 4, 8 or 12 months, paid once. Read-only: it can't upload, edit or delete.</dd></dl>
         <a class="ax-btn ax-btn-line" href="https://ai.asendify.co/?utm_source=asendify&amp;utm_medium=home&amp;utm_campaign=asendifyai">See Asendify AI</a>
       </div>
       <div class="ax-card ax-glass ax-reveal">
         <span class="ax-badge open">Live in minutes</span>
         <h3>Asendify Web</h3>
+        <p>A professional business website, live in minutes from a short form.</p>
+        <div class="ax-get"><span class="ax-get-t">After you pay, you get:</span><ul><li>Your website live in minutes, in one of three styles with your words, colours and photos</li><li>Hosting and SSL included, and your own domain (we show you the exact DNS records)</li><li>Unlimited self-edits from your private edit page</li><li>After the first month, a £99 payment link a week before each month: nothing charged automatically</li></ul></div>
         <div class="p">£1,000<small>today, then £99/mo</small></div>
-        <p>Your business website with your own domain, hosting, SSL and unlimited self-edits.</p>
-        <dl><dt>Who it's for</dt><dd>Businesses that need a professional site fast</dd><dt>Price</dt><dd>£689.66 + 45% service fee today, then £99 a month</dd></dl>
         <a class="ax-btn ax-btn-line" href="https://web.asendify.co/?utm_source=asendify&amp;utm_medium=home">See Asendify Web</a>
       </div>
       <div class="ax-card ax-glass ax-reveal">
         <span class="ax-badge full">At capacity &middot; waitlist</span>
         <h3>AI Automations</h3>
+        <p>Win back the hours your agency spends on admin, with AI systems built by MorningstarrAI.</p>
+        <div class="ax-get"><span class="ax-get-t">When your slot opens, you get:</span><ul><li>Automation Sprint: a workflow audit and system design, one process automated end to end and live within 5 working days of the process call</li><li>Handover docs, a recorded walkthrough and 30 days of fixes after go-live</li><li>AI Outbound Engine: new leads added to your own sheet daily, personal first lines and 2 follow-ups</li><li>Final scope and price agreed in writing before any work starts</li></ul></div>
         <div class="p">from £6,300<small>fixed price</small></div>
-        <p>Production AI systems for agencies: lead finding, cold email, replies and delivery ops, built by MorningstarrAI.</p>
-        <dl><dt>Who it's for</dt><dd>Marketing agencies with a manual bottleneck</dd><dt>Options</dt><dd>Engine £6,300 &middot; Sprint £7,560 &middot; Operating System from £16,800</dd></dl>
         <a class="ax-btn ax-btn-line" href="https://morningstarr.asendify.co/">See AI Automations</a>
       </div>
     </div>
