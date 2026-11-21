@@ -34,6 +34,12 @@ SLUG_RE = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
 LLMS_HEAD = '## Broad guides, roundups and comparisons (www.asendify.co)'
 
 
+
+def ax_theme(page):
+    """2026-11-21 design system v2: make sure every generated page loads ax-theme.css after style.css."""
+    if 'ax-theme.css' in page: return page
+    return re.sub(r'(<link[^>]*href="([^"]*?)assets/css/style\.css[^"]*"[^>]*>)', lambda m: m.group(1) + '\n    <link rel="stylesheet" href="' + m.group(2) + 'assets/css/ax-theme.css?v=1" />', page, count=1)
+
 def esc(s):
     return html.escape(str(s or ''), quote=True)
 
@@ -278,7 +284,7 @@ def main():
         html_page, mins = page(r, T)
         if old != html_page:
             os.makedirs(os.path.dirname(out), exist_ok=True)
-            open(out, 'w', encoding='utf-8').write(html_page)
+            open(out, 'w', encoding='utf-8').write(ax_theme(html_page))
             changed.append(slug)
             if old is None:
                 new_count += 1
