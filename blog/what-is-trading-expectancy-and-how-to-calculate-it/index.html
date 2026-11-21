@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-733LBFR71P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-733LBFR71P');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What is trading expectancy, and how do you calculate it?</title>
+    <meta name="description" content="Expectancy is the average amount you win or lose per trade: (win rate x average win) - (loss rate x average loss). Why a 70% win rate can still lose money." />
+    <link rel="canonical" href="https://www.asendify.co/blog/what-is-trading-expectancy-and-how-to-calculate-it/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="What is trading expectancy, and how do you calculate it?" />
+    <meta property="og:description" content="Expectancy is the average amount you win or lose per trade: (win rate x average win) - (loss rate x average loss). Why a 70% win rate can still lose money." />
+    <meta property="og:url" content="https://www.asendify.co/blog/what-is-trading-expectancy-and-how-to-calculate-it/" />
+    <meta property="og:image" content="https://www.asendify.co/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="What is trading expectancy, and how do you calculate it?" />
+    <meta name="twitter:description" content="Expectancy is the average amount you win or lose per trade: (win rate x average win) - (loss rate x average loss). Why a 70% win rate can still lose money." />
+    <meta name="twitter:image" content="https://www.asendify.co/assets/images/og-image.png" />
+    <link rel="stylesheet" href="../../assets/css/style.css?v=85" />
+    <link rel="icon" type="image/png" href="../../assets/images/logo1.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xdj3054ut1");
+    </script>
+    <style>.post-body table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95em}.post-body th,.post-body td{border:1px solid rgba(255,255,255,.15);padding:8px 10px;text-align:left;vertical-align:top}</style>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "What is trading expectancy, and how do you calculate it?", "description": "Expectancy is the average amount you win or lose per trade: (win rate x average win) - (loss rate x average loss). Why a 70% win rate can still lose money.", "datePublished": "2026-11-19", "dateModified": "2026-11-19", "image": "https://www.asendify.co/assets/images/og-image.png", "mainEntityOfPage": "https://www.asendify.co/blog/what-is-trading-expectancy-and-how-to-calculate-it/", "author": {"@type": "Person", "name": "Manthan Bhendkar", "url": "https://www.asendify.co/founder/"}, "publisher": {"@type": "Organization", "name": "Asendify", "url": "https://www.asendify.co/", "logo": "https://www.asendify.co/assets/images/logo.png"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is there a trading journal that calculates expectancy inputs and shows what each mistake costs?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Asendify's Trader OS is a one-time-payment Notion template that calculates P&L, R-multiple, win rate and the cost of each mistake. A spreadsheet with the expectancy formula is the free alternative."}}, {"@type": "Question", "name": "What is a good expectancy in trading?", "acceptedAnswer": {"@type": "Answer", "text": "Any positive expectancy after all costs, measured over enough trades, means the approach has made money on average. How large it needs to be depends on your costs and how often you trade."}}, {"@type": "Question", "name": "Can a strategy with a low win rate be profitable?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. In ETRADE's example, a 45% win rate made +$170 a trade because average wins were five times average losses."}}, {"@type": "Question", "name": "How many trades do I need to calculate expectancy?", "acceptedAnswer": {"@type": "Answer", "text": "More is better; a few dozen trades give only a rough estimate. ETRADE warns that the maths is only useful with enough reliable data."}}, {"@type": "Question", "name": "Should I include costs in expectancy?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use profits and losses after spread, commission and financing, or your expectancy will look better than it is."}}, {"@type": "Question", "name": "What is the difference between expectancy and R-multiple?", "acceptedAnswer": {"@type": "Answer", "text": "R-multiple is the result of one trade measured against the amount risked. Expectancy is the average result across many trades, in money or in R. More playbooks on other topics: https://www.asendify.co/books/"}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.asendify.co/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.asendify.co/blog/"}, {"@type": "ListItem", "position": 3, "name": "What is trading expectancy, and how do you calculate it?", "item": "https://www.asendify.co/blog/what-is-trading-expectancy-and-how-to-calculate-it/"}]}]}</script>
+</head>
+
+<body>
+
+    <div class="scroll-dark-overlay" aria-hidden="true"></div>
+
+    <!-- ========== NAVBAR ========== -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="" class="logo">
+                <img class="logo" src="../../assets/images/logo.png" alt="Asendify logo">
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="../../" class="nav-link">Home</a>
+                <div class="nav-item-dropdown">
+                    <button class="nav-link nav-dropdown-toggle" type="button">
+                        Services
+                        <svg class="nav-dropdown-arrow" viewBox="0 0 12 8" width="10" height="7" fill="none">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-menu nav-dropdown-mega">
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Core Services</span>
+                            <a href="../../#work" class="nav-dropdown-link">YouTube Growth</a>
+                            <a href="https://ai.asendify.co/?utm_source=asendify&amp;utm_medium=nav&amp;utm_campaign=asendifyai" class="nav-dropdown-link btn-red-shine">Asendify AI</a>
+                            <a href="https://morningstarr.asendify.co/" class="nav-dropdown-link">AI Automations</a>
+                            <a href="https://web.asendify.co/" class="nav-dropdown-link">Web Design</a>
+                            <a href="../../clipping/" class="nav-dropdown-link trending-link">Clipping <span
+                                    class="trending-badge">🔥 Trending</span></a>
+                        </div>
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Content Types</span>
+                            <a href="../../short-form/" class="nav-dropdown-link">Short Form Content</a>
+                            <a href="../../animations/" class="nav-dropdown-link">2D Animations</a>
+                            <a href="../../3d/" class="nav-dropdown-link">3D Animations</a>
+                            <a href="../../youtube" class="nav-dropdown-link">YouTube Editing</a>
+                            <a href="../../podcast/" class="nav-dropdown-link">Podcast Editing</a>
+                        </div>
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Niche Content</span>
+                            <a href="../../gaming/" class="nav-dropdown-link">Gaming Content</a>
+                            <a href="../../vlogs/" class="nav-dropdown-link">Vlogs</a>
+                            <a href="../../ai/" class="nav-dropdown-link">AI Content</a>
+                            <a href="../../talkinghead/" class="nav-dropdown-link">Talking Head</a>
+                            <a href="../../explainer/" class="nav-dropdown-link">Comic Explainer</a>
+                            <a href="../../trading/" class="nav-dropdown-link">Trading</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="../../#work" class="nav-link">Work</a>
+                <div class="nav-item-dropdown">
+                    <button class="nav-link nav-dropdown-toggle" type="button">
+                        Resources
+                        <svg class="nav-dropdown-arrow" viewBox="0 0 12 8" width="10" height="7" fill="none">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="../../#testimonials" class="nav-dropdown-link">Testimonials</a>
+                        <a href="../../case-studies" class="nav-dropdown-link">Case Studies</a>
+                        <a href="../../blog/" class="nav-dropdown-link">Blog</a>
+                        <a href="../../tools/retention-calculator/" class="nav-dropdown-link">Retention Calculator</a>
+                        <a href="../../tools/" class="nav-dropdown-link">Free Tools</a>
+                        <a href="../../#roi-calculator" class="nav-dropdown-link">ROI Calculator</a>
+                        <a href="https://playbook.asendify.co/" class="nav-dropdown-link">Secrets to become a celebrity on Youtube</a>
+                        <a href="../../programs/" class="nav-dropdown-link">Programs</a>
+                        <a href="../../books/" class="nav-dropdown-link">Books</a>
+                    </div>
+                </div>
+                <a href="../../books/" class="nav-link nav-books">Books</a> <a href="../../retention-doctor/" class="nav-link nav-books nav-doctor btn-red-shine">Retention Doctor</a>
+                <a href="../../#pricing" class="nav-link">Pricing</a>
+                <a href="../../policies" class="nav-link">Policies</a>
+                <a href="../../founder" class="nav-link">Founder</a>
+                <a href="../../contact" class="nav-link">Contact</a>
+                <a href="https://portal.asendify.co" class="nav-link nav-mobile-signin">Client Sign In</a>
+                <a rel="nofollow" href="../../book" class="btn-cta nav-mobile-cta">Work with us</a>
+            </nav>
+            <a href="https://portal.asendify.co" class="nav-signin" title="For existing Asendify clients">Client Sign In</a>
+            <a rel="nofollow" href="../../book" class="btn-cta">Work with us</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- hub-article: built by scripts/build_hub_articles.py from shop_articles (product=hub) -->
+        <article class="post-wrap">
+            <div class="container post-container">
+                <nav class="post-crumbs" aria-label="Breadcrumb"><a href="../../">Home</a> / <a href="../">Blog</a></nav>
+                <div class="section-tag">Guide</div>
+                <h1 class="post-title">What is trading expectancy, and how do you calculate it?</h1>
+                <p class="post-meta">By <a href="../../founder">Manthan Bhendkar</a> · 5 min read · Published 19 November 2026 · Last updated 19 November 2026</p>
+                <div class="svc-copy post-body">
+<p class="hub-disclosure"><em>Disclosure: Asendify publishes this page and makes some of the options mentioned here; ours are named as ours. Every option is described from its own official page, and prices and features can change, so check before you buy.</em></p>
+<p>Trading expectancy is the average amount you can expect to win or lose per trade, based on your past results. The formula is: expectancy = (win rate x average win) - (loss rate x average loss). A positive number means the approach has made money on average; a negative one means it has lost. It matters more than win rate alone: a strategy that wins 70% of the time can still lose money if its losers are much bigger than its winners.</p>
+<p><em>This page is education only, not financial advice. Past results do not guarantee future results.</em></p>
+<blockquote><p><strong>Trader OS by Asendify</strong> · One-time payment Notion template · Logs every trade and does the maths for you: P&amp;L, R-multiple, win rate, position size and the money each mistake costs. <a href="https://trading.asendify.co/trader-os?utm_source=ai-page&amp;utm_medium=buybox&amp;utm_campaign=what-is-trading-expectancy-and-how-to-calculate-it">See Trader OS</a></p></blockquote>
+<h2>Key takeaways</h2>
+<ul><li>Formula: (average win x win rate) - (average loss x loss rate).</li><li>Win rate alone tells you little; E*TRADE&#x27;s example shows a 45% strategy making +$170 a trade and a 70% strategy losing $50 a trade.</li><li>Expectancy is only as good as the data behind it (&quot;garbage in, garbage out&quot;), so you need enough logged trades.</li><li>Costs (spread, commission, financing) must be included, or a slightly positive expectancy can turn negative.</li><li>Expressing results in R (multiples of the amount risked) lets you compare trades of different sizes.</li></ul>
+<h2>The formula</h2>
+<p>BabyPips&#x27; <a href="https://www.babypips.com/forexpedia/expectancy" rel="noopener">Forexpedia entry on expectancy</a> defines it as &quot;a statistical measure that estimates the average amount a trader can expect to win or lose per trade&quot;. E*TRADE&#x27;s guide <a href="https://us.etrade.com/knowledge/library/perspectives/daily-insights/risk-reward-probability" rel="noopener">Trade expectations</a> (July 2022) writes the same idea as:</p>
+<p><strong>Expectancy = (Average winning trade x Win frequency) - (Average losing trade x Loss frequency)</strong></p>
+<div class="table-wrap" style="overflow-x:auto"><table><thead><tr><th>Input</th><th>What it means</th><th>Where to get it</th></tr></thead><tbody><tr><td>Win rate</td><td>Share of trades that made money</td><td>Count winners ÷ total trades</td></tr><tr><td>Loss rate</td><td>Share that lost money</td><td>1 - win rate</td></tr><tr><td>Average win</td><td>Mean profit on winning trades (after costs)</td><td>Your journal</td></tr><tr><td>Average loss</td><td>Mean loss on losing trades (after costs), as a positive number</td><td>Your journal</td></tr></tbody></table></div>
+<p>BabyPips&#x27; example: a 60% win rate, $100 average win and $50 average loss gives 0.6 x $100 - 0.4 x $50 = $60 - $20 = <strong>$40 per trade</strong>.</p>
+<h2>Why win rate misleads</h2>
+<p>E*TRADE compares two strategies:</p>
+<div class="table-wrap" style="overflow-x:auto"><table><thead><tr><th>Strategy</th><th>Win rate</th><th>Average win</th><th>Average loss</th><th>Expectancy per trade</th></tr></thead><tbody><tr><td>A</td><td>45%</td><td>$500</td><td>$100</td><td>(500 x 0.45) - (100 x 0.55) = <strong>+$170</strong></td></tr><tr><td>B</td><td>70%</td><td>$100</td><td>$400</td><td>(100 x 0.70) - (400 x 0.30) = <strong>-$50</strong></td></tr></tbody></table></div>
+<p>As the article puts it, &quot;Winning percentage is only one part of the potential profitability equation.&quot; Strategy B feels better day to day, because it wins most of the time, but over many trades it loses. This is the trap behind cutting winners early and letting losers run; see <a href="https://www.asendify.co/blog/what-is-the-disposition-effect-in-trading/">the disposition effect in trading</a>.</p>
+<h2>Expectancy in R-multiples</h2>
+<p>Many traders express results in R, where 1R is the amount risked on a trade (entry to stop-loss). A trade that makes twice what was risked is +2R; one stopped out at the planned level is -1R. Expectancy in R lets you compare a £20-risk trade with a £200-risk trade.</p>
+<p><strong>Expectancy (R) = (win rate x average winning R) - (loss rate x average losing R)</strong></p>
+<h2>Worked example: 40 trades from a journal</h2>
+<p>Example (illustrative): Priya logs 40 CFD trades, risking £50 (1R) on each.</p>
+<div class="table-wrap" style="overflow-x:auto"><table><thead><tr><th>Measure</th><th>Value</th></tr></thead><tbody><tr><td>Trades</td><td>40</td></tr><tr><td>Winners</td><td>16 (40%)</td></tr><tr><td>Losers</td><td>24 (60%)</td></tr><tr><td>Average winner</td><td>+£110 (+2.2R) after costs</td></tr><tr><td>Average loser</td><td>-£52 (-1.04R) after costs, including slippage past stops</td></tr><tr><td>Expectancy (£)</td><td>0.40 x £110 - 0.60 x £52 = £44.00 - £31.20 = <strong>+£12.80 per trade</strong></td></tr><tr><td>Expectancy (R)</td><td>0.40 x 2.2 - 0.60 x 1.04 = 0.88 - 0.624 = <strong>+0.256R</strong></td></tr></tbody></table></div>
+<p>Now she checks costs more carefully and finds she left out overnight financing of about £8 a trade on average. Adjusted expectancy: £12.80 - £8.00 = <strong>+£4.80 per trade</strong>, or about +0.1R. Still positive, but thin. A small change, such as wider spreads or a few more impulsive trades, could push it below zero. And 40 trades is a small sample; see <a href="https://www.asendify.co/blog/how-many-trades-to-know-if-strategy-works/">how many trades you need to know if a strategy works</a>.</p>
+<h2>Why costs and leverage matter so much</h2>
+<p>The UK regulator&#x27;s policy statement on CFDs, <a href="https://www.fca.org.uk/publication/policy/ps19-18.pdf" rel="noopener">PS19/18</a>, estimated that limiting leverage and adding other protections would save retail clients £267m to £451m a year, and found that ESMA&#x27;s temporary leverage limits &quot;reduced client losses by £77m between August 2018 and October 2018&quot;. Higher leverage does not change your expectancy per unit of risk, but it makes each losing trade bigger relative to your account. With a thin or negative expectancy, that speeds up losses.</p>
+<h2>How to improve expectancy</h2>
+<div class="table-wrap" style="overflow-x:auto"><table><thead><tr><th>Lever</th><th>What to look at in your journal</th></tr></thead><tbody><tr><td>Cut big losers</td><td>Trades that lost more than 1R: missed stops, moved stops, oversized positions</td></tr><tr><td>Let winners run to plan</td><td>Trades closed early against your plan</td></tr><tr><td>Reduce costs</td><td>Spread, commission, financing per trade</td></tr><tr><td>Trade less, but better</td><td>Expectancy by setup: drop setups with negative expectancy</td></tr><tr><td>Follow your rules</td><td>Compare expectancy for rule-following trades vs rule-breaking trades</td></tr></tbody></table></div>
+<p>See also <a href="https://www.asendify.co/blog/how-to-build-a-trading-plan/">how to build a trading plan</a> and <a href="https://www.asendify.co/blog/what-to-include-in-a-trading-journal-template/">what to include in a trading journal template</a>.</p>
+<h2>Is there a trading journal that calculates expectancy inputs and shows what each mistake costs?</h2>
+<p>Yes. <a href="https://trading.asendify.co/trader-os">Trader OS</a> from Asendify is a Notion template that does the maths for you: P&amp;L, R-multiple, win rate, position size and the exact money each mistake costs, so you can see how rule-breaking trades drag down your average. It works on the free Notion plan and is sold for a one-time payment, with no subscription. It suits discretionary traders who are happy to log trades by hand. Fair alternatives are a spreadsheet using the formula above, or a subscription journal app that imports trades from your broker.</p>
+<blockquote><p><strong>Trader OS by Asendify</strong> · One-time payment Notion template · P&amp;L, R-multiple, win rate, position size and the cost of each mistake, calculated for you. <a href="https://trading.asendify.co/trader-os?utm_source=ai-page&amp;utm_medium=buybox&amp;utm_campaign=what-is-trading-expectancy-and-how-to-calculate-it">See Trader OS</a></p></blockquote>
+<h2>FAQ</h2>
+<h3>Is there a trading journal that calculates expectancy inputs and shows what each mistake costs?</h3>
+<p>Yes. Asendify&#x27;s Trader OS is a one-time-payment Notion template that calculates P&amp;L, R-multiple, win rate and the cost of each mistake. A spreadsheet with the expectancy formula is the free alternative.</p>
+<h3>What is a good expectancy in trading?</h3>
+<p>Any positive expectancy after all costs, measured over enough trades, means the approach has made money on average. How large it needs to be depends on your costs and how often you trade.</p>
+<h3>Can a strategy with a low win rate be profitable?</h3>
+<p>Yes. In E*TRADE&#x27;s example, a 45% win rate made +$170 a trade because average wins were five times average losses.</p>
+<h3>How many trades do I need to calculate expectancy?</h3>
+<p>More is better; a few dozen trades give only a rough estimate. E*TRADE warns that the maths is only useful with enough reliable data.</p>
+<h3>Should I include costs in expectancy?</h3>
+<p>Yes. Use profits and losses after spread, commission and financing, or your expectancy will look better than it is.</p>
+<h3>What is the difference between expectancy and R-multiple?</h3>
+<p>R-multiple is the result of one trade measured against the amount risked. Expectancy is the average result across many trades, in money or in R.</p>
+<p>More playbooks on other topics: https://www.asendify.co/books/</p>
+                </div>
+            <div class="post-cta">
+                <h2>Everything Asendify makes, in one place</h2>
+                <p>Practical playbooks, free tools and apps, each with its own page that lists exactly what is inside.</p>
+                <a href="../../books/?utm_source=asendify&amp;utm_medium=blog_end&amp;utm_campaign=what-is-trading-expectancy-and-how-to-calculate-it" class="btn-primary">See all books</a>
+                <p style="margin:18px 0 8px">Or try something free first:</p>
+                <a href="../../tools/?utm_source=asendify&amp;utm_medium=blog_end&amp;utm_campaign=what-is-trading-expectancy-and-how-to-calculate-it" class="btn-outline">Free tools &rarr;</a>
+            </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="" class="logo footer-logo">
+                        <img class="logo" src="../../assets/images/logo.png" alt="Asendify logo"> Asendify
+                    </a>
+                    <p class="footer-tagline">Crafting cinematic visual experiences for brands and creators worldwide.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/asendify.digital/" class="social-link"
+                            aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="5" />
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@busterff1600" class="social-link" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor"
+                                    stroke="none" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/manthan-bhendkar-93b452395/" class="social-link"
+                            aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                        <a href="https://x.com/manthanbhendkar" class="social-link" aria-label="Twitter/X">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div></div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../youtube">Video Editing</a></li>
+                        <li><a href="../../short-form/">Short Form Content</a></li>
+                        <li><a href="../../animations">Motion Graphics</a></li>
+                        <li><a href="../../youtube">YouTube Editing</a></li>
+                        <li><a href="../../youtube">Commercial Ads</a></li>
+                        <li><a href="../../books/">Books</a></li>
+                        <li><a href="https://playbook.asendify.co/affiliate">Affiliates: earn 30%</a></li>
+                        <li><a href="https://game.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Asendify Daily (free game)</a></li>
+                        <li><a href="https://anime.asendify.co/?utm_source=asendify&amp;utm_medium=footer">ASCEND (free anime)</a></li><li><a href="https://cowork.asendify.co/?utm_source=asendify&amp;utm_medium=footer">The Cowork Operator (course)</a></li>
+                        <li><a href="https://realestate.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Real Estate playbook</a></li>
+                        <li><a href="https://www.asendify.co/roast/?utm_source=asendify&amp;utm_medium=footer">YouTube Channel Roast (free)</a></li>
+                        <li><a href="https://www.asendify.co/tools/">Free tools (32)</a></li>
+                        <li><a href="https://automate.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Automation Blueprint</a></li>
+                        <li><a href="https://charts.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Chart Reader</a></li>
+                        <li><a href="https://web.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Instant Website</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links footer-contact">
+                        <li>manthanbhendkaar@gmail.com</li>
+                        <li>Discord: manthanbhendkaar</li>
+                        <li>Remote — Worldwide</li>
+                        <li>24hr Response Time</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Asendify. All rights reserved. <a href="../../privacy/">Privacy Policy</a></p>
+                <p>Crafted with precision &amp; passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/script.js?v=89"></script>
+    <script src="/assets/js/blossom.js?v=5" defer></script>
+</body>
+
+</html>
