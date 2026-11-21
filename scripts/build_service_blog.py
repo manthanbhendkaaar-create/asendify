@@ -17,6 +17,12 @@ MANIFEST = 'blog/_articles.json'
 _ALL = None
 COUNTER = 'scripts/visit_counter.html'  # 2026-10-22: real-visit counter snippet (shell mode); template mode pages already load it
 
+
+def ax_theme(page):
+    """2026-11-21 design system v2: make sure every generated page loads ax-theme.css after style.css."""
+    if 'ax-theme.css' in page: return page
+    return re.sub(r'(<link[^>]*href="([^"]*?)assets/css/style\.css[^"]*"[^>]*>)', lambda m: m.group(1) + '\n    <link rel="stylesheet" href="' + m.group(2) + 'assets/css/ax-theme.css?v=1" />', page, count=1)
+
 def add_counter(page):
     if not os.path.exists(COUNTER) or 'api/ref' in page: return page
     return page.replace('</body>', open(COUNTER, encoding='utf-8').read().rstrip() + '\n</body>', 1)
@@ -97,10 +103,10 @@ def main():
         old = open(out, encoding='utf-8').read() if os.path.exists(out) else None
         if old != page:
             os.makedirs(os.path.dirname(out), exist_ok=True)
-            open(out, 'w', encoding='utf-8').write(page); changed.append(slug)
+            open(out, 'w', encoding='utf-8').write(ax_theme(page)); changed.append(slug)
         if mode == 'template': add_card(f, minutes(f['html']))
     if mode == 'shell':
-        open('blog/index.html', 'w', encoding='utf-8').write(add_counter(get('', raw=True)))
+        open('blog/index.html', 'w', encoding='utf-8').write(ax_theme(add_counter(get('', raw=True))))
     open('blog-sitemap.xml', 'w', encoding='utf-8').write(get('sitemap=1', raw=True))
     os.unlink(_ALL)
     site = 'https://www.asendify.co' if svc == 'agency' else 'https://realty.asendify.co'
