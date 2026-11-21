@@ -29,7 +29,7 @@ import sys
 SITE = 'https://www.asendify.co'
 TEMPLATE = 'blog/best-retention-editing-courses/index.html'
 HUB_MARK = '<!-- hub-article: built by scripts/build_hub_articles.py from shop_articles (product=hub) -->'
-MAX_NEW = 12
+MAX_NEW = 200   # 2026-11-21 (Manthan "ok 172", RULE 147): 172 retention hub pages a night; the old 12/run brake left pages 404 for days
 SLUG_RE = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
 LLMS_HEAD = '## Broad guides, roundups and comparisons (www.asendify.co)'
 
@@ -139,7 +139,8 @@ def kind_tag(keyword):
 
 
 def fmt_date(iso):
-    d = datetime.datetime.fromisoformat(str(iso).replace('Z', '+00:00'))
+    s = re.sub(r'\.(\d+)', lambda m: '.' + (m.group(1) + '000000')[:6], str(iso).replace('Z', '+00:00'), count=1)   # any fraction length (py<3.11)
+    d = datetime.datetime.fromisoformat(s)
     return d, f'{d.day} {d.strftime("%B %Y")}'
 
 
@@ -282,9 +283,10 @@ def main():
         if old is None and new_count >= MAX_NEW:
             skipped.append(f'{slug}: over the {MAX_NEW}-new-pages-per-run brake, next run'); continue
         html_page, mins = page(r, T)
+        html_page = ax_theme(html_page)   # compare the final page, so unchanged pages are not rewritten/re-pinged every run
         if old != html_page:
             os.makedirs(os.path.dirname(out), exist_ok=True)
-            open(out, 'w', encoding='utf-8').write(ax_theme(html_page))
+            open(out, 'w', encoding='utf-8').write(html_page)
             changed.append(slug)
             if old is None:
                 new_count += 1
