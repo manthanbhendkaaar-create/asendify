@@ -146,7 +146,7 @@ def fmt_date(iso):
 
 # ---------- Retention Playbook buy boxes (2026-11-21, Manthan "yes buy box"; RULE 147 retention-focus pages) ----------
 PB_URL = 'https://playbook.asendify.co/'
-PB_PRICE = '£1,000'
+PB_PRICE = '£1,720'  # 2026-11-21 (Manthan): retention playbook GBP 1,720 (was GBP 1,000)
 PB_GET = [
     ('The book', 'Secrets to become a celebrity on Youtube: The Retention Editing Playbook (PDF, licensed to you)'),
     ('Chapter Workbook', 'one worksheet for each chapter'),
