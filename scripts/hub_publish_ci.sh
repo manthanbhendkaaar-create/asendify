@@ -10,6 +10,16 @@ SUPA=https://capsmeqrpeholfjewwwj.supabase.co
 ANON=sb_publishable_yow9WLNOTbvm_Y2oXWUTvQ_FpT-f5FJ
 OUT_FILE=${OUT_FILE:-/tmp/hub_out.json}
 
+# 2026-11-21 (Manthan: "make sure indexing happens automatically"): every run (00:20 and 07:05 IST) also submits
+# every page of every book and service site to IndexNow (Bing, which ChatGPT search and Copilot use). Never fails the build.
+(
+  UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/130 Safari/537.36"
+  for h in aiadvantage approach autobiography breakup buildai caffeine cowork defend dubai environment glowup ironclad lowerrisk money money2027 playbook problemfree realestate recommended redflags sellable simulation steadymind tate thinking trading; do
+    echo "indexnow $h $(curl -s -m 40 -A "$UA" "https://$h.asendify.co/api/blog?indexnow=1" | head -c 120)"; done
+  for sv in outbound web game supercar automate notes charts asendifyai; do
+    echo "indexnow svc:$sv $(curl -s -m 40 -A "$UA" "https://playbook.asendify.co/api/blog?svc=$sv&indexnow=1" | head -c 120)"; done
+) || true
+
 curl -fsS --retry 3 --max-time 60 -X POST "$SUPA/rest/v1/rpc/hub_articles" \
   -H "apikey: $ANON" -H "Authorization: Bearer $ANON" -H 'Content-Type: application/json' -d '{}' -o /tmp/hub_rows.json
 python3 -c "import json; d=json.load(open('/tmp/hub_rows.json')); assert isinstance(d, list); print(len(d), 'published hub rows')"
