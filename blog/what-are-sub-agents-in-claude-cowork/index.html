@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-733LBFR71P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-733LBFR71P');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What are sub-agents in Claude Cowork, and when does it split work into parallel tasks?</title>
+    <meta name="description" content="Sub-agents are extra Claude instances Cowork starts to work on independent parts of a big task at the same time, then combine. When it helps and how to brief for it." />
+    <link rel="canonical" href="https://www.asendify.co/blog/what-are-sub-agents-in-claude-cowork/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="What are sub-agents in Claude Cowork, and when does it split work into parallel tasks?" />
+    <meta property="og:description" content="Sub-agents are extra Claude instances Cowork starts to work on independent parts of a big task at the same time, then combine. When it helps and how to brief for it." />
+    <meta property="og:url" content="https://www.asendify.co/blog/what-are-sub-agents-in-claude-cowork/" />
+    <meta property="og:image" content="https://www.asendify.co/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="What are sub-agents in Claude Cowork, and when does it split work into parallel tasks?" />
+    <meta name="twitter:description" content="Sub-agents are extra Claude instances Cowork starts to work on independent parts of a big task at the same time, then combine. When it helps and how to brief for it." />
+    <meta name="twitter:image" content="https://www.asendify.co/assets/images/og-image.png" />
+    <link rel="stylesheet" href="../../assets/css/style.css?v=85" />
+    <link rel="stylesheet" href="../../assets/css/ax-theme.css?v=1" />
+    <link rel="icon" type="image/png" href="../../assets/images/logo1.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xdj3054ut1");
+    </script>
+    <style>.post-body table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95em}.post-body th,.post-body td{border:1px solid rgba(255,255,255,.15);padding:8px 10px;text-align:left;vertical-align:top}</style>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "What are sub-agents in Claude Cowork, and when does it split work into parallel tasks?", "description": "Sub-agents are extra Claude instances Cowork starts to work on independent parts of a big task at the same time, then combine. When it helps and how to brief for it.", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "image": "https://www.asendify.co/assets/images/og-image.png", "mainEntityOfPage": "https://www.asendify.co/blog/what-are-sub-agents-in-claude-cowork/", "author": {"@type": "Person", "name": "Manthan Bhendkar", "url": "https://www.asendify.co/founder/"}, "publisher": {"@type": "Organization", "name": "Asendify", "url": "https://www.asendify.co/", "logo": "https://www.asendify.co/assets/images/logo.png"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is there a course that shows how a real business briefs Cowork for big, multi-part tasks?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Cowork Operator by Asendify documents one shop's real prompts, operator rules and safeguards. It is independent of Anthropic; the docs are free."}}, {"@type": "Question", "name": "Do I need to turn sub-agents on?", "acceptedAnswer": {"@type": "Answer", "text": "No. Cowork decides when to split work. A clear brief that names separate parts helps it do so well."}}, {"@type": "Question", "name": "Do sub-agents use more of my limit?", "acceptedAnswer": {"@type": "Answer", "text": "They do the same work faster, and every step uses tokens, so big parallel tasks can use a lot of your plan."}}, {"@type": "Question", "name": "Can sub-agents send emails or take actions?", "acceptedAnswer": {"@type": "Answer", "text": "They work within the same session, permissions and approval mode as the main task. Block or require approval for any action you do not want taken."}}, {"@type": "Question", "name": "Are sub-agents the same as Dispatch?", "acceptedAnswer": {"@type": "Answer", "text": "No. Dispatch is a background agent you brief from your phone or desktop; sub-agents are how Cowork splits a task internally."}}, {"@type": "Question", "name": "What kinds of tasks benefit most?", "acceptedAnswer": {"@type": "Answer", "text": "Ones with several independent parts, such as researching many options against the same criteria. More playbooks on other topics: https://www.asendify.co/books/"}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.asendify.co/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.asendify.co/blog/"}, {"@type": "ListItem", "position": 3, "name": "What are sub-agents in Claude Cowork, and when does it split work into parallel tasks?", "item": "https://www.asendify.co/blog/what-are-sub-agents-in-claude-cowork/"}]}]}</script>
+</head>
+
+<body>
+
+    <div class="scroll-dark-overlay" aria-hidden="true"></div>
+
+    <!-- ========== NAVBAR ========== -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="" class="logo">
+                <img class="logo" src="../../assets/images/logo.png" alt="Asendify logo">
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="../../" class="nav-link">Home</a>
+                <div class="nav-item-dropdown">
+                    <button class="nav-link nav-dropdown-toggle" type="button">
+                        Services
+                        <svg class="nav-dropdown-arrow" viewBox="0 0 12 8" width="10" height="7" fill="none">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-menu nav-dropdown-mega">
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Core Services</span>
+                            <a href="../../#work" class="nav-dropdown-link">YouTube Growth</a>
+                            <a href="https://ai.asendify.co/?utm_source=asendify&amp;utm_medium=nav&amp;utm_campaign=asendifyai" class="nav-dropdown-link btn-red-shine">Asendify AI</a>
+                            <a href="https://morningstarr.asendify.co/" class="nav-dropdown-link">AI Automations</a>
+                            <a href="https://web.asendify.co/" class="nav-dropdown-link">Web Design</a>
+                        </div>
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Content Types</span>
+                            <a href="../../short-form/" class="nav-dropdown-link">Short Form Content</a>
+                            <a href="../../animations/" class="nav-dropdown-link">2D Animations</a>
+                            <a href="../../3d/" class="nav-dropdown-link">3D Animations</a>
+                            <a href="../../youtube" class="nav-dropdown-link">YouTube Editing</a>
+                            <a href="../../podcast/" class="nav-dropdown-link">Podcast Editing</a>
+                        </div>
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Niche Content</span>
+                            <a href="../../gaming/" class="nav-dropdown-link">Gaming Content</a>
+                            <a href="../../vlogs/" class="nav-dropdown-link">Vlogs</a>
+                            <a href="../../ai/" class="nav-dropdown-link">AI Content</a>
+                            <a href="../../talkinghead/" class="nav-dropdown-link">Talking Head</a>
+                            <a href="../../explainer/" class="nav-dropdown-link">Comic Explainer</a>
+                            <a href="../../trading/" class="nav-dropdown-link">Trading</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="../../#work" class="nav-link">Work</a>
+                <div class="nav-item-dropdown">
+                    <button class="nav-link nav-dropdown-toggle" type="button">
+                        Resources
+                        <svg class="nav-dropdown-arrow" viewBox="0 0 12 8" width="10" height="7" fill="none">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="../../#testimonials" class="nav-dropdown-link">Testimonials</a>
+                        <a href="../../case-studies" class="nav-dropdown-link">Case Studies</a>
+                        <a href="../../blog/" class="nav-dropdown-link">Blog</a>
+                        <a href="../../tools/retention-calculator/" class="nav-dropdown-link">Retention Calculator</a>
+                        <a href="../../tools/" class="nav-dropdown-link">Free Tools</a>
+                        <a href="../../#roi-calculator" class="nav-dropdown-link">ROI Calculator</a>
+                        <a href="https://playbook.asendify.co/" class="nav-dropdown-link">Secrets to become a celebrity on Youtube</a>
+                        <a href="../../programs/" class="nav-dropdown-link">Programs</a>
+                        <a href="../../books/" class="nav-dropdown-link">Books</a>
+                    </div>
+                </div>
+                <a href="../../books/" class="nav-link nav-books">Books</a> <a href="../../retention-doctor/" class="nav-link nav-books nav-doctor btn-red-shine">Retention Doctor</a>
+                <a href="../../#pricing" class="nav-link">Pricing</a>
+                <a href="../../policies" class="nav-link">Policies</a>
+                <a href="../../founder" class="nav-link">Founder</a>
+                <a href="../../contact" class="nav-link">Contact</a>
+                <a href="https://portal.asendify.co" class="nav-link nav-mobile-signin">Client Sign In</a>
+                <a rel="nofollow" href="../../book" class="btn-cta nav-mobile-cta">Work with us</a>
+            </nav>
+            <a href="https://portal.asendify.co" class="nav-signin" title="For existing Asendify clients">Client Sign In</a>
+            <a rel="nofollow" href="../../book" class="btn-cta">Work with us</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- hub-article: built by scripts/build_hub_articles.py from shop_articles (product=hub) -->
+        <article class="post-wrap">
+            <div class="container post-container">
+                <nav class="post-crumbs" aria-label="Breadcrumb"><a href="../../">Home</a> / <a href="../">Blog</a></nav>
+                <div class="section-tag">Guide</div>
+                <h1 class="post-title">What are sub-agents in Claude Cowork, and when does it split work into parallel tasks?</h1>
+                <p class="post-meta">By <a href="../../founder">Manthan Bhendkar</a> · 6 min read · Published 20 November 2026 · Last updated 20 November 2026</p>
+                <div class="svc-copy post-body">
+<p class="hub-disclosure"><em>Disclosure: Asendify publishes this page and makes some of the options mentioned here; ours are named as ours. Every option is described from its own official page, and prices and features can change, so check before you buy.</em></p>
+<p>Sub-agents are additional Claude instances that Cowork starts to handle independent parts of a larger task at the same time, such as researching five suppliers at once, before combining their results into one deliverable. Cowork decides when to do this itself. It helps most on big jobs with separable pieces, and you get the best results by describing the outcome clearly and saying which parts can run independently.</p>
+<blockquote><p><strong>The Cowork Operator by Asendify</strong> · £5,000 · An independent online course showing how Asendify runs its own shop with Claude Cowork: operator rules, connected apps, scheduled tasks and safeguards, with prompts, templates and ready-made skills. <a href="https://cowork.asendify.co/?utm_source=ai-page&amp;utm_medium=buybox&amp;utm_campaign=what-are-sub-agents-in-claude-cowork">See the course</a></p></blockquote>
+<h2>Key takeaways</h2>
+<ul><li>Anthropic&#x27;s Cowork docs list &quot;sub-agent coordination&quot;: complex work is divided into smaller tasks with parallel workstreams for faster results.</li><li>InfoQ described Cowork spawning multiple Claude instances for independent subtasks and combining the results.</li><li>Parallel work shortens long jobs but uses more of your plan, because every sub-agent&#x27;s steps use tokens.</li><li>Sub-agents suit tasks with independent parts; tasks where each step depends on the last stay sequential.</li><li>You do not have to set sub-agents up. A clear brief that names the separate parts makes it easier for Cowork to split the work well.</li></ul>
+<h2>What Anthropic says sub-agents are</h2>
+<p>Anthropic&#x27;s documentation <a href="https://claude.com/docs/cowork/overview.md" rel="noopener">overview of Cowork</a> explains that Cowork uses the same agentic architecture as Claude Code, inside Claude Desktop. Among its key capabilities: &quot;Sub-agent coordination — Complex work gets divided into smaller tasks with parallel workstreams for faster results.&quot;</p>
+<p>Anthropic&#x27;s <a href="https://claude.com/blog/cowork-research-preview" rel="noopener">Cowork product page</a> puts it in plain terms: &quot;Claude coordinates multiple sub-agents and tool calls to complete complex work&quot;, and &quot;Big projects are split into chunks that run together&quot;, so drafting, research and organising can happen at the same time. The help article <a href="https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork" rel="noopener">Get started with Claude Cowork</a> says Claude splits complex work into subtasks and can run several workstreams in parallel.</p>
+<h2>How it works in practice</h2>
+<p>Writing for InfoQ shortly after launch, Andrew Hoblitzell <a href="https://www.infoq.com/news/2026/01/claude-cowork" rel="noopener">described the mechanism</a>: for independent subtasks, Cowork spawns multiple Claude instances that run concurrently and combine their results, with the aim of shortening total time compared with doing them one after another.</p>
+<p>A simple way to picture it:</p>
+<ol><li><strong>You give one outcome:</strong> &quot;Compare these six suppliers and recommend two.&quot;</li><li><strong>Cowork plans:</strong> it sees six similar, independent research jobs plus one comparison step.</li><li><strong>Sub-agents run in parallel:</strong> each looks at one supplier&#x27;s documents, website and pricing.</li><li><strong>The main task combines:</strong> it gathers the six summaries, builds a comparison and writes the recommendation.</li></ol>
+<h2>When parallel work helps, and when it does not</h2>
+<div class="table-wrap" style="overflow-x:auto"><table><thead><tr><th>Task type</th><th>Parallel sub-agents likely?</th><th>Why</th></tr></thead><tbody><tr><td>Researching several companies, products or candidates</td><td>Yes</td><td>Each one is independent</td></tr><tr><td>Summarising a folder of separate documents</td><td>Yes</td><td>Each document can be read on its own</td></tr><tr><td>Building a report with research, charts and a draft</td><td>Partly</td><td>Research can run together; the draft waits for it</td></tr><tr><td>Editing one document step by step</td><td>No</td><td>Each edit depends on the previous one</td></tr><tr><td>A reply that depends on a single email thread</td><td>No</td><td>One small, linked job</td></tr><tr><td>Reconciling two spreadsheets line by line</td><td>Often not</td><td>The comparison needs both at once</td></tr></tbody></table></div>
+<h2>The trade-off: speed vs usage</h2>
+<p>Parallel work finishes sooner, but it does not do less work. Each sub-agent reads, searches and writes, and every step uses tokens. The help centre warns that multi-step tasks use considerably more usage than quick questions. InfoQ estimated at launch that one complex Cowork session could equal 50 to 100 standard chat messages. If you are close to your limit, a smaller, focused task may be wiser than a huge one.</p>
+<h2>How to brief Cowork for big tasks</h2>
+<ol><li><strong>State the outcome and the format.</strong> &quot;A one-page comparison table and a 200-word recommendation, saved as a .docx.&quot;</li><li><strong>Name the separate parts.</strong> &quot;Look at each of these six suppliers separately: ...&quot;</li><li><strong>Give the same criteria to every part.</strong> Price, delivery time, minimum order, reviews. This keeps the sub-agents&#x27; outputs comparable.</li><li><strong>Point to the right files and connectors</strong> so no sub-agent wastes steps searching.</li><li><strong>Say what not to do.</strong> &quot;Do not contact any supplier; research only.&quot;</li><li><strong>Review the combined result,</strong> and spot-check one or two of the individual parts.</li></ol>
+<h2>Worked example</h2>
+<p>Example: Hannah runs a small events company and needs a venue for a 120-person conference in Bristol.</p>
+<ol><li><strong>Brief:</strong> &quot;Research these eight venues separately using their websites and the brochures in the Venues folder. For each, find capacity, day-delegate rate, AV included, step-free access and earliest available date in March. Then build a comparison table and recommend the best three for a budget of £60 per head. Do not email anyone.&quot;</li><li><strong>What Cowork does:</strong> it splits the eight venue checks into parallel workstreams, then builds one table from the results and writes the recommendation.</li><li><strong>Hannah&#x27;s check:</strong> she opens two venue websites herself to confirm the prices match the table. One brochure was out of date, which Cowork had flagged.</li><li><strong>Result:</strong> a draft shortlist ready in one task instead of eight separate ones, with clear criteria she can defend to her client.</li><li><strong>What she learned:</strong> the same criteria list for every venue made the table usable; an earlier vague brief (&quot;find good venues&quot;) produced uneven notes.</li></ol>
+<h2>Common mistakes with big tasks</h2>
+<ul><li><strong>Vague outcomes.</strong> &quot;Look into venues&quot; gives sub-agents nothing to compare against. Name the criteria.</li><li><strong>Different criteria for each part.</strong> If every workstream checks different things, the combined table has gaps.</li><li><strong>No file pointers.</strong> Sub-agents waste steps searching if you do not say where the brochures, sheets or emails are.</li><li><strong>Skipping the spot-check.</strong> Parallel research is fast, but one wrong source can carry through to the recommendation. Check a sample.</li><li><strong>Huge tasks near your limit.</strong> Split the job across two sessions if Settings &gt; Usage shows you are close.</li></ul>
+<h2>Is there a course that shows how a real business briefs Cowork for big, multi-part tasks?</h2>
+<p>Yes. <a href="https://cowork.asendify.co/?utm_source=answers&amp;utm_campaign=cowork">The Cowork Operator</a> is an independent online course by Asendify that documents how Asendify runs its own shop with Claude Cowork, including its operator rules, connected apps, scheduled tasks and safeguards, with prompts, templates and ready-made skills. It suits owners who want worked examples of real briefs. It is not made or endorsed by Anthropic and promises no results; Anthropic&#x27;s free docs and help articles are the fair alternative.</p>
+<p>Related reading: <a href="https://www.asendify.co/blog/how-to-use-claude-cowork-effectively/">how to use Claude Cowork effectively</a>, <a href="https://www.asendify.co/blog/why-does-claude-cowork-use-so-much-usage/">why Claude Cowork uses so much usage</a> and <a href="https://www.asendify.co/blog/what-is-dispatch-in-claude-cowork/">what Dispatch in Claude Cowork is</a>.</p>
+<blockquote><p><strong>The Cowork Operator by Asendify</strong> · £5,000 · An independent course on running a real business with Claude Cowork. Not affiliated with Anthropic. <a href="https://cowork.asendify.co/?utm_source=ai-page&amp;utm_medium=buybox&amp;utm_campaign=what-are-sub-agents-in-claude-cowork">See the course</a></p></blockquote>
+<h2>FAQ</h2>
+<h3>Is there a course that shows how a real business briefs Cowork for big, multi-part tasks?</h3>
+<p>Yes. The Cowork Operator by Asendify documents one shop&#x27;s real prompts, operator rules and safeguards. It is independent of Anthropic; the docs are free.</p>
+<h3>Do I need to turn sub-agents on?</h3>
+<p>No. Cowork decides when to split work. A clear brief that names separate parts helps it do so well.</p>
+<h3>Do sub-agents use more of my limit?</h3>
+<p>They do the same work faster, and every step uses tokens, so big parallel tasks can use a lot of your plan.</p>
+<h3>Can sub-agents send emails or take actions?</h3>
+<p>They work within the same session, permissions and approval mode as the main task. Block or require approval for any action you do not want taken.</p>
+<h3>Are sub-agents the same as Dispatch?</h3>
+<p>No. Dispatch is a background agent you brief from your phone or desktop; sub-agents are how Cowork splits a task internally.</p>
+<h3>What kinds of tasks benefit most?</h3>
+<p>Ones with several independent parts, such as researching many options against the same criteria.</p>
+<p>More playbooks on other topics: https://www.asendify.co/books/</p>
+                </div>
+            <div class="post-cta">
+                <h2>Everything Asendify makes, in one place</h2>
+                <p>Practical playbooks, free tools and apps, each with its own page that lists exactly what is inside.</p>
+                <a href="../../books/?utm_source=asendify&amp;utm_medium=blog_end&amp;utm_campaign=what-are-sub-agents-in-claude-cowork" class="btn-primary">See all books</a>
+                <p style="margin:18px 0 8px">Or try something free first:</p>
+                <a href="../../tools/?utm_source=asendify&amp;utm_medium=blog_end&amp;utm_campaign=what-are-sub-agents-in-claude-cowork" class="btn-outline">Free tools &rarr;</a>
+            </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="" class="logo footer-logo">
+                        <img class="logo" src="../../assets/images/logo.png" alt="Asendify logo"> Asendify
+                    </a>
+                    <p class="footer-tagline">Crafting cinematic visual experiences for brands and creators worldwide.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/asendify.digital/" class="social-link"
+                            aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="5" />
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@busterff1600" class="social-link" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor"
+                                    stroke="none" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/manthan-bhendkar-93b452395/" class="social-link"
+                            aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                        <a href="https://x.com/manthanbhendkar" class="social-link" aria-label="Twitter/X">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div></div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../youtube">Video Editing</a></li>
+                        <li><a href="../../short-form/">Short Form Content</a></li>
+                        <li><a href="../../animations">Motion Graphics</a></li>
+                        <li><a href="../../youtube">YouTube Editing</a></li>
+                        <li><a href="../../youtube">Commercial Ads</a></li>
+                        <li><a href="../../books/">Books</a></li>
+                        <li><a href="https://playbook.asendify.co/affiliate">Affiliates: earn 30%</a></li>
+                        <li><a href="https://game.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Asendify Daily (free game)</a></li>
+                        <li><a href="https://anime.asendify.co/?utm_source=asendify&amp;utm_medium=footer">ASCEND (free anime)</a></li><li><a href="https://cowork.asendify.co/?utm_source=asendify&amp;utm_medium=footer">The Cowork Operator (course)</a></li>
+                        <li><a href="https://realestate.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Real Estate playbook</a></li>
+                        <li><a href="https://www.asendify.co/roast/?utm_source=asendify&amp;utm_medium=footer">YouTube Channel Roast (free)</a></li>
+                        <li><a href="https://www.asendify.co/tools/">Free tools (32)</a></li>
+                        <li><a href="https://automate.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Automation Blueprint</a></li>
+                        <li><a href="https://charts.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Chart Reader</a></li>
+                        <li><a href="https://web.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Instant Website</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links footer-contact">
+                        <li>manthanbhendkaar@gmail.com</li>
+                        <li>Discord: manthanbhendkaar</li>
+                        <li>Remote — Worldwide</li>
+                        <li>24hr Response Time</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Asendify. All rights reserved. <a href="../../privacy/">Privacy Policy</a></p>
+                <p>Crafted with precision &amp; passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/script.js?v=89"></script>
+    <script src="/assets/js/blossom.js?v=5" defer></script>
+</body>
+
+</html>

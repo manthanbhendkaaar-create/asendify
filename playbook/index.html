@@ -265,7 +265,7 @@
             <div class="section-header">
                 <div class="section-tag reveal">What's Included</div>
             </div>
-            <p class="section-sub" style="max-width:720px;margin:0 auto 24px">The book and its Bonus Pack, delivered together in one licensed download straight after payment.</p>
+            <p class="section-sub" style="max-width:720px;margin:0 auto 24px">The book, its Bonus Pack and the add-ons, delivered together in one licensed download straight after payment.</p>
             <div class="policy-list">
                 <div class="policy-block reveal delay-2">
                     <div class="policy-number">+</div>
@@ -278,9 +278,31 @@
                         <li><b>Retention Tracker (per video)</b>, plus a spreadsheet version with the calculations already set up.</li>
                     </ul>
                 </div>
+                <!-- 2026-11-22: Retention playbook add-ons (Manthan "yes 1 2 3 4 5 6") -->
+                <div class="policy-block reveal delay-2">
+                    <div class="policy-number">+</div>
+                    <h3 class="policy-title">Add-ons</h3>
+                    <ul class="policy-items" id="addon-list">
+                        <li><b>Ad Hook Swipe File</b>: 100 original opening lines for agency ads, client ads, podcasts, events and YouTube, each with a note on why it holds attention.</li>
+                        <li><b>Agency Editor Kit</b>: an editor brief, a pre-ship retention check and a revision-notes template (PDF plus editable Word and spreadsheet copies).</li>
+                        <li><b>Podcast-to-Clips Retention Guide</b>: picking moments, cold opens, captions and a clip scoring sheet.</li>
+                        <li><b>Editing Presets and Settings Guide</b>: sequence, export, loudness and caption settings to save as presets in Premiere Pro, DaVinci Resolve, Final Cut Pro or CapCut (a settings guide, not project files).</li>
+                        <li><b>Future updates</b>: new chapters and updates to the playbook are emailed to you.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- 2026-11-22: the video teardown is listed only while the shop flag PLAYBOOK_TEARDOWN is on (default off) -->
+    <script>
+    (function(){try{fetch('https://playbook.asendify.co/api/config?addons=1').then(function(r){return r.json()}).then(function(j){
+      var ul=document.getElementById('addon-list'); if(!j||j.teardown!==true||!ul||document.getElementById('addon-teardown'))return;
+      var li=document.createElement('li'); li.id='addon-teardown';
+      li.innerHTML='<b>One written video teardown</b>: send us one of your videos after you buy and we email you a written retention teardown (where viewers are likely to leave, why, and what to change) within 7 days.';
+      ul.insertBefore(li, ul.lastElementChild);
+    }).catch(function(){});}catch(e){}})();
+    </script>
 
     <!-- ========== WHO IT'S FOR ========== -->
     <section class="work" id="who-its-for" style="padding: 40px 0;">
@@ -361,7 +383,8 @@
     </section>
 
     <!-- ========== GO FURTHER (programs ladder) ========== -->
-    <section class="svc-about" id="go-further">
+    <div class="wa-ask" style="margin:28px auto;max-width:760px;padding:16px 18px;border:1px solid rgba(212,175,55,.35);border-radius:14px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap"><p style="margin:0;font-weight:600">Questions before you buy? Ask me directly, I reply myself.</p><a href="https://wa.me/919096082894?text=Hi%20Manthan%2C%20I%20have%20a%20question%20about%20the%20Retention%20Editing%20Playbook%3A%20" target="_blank" rel="noopener" data-wa="playbook" style="display:inline-block;padding:11px 18px;border-radius:999px;background:#25D366;color:#06210f;font-weight:700;text-decoration:none">Message Manthan on WhatsApp &rarr;</a></div>
+<section class="svc-about" id="go-further">
         <div class="container">
             <div class="section-header">
                 <div class="section-tag">Go Further</div>

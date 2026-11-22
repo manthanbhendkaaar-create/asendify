@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-733LBFR71P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-733LBFR71P');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How do Claude in Chrome site permissions work in Cowork, and what will Claude never do in your browser?</title>
+    <meta name="description" content="Claude asks per site: allow this action, always allow on this site, or decline. What still needs your OK in any mode, what is never allowed and how to revoke access." />
+    <link rel="canonical" href="https://www.asendify.co/blog/claude-in-chrome-site-permissions-cowork/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How do Claude in Chrome site permissions work in Cowork, and what will Claude never do in your browser?" />
+    <meta property="og:description" content="Claude asks per site: allow this action, always allow on this site, or decline. What still needs your OK in any mode, what is never allowed and how to revoke access." />
+    <meta property="og:url" content="https://www.asendify.co/blog/claude-in-chrome-site-permissions-cowork/" />
+    <meta property="og:image" content="https://www.asendify.co/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How do Claude in Chrome site permissions work in Cowork, and what will Claude never do in your browser?" />
+    <meta name="twitter:description" content="Claude asks per site: allow this action, always allow on this site, or decline. What still needs your OK in any mode, what is never allowed and how to revoke access." />
+    <meta name="twitter:image" content="https://www.asendify.co/assets/images/og-image.png" />
+    <link rel="stylesheet" href="../../assets/css/style.css?v=85" />
+    <link rel="stylesheet" href="../../assets/css/ax-theme.css?v=1" />
+    <link rel="icon" type="image/png" href="../../assets/images/logo1.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xdj3054ut1");
+    </script>
+    <style>.post-body table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95em}.post-body th,.post-body td{border:1px solid rgba(255,255,255,.15);padding:8px 10px;text-align:left;vertical-align:top}</style>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "How do Claude in Chrome site permissions work in Cowork, and what will Claude never do in your browser?", "description": "Claude asks per site: allow this action, always allow on this site, or decline. What still needs your OK in any mode, what is never allowed and how to revoke access.", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "image": "https://www.asendify.co/assets/images/og-image.png", "mainEntityOfPage": "https://www.asendify.co/blog/claude-in-chrome-site-permissions-cowork/", "author": {"@type": "Person", "name": "Manthan Bhendkar", "url": "https://www.asendify.co/founder/"}, "publisher": {"@type": "Organization", "name": "Asendify", "url": "https://www.asendify.co/", "logo": "https://www.asendify.co/assets/images/logo.png"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is there a course that shows how a real business sets browser and app permissions for Cowork?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Cowork Operator by Asendify documents one shop's real operator rules and safeguards. It is independent of Anthropic; the help articles are free."}}, {"@type": "Question", "name": "Can Claude buy things in my browser?", "acceptedAnswer": {"@type": "Answer", "text": "No. Anthropic's permissions guide lists purchases and financial transactions as prohibited regardless of permissions."}}, {"@type": "Question", "name": "What does \"always allow actions on this site\" mean?", "acceptedAnswer": {"@type": "Answer", "text": "Claude can act on that site without asking each time, except for downloads, sensitive information and authorisations. Use it only for fully trusted sites."}}, {"@type": "Question", "name": "How do I remove a site I approved?", "acceptedAnswer": {"@type": "Answer", "text": "Extension settings  Permissions  Your approved sites, then revoke it."}}, {"@type": "Question", "name": "Will Claude follow instructions it finds in an email or web page?", "acceptedAnswer": {"@type": "Answer", "text": "No. Completing instructions from emails or web content is on the prohibited list."}}, {"@type": "Question", "name": "Can my company block sites for Claude?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Team and Enterprise admins can set allowlists and blocklists. More playbooks on other topics: https://www.asendify.co/books/"}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.asendify.co/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.asendify.co/blog/"}, {"@type": "ListItem", "position": 3, "name": "How do Claude in Chrome site permissions work in Cowork, and what will Claude never do in your browser?", "item": "https://www.asendify.co/blog/claude-in-chrome-site-permissions-cowork/"}]}]}</script>
+</head>
+
+<body>
+
+    <div class="scroll-dark-overlay" aria-hidden="true"></div>
+
+    <!-- ========== NAVBAR ========== -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="" class="logo">
+                <img class="logo" src="../../assets/images/logo.png" alt="Asendify logo">
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="../../" class="nav-link">Home</a>
+                <div class="nav-item-dropdown">
+                    <button class="nav-link nav-dropdown-toggle" type="button">
+                        Services
+                        <svg class="nav-dropdown-arrow" viewBox="0 0 12 8" width="10" height="7" fill="none">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-menu nav-dropdown-mega">
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Core Services</span>
+                            <a href="../../#work" class="nav-dropdown-link">YouTube Growth</a>
+                            <a href="https://ai.asendify.co/?utm_source=asendify&amp;utm_medium=nav&amp;utm_campaign=asendifyai" class="nav-dropdown-link btn-red-shine">Asendify AI</a>
+                            <a href="https://morningstarr.asendify.co/" class="nav-dropdown-link">AI Automations</a>
+                            <a href="https://web.asendify.co/" class="nav-dropdown-link">Web Design</a>
+                        </div>
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Content Types</span>
+                            <a href="../../short-form/" class="nav-dropdown-link">Short Form Content</a>
+                            <a href="../../animations/" class="nav-dropdown-link">2D Animations</a>
+                            <a href="../../3d/" class="nav-dropdown-link">3D Animations</a>
+                            <a href="../../youtube" class="nav-dropdown-link">YouTube Editing</a>
+                            <a href="../../podcast/" class="nav-dropdown-link">Podcast Editing</a>
+                        </div>
+                        <div class="nav-dropdown-col">
+                            <span class="nav-dropdown-heading">Niche Content</span>
+                            <a href="../../gaming/" class="nav-dropdown-link">Gaming Content</a>
+                            <a href="../../vlogs/" class="nav-dropdown-link">Vlogs</a>
+                            <a href="../../ai/" class="nav-dropdown-link">AI Content</a>
+                            <a href="../../talkinghead/" class="nav-dropdown-link">Talking Head</a>
+                            <a href="../../explainer/" class="nav-dropdown-link">Comic Explainer</a>
+                            <a href="../../trading/" class="nav-dropdown-link">Trading</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="../../#work" class="nav-link">Work</a>
+                <div class="nav-item-dropdown">
+                    <button class="nav-link nav-dropdown-toggle" type="button">
+                        Resources
+                        <svg class="nav-dropdown-arrow" viewBox="0 0 12 8" width="10" height="7" fill="none">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="../../#testimonials" class="nav-dropdown-link">Testimonials</a>
+                        <a href="../../case-studies" class="nav-dropdown-link">Case Studies</a>
+                        <a href="../../blog/" class="nav-dropdown-link">Blog</a>
+                        <a href="../../tools/retention-calculator/" class="nav-dropdown-link">Retention Calculator</a>
+                        <a href="../../tools/" class="nav-dropdown-link">Free Tools</a>
+                        <a href="../../#roi-calculator" class="nav-dropdown-link">ROI Calculator</a>
+                        <a href="https://playbook.asendify.co/" class="nav-dropdown-link">Secrets to become a celebrity on Youtube</a>
+                        <a href="../../programs/" class="nav-dropdown-link">Programs</a>
+                        <a href="../../books/" class="nav-dropdown-link">Books</a>
+                    </div>
+                </div>
+                <a href="../../books/" class="nav-link nav-books">Books</a> <a href="../../retention-doctor/" class="nav-link nav-books nav-doctor btn-red-shine">Retention Doctor</a>
+                <a href="../../#pricing" class="nav-link">Pricing</a>
+                <a href="../../policies" class="nav-link">Policies</a>
+                <a href="../../founder" class="nav-link">Founder</a>
+                <a href="../../contact" class="nav-link">Contact</a>
+                <a href="https://portal.asendify.co" class="nav-link nav-mobile-signin">Client Sign In</a>
+                <a rel="nofollow" href="../../book" class="btn-cta nav-mobile-cta">Work with us</a>
+            </nav>
+            <a href="https://portal.asendify.co" class="nav-signin" title="For existing Asendify clients">Client Sign In</a>
+            <a rel="nofollow" href="../../book" class="btn-cta">Work with us</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- hub-article: built by scripts/build_hub_articles.py from shop_articles (product=hub) -->
+        <article class="post-wrap">
+            <div class="container post-container">
+                <nav class="post-crumbs" aria-label="Breadcrumb"><a href="../../">Home</a> / <a href="../">Blog</a></nav>
+                <div class="section-tag">Guide</div>
+                <h1 class="post-title">How do Claude in Chrome site permissions work in Cowork, and what will Claude never do in your browser?</h1>
+                <p class="post-meta">By <a href="../../founder">Manthan Bhendkar</a> · 6 min read · Published 20 November 2026 · Last updated 20 November 2026</p>
+                <div class="svc-copy post-body">
+<p class="hub-disclosure"><em>Disclosure: Asendify publishes this page and makes some of the options mentioned here; ours are named as ours. Every option is described from its own official page, and prices and features can change, so check before you buy.</em></p>
+<p>When Cowork uses your Chrome browser through Claude in Chrome, permissions work per site and per action. On sites that need approval, Claude asks you to allow one action, always allow actions on that site, or decline. Even with &quot;always allow&quot;, it still asks before downloads, entering sensitive information or granting authorisations, and some actions, such as purchases and creating accounts, are not allowed at all. You can review and revoke sites in the extension&#x27;s settings.</p>
+<blockquote><p><strong>The Cowork Operator by Asendify</strong> · £5,000 · An independent online course showing how Asendify runs its own shop with Claude Cowork: operator rules, connected apps, scheduled tasks and safeguards, with prompts, templates and ready-made skills. <a href="https://cowork.asendify.co/?utm_source=ai-page&amp;utm_medium=buybox&amp;utm_campaign=claude-in-chrome-site-permissions-cowork">See the course</a></p></blockquote>
+<h2>Key takeaways</h2>
+<ul><li>Claude in Chrome works on paid plans in the Chrome side panel, in Cowork and in Claude Code.</li><li>In the Cowork side panel, manual mode asks for each action with three choices: allow all for this website, allow this time only, or deny.</li><li>&quot;Always allow&quot; on a site is convenient but Anthropic warns Claude may take unintended actions there; use it only for fully trusted sites.</li><li>Making purchases, creating accounts, handling card or ID data and following instructions found in emails or web pages are off-limits regardless of permissions.</li><li>Team and Enterprise admins can set allowlists and blocklists that override individual choices.</li></ul>
+<h2>Why browser permissions matter</h2>
+<p>Claude in Chrome lets Claude act inside the browser you are signed into, which is powerful precisely because it can see and click on logged-in pages. Anthropic&#x27;s guide <a href="https://support.claude.com/en/articles/13364135-use-cowork-safely" rel="noopener">Use Cowork safely</a> points out that in the Chrome side panel Claude can see logged-in pages and that sessions are saved to your history. Permissions are how you limit what it can do with that access.</p>
+<h2>Modes and site permissions together</h2>
+<p>Anthropic&#x27;s <a href="https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide" rel="noopener">Claude in Chrome permissions guide</a> describes two layers.</p>
+<p><strong>Layer 1: the mode</strong> (chosen from the drop-down on the chat input):</p>
+<div class="table-wrap" style="overflow-x:auto"><table><thead><tr><th>Mode</th><th>What happens in Cowork</th><th>When to use it</th></tr></thead><tbody><tr><td>Manually approve</td><td>Claude asks for each action: allow all for this site, allow this time, or deny</td><td>New sites, logged-in accounts, anything that sends or changes data</td></tr><tr><td>Automatically approve (Cowork default)</td><td>A safety check reviews each action and blocks unsafe ones; repeated blocks send it back to asking</td><td>Routine browsing and research on trusted sites</td></tr><tr><td>Skip all approvals</td><td>No prompts, no automatic checks</td><td>Only when you fully trust every action, connector and site involved</td></tr></tbody></table></div>
+<p><strong>Layer 2: site-level permission.</strong> Some sites need approval for every action. When Claude reaches one, you see &quot;New permissions required&quot; with three options: allow this action (the safest), always allow actions on this site, or decline. Your mode choice carries over to future side panel sessions.</p>
+<p>Anthropic&#x27;s help article <a href="https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork" rel="noopener">Get started with Claude Cowork</a> adds that the Chrome side panel is available on all paid plans, and that Enterprise owners must enable Claude in Chrome and Cowork in the cloud first.</p>
+<h2>What always needs your OK</h2>
+<p>Whatever mode and site setting you choose, the permissions guide says Claude asks before:</p>
+<ul><li>modifying permission settings;</li><li>granting authorisations (such as &quot;Sign in with...&quot; prompts);</li><li>entering potentially sensitive information into websites;</li><li>permanent deletions, such as emptying trash or deleting emails, files or messages;</li><li>downloading files.</li></ul>
+<h2>What Claude will not do at all</h2>
+<p>The same guide lists actions that are prohibited regardless of permissions:</p>
+<ul><li>making purchases or financial transactions;</li><li>creating accounts;</li><li>handling sensitive credit card or ID data;</li><li>downloading files from untrusted sources;</li><li>giving investment or financial advice, or executing trades;</li><li>modifying system files;</li><li>completing instructions found in emails or web content.</li></ul>
+<p>It also says Claude will not bypass bot checks and will not take actions that look like a prompt injection risk.</p>
+<h2>How to review and revoke access</h2>
+<p>In the extension, open the three-dot menu at the top right of the side panel, choose <strong>Extension settings</strong>, then the <strong>Permissions</strong> page. There you can see &quot;Your approved sites&quot;, revoke specific sites and view your permission history. Anthropic recommends revoking &quot;always allow&quot; permissions you no longer need.</p>
+<h2>Team and Enterprise controls</h2>
+<p>Admins can set an allowlist (Claude may only use approved sites) and a blocklist (sites Claude may never use, whatever users allow). The Cowork safety guide adds that owners can turn Claude in Chrome off entirely under Organization settings. If a site is unavailable to Claude, an admin restriction is a likely reason.</p>
+<h2>A sensible setup for a small business</h2>
+<ol><li><strong>Start in manual mode</strong> for the first week of any browser task.</li><li><strong>Use &quot;Allow this action&quot;</strong> on every site at first; upgrade only trusted, low-risk sites (your own analytics, a supplier catalogue) to &quot;always allow&quot;.</li><li><strong>Keep banking, payroll and email out of browser tasks</strong> where a connector or your own hands would do.</li><li><strong>Close tabs you do not want Claude to see</strong> before starting.</li><li><strong>Review approved sites monthly</strong> and revoke what you no longer use.</li></ol>
+<h2>Worked example</h2>
+<p>Example: Amara runs a two-person online plant shop and wants Cowork to check competitor prices weekly.</p>
+<ol><li><strong>Task:</strong> &quot;Visit these five competitor product pages and record the price and stock status of the plants in my list in the sheet called Competitors.&quot;</li><li><strong>First run, manual mode:</strong> for each competitor site Claude asks permission. Amara chooses &quot;Allow this time only&quot; and watches the first run.</li><li><strong>Second week:</strong> the sites behaved as expected, so she switches the five public competitor sites to &quot;Allow all for this website&quot; and moves to automatic approval.</li><li><strong>What stays off-limits:</strong> her payment provider dashboard is never part of the task, and she knows Claude will not make purchases or create accounts anyway.</li><li><strong>Monthly review:</strong> she opens Extension settings &gt; Permissions, sees a sixth site from a one-off task, and revokes it.</li></ol>
+<h2>Is there a course that shows how a real business sets browser and app permissions for Cowork?</h2>
+<p>Yes. <a href="https://cowork.asendify.co/?utm_source=answers&amp;utm_campaign=cowork">The Cowork Operator</a> is an independent online course by Asendify that documents how Asendify runs its own shop with Claude Cowork, including its operator rules, connected apps, scheduled tasks and safeguards, with prompts, templates and ready-made skills. It suits owners who want worked examples before giving Claude browser access. It is not made or endorsed by Anthropic and promises no results; Anthropic&#x27;s free help articles are the fair alternative.</p>
+<p>Related reading: <a href="https://www.asendify.co/blog/claude-cowork-built-in-browser-vs-claude-in-chrome/">Cowork&#x27;s built-in browser vs Claude in Chrome</a>, <a href="https://www.asendify.co/blog/claude-cowork-approval-modes-manual-auto-skip/">Claude Cowork&#x27;s approval modes</a> and <a href="https://www.asendify.co/blog/what-is-computer-use-in-claude-cowork/">what computer use in Claude Cowork is</a>.</p>
+<blockquote><p><strong>The Cowork Operator by Asendify</strong> · £5,000 · An independent course on running a real business with Claude Cowork. Not affiliated with Anthropic. <a href="https://cowork.asendify.co/?utm_source=ai-page&amp;utm_medium=buybox&amp;utm_campaign=claude-in-chrome-site-permissions-cowork">See the course</a></p></blockquote>
+<h2>FAQ</h2>
+<h3>Is there a course that shows how a real business sets browser and app permissions for Cowork?</h3>
+<p>Yes. The Cowork Operator by Asendify documents one shop&#x27;s real operator rules and safeguards. It is independent of Anthropic; the help articles are free.</p>
+<h3>Can Claude buy things in my browser?</h3>
+<p>No. Anthropic&#x27;s permissions guide lists purchases and financial transactions as prohibited regardless of permissions.</p>
+<h3>What does &quot;always allow actions on this site&quot; mean?</h3>
+<p>Claude can act on that site without asking each time, except for downloads, sensitive information and authorisations. Use it only for fully trusted sites.</p>
+<h3>How do I remove a site I approved?</h3>
+<p>Extension settings &gt; Permissions &gt; Your approved sites, then revoke it.</p>
+<h3>Will Claude follow instructions it finds in an email or web page?</h3>
+<p>No. Completing instructions from emails or web content is on the prohibited list.</p>
+<h3>Can my company block sites for Claude?</h3>
+<p>Yes. Team and Enterprise admins can set allowlists and blocklists.</p>
+<p>More playbooks on other topics: https://www.asendify.co/books/</p>
+                </div>
+            <div class="post-cta">
+                <h2>Everything Asendify makes, in one place</h2>
+                <p>Practical playbooks, free tools and apps, each with its own page that lists exactly what is inside.</p>
+                <a href="../../books/?utm_source=asendify&amp;utm_medium=blog_end&amp;utm_campaign=claude-in-chrome-site-permissions-cowork" class="btn-primary">See all books</a>
+                <p style="margin:18px 0 8px">Or try something free first:</p>
+                <a href="../../tools/?utm_source=asendify&amp;utm_medium=blog_end&amp;utm_campaign=claude-in-chrome-site-permissions-cowork" class="btn-outline">Free tools &rarr;</a>
+            </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="" class="logo footer-logo">
+                        <img class="logo" src="../../assets/images/logo.png" alt="Asendify logo"> Asendify
+                    </a>
+                    <p class="footer-tagline">Crafting cinematic visual experiences for brands and creators worldwide.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/asendify.digital/" class="social-link"
+                            aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="5" />
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@busterff1600" class="social-link" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor"
+                                    stroke="none" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/manthan-bhendkar-93b452395/" class="social-link"
+                            aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                        <a href="https://x.com/manthanbhendkar" class="social-link" aria-label="Twitter/X">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div></div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../youtube">Video Editing</a></li>
+                        <li><a href="../../short-form/">Short Form Content</a></li>
+                        <li><a href="../../animations">Motion Graphics</a></li>
+                        <li><a href="../../youtube">YouTube Editing</a></li>
+                        <li><a href="../../youtube">Commercial Ads</a></li>
+                        <li><a href="../../books/">Books</a></li>
+                        <li><a href="https://playbook.asendify.co/affiliate">Affiliates: earn 30%</a></li>
+                        <li><a href="https://game.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Asendify Daily (free game)</a></li>
+                        <li><a href="https://anime.asendify.co/?utm_source=asendify&amp;utm_medium=footer">ASCEND (free anime)</a></li><li><a href="https://cowork.asendify.co/?utm_source=asendify&amp;utm_medium=footer">The Cowork Operator (course)</a></li>
+                        <li><a href="https://realestate.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Real Estate playbook</a></li>
+                        <li><a href="https://www.asendify.co/roast/?utm_source=asendify&amp;utm_medium=footer">YouTube Channel Roast (free)</a></li>
+                        <li><a href="https://www.asendify.co/tools/">Free tools (32)</a></li>
+                        <li><a href="https://automate.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Automation Blueprint</a></li>
+                        <li><a href="https://charts.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Chart Reader</a></li>
+                        <li><a href="https://web.asendify.co/?utm_source=asendify&amp;utm_medium=footer">Instant Website</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links footer-contact">
+                        <li>manthanbhendkaar@gmail.com</li>
+                        <li>Discord: manthanbhendkaar</li>
+                        <li>Remote — Worldwide</li>
+                        <li>24hr Response Time</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Asendify. All rights reserved. <a href="../../privacy/">Privacy Policy</a></p>
+                <p>Crafted with precision &amp; passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/script.js?v=89"></script>
+    <script src="/assets/js/blossom.js?v=5" defer></script>
+</body>
+
+</html>
