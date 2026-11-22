@@ -282,18 +282,27 @@
                 <div class="policy-block reveal delay-2">
                     <div class="policy-number">+</div>
                     <h3 class="policy-title">Add-ons</h3>
-                    <ul class="policy-items">
+                    <ul class="policy-items" id="addon-list">
                         <li><b>Ad Hook Swipe File</b>: 100 original opening lines for agency ads, client ads, podcasts, events and YouTube, each with a note on why it holds attention.</li>
                         <li><b>Agency Editor Kit</b>: an editor brief, a pre-ship retention check and a revision-notes template (PDF plus editable Word and spreadsheet copies).</li>
                         <li><b>Podcast-to-Clips Retention Guide</b>: picking moments, cold opens, captions and a clip scoring sheet.</li>
                         <li><b>Editing Presets and Settings Guide</b>: sequence, export, loudness and caption settings to save as presets in Premiere Pro, DaVinci Resolve, Final Cut Pro or CapCut (a settings guide, not project files).</li>
-                        <li><b>One written video teardown</b>: send us one of your videos after you buy and we email you a written retention teardown (where viewers are likely to leave, why, and what to change) within 7 days.</li>
                         <li><b>Future updates</b>: new chapters and updates to the playbook are emailed to you.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- 2026-11-22: the video teardown is listed only while the shop flag PLAYBOOK_TEARDOWN is on (default off) -->
+    <script>
+    (function(){try{fetch('https://playbook.asendify.co/api/config?addons=1').then(function(r){return r.json()}).then(function(j){
+      var ul=document.getElementById('addon-list'); if(!j||j.teardown!==true||!ul||document.getElementById('addon-teardown'))return;
+      var li=document.createElement('li'); li.id='addon-teardown';
+      li.innerHTML='<b>One written video teardown</b>: send us one of your videos after you buy and we email you a written retention teardown (where viewers are likely to leave, why, and what to change) within 7 days.';
+      ul.insertBefore(li, ul.lastElementChild);
+    }).catch(function(){});}catch(e){}})();
+    </script>
 
     <!-- ========== WHO IT'S FOR ========== -->
     <section class="work" id="who-its-for" style="padding: 40px 0;">
