@@ -250,6 +250,31 @@ PB_CSS = ('.post-wrap .rbx,.rbx{border:1px solid rgba(212,175,55,.38)!important;
           'body.rbx-pad{padding-bottom:calc(76px + env(safe-area-inset-bottom))}}')
 
 
+# ---------- author / trust block (2026-11-24, E-E-A-T: who writes these guides) ----------
+# Facts only, all already stated on the site: founder Manthan Bhendkar (/founder/), retention-focused editing for
+# YouTube channels incl. finance creators, based in Pune, India (policies page). No client counts, results or awards.
+ORG_ID = f'{SITE}/#organization'
+PERSON_ID = f'{SITE}/founder/#person'
+AUTHOR_LD = {'@type': 'Person', '@id': PERSON_ID, 'name': 'Manthan Bhendkar', 'url': f'{SITE}/founder/',
+             'jobTitle': 'Founder', 'worksFor': {'@id': ORG_ID}}
+PUBLISHER_LD = {'@type': 'Organization', '@id': ORG_ID, 'name': 'Asendify', 'url': f'{SITE}/',
+                'logo': {'@type': 'ImageObject', 'url': f'{SITE}/assets/images/logo.png'}}
+AUTHOR_CSS = ('.hub-author{border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px 20px;margin:32px 0 8px;'
+              'display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.03)}'
+              '.hub-author img{width:48px;height:48px;border-radius:50%;flex:0 0 48px;object-fit:cover;background:#111}'
+              '.hub-author h2{font-size:1.05em;margin:0 0 6px;color:#fff}.hub-author p{margin:0 0 8px;font-size:.95em;line-height:1.6}'
+              '.hub-author p:last-child{margin:0}.hub-author a{color:#e6c86a}'
+              '@media (max-width:759px){.hub-author{padding:16px;gap:12px}.hub-author img{width:40px;height:40px;flex-basis:40px}}')
+AUTHOR_HTML = ('<aside class="hub-author" aria-labelledby="hub-author-h">'
+               '<img src="../../assets/images/logo.png" alt="" width="48" height="48" loading="lazy">'
+               '<div><h2 id="hub-author-h">Who writes these guides</h2>'
+               '<p>This guide is written by the Asendify editorial team, led by founder '
+               '<a href="../../founder/">Manthan Bhendkar</a>. Asendify is a YouTube growth agency based in Pune, India, '
+               'doing retention-focused editing for YouTube channels, including finance creators.</p>'
+               '<p><a href="../../founder/">About Manthan Bhendkar &rarr;</a> &middot; '
+               '<a href="../../contact/">Spotted something out of date? Tell us</a></p></div></aside>\n')
+
+
 # ---------- page ----------
 def split_template(t):
     head_end = t.index('</head>')
@@ -309,8 +334,8 @@ def page(r, T):
         '@type': 'BlogPosting', 'headline': title[:110], 'description': desc,
         'datePublished': pub_d.date().isoformat(), 'dateModified': upd_d.date().isoformat(),
         'image': f'{SITE}/assets/images/og-image.png', 'mainEntityOfPage': url,
-        'author': {'@type': 'Person', 'name': 'Manthan Bhendkar', 'url': f'{SITE}/founder/'},
-        'publisher': {'@type': 'Organization', 'name': 'Asendify', 'url': f'{SITE}/', 'logo': f'{SITE}/assets/images/logo.png'},
+        'author': AUTHOR_LD,
+        'publisher': PUBLISHER_LD,
     }]
     faqs = faq_pairs(body_md)
     if faqs:
@@ -338,13 +363,13 @@ def page(r, T):
             f'    <meta name="twitter:image" content="{og}" />\n'
             f'    <link rel="stylesheet" href="{T["css"]}" />\n    ' + '\n    '.join(T['head_tail']) + '\n'
             f'    {T["clarity"]}\n'
-            f'    <style>.post-body table{{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95em}}.post-body th,.post-body td{{border:1px solid rgba(255,255,255,.15);padding:8px 10px;text-align:left;vertical-align:top}}</style>\n' + (f'    <style>{PB_CSS}</style>\n' if retention else '') + f''
+            f'    <style>.post-body table{{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95em}}.post-body th,.post-body td{{border:1px solid rgba(255,255,255,.15);padding:8px 10px;text-align:left;vertical-align:top}}' + AUTHOR_CSS + '</style>\n' + (f'    <style>{PB_CSS}</style>\n' if retention else '') + f''
             f'    <script type="application/ld+json">{ld}</script>\n</head>\n\n')
     main = (f'<main>\n        {HUB_MARK}\n        <article class="post-wrap">\n            <div class="container post-container">\n'
             f'                <nav class="post-crumbs" aria-label="Breadcrumb"><a href="../../">Home</a> / <a href="../">Blog</a></nav>\n'
             f'                <div class="section-tag">{kind_tag(r.get("keyword"))}</div>\n'
             f'                <h1 class="post-title">{t}</h1>\n'
-            f'                <p class="post-meta">By <a href="../../founder">Manthan Bhendkar</a> · {mins} min read · Published {pub} · Last updated {upd}</p>\n'
+            f'                <p class="post-meta">By the Asendify editorial team, led by <a href="../../founder/">Manthan Bhendkar</a> · {mins} min read · Published {pub} · Last updated {upd}</p>\n'
             f'                <div class="svc-copy post-body">\n{body}\n                </div>\n'
             + (pb_end if retention else (
             f'            <div class="post-cta">\n'
@@ -354,7 +379,7 @@ def page(r, T):
             f'                <p style="margin:18px 0 8px">Or try something free first:</p>\n'
             f'                <a href="../../tools/?utm_source=asendify&amp;utm_medium=blog_end&amp;utm_campaign={esc(slug)}" class="btn-outline">Free tools &rarr;</a>\n'
             f'            </div>\n'))
-            + f'            </div>\n        </article>\n    </main>' + (pb_sticky if retention else ''))
+            + f'            {AUTHOR_HTML}            </div>\n        </article>\n    </main>' + (pb_sticky if retention else ''))
     return head + T['nav'] + main + T['footer'], mins
 
 

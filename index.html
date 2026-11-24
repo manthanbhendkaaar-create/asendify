@@ -51,13 +51,30 @@
     {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://www.asendify.co/#organization",
         "name": "Asendify",
         "url": "https://www.asendify.co/",
-        "logo": "https://www.asendify.co/assets/images/logo.png",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.asendify.co/assets/images/logo.png"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Pune",
+            "addressRegion": "Maharashtra",
+            "addressCountry": "IN"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "url": "https://www.asendify.co/contact/"
+        },
         "description": "Asendify is a YouTube growth company (its done-for-you agency is invite-only; tools and books are open to everyone) offering retention-engineered video editing, AI automations, and web design for creators of all niches.",
         "founder": {
             "@type": "Person",
-            "name": "Manthan Bhendkar"
+            "@id": "https://www.asendify.co/founder/#person",
+            "name": "Manthan Bhendkar",
+            "url": "https://www.asendify.co/founder/"
         },
         "sameAs": [
             "https://www.instagram.com/asendify.digital/",
@@ -763,6 +780,21 @@ twq('config','rd7up');
                     <li>Anyone looking for templated, automated or outsourced bulk editing.</li>
                     <li>Creators who'd rather do it themselves: Asendify Books has our full system.</li>
                 </ul></div>
+            </div>
+        </div>
+    </section>
+<!-- 2026-11-24 trust signals (E-E-A-T): facts already on the site only (founder page, policies page, services above). -->
+<section class="pricing asd-facts" id="about">
+        <div class="container">
+            <div class="section-header" style="margin-bottom:36px">
+                <div class="section-tag">About</div>
+                <h2 class="section-heading">About <em>Asendify</em></h2>
+            </div>
+            <div style="max-width:760px;margin:0 auto;line-height:1.7;font-size:17px">
+                <p>Asendify was founded by <a href="./founder/" style="color:#e6c86a">Manthan Bhendkar</a>. We are a YouTube growth agency that edits for retention: hooks, pacing and structure, cut frame by frame so viewers keep watching.</p>
+                <p>We edit for YouTube channels across niches, including finance creators (stock market, crypto and personal finance) and investment firms.</p>
+                <p>Asendify is based in Pune, India, and works remotely with creators worldwide. The guides on our <a href="./blog/" style="color:#e6c86a">blog</a> are written by the Asendify editorial team, led by Manthan.</p>
+                <p><a href="./founder/" style="color:#e6c86a">Meet the founder &rarr;</a> &middot; <a href="./contact/" style="color:#e6c86a">Contact us</a></p>
             </div>
         </div>
     </section>
