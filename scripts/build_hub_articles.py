@@ -192,6 +192,14 @@ def pb_link(where):
     return f'{PB_URL}?utm_source=asendify&amp;utm_medium=article&amp;utm_campaign=retention_buybox&amp;utm_content={where}'
 
 
+# 2026-11-24 (Manthan "yes 1", the leak fix): 70 blog readers a week, 0 clicks to the playbook in 14 days on a GBP 1,720 ask.
+# The first boxes now offer a FREE next step on the playbook site (Hook Checker, worked example on the book page);
+# the full offer stays in the end box. Every link is tagged so each box's clicks show on the dashboard.
+HOOK_URL = 'https://playbook.asendify.co/hook-checker/'
+def free_link(base, where, anchor=''):
+    return f'{base}?utm_source=asendify&amp;utm_medium=article&amp;utm_campaign=retention_free&amp;utm_content={where}{anchor}'
+
+
 def strip_md_buybox(md):
     """The night agent writes its own buy-box lines into body_md; the template now adds the boxes, so drop those lines."""
     out = []
@@ -206,19 +214,22 @@ def pb_boxes(r):
     key, lead, line = pb_topic(r)
     get_li = ''.join(f'<li><b>{esc(a)}</b>: {esc(b)}</li>' for a, b in PB_GET)
     top = (f'<aside class="rbx rbx-top" data-topic="{key}"><p><strong>{esc(lead)}</strong> {esc(line)}</p>'
-           f'<a class="rbx-btn" href="{pb_link("top")}">See the Retention Playbook &rarr;</a></aside>')
-    mid = (f'<aside class="rbx rbx-mid"><div class="rbx-k">The Retention Playbook &middot; {PB_PRICE}</div>'
-           f'<h3>What you get</h3><ul>{get_li}</ul>'
-           f'<p class="rbx-for"><b>Who it is for:</b> people who put money behind video: your own ads, client ads, podcasts, events and roadshows, YouTube and Shorts.</p>'
-           f'<a class="rbx-btn" href="{pb_link("mid")}">Get the playbook &middot; {PB_PRICE} &rarr;</a></aside>')
+           f'<a class="rbx-btn" href="{free_link(HOOK_URL, "top_tool")}">Check your hook free &rarr;</a>'
+           f'<p class="rbx-alt"><a href="{free_link(PB_URL, "top_example", "#worked-example")}">or see a worked example from the playbook</a></p></aside>')
+    mid = (f'<aside class="rbx rbx-mid"><div class="rbx-k">Free look inside the Retention Playbook</div>'
+           f'<h3>See how a real edit gets fixed, step by step</h3>'
+           f'<p>A worked example from the book: the drop-off, what caused it, and the exact change that fixed it.</p>'
+           f'<a class="rbx-btn" href="{free_link(PB_URL, "mid_example", "#worked-example")}">See the worked example &rarr;</a>'
+           f'<p class="rbx-alt">Full playbook {PB_PRICE} one-time, if and when you want it.</p></aside>')
     end = (f'<section class="rbx rbx-end"><div class="rbx-k">Secrets to become a celebrity on Youtube: The Retention Editing Playbook</div>'
            f'<h2>Keep viewers watching, so every video you pay for works harder</h2>'
            f'<p>{esc(line)} It is the same retention system we use on client channels, written down step by step.</p>'
            f'<h3>After you pay, you get</h3><ul>{get_li}</ul>'
            f'<p class="rbx-price">{PB_PRICE} one-time &middot; instant download, book and Bonus Pack together</p>'
-           f'<a class="rbx-btn rbx-btn-lg" href="{pb_link("end")}">Get the Retention Playbook &rarr;</a></section>')
+           f'<a class="rbx-btn rbx-btn-lg" href="{pb_link("end")}">Get the Retention Playbook &rarr;</a>'
+           f'<p class="rbx-alt"><a href="{free_link(HOOK_URL, "end_tool")}">Not ready? Check your hook free first</a></p></section>')
     sticky = (f'<div class="rbx-sticky" id="rbx-sticky" role="complementary" aria-label="Retention Playbook">'
-              f'<a href="{pb_link("sticky")}">Get the Retention Playbook &middot; {PB_PRICE} &rarr;</a>'
+              f'<a href="{free_link(HOOK_URL, "sticky_tool")}">Free hook check, 30 seconds &rarr;</a>'
               f'<button type="button" aria-label="Close" onclick="var b=document.getElementById(\'rbx-sticky\');b.hidden=true;document.body.classList.remove(\'rbx-pad\');try{{sessionStorage.setItem(\'rbx-x\',\'1\')}}catch(e){{}}">&times;</button></div>'
               f'<script>(function(){{try{{if(sessionStorage.getItem("rbx-x")){{document.getElementById("rbx-sticky").hidden=true;return}}}}catch(e){{}}document.body.classList.add("rbx-pad")}})();</script>')
     return top, mid, end, sticky
@@ -231,6 +242,7 @@ PB_CSS = ('.post-wrap .rbx,.rbx{border:1px solid rgba(212,175,55,.38)!important;
           '.rbx-btn{display:inline-block;background:#f3eee4;color:#0b0b0d !important;font-weight:700;text-decoration:none;border-radius:999px;padding:11px 20px;box-shadow:0 0 0 4px rgba(212,175,55,.18)}'
           '.rbx-btn:hover{background:#fff}.rbx-btn-lg{padding:14px 26px;font-size:1.05em}'
           '.post-wrap .rbx-end{padding:26px 24px!important;margin-top:36px!important}.rbx-price{font-weight:700;color:#fff}'
+          '.rbx-alt{margin:10px 0 0;font-size:.92em;color:#cfc8ba}.rbx-alt a{color:#e6c86a}'
           '.rbx-sticky{display:none}'
           '@media (max-width:759px){.post-wrap .rbx,.rbx{padding:16px!important}.rbx-sticky:not([hidden]){display:flex;position:fixed;left:8px;right:8px;bottom:calc(8px + env(safe-area-inset-bottom));z-index:60;align-items:center;gap:8px;background:#141210;border:1px solid rgba(212,175,55,.45);border-radius:14px;padding:10px 10px 10px 14px;box-shadow:0 8px 30px rgba(0,0,0,.5)}'
           '.rbx-sticky a{flex:1;color:#f3e6c4;font-weight:700;text-decoration:none;font-size:15px}'
