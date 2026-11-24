@@ -29,7 +29,7 @@ import sys
 SITE = 'https://www.asendify.co'
 TEMPLATE = 'blog/best-retention-editing-courses/index.html'
 HUB_MARK = '<!-- hub-article: built by scripts/build_hub_articles.py from shop_articles (product=hub) -->'
-MAX_NEW = 200   # 2026-11-21 (Manthan "ok 172", RULE 147): 172 retention hub pages a night; the old 12/run brake left pages 404 for days
+MAX_NEW = 450   # 2026-11-24: 200 left 133 of 333 hub pages waiting a day (258 pages/night + top-ups); 2026-11-21 (Manthan "ok 172", RULE 147): 172 retention hub pages a night; the old 12/run brake left pages 404 for days
 SLUG_RE = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
 LLMS_HEAD = '## Broad guides, roundups and comparisons (www.asendify.co)'
 
