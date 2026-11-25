@@ -535,16 +535,28 @@ document.addEventListener('click', function (e) {
         // on the Channels dashboard; same landing-page rule as 'books', so a session is still counted once.
         var product = /^\/books(\/|$)/.test(path) ? 'books' : /^\/accelerator(\/|$)/.test(path) ? 'accelerator' : /^\/retention-doctor(\/|$)/.test(path) ? 'doctor' : 'hub'; // 2026-11-16: Retention Doctor landing (www.asendify.co/retention-doctor/) counts as product 'doctor'
         var acts = ['scroll', 'pointerdown', 'touchstart', 'keydown', 'mousemove', 'wheel'], sent = false, shown = 0, tick;
+        var vid = Math.random().toString(36).slice(2, 10) + Date.now().toString(36); // 2026-11-25: per-visit id for follow-ups
         var send = function (how) {
             if (sent) return; sent = true; clearInterval(tick);
             acts.forEach(function (e) { removeEventListener(e, onAct, true); });
             try { sessionStorage.setItem('asd_sv', '1'); } catch (e) {}
             fetch('https://playbook.asendify.co/api/ref', { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain' },
-                body: JSON.stringify({ visit: src, page: path, engaged: how, product: product }) }).catch(function () {});
+                body: JSON.stringify({ visit: src, page: path, engaged: how, product: product, vid: vid }) }).catch(function () {});
         };
         var onAct = function () { send('interact'); };
         acts.forEach(function (e) { addEventListener(e, onAct, { capture: true, passive: true }); });
         tick = setInterval(function () { if (document.visibilityState === 'visible' && (shown += 1000) >= 12000) send('time'); }, 1000);
+        // 2026-11-25 (Manthan "ok www tracker"): once the visit is counted, keep updating the SAME row (vid): how far down the
+        // page they scrolled, seconds on screen, and clicks on the playbook boxes (free Hook Checker / worked example / buy).
+        var up = function (o) { if (!sent) return; try { o.vupd = vid; fetch('https://playbook.asendify.co/api/ref', { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(o) }).catch(function () {}); } catch (e) {} };
+        var depth = 0, secs = 0, last = '';
+        var onScroll = function () { var d = document.documentElement; var p = Math.min(100, Math.round(((window.scrollY || d.scrollTop) + window.innerHeight) / Math.max(1, d.scrollHeight) * 100)); if (p > depth) depth = p; };
+        addEventListener('scroll', onScroll, { passive: true });
+        var flush = function () { onScroll(); var k = depth + '/' + secs; if (secs > 0 && k !== last) { last = k; up({ depth: depth, secs: secs }); } };
+        setInterval(function () { if (document.visibilityState !== 'visible') return; secs += 1; if (secs % 15 === 0) flush(); }, 1000);
+        addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') flush(); });
+        addEventListener('pagehide', flush);
+        document.addEventListener('click', function (e) { try { var a = e.target && e.target.closest ? e.target.closest('a[href*="playbook.asendify.co"]') : null; if (a) { flush(); up({ pay: /hook-checker/.test(a.href) ? 'tool' : 'playbook' }); } } catch (x) {} }, true);
     } catch (e) {}
 })();
 
